@@ -1,0 +1,184 @@
+diff --git a/lalsimulation/src/LALSimIMR.h b/lalsimulation/src/LALSimIMR.h
+index d4129de..ad8501d 100644
+--- a/lalsimulation/src/LALSimIMR.h
++++ b/lalsimulation/src/LALSimIMR.h
+@@ -106,13 +106,13 @@ SphHarmTimeSeries *XLALSimIMREOBNRv2Modes(const REAL8 phiRef, const REAL8 deltaT
+ 
+ double XLALSimIMRSpinAlignedEOBPeakFrequency(REAL8 m1SI, REAL8 m2SI, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion);
+ int XLALSimIMRSpinAlignedEOBWaveform(REAL8TimeSeries **hplus, REAL8TimeSeries **hcross, const REAL8 phiC, REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 inc, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion, LALDict *LALparams);
+-int XLALSimIMRSpinAlignedEOBWaveformAll(REAL8TimeSeries **hplus, REAL8TimeSeries **hcross, const REAL8 phiC, REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 inc, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion, const REAL8 lambda2Tidal1, const REAL8 lambda2Tidal2, const REAL8 omega02Tidal1, const REAL8 omega02Tidal2, const REAL8 lambda3Tidal1, const REAL8 lambda3Tidal2, const REAL8 omega03Tidal1, const REAL8 omega03Tidal2, const REAL8 quadparam1, const REAL8 quadparam2, REAL8Vector *nqcCoeffsInput, const INT4 nqcFlag, LALValue *ModeArray);
++int XLALSimIMRSpinAlignedEOBWaveformAll(REAL8TimeSeries **hplus, REAL8TimeSeries **hcross, const REAL8 phiC, REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 inc, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion, const REAL8 lambda2Tidal1, const REAL8 lambda2Tidal2, const REAL8 omega02Tidal1, const REAL8 omega02Tidal2, const REAL8 lambda3Tidal1, const REAL8 lambda3Tidal2, const REAL8 omega03Tidal1, const REAL8 omega03Tidal2, const REAL8 quadparam1, const REAL8 quadparam2, const COMPLEX16 qnmfreq, REAL8Vector *nqcCoeffsInput, const INT4 nqcFlag, LALValue *ModeArray);
+ int XLALSimIMRSpinAlignedEOBModes(SphHarmTimeSeries ** hlmmode,
+   //SM
+   REAL8Vector ** dynamics_out, /**<< OUTPUT, low-sampling dynamics */
+   REAL8Vector ** dynamicsHi_out, /**<< OUTPUT, high-sampling dynamics */
+   //SM
+- REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion, const REAL8 lambda2Tidal1, const REAL8 lambda2Tidal2, const REAL8 omega02Tidal1, const REAL8 omega02Tidal2, const REAL8 lambda3Tidal1, const REAL8 lambda3Tidal2, const REAL8 omega03Tidal1, const REAL8 omega03Tidal2, const REAL8 quadparam1, const REAL8 quadparam2, REAL8Vector *nqcCoeffsInput, const INT4 nqcFlag);
++ REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 spin1z, const REAL8 spin2z, UINT4 SpinAlignedEOBversion, const REAL8 lambda2Tidal1, const REAL8 lambda2Tidal2, const REAL8 omega02Tidal1, const REAL8 omega02Tidal2, const REAL8 lambda3Tidal1, const REAL8 lambda3Tidal2, const REAL8 omega03Tidal1, const REAL8 omega03Tidal2, const REAL8 quadparam1, const REAL8 quadparam2, const COMPLEX16 qnmfreq, REAL8Vector *nqcCoeffsInput, const INT4 nqcFlag);
+ /*int XLALSimIMRSpinEOBWaveform(REAL8TimeSeries **hplus, REAL8TimeSeries **hcross, const REAL8 phiC, const REAL8 deltaT, const REAL8 m1SI, const REAL8 m2SI, const REAL8 fMin, const REAL8 r, const REAL8 inc, const REAL8 spin1[], const REAL8 spin2[]);
+  */
+ 
+diff --git a/lalsimulation/src/LALSimIMREOBHybridRingdown.c b/lalsimulation/src/LALSimIMREOBHybridRingdown.c
+index 1b514f6..9fa4080 100644
+--- a/lalsimulation/src/LALSimIMREOBHybridRingdown.c
++++ b/lalsimulation/src/LALSimIMREOBHybridRingdown.c
+@@ -1025,6 +1025,7 @@ static UNUSED INT4 XLALSimIMREOBAttachFitRingdown(
+     const REAL8 spin2x,    /**<<The spin of the second object; */
+     const REAL8 spin2y,    /**<<The spin of the second object; */
+     const REAL8 spin2z,    /**<<The spin of the second object; */
++    const COMPLEX16 qnmfreq,
+     REAL8Vector * timeVec, /**<< Vector containing the time values */
+     REAL8Vector * matchrange,
+                            /**<< Time values chosen as points for performing comb matching */
+@@ -1083,10 +1084,11 @@ static UNUSED INT4 XLALSimIMREOBAttachFitRingdown(
+     /*********************************************************************************************/
+     /* Getting  QNMs */
+     modefreqs = XLALCreateCOMPLEX16Vector(1);
+-    if (XLALSimIMREOBGenerateQNMFreqV2(modefreqs, mass1, mass2, spin1, spin2, l, m, 1, appr) == XLAL_FAILURE) {
+-        XLALDestroyCOMPLEX16Vector(modefreqs);
+-        XLAL_ERROR(XLAL_EFUNC);
+-    }
++    modefreqs->data[0] = qnmfreq;
++    //if (XLALSimIMREOBGenerateQNMFreqV2(modefreqs, mass1, mass2, spin1, spin2, l, m, 1, appr) == XLAL_FAILURE) {
++    //    XLALDestroyCOMPLEX16Vector(modefreqs);
++    //    XLAL_ERROR(XLAL_EFUNC);
++    //}
+ 
+     //RC: we use this variable to compute the damping time of the 22 mode which will be used to set the lenght of the ringdown for all the modes
+     modefreqs22 = XLALCreateCOMPLEX16Vector(1);
+diff --git a/lalsimulation/src/LALSimIMRSpinAlignedEOB.c b/lalsimulation/src/LALSimIMRSpinAlignedEOB.c
+index 6c1a54e..22a7b5c 100644
+--- a/lalsimulation/src/LALSimIMRSpinAlignedEOB.c
++++ b/lalsimulation/src/LALSimIMRSpinAlignedEOB.c
+@@ -544,7 +544,9 @@ XLALSimIMRSpinAlignedEOBWaveform (REAL8TimeSeries ** hplus,	     /**<< OUTPUT, +
+   REAL8 omega03Tidal2 = 0;
+   REAL8 quadparam1 = 0;
+   REAL8 quadparam2 = 0;
++  COMPLEX16 qnmfreq = 0;
+ 
++  qnmfreq = XLALSimInspiralWaveformParamsLookupQNMFreq(LALParams);
+   lambda2Tidal1 = XLALSimInspiralWaveformParamsLookupTidalLambda1(LALParams);
+   lambda2Tidal2 = XLALSimInspiralWaveformParamsLookupTidalLambda2(LALParams);
+   if ( (SpinAlignedEOBversion == 201 || SpinAlignedEOBversion == 401) && lambda2Tidal1 != 0. ) {
+@@ -607,7 +609,7 @@ XLALSimIMRSpinAlignedEOBWaveform (REAL8TimeSeries ** hplus,	     /**<< OUTPUT, +
+       printf("First run SEOBNRv4 to compute NQCs\n");
+ #endif
+       ret = XLALSimIMRSpinAlignedEOBWaveformAll (hplus, hcross, phiC, 1./32768, m1BH, m2BH, 2*pow(10.,-1.5)/(2.*LAL_PI)/((m1BH + m2BH)*LAL_MTSUN_SI/LAL_MSUN_SI), r, inc, spin1z, spin2z, 400,
+-					 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nqcCoeffsInput, nqcFlag, ModeArray);
++					 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, qnmfreq, nqcCoeffsInput, nqcFlag, ModeArray);
+       if (ret == XLAL_FAILURE){
+         if ( nqcCoeffsInput ) XLALDestroyREAL8Vector( nqcCoeffsInput );
+         if(ModeArray) XLALDestroyValue(ModeArray);
+@@ -627,7 +629,7 @@ XLALSimIMRSpinAlignedEOBWaveform (REAL8TimeSeries ** hplus,	     /**<< OUTPUT, +
+                                                  omega02Tidal1, omega02Tidal2,
+                                                  lambda3Tidal1, lambda3Tidal2,
+                                                  omega03Tidal1, omega03Tidal2,
+-                                                 quadparam1, quadparam2,
++                                                 quadparam1, quadparam2, qnmfreq,
+                                                  nqcCoeffsInput, nqcFlag, ModeArray);
+      if (ret == XLAL_FAILURE){
+        if ( nqcCoeffsInput ) XLALDestroyREAL8Vector( nqcCoeffsInput );
+@@ -710,6 +712,7 @@ XLALSimIMRSpinAlignedEOBModes (SphHarmTimeSeries ** hlmmode,
+                      /**<< parameter kappa_1 of the spin-induced quadrupole for body 1, quadrupole is Q_A = -kappa_A m_A^3 chi_A^2 */
+ 				     const REAL8 quadparam2,
+                      /**<< parameter kappa_2 of the spin-induced quadrupole for body 2, quadrupole is Q_A = -kappa_A m_A^3 chi_A^2 */
++				     const COMPLEX16 qnmfreq,
+                      REAL8Vector *nqcCoeffsInput,
+                      /**<< Input NQC coeffs */
+                      const INT4 nqcFlag
+@@ -2565,7 +2568,7 @@ for ( UINT4 k = 0; k<nModes; k++) {
+             if (XLALSimIMREOBAttachFitRingdown (sigReHi, sigImHi, modeL, modeM,
+ 					  deltaTHigh, m1, m2, spin1[0],
+ 					  spin1[1], spin1[2], spin2[0],
+-					  spin2[1], spin2[2], &timeHi,
++					  spin2[1], spin2[2], qnmfreq, &timeHi,
+ 					  rdMatchPoint,
+ 					  SpinAlignedEOBapproximant, &indAmpMax) ==
+                 XLAL_FAILURE)
+@@ -3236,6 +3239,7 @@ XLALSimIMRSpinAlignedEOBWaveformAll (REAL8TimeSeries ** hplus,
+                      /**<< parameter kappa_1 of the spin-induced quadrupole for body 1, quadrupole is Q_A = -kappa_A m_A^3 chi_A^2 */
+ 				     const REAL8 quadparam2,
+                      /**<< parameter kappa_2 of the spin-induced quadrupole for body 2, quadrupole is Q_A = -kappa_A m_A^3 chi_A^2 */
++				     const COMPLEX16 qnmfreq,
+                      REAL8Vector *nqcCoeffsInput,
+                      /**<< Input NQC coeffs */
+                      const INT4 nqcFlag,
+@@ -3264,7 +3268,7 @@ XLALSimIMRSpinAlignedEOBWaveformAll (REAL8TimeSeries ** hplus,
+                                                omega02Tidal1, omega02Tidal2,
+                                                lambda3Tidal1, lambda3Tidal2,
+                                                omega03Tidal1, omega03Tidal2,
+-                                               quadparam1, quadparam2,
++                                               quadparam1, quadparam2, qnmfreq,
+                                                nqcCoeffsInput, nqcFlag) == XLAL_FAILURE){
+                                                  if(dynamics) XLALDestroyREAL8Vector(dynamics);
+                                                  if(dynamicsHi) XLALDestroyREAL8Vector(dynamicsHi);
+diff --git a/lalsimulation/src/LALSimInspiral.c b/lalsimulation/src/LALSimInspiral.c
+index 3c6e34d..4bfe554 100644
+--- a/lalsimulation/src/LALSimInspiral.c
++++ b/lalsimulation/src/LALSimInspiral.c
+@@ -344,6 +344,7 @@ int XLALSimInspiralChooseTDWaveform(
+     REAL8 quadparam2 = 1.+XLALSimInspiralWaveformParamsLookupdQuadMon2(LALparams);
+     REAL8 lambda1 = XLALSimInspiralWaveformParamsLookupTidalLambda1(LALparams);
+     REAL8 lambda2 = XLALSimInspiralWaveformParamsLookupTidalLambda2(LALparams);
++    UNUSED COMPLEX16 qnmfreq = XLALSimInspiralWaveformParamsLookupQNMFreq(LALparams);
+     int amplitudeO = XLALSimInspiralWaveformParamsLookupPNAmplitudeOrder(LALparams);
+     int phaseO =XLALSimInspiralWaveformParamsLookupPNPhaseOrder(LALparams);
+ 		/* Tidal parameters to be computed, if required, by universal relations */
+diff --git a/lalsimulation/src/LALSimInspiralWaveformParams.c b/lalsimulation/src/LALSimInspiralWaveformParams.c
+index e707ffa..2e4ac28 100644
+--- a/lalsimulation/src/LALSimInspiralWaveformParams.c
++++ b/lalsimulation/src/LALSimInspiralWaveformParams.c
+@@ -67,6 +67,7 @@ DEFINE_INSERT_FUNC(PNEccentricityOrder, INT4, "eccO", -1)
+ DEFINE_INSERT_FUNC(PNSpinOrder, INT4, "spinO", -1)
+ DEFINE_INSERT_FUNC(PNTidalOrder, INT4, "tideO", -1)
+ 
++DEFINE_INSERT_FUNC(QNMFreq, COMPLEX16, "qnmfreq", 0)
+ 
+ DEFINE_INSERT_FUNC(TidalLambda1, REAL8, "lambda1", 0)
+ DEFINE_INSERT_FUNC(TidalLambda2, REAL8, "lambda2", 0)
+@@ -167,6 +168,8 @@ DEFINE_LOOKUP_FUNC(PNEccentricityOrder, INT4, "eccO", -1)
+ DEFINE_LOOKUP_FUNC(PNSpinOrder, INT4, "spinO", -1)
+ DEFINE_LOOKUP_FUNC(PNTidalOrder, INT4, "tideO", -1)
+ 
++DEFINE_LOOKUP_FUNC(QNMFreq, COMPLEX16, "qnmfreq", 0)
++
+ DEFINE_LOOKUP_FUNC(TidalLambda1, REAL8, "lambda1", 0)
+ DEFINE_LOOKUP_FUNC(TidalLambda2, REAL8, "lambda2", 0)
+ DEFINE_LOOKUP_FUNC(TidalOctupolarLambda1, REAL8, "TidalOctupolarLambda1", 0)
+@@ -259,6 +262,8 @@ DEFINE_ISDEFAULT_FUNC(PNEccentricityOrder, INT4, "eccO", -1)
+ DEFINE_ISDEFAULT_FUNC(PNSpinOrder, INT4, "spinO", -1)
+ DEFINE_ISDEFAULT_FUNC(PNTidalOrder, INT4, "tideO", -1)
+ 
++DEFINE_ISDEFAULT_FUNC(QNMFreq, COMPLEX16, "qnmfreq", 0)
++
+ DEFINE_ISDEFAULT_FUNC(TidalLambda1, REAL8, "lambda1", 0)
+ DEFINE_ISDEFAULT_FUNC(TidalLambda2, REAL8, "lambda2", 0)
+ DEFINE_ISDEFAULT_FUNC(TidalOctupolarLambda1, REAL8, "TidalOctupolarLambda1", 0)
+diff --git a/lalsimulation/src/LALSimInspiralWaveformParams.h b/lalsimulation/src/LALSimInspiralWaveformParams.h
+index c8ebdaf..07239af 100644
+--- a/lalsimulation/src/LALSimInspiralWaveformParams.h
++++ b/lalsimulation/src/LALSimInspiralWaveformParams.h
+@@ -24,6 +24,7 @@ int XLALSimInspiralWaveformParamsInsertPNEccentricityOrder(LALDict *params, INT4
+ int XLALSimInspiralWaveformParamsInsertPNSpinOrder(LALDict *params, INT4 value);
+ int XLALSimInspiralWaveformParamsInsertPNTidalOrder(LALDict *params, INT4 value);
+ 
++int XLALSimInspiralWaveformParamsInsertQNMFreq(LALDict *params, COMPLEX16 value);
+ int XLALSimInspiralWaveformParamsInsertTidalLambda1(LALDict *params, REAL8 value);
+ int XLALSimInspiralWaveformParamsInsertTidalLambda2(LALDict *params, REAL8 value);
+ int XLALSimInspiralWaveformParamsInsertTidalOctupolarLambda1(LALDict *params, REAL8 value);
+@@ -109,6 +110,7 @@ INT4 XLALSimInspiralWaveformParamsLookupPNEccentricityOrder(LALDict *params);
+ INT4 XLALSimInspiralWaveformParamsLookupPNSpinOrder(LALDict *params);
+ INT4 XLALSimInspiralWaveformParamsLookupPNTidalOrder(LALDict *params);
+ 
++COMPLEX16 XLALSimInspiralWaveformParamsLookupQNMFreq(LALDict *params);
+ REAL8 XLALSimInspiralWaveformParamsLookupTidalLambda1(LALDict *params);
+ REAL8 XLALSimInspiralWaveformParamsLookupTidalLambda2(LALDict *params);
+ REAL8 XLALSimInspiralWaveformParamsLookupTidalOctupolarLambda1(LALDict *params);
+@@ -194,6 +196,7 @@ int XLALSimInspiralWaveformParamsPNEccentricityOrderIsDefault(LALDict *params);
+ int XLALSimInspiralWaveformParamsPNSpinOrderIsDefault(LALDict *params);
+ int XLALSimInspiralWaveformParamsPNTidalOrderIsDefault(LALDict *params);
+ 
++int XLALSimInspiralWaveformParamsQNMFreqIsDefault(LALDict *params);
+ int XLALSimInspiralWaveformParamsTidalLambda1IsDefault(LALDict *params);
+ int XLALSimInspiralWaveformParamsTidalLambda2IsDefault(LALDict *params);
+ int XLALSimInspiralWaveformParamsTidalOctupolarLambda1IsDefault(LALDict *params);
