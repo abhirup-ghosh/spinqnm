@@ -11,6 +11,7 @@ from scipy import interpolate
 import sys
 import scipy.ndimage.filters as filter
 from optparse import OptionParser
+import corner
 
 # Module for confidence calculations
 class confidence(object):
@@ -47,77 +48,52 @@ if __name__ == '__main__':
   (options, args) = parser.parse_args()
   post_loc = options.post_loc
 
-  # Read data
+  ##############################################################################
+  ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
+  ##############################################################################
+
   data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
-  m1, m2, a1z, a2z, domega220, dtauinv220 = data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtauinv220']
+  m1, m2, a1z, a2z, domega, dtau = data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtauinv220']
 
-  N_bins = 51
-
-  ########################################################
-  ## Computing (domega220, dtauinv220) histogram
-  ########################################################
-
-  domega220_bins = np.linspace(min(domega220), max(domega220), N_bins)
-  dtauinv220_bins = np.linspace(min(dtauinv220), max(dtauinv220), N_bins)
-
-  domega220_intp = (domega220_bins[:-1] + domega220_bins[1:])/2.
-  dtauinv220_intp = (dtauinv220_bins[:-1] + dtauinv220_bins[1:])/2.
-
-  P_domega220dtauinv220, domega220_bins, dtauinv220_bins = np.histogram2d(domega220, dtauinv220, bins=(domega220_bins, dtauinv220_bins), normed=True)
-  P_domega220dtauinv220 = P_domega220dtauinv220.T
-
-  ########################################################
-  ## Computing (omega220, tau220) histogram
-  ########################################################
+  ##############################################################################
+  ## Computing (omega, tau) GR and modGR posterior samples
+  ##############################################################################
 
   lm = [2,2]
-  omega220 = []
-  tau220 = []
+
+  omega_GR_array = []
+  tau_GR_array = []
+
+  omega_modGR_array = []
+  tau_modGR_array = []
 
   for idx in range(len(data)):
 
-    # Compute GR values of (omega220, tauinv220) from (m1, m2, a1z, a2z) samples
-    omega220_GR, tauinv220_GR = calcqnm.get_sigmalm0SI_GR(m1[idx], m2[idx], a1z[idx], a2z[idx], lm)
+	    # Compute GR values of (omega, tau) from (m1, m2, a1z, a2z) samples
+	    omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1[idx], m2[idx], a1z[idx], a2z[idx], lm)
 
-    # Compute modGR values of (omega220, tauinv220) by including the fractional deviations (domega220, dtauinv220)
-    omega220_modGR, tauinv220_modGR = omega220_GR*(1. + domega220[idx]), tauinv220_GR*(1 + dtauinv220[idx])
+	    # create (omega/2pi, tau) GR arrays
+	    omega_GR_array.append(omega_GR[0]), tau_GR_array.append(tau_GR[0])
 
-    # Compute tau220 from tauinv220
-    tau220_modGR = 1/tauinv220_modGR
+	    # Compute modGR values of (omega, tau) by including the fractional deviations (domega, dtau)
+	    omega_modGR, tau_modGR = omega_GR*(1. + domega[idx]), tau_GR*(1 + dtau[idx])
 
-    # create (omega220/2pi, tau220) arrays
-    omega220.append(omega220_modGR[0]/(2.*np.pi)), tau220.append(tau220_modGR[0])
+	    # create (omega/2pi, tau) modGR arrays
+	    omega_modGR_array.append(omega_modGR[0]), tau_modGR_array.append(tau_modGR[0])
 
-  omega220_bins = np.linspace(min(omega220), max(omega220), N_bins)
-  tau220_bins = np.linspace(min(tau220), max(tau220), N_bins)
+  ##############################################################################
+  ## Plotting
+  ##############################################################################
 
-  omega220_intp = (omega220_bins[:-1] + omega220_bins[1:])/2.
-  tau220_intp = (tau220_bins[:-1] + tau220_bins[1:])/2.
+  samples_domega_dtau = np.vstack((domega, dtau)).T
+  corner.corner(samples_domega_dtau, labels=[r"$d\Omega$", r"$d\tau$"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/qnmtest_frac_params_corner.png')
 
-  P_omega220tau220, omega220_bins, tau220_bins = np.histogram2d(omega220, tau220, bins=(omega220_bins, tau220_bins), normed=True)
-  P_omega220tau220 = P_omega220tau220.T
+  samples_omega_tau_GR = np.vstack((omega_GR_array, tau_GR_array)).T
+  corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (s)"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/qnmtest_abs_params_GR_corner.png')
 
-  ########################################################
-  ## Plotting (domega220, dtauinv220) and (omega220, tau220)
-  ########################################################
- 
-  conf_domega220dtauinv220 = confidence(P_domega220dtauinv220)
-  s1_domega220dtauinv220 = conf_domega220dtauinv220.height_from_level(0.5)
-  s2_domega220dtauinv220 = conf_domega220dtauinv220.height_from_level(0.9)
-
-  conf_omega220tau220 = confidence(P_omega220tau220)
-  s1_omega220tau220 = conf_omega220tau220.height_from_level(0.5)
-  s2_omega220tau220 = conf_omega220tau220.height_from_level(0.9)
-
-  plt.figure(figsize=(5,5))
-  plt.contour(domega220_bins[:-1], dtauinv220_bins[:-1], gf(P_domega220dtauinv220), levels=(s2_domega220dtauinv220,s1_domega220dtauinv220), linewidths=(1,1.5), colors='orange')
-  plt.xlim([-1,1])
-  plt.ylim([-1,1])
-  plt.savefig(post_loc + '/qnmtest_dsigmalm0.png')
-
-  plt.figure(figsize=(5,5))
-  plt.contour(omega220_bins[:-1], tau220_bins[:-1], gf(P_omega220tau220), levels=(s2_omega220tau220,s1_omega220tau220), linewidths=(1,1.5), colors='orange')
-  plt.xlim([0, 400])
-  plt.ylim([0, 400])
-  plt.savefig(post_loc + '/qnmtest_sigmalm0.png')
+  samples_omega_tau_modGR = np.vstack((omega_modGR_array, tau_modGR_array)).T
+  corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (s)"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/qnmtest_abs_params_modGR_corner.png')
 

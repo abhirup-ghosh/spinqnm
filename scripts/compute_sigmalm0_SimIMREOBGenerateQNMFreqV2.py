@@ -8,10 +8,10 @@ def get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm):
 
   sigmalm0SI = lal.CreateCOMPLEX16Vector(1)
   lalsim.SimIMREOBGenerateQNMFreqV2(sigmalm0SI, m1, m2, np.array([0., 0., a1z]), np.array([0., 0., a2z]), lm[0], lm[1], 1, lalsim.SEOBNRv4)
-  omegalm0SI = np.real(sigmalm0SI.data)
-  tauinvlm0SI = np.imag(sigmalm0SI.data)
+  omegalm0SI = np.real(sigmalm0SI.data)/(2.*np.pi)
+  taulm0SI = 1./np.imag(sigmalm0SI.data)
 
-  return omegalm0SI, tauinvlm0SI
+  return omegalm0SI, taulm0SI
 
 if __name__ == '__main__':
 
@@ -20,6 +20,7 @@ if __name__ == '__main__':
 
   for lm in lm_list:
 
-    omegalm0SI, tauinvlm0SI = get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
+    omegalm0SI, taulm0SI = get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
 
-    print '... GR values: omegalm0SI/(2pi): %.2f Hz; taulm0SI: %.2f ms'%(omegalm0SI/(2.*np.pi), 1000./tauinvlm0SI)
+    print '... GR values: omegalm0SI: %.2f Hz; taulm0SI: %.2f ms'%(omegalm0SI, taulm0SI*1000.)
+
