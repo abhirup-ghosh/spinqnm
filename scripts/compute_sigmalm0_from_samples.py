@@ -1,3 +1,4 @@
+import os
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -45,8 +46,12 @@ if __name__ == '__main__':
 
   parser = OptionParser()
   parser.add_option("-p", "--post-loc", dest="post_loc", help="path to directory containing the cbcBayesPostProc posterior_samples.dat output")
+  parser.add_option("-o", "--outdir", dest="outdir", help="creates output directory inside the post_loc")
   (options, args) = parser.parse_args()
   post_loc = options.post_loc
+  outdir = options.outdir
+
+  os.system('mkdir -p %s/%s'%(post_loc, outdir))
 
   ##############################################################################
   ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
@@ -72,28 +77,27 @@ if __name__ == '__main__':
 	    # Compute GR values of (omega, tau) from (m1, m2, a1z, a2z) samples
 	    omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1[idx], m2[idx], a1z[idx], a2z[idx], lm)
 
-	    # create (omega/2pi, tau) GR arrays
-	    omega_GR_array.append(omega_GR[0]), tau_GR_array.append(tau_GR[0])
+	    # create (omega, 1000*tau) GR arrays; converting tau to units of milliseconds
+	    omega_GR_array.append(omega_GR[0]), tau_GR_array.append(tau_GR[0]*1000.)
 
 	    # Compute modGR values of (omega, tau) by including the fractional deviations (domega, dtau)
 	    omega_modGR, tau_modGR = omega_GR*(1. + domega[idx]), tau_GR*(1 + dtau[idx])
 
-	    # create (omega/2pi, tau) modGR arrays
-	    omega_modGR_array.append(omega_modGR[0]), tau_modGR_array.append(tau_modGR[0])
+	    # create (omega, 1000*tau) modGR arrays; converting tau to units of milliseconds
+	    omega_modGR_array.append(omega_modGR[0]), tau_modGR_array.append(tau_modGR[0]*1000.)
 
   ##############################################################################
   ## Plotting
   ##############################################################################
 
   samples_domega_dtau = np.vstack((domega, dtau)).T
-  corner.corner(samples_domega_dtau, labels=[r"$d\Omega$", r"$d\tau$"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/qnmtest_frac_params_corner.png')
+  corner.corner(samples_domega_dtau, labels=[r"$d\Omega$", r"$d\tau$"], quantiles=(0.16, 0.5, 0.84), truths=[0,0], truth_color='g', show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/%s/qnmtest_frac_params_corner.png'%outdir)
 
   samples_omega_tau_GR = np.vstack((omega_GR_array, tau_GR_array)).T
-  corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (s)"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/qnmtest_abs_params_GR_corner.png')
+  corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_GR_corner.png'%outdir)
 
   samples_omega_tau_modGR = np.vstack((omega_modGR_array, tau_modGR_array)).T
-  corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (s)"], quantiles=(0.16, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/qnmtest_abs_params_modGR_corner.png')
-
+  corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_modGR_corner.png'%outdir)
