@@ -2,6 +2,10 @@ import numpy as np
 import lal
 import lalsimulation as lalsim
 
+###########################################################
+# function to compute GR value of sigmalm0 (in SI units)
+# for a single set of m1, m2, a1z, a2z
+###########################################################
 def get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm):
 
   M = m1 + m2
@@ -12,6 +16,23 @@ def get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm):
   taulm0SI = 1./np.imag(sigmalm0SI.data)
 
   return omegalm0SI, taulm0SI
+
+
+###########################################################
+# function to compute GR values of sigmalm0 (in SI units)
+# for m1, m2, a1z, a2z arrays; returns a numpy array
+###########################################################
+def get_sigmalm0SI_GR_list(m1, m2, a1z, a2z, lm):
+
+  M = m1 + m2
+
+  return np.asarray([get_sigmalm0SI_GR(m1[idx], m2[idx], a1z[idx], a2z[idx], lm)[0][0] for idx in range(len(m1))]), np.asarray([get_sigmalm0SI_GR(m1[idx], m2[idx], a1z[idx], a2z[idx], lm)[1][0] for idx in range(len(m1))])
+
+###########################################################
+# function to compute modGR values of sigmalm0 (in SI units)
+###########################################################
+def get_sigmalm0SI_modGR_list(omega_GR_list, tau_GR_list, domega_list, dtau_list):
+  return omega_GR_list*(1. + domega_list), tau_GR_list*(1 + dtau_list)
 
 if __name__ == '__main__':
 
@@ -24,3 +45,7 @@ if __name__ == '__main__':
 
     print '... GR values: omegalm0SI: %.2f Hz; taulm0SI: %.2f ms'%(omegalm0SI, taulm0SI*1000.)
 
+  m1, m2, a1z, a2z = np.random.randn(100) + 40, np.random.randn(100)+30, np.zeros(100), np.zeros(100)
+  lm = [2,2]
+  omegalm0SI_list, taulm0SI_list = get_sigmalm0SI_GR_list(m1, m2, a1z, a2z, lm)
+  print omegalm0SI_list, taulm0SI_list
