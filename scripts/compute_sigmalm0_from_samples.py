@@ -68,10 +68,10 @@ if __name__ == '__main__':
 
   # create (omega, tau) GR and modGRarrays
   omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
-  freq_GR = omega_GR/(2.*pi)
+  freq_GR = omega_GR/(2.*np.pi)
 
   omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtau)
-  freq_modGR = omega_modGR/(2.*pi)
+  freq_modGR = omega_modGR/(2.*np.pi)
 
   ##############################################################################
   ## Plotting
