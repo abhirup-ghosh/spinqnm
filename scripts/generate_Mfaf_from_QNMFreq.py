@@ -25,30 +25,24 @@ data_insp = np.genfromtxt(post_loc_insp, dtype=None, names=True)
 post_loc_ring = '/home/abhirup.ghosh/Documents/Work/O3/2019/May/21/1242459857p4634/G333674/lalinference/20190525_pSEOBNRv4HM_domega220_dtauinv220_nonROQ/cbcBayes/posterior_samples.dat'
 data_ring = np.genfromtxt(post_loc_ring, dtype=None, names=True)
 
-MJ_insp = np.vstack([data_insp['mf'],data_insp['af']])
+Mf_insp, af_insp = data_insp['mf'],data_insp['af']
+print Mf_insp, af_insp
+
+#MJ_insp = np.vstack([data_insp['mf'],data_insp['af']])
 
 m1_ring, m2_ring, a1z_ring, a2z_ring, domega220_ring, dtau220_ring = data_ring['m1'], data_ring['m2'], data_ring['a1z'], data_ring['a2z'], data_ring['domega220'], data_ring['dtauinv220']
 lm = [2,2]
-omega_GR_array, tau_GR_array = calcqnm.get_sigmalm0SI_GR_list(m1_ring, m2_ring, a1z_ring, a2z_ring, lm)
-omega_modGR_array, tau_modGR_array = calcqnm.get_sigmalm0SI_modGR_list(omega_GR_array, tau_GR_array, domega220_ring, dtau220_ring)
+omega_GR_ring, tau_GR_ring = calcqnm.get_sigmalm0SI_GR(m1_ring, m2_ring, a1z_ring, a2z_ring, lm)
+omega_modGR_ring, tau_modGR_ring = calcqnm.get_sigmalm0SI_modGR(omega_GR_ring, tau_GR_ring, domega220_ring, dtau220_ring)
 
-MJ = Mjfinal220(omega_modGR_array, tau_modGR_array)
+print omega_modGR_ring, tau_modGR_ring
 
-print MJ
+#MJ = Mjfinal220(omega_modGR_ring, tau_modGR_ring)
+#MJ_ring = np.vstack([MJ[0][(MJ[1]>0) & (MJ[1]<1)], MJ[1][(MJ[1]>0) & (MJ[1]<1)]])
 
-MJ_ring = np.vstack([MJ[0][(MJ[1]>0) & (MJ[1]<1)], MJ[1][(MJ[1]>0) & (MJ[1]<1)]])
+Mf_ring, af_ring = Mjfinal220(omega_modGR_ring, tau_modGR_ring)
 
-print np.shape(MJ_ring), np.shape(MJ_insp)
-
-fig = corner.corner(np.transpose(MJ_ring),
-                    labels=[r'$M$',
-                            r'$j$'])
-
-corner.corner(np.transpose(MJ_insp),
-                    labels=[r'$M$',
-                            r'$j$'])
-
-
-plt.minorticks_on()
-
+plt.figure(figsize=(5,5))
+plt.scatter(Mf_insp, af_insp, 'k')
+plt.scatter(Mf_ring, af_ring, 'r')
 plt.savefig('./IMRCT_S190521r.png')

@@ -68,7 +68,10 @@ if __name__ == '__main__':
 
   # create (omega, tau) GR and modGRarrays
   omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
+  freq_GR = omega_GR/(2.*pi)
+
   omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtau)
+  freq_modGR = omega_modGR/(2.*pi)
 
   ##############################################################################
   ## Plotting
@@ -80,8 +83,17 @@ if __name__ == '__main__':
 
   samples_omega_tau_GR = np.vstack((omega_GR, tau_GR*1000.)).T
   corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/%s/qnmtest_abs_params_GR_corner.png'%outdir)
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_omega_tau_GR_corner.png'%outdir)
 
   samples_omega_tau_modGR = np.vstack((omega_modGR, tau_modGR*1000.)).T
   corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/%s/qnmtest_abs_params_modGR_corner.png'%outdir)
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_omega_tau_modGR_corner.png'%outdir)
+
+  samples_freq_tau_GR = np.vstack((freq_GR, tau_GR*1000.)).T
+  corner.corner(samples_freq_tau_GR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_f_tau_GR_corner.png'%outdir)
+
+  samples_freq_tau_modGR = np.vstack((freq_modGR, tau_modGR*1000.)).T
+  corner.corner(samples_freq_tau_modGR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig(post_loc + '/%s/qnmtest_abs_params_f_tau_modGR_corner.png'%outdir)
+

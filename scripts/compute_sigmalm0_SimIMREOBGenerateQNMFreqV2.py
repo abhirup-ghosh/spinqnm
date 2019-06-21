@@ -17,7 +17,7 @@ def get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm):
     sigmalm0SI = lal.CreateCOMPLEX16Vector(1)
     lalsim.SimIMREOBGenerateQNMFreqV2(sigmalm0SI, m1[idx], m2[idx], np.array([0., 0., a1z[idx]]), np.array([0., 0., a2z[idx]]), lm[0], lm[1], 1, lalsim.SEOBNRv4)
 
-    omegalm0SI.append(np.real((sigmalm0SI.data)[0])/(2.*np.pi))
+    omegalm0SI.append(np.real((sigmalm0SI.data)[0]))
     taulm0SI.append(1./np.imag((sigmalm0SI.data)[0]))
 
   return np.asarray(omegalm0SI), np.asarray(taulm0SI)
@@ -41,10 +41,12 @@ if __name__ == '__main__':
     omegalm0SI_GR, taulm0SI_GR = get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
 
     print 'omega_GR (Hz) values:', omegalm0SI_GR
+    print 'freq_GR = omega_GR/2pi (Hz) values', omegalm0SI_GR/(2*pi)
     print 'tau_GR (ms) values:', taulm0SI_GR*1000.
 
     omegalm0SI_modGR, taulm0SI_modGR = get_sigmalm0SI_modGR(omegalm0SI_GR, taulm0SI_GR, domega220, dtauinv220)
 
     print 'omega_modGR (Hz) values:', omegalm0SI_modGR
+    print 'freq_modGR = omega_modGR/2pi (Hz) values', omegalm0SI_modGR/(2*pi)
     print 'tau_modGR (ms) values:', taulm0SI_modGR*1000.
 
