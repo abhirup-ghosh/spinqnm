@@ -54,11 +54,14 @@ if __name__ == '__main__':
   os.system('mkdir -p %s/%s'%(post_loc, outdir))
 
   ##############################################################################
-  ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
+  ## Read (m1, m2, a1z, a2z, domega, dtauinv) posterior samples
   ##############################################################################
 
   data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
-  m1, m2, a1z, a2z, domega, dtau = data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
+  m1, m2, a1z, a2z, domega, dtauinv = data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtauinv220']
+  idx, = np.where(m1 > 0)
+  m1, m2, a1z, a2z, domega, dtauinv = m1[idx], m2[idx], a1z[idx], a2z[idx], domega[idx], dtauinv[idx]
+
 
   ##############################################################################
   ## Computing (omega, tau) GR and modGR posterior samples
@@ -70,13 +73,13 @@ if __name__ == '__main__':
   omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
   freq_GR = omega_GR/(2.*np.pi)
 
-  omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtau)
+  omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtauinv)
   freq_modGR = omega_modGR/(2.*np.pi)
 
   ##############################################################################
   ## Saving data
   ##############################################################################
-  np.savetxt(post_loc + '/%s/qnmtest_frac_params_data.dat'%outdir, np.c_[domega, dtau], header='domega dtau')
+  np.savetxt(post_loc + '/%s/qnmtest_frac_params_data.dat'%outdir, np.c_[domega, dtauinv], header='domega dtauinv')
   np.savetxt(post_loc + '/%s/qnmtest_abs_params_omega_tau_GR_data.dat'%outdir, np.c_[omega_GR, tau_GR], header='omega_GR tau_GR')
   np.savetxt(post_loc + '/%s/qnmtest_abs_params_omega_tau_modGR_data.dat'%outdir, np.c_[omega_modGR, tau_modGR], header='omega_modGR tau_modGR')
   np.savetxt(post_loc + '/%s/qnmtest_abs_params_f_tau_GR_data.dat'%outdir, np.c_[freq_GR, tau_GR], header='freq_GR tau_GR')
@@ -86,8 +89,8 @@ if __name__ == '__main__':
   ## Plotting
   ##############################################################################
 
-  samples_domega_dtau = np.vstack((domega, dtau)).T
-  corner.corner(samples_domega_dtau, labels=[r"$d\Omega$", r"$d\tau$"], quantiles=(0.16, 0.5, 0.84), truths=[0,0], truth_color='g', show_titles=True, title_kwargs={"fontsize": 12})
+  samples_domega_dtauinv = np.vstack((domega, dtauinv)).T
+  corner.corner(samples_domega_dtauinv, labels=[r"$d\Omega$", r"$d\tau$"], quantiles=(0.16, 0.5, 0.84), truths=[0,0], truth_color='g', show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_frac_params_corner.png'%outdir)
 
   samples_omega_tau_GR = np.vstack((omega_GR, tau_GR*1000.)).T
