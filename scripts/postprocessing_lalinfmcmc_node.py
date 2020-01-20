@@ -22,6 +22,6 @@ lalinfmcmc_files_arg = ' '.join(lalinfmcmc_files)
 out_dir = post_loc_root + '/cbcBayes'
 os.system('mkdir -p %s'%out_dir)
 
-command = 'cbcBayesPostProc --snr %s --skyres 0.5 --psdfiles %s --deltaLogP %s --outpath %s %s'%(snr_file, psd_files_arg, deltaLogP, out_dir, lalinfmcmc_files_arg)
+command = 'cbcBayesPostProc --snr %s --psdfiles %s --deltaLogP %s --outpath %s %s'%(snr_file, psd_files_arg, deltaLogP, out_dir, lalinfmcmc_files_arg)
 print command
 os.system(command)
