@@ -13,6 +13,7 @@ import sys
 import scipy.ndimage.filters as filter
 from optparse import OptionParser
 import corner
+import imrtgrutils_final as tgr
 
 # Module for confidence calculations
 class confidence(object):
@@ -58,7 +59,12 @@ if __name__ == '__main__':
   ##############################################################################
 
   data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
-  mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
+  if ('mf_evol' in data.dtype.names) and ('af_evol' in data.dtype.names):
+  	mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
+  else:
+	m1, m2, a1, a2, a1z, a2z, domega, dtau = data['mass_1'], data['mass_2'], data['a1'], data['a2'], data['chi_1'], data['chi_2'], data['domega220'], data['dtau220']
+	tilt1, tilt2, phi12 = np.zeros(len(m1)), np.zeros(len(m1)), np.zeros(len(m1))
+	mf, af = tgr.calc_final_mass_spin(m1_i, m2_i, a1, a2, a1z, a2z, tilt1, tilt2, phi12, 'bbh_average_fits_precessing')
 
   ##############################################################################
   ## Computing (omega, tau) GR and modGR posterior samples
