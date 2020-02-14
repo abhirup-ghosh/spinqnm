@@ -52,19 +52,19 @@ if __name__ == '__main__':
   post_loc = options.post_loc
   outdir = options.outdir
 
-  os.system('mkdir -p %s/%s'%(post_loc, outdir))
+  os.system('mkdir -p %s'%(outdir))
 
   ##############################################################################
   ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
   ##############################################################################
 
-  data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
+  data = np.genfromtxt(post_loc, names=True, dtype=None)
   if ('mf_evol' in data.dtype.names) and ('af_evol' in data.dtype.names):
   	mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
   else:
-	m1, m2, a1, a2, a1z, a2z, domega, dtau = data['mass_1'], data['mass_2'], data['a1'], data['a2'], data['chi_1'], data['chi_2'], data['domega220'], data['dtau220']
+	m1, m2, a1, a2, a1z, a2z, domega, dtau = data['mass_1'], data['mass_2'], data['a_1'], data['a_2'], data['chi_1'], data['chi_2'], data['domega220'], data['dtau220']
 	tilt1, tilt2, phi12 = np.zeros(len(m1)), np.zeros(len(m1)), np.zeros(len(m1))
-	mf, af = tgr.calc_final_mass_spin(m1_i, m2_i, a1, a2, a1z, a2z, tilt1, tilt2, phi12, 'bbh_average_fits_precessing')
+	mf, af = tgr.calc_final_mass_spin(m1, m2, a1, a2, a1z, a2z, tilt1, tilt2, phi12, 'bbh_average_fits_precessing')
 
   ##############################################################################
   ## Computing (omega, tau) GR and modGR posterior samples
@@ -83,5 +83,6 @@ if __name__ == '__main__':
   ##############################################################################
 
   samples_domega_dtau = np.vstack((domega, dtau,freq_modGR, tau_modGR*1000.,mf, af)).T
-  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220}$",r"$\tau_{220}$",r"$M_f$",r"$\chi_f$"], quantiles=(0.16, 0.5, 0.84), truths=[0,0,0,0,0,0], truth_color='g', show_titles=True, title_kwargs={"fontsize": 12})
-  plt.savefig(post_loc + '/%s/corner6D.png'%outdir)
+
+  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220}$",r"$\tau_{220}$",r"$M_f$",r"$\chi_f$"], show_titles=True, title_kwargs={"fontsize": 12})
+  plt.savefig('%s/corner6D.png'%outdir)
