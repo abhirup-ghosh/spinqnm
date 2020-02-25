@@ -1,0 +1,27 @@
+import numpy as np
+import glob
+import os
+from optparse import OptionParser
+
+parser = OptionParser()
+parser.add_option("-p", "--post-loc-root", dest="post_loc_root", help="path to post loc")
+parser.add_option("--deltaLogP", dest="deltaLogP", help="deltaLogP")
+(options, args) = parser.parse_args()
+
+post_loc_root = options.post_loc_root
+deltaLogP = float(options.deltaLogP)
+
+psd_files = glob.glob(post_loc_root + '/postprocess/*PSD.dat')
+psd_files_arg = ','.join(psd_files)
+
+snr_file = glob.glob(post_loc_root + '/postprocess/*snr.txt')
+
+lalinfmcmc_files = glob.glob(post_loc_root + '/postprocess/lalinferencemcmc*.hdf5')
+lalinfmcmc_files_arg = ' '.join(lalinfmcmc_files)
+
+out_dir = post_loc_root + '/cbcBayes'
+os.system('mkdir -p %s'%out_dir)
+
+command = 'cbcBayesPostProc --snr %s --psdfiles %s --deltaLogP %s --outpath %s %s'%(snr_file, psd_files_arg, deltaLogP, out_dir, lalinfmcmc_files_arg)
+print command
+os.system(command)
