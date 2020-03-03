@@ -61,6 +61,8 @@ if __name__ == '__main__':
   data = np.genfromtxt(post_loc, names=True, dtype=None)
   if ('mf_evol' in data.dtype.names) and ('af_evol' in data.dtype.names):
   	mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
+  elif ('mf' in data.dtype.names) and ('af' in data.dtype.names):
+        mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf'], data['af'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
   else:
 	m1, m2, a1, a2, a1z, a2z, domega, dtau = data['mass_1'], data['mass_2'], data['a_1'], data['a_2'], data['chi_1'], data['chi_2'], data['domega220'], data['dtau220']
 	tilt1, tilt2, phi12 = np.zeros(len(m1)), np.zeros(len(m1)), np.zeros(len(m1))
@@ -74,6 +76,7 @@ if __name__ == '__main__':
 
   # create (omega, tau) GR and modGRarrays
   omega_GR, tau_GR = calcqnm.get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
+  freq_GR = omega_GR/(2.*np.pi)
 
   omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtau)
   freq_modGR = omega_modGR/(2.*np.pi)
@@ -82,7 +85,7 @@ if __name__ == '__main__':
   ## Plotting
   ##############################################################################
 
-  samples_domega_dtau = np.vstack((domega, dtau,freq_modGR, tau_modGR*1000.,mf, af)).T
+  samples_domega_dtau = np.vstack((domega, dtau, freq_GR, tau_GR*1000., mf, af)).T
 
-  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220}$",r"$\tau_{220}$",r"$M_f$",r"$\chi_f$"], show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220,GR}$",r"$\tau_{220,GR}$",r"$M_{f,GR}$",r"$\chi_{f,GR}$"], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig('%s/corner6D.png'%outdir)
