@@ -14,6 +14,7 @@ import scipy.ndimage.filters as filter
 from optparse import OptionParser
 import corner
 import imrtgrutils_final as tgr
+import argparse
 
 # Module for confidence calculations
 class confidence(object):
@@ -46,7 +47,7 @@ def gf(P):
 def Mjfinal220(omega220,tau220):
 
     jf=1-pow((omega220*tau220/2.-0.7)/(1.4187),-1/0.4990)
-    Mf=((1.5251 - 1.1568*pow((1 - jf),0.1292))/omega220)*(pow(cc,3)/G/Msun)
+    Mf=((1.5251 - 1.1568*pow((1 - jf),0.1292))/omega220)*(pow(lal.C_SI,3)/lal.G_SI/lal.MSUN_SI)
 
     return Mf,jf
 
@@ -55,17 +56,36 @@ if __name__ == '__main__':
   parser = OptionParser()
   parser.add_option("-p", "--post-loc", dest="post_loc", help="path to directory containing the cbcBayesPostProc posterior_samples.dat output")
   parser.add_option("-o", "--outdir", dest="outdir", help="creates output directory inside the post_loc")
+  parser.add_option("-i", "--inj_data", dest="inj_data", nargs=9, type="float", help="injection array")
   (options, args) = parser.parse_args()
   post_loc = options.post_loc
   outdir = options.outdir
+  inj_data = options.inj_data
 
-  os.system('mkdir -p %s'%(outdir))
+  print inj_data
+
+  os.system('mkdir -p %s/%s'%(post_loc, outdir))
+
+  ##############################################################################
+  ## Injection
+  ##############################################################################
+
+  lm = [2,2]
+
+  if inj_data != None:
+	m1, m2, a1, a2, a1z, a2z, tilt1, tilt2, phi12 = inj_data
+	mf_inj, af_inj = tgr.calc_final_mass_spin(m1, m2, a1, a2, a1z, a2z, tilt1, tilt2, phi12, 'bbh_average_fits_precessing')
+	omega_inj, tau_inj = calcqnm.get_sigmalm0SI_GR(np.array([m1]), np.array([m2]), np.array([a1z]), np.array([a2z]), lm)
+  	freq_inj = omega_inj/(2.*np.pi)
+
+  else:
+	freq_inj, tau_inj, mf_inj, af_inj = 0., 0., 0., 0.
 
   ##############################################################################
   ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
   ##############################################################################
 
-  data = np.genfromtxt(post_loc, names=True, dtype=None)
+  data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
   if ('mf_evol' in data.dtype.names) and ('af_evol' in data.dtype.names):
   	mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
   elif ('mf' in data.dtype.names) and ('af' in data.dtype.names):
@@ -88,7 +108,7 @@ if __name__ == '__main__':
   omega_modGR, tau_modGR = calcqnm.get_sigmalm0SI_modGR(omega_GR, tau_GR, domega, dtau)
   freq_modGR = omega_modGR/(2.*np.pi)
 
-  mf_modGR, af_modGR = =Mjfinal220(freq_modGR*2*np.pi,tau_modGR)
+  mf_modGR, af_modGR = Mjfinal220(freq_modGR*2*np.pi,tau_modGR)
 
   ##############################################################################
   ## Saving data
@@ -110,25 +130,25 @@ if __name__ == '__main__':
   plt.savefig(post_loc + '/%s/qnmtest_frac_params_corner.png'%outdir)
 
   samples_omega_tau_GR = np.vstack((omega_GR, tau_GR*1000.)).T
-  corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_omega_tau_GR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), truths=[freq_inj*2.*np.pi, tau_inj], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_abs_params_omega_tau_GR_corner.png'%outdir)
 
   samples_omega_tau_modGR = np.vstack((omega_modGR, tau_modGR*1000.)).T
-  corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_omega_tau_modGR, labels=[r"$\Omega$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), truths=[freq_inj*2.*np.pi, tau_inj], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_abs_params_omega_tau_modGR_corner.png'%outdir)
 
   samples_freq_tau_GR = np.vstack((freq_GR, tau_GR*1000.)).T
-  corner.corner(samples_freq_tau_GR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_freq_tau_GR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), truths=[freq_inj, tau_inj], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_abs_params_f_tau_GR_corner.png'%outdir)
 
   samples_freq_tau_modGR = np.vstack((freq_modGR, tau_modGR*1000.)).T
-  corner.corner(samples_freq_tau_modGR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_freq_tau_modGR, labels=[r"$f$(Hz)", r"$\tau$ (ms)"], quantiles=(0.16, 0.5, 0.84), truths=[freq_inj, tau_inj], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_abs_params_f_tau_modGR_corner.png'%outdir)
 
   samples_mf_af_modGR = np.vstack((mf_modGR, af_modGR)).T
-  corner.corner(samples_mf_af_modGR, labels=["$M_f$", "$a_f$"], quantiles=(0.16, 0.5, 0.84), show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_mf_af_modGR, labels=["$M_f$", "$a_f$"], quantiles=(0.16, 0.5, 0.84), truths=[mf_inj, af_inj], show_titles=True, title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/qnmtest_mf_af_modGR_corner.png'%outdir)
 
   samples_domega_dtau = np.vstack((domega, dtau, freq_GR, tau_GR*1000., mf, af)).T
-  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220,GR}$",r"$\tau_{220,GR}$",r"$M_{f,GR}$",r"$\chi_{f,GR}$"], show_titles=True, title_kwargs={"fontsize": 12})
+  corner.corner(samples_domega_dtau, labels=[r"$df_{220}$", r"$d\tau_{220}$",r"$f_{220,GR}$",r"$\tau_{220,GR}$",r"$M_{f,GR}$",r"$\chi_{f,GR}$"], show_titles=True, truths=[0., 0., freq_inj, tau_inj, mf_inj, af_inj], title_kwargs={"fontsize": 12})
   plt.savefig(post_loc + '/%s/corner6D.png'%outdir)
