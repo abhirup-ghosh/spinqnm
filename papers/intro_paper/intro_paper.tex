@@ -1,8 +1,34 @@
 \documentclass[twocolumn,prd,superscriptaddress,amsfonts,amssymb,amsmath,preprintnumbers]{revtex4-1}
+\usepackage{epsfig}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{bm}
+\usepackage{times}
+\usepackage{xspace}
+\usepackage[varg]{txfonts}
+\usepackage[normalem]{ulem} % To get strikethrough (\sout)
+\usepackage[colorlinks]{hyperref}
+\usepackage[caption=false]{subfig}
+\usepackage{booktabs}
+
+
+\definecolor{LinkColor}{rgb}{0.75, 0, 0}
+\definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
+\definecolor{UrlColor}{rgb}{0, 0, 0.75}
+\hypersetup{linkcolor=LinkColor}
+\hypersetup{citecolor=CiteColor}
+\hypersetup{urlcolor=UrlColor}
+\usepackage{perpage}
+\MakePerPage{footnote}
+
+\newcommand{\paperone}{Paper~I\xspace}
+\newcommand{\abhi}[1]{\textcolor{red}{[\textit{AG: #1}]}}
 
 \begin{document}
 
-\title{Technical Note: pSEOBNRv4HM}
+\title{pSEOBNRv4HM}
 
 \author{Abhirup Ghosh}
 \affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), D-14476 Potsdam-Golm, Germany}
@@ -19,12 +45,45 @@
 % Abstract
 %%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
-\section{Method}
+\iffalse
+Overview of LIGO-Virgo tests of GR
+No-hair theorem and overview of nohair and ringdown tests with LIGO-Virgo Observations and future detectors
+Describe briefly the test
+Motivate the test: full IMR SNR, t0 definition, flexibility
+highlight importance of spins
+Section breakdown
+\fi
 
-\section{Results}
+The LIGO Scientific Collaboration~\citep{LSC} and the Virgo Collaborations~\citep{Virgo} recently announced their catalogue of gravitational wave observations~\citep{GWTC-2} from the first half of their third observing run~\citep{O3reference}. Combined with the confirmed observations from the first and second observing runs~\citep{GWTC-1}, the Advanced LIGO detectors at Hanford, Washington~\citep{technicaldocument_AdL_H} and Livingston, Louisiana~\citep{technicaldocument_AdL_L}, and the Advanced Virgo detector in Cascina, Italy~\citep{technicaldocument_V} have now detected more than $40$ gravitational wave events from the merger of compact objects like neutron stars and/or black holes (compact binary coalescences/CBCs). Alongside independent claims of detections~\citep{Nitz,IAS}, this has firmly established the field of gravitational wave astronomy, five years on from the first ever direct detection of gravitational waves on Earth, on September 14, 2015~\citep{GW150914det}. 
+\par
+Observation of gravitational waves have had significant astrophysical and cosmological implications~\citep{LVC:astropapers,H0paper}. It has also allowed us to make statements in fundamental physics. Specifically, LIGO-Virgo's observations have allowed us to test predictions of Einstein's theory of General Relativity~\citep[GR]{}, in previously unexplored regimes of highly relativistic, strong-field regimes of gravity~\citep{GW150914TGR,GW170817TGR,GWTC-1TGR}. In GR, a CBC involving two black holes (a binary black hole/BBH system) is described in three distinct phases: an early \textit{inspiral}, where the two compact objects spiral in and \textit{plunge} due to a back-reaction of gravitational-wave-emission, a \textit{merger} event marked by the formation of an apparent horizon~\citep{NRpaper}, and a late-time \textit{ringdown}, where the newly formed remnant object settles down to a stable Kerr state through the emission of an exponentially damped quasi-normal-mode (QNM) spectrum of gravitational radiation~\citep{vishu,earlyqnmpapers}.  We have performed tests of gravitational wave generation and source dynamics, where we place bounds on parametrised deviations in the Post-Newtonian coefficients describing the early inspiral~\citep{earlydevelopmentpapers}, and phenomenological coefficients describing the intermediate (plunge) and merger regimes of coalescence~\citep{TIGERmethodspapers}, tests of gravitational wave propagation, which assume a generalised dispersion relation and place upper bounds on the Compton wavelength and consequently, the mass of the graviton~\citep{GW170104det,samajdaretal} and tests of the polarisation of gravitational radiation using a multi-gravitational-wave-detector network~\citep{GW170814det,isietal}. We have also checked for consistency between different portions of the signal using estimates of final mass and spin~\citep{IMRCTpapers}, and consistency of the residuals with interferometric noise~\citep{sudarshanetal,GWTC-1TGR}. None of these tests report any departure from the predictions of GR.
+\par
+Tests of black hole ringdown and nature of the remnant object is an active field of research at the moment. The no-hair conjecture in GR~\citep{} states that an (electrically neutral) astrophysical black hole is completely described by two observables: mass and spin angular momentum. One consequence of the no-hair conjecture is that the (complex) QNM frequencies of gravitational radiation emitted by a perturbed isolated black hole is uniquely determined by its mass and spin angular momentum. Hence a test of the no-hair conjecture would involve checking for consistency between estimates of mass and spin of the remnant object across multiple QNM frequencies. An inconsistency would either indicate a non-black hole nature of the remnant object, or an incompleteness of GR as a theory of gravity. The consistency between the post-merger signal and the least dampled QNM was first demonstrated in ~\citep{GW150914TGR}, and later extended to include overtones in~\citep{isietal}. Consistency of the late-time signal with a single QNM is a test of the ringdown of a BBH coalescence, but not necessarily a test of the no-hair conjecture, which requires the measurement of (atleast) two QNMs (black hole spectroscopy), and checking for consistency between them. Recent work in that direction include~\citep{carulloetalpapers,bertipapers}. The nature of the remnant object has also been explored through tests of black hole thermodynamics, like the Hawking's area theorem~\citep{Miriametal} or through search for echos in the post-merger signal~\citep{nielsen,abedi,kawa}. None of these tests have found evidence for non-black hole nature of the remnant object (as described in GR) in LIGO-Virgo BBH observations.
+\par
+Most of the tests mentioned above focus on analysing the post-merger or late-time ringdown signal in isolation. Second generation ground-based interferometric detectors like Advanced LIGO and Virgo are most sensitive to stellar-mass black hole binaries that merge near the minima of their sensitivity band ($\sim 100$Hz). As a consequence, the remnant object \textit{rings down} in shot-noise dominated higher frequencies, leaving very little signal-to-noise ratio (SNR) in the post-merger signal. Furthermore, the post-merger signal of a BBH coalescence transitions from a non-linear to a linear regime where the description of the signal as a QNM spectrum becomes appropriate~\citep{}. The ringdown start time isn't a clearly defined quantity and has been explored in detail in~\citep{bhagwatetal}. In other works~\citep{carulloetal}, it has been left as a free parameter to be estimated directly from the data. Uncertainties in estimates of the ringdown start-time, as well as an overall lack of SNR in the post-merger signal, given typical sensitivities of ground-based detectors result in significant statistical uncertainties in the measurement of the QNM frequencies.
+\par
+An independent approach to black hole spectroscopy, based on a full-signal analysis, was outlined in~\citep{britopaper1} (henceforth referred to as \paperone). \abhi{describe underlying GR model; parameterisation; advantages over other methods; highlight spin} 
 
-\section{Discussion}
+
+
+Unlike methods that focus on the post-merger signal, it describes a framework in which a complete inspiral-merger-ringdown (IMR) waveform model is used to measure the complex QNM frequencies. \abhi{It is a spinning multipolar effective-one-body waveform calibrated to numerical relativity simulations (SEOBNRv4HM~\citep{cotesta}})This allows access to the full SNR of the signal, reducing measurement uncertainties. Moreover, the definition of the ringdown start time is built into the model and does not need to be either left as an additional free parameter or fixed using alternate definitions. While \paperone presented the method in the context of a non-spinning waveform model, we extend the analysis to the case with black holes spins in the current paper. All astrophysical black holes are expected to be spinning, and ignoring effects of spin have been shown to introduce systematic biases in the measurement of the source properties.
+\par
+The rest of this paper is organized as follows. Section~\ref{sec:model} describes our parametrised IMR waveform model. In section~\ref{sec:method}, we define our testing GR framework in which we use that model to measure the complex QNM frequencies in a Bayesian formalism. Then in section~\ref{sec:results}, we demonstrate our method on real gravitational wave events, as well as simulated signals. Finally we provide a summary of our results and discuss future developments in section  The rest of this paper is organized as follows. Section~\ref{sec:model} describes our waveform model, which is then used to perform our test of black hole ringdown using Bayesian framwork, outlined in section~\ref{sec:discussion}.
+
+\section{Waveform Model}\label{sec:model}
+SEOBNRv4HM model + parameterised
+highlight importance of spins
+
+\section{Method/Bayesian PE}\label{sec:method}
+Bayesian inference
+
+\section{Results}\label{sec:results}
+Priors
+LIGO-Virgo results
+Results on injections: modGR, noise systematics
+
+\section{Discussion}\label{sec:discussion}
 
 \end{document}
