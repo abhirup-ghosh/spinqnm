@@ -13,6 +13,8 @@
 \usepackage[caption=false]{subfig}
 \usepackage{booktabs}
 \usepackage{url}
+\usepackage{float}
+
 
 
 \definecolor{LinkColor}{rgb}{0.75, 0, 0}
@@ -26,6 +28,37 @@
 
 \newcommand{\paperone}{Paper~I\xspace}
 \newcommand{\abhi}[1]{\textcolor{red}{[\textit{AG: #1}]}}
+
+\newcommand{\h}{\mathpzc{h}}
+\newcommand{\Hhat}{\hat{\mathpzc{H}}}
+\newcommand{\B}{\mathpzc{B}}
+\newcommand{\hlm}{\mathpzc{h}_{\ell m}}
+\newcommand{\xilm}{\xi_{\ell m}}
+\newcommand{\Ylm}{{Y}^{-2}_{\ell m}}
+\newcommand{\Y}{{Y}^{-2}}
+\newcommand{\hc}{h_\times}
+\newcommand{\hp}{h_+}
+\newcommand{\Fc}{F_\times}
+\newcommand{\Fp}{F_+}
+\newcommand{\Mf}{M_f}
+\newcommand{\cA}{\mathpzc{A}}
+\newcommand{\lm}{_{\ell m}}
+\newcommand{\deff}{d_\mathrm{eff}}
+\newcommand{\rmi}{\mathrm{i}}
+\newcommand{\blambda}{\bm{\lambda}}
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\bxi}{\bm{\xi}}
+\newcommand{\Mo}{M_{\odot}}
+\newcommand{\FFe}{\mathrm{FF}_\mathrm{eff}}
+\newcommand{\FF}{\mathrm{FF}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\rhoopt}{\rho_\mathrm{opt}}
+\newcommand{\rhosubopt}{\rho_\mathrm{subopt}}
+\newcommand{\fqnm}{f}
+\newcommand{\sigmaqnm}{\sigma}
+\newcommand{\n}{\mathbf{n}}
+\newcommand*{\skymapscale}{0.5}
+\newcommand*{\paramestscale}{0.455}
 
 \begin{document}
 
@@ -86,18 +119,60 @@ The rest of this paper is organized as follows. Section~\ref{sec:model} describe
 
 \abhi{This section will basically provide an overview of Bayesian inference. Starting from the generalised definition of likelihood, provide an expression for the posterior on the delta QNM parameters.}
 
+Each interferometric GW detector $I$ detects a linear combination of the two polarizations $h_+$ and $h_\times$, given by 
+\begin{eqnarray}
+h^I(t) & = \frac{1}{d_L} \, \left [ F^I_+(\alpha, \delta, \psi) \, h_+(t-t_0; \n, \blambda) \right. \\ 
+       & \left. + F^I_{\times}(\alpha, \delta, \psi)\, h_\times(t-t_0; \n, \blambda) \right]
+\label{eq:det_response}
+\end{eqnarray}
+where ${d_L}$ is the luminosity distance to the source, $F^I_+$ and $F^I_\times$ are the antenna pattern functions of the detector $I$, $t_0$ is the time of arrival of the signal at the detector, and $(\alpha, \delta), \psi$ define the sky position and polarisation angle of the GW source, respectively. Above, we have neglected the time dependence of the antenna pattern functions, which is a good assumption for the case of the transient signals that we consider in this work. 
+
+The noise $n(t)$ in a GW detector can be safely described, over sufficiently short time intervals, as a stationary and Gaussian random process with zero mean and a power spectral density (PSD), $S_n(f)$. In the presence of a GW signal $h(t; \btheta)$ from a binary black hole merger described by a parameter set $\btheta$ (which include the intrinsic and extrinsic parameters of the binary as well as the set of parameters describing deviations from GR), we assume that the detector data $d(t)$ is the sum of the noise and the signal, i.e.:
+\begin{equation}
+d(t) = n(t) + h(t; \btheta). 
+\end{equation}
+A (quasi-circular) non-spinning binary black hole coalescence can be completely described by a 11-dimensional parameter set $\btheta = \{ \blambda, \bxi\}$ in GR, where $\blambda = \{ M_c, q, s_{1z}, s_{2z} \}$ is the set of intrinsic parameters consisting of the chirp mass $M_c$ and the asymmetric mass ratio $q = m_2/m_1$ (with the convention $m_2 \leq m_1$) and the aligned spin components $(s_{1z}, s_{2z})$, and $\bxi = \{ d_L, \alpha, \delta, \iota, \psi, t_0, \phi_0 \}$, is the set of extrinsic parameters consisting of the luminosity distance $d_L$, the sky position $\{\alpha, \delta\}$ and orientation $\{\psi, \iota\}$ of the binary, and the time and phase at coalescence $\{t_0, \phi_0\}$ respectively.
+
+We use the Bayesian framework to obtain the posterior probability distribution $P({\btheta} \, | \, d)$ of the parameter set $\btheta$, through the Bayes Theorem:
+\begin{equation}
+P({\btheta} \, | \, d) = \frac{P({\btheta}) \, P (d \, | \, {\btheta})}{P(d)}.
+\label{eq:Bayes_theorem}
+\end{equation} 
+where, $P({\btheta})$ denotes the prior probability distribution of the parameters, and $P (d \, | \, {\btheta})$ is the likelihood function, the probability of observing data $d(t)$ given the model parameters $\btheta$. $P(d)$ is a normalization constant, called the marginal likelihood: $P(d) = \int p(d|\btheta) \, p(\btheta) \, d\btheta$. Under the assumption of the data mentioned above, the likelihood function $P(d \, | \, {\btheta})$ can be written as:
+\begin{equation}
+P (d \, | \, {\btheta}) \propto \exp \left[ -\frac{1}{2} \langle d - h({\btheta}), d - h({\btheta}) \rangle \right],
+\end{equation}
+where $\langle a, b \rangle$ describes the noise-weighted inner product defined as:
+\begin{equation}
+\langle a, b \rangle := 4 \Re \int_{f_\mathrm{low}}^{f_\mathrm{high}} \frac{\tilde{a}(f) \, \tilde{b}^*(f)}{S_n(f)}df
+\end{equation}
+where $\tilde{a}(f)$ denotes the Fourier transforms of $a(t)$, and the integration limits are defined by the sensitivity bandwidth of the detector, $f_\mathrm{low}$ and $f_\mathrm{high}$.
+
+Assuming that the noise between any two detectors is uncorrelated, the joint likelihood across the three detectors is written as a product of the likelihoods in each detector:
+\begin{equation}
+P (d \, | \, {\btheta}) = \prod_{I \epsilon {H,L,V}} P (d^{I} \, | \, {\btheta}).
+\end{equation}
+
+In this Bayesian framework, we proceed to estimate the posterior probability distribution of $\btheta$ by stochastically sampling over the parameter space, using a python-based affine-invariant ensemble sampler \textsc{emcee}~\cite{foreman2013emcee, goodman2010ensemble}. Subsequently, we marginalize over the \textit{nuisance} parameters to obtain the posterior distributions on the non-GR parameter set, ${\Delta \blambda}$ or $c_{\ell m}$. If the data is consistent with a binary black hole signal in GR, $P(\Delta \blambda \, | \, d)$ (or $P(\Delta c_{\ell m} \, | \, d)$) is expected to be consistent with zero. 
 
 \section{Results}\label{sec:results}
 \subsection{Priors}
 
 \abhi{A small sub-section dedicated to priors used in this analysis. Very common question from referees.}
 
+We assume uniform prior probability distributions on the chirp mass and mass ratio in the interval $M_c \in [1,200] M_\odot$ and $q \in [0.05,1.0]$. The prior on the location of the source is  assumed to be isotropic on the sphere of  the  sky,  with $P({d_L}) \propto d_{L}^{2}$ where $d_L \in [1,10000]$ Mpc. We use an  isotropic  prior  on  the  orientation  of  the  binary: $P({\iota,\varphi_0,\psi}) \propto \sin\iota$ with $\iota \in [0,\pi)$, $\varphi_0 \in [0,2\pi)$ and $\psi \in [0,\pi)$. For all other parameters in $\btheta$, we use uniform priors: $\alpha \in [0,2\pi)$, $\delta \in [0,2\pi)$ and $t_0 \in [-15,15]$. 
+
+
 \subsection{Results on GW150914-like injection}
+
+
+\begin{figure*}
+	\includegraphics[width=\textwidth]{figures/GW150914_swinj_GR_vs_modGR.png}
+\end{figure*}
 
 \abhi{The GW150914-like injections we have:}
 \begin{itemize}
 \item{an SEOBNRv4HM software injection with the 22 mode frequencies estimated}
-%\item{an SEOBNRv4HM software injection with the 33 mode frequencies estimated}
 \item{a non-spinning NR injection with parameters close to the real event but higher SNR for which 22 mode frequencies are estimated}
 \item{a non-spinning highly-asymmetric (q=6) NR injection with total mass similar to GW150914 and high SNR for which 22 and 33 mode frequencies are estimated}
 \end{itemize}
@@ -109,13 +184,93 @@ The rest of this paper is organized as follows. Section~\ref{sec:model} describe
 
 \subsection{Results on actual LIGO-Virgo results}
 
+\begin{figure}
+	\includegraphics[width=0.4\textwidth]{figures/GW150914.png}
+\end{figure}
+
 \abhi{Results obtained as part of the review on GW150914 and other O1-O2 events which are of relevance}
+\abhi{A plot showing the fractional quantities}
+\abhi{A table with absolute quantites similar to GWTC-2 TGR}
+
+\begin{tabular}{llllllll}
+\toprule
+Event & \multicolumn{3}{c}{Redshifted} & \hphantom{X} & \multicolumn{3}{c}{Redshifted} \\
+& \multicolumn{3}{c}{frequency [Hz]} & \hphantom{X} & \multicolumn{3}{c}{damping time [ms]} \\[0.075cm]
+\cline{2-4}
+\cline{6-8}
+& IMR & DS & pSEOB & \hphantom{X} & IMR & DS & pSEOB \\
+\midrule
+
+GW150914 &
+$249^{+9}_{-7}$ &
+$247^{+14}_{-16}$ &
+$-$ &
+\hphantom{X} &
+$4.1^{+0.3}_{-0.2}$ &
+$4.8^{+3.7}_{-1.9}$ &
+$-$
+\\[0.075cm]
+
+GW170104 &
+$286^{+16}_{-27}$ &
+$228^{+71}_{-102}$ &
+$-$ &
+\hphantom{X} &
+$3.5^{+0.4}_{-0.3}$ &
+$3.6^{+36.2}_{-2.1}$ &
+$-$
+\\[0.075cm]
+
+GW170729 &
+$161^{+13}_{-14}$ &
+$148^{+11}_{-11}$ &
+$-$ &
+\hphantom{X} &
+$7.8^{+1.8}_{-1.5}$ &
+$10.4^{+8.2}_{-4.7}$ &
+$-$
+\\[0.075cm]
+
+GW170814 &
+$295^{+13}_{-12}$ &
+$527^{+340}_{-332}$ &
+$-$ &
+\hphantom{X} &
+$3.7^{+0.3}_{-0.2}$ &
+$25.1^{+22.2}_{-19.0}$ &
+$-$
+\\[0.075cm]
+
+GW170823 &
+$199^{+14}_{-16}$ &
+$222^{+664}_{-62}$ &
+$-$ &
+\hphantom{X} &
+$5.4^{+1.0}_{-0.6}$ &
+$13.4^{+31.8}_{-9.8}$ &
+$-$
+\\[0.075cm]
+
+\bottomrule
+\end{tabular}
+
 
 \subsection{Results on noise systematics study}
 
 \abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
 
+\begin{figure}[H]
+	\includegraphics[width=0.4\textwidth]{figures/S190521g_gaussiannoiseinjections.png}
+	\includegraphics[width=0.4\textwidth]{figures/S190521g_swinjs.png}
+\end{figure}
+
+We injected NRSur7dq4 signal using the MaxL parameters from EXP30, in 2.5 hours of data surrounding the event at: t0-1.5 hours, t0-1., t0-0.5, t0+0.5, t0+1. For 3 of the 5 noise realisations, corresponding to t0-1 hour, t0+0.5 hours, and t0+1.0 hour we recover a damping time similar to the actual event, whereas for a third case, t0-0.5 hours, we obtain a damping time consistent at the 90\% credible interval. L1-SNR goes down by more than 3 in some runs (maximum L1-SNR 12, minimum 9), indicative of how the noise variability is strongly affecting the recovered parameters. For some injections the mass ratio is biased, although final spin (most sensitive to mass ratio) is not affected much.  domega varies quite a lot among runs, instead dtau seems well behaved around zero. Effective frequency is a stable parameter (always well measured), while effective tau is much more sensitive to the noise configuration.  
+
+
 \section{Discussion}\label{sec:discussion}
+
+\abhi{A comparison with pyRING}
+\abhi{damped sinusoid results}
 
 %
 \bibliographystyle{apsrev}
