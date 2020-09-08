@@ -48,6 +48,8 @@
 \newcommand{\blambda}{\bm{\lambda}}
 \newcommand{\btheta}{\bm{\theta}}
 \newcommand{\bxi}{\bm{\xi}}
+\newcommand{\bzeta}{\bm{\zeta}}
+\newcommand{\bs}[1]{\bm{\vec{s}_{#1}}}
 \newcommand{\Mo}{M_{\odot}}
 \newcommand{\FFe}{\mathrm{FF}_\mathrm{eff}}
 \newcommand{\FF}{\mathrm{FF}}
@@ -117,57 +119,33 @@ The rest of this paper is organized as follows. Section~\ref{sec:model} describe
 
 \section{Method/Bayesian PE}\label{sec:method}
 
-\abhi{This section will basically provide an overview of Bayesian inference. Starting from the generalised definition of likelihood, provide an expression for the posterior on the delta QNM parameters.}
+A gravitational waveform from the (quasi-circular) coalescence of two black holes is completely described in GR by a set \textit{intrinsic} parameters, $\bxi$: the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the initial binary and a reference time and phase $t_c, \phi_c$ respectively; and a set of \textit{extrinsic} parameters, $\btheta$: the location of the binary given by the right ascension, $\alpha$, declination,$\delta$ and the luminosity distance, $d_L$, and its orientation described through the inclination of the binary $\iota$ and its polarisation $\psi$. Also allowing for additional degrees of freedom $\bzeta$ like the complex QNM frequencies described in section \ref{sec:model}, one can then use a Bayesian formalism to obtain a posterior probability density function on the combined parameter set $\blambda = \{\bxi, \btheta, \bzeta\}$:
 
-Each interferometric GW detector $I$ detects a linear combination of the two polarizations $h_+$ and $h_\times$, given by 
-\begin{eqnarray}
-h^I(t) & = \frac{1}{d_L} \, \left [ F^I_+(\alpha, \delta, \psi) \, h_+(t-t_0; \n, \blambda) \right. \\ 
-       & \left. + F^I_{\times}(\alpha, \delta, \psi)\, h_\times(t-t_0; \n, \blambda) \right]
-\label{eq:det_response}
-\end{eqnarray}
-where ${d_L}$ is the luminosity distance to the source, $F^I_+$ and $F^I_\times$ are the antenna pattern functions of the detector $I$, $t_0$ is the time of arrival of the signal at the detector, and $(\alpha, \delta), \psi$ define the sky position and polarisation angle of the GW source, respectively. Above, we have neglected the time dependence of the antenna pattern functions, which is a good assumption for the case of the transient signals that we consider in this work. 
-
-The noise $n(t)$ in a GW detector can be safely described, over sufficiently short time intervals, as a stationary and Gaussian random process with zero mean and a power spectral density (PSD), $S_n(f)$. In the presence of a GW signal $h(t; \btheta)$ from a binary black hole merger described by a parameter set $\btheta$ (which include the intrinsic and extrinsic parameters of the binary as well as the set of parameters describing deviations from GR), we assume that the detector data $d(t)$ is the sum of the noise and the signal, i.e.:
 \begin{equation}
-d(t) = n(t) + h(t; \btheta). 
-\end{equation}
-A (quasi-circular) non-spinning binary black hole coalescence can be completely described by a 11-dimensional parameter set $\btheta = \{ \blambda, \bxi\}$ in GR, where $\blambda = \{ M_c, q, s_{1z}, s_{2z} \}$ is the set of intrinsic parameters consisting of the chirp mass $M_c$ and the asymmetric mass ratio $q = m_2/m_1$ (with the convention $m_2 \leq m_1$) and the aligned spin components $(s_{1z}, s_{2z})$, and $\bxi = \{ d_L, \alpha, \delta, \iota, \psi, t_0, \phi_0 \}$, is the set of extrinsic parameters consisting of the luminosity distance $d_L$, the sky position $\{\alpha, \delta\}$ and orientation $\{\psi, \iota\}$ of the binary, and the time and phase at coalescence $\{t_0, \phi_0\}$ respectively.
-
-We use the Bayesian framework to obtain the posterior probability distribution $P({\btheta} \, | \, d)$ of the parameter set $\btheta$, through the Bayes Theorem:
-\begin{equation}
-P({\btheta} \, | \, d) = \frac{P({\btheta}) \, P (d \, | \, {\btheta})}{P(d)}.
-\label{eq:Bayes_theorem}
-\end{equation} 
-where, $P({\btheta})$ denotes the prior probability distribution of the parameters, and $P (d \, | \, {\btheta})$ is the likelihood function, the probability of observing data $d(t)$ given the model parameters $\btheta$. $P(d)$ is a normalization constant, called the marginal likelihood: $P(d) = \int p(d|\btheta) \, p(\btheta) \, d\btheta$. Under the assumption of the data mentioned above, the likelihood function $P(d \, | \, {\btheta})$ can be written as:
-\begin{equation}
-P (d \, | \, {\btheta}) \propto \exp \left[ -\frac{1}{2} \langle d - h({\btheta}), d - h({\btheta}) \rangle \right],
-\end{equation}
-where $\langle a, b \rangle$ describes the noise-weighted inner product defined as:
-\begin{equation}
-\langle a, b \rangle := 4 \Re \int_{f_\mathrm{low}}^{f_\mathrm{high}} \frac{\tilde{a}(f) \, \tilde{b}^*(f)}{S_n(f)}df
-\end{equation}
-where $\tilde{a}(f)$ denotes the Fourier transforms of $a(t)$, and the integration limits are defined by the sensitivity bandwidth of the detector, $f_\mathrm{low}$ and $f_\mathrm{high}$.
-
-Assuming that the noise between any two detectors is uncorrelated, the joint likelihood across the three detectors is written as a product of the likelihoods in each detector:
-\begin{equation}
-P (d \, | \, {\btheta}) = \prod_{I \epsilon {H,L,V}} P (d^{I} \, | \, {\btheta}).
+p(\blambda | d, H, I) \propto P(\blambda | H,I) \mathcal{L}(d | \blambda, H, I)
 \end{equation}
 
-In this Bayesian framework, we proceed to estimate the posterior probability distribution of $\btheta$ by stochastically sampling over the parameter space, using a python-based affine-invariant ensemble sampler \textsc{emcee}~\cite{foreman2013emcee, goodman2010ensemble}. Subsequently, we marginalize over the \textit{nuisance} parameters to obtain the posterior distributions on the non-GR parameter set, ${\Delta \blambda}$ or $c_{\ell m}$. If the data is consistent with a binary black hole signal in GR, $P(\Delta \blambda \, | \, d)$ (or $P(\Delta c_{\ell m} \, | \, d)$) is expected to be consistent with zero. 
+where $P(\blambda | H,I)$ is the prior probability density function and $\mathcal{L}(d | \blambda, H, I)$ is the likelihood of obtaining the data for a given choice of the parameter set $\blambda$. We assume the hypothesis $H$ to be our waveform model described in section \ref{sec:model} and $I$ to be any other information assumed during the analysis.
+
+Given the full-dimensional posterior probability density function $p(\blambda | d, H, I)$, we can marginalise over the \emph{nuisance} parameters, to obtain the marginalised posterior probability density function on our QNM parameters $\bzeta$, as:
+
+\begin{equation}
+p(\bzeta | d, H, I) = \int p(\blambda | d, H, I) d\bxi d\btheta
+\end{equation}
+
+Throughout our analysis, we assume the noise in the detector to be well-approximated by the Gaussian random process with a fixed power spectral density. This allows us to define a Gaussian likelihood function $\mathcal{L}(d | \blambda, H, I)$, which we stochastically sample over using either a Markhov-Chain-Monte-Carlo based algorithm implemented in the LIGO Algorithms Library.
 
 \section{Results}\label{sec:results}
 \subsection{Priors}
 
-\abhi{A small sub-section dedicated to priors used in this analysis. Very common question from referees.}
-
-We assume uniform prior probability distributions on the chirp mass and mass ratio in the interval $M_c \in [1,200] M_\odot$ and $q \in [0.05,1.0]$. The prior on the location of the source is  assumed to be isotropic on the sphere of  the  sky,  with $P({d_L}) \propto d_{L}^{2}$ where $d_L \in [1,10000]$ Mpc. We use an  isotropic  prior  on  the  orientation  of  the  binary: $P({\iota,\varphi_0,\psi}) \propto \sin\iota$ with $\iota \in [0,\pi)$, $\varphi_0 \in [0,2\pi)$ and $\psi \in [0,\pi)$. For all other parameters in $\btheta$, we use uniform priors: $\alpha \in [0,2\pi)$, $\delta \in [0,2\pi)$ and $t_0 \in [-15,15]$. 
-
+Throughout our analysis we assume a completely uninformed prior in the component masses $m_1, m_2$, uniformly distributed in the range (XX,YY). Our prior on the spins are uniform in the magnitude between (0,1) and isotropic in spin orientation. Our prior on the distance varies as $d_L^2$ upto a distance of XX. For the rest of the parameters we use standard priors as defined in the documentation (CITE Vietch et al. 2015 LALInference paper). For our non-GR ringdown parameters, we assume priors uniform in the range (XX,YY). For $d\tau = -1$, we encounter a singularity (the imaginary part of the frequency goes to infinity), which we avoid by restricting the minimum of the prior on $d\tau$ to be greater than $-1$.
 
 \subsection{Results on GW150914-like injection}
 
 
 \begin{figure*}
 	\includegraphics[width=\textwidth]{figures/GW150914_swinj_GR_vs_modGR.png}
+	\caption{final figure will contain a third set of contours for modGR recovered assuming GR to show bias. That run is ongoing.}
 \end{figure*}
 
 \abhi{The GW150914-like injections we have:}
@@ -186,6 +164,7 @@ We assume uniform prior probability distributions on the chirp mass and mass rat
 
 \begin{figure}
 	\includegraphics[width=0.4\textwidth]{figures/GW150914.png}
+	\caption{include contours from pyRING}
 \end{figure}
 
 \abhi{Results obtained as part of the review on GW150914 and other O1-O2 events which are of relevance}
@@ -260,8 +239,8 @@ $-$
 \abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
 
 \begin{figure}[H]
-	\includegraphics[width=0.4\textwidth]{figures/S190521g_gaussiannoiseinjections.png}
-	\includegraphics[width=0.4\textwidth]{figures/S190521g_swinjs.png}
+	\includegraphics[width=0.4\textwidth]{figures/S190521g_noiseinjections.png}
+	\caption{a single figure for both Gaussian and Real noise injections, color coded, to save space}
 \end{figure}
 
 We injected NRSur7dq4 signal using the MaxL parameters from EXP30, in 2.5 hours of data surrounding the event at: t0-1.5 hours, t0-1., t0-0.5, t0+0.5, t0+1. For 3 of the 5 noise realisations, corresponding to t0-1 hour, t0+0.5 hours, and t0+1.0 hour we recover a damping time similar to the actual event, whereas for a third case, t0-0.5 hours, we obtain a damping time consistent at the 90\% credible interval. L1-SNR goes down by more than 3 in some runs (maximum L1-SNR 12, minimum 9), indicative of how the noise variability is strongly affecting the recovered parameters. For some injections the mass ratio is biased, although final spin (most sensitive to mass ratio) is not affected much.  domega varies quite a lot among runs, instead dtau seems well behaved around zero. Effective frequency is a stable parameter (always well measured), while effective tau is much more sensitive to the noise configuration.  
