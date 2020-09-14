@@ -28,6 +28,7 @@
 
 \newcommand{\paperone}{Paper~I\xspace}
 \newcommand{\abhi}[1]{\textcolor{red}{[\textit{AG: #1}]}}
+\newcommand{\rb}[1]{\textcolor{blue}{[\textit{RB: #1}]}}
 
 \newcommand{\h}{\mathpzc{h}}
 \newcommand{\Hhat}{\hat{\mathpzc{H}}}
@@ -104,7 +105,7 @@ An independent approach to black hole spectroscopy, based on a full-signal analy
 
 
 
-Unlike methods that focus on the post-merger signal, it describes a framework in which a complete inspiral-merger-ringdown (IMR) waveform model is used to measure the complex QNM frequencies. \abhi{It is a spinning multipolar effective-one-body waveform calibrated to numerical relativity simulations (SEOBNRv4HM~\citep{cotesta}})This allows access to the full SNR of the signal, reducing measurement uncertainties. Moreover, the definition of the ringdown start time is built into the model and does not need to be either left as an additional free parameter or fixed using alternate definitions. While \paperone presented the method in the context of a non-spinning waveform model, we extend the analysis to the case with black holes spins in the current paper. All astrophysical black holes are expected to be spinning, and ignoring effects of spin have been shown to introduce systematic biases in the measurement of the source properties.
+Unlike methods that focus on the post-merger signal, it describes a framework in which a complete inspiral-merger-ringdown (IMR) waveform model is used to measure the complex QNM frequencies. \abhi{It is a spinning multipolar effective-one-body waveform calibrated to numerical relativity simulations (SEOBNRv4HM~\citep{Cotesta:2018fcv}})This allows access to the full SNR of the signal, reducing measurement uncertainties. Moreover, the definition of the ringdown start time is built into the model and does not need to be either left as an additional free parameter or fixed using alternate definitions. While \paperone presented the method in the context of a non-spinning waveform model, we extend the analysis to the case with black holes spins in the current paper. All astrophysical black holes are expected to be spinning, and ignoring effects of spin have been shown to introduce systematic biases in the measurement of the source properties.
 \par
 The rest of this paper is organized as follows. Section~\ref{sec:model} describes our parametrised IMR waveform model. In section~\ref{sec:method}, we define our testing GR framework in which we use that model to measure the complex QNM frequencies in a Bayesian formalism. Then in section~\ref{sec:results}, we demonstrate our method on real gravitational wave events, as well as simulated signals. Finally we provide a summary of our results and discuss future developments in section  The rest of this paper is organized as follows. Section~\ref{sec:model} describes our waveform model, which is then used to perform our test of black hole ringdown using Bayesian framwork, outlined in section~\ref{sec:discussion}.
 
@@ -116,6 +117,35 @@ The rest of this paper is organized as follows. Section~\ref{sec:model} describe
 \item{a description of the SEOBNRv4HM model and it's generalisation to form the pSEOBNRv4HM model}
 \item{highlight the importance of spins in the model, especially with regards to the non-spinning method outlined in Brito et al.}
 \end{itemize}
+
+\rb{work in progress}
+
+As in \paperone, we use an IMR waveform developed within the EOB formalism. However, in this work we  extend the results of \paperone by using a waveform model for spinning, nonprecessing binary BHs. Namely we use the multipolar waveform developed in Ref.~\citep{Cotesta:2018fcv}. In addition to being calibrated to NR simulations, this model also uses information from BH perturbation theory for the merger and ringdown. Therefore this waveform model provides a very accurate and faithful semi-analytic description of the inspiral, merger and ringdown phases. 
+
+
+In the observer frame, GWs emitted by a binary can be written as 
+$h_+(\iota,\varphi;t ) - i h_\times(\iota,\varphi;t) = \sum_{\ell, m} {}_{-\!2}Y_{\ell m}(\iota,\varphi)\, h_{\ell m}(t)$, where $\iota$ denotes the inclination angle computed with respect to the direction perpendicular to the orbital, $\varphi$ the azimuthal direction to the observer, ${}_{-\!2}Y_{\ell m}(\theta,\phi)$ are the $-2$ spin-weighted spherical harmonics. The EOBNR model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes.  For each $(\ell, m)$, the merger-ringdown EOBNR modes read~\citep{Cotesta:2018fcv}
+%
+\begin{equation}
+  \label{RD}
+  h_{\ell m}^\mathrm{merger-RD}(t) = \nu A_{\ell m}(t) e^{i\phi_{\ell m} (t)}\,
+  e^{-i\sigma_{\ell m0} (t-t_\mathrm{match}^{\ell m})} \quad t \geq t_{\rm match}^{\ell m}\,,
+\end{equation}
+%
+where $\sigma_{\ell m0} = \omega_{\ell m 0} -i/\tau_{\ell m 0}$ denotes the complex frequency of the fundamental QNM of the final BH,  where the oscillation frequency of the QNM is given by $\omega_{\ell m  0}>0$ and the decay time by $\tau_{\ell m 0}>0$. The explicit expressions for the functions $A_{\ell m}(t)$ and $\phi_{\ell m} (t)$ can be found given in Ref.~\citep{Cotesta:2018fcv}, and are chosen such that the functions $A_{\ell  m}$ and $\phi_{\ell  m}$ are of class $C^1$ at $t=  t_{\rm match}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge EOBNR 
+waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. Finally, the inspiral-(plunge-)merger-ringdown EOBNR waveform reads $h_{\ell m}(t) = h_{\ell m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{\ell m} - t) + h_{\ell m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{
+    match}^{\ell m})$, where $\theta(t)$ is the Heaviside step function.
+ 
+ 
+  In the model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex frequencies $\sigma_{\ell m 0}$  are expressed in terms of the final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the latter are related to the BBH's component masses and spins through an
+  NR--fitting-formulas obtained in GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. 
+  Here, to measure the ringdown frequencies and damping times of
+  different QNMs, we relax the assumption that the ringdown signal is
+  fixed by the NR--fitting-formulas, and
+  instead promote the QNM (complex) frequencies to be free
+  parameters (henceforth, pSEOBNR model). 
+  %In the specific applications of this paper, we will only allow $\sigma_{220}$ and $\sigma_{330}$ to vary freely, while all the other mode frequencies present in the merger-ringdown waveform coincide to the GR values. We emphasize that $\sigma_{220}$ and $\sigma_{330}$ varying freely implies that the EOBNR waveform at merger (i.e., close to the peak and at $t_\mathrm{match}^{\ell m}$),  {\it does not necessarily} coincide with the GR prediction, since the matching procedure changes the shape of the waveform for $t>  t_\mathrm{match}^{\ell m}$ for $(\ell,m) = (2,2)$ and $(3,3)$. Lastly, for $t < t_{\rm match}^{\ell m}$, our EOBNR waveform modes agree with the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ computed in GR. 
+
 
 \section{Method/Bayesian PE}\label{sec:method}
 
@@ -238,10 +268,10 @@ $-$
 
 \abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
 
-\begin{figure}[H]
-	\includegraphics[width=0.4\textwidth]{figures/S190521g_noiseinjections.png}
-	\caption{a single figure for both Gaussian and Real noise injections, color coded, to save space}
-\end{figure}
+%\begin{figure}[H]
+%	\includegraphics[width=0.4\textwidth]{figures/S190521g_noiseinjections.png}
+%	\caption{a single figure for both Gaussian and Real noise injections, color coded, to save space}
+%\end{figure}
 
 We injected NRSur7dq4 signal using the MaxL parameters from EXP30, in 2.5 hours of data surrounding the event at: t0-1.5 hours, t0-1., t0-0.5, t0+0.5, t0+1. For 3 of the 5 noise realisations, corresponding to t0-1 hour, t0+0.5 hours, and t0+1.0 hour we recover a damping time similar to the actual event, whereas for a third case, t0-0.5 hours, we obtain a damping time consistent at the 90\% credible interval. L1-SNR goes down by more than 3 in some runs (maximum L1-SNR 12, minimum 9), indicative of how the noise variability is strongly affecting the recovered parameters. For some injections the mass ratio is biased, although final spin (most sensitive to mass ratio) is not affected much.  domega varies quite a lot among runs, instead dtau seems well behaved around zero. Effective frequency is a stable parameter (always well measured), while effective tau is much more sensitive to the noise configuration.  
 
