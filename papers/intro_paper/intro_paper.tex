@@ -109,7 +109,8 @@ Unlike methods that focus on the post-merger signal, it describes a framework in
 \par
 The rest of this paper is organized as follows. Section~\ref{sec:model} describes our parametrised IMR waveform model. In section~\ref{sec:method}, we define our testing GR framework in which we use that model to measure the complex QNM frequencies in a Bayesian formalism. Then in section~\ref{sec:results}, we demonstrate our method on real gravitational wave events, as well as simulated signals. Finally we provide a summary of our results and discuss future developments in section  The rest of this paper is organized as follows. Section~\ref{sec:model} describes our waveform model, which is then used to perform our test of black hole ringdown using Bayesian framwork, outlined in section~\ref{sec:discussion}.
 
-\section{Waveform Model}\label{sec:model}
+\section{Method}
+\subsection{Waveform Model}\label{sec:model}
 
 \abhi{Summary of the section:}
 
@@ -147,7 +148,7 @@ waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. Finally, the inspiral-(plunge
   %In the specific applications of this paper, we will only allow $\sigma_{220}$ and $\sigma_{330}$ to vary freely, while all the other mode frequencies present in the merger-ringdown waveform coincide to the GR values. We emphasize that $\sigma_{220}$ and $\sigma_{330}$ varying freely implies that the EOBNR waveform at merger (i.e., close to the peak and at $t_\mathrm{match}^{\ell m}$),  {\it does not necessarily} coincide with the GR prediction, since the matching procedure changes the shape of the waveform for $t>  t_\mathrm{match}^{\ell m}$ for $(\ell,m) = (2,2)$ and $(3,3)$. Lastly, for $t < t_{\rm match}^{\ell m}$, our EOBNR waveform modes agree with the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ computed in GR. 
 
 
-\section{Method/Bayesian PE}\label{sec:method}
+\subsection{Bayesian PE}\label{sec:method}
 
 A gravitational waveform from the (quasi-circular) coalescence of two black holes is completely described in GR by a set \textit{intrinsic} parameters, $\bxi$: the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the initial binary and a reference time and phase $t_c, \phi_c$ respectively; and a set of \textit{extrinsic} parameters, $\btheta$: the location of the binary given by the right ascension, $\alpha$, declination,$\delta$ and the luminosity distance, $d_L$, and its orientation described through the inclination of the binary $\iota$ and its polarisation $\psi$. Also allowing for additional degrees of freedom $\bzeta$ like the complex QNM frequencies described in section \ref{sec:model}, one can then use a Bayesian formalism to obtain a posterior probability density function on the combined parameter set $\blambda = \{\bxi, \btheta, \bzeta\}$:
 
