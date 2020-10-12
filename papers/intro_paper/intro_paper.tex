@@ -112,20 +112,21 @@ The rest of this paper is organized as follows. Section~\ref{sec:model} describe
 \section{Method}
 \subsection{Waveform Model}\label{sec:model}
 
-\abhi{Summary of the section:}
+%\abhi{Summary of the section:}
 
-\begin{itemize}
-\item{a description of the SEOBNRv4HM model and it's generalisation to form the pSEOBNRv4HM model}
-\item{highlight the importance of spins in the model, especially with regards to the non-spinning method outlined in Brito et al.}
-\end{itemize}
+%\begin{itemize}
+%\item{a description of the SEOBNRv4HM model and it's generalisation to form the pSEOBNRv4HM model}
+%\item{highlight the importance of spins in the model, especially with regards to the non-spinning method outlined in Brito et al.}
+%\end{itemize}
 
-\rb{work in progress}
-
-As in \paperone, we use an IMR waveform developed within the EOB formalism. However, in this work we  extend the results of \paperone by using a waveform model for spinning, nonprecessing binary BHs. Namely we use the multipolar waveform developed in Ref.~\citep{Cotesta:2018fcv}. In addition to being calibrated to NR simulations, this model also uses information from BH perturbation theory for the merger and ringdown. Therefore this waveform model provides a very accurate and faithful semi-analytic description of the inspiral, merger and ringdown phases. 
+As in \paperone, we use an IMR waveform model developed within the EOB formalism. However, in this work we extend the results of \paperone by using a waveform model for spinning, nonprecessing binary BHs. Namely we use as our baseline model the multipolar waveform developed in Ref.~\citep{Cotesta:2018fcv}. In addition to being calibrated to NR simulations, this model also uses information from BH perturbation theory for the merger and ringdown phases. Therefore this waveform model provides a very accurate and faithful semi-analytic description of the inspiral, merger and ringdown phases. Henceforth we will denote this model by SEOBNR for short.
 
 
-In the observer frame, GWs emitted by a binary can be written as 
-$h_+(\iota,\varphi;t ) - i h_\times(\iota,\varphi;t) = \sum_{\ell, m} {}_{-\!2}Y_{\ell m}(\iota,\varphi)\, h_{\ell m}(t)$, where $\iota$ denotes the inclination angle computed with respect to the direction perpendicular to the orbital, $\varphi$ the azimuthal direction to the observer, ${}_{-\!2}Y_{\ell m}(\theta,\phi)$ are the $-2$ spin-weighted spherical harmonics. The EOBNR model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes.  For each $(\ell, m)$, the merger-ringdown EOBNR modes read~\citep{Cotesta:2018fcv}
+In the observer's frame, the GW polarizations can be written as 
+$h_+(\iota,\varphi;t ) - i h_\times(\iota,\varphi;t) = \sum_{\ell, m} {}_{-\!2}Y_{\ell m}(\iota,\varphi)\, h_{\ell m}(t)$, where $\iota$ denotes the inclination angle computed with respect to the direction perpendicular to the orbital plane, $\varphi$ is the azimuthal direction to the observer, ${}_{-\!2}Y_{\ell m}(\theta,\phi)$ are the $-2$ spin-weighted spherical harmonics. The SEOBNR model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes. For each $(\ell, m)$, the inspiral-(plunge-)merger-ringdown SEOBNR waveform is schematically given by $h_{\ell m}(t) = h_{\ell m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{\ell m} - t) + h_{\ell m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{
+    match}^{\ell m})$, where $\theta(t)$ is the Heaviside step function, $h_{\ell m}^\mathrm{insp-plunge}$ represents the inspiral-plunge part of the waveform, whereas $h_{\ell m}^\mathrm{merger-RD}$ denotes the merger-ringdown phase. 
+  %  
+The merger-ringdown SEOBNR modes read~\citep{Bohe:2016gbl,Cotesta:2018fcv}
 %
 \begin{equation}
   \label{RD}
@@ -133,19 +134,12 @@ $h_+(\iota,\varphi;t ) - i h_\times(\iota,\varphi;t) = \sum_{\ell, m} {}_{-\!2}Y
   e^{-i\sigma_{\ell m0} (t-t_\mathrm{match}^{\ell m})} \quad t \geq t_{\rm match}^{\ell m}\,,
 \end{equation}
 %
-where $\sigma_{\ell m0} = \omega_{\ell m 0} -i/\tau_{\ell m 0}$ denotes the complex frequency of the fundamental QNM of the final BH,  where the oscillation frequency of the QNM is given by $\omega_{\ell m  0}>0$ and the decay time by $\tau_{\ell m 0}>0$. The explicit expressions for the functions $A_{\ell m}(t)$ and $\phi_{\ell m} (t)$ can be found given in Ref.~\citep{Cotesta:2018fcv}, and are chosen such that the functions $A_{\ell  m}$ and $\phi_{\ell  m}$ are of class $C^1$ at $t=  t_{\rm match}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge EOBNR 
-waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. Finally, the inspiral-(plunge-)merger-ringdown EOBNR waveform reads $h_{\ell m}(t) = h_{\ell m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{\ell m} - t) + h_{\ell m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{
-    match}^{\ell m})$, where $\theta(t)$ is the Heaviside step function.
+where $\nu$ is the symmetric mass ratio of the binary and $\sigma_{\ell m0} = \omega_{\ell m 0} -i/\tau_{\ell m 0}$ denotes the complex frequency of the fundamental QNMs of the remnant BH. We denote the oscillation frequencies by $\omega_{\ell m  0}\equiv \Re(\sigma_{\ell m0})$ and the decay times by $\tau_{\ell m 0}\equiv -1/\Im(\sigma_{\ell m0})$. The explicit expressions for the amplitudes $A_{\ell m}(t)$ and phases $\phi_{\ell m} (t)$ can be found in Ref.~\citep{Cotesta:2018fcv}, and are chosen such that the functions $A_{\ell  m}$ and $\phi_{\ell  m}$ are of class $C^1$ at $t=  t_{\rm match}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge SEOBNR waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$.
  
- 
-  In the model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex frequencies $\sigma_{\ell m 0}$  are expressed in terms of the final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the latter are related to the BBH's component masses and spins through an
-  NR--fitting-formulas obtained in GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. 
-  Here, to measure the ringdown frequencies and damping times of
-  different QNMs, we relax the assumption that the ringdown signal is
-  fixed by the NR--fitting-formulas, and
-  instead promote the QNM (complex) frequencies to be free
-  parameters (henceforth, pSEOBNR model). 
-  %In the specific applications of this paper, we will only allow $\sigma_{220}$ and $\sigma_{330}$ to vary freely, while all the other mode frequencies present in the merger-ringdown waveform coincide to the GR values. We emphasize that $\sigma_{220}$ and $\sigma_{330}$ varying freely implies that the EOBNR waveform at merger (i.e., close to the peak and at $t_\mathrm{match}^{\ell m}$),  {\it does not necessarily} coincide with the GR prediction, since the matching procedure changes the shape of the waveform for $t>  t_\mathrm{match}^{\ell m}$ for $(\ell,m) = (2,2)$ and $(3,3)$. Lastly, for $t < t_{\rm match}^{\ell m}$, our EOBNR waveform modes agree with the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ computed in GR. 
+In the SEOBNR model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex frequencies $\sigma_{\ell m 0}$  are expressed in terms of the final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the latter are related to the BBH's component masses and spins through NR--fitting-formulas obtained in GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. Here instead, in the spirit of what was done in \paperone, we promote the QNM (complex) frequencies to be free parameters of the model, while keeping the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ fixed to their GR values (henceforth, pSEOBNR model). We note that when leaving $\sigma_{\ell m}$ to vary freely, the amplitudes $A_{\ell m}(t)$ and phases $\phi_{\ell m} (t)$ will in general also differ from the GR prediction, since those functions depend on the QNM complex frequencies (see~\citep{Cotesta:2018fcv}).
+
+For the specific applications of this paper, we will normally only allow either $\sigma_{220}$ or $\sigma_{330}$ to vary, while keeping all the other modes to coincide with GR. However the model can be easily used to measure any QNM complex frequency available in the waveform.
+
 
 
 \subsection{Bayesian PE}\label{sec:method}
