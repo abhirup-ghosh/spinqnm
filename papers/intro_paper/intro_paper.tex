@@ -200,9 +200,27 @@ and construct posterior distributions on these effective quantities, $(f_{220}^{
 \end{itemize}
 \fi
 
+\subsubsection{Test of the No hair theorem}
+
+We provide a simple demonstration of a test of the no-hair theorem using our model. As described in the introduction, any test of the no-hair theorem of black holes would need to involve the independent measurements of (at least) two different QNMs. We use a simulated GW signal from the SXS catalog CITE corresponding a non-spinning binary black hole with a mass-ratio $q=6$ (SXS:BBH:0166), rescaled to a total mass of $M=84 \Mo$. We choose an asymmetric system to increase the SNR in the higher modes. We also rescale the distance and orientation of the binary such that the total SNR of the signal is 75. Based on the LIGO-Virgo observations during  O3, such asymmetric and loud signals are no longer just a theoretical prediction but quite the possibility at design sensitivities CITE of these detectors. Using the signal, we attempt to measure the QNM frequencies corresponding to the zeroeth overtone of the $(2,\pm 2)$ and $(3,\pm 3)$ modes~\ref{fig:nohair_sxs}. We explore two cases, where we fix either one of the $(2,\pm 2)$ or $(3,\pm 3)$ frequency and damping time, ie, $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ or $(f_{330}^{\text{eff}}, \tau _{330}^{\text{eff}})$ fixed at their GR predictions and estimating the other pair.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}
+	%\includegraphics[width=0.3\textwidth]{figures/GW150914_GW190521_simulated_frac.png}\includegraphics[width=0.56\textwidth]{figures/GW150914_GW190521_simulated_abs.png}
+	\label{fig:nohair_sxs}
+	\caption{SXS:BBH:0166. 220/330 measurement}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\iffalse
+\abhi{As part of review we had developed the infrastructure to make non-GR waveforms using pSEOBNRv4HM, and running LALInference on it. We had specifically chosen an injection with domega220 = dtau220  = 0.5 in zero-noise, and successfully recovered those frequencies thus demonstrating the robustness of the method in detecting deviations from GR.}
+\fi
+
 \subsection{Simulations using nonGR signals}
 
-To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger \abhi{be more specific}, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $d\omega =d\tau = 0.5$. In other words, we assume that the frequency and damping time of our nonGR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $\{d\omega,d\tau\}$ or equivalently$(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ (dashed lines in Fig.\ref{fig:gr_simulation})) are consistent with the corresponding the values of the injection parameters, indicated by plus signs \abhi{add markers in effective quantity plots}.
+To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger \abhi{be more specific}, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $d\omega =d\tau = 0.5$. In other words, we assume that the frequency and damping time of our nonGR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $\{d\omega,d\tau\}$ or equivalently $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ (dashed lines in Fig.\ref{fig:gr_simulation})) are consistent with the corresponding the values of the injection parameters, indicated by plus signs \abhi{add markers in effective quantity plots}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -212,12 +230,6 @@ To demonstrate the robustness of the method in detecting possible deviations of 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Simulations using NR signals}
-
-\iffalse
-\abhi{As part of review we had developed the infrastructure to make non-GR waveforms using pSEOBNRv4HM, and running LALInference on it. We had specifically chosen an injection with domega220 = dtau220  = 0.5 in zero-noise, and successfully recovered those frequencies thus demonstrating the robustness of the method in detecting deviations from GR.}
-\fi
 
 \subsection{Results on actual LIGO-Virgo results}
 
@@ -319,8 +331,10 @@ We injected NRSur7dq4 signal using the MaxL parameters from EXP30, in 2.5 hours 
 
 \section{Discussion}\label{sec:discussion}
 
+\iffalse
 \abhi{A comparison with pyRING}
 \abhi{damped sinusoid results}
+\fi
 
 %
 \bibliographystyle{apsrev}
