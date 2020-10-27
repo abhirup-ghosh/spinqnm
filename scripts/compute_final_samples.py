@@ -15,6 +15,7 @@ from optparse import OptionParser
 import corner
 import imrtgrutils_final as tgr
 import argparse
+import glob
 
 # Module for confidence calculations
 class confidence(object):
@@ -85,7 +86,10 @@ if __name__ == '__main__':
   ## Read (m1, m2, a1z, a2z, domega, dtau) posterior samples
   ##############################################################################
 
-  data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
+  try:
+  	data = np.genfromtxt(post_loc + '/posterior_samples.dat', names=True, dtype=None)
+  except IOError:
+	data = np.genfromtxt(glob.glob(post_loc + '/*.dat')[0], names=True, dtype=None)
   if ('mf_evol' in data.dtype.names) and ('af_evol' in data.dtype.names):
   	mf, af, m1, m2, a1z, a2z, domega, dtau = data['mf_evol'], data['af_evol'], data['m1'], data['m2'], data['a1z'], data['a2z'], data['domega220'], data['dtau220']
   elif ('mf' in data.dtype.names) and ('af' in data.dtype.names):

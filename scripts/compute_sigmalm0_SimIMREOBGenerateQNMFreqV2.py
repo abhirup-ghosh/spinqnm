@@ -61,13 +61,13 @@ if __name__ == '__main__':
 
     omegalm0SI_GR, taulm0SI_GR = get_sigmalm0SI_GR(m1, m2, a1z, a2z, lm)
 
-    print 'omega_GR (Hz) values:', omegalm0SI_GR
-    print 'freq_GR = omega_GR/2pi (Hz) values', omegalm0SI_GR/(2*pi)
-    print 'tau_GR (ms) values:', taulm0SI_GR*1000.
+    #print 'omega_GR (Hz) values:', omegalm0SI_GR
+    #print 'freq_GR = omega_GR/2pi (Hz) values', omegalm0SI_GR/(2*pi)
+    #print 'tau_GR (ms) values:', taulm0SI_GR*1000.
 
     omegalm0SI_modGR, taulm0SI_modGR = get_sigmalm0SI_modGR(omegalm0SI_GR, taulm0SI_GR, domega220, dtau220)
 
-    print 'omega_modGR (Hz) values:', omegalm0SI_modGR
-    print 'freq_modGR = omega_modGR/2pi (Hz) values', omegalm0SI_modGR/(2*pi)
-    print 'tau_modGR (ms) values:', taulm0SI_modGR*1000.
+    #print 'omega_modGR (Hz) values:', omegalm0SI_modGR
+    #print 'freq_modGR = omega_modGR/2pi (Hz) values', omegalm0SI_modGR/(2*pi)
+    #print 'tau_modGR (ms) values:', taulm0SI_modGR*1000.
 

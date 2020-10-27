@@ -1,4 +1,4 @@
-#pSEOBNRvrHM files
+#pSEOBNRv4HM files
 # C01 files
 ## GR
 rsync -ztave gsissh hypatia1.aei.mpg.de:/home/abhirup.ghosh/Documents/Work/spinqnm/runs/XLALSimInspiralChooseTDWaveformFromCache_runs/ligo_events/S190521g/C01/GR/cbcBayes/posterior_samples.dat pSEOBNRv4HM_GR_c01.dat

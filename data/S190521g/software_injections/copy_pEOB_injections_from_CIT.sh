@@ -1,0 +1,8 @@
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections_zeronoise/precession_220/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injprec_zeronoise.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections_zeronoise/precession_GR/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injprec_zeronoise_GR.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections_zeronoise/v4HM_220/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injnoprec_zeronoise.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections_zeronoise/v4HM_GR/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injnoprec_zeronoise_GR.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections/precession_220/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injprec_w_noise.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections/precession_GR/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injprec_w_noise_GR.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections/v4HM_220/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injnoprec_w_noise.dat
+rsync -ztave ssh ldas-grid.ligo.caltech.edu:/home/richard.brito/public_html/LVC/projects/pEOBNRv2HM/O3/S190521g/injections/v4HM_GR/1126259462.39-0/H1L1/posterior_samples.dat pEOB_injnoprec_w_noise_GR.dat
