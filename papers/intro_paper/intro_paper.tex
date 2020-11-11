@@ -62,10 +62,16 @@
 \newcommand{\n}{\mathbf{n}}
 \newcommand*{\skymapscale}{0.5}
 \newcommand*{\paramestscale}{0.455}
+\newcommand{\df}[1]{\delta f_{\text{#1}}}
+\newcommand{\dt}[1]{\delta \tau_{\text{#1}}}
+\newcommand{\fngr}[1]{f_{\text{#1}}}
+\newcommand{\tngr}[1]{tau_{\text{#1}}}
+%\newcommand{\fgr}[1]{f ^{\text{GR}}_{\text{#1}}}
+%\newcommand{\tgr}[1]{\tau ^{\text{GR}_{\text{#1}}}
 
 \begin{document}
 
-\title{pSEOBNRv4HM}
+\title{Black hole spectroscopy using gravitational wave signals from the inspiral, merger and ringdown of binary black holes}
 
 \author{Abhirup Ghosh}
 \affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), D-14476 Potsdam-Golm, Germany}
@@ -76,11 +82,15 @@
 
 \date{\today}
 
-\maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%
-% Abstract
+\begin{abstract}
+The no-hair conjecture in general relativity states that the properties of a Kerr black hole are completely described by its mass and spin angular momentum. As a consequence, the complex quasi-normal-mode (QNM) frequencies of a binary black hole ringdown can be uniquely determined by the mass and spin of the remnant object. Conversely, measurement of the QNM frequencies could be a independent test of the no-hair conjecture. This paper outlines a test of the no-hair conjecture by measuring the complex QNM frequencies of a binary black hole ringdown within the framework of, for the first time, a spinning inspiral-merger-ringdown waveform model, thereby using the entire signal power and removing dependency on the predicted or estimated start time of the proposed ringdown. We further demonstrate the robustness of the test against modified gravitational wave signals with a ringdown different from what general relativity predicts for Kerr black holes. The method was used to analyse the properties of the merger remnants for the events observed by LIGO-Virgo in the first half of their third observing run (O3a) in the latest LIGO-Virgo publication. In this paper, for the first time, we analyse the gravitational wave events from the first and second LIGO-Virgo observing runs and provide joint constraints with published results from O3a. The joint measurements of the fractional deviations in the frequency, $\df{220} = XX \pm$ and $\dt{220} = YY \pm$ are the strongest constraints yet using this method. Finally, we also present a investigation into possible systematic effects due to an incomplete understanding of the interferometric noise around the gravitational wave event on the results of this test.
+\end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
 
 \section{Introduction}\label{sec:intro}
 
@@ -188,6 +198,8 @@ In the SEOBNR model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex freq
 We note that when leaving $\sigma_{\ell m}$ to vary freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ will in general also differ from the GR prediction, since those functions depend on the QNM complex frequencies, as can be seen from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$.
 
 For the specific applications of this paper, we will normally only allow either $\sigma_{220}$ and/or $\sigma_{330}$ to vary, while keeping all the other modes to coincide with GR. However the model can be easily used to measure any QNM complex frequency available in the waveform.
+
+
 
 \subsection{Bayesian PE}\label{sec:method}
 
