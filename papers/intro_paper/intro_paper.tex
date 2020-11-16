@@ -14,6 +14,8 @@
 \usepackage{booktabs}
 \usepackage{url}
 \usepackage{float}
+\usepackage[bottom]{footmisc}
+
 
 
 
@@ -197,16 +199,20 @@ Teukolsky-equation--based waveforms and can be found in Appendix C of Ref.~\cite
 In the $\SEOB$ model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex frequencies $\sigma_{\ell m 0}$  are expressed in terms of the final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the latter are related to the BBH's component masses and spins through NR--fitting-formulas obtained in GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. Here instead, in the spirit of what was done in \paperone, we promote the QNM (complex) frequencies to be free parameters of the model, while keeping the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ fixed to their GR values (henceforth, $\pSEOB$ model). The $\pSEOB$ model uses a parameterised version of the $\SEOB$ model where the frequency and the damping time of the ${\ell m 0}$ mode, i.e, $(f_{\ell m 0}, \tau _{\ell m 0})$ is defined through fractional deviations from the corresponding GR values, i.e., the predictions of the QNM frequencies obtained using the fits~\cite{Taracchini:2013rva,Hofmann:2016yih}:
 
 \begin{eqnarray}
-f_{\ell m 0}^{\text{nGR}} &:=& f_{\ell m 0}^{\text{GR}} (1 + \delta f_{\ell m 0}) \\
-\tau _{\ell m 0}^{\text{nGR}} &:=& \tau _{\ell m 0}^{\text{GR}} (1 + \delta \tau_{\ell m 0})
+f_{\ell m 0}^{\text{nGR}} &:=& f_{\ell m 0}^{\text{GR}} (1 + \delta f_{\ell m 0})\label{eq:nongr_freqs_a} \\ 
+\tau _{\ell m 0}^{\text{nGR}} &:=& \tau _{\ell m 0}^{\text{GR}} (1 + \delta \tau_{\ell m 0}) \label{eq:nongr_freqs_b}
 \end{eqnarray}
-
-where $(\delta f_{\ell m 0},\delta \tau_{\ell m 0})$ are the fractional deviations in the frequency and damping time, respectively. We note that when leaving $\sigma_{\ell m}$ to vary freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ will in general also differ from the GR prediction, since those functions depend on the QNM complex frequencies, as can be seen from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$. \footnote{For the results discussed in this paper, we restrict ourselves to the $(\ell m) = (2,2)$ and $(3,3)$ modes. Most of the high-mass events, for which this test is most appropriate, observed by LIGO-Virgo are consistent with nearly-equal-mass face-on/off binaries for which power in the subdominant modes is not enough to attempt to measure more than two QNM frequencies at once. Hence, all the other $(\ell m)$ modes are fixed at their GR predictions.}
+where $(\delta f_{\ell m 0},\delta \tau_{\ell m 0})$ are the fractional deviations in the frequency and damping time, respectively, from the corresponding GR predictions. The GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are constructed using numerical relativity predictions of the mass and spin of the remnant object, starting from estimates of the masses and spins of the initial binary:
+\begin{eqnarray}
+f_{\ell m 0}^{GR} = f_{\ell m 0}^{GR}(M_f, a_f) = f_{\ell m 0}^{GR}(m_1, m_2, \bs1, \bs2 ) \\
+\tau_{\ell m 0}^{GR} = \tau_{\ell m 0}^{GR}(M_f, a_f) = \tau_{\ell m 0}^{GR}(m_1, m_2, \bs1, \bs2 )
+\end{eqnarray}
+where we go from the second to the third step in both equation through the numerical relativity fits: $M_f = M_f(m_1, m_2, \bs1, \bs2)$ and $a_f = a_f(m_1, m_2, \bs1, \bs2)$. $M_f, a_f$ are the mass and spin of the remnant black while are determined from the initial masses and spins using analytical fits to numerical relativity simulations described above. We note that when leaving $\sigma_{\ell m}$ to vary freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ will in general also differ from the GR prediction, since those functions depend on the QNM complex frequencies, as can be seen from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$. \footnote{For the results discussed in this paper, we restrict ourselves to the $(\ell m) = (2,2)$ and $(3,3)$ modes. Most of the high-mass events, for which this test is most appropriate, observed by LIGO-Virgo are consistent with nearly-equal-mass face-on/off binaries for which power in the subdominant modes is not enough to attempt to measure more than two QNM frequencies at once. Hence, all the other $(\ell m)$ modes are fixed at their GR predictions.}
 
 
 \subsection{Bayesian PE}\label{sec:method}
 
-A gravitational wave signal from the (quasi-circular) coalescence of two black holes is completely described in GR by a fixed set of parameters, $\bxigr$. These can be grouped into the \emph{intrinsic} parameters: the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the initial binary and a reference time and phase $t_c, \phi_c$ respectively; and the \emph{extrinsic} parameters: the location of the binary given by the right ascension, $\alpha$, declination,$\delta$ and the luminosity distance, $d_L$, and its orientation described through the inclination of the binary $\iota$ and its polarisation $\psi$. The parametrised model described in ~\ref{sec:model}, $\pSEOB$, introduces an additional set of non-GR parameters, $\bxingr$, which essentially consist of the fractional deviations in the frequency and damping time corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$ and any other information used in the analysis $I$:
+A gravitational wave signal from the (quasi-circular) coalescence of two black holes is completely described in GR by a fixed set of parameters, $\bxigr$. These can be grouped into the \emph{intrinsic} parameters: the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the initial binary and a reference time and phase $t_c, \phi_c$ respectively; and the \emph{extrinsic} parameters: the location of the binary given by the right ascension, $\alpha$, declination,$\delta$ and the luminosity distance, $d_L$, and its orientation described through the inclination of the binary $\iota$ and its polarisation $\psi$. The parametrised model described in ~\ref{sec:model}, $\pSEOB$, introduces an additional set of non-GR parameters, $\bxingr$, which essentially consist of the fractional deviations in the frequency and damping time corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. Also, since the underlying GR model, $\SEOB$ is aligned-spin, i.e., the black holes are restricted to have spins parallel to the orbital angular momentum, the number of independent spin components reduce from 6 to 2. By convention we denote the direction of the orbital angular momentum to be the $z$-axis, and as a consequence, denote the spin components of the two black holes as $s_{1z}$ and $s_{2z}$, respectively. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$ and any other information used in the analysis $I$:
 
 \begin{equation}
 P(\blambda | d, \mathcal{H}, I) = \frac{P(\blambda | \mathcal{H}, I) \, \mathcal{L}(d | \blambda, \mathcal{H}, I)}{P(d|\mathcal{H}, I)},
@@ -230,34 +236,60 @@ Given the full-dimensional posterior probability density function $P(\blambda | 
 P(\bxingr | d, \mathcal{H}, I)= \int P(\blambda | d, \mathcal{H}, I) d\bxigr
 \end{equation}
 
-For most of the results discussed in this paper, we would restrict ourselves to the $(\ell m) = (2,2)$ and/or $(3,3)$ modes. In those cases we would assume $\bxingr = \{\df{220},\dtau{220}\}$ and/or  $ \{\df{330},\dtau{330}\}$, and all the other $(\ell m)$ modes are fixed at their GR predictions, i.e., $\delta f_{\ell m 0}) = \delta \tau_{\ell m 0} = 0$. This is because, for most of the high-mass events we find most appropriate for this test, the LIGO-Virgo observations are consistent with nearly-equal-mass face-on/off black hole binaries for which power in the subdominant modes is not enough to attempt to measure more than two QNM frequencies at once.
+For most of the results discussed in this paper, we would restrict ourselves to the $(\ell m) = (2,2)$ and/or $(3,3)$ modes. In those cases we would assume $\bxingr = \{\df{220},\dtau{220}\}$ and/or  $ \{\df{330},\dtau{330}\}$, and all the other $(\ell m)$ modes are fixed at their GR predictions, i.e., $\delta f_{\ell m 0}) = \delta \tau_{\ell m 0} = 0$. This is because, for most of the high-mass events we find most appropriate for this test, the LIGO-Virgo observations are consistent with nearly-equal-mass face-on/off black hole binaries for which power in the subdominant modes is not enough to attempt to measure more than one, or at most QNM frequencies at once.
+
+\subsection{Priors}
+
+Throughout our analysis we assume a completely prior uniform in the component masses $m_1, m_2$. Our prior on the spins are uniform in the magnitude between (0,1) and isotropic in spin orientation, but finally restricted to the component parallel to the orbital angular momentum of the binary. The prior on the distance varies as $d_L^2$ giving more weightage to binaries farther out. For the rest of the parameters we use standard priors as defined in the documentation (CITE Vietch et al. 2015 LALInference paper). For our non-GR ringdown parameters, we assume uniform priors. This of course leads to a non-trivial prior on the reconstructed frequency and damping time, because of the prior on $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$, which itself depend on the prior on the initial masses and spins through NR fits \abhi{perhaps figure on priors on QNM quantities}. For $d\tau = -1$, we encounter a singularity (the imaginary part of the frequency goes to infinity), which we avoid by restricting the minimum of the prior on $d\tau$ to be greater than $-1$.
 
 \section{Results}\label{sec:results}
 
-\iffalse
-\subsection{Priors}
+\subsection{Simulations using GR signals in Gaussian Noise}\label{ssec:gr_signal}
 
-Throughout our analysis we assume a completely uninformed prior in the component masses $m_1, m_2$, uniformly distributed in the range (XX,YY). Our prior on the spins are uniform in the magnitude between (0,1) and isotropic in spin orientation. Our prior on the distance varies as $d_L^2$ upto a distance of XX. For the rest of the parameters we use standard priors as defined in the documentation (CITE Vietch et al. 2015 LALInference paper). For our non-GR ringdown parameters, we assume priors uniform in the range (XX,YY). For $d\tau = -1$, we encounter a singularity (the imaginary part of the frequency goes to infinity), which we avoid by restricting the minimum of the prior on $d\tau$ to be greater than $-1$.
+First, we demonstrate our method on gravitational wave signals from BBH systems that are well described by GR. We inject simulated GW signals modellng inspiral, merger and ringdown of BBHs  into coloured Gaussian noise described by Advanced LIGO-Virgo design sensitivity in the high-power, zero-detuning configuration (ZDHP) CITE. In particular we choose parameters similar to two specific GW events, GW150914 CITE and GW190521 CITE. The details of the injections are provided in Table~\ref{tab:injection_values}. These two systems are representative data points for the kind of systems this test is most suitable for: high-mass events which are loud enough that the signal-to-noise ratio pre- and post-merger return reliable parameter estimation results. To avoid possible systematic biases in our parameter estimation results due to error in modelling, we use the GR version of the same waveform, $\SEOB$ CITE (without allowing for deviations in the QNM parameters) to simulate our GW signal. And to avoid systematic biases due to noise, we use an averaged (zero-noise) realisation of the Advanced LIGO zero-detuned-high-power PSD CITE. As in the case of the actual detections, we consider a two-detector advanced LIGO network at Hanford and Livingston, having identical PSDs. The distance to the two simulated events is rescaled such that the SNR in the detector network is same as the actual event, i.e, 24 (14) for GW150914 (GW190521). Since (almost) equal-mass binaries like GW150914 and GW190521 observed at moderate high SNRs are not expected to have a loud ringdown signal, we restrict ourselves to estimating the frequency and damping time of the $(\ell m) = (2,2)$, i.e., $\{\df{220},\dtau{220}\}$, while fixing the other QNM frequencies to their GR values. 
 
-\fi
+We find, as one might expect, that the posterior distribution on the parameters describing fractional deviations in the frequency and damping time are consistent with zero (the left top panel in Figs.\ref{fig:GW150914_simulated_signal} and \ref{fig:GW190521_simulated_signal}). The difference in the size of the posterior is due to the difference in the SNRs of the two events. One can then convert these fractional quantities into absolute quantities using the relations given in Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b}, and construct posterior distributions on these effective quantities, $(\fngr{220}, \taungr{220})$ (the right top panel in Figs.\ref{fig:GW150914_simulated_signal} and \ref{fig:GW190521_simulated_signal}). In each of these cases, recovered posterior are consistent with the GR predictions (as indicated by the plus signs).
 
-\subsection{Simulations using GR signals}\label{ssec:gr_signal}
-
-We initially demonstrate our method using simulated GR signals, with parameters similar to the two GW events, GW150914 CITE and GW190521 CITE. These two systems are representative data points for the kind of systems this test is most suitable for: high-mass events which are loud enough that the signal-to-noise ratio pre- and post-merger return reliable parameter estimation results. To avoid possible systematic biases in our parameter estimation results due to error in modelling, we use the GR version of the same waveform, SEOBNRv4HM CITE (without allowing for deviations in the QNM parameters) to simulate our GW signal. And to avoid systematic biases due to noise, we use an averaged (zero-noise) realisation of the Advanced LIGO zero-detuned-high-power PSD CITE. We find, as expected, that the posterior distribution on the parameters describing fractional deviations in the frequency and damping time, $\{d\omega,d\tau\}$ are consistent with zero (the solid curves in left panel of Fig.\ref{fig:gr_simulation}). The difference in the size of the posterior is due to the difference in the SNRs of the two events ($\sim 25$ for GW150914 as compared to $\sim 13$ for GW190521). One can then convert these fractional quantities into absolute quantities using the relations:
-
-\begin{eqnarray}
-f_{220}^{\text{eff}} &:=& f_{220}^{\text{GR}} (1 + \delta f_{220}) \\
-\tau _{220}^{\text{eff}} &:=& \tau _{220}^{\text{GR}} (1 + \delta \tau_{220})
-\end{eqnarray}
-
-and construct posterior distributions on these effective quantities, $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ (solid lines in middle and right panels of Fig.\ref{fig:gr_simulation}). The GR quantities $(f_{220}^{\text{GR}}, \tau _{220}^{\text{GR}})$ are constructed using numerical relativity predictions of the mass and spin of the remnant object, starting from estimates of the masses and spins of the initial binary \abhi{add description of the contruction of GR quantities with details of NR fit formula}. In each of these cases, recovered posterior are consistent with the GR predictions (as indicated by the plus signs).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table for Injections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-	\includegraphics[width=0.3\textwidth]{figures/GW150914_GW190521_simulated_frac.png}\includegraphics[width=0.56\textwidth]{figures/GW150914_GW190521_simulated_abs.png}\label{fig:gr_simulation}
-	\caption{final figure will contain a third set of contours for modGR recovered assuming GR to show bias. That run is ongoing.}
-\end{figure*}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| }
+ \hline
+ Event & $m_1 (\Mo)$ &  $m_1 (\Mo)$ & $a_{1z}$ & $a_{2z}$ & SNR \\ 
+ \hline
+ GW150914 & 38.53 & 33.40 & 0.0035 & -0.0440 & 25 \\ \label{tab:injection_values}
+ GW190521 & 152.20 & 120.41 & 0.0230 & -0.3864 & 14 \\ 
+ \hline
+\end{tabular}
+\caption{Details of the injection parameters, chosen to be similar to the actual GW events}
+\label{tab:injection_values}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GW150914-like simulated signal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_gr_ngr.png}
+	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (top panel) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (bottom panel) for an injection with initial parameters similar to GW150914 \ref{tab:injection_values}. The dark purple and grey points indicate the GR and modified GR signals respectively, when recovered using our $\pSEOB$ model. The two contours indicate the 50 and 90 \% credible levels, while the injected values are indicated by the '+' marker. The orange posterior probability distribution with the accompanying 90 \% credible level indicated in white corresponds to the biased measurement if our modGR signal had been estimated using the GR waveform model $SEOB$. }
+	\label{fig:GW150914_simulated_signal}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GW190521-like simulated signal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_gr_ngr.png}
+	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (top panel) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (bottom panel) for an injection with initial parameters similar to GW190521 \ref{tab:injection_values}. The dark purple and grey points indicate the GR and modified GR signals respectively, when recovered using our $\pSEOB$ model. The two contours indicate the 50 and 90 \% credible levels, while the injected values are indicated by the '+' marker. The orange posterior probability distribution with the accompanying 90 \% credible level indicated in white corresponds to the biased measurement if our modGR signal had been estimated using the GR waveform model $SEOB$. }
+	\label{fig:GW190521_simulated_signal}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -270,116 +302,131 @@ and construct posterior distributions on these effective quantities, $(f_{220}^{
 \end{itemize}
 \fi
 
-\subsubsection{Test of the No hair theorem}
 
-We provide a simple demonstration of a test of the no-hair theorem using our model. As described in the introduction, any test of the no-hair theorem of black holes would need to involve the independent measurements of (at least) two different QNMs. We use a simulated GW signal from the SXS catalog CITE corresponding a non-spinning binary black hole with a mass-ratio $q=6$ (SXS:BBH:0166), rescaled to a total mass of $M=84 \Mo$. We choose an asymmetric system to increase the SNR in the higher modes. We also rescale the distance and orientation of the binary such that the total SNR of the signal is 75. Based on the LIGO-Virgo observations during  O3, such asymmetric and loud signals are no longer just a theoretical prediction but quite the possibility at design sensitivities CITE of these detectors. Using the signal, we attempt to measure the QNM frequencies corresponding to the zeroeth overtone of the $(2,\pm 2)$ and $(3,\pm 3)$ modes~\ref{fig:nohair_sxs}. We explore two cases, where we fix either one of the $(2,\pm 2)$ or $(3,\pm 3)$ frequency and damping time, ie, $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ or $(f_{330}^{\text{eff}}, \tau _{330}^{\text{eff}})$ fixed at their GR predictions and estimating the other pair.
+\subsection{Simulations using modified GR signals in Gaussian noise}
+
+To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $\df{220} = \dtau{220} = 0.5$. In other words, we assume that the frequency and damping time of our non-GR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $(\df{220}, \dtau{220})$ or equivalently $(\fngr{220}, \taungr{220})$ (right panels in Figs.\ref{fig:GW150914_simulated_signal} and \ref{fig:GW190521_simulated_signal}) are consistent with the corresponding the values of the injection parameters, indicated by plus signs. 
+
+We additionally investigate the effects of erroneously assuming that an underlying modified GR signal can be well-described using GR. We do this by estimating the parameters of our modified GR signals using the GR waveform model $\SEOB$ instead of the parametrised $\pSEOB$. In such cases, we run the risk of biased pareameter estimates due to an incomplete understanding of the underlying signal. The resulting orange posterior probability distributions are shown in Figs.\ref{fig:GW150914_simulated_signal} and \ref{fig:GW190521_simulated_signal}) with the corresponding 90 \% credible level in white. The results are interesting and distinctly different for the two events. For the GW150914-like modified GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (Fig.\ref{fig:GW150914_simulated_signal} lower panel) are consistent with the $(\fgr{220}, \taugr{220})$ measurements for a signal with no deviations. In other words, if the actual signal had deviations as large as the 50 \% of the GR prediction, the analysis with $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like modified GR signal, a simple GR analysis of the modified GR signal would have yielded measurements distinctly different from either of the two parametrised estimates: with and without deviations. The fact that the GW190521-like signal has a much lower SNR than GW150914 might be a possible reason for the the measurement of the final quantities to be more susceptible to noise.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
-	%\includegraphics[width=0.3\textwidth]{figures/GW150914_GW190521_simulated_frac.png}\includegraphics[width=0.56\textwidth]{figures/GW150914_GW190521_simulated_abs.png}
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{figures/modGR_waveforms.png}
+	\caption{The gravitational strain $h(t)$ in the LIGO Hanford (top panel) and Livingston (bottom panel) detectors, for a GW150914-like event where the ringdown is described by GR (black solid lines), i.e., $\df{220} = \dtau{220} = 0$, and where the ringdown frequencies are modified from GR (dashed red lines), i.e., $\df{220} = \dtau{220} = 0.5$. The time is measured with respect to UTC:1126285216, which was assumed to be point at which the event merged. The signals are identical up to merger, but show a distinctly different ringdown.}
+	\label{fig:nongr_waveform}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Test of the No hair theorem}\label{ssec:nohairtheorem}
+
+Finally, we provide a simple demonstration of a test of the no-hair theorem using our model. As described in the introduction, any test of the no-hair theorem of black holes would need to involve independent measurements of (at least) two different QNMs. We use a simulated GW signal from the SXS catalog CITE corresponding a non-spinning binary black hole with a mass-ratio $q=6$ (SXS:BBH:0166), rescaled to a total mass of $M=84 \Mo$. We choose an asymmetric system to increase the SNR in the higher modes. We also rescale the distance and orientation of the binary such that the total SNR of the signal in a network of three detectors, LIGO Hanford, Livingston and Virgo, is 75. The LIGO detectors are assumed to be in the ZDHP configuration as before, while the Virgo detector is assumed to be at design sensitivity CITE. Based on the LIGO-Virgo observations during O3a, such asymmetric and loud signals are no longer just a theoretical prediction but quite plausible at design sensitivities. Using the signal, we attempt to measure the QNM frequencies $(2,\pm 2)$ and $(3,\pm 3)$ modes together (Fig.~\ref{fig:nohair_sxs}). The fractional deviations in the estimates of the damping time and frequency of either mode is expected to be consistent with 0, as we indeed find in the left panel of Fig.~\ref{fig:nohair_sxs}. Consequently we find that the reconstructed quantities $(\fngr{220}, \taungr{220})$ and $(\fngr{330}, \taungr{330})$  are also consistent with the corresponding predictions for a BBH merger in GR. As a consequence, the information from these two independent measures correspond to a unique remnant object, which is completely described by its mass and spin angular momentum. For most of the events observed so far, the power in the $(3,\pm 3)$ has not been sufficient to measure it along with the $(2,\pm 2)$, or in fact, in its place. However, it might also be possible to combine information from multiple observation, as is likely over the coming few years of gravitational wave astronomy with the LIGO-Virgo detectors, to obtain meaningful constraints on the $(3,\pm 3)$ and other sub-dominant QNMs.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{figures/nohair_sxs_0166_placeholder.png}	
+	\caption{\textcolor{red}{DEMO FIGURE; RUN ONGOING} Posterior probability distribution on the fractional deviations (left panel) and the reconstructed (right panel) frequency and damping time of the $(2,\pm 2)$ (blue curves) and $(3,\pm 3)$ (red curves) respectively, for a numerical relativity signal corresponding to a BBH merger of $q=6$,  $M=84 \Mo$ and SNR $75$. The plus signs mark the GR predictions.}
 	\label{fig:nohair_sxs}
-	\caption{SXS:BBH:0166. 220/330 measurement}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\iffalse
-\abhi{As part of review we had developed the infrastructure to make non-GR waveforms using pSEOBNRv4HM, and running LALInference on it. We had specifically chosen an injection with domega220 = dtau220  = 0.5 in zero-noise, and successfully recovered those frequencies thus demonstrating the robustness of the method in detecting deviations from GR.}
-\fi
-
-\subsection{Simulations using nonGR signals}
-
-To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger \abhi{be more specific}, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $d\omega =d\tau = 0.5$. In other words, we assume that the frequency and damping time of our nonGR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $\{d\omega,d\tau\}$ or equivalently $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ (dashed lines in Fig.\ref{fig:gr_simulation})) are consistent with the corresponding the values of the injection parameters, indicated by plus signs \abhi{add markers in effective quantity plots}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
-	\includegraphics[width=0.5\textwidth]{figures/modGR_waveforms.png}\label{fig:nongr_waveform}
-	\caption{NonGR waveforms}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Results on actual LIGO-Virgo results}
 
-The LIGO-Virgo Collaboration recently released their testing GR catalog containing results of this test for all events observed during the first half of O3 CITE, which passed a threshold for the total detector frame mass > XX and SNRs in the pre- and post-merger regions to be atleast YY. For reasons of computational expense the analyses of the relevant events during the LIGO-Virgo's first and second observing runs could not be included in the catalog, and are being presented here for the first time. We conduct analysis on the 5 relevant events that pass the above thresholds from the O1-O2 catalog CITE: GW150914, GW170104, GW170729, GW170814 and GW170823 \abhi{what about GW170809?}. Out of these, the analysis of GW170814 and GW170823 return uninformative posteriors. This is because of an insufficient SNR In the post-merger signal for these two events. For GW170814, this is because the total mass is slightly lower than the rest, thus coalescing in the region of the detector bandwidth dominated by shot-noise, while in the case of GW170823 the overall SNR of the entire signal is too low to reliably estimate $\{d\omega,d\tau\}$. For the three remaining signals, GW150914, GW170104 and GW170729, we provide the posterior distributions in $\{d\omega,d\tau\}$ in the top panel of Fig.\ref{fig:o1o2_events}. We also reconstruct the effective QNM parameters, $(f_{220}^{\text{eff}}, \tau _{220}^{\text{eff}})$ which are tabulated in Table \ref{tab:qnm_o1o2_results}.
+The LIGO-Virgo Collaboration recently released their testing GR catalogue containing results of this test for all events observed during the first half of O3 CITE, which passed a threshold for the total detector frame mass $\geq 50 \Mo$ and SNRs in the pre- and post-merger regions $\geq 8$\abhi{confirm}.The pre- and post-merger regions of the signal are identified as the power in the frequency content of the signal before and after the signal reaches peak amplitude, as determined by the maximum likelihood parameter estimation template. We restricted ourselves to the high-mass events which are expected to be merger-ringdown dominated. However, since our method relies on doing a parameter estimation on the entire inspiral-merger-ringdown signal, we require the SNR to be beyond a certain threshold throughout the signal for reliable parameter estimation of the initial and final quantities. Fig.~\ref{fig:o1o2_events} contains three events from O3a, GW190519\_ 153544, GW190521\_ 074359, GW190910\_ 112807.
 
-Among all GW signals detected so far, GW150914 is unique in it's loudness, mass as well as the clarity of the signal, leading to the first, and to date, best attempt in measuring the QNM frequencies CITE. The bottom panel of Fig.\ref{fig:o1o2_events} compares the results we obtain for GW150914 with previously published LIGO-Virgo results using a damped-sinusoid method, as well as the measurement reported using a non-spinning model in \paperone. The damped-sinusoid model assumed specific cutoff times (indicated in the curves on the bottom panel of Fig.\ref{fig:o1o2_events}) after the time corresponding to the peak amplitude as predicted by the best-fitting GR template waveform. Increasing time, decreasing SNR, wider posteriors, less-precise measurement. Compared to that we see when we incorporate the complete IMR version of the test, we utilise more SNR leading to tighter constraints.
+For the first time, in this paper, we present results on the relevant events from LIGO-Virgo's first and second observing runs, alongside the above events. Applying the same thresholds as above, we find three additional events which could be included in the analysis: GW150914, GW170104, GW170729 \abhi{would need to confirm the thresholds again, and see if GW170809 qualifies}. Regarding the other two high-mass events, GW170814 and GW170823 do not satisfy the SNR thresholds. For the three relevant signals, GW150914, GW170104 and GW170729, we provide the posterior distributions in $(\df{220}, \dtau{220})$ in Fig.\ref{fig:o1o2_events}. We also reconstruct the effective QNM parameters, $(\fngr{220}, \taungr{220})$ which are tabulated in Table~\ref{tab:qnm_o1o2_results}. 
+
+Among all GW signals detected so far, GW150914 is unique in its loudness, mass as well as the clarity of the signal, leading to the first, and to date, best attempt in measuring the QNM frequencies CITE. The bottom panel of Fig.\ref{fig:o1o2_events} compares the results we obtain for GW150914 with previously published LIGO-Virgo results using a damped-sinusoid method, as well as the measurement reported using a non-spinning model in \paperone. The damped-sinusoid model assumed specific cutoff times (indicated in the curves on the bottom panel of Fig.\ref{fig:o1o2_events}) after the time corresponding to the peak amplitude as predicted by the best-fitting GR template waveform. Increasing time, decreasing SNR, wider posteriors, less-precise measurement. Compared to that we see when we incorporate the complete IMR version of the test, we utilise more SNR leading to tighter constraints.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O1-O2 events
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
-	\includegraphics[width=0.4\textwidth]{figures/O1O2_realevents.png}
-	\includegraphics[width=0.4\textwidth]{figures/GW150914.png}
-	\caption{O1-O2 analysis}\label{fig:o1o2_events}
+\begin{figure}[h!]
+	\includegraphics[width=0.5\textwidth]{figures/O1O2_realevents.pdf}
+	%\includegraphics[width=0.4\textwidth]{figures/GW150914.png}
+	\caption{The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ and their corresponding one-dimensional marginalized posterior distributions. We also plot the joint probability distribution obtained by multiplying the likelihoods of the $\{\df{220},\dtau{220}\}$ (black dashed line) \abhi{need to compute the joint likelihood. currently contains the hierarchical contour from the O3a TGR paper}}
+	\label{fig:o1o2_events}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GW150914
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!]
+	\includegraphics[width=0.4\textwidth]{figures/GW150914.png}
+	\caption{The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ and their corresponding one-dimensional marginalized posterior distributions. We also plot the joint probability distribution obtained by multiplying the likelihoods of the $\{\df{220},\dtau{220}\}$ (black dashed line) \abhi{need to compute the joint likelihood. currently contains the hierarchical contour from the O3a TGR paper}}
+	\label{fig:GW150914_real}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Finally, if we assume that the fractional deviations $(\df{220}, \dtau{220})$ take the same values in multiple events, we can assume the posterior of one event to be the prior for the next, and obtain a joint posterior probability distribution. For $N$ observations, where $P_j(\df{220}, \dtau{220} | d_j)$ is the posterior for the $j-th$ observation corresponding to the data set $d_j$, $j=1...N$, the joint posterior is given by:
+\begin{equation}
+P(\df{220}, \dtau{220} | \{d_j\}) = P(\df{220}, \dtau{220}) \prod _{j=1}^N \frac{P(\df{220}, \dtau{220} | d_j) }{P(\df{220}, \dtau{220})}
+\end{equation}
+where $P(\df{220}, \dtau{220})$ is the prior on $(\df{220}, \dtau{220})$. However, since we assume the prior on $(\df{220}, \dtau{220})$ to be flat or uniform, the joint posterior is equal to the joint likelihood.
+
+We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as the corresponding one-dimensional marginalised distributions as black dashed lines in Fig.~\ref{fig:o1o2_events}. These are the strongest constraints on possible deviations in the measurement of $(\df{220}, \dtau{220})$ to date using our method. \abhi{perhaps show 2 joint posteriors: only O3a and O3a+O1-O2 to explicitly show the tightening of the joint constraints by adding the O1-O2 events}
+
+\begin{table}
+\begin{center}
 \begin{tabular}{llllllll}
 \toprule
-Event & \multicolumn{3}{c}{Redshifted} & \hphantom{X} & \multicolumn{3}{c}{Redshifted} \\
-& \multicolumn{3}{c}{frequency [Hz]} & \hphantom{X} & \multicolumn{3}{c}{damping time [ms]} \\[0.075cm]
+Event & \multicolumn{2}{c}{Redshifted} & \hphantom{X} & \multicolumn{2}{c}{Redshifted} \\
+& \multicolumn{2}{c}{frequency [Hz]} & \hphantom{X} & \multicolumn{2}{c}{damping time [ms]} \\[0.075cm]
 \cline{2-4}
 \cline{6-8}
-& IMR & DS & pSEOB & \hphantom{X} & IMR & DS & pSEOB \\
+& IMR  & pSEOB & \hphantom{X} & IMR  & pSEOB \\
 \midrule
 
 GW150914 &
 $249^{+9}_{-7}$ &
-$247^{+14}_{-16}$ &
 $-$ &
 \hphantom{X} &
 $4.1^{+0.3}_{-0.2}$ &
-$4.8^{+3.7}_{-1.9}$ &
 $-$
 \\[0.075cm]
 
 GW170104 &
 $286^{+16}_{-27}$ &
-$228^{+71}_{-102}$ &
 $-$ &
 \hphantom{X} &
 $3.5^{+0.4}_{-0.3}$ &
-$3.6^{+36.2}_{-2.1}$ &
 $-$
 \\[0.075cm]
 
 GW170729 &
 $161^{+13}_{-14}$ &
-$148^{+11}_{-11}$ &
 $-$ &
 \hphantom{X} &
 $7.8^{+1.8}_{-1.5}$ &
-$10.4^{+8.2}_{-4.7}$ &
-$-$
-\\[0.075cm]
-
-GW170814 &
-$295^{+13}_{-12}$ &
-$527^{+340}_{-332}$ &
-$-$ &
-\hphantom{X} &
-$3.7^{+0.3}_{-0.2}$ &
-$25.1^{+22.2}_{-19.0}$ &
-$-$
-\\[0.075cm]
-
-GW170823 &
-$199^{+14}_{-16}$ &
-$222^{+664}_{-62}$ &
-$-$ &
-\hphantom{X} &
-$5.4^{+1.0}_{-0.6}$ &
-$13.4^{+31.8}_{-9.8}$ &
 $-$
 \\[0.075cm]
 
 \bottomrule
-\end{tabular}\label{tab:qnm_o1o2_results}
+\end{tabular}
+\caption{}
+\label{tab:qnm_o1o2_results}
+\end{center}
+\end{table}
 
-\subsection{Results on noise systematics study}
+\section{Discussion}\label{sec:discussion}
+
+\iffalse
+\abhi{A comparison with pyRING}
+\abhi{damped sinusoid results}
+\fi
+
+\pagebreak
+
+\appendix
+\section{Study of noise syetematics on ringdown measurements}
 
 \iffalse
 \abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
@@ -389,7 +436,7 @@ In order to investigate the
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[H]
+\begin{figure}
 	\includegraphics[width=0.4\textwidth]{figures/S190521g_swinjs.png}
 	\caption{a single figure for both Gaussian and Real noise injections, color coded, to save space}\label{fig:21g_systematics}
 \end{figure}
@@ -398,13 +445,6 @@ In order to investigate the
 
 We injected NRSur7dq4 signal using the MaxL parameters from EXP30, in 2.5 hours of data surrounding the event at: t0-1.5 hours, t0-1., t0-0.5, t0+0.5, t0+1. For 3 of the 5 noise realisations, corresponding to t0-1 hour, t0+0.5 hours, and t0+1.0 hour we recover a damping time similar to the actual event, whereas for a third case, t0-0.5 hours, we obtain a damping time consistent at the 90\% credible interval (bottom panel of FIg.\ref{fig:21g_systematics}). L1-SNR goes down by more than 3 in some runs (maximum L1-SNR 12, minimum 9), indicative of how the noise variability is strongly affecting the recovered parameters. For some injections the mass ratio is biased, although final spin (most sensitive to mass ratio) is not affected much.  domega varies quite a lot among runs, instead dtau seems well behaved around zero. Effective frequency is a stable parameter (always well measured), while effective tau is much more sensitive to the noise configuration.  
 
-
-\section{Discussion}\label{sec:discussion}
-
-\iffalse
-\abhi{A comparison with pyRING}
-\abhi{damped sinusoid results}
-\fi
 
 %
 \bibliographystyle{apsrev}
