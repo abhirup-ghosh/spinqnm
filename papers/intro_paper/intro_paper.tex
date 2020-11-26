@@ -417,6 +417,10 @@ $-$
 
 \section{Discussion}\label{sec:discussion}
 
+\section*{ACKNOWLEDGEMENTS}\label{sec:acknowledgements}
+LIGO Clusters
+
+
 \iffalse
 \abhi{A comparison with pyRING}
 \abhi{damped sinusoid results}
@@ -425,13 +429,15 @@ $-$
 \pagebreak
 
 \appendix
-\section{Study of noise syetematics on ringdown measurements}\label{sec:noise_systematics}
+\section{Study of syetematics on ringdown measurements}\label{sec:noise_systematics}
 
 \iffalse
 \abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
 \fi
 
-In order to investigate the 
+In Section~\ref{sec:method}, we mentioned that the expression of the Bayesian likelihood function outlined in Eqs.~\ref{eq:likelihood} and \ref{eq:nwip} is only valid if the interferometric noise can be described as a stationary Gaussian process. LIGO-Virgo noise, however, frequently has non-stationary and/or non-Gaussian features, like glitches, PSD drift, etc, which can affect parameter inferences unless appropriately accounted for. 
+
+Here we demonstrate with an example, systematic biases likely originating from an incomplete understanding of the noise using the example of the GW190521. In Fig.~\ref{ig:o1o2_events} \abhi{include GW190521A in figure}, we find the estimates of the fractional deviations in the damping time, $\dtau{220}$ does not enclose the GR prediction at the 90 \% credible level, although the fractional deviation in the frequency $\df{220}$ is. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
