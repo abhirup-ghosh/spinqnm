@@ -1,0 +1,19 @@
+name: gwtc2-tgr
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3
+  - jupyterlab
+  - seaborn
+  - scipy
+  - qnm
+  - numpy
+  - corner
+  - nodejs
+  - ipywidgets
+  - h5py
+  - parse
+  - pandas
+  - jupyter_contrib_nbextensions
+  - pesummary=0.8
