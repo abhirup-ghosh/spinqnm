@@ -238,28 +238,6 @@ First, we demonstrate our method on GW signals from BBH systems that are well de
 
 We find, as one might expect, that the posterior distribution on the parameters describing fractional deviations in the frequency and damping time are consistent with zero (left panels of Fig.~\ref{fig:simulated_signal_GR}). One can then convert these fractional quantities into absolute quantities using the relations given in Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b}, and construct posterior distributions on these effective quantities, $(\fngr{220}, \taungr{220})$ (right panels of Fig.~\ref{fig:simulated_signal_GR}). In each of these cases, recovered posterior are consistent with the GR predictions (black solid lines).
 
-\iffalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table for Injections
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{ |c|c|c|c|c|c| }
- \hline
- Event & $m_1 (\Mo)$ &  $m_1 (\Mo)$ & $a_{1z}$ & $a_{2z}$ & SNR \\ 
- \hline
- GW150914 & 38.53 & 33.40 & 0.0035 & -0.0440 & 25 \\ \label{tab:injection_values}
- GW190521 & 152.20 & 120.41 & 0.0230 & -0.3864 & 14 \\ 
- \hline
-\end{tabular}
-\caption{Details of the injection parameters, chosen to be similar to the actual GW events}
-\label{tab:injection_values}
-\end{center}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fi
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table for Injections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,12 +262,14 @@ We find, as one might expect, that the posterior distribution on the parameters 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Simulated siganl: GR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h!]
-	\includegraphics[width=0.25\textwidth]{figures/GW150914_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.25\textwidth]{figures/GW150914_simulated_signal_0p0_f220_tau220.png}	
-	\includegraphics[width=0.25\textwidth]{figures/GW190521_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.25\textwidth]{figures/GW190521_simulated_signal_0p0_f220_tau220.png}		
+\begin{figure*}%[h!]
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_f220_tau220.png}	
+	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_f220_tau220.png}		
 	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalised distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values.}
 	\label{fig:simulated_signal_GR}
-\end{figure}
+\end{center}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -312,12 +292,14 @@ We additionally investigate the effects of erroneously assuming that an underlyi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Simulated siganl: non-GR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[h!]
-	\includegraphics[width=0.25\textwidth]{figures/GW150914_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.25\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_fngrtaungr.png}	
-	\includegraphics[width=0.25\textwidth]{figures/GW190521_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.25\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_fngrtaungr.png}
+\begin{figure*}%[h!]
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_fngrtaungr.png}	
+	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_fngrtaungr.png}
 	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for modGR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The underlying signal has a deviation, $\df{220} = \dtau{220} = XX$. The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalised distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. In the right panels, we additionally show measurements using a GR ($SEOB$) waveform, for GW150914 (grey) and GW190521 (pink), The measurements are visibly biased.}
 	\label{fig:simulated_signal_nonGR}
-\end{figure}
+\end{center}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -426,19 +408,8 @@ $-$
 LIGO Clusters
 
 
-\iffalse
-\abhi{A comparison with pyRING}
-\abhi{damped sinusoid results}
-\fi
-
-\pagebreak
-
 \appendix
 \section{Study of syetematics on ringdown measurements}\label{sec:noise_systematics}
-
-\iffalse
-\abhi{A small summary of the noise systematics study that was done for S190521g to show that the deviations seen were consistent with systematics due to noise. The study include 2 separate sections: in Gaussian noise, and in real LIGO-Virgo noise immediately adjacent to the actual event.}
-\fi
 
 In Section~\ref{sec:method}, we mentioned that the expression of the Bayesian likelihood function outlined in Eqs.~\ref{eq:likelihood} and \ref{eq:nwip} is only valid if the interferometric noise can be described as a stationary Gaussian process. LIGO-Virgo noise, however, frequently has non-stationary and/or non-Gaussian features, for example glitches, which can affect parameter inferences unless appropriately accounted for. Here we demonstrate with an example of a GW190521-like simulated signal, systematic biases likely originating from an incomplete understanding of the noise. 
 
