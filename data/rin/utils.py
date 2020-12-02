@@ -777,4 +777,56 @@ def kdeplot_2d_clevels(xs, ys, levels=11, **kwargs):
     ax = kwargs.pop('ax', gca())
 
     ax.contour(XS, YS, ZS, levels=l, **kwargs)
+    
+def kdeplot_2d_clevels_contourf(xs, ys, levels=11, **kwargs):
+    """ Plot contours at specified credible levels.
+
+    Arguments
+    ---------
+    xs: array
+        samples of the first variable.
+    ys: array
+        samples of the second variable, drawn jointly with `xs`.
+    levels: float, array
+        if float, interpreted as number of credible levels to be equally 
+        spaced between (0, 1); if array, interpreted as list of credible
+        levels.
+    xlow: float
+        lower bound for abscissa passed to Bounded_2d_kde (optional).
+    xigh: float
+        upper bound for abscissa passed to Bounded_2d_kde (optional).
+    ylow: float
+        lower bound for ordinate passed to Bounded_2d_kde (optional).
+    yhigh: float
+        upper bound for ordinate passed to Bounded_2d_kde (optional).
+    ax: Axes
+        matplotlib axes on which to plot (optional).
+    kwargs:
+        additional arguments passed to plt.contour().
+    """
+    try:
+        len(levels)
+        f = 1 - np.array(levels)
+    except TypeError:
+        f = linspace(0, 1, levels+2)[1:-1]
+    kde_kws = {k: kwargs.pop(k, None) for k in ['xlow', 'xhigh', 'ylow', 'yhigh']}
+    k = Bounded_2d_kde(np.column_stack((xs, ys)), **kde_kws)
+    size = max(10*(len(f)+2), 500)
+    c = np.random.choice(len(xs), size=size)
+    p = k(np.column_stack((xs[c], ys[c])))
+    i = argsort(p)
+    l = array([p[i[int(round(ff*len(i)))]] for ff in f])
+
+    Dx = np.percentile(xs, 99) - np.percentile(xs, 1)
+    Dy = np.percentile(ys, 99) - np.percentile(ys, 1)
+
+    x = linspace(np.percentile(xs, 1)-0.1*Dx, np.percentile(xs, 99)+0.1*Dx, 128)
+    y = linspace(np.percentile(ys, 1)-0.1*Dy, np.percentile(ys, 99)+0.1*Dy, 128)
+
+    XS, YS = meshgrid(x, y, indexing='ij')
+    ZS = k(np.column_stack((XS.flatten(), YS.flatten()))).reshape(XS.shape)
+
+    ax = kwargs.pop('ax', gca())
+
+    ax.contourf(XS, YS, ZS, levels=l, **kwargs)    
 
