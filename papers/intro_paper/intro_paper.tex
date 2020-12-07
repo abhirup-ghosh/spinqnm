@@ -79,7 +79,7 @@
 
 \begin{document}
 
-\title{Black hole symphony orchestra: Spectroscopy using gravitational wave signals from binary black hole coalescences}
+\title{Black hole spectroscopy using a complete gravitational wave signal from a binary black coalescence}
 
 \author{Abhirup Ghosh}
 \affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), D-14476 Potsdam-Golm, Germany}
@@ -277,13 +277,13 @@ We find, as one might expect, that the posterior distribution on the parameters 
 
 To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $\df{220} = \dtau{220} = 0.5$ \abhi{deviations=0.1 runs are ongoing and almost done}. In other words, we assume that the frequency and damping time of our non-GR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $(\df{220}, \dtau{220})$ or equivalently $(\fngr{220}, \taungr{220})$ (Fig.~\ref{simulated_signal_nonGR}) are consistent with the corresponding the values of the injection parameters, indicated by the black solid lines. 
 
-We additionally investigate the effects of erroneously assuming that an underlying modified GR signal can be well-described using GR. We do this by estimating the parameters of our modified GR signals using the GR waveform model $\SEOB$ instead of the parametrised $\pSEOB$. In such cases, we run the risk of biased parameter estimates due to an incomplete understanding of the underlying signal. The resulting posterior probability distributions are shown in the right panels of Fig.~\ref{simulated_signal_nonGR} by the pink (GW150914) and grey (GW190521) curves. The results are interesting and distinctly different for the two events. For the GW150914-like modified GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (Fig.~\ref{simulated_signal_nonGR} top right panel) are consistent with the $(\fgr{220}, \taugr{220})$ measurements for a signal with no deviations (Fig.~\ref{simulated_signal_GR} top right panel). In other words, if the actual signal had deviations as large as the 50 \% of the GR prediction, the analysis with $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like modified GR signal, a simple GR analysis of the modified GR signal would have yielded measurements distinctly different from either of the two parametrised estimates: with and without deviations. The fact that the GW190521-like signal has a much lower SNR than GW150914 might be a possible reason for the the measurement of the final quantities to be more susceptible to noise. A more detailed comparison of the other parameters, like the masses and spins, between an $pSEOB$ and an $SEOB$ measurement of a modified GR signal is shown in the appendix (Fig.~\ref{fig:gr_ngr_comparison}).
+We additionally investigate the effects of erroneously assuming that an underlying modified GR signal can be well-described using GR. We do this by estimating the parameters of our modified GR signals using the GR waveform model $\SEOB$ instead of the parametrised $\pSEOB$. In such cases, we run the risk of biased parameter estimates due to an incomplete understanding of the underlying signal. The resulting posterior probability distributions are shown in the right panels of Fig.~\ref{simulated_signal_nonGR} by the pink (GW150914) and grey (GW190521) curves. The results are interesting and distinctly different for the two events. For the GW150914-like modified GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (Fig.~\ref{simulated_signal_nonGR} top right panel) are consistent with the $(\fgr{220}, \taugr{220})$ measurements for a signal with no deviations (Fig.~\ref{simulated_signal_GR} top right panel). In other words, if the actual signal had deviations as large as the 50 \% of the GR prediction, the analysis with $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like modified GR signal, a simple GR analysis of the modified GR signal would have yielded measurements distinctly different from either of the two parametrised estimates: with and without deviations. The fact that the GW190521-like signal has a much lower SNR than GW150914 might be a possible reason for the the measurement of the final quantities to be more susceptible to noise. A more detailed comparison of the other parameters, like the masses and spins, between an $pSEOB$ and an $SEOB$ measurement of a modified GR signal is shown in Fig.~\ref{fig:gr_ngr_comparison}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{figures/modGR_waveforms_amplitudephase.png}
-	\caption{\textcolor{red}{FINAL RESULT} Top panel: The `+'--polarisation of the gravitational waveform $h_+(t)$ from a GW150914-like event where the post-merger is described by GR (solid orange lines), i.e., $\df{220} = \dtau{220} = 0$, and where the merger-ringdown is modified (dashed grey lines), i.e., $\df{220} = \dtau{220} = 0.5$. Bottom panel: Comparison of the evolution of the amplitude (left) and phase (right) for the GR and modified GR signal.}
+	\caption{\textcolor{red}{FINAL RESULT} Top panel: The `+'--polarisation of the gravitational waveform $h_+(t)$ from a GW150914-like event where the post-merger is described by GR (solid orange lines), i.e., $\df{220} = \dtau{220} = 0$, and where the merger-ringdown is modified (dashed grey lines), i.e., $\df{220} = \dtau{220} = 0.5$. Bottom panel: Comparison of the evolution of the amplitude (left) and instantaneous frequency (right) for the GR and modified GR signal.}
 	\label{fig:nongr_waveform}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -302,6 +302,21 @@ We additionally investigate the effects of erroneously assuming that an underlyi
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% modified GR signal: GR vs nonGR recovery comparison
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}%[h!]
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_m1m2.png}
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_a1za2z.png}	
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_fgrtaugr.png}
+	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_Mfaf.png}
+	\caption{\textcolor{red}{FINAL RESULT} Comparison of the recovered parameters when the underlying signal is assumed to be a GR signal or a modified GR signal. In both cases, the actual underlying signal is a modified GR signal with parameters similar to GW150914 (left panels) and GW190521 (right panels) respectively. The initial parameters are given in Table~\ref{tab:injection_values}, with the QNM parameters defined by $\df{220} = \dtau{220} = 0.5$. For the GW150914 (GW190521) contours, the $SEOB$ and $pSEOB$ recoveries are indicated by blue (red) and pink (grey) curves respectively. The panels (from top to bottom) show the recoveries in (detector-frame) initial masses (first row), z-components of dimensionless initial spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f, a_f$) from the frequency and damping time (obtained by inverting the Berti fits) CITE}
+	\label{fig:gr_ngr_comparison}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Test of the No hair theorem}\label{ssec:nohairtheorem}
 
@@ -430,23 +445,6 @@ We use as our underlying GR signal, an NR waveform (using the waveform model \te
 The underlying NR signal is expected to be precessing, and since the $pSEOB$ model is built on an aligned-spin GR model, a lack of precession could bias measurements. We explore effects of possible waveform systematics by injecting the signal is coloured Gaussian noise. In this case, since the understanding of the noise realisations is complete, any measurement biases could only arise from incomplete understanding of the underlying signal. We find (grey curves in Fig.\ref{fig:21g_systematics}) our results to be consistent with the prediction thus ruling out a lack of precession to be a likely cause for the bias in the damping time measurement of the actual signal.
 
 We subsequently study the effects of possible noise systematics by injecting the same \texttt{NRSur7dq4} GW signal in different realisations of actual interferometric noise around the real event GW190521. Since the PSDs of the GW detectors are expected to vary over longer durations of time, we select 5 different noise realisations over a segment of 2.5 hours of coincident data in both the LIGO detectors centred at the time of the actual event. The noise properties in this chunk of data, and consequently for all 5 simulated signals, is expected to be the closest to that for the actual event. The results are indicated by pink curves in Fig.~\ref{fig:21g_systematics}. For 3 of the 5 noise realisations, corresponding to $t_0-1$ hour, $t_0+0.5$ hours, and $t_0+1$ hour we recover a damping time similar to the actual event, where $t_0$ is the GPS time of the actual event. For the other two noise realisations, we estimate the consistent damping time but an off-set frequency, while the fifth noise realisation is consistent with both predictions. The SNR in the L1 Livingston detector goes down by more than 3 in some runs, indicative of how a variation in the noise strongly affects our ability to infer parameters. This also seems to indicate that a bias in the measurements of the damping time for the actual event can be unaccounted noise systematics.
-
-\section{Correlations between GR and non-GR parameters}\label{sec:correlations}
-\abhi{Do we want a separate appendix to discuss Fig.~\ref{fig:gr_ngr_comparison}? Or is the reference in the main text currently, sufficient?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% modified GR signal: GR vs nonGR recovery comparison
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[h!]
-	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_m1m2.png}
-	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_a1za2z.png}	
-	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_fgrtaugr.png}
-	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_Mfaf.png}
-	\caption{\textcolor{red}{FINAL RESULT} Comparison of the recovered parameters when the underlying signal is assumed to be a GR signal or a modified GR signal. In both cases, the actual underlying signal is a modified GR signal with parameters similar to GW150914 (left panels) and GW190521 (right panels) respectively. The initial parameters are given in Table~\ref{tab:injection_values}, with the QNM parameters defined by $\df{220} = \dtau{220} = 0.5$. For the GW150914 (GW190521) contours, the $SEOB$ and $pSEOB$ recoveries are indicated by blue (red) and pink (grey) curves respectively. The panels (from top to bottom) show the recoveries in (detector-frame) initial masses (first row), z-components of dimensionless initial spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f, a_f$) from the frequency and damping time (obtained by inverting the Berti fits) CITE}
-	\label{fig:gr_ngr_comparison}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %
