@@ -1,5 +1,5 @@
-\documentclass[twocolumn,prd,superscriptaddress,amsfonts,amssymb,amsmath,preprintnumbers]{revtex4-1}
-
+%\documentclass[twocolumn,prd,superscriptaddress,amsfonts,amssymb,amsmath,preprintnumbers,nofootinbib]{revtex4-1}
+\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath]{revtex4-1}
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -56,7 +56,7 @@
 \newcommand{\bxigr}{\bm{\xi}_{\text{GR}}}
 \newcommand{\bxingr}{\bm{\xi}_{\text{nGR}}}
 \newcommand{\bzeta}{\bm{\zeta}}
-\newcommand{\bs}[1]{\bm{\vec{s}_{#1}}}
+\newcommand{\bs}[1]{\bm{\vec{S}_{#1}}}
 \newcommand{\Mo}{M_{\odot}}
 \newcommand{\FFe}{\mathrm{FF}_\mathrm{eff}}
 \newcommand{\FF}{\mathrm{FF}}
@@ -125,8 +125,7 @@
   that were not considered \sout{for} \ab{in}  the initial \ab{LIGO-Virgo} analysis. Finally, the
   joint measurements of the fractional deviations in the frequency,
   $\df{220} = XX \pm$ and $\dtau{220} = YY \pm$ are the strongest
-  constraints yet using this
-  method. %Finally, we also present a investigation into possible systematic effects due to an incomplete understanding of the interferometric noise around the GW event on the results of this test.
+  constraints yet using this method. %Finally, we also present a investigation into possible systematic effects due to an incomplete understanding of the interferometric noise around the GW event on the results of this test.
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -166,26 +165,27 @@ gravity}~\citep{LSC_2016grtests,GW170817_TGR,gwtc1_tgr}. In GR\sout{, a CBC
 involving two BHs (}a binary black hole (BBH) system\sout{)} is described \sout{in} \ab{by}
 three \sout{distinct} phases: an early \textit{inspiral}, where the two
 compact objects spiral in \ab{loosing energy because of the emission of GWs} \sout{and \textit{plunge} due to a back-reaction
-of gravitational-wave-emission}, a \textit{merger} marked by the
+of GW-emission}, a \textit{merger} marked by the
 formation of a\sout{n} \ab{common} apparent horizon~\citep{NRpaper}, and a \sout{late-time} 
 \textit{ringdown}, \sout{where} \ab{during which} the newly formed remnant object settles down
-to a \sout{stable} Kerr \ab{BH} \sout{state through the emission of} \ab{emitting} an exponentially damped
-quasi-normal-mode (QNM) spectrum of gravitational
-radiation~\citep{vishu,earlyqnmpapers}.
+to a \sout{stable} Kerr \ab{BH} \sout{state through the emission of} \ab{emitting} \sout{an exponentially damped} 
+quasi-normal-modes (QNMs) \sout{spectrum of gravitational
+radiation}~\citep{vishu,earlyqnmpapers} \ab{(i.e., damped oscillations with specific, discrete 
+frequencies and decay times)}.
 
 The LIGO-Virgo collaborations \ab{have released companion papers \cite{}} detailing their \sout{latest} results 
-of tests of GR using \sout{events} \ab{GW150914 \cite{} and 
-the first two transient catalogues (TC) (i.e., GWTC-1\cite{}  and GWTC-2 \cite{})}. 
+of tests of GR  \sout{using events} \ab{for GW150914} \cite{} and \ab{for several GW events of} 
+the \sout{first} two transient catalogues (TC): GWTC-1\cite{}  and GWTC-2 \cite{}. 
 The results include tests of GW generation and source dynamics, where bounds are placed on
-parametrized deviations in the post-Newtonian \ab{(PN)} coefficients describing
+parameterized deviations in the post-Newtonian \ab{(PN)} coefficients describing
 the early inspiral~\citep{earlydevelopmentpapers}, and
 phenomenological coefficients describing the intermediate (plunge) and
 merger regimes of coalescence~\citep{TIGERmethodspapers}; tests of GW
 propagation, which assume a generalized dispersion relation and place
-upper bounds on the Compton wavelength and consequently, the mass of
+upper bounds on the Compton wavelength and, consequently, the mass of
 the graviton~\citep{gw170104,samajdar2017projected}, and tests of the
 polarization of gravitational radiation using a
-multi-GW-detector network~\citep{gw170814,isi2017probing}. The \ab{GWTC-1/2} paper\ab{s} also 
+multi--GW-detector network~\citep{gw170814,isi2017probing}. The \ab{GWTC-1/2} paper\ab{s} also 
 check\sout{s} for consistency between different portions of the signal using estimates
 \sout{of} \ab{for the} predicted mass and spin of the remnant
 object~\citep{Ghosh:2016xx,Ghosh:2017gfp,LSC_2016grtests}, and
@@ -194,7 +194,7 @@ noise~\citep{Ghonge:2020suv,gwtc1_tgr}. None of these tests report any
 departure from the predictions of GR.
 
 \ab{The first paper on tests of GR by the LIGO Collaboration~\cite{} provided us with the 
-first measurement of the dominant damped-sinusoidal signal in the ringdown stage of a BBH 
+first measurement of the dominant damped-oscillation signal in the ringdown stage of a BBH 
 coalescence.} The LIGO-Virgo O3a testing GR paper~\cite{} \ab{has recently reported} 
 \sout{also details results on tests} \ab{a comprehensive analysis of the properties of the 
 remnant object, including the ringdown stage, for tens of GW events.}   
@@ -204,7 +204,7 @@ states that an (electrically neutral) astrophysical BH is completely
 described by two observables: mass and spin angular momentum. One
 consequence of the no-hair conjecture is that the (complex) QNM
 frequencies of gravitational radiation emitted by a perturbed isolated
-BH is uniquely determined by its mass and spin angular momentum. Hence
+BH \ab{are} \sout{is} uniquely determined by its mass and spin angular momentum. Hence
 a test of the no-hair conjecture would involve checking for
 consistency between estimates of mass and spin of the remnant object
 across multiple QNM frequencies~\cite{Dreyer:2003bv}. An inconsistency would either
@@ -217,7 +217,7 @@ overtones in Refs.~\citep{Brito:2018rfr,Giesler:2019uxc,Isi:2019aib,Bhagwat:2019
 of the late-time \sout{signal} \ab{waveform} with a single QNM is a test of the ringdown of
 a BBH coalescence, but not necessarily a test of the no-hair
 conjecture, which requires the measurement of (at least) two QNMs (BH
-spectroscopy), and checking for consistency between them~\cite{Dreyer:2003bv,Berti:2005ys}. Recent work
+spectroscopy), and \sout{checking for} consistency between them~\cite{Dreyer:2003bv,Berti:2005ys}. Recent work
 in that direction \comment{AB: which direction? There are papers by Nikhef group and 
 also Brito et al., and many others that have investigated BH spectroscopy.} include~\citep{Carullo:2018gah,Carullo:2019flw,Bhagwat:2019bwv}. The
 nature of the remnant object has also been explored through tests of
@@ -228,7 +228,7 @@ signal~\citep{Nielsen:2018lkf,Tsang:2019zra,Lo:2018sep,Abedi:2018npz,Abedi:2020s
 of these tests have found evidence for non-BH nature of the remnant
 object (as described in GR) in LIGO-Virgo BBH observations.
 
-\comment{AB: I don't understand the next senetnce, it looks to me out of context.} 
+\comment{AB: I don't understand the next sentence, it looks to me out of context.} 
 Most of the tests mentioned above focus on analysing the post-merger
 or late-time ringdown signal in isolation. \sout{Second generation
 ground-based interferometric detectors like} \ab{Ground-based detectors, 
@@ -241,15 +241,15 @@ frequencies, leaving} \ab{at frequencies where the sensitivity is worse, leaving
 very little signal-to-noise ratio (SNR) in the
 post-merger signal. \comment{AB: This discussion about the starting time of the ringdown starts too abruptly, 
 and looks out of context and incomplete. Also, why are we citing only those papers? The matter 
-has a long history. There have been calibrations to NR of damped-sinusoid signals.} 
+has a long history. There have been calibrations to NR of damped- oscillation signals.} 
 The ringdown start time is not a clearly defined
 quantity and has been explored in detail
 in Ref.~\citep{Bhagwat:2017tkm}. In other
 works~\citep{Carullo:2018gah,Carullo:2019flw}, it has been left as a
 free parameter to be estimated directly from the data. Uncertainties
-in estimates of the ringdown start-time, as well as an overall lack of
+in estimates of the ringdown start-time, as well as, an overall lack of
 SNR in the post-merger signal, given typical sensitivities of
-ground-based detectors result in significant statistical uncertainties
+ground-based detectors, result in significant statistical uncertainties
 in the measurement of the QNM frequencies. 
 
 An independent approach to BH spectroscopy, based on the full-signal
@@ -266,25 +266,52 @@ definitions. While \paperone presented the method \ab{and tested it for }\sout{i
 non-spinning waveform model} \ab{non-spinning BBHs}, \ab{here} we extend the analysis to the \ab{more 
 realistic astrophysical} case in which BHs \ab{carry} spin\sout{s in the current paper}. \ab{Furthermore, 
 the IMR waveform model used in this paper is more accurate than what employed in \paperone, 
-because it contains more information from PN theory and it was calibrated to a much larger set 
-of numerical-relativity waveforms~\cite{Bohe:2016gbl}.}  All astrophysical BHs are expected to be spinning, 
-and ignoring effects of spin have been shown to introduce systematic biases in the measurement of the 
+because it contains higher-order corrections in PN theory and it was calibrated to a much larger set 
+of numerical-relativity (NR) waveforms~\cite{Bohe:2016gbl}.}  All astrophysical BHs are expected to be spinning, 
+and ignoring effects of spin has been shown to introduce systematic biases in the measurement of the 
 source properties \cite{paper_showing_systematics_from_ignoring_spin}.
 
-The rest of the paper is organized as follows. Section~\ref{sec:model} describes our parametrized IMR
-waveform model. In Sec.~\ref{sec:method}, we define our testing GR  framework in which we use that model 
-to measure the complex QNM frequencies within a Bayesian formalism. Then, in Sec.~\ref{sec:results}, 
+The rest of the paper is organized as follows. Section~\ref{sec:model} describes our parameterized IMR
+waveform model. In Sec.~\ref{sec:method}, we define our framework to test GR\ab{, notably how we can measure 
+complex QNM frequencies with our parameterized model within a Bayesian formalism}. Then, in Sec.~\ref{sec:results}, 
 we demonstrate our method on real GW events, as well as simulated signals. \ab{In particular, we analyze 
-the ... and constrain the QNM frequecies ...} Finally, we provide a summary of
-our results and discuss future developments in Sec.~\ref{sec:discussion}.
+the ... and constrain the QNM frequecies ... Finally, in Sec.~\ref{sec:discussion} we provide a summary of
+our results and discuss future developments.} 
 
 \section{Method}
 
-A GW signal from the (quasi-circular) coalescence of two BHs is completely described in GR by a fixed set of $15$ parameters, $\bxigr$. These can be grouped into the \emph{intrinsic} parameters: the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the initial binary and a reference time and phase $t_c, \phi_c$ respectively; and the \emph{extrinsic} parameters: the sky position of the binary ($\alpha$, $\delta$), the luminosity distance, $d_L$, and its orientation described through the inclination of the binary $\iota$ and its polarisation $\psi$. If the spins of the individual BHs are assumed to be aligned with the orbital angular momentum of the binary, then GW signal has a reduced dimensionality of $11$ parameters. The aligned-spin components are defined as: $a_{iz} = s_{iz}/m_i$, where $i=1,2$ for the two BHs.
+\comment{AB: In teh following, I will not use much the strike-out, but instead I will 
+bracket in color the text that I have changed.}
+
+A GW signal from the (quasi-circular) coalescence of two BHs is
+completely described in GR by a \sout{fixed set of} $15$ parameters,
+$\bxigr$. These can be grouped into the \emph{intrinsic} parameters:
+the masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the \ab{component 
+objects in the} \sout{initial} binary; and the 
+\emph{extrinsic} parameters: \ab{a reference time $t_c$ and phase 
+$\phi_c$,} the sky position of the binary ($\alpha$,
+$\delta$), the luminosity distance, $d_L$, and \ab{the binary's} orientation
+described through the inclination of the binary $\iota$ and its
+polarization $\psi$. \ab{We also introduce the total mass $M = m_1+m_2$, 
+and the (dimensionless) symmetric mass ratio $\nu = m_1m_2/M^2$}. 
+
+\ab{Here, we focus on BHs with spins aligned or anti-aligned 
+with the orbital angular momentum (henceforth, ``aligned-spin''). In this case,  
+the GW signal depends on $11$ parameters. We denote the 
+aligned-spin \ab{(dimensionless)} components as $\chi_{i} = |\vec{\bm{S}}_i|/m^2_i$, where $i=1,2$ for the two BHs.}
 
 \subsection{Waveform Model}\label{sec:model}
 
-As in \paperone, we use an IMR waveform model developed within the EOB formalism. However, in this work we extend the results of \paperone by using a waveform model for spinning, non-precessing BBHs. Namely we use as our baseline model the aligned-spin multipolar waveform developed in Ref.~\citep{Cotesta:2018fcv}. In addition to being calibrated to NR simulations, this model also uses information from BH perturbation theory for the merger and ringdown phases. Therefore this waveform model provides a very accurate and faithful semi-analytic description of the inspiral, merger and ringdown phases. Henceforth we will denote this model by $\SEOB$ for short.
+As in \paperone, we use an IMR waveform model developed within the effective-one-body (EOB) 
+formalism~\cite{}. \ab{However, whereas \paperone was limited to non-spinning multipolar waveforms, 
+here we use as our baseline model the aligned-spin multipolar waveform model 
+developed in Ref.~\citep{Cotesta:2018fcv}}. In addition to being
+calibrated to NR simulations, this model also uses information from BH
+perturbation theory for the merger and ringdown phases. \sout{Therefore this
+waveform model provides a very accurate and faithful semi-analytic
+description of the inspiral, merger and ringdown phases.} \ab{Henceforth we
+will denote this model by $\SEOB$ for short}~\footnote{\ab{In the LIGO Algorithm Library (LAL), this 
+waveform model is called {\tt SEOBNRv4HM}.}}.
 
 
 In the observer's frame, the GW polarizations can be written as 
@@ -293,13 +320,13 @@ In the observer's frame, the GW polarizations can be written as
 h_+(\iota,\varphi;t ) - i h_\times(\iota,\varphi;t) = \sum_{\ell, m} {}_{-\!2}Y_{\ell m}(\iota,\varphi)\, h_{\ell m}(t)\,,
 \end{equation}
 %
-where $\varphi$ is the azimuthal direction to the observer, ${}_{-\!2}Y_{\ell m}(\theta,\phi)$ are the $-2$ spin-weighted spherical harmonics. The $\SEOB$ model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes~\cite{Cotesta:2018fcv}. For each $(\ell, m)$, the inspiral-(plunge-)merger-ringdown $\SEOB$ waveform is schematically given by
+\comment{AB: there is a mismatch of notations for the parameters with respect to what was introduced above.}
+where $\varphi$ is the azimuthal direction to the observer, ${}_{-\!2}Y_{\ell m}(\theta,\varphi)$ are the $-2$ spin-weighted spherical harmonics. The $\SEOB$ model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes~\cite{Cotesta:2018fcv}. For each $(\ell, m)$, the inspiral-(plunge-)merger-ringdown $\SEOB$ waveform is schematically given by
 %
 \begin{equation}
 h_{\ell m}(t) = h_{\ell m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{\ell m} - t) + h_{\ell m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{match}^{\ell m})\,,
 \end{equation}
-where $\theta(t)$ is the Heaviside step function, $h_{\ell m}^\mathrm{insp-plunge}$ represents the inspiral-plunge part of the waveform, whereas $h_{\ell m}^\mathrm{merger-RD}$ denotes the merger-ringdown phase.   
-The merger-ringdown $\SEOB$ modes read~\citep{Bohe:2016gbl,Cotesta:2018fcv}
+where $\theta(t)$ is the Heaviside step function, $h_{\ell m}^\mathrm{insp-plunge}$ represents the inspiral-plunge part of the waveform, whereas $h_{\ell m}^\mathrm{merger-RD}$ denotes the merger-ringdown \ab{waveform, which reads~\citep{Bohe:2016gbl,Cotesta:2018fcv}}
 %
 \begin{equation}
 \label{RD}
@@ -320,15 +347,17 @@ The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are given b
 \end{equation}
 %
 where $ \phi_{\textrm{match}}^{\ell m}$ is the phase of the inspiral-plunge mode $(\ell, m)$ computed at $t = t_{\textrm{match}}^{\ell m}$. The coefficients $d_{1,c}^{\ell m}$ and $c_{i,c}^{\ell m}$ with $i = 1,2$
-are fixed by imposing that the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are of class $C^1$ at $t = t_{\textrm{match}}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge $\SEOB$ waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. This allows to write the coefficients $c_{i,c}^{\ell m}$ as~\cite{Cotesta:2018fcv}:
+are fixed by imposing that the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are of class $C^1$ at $t = t_{\textrm{match}}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge $\SEOB$ waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. This allows us to write the coefficients $c_{i,c}^{\ell m}$ as~\cite{Cotesta:2018fcv}:
 % in terms of $c_{1,f}^{\ell   m},\ c_{2,f}^{\ell m},\ \sigma^\textrm{R}_{\ell m},\ |h_{\ell    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell  m})|,\ \partial_t|h_{\ell    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m})|$ as
 \begin{align} 
+\label{c1}
 c_{1,c}^{\ell m} &= \frac{1}{c_{1,f}^{\ell
     m} \nu} \big[ \partial_t|h_{\ell
     m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m})| \nonumber \\
     &- \sigma^\textrm{R}_{\ell m} |h_{\ell
     m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
     m})|\big] \cosh^2{(c_{2,f}^{\ell m})}, \\
+\label{c2}
 c_{2,c}^{\ell m} &= -\frac{ |h_{\ell
     m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
     m})|}{\nu} + \frac{1}{c_{1,f}^{\ell
@@ -339,7 +368,8 @@ c_{2,c}^{\ell m} &= -\frac{ |h_{\ell
     m})|\big] \cosh{(c_{2,f}^{\ell m})}\sinh{(c_{2,f}^{\ell m})}, \\ \nonumber   
 \end{align}
 and $d_{1,c}^{\ell m}$ as
-\begin{align}    
+\begin{align}
+\label{d1}    
 d_{1,c}^{\ell m} &= \left[\omega_{\ell m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m}) -  \sigma^\textrm{I}_{\ell
       m}\right]\frac{1+ d_{2,f}^{\ell m}}{d_{1,f}^{\ell m}d_{2,f}^{\ell m}}\,,
 \end{align}
@@ -347,44 +377,95 @@ d_{1,c}^{\ell m} &= \left[\omega_{\ell m}^{\textrm{insp-plunge}}(t_{\textrm{matc
 where we denoted $\sigma_{\ell m}^\textrm{R} \equiv \Im (\sigma_{\ell m0}) < 0$ and  $\sigma_{\ell m}^\textrm{I} \equiv -\Re (\sigma_{\ell m0})$, and $\omega_{\ell m}^{\textrm{insp-plunge}}(t)$ is the frequency of the inspiral-plunge EOB mode. The coefficients $c_{i,f}^{\ell m}$ and $d_{i,f}^{\ell m}$ are obtained through fits to NR and 
 Teukolsky-equation--based waveforms and can be found in Appendix C of Ref.~\cite{Cotesta:2018fcv}.
 
-In the $\SEOB$ model constructed in Ref.~\cite{Cotesta:2018fcv}, the complex frequencies $\sigma_{\ell m 0}$  are expressed in terms of the final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the latter are related to the BBH's component masses and spins through NR--fitting-formulas obtained in GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. Here instead, in the spirit of what was done in \paperone, we promote the QNM (complex) frequencies to be free parameters of the model, while keeping the inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ fixed to their GR values. Henceforth called $\pSEOB$, this model uses a parameterised version of the $\SEOB$ model where the frequency and the damping time of the ${\ell m 0}$ mode, i.e, $(f_{\ell m 0}, \tau _{\ell m 0})$ is defined through fractional deviations, ($(\delta f_{\ell m 0},\delta \tau_{\ell m 0})$), from the corresponding GR values, i.e., the predictions of the QNM frequencies obtained using the fits~\cite{Taracchini:2013rva,Hofmann:2016yih}:
-
+In the $\SEOB$ model constructed in Ref.~\cite{Cotesta:2018fcv}, the
+complex frequencies $\sigma_{\ell m 0}$ are expressed in terms of the
+final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the
+latter are related to the BBH's component masses and spins through
+NR--fitting-formulas obtained in
+GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. Here instead, in the
+spirit of what was done in \paperone, we promote the QNM (complex)
+frequencies to be free parameters of the model, while keeping the
+inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ fixed
+to their GR values. \ab{More explicitly, we introduce a parameterized 
+version of the $\SEOB$ model where the frequency and the
+damping time of the ${\ell m 0}$ mode (i.e, $(f_{\ell m 0}, \tau
+_{\ell m 0})$) is defined through the fractional deviations, $(\delta
+f_{\ell m 0},\delta \tau_{\ell m 0})$, from the corresponding GR
+values, which are obtained using NR fits~\cite{Taracchini:2013rva,Hofmann:2016yih}. Thus,} 
 \begin{eqnarray}
-f_{\ell m 0} &:=& f_{\ell m 0}^{\text{GR}} (1 + \delta f_{\ell m 0})\label{eq:nongr_freqs_a} \\ 
-\tau _{\ell m 0} &:=& \tau _{\ell m 0}^{\text{GR}} (1 + \delta \tau_{\ell m 0}) \label{eq:nongr_freqs_b}
+f_{\ell m 0} &=& f_{\ell m 0}^{\text{GR}}\, (1 + \delta f_{\ell m 0})\,,\label{eq:nongr_freqs_a} \\ 
+\tau _{\ell m 0} &=& \tau _{\ell m 0}^{\text{GR}}\, (1 + \delta \tau_{\ell m 0})\,. \label{eq:nongr_freqs_b}
 \end{eqnarray}
-The GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are constructed using the same NR--fitting--formula prescriptiion described above. We note that when leaving $\sigma_{\ell m}$ to vary freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ will in general also differ from the GR prediction, since those functions depend on the QNM complex frequencies, as can be seen from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$.
+\ab{We denote such a parameterized waveform model \pSEOB}~\footnote{\ab{This 
+waveform model is called {\tt pSEOBNRv4HM} in LAL.}}.
+
+\ab{As said}, the GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are
+constructed using the same NR--fitting--formula \sout{prescriptiion} 
+described above. We note that when leaving $\sigma_{\ell m}$ to vary
+freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell
+  m}(t)$ \sout{will} in general also differ from the GR prediction\ab{s}, since
+those functions depend on the QNM complex frequencies, as can be seen
+from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$ \ab{in Eqs.~(\ref{c1}), 
+(\ref{c2}), and (\ref{d1}).}
 
 
-\subsection{Bayesian PE}\label{sec:method}
+\subsection{Bayesian Parameter Estimation}\label{sec:method}
 
-The parametrised model, $\pSEOB$, described above introduces an additional set of non-GR parameters, $\bxingr = (\delta f_{\ell m 0},\delta \tau_{\ell m 0})$, corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$:
-
+The parameterized model, $\pSEOB$, described above introduces an additional set of non-GR parameters, $\bxingr = (\delta f_{\ell m 0},\delta \tau_{\ell m 0})$, corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$:
+%
 \begin{equation}
 P(\blambda | d, \mathcal{H}) = \frac{P(\blambda | \mathcal{H}) \, \mathcal{L}(d | \blambda, \mathcal{H})}{P(d|\mathcal{H})},
 \label{eq:Bayes_theorem}
 \end{equation}
-where $P(\blambda | \mathcal{H})$ is the \emph{prior} probability distribution, and $\mathcal{L}(d | \blambda, \mathcal{H})$ is called the \emph{likelihood} function. The denominator is a normalization constant $P(d|\mathcal{H}) := \int P(\blambda | \mathcal{H}) \, \mathcal{L}(d | \blambda, \mathcal{H}) \, d\blambda$, called the marginal likelihood, or the \emph{evidence} of the hypothesis $\mathcal{H}$. In this case, our hypothesis $\mathcal{H}$ is that the data contains a GW signal that is described by the $\pSEOB$ waveform model $h(\blambda)$  and stationary Gaussian noise described by a power spectral density (PSD) $S_n(f)$. The likelihood function can consequently be defined as:
-
+%
+where $P(\blambda | \mathcal{H})$ is the \emph{prior} probability distribution, and $\mathcal{L}(d | \blambda, \mathcal{H})$ is called the \emph{likelihood} function. The denominator is a normalization constant $P(d|\mathcal{H}) = \int P(\blambda | \mathcal{H}) \, \mathcal{L}(d | \blambda, \mathcal{H}) \, d\blambda$, called the marginal likelihood, or the \emph{evidence} of the hypothesis $\mathcal{H}$. In this case, our hypothesis $\mathcal{H}$ is that the data contains a GW signal that is described by the $\pSEOB$ waveform model $h(\blambda)$  and stationary Gaussian noise described by a power spectral density (PSD) $S_n(f)$. The likelihood function can consequently be defined as:
+%
 \begin{equation}
 \mathcal{L}(d | \blambda, \mathcal{H}) \propto \exp\big[-\frac{1}{2} \langle d - h(\blambda) \, | \, d -h(\blambda) \rangle \big],
-\label{eq:likelihood}\end{equation}
+\label{eq:likelihood}
+\end{equation}
+%
 where $\langle . | . \rangle$ is the following noise-weighted inner product:
+%
 \begin{equation}
-\langle A | B \rangle := \int_{f_\mathrm{low}} ^{f_\mathrm{high}} df \frac{\tilde{A}^*(f)\tilde{B}(f) + \tilde{A}(f)\tilde{B}^*(f)}{S_n(f)}.
+\langle A | B \rangle = \int_{f_\mathrm{low}} ^{f_\mathrm{high}} df \frac{\tilde{A}^*(f)\tilde{B}(f) + \tilde{A}(f)\tilde{B}^*(f)}{S_n(f)}.
 \label{eq:nwip}
 \end{equation}
-$\tilde{A}(f)$ denotes the Fourier transform of $A(t)$ and a $^*$ denotes complex conjugation. The limits of integration ${f_\mathrm{low}}$ and ${f_\mathrm{high}}$ define the bandwidth of the sensitivity of the GW detector. We usually assume ${f_\mathrm{high}}$ to be the Nyquist frequency whereas${f_\mathrm{low}}$ is dictated by the response of the gravitational detector to low-frequency seismic noise. Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in equation~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-Chain Monte-Carlo~\cite{xxx} or Nested Sampling~\cite{xxx}. For this paper, we use the lalinferencemcmc~\cite{xx} and bilby codes CITE that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions. 
+%
+\ab{The quantity} $\tilde{A}(f)$ denotes the Fourier transform of $A(t)$ and the $^*$ indicates complex conjugation. The limits of integration ${f_\mathrm{low}}$ and ${f_\mathrm{high}}$ define the bandwidth of the sensitivity of the GW detector. We usually assume ${f_\mathrm{high}}$ to be the Nyquist frequency whereas${f_\mathrm{low}}$ is dictated by \ab{the performance of the 
+GW detector at low-frequency and we assume XXX}. \comment{AB: It isn't just seismic noise. In fact, at low frequency, there are mysterious noises that people have had hard time 
+to control.} \sout{the response of the gravitational detector to low-frequency seismic noise.} Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in equation~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-Chain Monte-Carlo~\cite{xxx} or Nested Sampling~\cite{xxx}. For this paper, we use the lalinferencemcmc~\cite{xx} and bilby codes CITE that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions. 
 
-Given the full-dimensional posterior probability density function $P(\blambda | d, \mathcal{H})$, we can marginalise over the \emph{nuisance} parameters, to obtain the marginalised posterior probability density function over the QNM parameters $\bxingr$:
+Given the full-dimensional posterior probability density function $P(\blambda | d, \mathcal{H})$, we can marginalize over the \emph{nuisance} parameters, to obtain the marginalized posterior probability density function over the QNM parameters $\bxingr$:
 
 \begin{equation}
-P(\bxingr | d, \mathcal{H})= \int P(\blambda | d, \mathcal{H}) d\bxigr
+P(\bxingr | d, \mathcal{H})= \int P(\blambda | d, \mathcal{H}) d\bxigr\,.
 \end{equation}
 
-For most of the results discussed in this paper, we would restrict ourselves to the $(\ell m) = (2,2)$ and/or $(3,3)$ modes. In those cases we would assume $\bxingr = \{\df{220},\dtau{220}\}$ and/or  $ \{\df{330},\dtau{330}\}$, and all the other $(\ell m)$ modes to be fixed at their GR predictions, i.e., $\delta f_{\ell m 0} = \delta \tau_{\ell m 0} = 0$. This is because, for most of the high-mass events we find most appropriate for this test, the LIGO-Virgo observations are consistent with nearly-equal-mass face-on/off BH binaries for which power in the subdominant modes is not enough to attempt to measure more than one, or at most QNM frequencies simultaneously. 
+For most of the results discussed in this paper, we restrict ourselves
+to the $(\ell m) = (2,2)$ and/or $(3,3)$ modes. In those cases we
+\sout{would} assume $\bxingr = \{\df{220},\dtau{220}\}$ and/or $
+\{\df{330},\dtau{330}\}$, and all the other $(\ell m)$ modes to be
+fixed at their GR predictions (i.e., $\delta f_{\ell m 0} = \delta
+\tau_{\ell m 0} = 0$). This is because, for most of the high-mass BH 
+events that we find most appropriate for this test, the LIGO-Virgo
+observations are consistent with nearly--equal-mass face-on/off BBHs 
+for which power in the subdominant modes is not enough to
+attempt to measure more than one, or at most \comment{AB: it seems some wrods are missing 
+to make the senetence meaningful} QNM frequencies, 
+simultaneously.
 
-Throughout our analysis, we assume uniform priors on our non-GR QNM parameters, $(\delta f_{\ell m 0},\delta \tau_{\ell m 0})$. However, since the priors on $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are derived through NR--fits, from the corresponding priors on the initial masses and spins, this leads to a non-trivial prior on the final reconstructed frequency and damping time, $( f_{\ell m 0},\tau_{\ell m 0})$. Also, given the definition of the damping time in Sec.~\ref{sec:model}, we realise $\delta \tau_{\ell m 0} = -1$ leads to the imaginary part of the frequency going to infinity. We avoid this by restricting the minimum of the prior on $\delta \tau_{\ell m 0}$ to be greater than $-1$.
+\ab{Lastly}, throughout our analysis, we assume uniform priors on our non-GR QNM
+parameters, $(\delta f_{\ell m 0},\delta \tau_{\ell m 0})$. However,
+since the priors on $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are
+derived through NR--fits, from the corresponding priors on the initial
+masses and spins, this leads to a non-trivial prior on the final
+reconstructed frequency and damping time, $( f_{\ell m 0},\tau_{\ell m
+  0})$. Also, given the definition of the damping time in
+Sec.~\ref{sec:model}, we \sout{realize} \ab{note} that $\delta \tau_{\ell m 0} = -1$ leads
+to the imaginary part of the frequency going to infinity. We avoid
+this by restricting the minimum of the prior on $\delta \tau_{\ell m
+  0}$ to be greater than $-1$.
 
 \iffalse
 \subsection{Priors}
@@ -428,7 +509,7 @@ We find, as one might expect, that the posterior distribution on the parameters 
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_f220_tau220.png}	
 	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_f220_tau220.png}		
-	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalised distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values.}
+	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values.}
 	\label{fig:simulated_signal_GR}
 \end{center}
 \end{figure*}
@@ -439,7 +520,7 @@ We find, as one might expect, that the posterior distribution on the parameters 
 
 To demonstrate the robustness of the method in detecting possible deviations of the underlying GW signal from predictions of GR, we inject simulated GW signals which are identical to the corresponding GR prediction upto merger, and differ in their post-merger description. We again choose systems with initial-binary-parameters similar to GW150914 and GW190521, but we attach a phenomenological post-merger signal described by deviation parameters $\df{220} = \dtau{220} = 0.5$ \abhi{deviations=0.1 runs are ongoing and almost done}. In other words, we assume that the frequency and damping time of our non-GR signal is 1.5 times the corresponding GR prediction, although the pre-merger signal is identical to GR (Fig.\ref{fig:nongr_waveform}). We also avoid waveform and noise systematic biases by choosing a configuration identical to the simulations described in Sec.\ref{ssec:gr_signal}. The posterior probability distributions on $(\df{220}, \dtau{220})$ or equivalently $(\fngr{220}, \taungr{220})$ (Fig.~\ref{simulated_signal_nonGR}) are consistent with the corresponding the values of the injection parameters, indicated by the black solid lines. 
 
-We additionally investigate the effects of erroneously assuming that an underlying modified GR signal can be well-described using GR. We do this by estimating the parameters of our modified GR signals using the GR waveform model $\SEOB$ instead of the parametrised $\pSEOB$. In such cases, we run the risk of biased parameter estimates due to an incomplete understanding of the underlying signal. The resulting posterior probability distributions are shown in the right panels of Fig.~\ref{simulated_signal_nonGR} by the pink (GW150914) and grey (GW190521) curves. The results are interesting and distinctly different for the two events. For the GW150914-like modified GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (Fig.~\ref{simulated_signal_nonGR} top right panel) are consistent with the $(\fgr{220}, \taugr{220})$ measurements for a signal with no deviations (Fig.~\ref{simulated_signal_GR} top right panel). In other words, if the actual signal had deviations as large as the 50 \% of the GR prediction, the analysis with $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like modified GR signal, a simple GR analysis of the modified GR signal would have yielded measurements distinctly different from either of the two parametrised estimates: with and without deviations. The fact that the GW190521-like signal has a much lower SNR than GW150914 might be a possible reason for the the measurement of the final quantities to be more susceptible to noise. A more detailed comparison of the other parameters, like the masses and spins, between an $pSEOB$ and an $SEOB$ measurement of a modified GR signal is shown in Fig.~\ref{fig:gr_ngr_comparison}.
+We additionally investigate the effects of erroneously assuming that an underlying modified GR signal can be well-described using GR. We do this by estimating the parameters of our modified GR signals using the GR waveform model $\SEOB$ instead of the parameterized $\pSEOB$. In such cases, we run the risk of biased parameter estimates due to an incomplete understanding of the underlying signal. The resulting posterior probability distributions are shown in the right panels of Fig.~\ref{simulated_signal_nonGR} by the pink (GW150914) and grey (GW190521) curves. The results are interesting and distinctly different for the two events. For the GW150914-like modified GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (Fig.~\ref{simulated_signal_nonGR} top right panel) are consistent with the $(\fgr{220}, \taugr{220})$ measurements for a signal with no deviations (Fig.~\ref{simulated_signal_GR} top right panel). In other words, if the actual signal had deviations as large as the 50 \% of the GR prediction, the analysis with $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like modified GR signal, a simple GR analysis of the modified GR signal would have yielded measurements distinctly different from either of the two parameterized estimates: with and without deviations. The fact that the GW190521-like signal has a much lower SNR than GW150914 might be a possible reason for the the measurement of the final quantities to be more susceptible to noise. A more detailed comparison of the other parameters, like the masses and spins, between an $pSEOB$ and an $SEOB$ measurement of a modified GR signal is shown in Fig.~\ref{fig:gr_ngr_comparison}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -458,7 +539,7 @@ We additionally investigate the effects of erroneously assuming that an underlyi
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p5_gr_ngr_fngrtaungr.png}	
 	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p5_gr_ngr_fngrtaungr.png}
-	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for modGR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The underlying signal has a deviation, $\df{220} = \dtau{220} = XX$. The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalised distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. In the right panels, we additionally show measurements using a GR ($SEOB$) waveform, for GW150914 (grey) and GW190521 (pink), The measurements are visibly biased.}
+	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for modGR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The underlying signal has a deviation, $\df{220} = \dtau{220} = XX$. The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. In the right panels, we additionally show measurements using a GR ($SEOB$) waveform, for GW150914 (grey) and GW190521 (pink), The measurements are visibly biased.}
 	\label{fig:simulated_signal_nonGR}
 \end{center}
 \end{figure*}
@@ -520,7 +601,7 @@ P(\df{220}, \dtau{220} | \{d_j\}) = P(\df{220}, \dtau{220}) \prod _{j=1}^N \frac
 \end{equation}
 where $P(\df{220}, \dtau{220})$ is the prior on $(\df{220}, \dtau{220})$. However, since we assume the prior on $(\df{220}, \dtau{220})$ to be flat or uniform, the joint posterior is equal to the joint likelihood.
 
-We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as the corresponding one-dimensional marginalised distributions as filled grey curves in Fig.~\ref{fig:o1o2_events}. These are the strongest constraints on possible deviations in the measurement of $(\df{220}, \dtau{220})$ to date using our method.\abhi{add text on the hierarchical analysis if we want to include that analysis}
+We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as the corresponding one-dimensional marginalized distributions as filled grey curves in Fig.~\ref{fig:o1o2_events}. These are the strongest constraints on possible deviations in the measurement of $(\df{220}, \dtau{220})$ to date using our method.\abhi{add text on the hierarchical analysis if we want to include that analysis}
 
 \begin{table}
 \begin{flushleft}
