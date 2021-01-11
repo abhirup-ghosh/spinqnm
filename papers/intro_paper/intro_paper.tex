@@ -300,7 +300,7 @@ with the orbital angular momentum (henceforth, ``aligned-spin''). In this case,
 the GW signal depends on $11$ parameters. We denote the 
 aligned-spin \ab{(dimensionless)} components as $\chi_{i} = |\vec{\bm{S}}_i|/m^2_i$, where $i=1,2$ for the two BHs.}
 
-\subsection{Waveform Model}\label{sec:model}
+\subsection{Waveform model}\label{sec:model}
 
 As in \paperone, we use an IMR waveform model developed within the effective-one-body (EOB) 
 formalism~\cite{}. \ab{However, whereas \paperone was limited to non-spinning multipolar waveforms, 
@@ -409,7 +409,7 @@ from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$ \ab{in Eqs.~(
 (\ref{c2}), and (\ref{d1}).}
 
 
-\subsection{Bayesian Parameter Estimation}\label{sec:method}
+\subsection{Bayesian parameter estimation}\label{sec:method}
 
 The parameterized model, $\pSEOB$, described above introduces an additional set of non-GR parameters, $\bxingr = (\delta f_{\ell m 0},\delta \tau_{\ell m 0})$, corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$:
 %
@@ -475,11 +475,16 @@ Throughout our analysis we assume a completely prior uniform in the component ma
 
 \section{Results}\label{sec:results}
 
-\subsection{Simulations using GR signals in Gaussian Noise}\label{ssec:gr_signal}
+\subsection{\ab{Synthetic-signal injections in General Relativity with Gaussian noise}}\label{ssec:gr_signal}
 
-First, we demonstrate our method on GW signals from BBH systems that are well described by GR. We inject simulated GW signals modellng inspiral, merger and ringdown of BBHs into coloured Gaussian noise with PSDs expected at design sensitivities of Advanced LIGO-Virgo CITE. In particular we choose parameters similar to two specific GW events, GW150914 CITE and GW190521 CITE. The details of the injections are provided in Table~\ref{tab:injection_values}. These two systems are representative data points for the kind of systems this test is most suitable for: high-mass events which are loud enough that the SNR pre- and post-merger return reliable parameter estimation results. To avoid possible systematic biases in our parameter estimation results due to error in modelling, we use the GR version of the same waveform, $\SEOB$ (without allowing for deviations in the QNM parameters) to simulate our GW signal. And to avoid systematic biases due to noise, we use an averaged (zero-noise) realisation of the noise. A detailed study on noise systematics for one of the GW events is presented in Appendix~\ref{sec:noise_systematics}. As in the case of the actual detections, we consider a two-detector advanced LIGO network at Hanford and Livingston, having identical PSDs. The distance to the two simulated events is rescaled such that the SNR in the detector network is same as the actual event, i.e, 24 (14) for GW150914 (GW190521). Since (almost) equal-mass binaries like GW150914 and GW190521 observed at moderately high SNRs are not expected to have a loud ringdown signal, we restrict ourselves to estimating the frequency and damping time of the $(\ell m) = (2,2)$, i.e., $\{\df{220},\dtau{220}\}$, while fixing the other QNM frequencies to their GR values. 
-
-We find, as one might expect, that the posterior distribution on the parameters describing fractional deviations in the frequency and damping time are consistent with zero (left panels of Fig.~\ref{fig:simulated_signal_GR}). One can then convert these fractional quantities into absolute quantities using the relations given in Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b}, and construct posterior distributions on these effective quantities, $(\fngr{220}, \taungr{220})$ (right panels of Fig.~\ref{fig:simulated_signal_GR}). In each of these cases, recovered posterior are consistent with the GR predictions (black solid lines).
+\ab{We demonstrate our method using synthetic-signal injections describing GWs 
+from BBHs in GR. We employ coloured Gaussian noise with PSDs expected for LIGO and 
+Virgo detectors at design sensitivities~\cite{}. \comment{AB: Please cite which PSD you used.} 
+For the mock BBH signals, we choose parameters similar to two specific GW events, GW150914~\cite{} and 
+GW190521~\cite{}. We list them in Table~\ref{tab:injection_values}. 
+These two binary systems are representative of the kind of systems for which 
+the QNM measurement is most suitable, notably high-mass BBH events which are loud enough that the  
+pre- and post-merger SNRs return reliable parameter-estimation results.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table for Injections
@@ -488,33 +493,71 @@ We find, as one might expect, that the posterior distribution on the parameters 
 \begin{center}
 \begin{tabular}{ |c|c|c|c|c|c| }
  \hline
- Event & $m_{1,d} (\Mo)$ &  $m_{2,d} (\Mo)$ & $a_{1z}$ & $a_{2z}$ & SNR \\ 
+ Event & $m_{1,d} (\Mo)$ &  $m_{2,d} (\Mo)$ & $\chi_{1}$ & $\chi_{2}$ & SNR \\ 
  \hline
- GW150914 & 39 & 31 & 0.0 & 0.0 & 25 \\
- GW190521 & 150 & 120 & 0.02 & -0.39 & 14 \\ 
+ GW150914-like & 39 & 31 & 0.0 & 0.0 & 25 \\
+ GW190521-like & 150 & 120 & 0.02 & -0.39 & 14 \\ 
  SXS:BBH:0166 & 72 & 12  & 0.0 & 0.0 & 75 \\
  \hline
 \end{tabular}
-\caption{Details of the injection parameters, chosen to be similar to the actual GW events. $(m_{1,d},m_{2,d})$ are the detector-frame masses of the primary and secondary BHs respectively.}
+\caption{\ab{Parameters of the synthetic-signal injections}, chosen to be similar to the actual GW events indicated in teh first column. The parameters 
+$(m_{1,d},m_{2,d})$ are the detector-frame masses of the primary and secondary BHs, respectively.}
 \label{tab:injection_values}
 \end{center}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\comment{AB: Nothing is said in the text about the third mock signal in the Table!}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Simulated siganl: GR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}%[h!]
+\begin{figure*}[hbt]
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_f220_tau220.png}	
 	\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_f220_tau220.png}		
-	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values.}
+	\caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $\{\df{220},\dtau{220}\}$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. \comment{AB: I would use a different color for the bottom figures, e.g., ``green''. Please also indicate on the figures: 
+GW150914-like and GW190521-like.}}
 	\label{fig:simulated_signal_GR}
 \end{center}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ab{To avoid possible systematic biases in our parameter-estimation analysis 
+due to error in waveform modeling,} we use the GR version of the same waveform,
+$\SEOB$ (without allowing for deviations in the QNM parameters) to
+simulate our GW signal. And to avoid systematic biases due to noise,
+we use an averaged (zero-noise) realization of the noise. A detailed
+study on noise systematics for one of the GW events is presented in
+Appendix~\ref{sec:noise_systematics}. \comment{AB: This reference to teh Appendix is out of context. 
+Why should the reader appreciate at this stage of the paper, where we have not yet 
+discussed results with real data, what is in the Appendix?} As in the case of the actual
+detections, we consider a two-detector LIGO network at
+Hanford and Livingston, having identical PSDs. The distance to the two
+\ab{synthetic} events is rescaled such that the SNR in the detector network
+is the same as the actual events (i.e., 24 for GW150914 and 14 
+for GW190521). Since mearly--equal-mass binaries like GW150914 and
+GW190521 observed at moderately high SNRs are not expected to have a
+loud ringdown signal, we restrict ourselves to estimating the
+frequency and damping time of \ab{only one QNM} $(\ell m) = (2,2)$, i.e.,
+$\{\df{220},\dtau{220}\}$, while fixing the other QNM frequencies to
+their GR values.
+
+We find, as one might expect, that the posterior distribution on the
+parameters describing fractional deviations in the frequency and
+damping time are consistent with zero (left panels of
+Fig.~\ref{fig:simulated_signal_GR}). One can then convert these
+fractional quantities into absolute quantities using the relations
+given in Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b}, and
+construct posterior distributions on these effective quantities,
+$(\fngr{220}, \taungr{220})$ (right panels of
+Fig.~\ref{fig:simulated_signal_GR}). In each of these cases, the recovered
+posterior are consistent with the GR predictions (black \sout{solid lines} \ab{dot}).
+
+
+
 
 \subsection{Simulations using modified GR signals in Gaussian noise}
 
