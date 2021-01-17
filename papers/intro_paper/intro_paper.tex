@@ -278,7 +278,7 @@ we demonstrate our method on real GW events, as well as simulated signals. \ab{I
 the ... and constrain the QNM frequecies ... Finally, in Sec.~\ref{sec:discussion} we provide a summary of
 our results and discuss future developments.} 
 
-\section{Method}
+\ab{\section{Waveform model and statistical strategy to measure quasi-normal modes}}
 
 \comment{AB: In teh following, I will not use much the strike-out, but instead I will 
 bracket in color the text that I have changed.}
@@ -409,7 +409,8 @@ from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$ \ab{in Eqs.~(
 (\ref{c2}), and (\ref{d1}).}
 
 
-\subsection{Bayesian parameter estimation}\label{sec:method}
+\ab{\subsection{Bayesian parameter-estimation technique}}
+\label{sec:method}
 
 The parameterized model, $\pSEOB$, described above introduces an additional set of non-GR parameters, $\bxingr = (\delta f_{\ell m 0},\delta \tau_{\ell m 0})$, corresponding to each $(\ell,m)$ QNM present in the GR waveform model $\SEOB$. One then proceeds to use the Bayes theorem to obtain the \emph{posterior} probability distribution on $\blambda = \{\bxigr, \bxingr\}$, given a hypothesis $\mathcal{H}$:
 %
@@ -473,7 +474,8 @@ this by restricting the minimum of the prior on $\delta \tau_{\ell m
 Throughout our analysis we assume a completely prior uniform in the component masses $m_1, m_2$. Our prior on the spins are uniform in the magnitude between (0,1) and isotropic in spin orientation, but finally restricted to the component parallel to the orbital angular momentum of the binary. The prior on the distance varies as $d_L^2$ giving more weightage to binaries farther out. For the rest of the parameters we use standard priors as defined in the documentation (CITE Vietch et al. 2015 LALInference paper). For our non-GR ringdown parameters, we assume uniform priors. This of course leads to a non-trivial prior on the reconstructed frequency and damping time, because of the prior on $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$, which itself depend on the prior on the initial masses and spins through NR fits \abhi{perhaps figure on priors on QNM quantities}. For $d\tau = -1$, we encounter a singularity (the imaginary part of the frequency goes to infinity), which we avoid by restricting the minimum of the prior on $d\tau$ to be greater than $-1$.
 \fi
 
-\section{Synthetic-signal injection study}\label{sec:results}
+\ab{\section{Synthetic-signal injection study}}
+\label{sec:results}
 
 \subsection{\ab{Simulations using GR signals in Gaussian noise}} \label{ssec:gr_signal}
 
