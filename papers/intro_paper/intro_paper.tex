@@ -136,7 +136,10 @@
 
 \comment{AB: Please make the citations in the bibliography uniform (I would stick with citations 
 taken from InSpires and remove the URL links). We will be submitting to Physical Review D, so please 
-stick with American English.}
+stick with American English. Also, please be uniform when writing captions, when using colors and style 
+of curves in plots, when building Tables. There is not a lot of discussion in the text on the main results of the paper (Sec. IV). 
+The abstract would need to be tighten and made more crispy once the quantitative results for the 
+bounds are included.}
 
 The LIGO Scientific Collaboration~\citep{lsc} and the Virgo
 Collaboration\sout{s}~\citep{Virgo} \ab{have} recently announced their catalogue of
@@ -280,7 +283,7 @@ our results and discuss future developments.}
 
 \ab{\section{Waveform model and statistical strategy to measure quasi-normal modes}}
 
-\comment{AB: In teh following, I will not use much the strike-out, but instead I will 
+\comment{AB: In the following, I will not use much the strike-out, but instead I will 
 bracket in color the text that I have changed.}
 
 A GW signal from the (quasi-circular) coalescence of two BHs is
@@ -532,7 +535,7 @@ $\SEOB$ (without allowing for deviations in the QNM parameters) to
 simulate our GW signal. And to avoid systematic biases due to noise,
 we use an averaged (zero-noise) realization of the noise. A detailed
 study on noise systematics for one of the GW events is presented in
-Appendix~\ref{sec:noise_systematics}. \comment{AB: This reference to teh Appendix is out of context. 
+Appendix~\ref{sec:noise_systematics}. \comment{AB: This reference to the Appendix is out of context. 
 Why should the reader appreciate at this stage of the paper, where we have not yet 
 discussed results with real data, what is in the Appendix?} As in the case of the actual
 detections, we consider a two-detector LIGO network at
@@ -585,7 +588,7 @@ summarize the results of the Bayesian analysis in Fig.~\ref{fig:simulated_signal
 show the posterior probability distributions for $(\df{220}, \dtau{220})$, or equivalently
 $(\fngr{220}, \taungr{220})$. We find that they are consistent with the corresponding 
 values of the injection parameters, indicated by the black solid lines.} \comment{AB: Please be more quantitative when 
-explaining the results in teh figure. Which black lines are you referring to? In the main 2-D figure the injected signal 
+explaining the results in the figure. Which black lines are you referring to? In the main 2-D figure the injected signal 
 is a point not a line. I think you are referring to the 1D posteriors, but it needs to be explained.}
 
 We additionally investigate the effects of erroneously assuming that
@@ -716,28 +719,101 @@ other sub-dominant QNMs~\cite{}.
 
 \ab{\section{Constraints on QNM frequencies using LIGO-Virgo data}}
 
-The LIGO-Virgo Collaboration recently released their testing GR catalogue containing results of this test for all events observed during O3a ~\cite{Abbott:2020jks}, which passed a threshold for the total (source-frame) mass $\geq 50 \Mo$ and SNRs in the pre- and post-merger regions $\geq 8$.The pre- and post-merger regions of the signal are identified as the power in the frequency content of the signal before and after the signal reaches peak amplitude, as determined by the maximum likelihood parameter estimation template. For the purpose of \cite{Abbott:2020jks}, we used a mass threshold and restricted ourselves to the highest-mass events which were expected to be most promising to study merger-ringdown. However, since our method relies on doing a parameter estimation on the entire inspiral-merger-ringdown signal, we require the SNR to be beyond a certain threshold throughout the signal for reliable parameter estimation of the initial and final quantities. In fact the SNR threshold alone should be sufficient for the analysis, and for this paper we have relaxed the mass threshold. This has added two events, GW190630$\_$185205 and GW190828$\_$063405, to the list of events considered in \cite{Abbott:2020jks} \abhi{Runs ongoing and looking promising}. Fig.~\ref{fig:o1o2_events} shows results from these two events along with GW190519$\_$153544, GW190521$\_$074359, GW190910$\_$112807.
+\comment{AB: This is the most important section in the paper, because it contains the 
+main results of the paper, i.e., the constraints on QNMs using real data. It needs to 
+be expanded and results would need to be highlighted much better than in the current version. 
+I would like to suggest that besides the Table and the figure with the 2D- and 1D-posteriors 
+that you made (which can be contrasted with Fig. 14 of the TGR GWTC-2 paper), we could have 
+a new figure that is either a combination of Figs. 5 and 6 or only Fig. 5 of the 
+TGR GWTC-2, but for the 22 QNM frequencies for the different GW events. 
+Figures can be used in talks, and can capture the information much better 
+than a list of numbers in a Table.}
 
-For the first time, in this paper, we present results on the relevant events from LIGO-Virgo's first and second observing runs, alongside the above events. Applying the same thresholds as above, we find three additional events which could be included in the analysis: GW150914, GW170104, GW170729. The other high-mass events from O1-O2, GW170809, GW170814, GW170818 and GW170823 do not have an SNR of $8$ in the merger-ringdown signal. For the three relevant signals, GW150914, GW170104 and GW170729, we provide the posterior distributions in $(\df{220}, \dtau{220})$ in Fig.~\ref{fig:o1o2_events}. We also reconstruct the effective QNM parameters, $(\fngr{220}, \taungr{220})$ which are tabulated in Table~\ref{tab:qnm_o1o2_results}. \footnote{See Table IV of \cite{Abbott:2020jks} for a list of the SNR thresholds. The paper quotes them for the purpose of the IMR consistency test, but the same thresholds have been used for the $pSEOB$ test as well.} Among all the GW signals detected so far, GW150914 (solid curve in Fig.~\ref{fig:o1o2_events})is unique in its loudness, mass as well as the clarity of the signal, leading to the first, and to date, best attempt in measuring the QNM frequencies CITE.
+The LIGO-Virgo Collaboration recently released their testing GR
+catalogue containing results \sout{of this test} for all events observed
+during O3a~\cite{Abbott:2020jks}, which passed a threshold for the
+total (source-frame) mass $\geq 50 \Mo$ and SNRs in the pre- and
+post-merger regions $\geq 8$.The pre- and post-merger regions of the
+signal are identified \sout{as} \ab{from} the \ab{signal's} power \sout{in the frequency content of the
+signal} before and after the signal reaches \ab{the} peak\ab{'s} 
+amplitude, \sout{as} \ab{which is} determined by the maximum \ab{of the} 
+likelihood \ab{function}  \ab{from the} parameter-estimation \ab{analysis} \sout{template}.
+\comment{AB: What does it mean ``for the purpose of Ref.''? We are using present tense in the 
+entire paper, except perhaps the Conclusions section.} 
+For the purpose of Ref.~\cite{Abbott:2020jks}, we use\sout{d} a mass
+threshold and restrict\sout{ed} ourselves to the highest-mass events which
+\sout{were} \ab{are} expected to be most promising to study merger-ringdown. However,
+since our method relies on doing a parameter estimation on the entire
+inspiral-merger-ringdown signal, we require the SNR to be beyond a
+certain threshold throughout the signal for reliable parameter
+estimation of the initial and final quantities. \comment{AB: there are not ``initial'' and ``final'' parameters, 
+there are the component masses of the holes in the binary, and the 
+mass of the remnant formed after merger.} In fact the SNR
+threshold alone should be sufficient for the analysis, and for this
+paper we have relaxed the mass threshold. This has added two events,
+GW190630$\_$185205 and GW190828$\_$063405, to the list of GW events
+considered in \cite{Abbott:2020jks} \abhi{Runs ongoing and looking
+  promising}. Fig.~\ref{fig:o1o2_events} shows results from these two
+events along with GW190519$\_$153544, GW190521$\_$074359,
+GW190910$\_$112807. \comment{AB: Please improve the above paragraph 
+and make it clearer which choice is made for the SNR threshold and 
+masses, and why.}
+
+\ab{Furthermore}, for the first time, in this paper, we \ab{apply our method to 
+measure the QNMs to} \sout{present results on} the relevant
+GW events from LIGO-Virgo's O1 and O2 runs, alongside
+the above events. Applying the same thresholds as above, we find three
+additional events that could be included in the analysis: GW150914,
+GW170104, GW170729. The other high-mass events from O1-O2, GW170809,
+GW170814, GW170818 and GW170823 do not have an SNR of $8$ in the
+merger-ringdown signal. For the three relevant signals, GW150914,
+GW170104 and GW170729, we \sout{provide} \ab{show} the posterior distributions in
+$(\df{220}, \dtau{220})$ in Fig.~\ref{fig:o1o2_events}. We also
+reconstruct the \sout{effective} QNM parameters, $(\fngr{220}, \taungr{220})$
+which are tabulated in Table~\ref{tab:qnm_o1o2_results} \footnote{See
+  Table IV of Ref.~\cite{Abbott:2020jks} for a list of the SNR
+  thresholds. The paper quotes them for the purpose of the IMR
+  consistency test, but the same thresholds have been used for the
+  $pSEOB$ test, as well.} Among all the GW signals detected so far,
+GW150914 (solid curve in Fig.~\ref{fig:o1o2_events}) is unique in its
+loudness, \sout{mass as well as the clarity of the signal,} \comment{AB: what 
+is the ``clarity'' of a signal?} leading to the
+first, and to date, best attempt in measuring the QNM frequencies~\cite{}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O1-O2 events
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 	\includegraphics[width=0.5\textwidth]{figures/rin_pseob_results.pdf}
-	\caption{\textcolor{red}{PRELIMINARY RESULT} The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,\pm 2)$ QNM, $\{\df{220},\dtau{220}\}$ and their corresponding one-dimensional marginalized posterior distributions, for events from O1, O2 and O3a passing a SNR threshold of $8$ in both the pre- and post-merger signal. The solid red curve marks the constraint the best single-event constraint, GW150914, whereas the contraints from the other events are indicated by the dash-dot curves. The joint constraints on $\{\df{220},\dtau{220}\}$ obtained using multiplying the likelihoods from individual events is given by the filled grey contours, while the hierarchical method of combination yields the black dot dashed curves.}
+	\caption{\textcolor{red}{PRELIMINARY RESULT} The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,\pm 2)$ QNM, $(\df{220},\dtau{220})$ and their corresponding one-dimensional marginalized posterior distributions, for events from O1, O2 and O3a passing a SNR threshold of $8$ in both the pre- and post-merger signal. The solid red curve marks the best single-event constraint, GW150914, whereas the contraints from the other events are indicated by the dash-dot curves. The joint constraints on $(\df{220},\dtau{220})$ obtained multiplying the likelihoods from individual events is given by the filled grey contours, while the hierarchical method of combination yields the black dot dashed curves.}
 	\label{fig:o1o2_events}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Finally, if we assume that the fractional deviations $(\df{220}, \dtau{220})$ take the same values in multiple events, we can assume the posterior of one event to be the prior for the next, and obtain a joint posterior probability distribution. For $N$ observations, where $P_j(\df{220}, \dtau{220} | d_j)$ is the posterior for the $j-th$ observation corresponding to the data set $d_j$, $j=1...N$, the joint posterior is given by:
+Finally, if we assume that the fractional deviations $(\df{220},
+\dtau{220})$ take the same values in multiple events, we can assume
+the posterior of one event to be the prior for the next, and obtain a
+joint posterior probability distribution. For $N$ observations, where
+$P_j(\df{220}, \dtau{220} | d_j)$ is the posterior for the $j$-th
+observation corresponding to the data set $d_j$, $j=1,\dots,N$, the joint
+posterior is given by:
+%
 \begin{equation}
 P(\df{220}, \dtau{220} | \{d_j\}) = P(\df{220}, \dtau{220}) \prod _{j=1}^N \frac{P(\df{220}, \dtau{220} | d_j) }{P(\df{220}, \dtau{220})}
 \end{equation}
-where $P(\df{220}, \dtau{220})$ is the prior on $(\df{220}, \dtau{220})$. However, since we assume the prior on $(\df{220}, \dtau{220})$ to be flat or uniform, the joint posterior is equal to the joint likelihood.
+%
+where $P(\df{220}, \dtau{220})$ is the prior on $(\df{220},
+\dtau{220})$. However, since we assume the prior on $(\df{220},
+\dtau{220})$ to be flat (or uniform), the joint posterior is equal to
+the joint likelihood.
 
-We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as the corresponding one-dimensional marginalized distributions as filled grey curves in Fig.~\ref{fig:o1o2_events}. These are the strongest constraints on possible deviations in the measurement of $(\df{220}, \dtau{220})$ to date using our method.\abhi{add text on the hierarchical analysis if we want to include that analysis}
+We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as, the corresponding \ab{1D} marginalized distributions as filled grey curves in Fig.~\ref{fig:o1o2_events}. 
+These are the strongest constraints on possible deviations in the measurement of $(\df{220}, \dtau{220})$ to date using our method.\comment{AG: add text on the hierarchical analysis 
+if we want to include that analysis. AB: we want to include that analysis.}
+
+\comment{AB: Please write in the text (equations) the results for $(\df{220}, \dtau{220})$ for GW150914, the joint likelihood and the 
+hierarchically combined methods.}
 
 \begin{table}
 \begin{flushleft}
@@ -746,7 +822,7 @@ We show these joint likelihoods on $(\df{220}, \dtau{220})$, as well as the corr
 Event & \multicolumn{2}{c}{Redshifted} & \hphantom{X} & \multicolumn{2}{c}{Redshifted} \\
 & \multicolumn{2}{c}{frequency [Hz]} & \hphantom{X} & \multicolumn{2}{c}{damping time [ms]} \\[0.075cm]
 \hline
-& IMR  & pSEOB & \hphantom{X} & IMR  & pSEOB \\
+& IMR  & \pSEOB & \hphantom{X} & IMR  & \pSEOB \\
 \hline
 
 GW150914 &
@@ -773,7 +849,7 @@ $7.8^{+1.8}_{-1.5}$ &
 $-$
 \\[0.075cm]
 
-GWGW190630$\_$185205 &
+GW190630$\_$185205 &
 $-$ &
 $-$ &
 \hphantom{X} &
@@ -781,7 +857,7 @@ $-$ &
 $-$
 \\[0.075cm]
 
-GW190828$\_$063405,170729 &
+GW190828$\_$063405 &
 $-$ &
 $-$ &
 \hphantom{X} &
@@ -791,12 +867,19 @@ $-$
 \hline
 \bottomrule
 \end{tabular}
-\caption{\textcolor{red}{NOT COMPLETE}}
+\caption{\textcolor{red}{NOT COMPLETE} \comment{AB: We would need to give also the final mass and spins. I would suggest that we list in the Table 
+also the results from the TGR GWTC-2 paper, obtained with our method, so that all the results are in one Table.}}
 \label{tab:qnm_o1o2_results}
 \end{flushleft}
 \end{table}
 
 \section{Discussion}\label{sec:discussion}
+
+\comment{AB: I am sorry, but I had no time to write this section. Please write a first draft. I have read in the last week several papers 
+about extracting information on the nature of dark objects and gravity in the strong-field regime combining LIGO/Virgo and also 
+EHT. I wanted to refer to them --- for example Maggio et al., Volkel et al., Franciolini et al., Cano et al. 
+It is also good if we cite papers that have predicted QNMs in gravity theories alternative to GR. We did it in the paper with 
+Richard and Vivien.}
 
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
@@ -805,27 +888,88 @@ LIGO Clusters. \comment{AB: Our cluster!!!}
 
 \appendix
 
-\section{Study of syetematics on ringdown measurements}\label{sec:noise_systematics}
+\section{Study of systematics on ringdown measurements \ab{in real , non-Gaussian noise}}\label{sec:noise_systematics}
 
-In Section~\ref{sec:method}, we mentioned that the expression of the Bayesian likelihood function outlined in Eqs.~\ref{eq:likelihood} and \ref{eq:nwip} is only valid if the interferometric noise can be described as a stationary Gaussian process. LIGO-Virgo noise, however, frequently has non-stationary and/or non-Gaussian features, for example glitches, which can affect parameter inferences unless appropriately accounted for. Here we demonstrate with an example of a GW190521-like simulated signal, systematic biases likely originating from an incomplete understanding of the noise. 
+\comment{AB: Please improve considerably this Appendix because it is not easy to follow the motivation and the logic. It is written for LIGO people. 
+I have tried to make changes but it is better if you do it. I risk to erase parts that you would consider important. Please write it thinking that your 
+reader is not an LSC reader!}
+
+In Sec.~\ref{sec:method}, we \ab{discussed} \sout{mentioned that} the expression of the
+Bayesian likelihood function \ab{that we use in our analysis} \sout{outlined in} \ab{(see 
+Eq.~\ref{eq:likelihood})} \ab{and stressed that it}\sout{and \ref{eq:nwip}} is only valid if the interferometric noise can be
+described as a stationary Gaussian process. LIGO-Virgo noise, however,
+frequently has non-stationary and/or non-Gaussian features, for
+example glitches, which can affect parameter inferences unless
+appropriately accounted for. Here we demonstrate\ab{, by injecting in real 
+noise a GW190521-like signal} \sout{with an example of a
+GW190521-like simulated signal}, \ab{how} systematic biases \ab{can originate} \sout{likely originating}
+from an incomplete understanding of the noise. \comment{AB: It is confusing to refer to ``systematic'' 
+biases for the noise, generally we refer to systematic biases for the waveform modeling. 
+In fact, below you also, somewhat suddenly, refer to (lack of) precession, as a possible source of systemtcis. 
+I would advice you to clarify from the beginning of this Appendix, what this study is about and what you intend to 
+do below.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \begin{center}
 	\includegraphics[width=0.5\textwidth]{figures/S190521g_swinjs.png}
-	\caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220}$ from simulations of an \texttt{NRSur7dq4} GW signal with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (pink dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 or the 5 real noise simulation are not. For comparison, we also plot the 90 \% credible level for the actual event, GW190521.}
+	\caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220})$ from simulations \comment{AB: I have changed this in other places. The word ``simulations'' is confusing, because we deal with a paper in which we also refer to NR simulations. I suggest to use ``injected synthetic signals'' instead} of an \texttt{NRSur7dq4} GW signal with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (pink dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 or the 5 real noise simulation are not. For comparison, we also plot the 90 \% credible level for the actual event, GW190521. \comment{AB: For clarity, please indicate on the plot which waveform model is used to obtain such posteriors, as you did 
+in the other plots of the paper. Also, please use something else instead of ``actual event'', which is confusing. The problem is 
+that the first two entries of the legend refer to the noise properties of the PE study done with an injected synthetic signal, whereas I believe ``actual event'' refers to ``real'' not injected signal 
+and ``real noise''. All the entries in the legend need to be consistent with each other; you need to specify for each of them the ``signal'' and the ``noise''. I hope is clear what I am saying}}
 	\label{fig:21g_systematics}
 \end{center}	
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We use as our underlying GR signal, an NR waveform (using the waveform model \texttt{NRSur7dq4}) with parameters similar to the actual event GW190521 (as reported in Table I of \cite{Abbott:2020tfl}). The predictions of the frequency and damping time for the GR signal we choose are indicated by the black cross in Fig.~\ref{fig:21g_systematics}, and for comparison, the results on the actual signal are shown with a black solid curve. It would appear that while the measurement of the frequency is consistent with the prediction, we overestimate the damping time. 
+\ab{The spinning, precessing NR-surrogate model \texttt{NRSur7dq4}, valid up to mass ratio 4, was employed 
+(together with the $\SEOB$ model) to analyze the GW190521 signal observed by the LIGO and Virgo detectors. 
+For the injected synthetic signal we use a \texttt{NRSur7dq4} waveform with parameters similar to the ones 
+recovered by this model on the actual GW190521 data (see Table I of Ref.~\cite{Abbott:2020tfl}).}  
+\ab{In Fig.~\ref{fig:21g_systematics}, we indicate with a black cross what the injected \texttt{NRSur7dq4} signal 
+predicts for the $(2,2)$ frequency and damping time, and for comparison, we also 
+show with a black solid curve the results obtained when recovering the the actual signal GW190521 with the waveform model $\pSEOB$. As seen in the plot, while 
+the measurement of the frequency is consistent with the prediction, we overestimate the damping time.} \comment{AB: it is not clear 
+to me what the figure shows. Is the black line the result when running $\pSEOB$ against real data or the 
+injection in realt data?}
 
-The underlying NR signal is expected to be precessing, and since the $pSEOB$ model is built on an aligned-spin GR model, a lack of precession could bias measurements. We explore effects of possible waveform systematics by injecting the signal is coloured Gaussian noise. In this case, since the understanding of the noise realisations is complete, any measurement biases could only arise from incomplete understanding of the underlying signal. We find (grey curves in Fig.\ref{fig:21g_systematics}) our results to be consistent with the prediction thus ruling out a lack of precession to be a likely cause for the bias in the damping time measurement of the actual signal.
+\comment{AB: What is the ``underlying'' NR signal? I think you are referring to the 
+injected signal. Also, until now you have not discussed precession. 
+} The underlying NR signal is expected to be precessing, and since the
+$\pSEOB$ model is built on an aligned-spin GR model, a lack of
+precession could bias measurements. We explore effects of possible
+waveform systematics by injecting the signal is coloured Gaussian
+noise. In this case, since the understanding of the noise realizations
+is complete, any measurement biases could only arise from incomplete
+understanding of the \sout{underlying} \ab{injected} signal. We find (grey curves in
+Fig.\ref{fig:21g_systematics}) our results to be consistent with the
+prediction thus ruling out a lack of precession to be a likely cause
+for the bias in the damping time measurement of the actual signal.
 
-We subsequently study the effects of possible noise systematics by injecting the same \texttt{NRSur7dq4} GW signal in different realisations of actual interferometric noise around the real event GW190521. Since the PSDs of the GW detectors are expected to vary over longer durations of time, we select 5 different noise realisations over a segment of 2.5 hours of coincident data in both the LIGO detectors centred at the time of the actual event. The noise properties in this chunk of data, and consequently for all 5 simulated signals, is expected to be the closest to that for the actual event. The results are indicated by pink curves in Fig.~\ref{fig:21g_systematics}. For 3 of the 5 noise realisations, corresponding to $t_0-1$ hour, $t_0+0.5$ hours, and $t_0+1$ hour we recover a damping time similar to the actual event, where $t_0$ is the GPS time of the actual event. For the other two noise realisations, we estimate the consistent damping time but an off-set frequency, while the fifth noise realisation is consistent with both predictions. The SNR in the L1 Livingston detector goes down by more than 3 in some runs, indicative of how a variation in the noise strongly affects our ability to infer parameters. This also seems to indicate that a bias in the measurements of the damping time for the actual event can be unaccounted noise systematics.
+We subsequently study the effects of possible noise systematics by
+injecting the same \texttt{NRSur7dq4} GW signal in different
+realizations of actual interferometric noise around the real event
+GW190521. Since the PSDs of the GW detectors are expected to vary over
+longer durations of time, we select 5 different noise realizations
+over a segment of 2.5 hours of coincident data in both the LIGO
+detectors centered at the time of the actual event. The noise
+properties in this chunk of data, and consequently for all 5 simulated
+signals, is expected to be the closest to that for the actual
+event. The results are indicated by \sout{pink} \ab{green} curves in
+Fig.~\ref{fig:21g_systematics}. \ab{As it can be seen from the figure,} 
+for 3 of the 5 noise realizations,
+corresponding to $t_0-1$ hour, $t_0+0.5$ hours, and $t_0+1$ hour we
+recover a damping time similar to the actual event, where $t_0$ is the
+GPS time of the actual event. For the other two noise realizations, we
+estimate the consistent damping time but an off-set frequency, while
+the fifth noise realization is consistent with both predictions. The
+SNR in the Livingston detector goes down by more than \ab{a factor} 3 in some
+runs, indicative of how a variation in the noise strongly affects our
+ability to infer parameters. This also seems to indicate that a bias
+in the measurements of the damping time for the actual event \comment{AB: not clear 
+what you mean} can be unaccounted noise systematics.
 
 
 %
