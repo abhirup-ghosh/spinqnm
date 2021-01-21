@@ -7,6 +7,9 @@ PAPER=intro_paper
 
 run: $(PAPER).pdf
 
+view: $(PAPER).pdf
+	open -a Preview.app $(PAPER).pdf
+
 $(PAPER).pdf: $(PAPER).bbl $(PAPER).tex
 	pdflatex $(PAPER).tex -draftmode
 	pdflatex $(PAPER).tex 
