@@ -64,9 +64,10 @@ two-dimensional posteriors are consistent with the GR predictions
 
 \subsection{Simulations using non-GR signals in Gaussian noise} \label{ssec:ngr_signal}
 
-\abhi{Divided up this section into three clear indepenent segments. each segment has a plot associated with it.}
-
-\abhi{segment 1: discuss the recovery of nonGR signals to establish the robustness of the pipeline}
+\abhi{I have slightly modified this subsection. I have divided up the three main results we want to show here:\\
+1. the robustness of the pipeline to detect devations. This segment includes the 10\% deviation results.\\
+2. the systematic biases if one uses a GR template to measure a nonGR signal. This also uses the 10\% deviation results.\\
+3. highlight the fact that for a nonGR signal, not only does pSEOB correctly recover the frequencies, unlike SEOB, it also correctly recovers the masses and spins. For this we needed to show a comparison of a SEOB vs pSEOB recovery of a signal with and without deviation, i.e, at least 4 cases. The easiest way to show this, I thought, would be to restrict to one event, GW150914-like, and create three signals with deviationsn = 0, 0.1 and 0.5. Then in two columns we show the SEOB vs pSEOB recoveries. There are several things that can be higlighted in this figure: a) for GR recoveries, greater the deviation, greater the biases. b) pSEOB measurements for all quantities are unbiased, c) this behaviour is unchanged irrespective of the magnitude of the deviation. Consequently, I have replaced the earlier Fig 4 with a new figure.}
 
 To demonstrate the robustness of the method in detecting possible
 deviations from GR, we inject synthetic GW signals which are identical to
@@ -110,39 +111,38 @@ GW150914-like (upper panel) and GW190521-like (lower panel) injections. The meas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\abhi{segment 2: discuss possible systematics by recoving a nonGR signal using a GR template}
 We additionally investigate the effects of erroneously assuming that an underlying non-GR signal can be well-described
 by a GR one. We do this by estimating the parameters of our non-GR signals using the GR waveform model $\SEOB$ instead of the parameterized $\pSEOB$.  The resulting one- and two-dimensional posteriors are shown in the right panels of Fig.~\ref{fig:simulated_signal_nonGR} by red curves for the GW150914-like (top) and GW190521-like (bottom) signals respectively. For both signals, we find the $\SEOB$ estimates are markedly biased with respect to the $\pSEOB$ estimates. This can be explained by the inability of the $\SEOB$ template waveform to capture all the physics in the $\pSEOB$ signal. We also notice that the results are distinctly different for the two events. For the GW150914-like non-GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (top right panel in Fig.~\ref{fig:simulated_signal_nonGR}) are consistent with the $(\fngr{220}, \taungr{220})$ measurements for a signal with \emph{no deviations} from GR (top right panel in Fig.~\ref{fig:simulated_signal_GR}). In other words, if the actual signal had deviations from GR as large as the $10\%$, the analysis with the GR signal $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like non-GR signal, a simple GR analysis of the non-GR signal would have yielded measurements distinctly different from either of the two parameterized estimates: with and without deviations. 
 
-\abhi{segment 3: discuss possible correlations between GR and nonGR quantities as you increase deviation. Also discuss the SNRs recovered}.
-Finally, we investigate the impact on the estimation of GR parameters discussed in Sec.~\ref{sec:method}, $\bxigr$  as we change the magnitude of deviation in the non-GR parameters. For comparison, we also consider a synthetic signal with $\df{220} = \dtau{220} = 0.5$, or 50 \% deviation, along with the 10\% non-GR signal and a signal with no deviation (essentially GR) mentioned above. 
+Finally, we investigate the impact on the estimation of GR parameters discussed in Sec.~\ref{sec:method}, $\bxigr$  as we change the magnitude of deviation in the non-GR parameters. We restrict oursel es to a GW150914-like event, and for comparison, add a synthetic signal with $\df{220} = \dtau{220} = 0.5$, or 50 \% deviation, alongside the 10\% non-GR signal and a signal with no deviation (essentially GR) mentioned above. We summarise the results in Fig.~\ref{fig:gr_ngr_comparison}. The left (right) panels show the posterior probability distributions of the three signals using the GR, $\SEOB$ (non-GR, $\pSEOB$) waveform model. The first difference we note is the $\SEOB$ recoveries yield biased estimates when the underlying signal is non-GR, while the $\pSEOB$ recoveries do not. Furthermore, as we increase the deviations, while the $\SEOB$ recoveries expectedly get more biased, the $\pSEOB$ measurements are robust is consistently recovering the injected value. Since the measurement of the frequency and damping time in the $\pSEOB$ model incorporate information from the masses and spins through the NR fitting formulae (as shown in Eqs.~\ref{eq:nongr_freqs_a}-~\ref{eq:nongr_freqs_b}), one might have expected correlations between the mass, spins and the QNM frequencies, leading to biased estimates in the masses and spins. We confirm here that is not the case.
 
-
-
-
-\comment{AB: Not clear to me the next sentence. We are working
-in Gaussian noise, so why are you referring to the noise as the culprit or the
-source of difference?} The fact that the GW190521-like signal has a much
-lower SNR than GW150914-like signal might be a possible reason for the
-measurement of the final quantities to be more susceptible to noise. A
-more detailed comparison of the other parameters, like the masses and
-spins, between an $\pSEOB$ and an $\SEOB$ measurement of a modified GR
-signal is shown in Fig.~\ref{fig:gr_ngr_comparison}. \comment{AB: Please
-comment the figures. What are the main results? What do we deduce?}
-
-
+\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % modified GR signal: GR vs nonGR recovery comparison
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}%[h!]
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_0p1_0p5_gr_m1m2.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fngrtaungr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_0p1_0p5_gr_fngrtaungr.png}
-        \caption{\textcolor{red}{FINAL RESULT} Comparison of \sout{the recovered} \ab{binary's} parameters when \sout{the underlying signal is assumed to be a GR signal or a modified GR signal} \ab{a non-GR signal ($\pSEOB$) is injected and recovered with a GR ($\SEOB$) or a non-GR ($\pSEOB$) waveform model}. \sout{In both cases, the actual underlying signal is a modified GR signal with parameters similar to} \ab{The left (right) panels refer to
-a GW150914-like (GW190521- like) injected signal (see Table~\ref{tab:injection_values}) with QNM deviation parameters of $\df{220} = \dtau{220} = 0.5$.} \sout{For the GW150914 (GW190521) contours, the $SEOB$ and $pSEOB$ recoveries are indicated by blue (red) and pink (grey) curves respectively.} The panels (from top to bottom) show the recoveries in (detector-frame) \sout{initial} masses (first row), \sout{z-components of dimensionless initial} \ab(dimensionless) spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $a_f$) from the frequency and damping time
-(obtained by inverting the Berti fits). \comment{AB: I would write those details about the ``Berti's fits, etc.'' in the text, not in the caption. Also please specify if the remnant mass is the detector-frame mass. Please
-switch the red and blue colors. The blue colors should always refer to the same waveform model, i.e., $\pSEOB$. Please indicate on the figures: GW150914-like and GW190521-like.}}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_m1m2.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_a1za2z.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_fgrtaugr.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_Mfaf.png}
+        \caption{\textcolor{red}{FINAL RESULT} Comparison of binary's parameters when a non-GR signal ($\pSEOB$) is injected and recovered with a GR ($\SEOB$) or a non-GR ($\pSEOB$) waveform model. The left (right) panels refer to
+a GW150914-like (GW190521- like) injected signal (see Table~\ref{tab:injection_values}) with QNM deviation parameters of $\df{220} = \dtau{220} = 0.1$. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $a_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines.}
+        \label{fig:gr_ngr_comparison}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GW150914-like signal with different deviations: GR vs nonGR recovery
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}%[h!]
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_m1m2.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_a1za2z.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_fgrtaugr.png}
+        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_Mfaf.png}
+        \caption{\textcolor{red}{FINAL RESULT}  Comparison of a GW150914-like injection's parameters when signals with no, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $a_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
         \label{fig:gr_ngr_comparison}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
