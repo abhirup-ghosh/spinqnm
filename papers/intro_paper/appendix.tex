@@ -1,83 +1,25 @@
-\section{Study of systematics on ringdown measurements in real, non-Gaussian noise}\label{sec:noise_systematics}
+\section{Study of systematics in ringdown measurements in real, non-Gaussian noise}\label{sec:noise_systematics}
 
-\comment{AB: Please improve considerably this Appendix because it is not easy to follow the motivation and the logic. It is written for LIGO people.
-I have tried to make changes but it is better if you do it. I risk to erase parts that you would consider important. Please write it thinking that your
-reader is not an LSC reader!}
+\abhi{completely re-written this section to make it more readable and less technical.}
 
-In Sec.~\ref{sec:method}, we \ab{discussed} \sout{mentioned that} the expression of the
-Bayesian likelihood function \ab{that we use in our analysis} \sout{outlined in} \ab{(see
-Eq.~\ref{eq:likelihood})} \ab{and stressed that it}\sout{and \ref{eq:nwip}} is only valid if the interferometric noise can be
-described as a stationary Gaussian process. LIGO-Virgo noise, however,
-frequently has non-stationary and/or non-Gaussian features, for
-example glitches, which can affect parameter inferences unless
-appropriately accounted for. Here we demonstrate\ab{, by injecting in real
-noise a GW190521-like signal} \sout{with an example of a
-GW190521-like simulated signal}, \ab{how} systematic biases \ab{can originate} \sout{likely originating}
-from an incomplete understanding of the noise. \comment{AB: It is confusing to refer to ``systematic''
-biases for the noise, generally we refer to systematic biases for the waveform modeling.
-In fact, below you also, somewhat suddenly, refer to (lack of) precession, as a possible source of systemtcis.
-I would advice you to clarify from the beginning of this Appendix, what this study is about and what you intend to
-do below.}
+Inferences of all parameters in this paper have been done under the assumption that the noise in the detectors is stationary and Gaussian. In other words, detector noise follows a normal distrubution with zero mean and a PSD, $S_n(f)$, that is not a function of time, at least during the internal of the gravitational wave signal. This allows us to write the Bayesian likelihood function in the form given in Eqs.~\ref{eq:likelihood}-~\ref{eq:nwip}, and perform all the parameter estimation that follows in the results sections. However,, LIGO-Virgo noise can often have features that deviate from stationarity and Gaussianity. If such features are not taken into account appropriately, final estimates of parameters can get biased. We demonstrate one such case by injecting in real noise a GW190521-like signal and showing how parameter estimates can be biased by our understanding of detector noise is not complete.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/S190521g_swinjs.png}
-        \caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220})$ from simulations \comment{AB: I have changed this in other places. The word ``simulations'' is confusing, because we deal with a paper in which we also refer to NR simulations. I suggest to use ``injected synthetic signals'' instead} of an \texttt{NRSur7dq4} GW signal with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (pink dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 or the 5 real noise simulation are not. For comparison, we also plot the 90 \% credible level for the actual event, GW190521. \comment{AB: For clarity, please indicate on the plot which waveform model is used to obtain such posteriors, as you did
-in the other plots of the paper. Also, please use something else instead of ``actual event'', which is confusing. The problem is
-that the first two entries of the legend refer to the noise properties of the PE study done with an injected synthetic signal, whereas I believe ``actual event'' refers to ``real'' not injected signal
-and ``real noise''. All the entries in the legend need to be consistent with each other; you need to specify for each of them the ``signal'' and the ``noise''. I hope is clear what I am saying}}
+        \caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220})$ using synthetic \texttt{NRSur7dq4} GW signals with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (green dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 or the 5 real noise simulation are not. The black curve corresponds to the measurements of the real event GW190521 reported in~\ref{Abbott:2020jks}. All signals are recovered using the $\pSEOB$ waveform model.}
         \label{fig:21g_systematics}
 \end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ab{The spinning, precessing NR-surrogate model \texttt{NRSur7dq4}, valid up to mass ratio 4, was employed
-(together with the $\SEOB$ model) to analyze the GW190521 signal observed by the LIGO and Virgo detectors.
-For the injected synthetic signal we use a \texttt{NRSur7dq4} waveform with parameters similar to the ones
-recovered by this model on the actual GW190521 data (see Table I of Ref.~\cite{Abbott:2020tfl}).}
-\ab{In Fig.~\ref{fig:21g_systematics}, we indicate with a black cross what the injected \texttt{NRSur7dq4} signal
-predicts for the $(2,2)$ frequency and damping time, and for comparison, we also
-show with a black solid curve the results obtained when recovering the the actual signal GW190521 with the waveform model $\pSEOB$. As seen in the plot, while
-the measurement of the frequency is consistent with the prediction, we overestimate the damping time.} \comment{AB: it is not clear
-to me what the figure shows. Is the black line the result when running $\pSEOB$ against real data or the
-injection in realt data?}
+We choose a spinning, precessing NR-surrogate model \texttt{NRSur7dq4} (valid up to mass ratio 4) to simulate the actual GW190521 signal observed by the LIGO and Virgo detectors~\cite{Abbott:2020tfl} (see Table I of Ref.~\cite{Abbott:2020tfl})). The choice of the  NR-surrogate model is motivated by the fact that they are the most accurate in the parameter range described by GW190521. In Fig.~\ref{fig:21g_systematics}, we indicate with a black cross what the injected \texttt{NRSur7dq4} signal predicts for the $(2,2)$ frequency and damping time,, and for comparison, we also show with a black solid curve the results obtained when recovering the the actual signal GW190521 with the waveform model $\pSEOB$. As seen in the plot, while the measurement of the frequency is consistent with the prediction, we overestimate the damping time.
 
-\comment{AB: What is the ``underlying'' NR signal? I think you are referring to the
-injected signal. Also, until now you have not discussed precession.
-} The underlying NR signal is expected to be precessing, and since the
-$\pSEOB$ model is built on an aligned-spin GR model, a lack of
-precession could bias measurements. We explore effects of possible
-waveform systematics by injecting the signal is coloured Gaussian
-noise. In this case, since the understanding of the noise realizations
-is complete, any measurement biases could only arise from incomplete
-understanding of the \sout{underlying} \ab{injected} signal. We find (grey curves in
-Fig.\ref{fig:21g_systematics}) our results to be consistent with the
-prediction thus ruling out a lack of precession to be a likely cause
-for the bias in the damping time measurement of the actual signal.
+The actual GW190521 event was observed at a GPS time, 1242442967.61 seconds (roughly 03:02:49 UTC, May 21, 2019). We select a time period of about 2.5 hours around this GPS time and create synthetic signals by injecting the \texttt{NRSur7dq4} GW signal in different stretches of real detector noise around the time of the actual GW event. The PSDs of GW detectors are expected to vary over
+longer durations of time, and hence the 2.5 hour stretch of noise we consider can be assumed to have noise-properties similar to the time of the actual event. The results are indicated by green curves in Fig.~\ref{fig:21g_systematics}. As it can be seen from the figure, for 3 of the 5 noise realizations, corresponding to $t_0-1$ hour, $t_0+0.5$ hours, and $t_0+1$ hour we recover a damping time similar to the actual event, where $t_0$ is the GPS time of the actual event. For the other two noise realizations, we estimate the consistent damping time but an off-set frequency, while the fifth noise realization is consistent with both predictions. This seems to indicate that a bias in the measurements of the damping time for the actual event can be explained on account of an incomplete understanding of the noise at the time of the event.
 
-We subsequently study the effects of possible noise systematics by
-injecting the same \texttt{NRSur7dq4} GW signal in different
-realizations of actual interferometric noise around the real event
-GW190521. Since the PSDs of the GW detectors are expected to vary over
-longer durations of time, we select 5 different noise realizations
-over a segment of 2.5 hours of coincident data in both the LIGO
-detectors centered at the time of the actual event. The noise
-properties in this chunk of data, and consequently for all 5 simulated
-signals, is expected to be the closest to that for the actual
-event. The results are indicated by \sout{pink} \ab{green} curves in
-Fig.~\ref{fig:21g_systematics}. \ab{As it can be seen from the figure,}
-for 3 of the 5 noise realizations,
-corresponding to $t_0-1$ hour, $t_0+0.5$ hours, and $t_0+1$ hour we
-recover a damping time similar to the actual event, where $t_0$ is the
-GPS time of the actual event. For the other two noise realizations, we
-estimate the consistent damping time but an off-set frequency, while
-the fifth noise realization is consistent with both predictions. The
-SNR in the Livingston detector goes down by more than \ab{a factor} 3 in some
-runs, indicative of how a variation in the noise strongly affects our
-ability to infer parameters. This also seems to indicate that a bias
-in the measurements of the damping time for the actual event \comment{AB: not clear
-what you mean} can be unaccounted noise systematics.
+The reader might question the judiciousness of using an aligned-spin waveform model, like $\pSEOB$ to measure a signal like GW190521 which appears to be precessing, especially because an incomplete understanding of the underlying signal can also lead to biases in measured quantities, as we have already demonstrated in Sec.~\ref{ssec:ngr_signal}. In order to explore possible effects of missing information about in-plane spins in $\pSEOB$, we repeat the above study of injecting synthetic signals using \texttt{NRSur7dq4} and recovering using the $\pSEOB$ template. But this time, instead of using real detector noise, we use Gaussian noise, i.e., realisations of noise sampled from a predicted detector PSD. Since the properties of the noise is completely understood in this case, any residual measurement biases can be completely attributed to diffferences in the waveform model. The 2D posterior distributions of the frequency and damping time measured using these Gaussian-noise signals is shown by the grey curves in Fig.~\ref{fig:21g_systematics}. We find the measurements to be completely consistent with the predictions of the frequency and damping time, thus concluding that a lack of in-plane spins in the $\pSEOB$ model does not affect our measurements of the QNM properties. The fact that the measurement of ringdown quantities are robust against an incomplete understanding of the inspral of a GW signal, is indeed one of the most strong points of our model.
 
