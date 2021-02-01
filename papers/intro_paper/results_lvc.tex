@@ -9,67 +9,43 @@ Figures can be used in talks, and can capture the information much better
 than a list of numbers in a Table.}
 
 The LIGO-Virgo Collaboration recently released their testing GR
-catalogue containing results \sout{of this test} for all events observed
-during O3a~\cite{Abbott:2020jks}, which passed a threshold for the
-total (source-frame) mass $\geq 50 \Mo$ and SNRs in the pre- and
-post-merger regions $\geq 8$.The pre- and post-merger regions of the
-signal are identified from the signal's power before and after the signal reaches the peak's
-amplitude, which is determined by the maximum of the
-likelihood function from the parameter-estimation analysis.
-\comment{AB: What does it mean ``for the purpose of Ref.''? We are using present tense in the
-entire paper, except perhaps the Conclusions section.}
-For the purpose of Ref.~\cite{Abbott:2020jks}, we use\sout{d} a mass
-threshold and restrict\sout{ed} ourselves to the highest-mass events which
-\sout{were} \ab{are} expected to be most promising to study merger-ringdown. However,
-since our method relies on doing a parameter estimation on the entire
-inspiral-merger-ringdown signal, we require the SNR to be beyond a
-certain threshold throughout the signal for reliable parameter
-estimation of the initial and final quantities. \comment{AB: there are not ``initial'' and ``final'' parameters,
-there are the component masses of the holes in the binary, and the
-mass of the remnant formed after merger.} In fact the SNR
-threshold alone should be sufficient for the analysis, and for this
-paper we have relaxed the mass threshold. This has added two events,
-GW190630$\_$185205 and GW190828$\_$063405, to the list of GW events
-considered in \cite{Abbott:2020jks}. Fig.~\ref{fig:o1o2_events} shows results from these two
-events along with GW190519$\_$153544, GW190521$\_$074359,
-GW190910$\_$112807. \comment{AB: Please improve the above paragraph
-and make it clearer which choice is made for the SNR threshold and
-masses, and why.}
+catalogue containing results for events observed
+during O3a~\cite{Abbott:2020jks}. For the test that we here present, the results shown in~\cite{Abbott:2020jks} only include events which pass a threshold for the median redshifted total mass $\geq 90 \Mo$ and SNRs in the pre- and
+post-merger regions $\geq 8$\footnote{The pre- and post-merger regions of the signal are identified from the signal's power before and after the signal reaches the peak's amplitude, which is determined from the maximum of the likelihood function obtained with the parameter-estimation analysis.}. 
+%
+The SNR threshold ensures that the signal contains sufficient information in both the inspiral and merger stages to break the degeneracy between the binary's total mass and the non-GR deviations $(\df{220}, \dtau{220})$. Such strong degeneracy is present for low-SNR events with negligible higher-modes and for which only the post-merger is detectable rendering the measurement of $(\df{220}, \dtau{220})$ impossible for those cases.\rb{should we show an example where this degeneracy happens in the appendix? We can show a corner plot with $(\df{220}, \dtau{220}, M_{\rm total })$ for 21g in the appendix for example. And perhaps also for GW150914 for comparison.}
+On the other hand the total mass threshold $\geq 90 \Mo$ was employed due to the fact that this analysis is computationally expensive, and also because we expected these events to be the most promising for ringdown studies. However, since the SNR threshold alone should be sufficient for the analysis, for this paper we run the test on all the events listed in Ref.~\cite{Abbott:2020jks} that have SNRs in the pre- and post-merger regions $\geq 8$, without imposing any mass threshold.
 
-Furthermore, for the first time, in this paper, we apply our method to
-measure the QNMs to the relevant
-GW events from LIGO-Virgo's O1 and O2 runs, alongside
-the above events. Applying the same thresholds as above, we find three
+Imposing this threshold adds two events, GW190630$\_$185205 and GW190828$\_$063405, to the list of GW events considered in \cite{Abbott:2020jks}. Furthermore, for the first time, in this paper, we apply our method to
+measure the QNMs to the relevant GW events from LIGO-Virgo's O1 and O2 runs, alongside
+the above events. Applying the same threshold as above, we find two
 additional events that could be included in the analysis: GW150914,
-GW170104, GW170729. The other high-mass events from O1-O2, GW170809,
-GW170814, GW170818 and GW170823 do not have an SNR of $8$ in the
-merger-ringdown signal. For the three relevant signals, GW150914,
-GW170104 and GW170729, we show the posterior distributions in
-$(\df{220}, \dtau{220})$ in Fig.~\ref{fig:o1o2_events}. We also reconstruct the QNM parameters, $(\fngr{220}, \taungr{220})$
-which are tabulated in Table~\ref{tab:qnm_o1o2_results} \footnote{See
-  Table IV of Ref.~\cite{Abbott:2020jks} for a list of the SNR
+GW170104. The other high-mass events from O1-O2, GW170729, GW170809,
+GW170814, GW170818 and GW170823 do not have an SNR $\geq 8$ in the
+merger-ringdown signal. The list of the signals for which we run the analysis is given in Table~\ref{tab:qnm_o1o2_results}\footnote{See Table IV of Ref.~\cite{Abbott:2020jks} for a list of the SNR
   thresholds. The paper quotes them for the purpose of the IMR
   consistency test, but the same thresholds have been used for the
-  $\pSEOB$ test, as well.} Among all the GW signals detected so far,
-GW150914 (solid curve in Fig.~\ref{fig:o1o2_events}) is unique in its
-loudness, leading to the first, and to date, best attempt in measuring the QNM frequencies~\cite{LSC_2016grtests,Brito:2018rfr,Carullo:2019flw,Isi:2019aib}. Within 90\% credibility we obtain from GW150914: 
-%
-\begin{equation}
-\df{220}=0.04^{+0.06}_{-0.04}\,\quad \dtau{220}=0.09^{+0.18}_{-0.18}\,.
-\end{equation}
-
-
-
+  $\pSEOB$ test, as well.}.
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % O1-O2 events
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
         \includegraphics[width=0.5\textwidth]{figures/rin_pseob_results_v2.pdf}\includegraphics[width=0.3\textwidth]{figures/rin_all_events_bounds.pdf}
-        \caption{\emph{Top panel}: The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,\pm 2)$ QNM, $(\df{220},\dtau{220})$ and their corresponding one-dimensional marginalized posterior distributions, for events from O1, O2 and O3a passing a SNR threshold of $8$ in both the pre- and post-merger signal. The solid red curve marks the best single-event constraint, GW150914, whereas the contraints from the other events are indicated by the dash-dot curves. The joint constraints on $(\df{220},\dtau{220})$ obtained multiplying the likelihoods from individual events is given by the filled grey contours, while the hierarchical method of combination yields the black dot dashed curves. \emph{Bottom panel}: 90\% credible interval on the one-dimensional marginalised posteriors on $\delta \sigma_i=(\df{220},\dtau{220})$, colored by the median redshifted total mass $(1 + z)M$, inferred assuming GR. Filled gray (unfilled black) triangles mark the constraints obtained when all the events are combined by multiplying likelihoods (hierarchically).}
+        \caption{\emph{Top panel}:\rb{should this be left and right panel?} The 90\% credible levels of the posterior probability distribution of the fractional deviations in the frequency and damping time of the $(2,\pm 2)$ QNM, $(\df{220},\dtau{220})$ and their corresponding one-dimensional marginalized posterior distributions, for events from O1, O2 and O3a passing a SNR threshold of $8$ in both the pre- and post-merger signal. The solid red curve marks the best single-event constraint, GW150914, whereas the contraints from the other events are indicated by the dash-dot curves. The joint constraints on $(\df{220},\dtau{220})$ obtained multiplying the likelihoods from individual events is given by the filled grey contours, while the hierarchical method of combination yields the black dot dashed curves. \emph{Bottom panel}: 90\% credible interval on the one-dimensional marginalised posteriors on $\delta \sigma_i=(\df{220},\dtau{220})$, colored by the median redshifted total mass $(1 + z)M$, inferred assuming GR. Filled gray (unfilled black) triangles mark the constraints obtained when all the events are combined by multiplying likelihoods (hierarchically).}
         \label{fig:o1o2_events}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+For all the relevant signals, we show the posterior distributions $(\df{220}, \dtau{220})$ in the left panel \rb{the caption says "top panel" but the current figure is in the left panel} of Fig.~\ref{fig:o1o2_events} and also provide the reconstructed QNM parameters, $(\fngr{220}, \taungr{220})$ in Table~\ref{tab:qnm_o1o2_results}. In the right panel \rb{the caption says "bottom panel" but the current figure is in the right panel} of Fig.~\ref{fig:o1o2_events} we also provide a summary of the 90\% credible intervals on the one-dimensional marginalised posteriors highlighting the dependence of the constraints with respect to the total mass of the system. In general the tightest bounds come from the most massive systems, as would be expected given that more massive events tend to have larger post-merger SNR \rb{check if this is true when plot is updated}.
+ 
+Among all the GW signals detected so far, GW150914 (solid curve in Fig.~\ref{fig:o1o2_events}) is unique in its loudness, leading to the first, and to date, best attempt in measuring the QNM frequencies~\cite{LSC_2016grtests,Brito:2018rfr,Carullo:2019flw,Isi:2019aib}. Within 90\% credibility we obtain from GW150914: 
+%
+\begin{equation}
+\df{220}=0.04^{+0.06}_{-0.04}\,\quad \dtau{220}=0.09^{+0.18}_{-0.18}\,.
+\end{equation}
 
 Stronger constraints can be obtained by combining information from all the events~\cite{Abbott:2020jks}. If we assume that the fractional deviations $(\df{220},\dtau{220})$ take the same values in multiple events, we can assume
 the posterior of one event to be the prior for the next, and obtain a
@@ -104,7 +80,7 @@ where $P(\xi_{\text{nGR}} | \,\mu, \sigma) = \mathcal{N}(\mu,\sigma)$ by constru
 \begin{equation}
 \df{220}=0.02^{+0.09}_{-0.09}\,,\quad \dtau{220}=0.13^{+0.42}_{-0.40}\,.
 \end{equation}
-Compared to Ref.~\cite{Abbott:2020jks} these constraints are almost a factor $\sim 4$ stronger for $\df{220}$ and a factor $\sim 2$ for $\dtau{220}$. \rb{give results for $\mu$ and $\sigma$ as well?}
+Compared to Ref.~\cite{Abbott:2020jks} these constraints are almost a factor $\sim 4$ stronger for $\df{220}$ and a factor $\sim 2$ for $\dtau{220}$. Similar improvements hold for the hyperparameters: $\df{220}\,(\mu=0.02^{+0.05}_{-0.05},\,\sigma<0.09)$ and $\dtau{220}\,(\mu=0.13^{+0.20}_{-0.18},\,\sigma<0.38)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
