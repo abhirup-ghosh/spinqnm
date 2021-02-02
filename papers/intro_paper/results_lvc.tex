@@ -69,18 +69,20 @@ the joint likelihood. We show these joint likelihoods on $(\df{220}, \dtau{220})
 %
 
 
-As described in~\cite{Abbott:2020jks}, we can relax the assumption of a shared deviation across all events by using the hierarchical inference technique originally proposed in Refs.~\cite{Zimmerman:2019wzo,Isi:2019asy}. The general idea behind this technique is to assume that the non-GR parameters $(\df{220},\dtau{220})$ are drawn from a common underlying distribution, whose properties can be inferred from the population of events. Following~\cite{Zimmerman:2019wzo,Isi:2019asy,Abbott:2020jks} we model the population distribution with a Gaussian  $\mathcal{N}(\mu,\sigma)$ of unknown mean $\mu$ and standard deviation $\sigma$. Through a joint analysis of all the GW events, one can then obtain a posterior distribution $P(\mu, \sigma |  \{d_j\}) $ for the hyperparameters $\mu$ and $\sigma$~\cite{Isi:2019asy} and a distribution for a given non-GR parameter $\xi_{\text{nGR}}$ by computing~\cite{Isi:2019asy}
+As described in~\cite{Abbott:2020jks}, we can relax the assumption of a shared deviation across all events by using the hierarchical inference technique originally proposed in Refs.~\cite{Zimmerman:2019wzo,Isi:2019asy}. The general idea behind this technique is to assume that the non-GR parameters $(\df{220},\dtau{220})$ are drawn from a common underlying distribution, whose properties can be inferred from the population of events. Following~\cite{Zimmerman:2019wzo,Isi:2019asy,Abbott:2020jks} we model the population distribution with a Gaussian  $\mathcal{N}(\mu,\sigma)$ of unknown mean $\mu$ and standard deviation $\sigma$. We can then obtain a posterior distribution $P(\mu, \sigma |  \{d_j\}) $ for the hyperparameters $\mu$ and $\sigma$ from a joint analysis of all the GW events~\cite{Isi:2019asy}. We use the \texttt{stan}-based code~\cite{stan} developed and used in Refs.~\cite{Isi:2019asy,Abbott:2020jks} to obtain $P(\mu, \sigma |  \{d_j\}) $.
+%
+Finally, the distribution for a given non-GR parameter $\xi_{\text{nGR}}$ is then be obtained by computing~\cite{Isi:2019asy}
 %
 \begin{equation}
 P(\xi_{\text{nGR}} | \{d_j\}) = \int P(\xi_{\text{nGR}} |\, \mu, \sigma)\,P(\mu, \sigma |  \{d_j\})\,d\mu\,d\sigma \,,
 \end{equation}
 %
-where $P(\xi_{\text{nGR}} | \,\mu, \sigma) = \mathcal{N}(\mu,\sigma)$ by construction. The 1D posteriors for $\df{220}$ and $ \dtau{220}$ obtained through this technique are shown in Fig.~\ref{fig:o1o2_events} (dash-dotted curves) with corresponding median and 90\% credible interval given by: 
+where $P(\xi_{\text{nGR}} | \,\mu, \sigma) = \mathcal{N}(\mu,\sigma)$. The 1D posteriors for $\df{220}$ and $ \dtau{220}$ obtained through this technique are shown in Fig.~\ref{fig:o1o2_events} (dash-dotted curves) with corresponding median and 90\% credible interval given by: 
 %
 \begin{equation}
 \df{220}=0.02^{+0.09}_{-0.09}\,,\quad \dtau{220}=0.13^{+0.42}_{-0.40}\,.
 \end{equation}
-Compared to Ref.~\cite{Abbott:2020jks} these constraints are almost a factor $\sim 4$ stronger for $\df{220}$ and a factor $\sim 2$ for $\dtau{220}$. Similar improvements hold for the hyperparameters: $\df{220}\,(\mu=0.02^{+0.05}_{-0.05},\,\sigma<0.09)$ and $\dtau{220}\,(\mu=0.13^{+0.20}_{-0.18},\,\sigma<0.38)$.
+Compared to Ref.~\cite{Abbott:2020jks} these constraints are almost a factor $\sim 4$ more stringent for $\df{220}$ and a factor $\sim 2$ for $\dtau{220}$. Similar improvements hold for the hyperparameters: $\df{220}\,(\mu=0.02^{+0.05}_{-0.05},\,\sigma<0.09)$ and $\dtau{220}\,(\mu=0.13^{+0.20}_{-0.18},\,\sigma<0.38)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
