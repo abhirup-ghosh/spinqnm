@@ -1,8 +1,9 @@
 \subsection{Simulations using GR signals in Gaussian noise} \label{ssec:gr_signal}
 
-We demonstrate our method using synthetic-signal injections describing GWs
-from BBHs in GR. We employ coloured Gaussian noise with PSDs expected for LIGO and
-Virgo detectors at design sensitivities~\cite{AdvLIGOPSD,TheVirgo:2014hva}.
+We \ab{now} demonstrate our method using synthetic-signal injections describing GWs
+from BBHs in GR. We employ coloured Gaussian noise with PSDs for LIGO and
+Virgo detectors \ab{during the fourth observing (O4) run} (i.e., at design sensitivity)\ab{, which 
+is expected to start yin the second half of 2022}~\cite{AdvLIGOPSD,TheVirgo:2014hva}.
 For the mock BBH signals, we choose parameters similar to two specific GW events, GW150914~\cite{Abbott:2016blz} and
 GW190521~\cite{Abbott:2020tfl}. We list them in Table~\ref{tab:injection_values}.
 These two binary systems are representative of the kind of systems for which
@@ -24,7 +25,18 @@ pre- and post-merger SNRs return reliable parameter-estimation results.
 \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_f220_tau220.png}
         \includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p0_f220_tau220.png}
-        \caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $(\df{220},\dtau{220})$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for GR injections with initial parameters similar to GW150914 (top panels) and GW190521 (bottom panels) (Table~\ref{tab:injection_values}). The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values.}
+        \caption{\textcolor{red}{FINAL RESULT} Posterior probability
+          distribution on the fractional deviations in the frequency
+          and damping time of the $(2,2)$ QNM, $(\df{220},\dtau{220})$
+          (left panels) and the reconstructed quantities,
+          $(\fngr{220}, \taungr{220})$ (right panels) for GR
+          injections \ab{($\SEOB$)} with initial parameters similar to GW150914 (top
+          panels) and GW190521 (bottom panels)
+          (see Table~\ref{tab:injection_values}). The 2D contour marks the
+          90\% credible region, while the dashed lines on the 1D
+          marginalized distributions mark the 90\% credible
+          levels. The black vertical and horizontal lines mark the
+          injection values.}
         \label{fig:simulated_signal_GR}
 \end{center}
 \end{figure*}
@@ -33,20 +45,20 @@ pre- and post-merger SNRs return reliable parameter-estimation results.
 
 To avoid possible systematic biases in our parameter-estimation analysis
 due to error in waveform modeling, we use the GR version of the same waveform,
-$\SEOB$ (without allowing for deviations in the QNM parameters) to
+$\SEOB$ (i.e., without allowing for deviations in the QNM parameters) to
 simulate our GW signal. And to avoid systematic biases due to noise,
 we use an averaged (zero-noise) realization of the noise. \footnote{A detailed
 study on noise systematics for one of the GW events is presented in
 Appendix~\ref{sec:noise_systematics}.}  As in the case of the actual
-detections, we consider a two-detector LIGO network at
+detections \ab{of GW150914 and GW190521}, we consider a two-detector LIGO network at
 Hanford and Livingston, having identical PSDs. The distance to the two 
 synthetic events is rescaled such that the SNR in the detector network
 is the same as the actual events (i.e., 24 for GW150914 and 14
 for GW190521). Since mearly--equal-mass binaries like GW150914 and
 GW190521 observed at moderately high SNRs are not expected to have a
 loud ringdown signal, we restrict ourselves to estimating the
-frequency and damping time of only one QNM $(\ell m) = (2,2)$, i.e.,
-$\{\df{220},\dtau{220}\}$, while fixing the other QNM frequencies to
+frequency and damping time of only one QNM $(\ell m) = (2,2)$ (i.e.,
+$\{\df{220},\dtau{220}\}$), while fixing the other QNM frequencies to
 their GR values.
 
 We find, as one might expect, that the posterior distribution on the
@@ -64,16 +76,11 @@ two-dimensional posteriors are consistent with the GR predictions
 
 \subsection{Simulations using non-GR signals in Gaussian noise} \label{ssec:ngr_signal}
 
-\abhi{I have slightly modified this subsection. I have divided up the three main results we want to show here:\\
-1. the robustness of the pipeline to detect devations. This segment includes the 10\% deviation results.\\
-2. the systematic biases if one uses a GR template to measure a nonGR signal. This also uses the 10\% deviation results.\\
-3. highlight the fact that for a nonGR signal, not only does pSEOB correctly recover the frequencies, unlike SEOB, it also correctly recovers the masses and spins. For this we needed to show a comparison of a SEOB vs pSEOB recovery of a signal with and without deviation, i.e, at least 4 cases. The easiest way to show this, I thought, would be to restrict to one event, GW150914-like, and create three signals with deviationsn = 0, 0.1 and 0.5. Then in two columns we show the SEOB vs pSEOB recoveries. There are several things that can be higlighted in this figure: a) for GR recoveries, greater the deviation, greater the biases. b) pSEOB measurements for all quantities are unbiased, c) this behaviour is unchanged irrespective of the magnitude of the deviation. Consequently, I have replaced the earlier Fig 4 with a new figure.}
-
 To demonstrate the robustness of the method in detecting possible
 deviations from GR, we inject synthetic GW signals which are identical to
 the corresponding GR prediction up to merger, and differ in their post-merger
 description. We again choose binary-parameters
-similar to GW150914 and GW190521 (as given in Table ~\ref{tab:injection_values}), but
+similar to GW150914 and GW190521 (see Table ~\ref{tab:injection_values}), but
 set $\df{220} = \dtau{220} = 0.1 $.
 In other words, we assume that the frequency and damping time
 of our non-GR signal is 10\% more than the corresponding GR prediction,
@@ -81,7 +88,7 @@ although the pre-merger signal is identical to GR. In Fig.~\ref{fig:nongr_wavefo
 we show this non-GR waveform, \texttt{pSEOBNR} with respect to the 
 original GR template, \texttt{SEOBNR}. We see that the waveforms are identical in amplitude
 and instanteneous frequency upto the merger (lower panel) , beyond which the 
-red (GR template) and blue (non-GR template) diverge. We summarize the results of the Bayesian analysis in Fig.~\ref{fig:simulated_signal_nonGR} where we
+red (GR template) and blue (non-GR template) \sout{diverge} \ab{differ}. We summarize the results of the Bayesian analysis in Fig.~\ref{fig:simulated_signal_nonGR} where we
 show the posterior probability distributions for $(\df{220}, \dtau{220})$, or equivalently
 $(\fngr{220}, \taungr{220})$. We find that they are consistent with the corresponding
 values of the injection parameters, indicated by the black dashed lines.
@@ -103,7 +110,7 @@ values of the injection parameters, indicated by the black dashed lines.
 \begin{center}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_fngrtaungr.png}
         \includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_deltaf220_deltatau220.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_fngrtaungr.png}
-        \caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $(\df{220},\dtau{220})$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for non-GR injections with parameters of GW150914-like (top panels) and GW190521-like (bottom panels) as given in Table~\ref{tab:injection_values}. The non-GR signal has a deviation, $\df{220} = \dtau{220} = 0.1$. The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. In the right panels, we additionally show measurements using a GR ($\SEOB$) waveform, for the
+        \caption{\textcolor{red}{FINAL RESULT} Posterior probability distribution on the fractional deviations in the frequency and damping time of the $(2,2)$ QNM, $(\df{220},\dtau{220})$ (left panels) and the reconstructed quantities, $(\fngr{220}, \taungr{220})$ (right panels) for non-GR injections \ab{($\pSEOB$)} with parameters of GW150914-like (top panels) and GW190521-like (bottom panels) as given in Table~\ref{tab:injection_values}. The non-GR signal has a deviation, $\df{220} = \dtau{220} = 0.1$. The 2D contour marks the 90\% credible region, while the dashed lines on the 1D marginalized distributions mark the 90\% credible levels. The black vertical and horizontal lines mark the injection values. In the right panels, we additionally show measurements using a GR ($\SEOB$) waveform, for the
 GW150914-like (upper panel) and GW190521-like (lower panel) injections. The measurements with $\SEOB$ waveforms are visibly biased.}
         \label{fig:simulated_signal_nonGR}
 \end{center}
@@ -111,10 +118,56 @@ GW150914-like (upper panel) and GW190521-like (lower panel) injections. The meas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We additionally investigate the effects of erroneously assuming that an underlying non-GR signal can be well-described
-by a GR one. We do this by estimating the parameters of our non-GR signals using the GR waveform model $\SEOB$ instead of the parameterized $\pSEOB$.  The resulting one- and two-dimensional posteriors are shown in the right panels of Fig.~\ref{fig:simulated_signal_nonGR} by red curves for the GW150914-like (top) and GW190521-like (bottom) signals respectively. For both signals, we find the $\SEOB$ estimates are markedly biased with respect to the $\pSEOB$ estimates. This can be explained by the inability of the $\SEOB$ template waveform to capture all the physics in the $\pSEOB$ signal. We also notice that the results are distinctly different for the two events. For the GW150914-like non-GR signal, the measurements of $(\fgr{220}, \taugr{220})$ (top right panel in Fig.~\ref{fig:simulated_signal_nonGR}) are consistent with the $(\fngr{220}, \taungr{220})$ measurements for a signal with \emph{no deviations} from GR (top right panel in Fig.~\ref{fig:simulated_signal_GR}). In other words, if the actual signal had deviations from GR as large as the $10\%$, the analysis with the GR signal $\SEOB$ would likely have reported \emph{no} deviation from the GR prediction. However in the case of the GW190521-like non-GR signal, a simple GR analysis of the non-GR signal would have yielded measurements distinctly different from either of the two parameterized estimates: with and without deviations. 
+We additionally investigate the effects of erroneously assuming that
+an underlying non-GR signal can be well-described by a GR one. We do
+this by estimating the parameters of our non-GR signals using the GR
+waveform model $\SEOB$ instead of the parameterized $\pSEOB$.  The
+resulting one- and two-dimensional posteriors are shown in the right
+panels of Fig.~\ref{fig:simulated_signal_nonGR} by red curves for the
+GW150914-like (top) and GW190521-like (bottom) signals
+respectively. For both signals, we find the $\SEOB$ estimates are
+markedly biased with respect to the $\pSEOB$ estimates. \sout{This can be
+explained by the inability of the $\SEOB$ template waveform to capture
+all the physics in the $\pSEOB$ signal.} \comment{AB: I erased the previous sentence because 
+$\pSEOB$ has not ``more'' physics. We varied the QNMs by 10\% with respect GR, we have a different gravity theory 
+which we cannot match with a GR template. I don't think we need to give any explanation of the results, 
+they are self-evident to me.} We also notice that the
+results are distinctly different for the two events. For the
+GW150914-like non-GR signal, the measurements of $(\fgr{220},
+\taugr{220})$ (top right panel in
+Fig.~\ref{fig:simulated_signal_nonGR}) are consistent with the
+$(\fngr{220}, \taungr{220})$ measurements for a signal with \emph{no
+  deviations} from GR (top right panel in
+Fig.~\ref{fig:simulated_signal_GR}). In other words, if the actual
+signal had deviations from GR as large as the $10\%$, the analysis
+with the GR signal $\SEOB$ would likely have reported \emph{no}
+deviation from the GR prediction. However in the case of the
+GW190521-like non-GR signal, a simple GR analysis of the non-GR signal
+would have yielded measurements distinctly different from either of
+the two parameterized estimates: with and without deviations.
 
-Finally, we investigate the impact on the estimation of GR parameters discussed in Sec.~\ref{sec:method}, $\bxigr$  as we change the magnitude of deviation in the non-GR parameters. We restrict oursel es to a GW150914-like event, and for comparison, add a synthetic signal with $\df{220} = \dtau{220} = 0.5$, or 50 \% deviation, alongside the 10\% non-GR signal and a signal with no deviation (essentially GR) mentioned above. We summarise the results in Fig.~\ref{fig:gr_ngr_comparison}. The left (right) panels show the posterior probability distributions of the three signals using the GR, $\SEOB$ (non-GR, $\pSEOB$) waveform model. The first difference we note is the $\SEOB$ recoveries yield biased estimates when the underlying signal is non-GR, while the $\pSEOB$ recoveries do not. Furthermore, as we increase the deviations, while the $\SEOB$ recoveries expectedly get more biased, the $\pSEOB$ measurements are robust is consistently recovering the injected value. Since the measurement of the frequency and damping time in the $\pSEOB$ model incorporate information from the masses and spins through the NR fitting formulae (as shown in Eqs.~\ref{eq:nongr_freqs_a}-~\ref{eq:nongr_freqs_b}), one might have expected correlations between the mass, spins and the QNM frequencies, leading to biased estimates in the masses and spins. We confirm here that is not the case.
+Finally, we investigate the impact on the estimation of \ab{the} GR parameters
+\sout{discussed in Sec.~\ref{sec:method},} $\bxigr$ as we change the
+magnitude of deviation in the non-GR parameters. We restrict ourselves 
+to a GW150914-like event, and for comparison, add a synthetic signal
+with $\df{220} = \dtau{220} = 0.5$, or 50 \% deviation, alongside the
+10\% non-GR signal and a signal with no deviation (essentially GR)
+mentioned above. We summarise the results in
+Fig.~\ref{fig:gr_ngr_comparison}. The left (right) panels show the
+posterior probability distributions of the three signals using the GR,
+$\SEOB$ (non-GR, $\pSEOB$) waveform model. The first difference we
+note is the $\SEOB$ recoveries yield biased estimates when the
+underlying signal is non-GR, while the $\pSEOB$ recoveries do
+not. Furthermore, as we increase the deviations, while the $\SEOB$
+recoveries expectedly get more biased, the $\pSEOB$ measurements are
+robust in consistently recovering the injected value. Since the
+measurement of the frequency and damping time in the $\pSEOB$ model
+incorporate information from the masses and spins through the NR
+fitting formulae (as shown in
+Eqs.~(\ref{eq:nongr_freqs_a})---(\ref{eq:nongr_freqs_b})), one might have
+expected correlations between the mass, spins and the QNM frequencies,
+leading to biased estimates in the masses and spins. We confirm here
+that is not the case.
 
 \iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,7 +195,7 @@ a GW150914-like (GW190521- like) injected signal (see Table~\ref{tab:injection_v
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_a1za2z.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_fgrtaugr.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_Mfaf.png}
-        \caption{\textcolor{red}{FINAL RESULT}  Comparison of a GW150914-like injection's parameters when signals with no, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $a_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
+        \caption{\textcolor{red}{FINAL RESULT}  Comparison of a GW150914-like injection's parameters when signals with zero, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $a_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
         \label{fig:gr_ngr_comparison}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
