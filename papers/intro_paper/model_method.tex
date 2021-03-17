@@ -48,19 +48,19 @@ h_{\ell m}^{\textrm{merger-RD}}(t) = \nu \ \tilde{A}_{\ell m}(t)\ e^{i \tilde{\p
 where $\nu$ is the symmetric mass ratio of the binary and $\sigma_{\ell m0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ denotes the complex frequency of the fundamental QNMs of the remnant BH. We denote the oscillation frequencies by $f_{\ell m  0}\equiv \Re(\sigma_{\ell m0})/(2\pi)$ and the decay times by $\tau_{\ell m 0}\equiv -1/\Im(\sigma_{\ell m0}) $.
 The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are given by~\cite{Bohe:2016gbl,Cotesta:2018fcv}:
 %
-\begin{equation}
+\begin{subequations}
+\begin{eqnarray}
 \label{eq:ansatz_amp}
-\tilde{A}_{\ell m}(t) = c_{1,c}^{\ell m} \tanh[c_{1,f}^{\ell m}\ (t-t_{\textrm{match}}^{\ell m}) \ +\ c_{2,f}^{\ell m}] \ + \ c_{2,c}^{\ell m},
-\end{equation}
-%
-\begin{equation}
+\tilde{A}_{\ell m}(t) &=& c_{1,c}^{\ell m} \tanh[c_{1,f}^{\ell m}\ (t-t_{\textrm{match}}^{\ell m}) \ +\ c_{2,f}^{\ell m}] \ + \ c_{2,c}^{\ell m},\\
 \label{eq:ansatz_phase}
-\tilde{\phi}_{\ell m}(t) = \phi_{\textrm{match}}^{\ell m} - d_{1,c}^{\ell m} \log\left[\frac{1+d_{2,f}^{\ell m} e^{-d_{1,f}^{\ell m}(t-t_{\textrm{match}}^{\ell m})}}{1+d_{2,f}^{\ell m}}\right],
-\end{equation}
+\tilde{\phi}_{\ell m}(t) &=& \phi_{\textrm{match}}^{\ell m} - d_{1,c}^{\ell m} \log\left[\frac{1+d_{2,f}^{\ell m} e^{-d_{1,f}^{\ell m}(t-t_{\textrm{match}}^{\ell m})}}{1+d_{2,f}^{\ell m}}\right],
+\end{eqnarray}
+\end{subequations}
 %
 where $ \phi_{\textrm{match}}^{\ell m}$ is the phase of the inspiral-plunge mode $(\ell, m)$ computed at $t = t_{\textrm{match}}^{\ell m}$. The coefficients $d_{1,c}^{\ell m}$ and $c_{i,c}^{\ell m}$ with $i = 1,2$
 are fixed by imposing that the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are of class $C^1$ at $t = t_{\textrm{match}}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge $\SEOB$ waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. This allows us to write the coefficients $c_{i,c}^{\ell m}$ as~\cite{Cotesta:2018fcv}:
 %
+\begin{subequations}
 \begin{align}
 \label{c1}
 c_{1,c}^{\ell m} &= \frac{1}{c_{1,f}^{\ell
@@ -79,6 +79,7 @@ c_{2,c}^{\ell m} &= -\frac{ |h_{\ell
     m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
     m})|\big] \cosh{(c_{2,f}^{\ell m})}\sinh{(c_{2,f}^{\ell m})}, \\ \nonumber
 \end{align}
+\end{subequations}
 and $d_{1,c}^{\ell m}$ as
 \begin{align}
 \label{d1}
@@ -105,10 +106,12 @@ _{\ell m 0})$) are defined through the fractional deviations, $(\delta
 f_{\ell m 0},\delta \tau_{\ell m 0})$, from the corresponding GR
 values.\sout{, which are obtained using NR fits}
 Thus~\cite{Gossan:2011ha,Meidam:2014jpa},
+\begin{subequations}
 \begin{eqnarray}
 f_{\ell m 0} &=& f_{\ell m 0}^{\text{GR}}\, (1 + \delta f_{\ell m 0})\,,\label{eq:nongr_freqs_a} \\ 
 \tau _{\ell m 0} &=& \tau _{\ell m 0}^{\text{GR}}\, (1 + \delta \tau_{\ell m 0})\,. \label{eq:nongr_freqs_b}
 \end{eqnarray}
+\end{subequations}
 We denote such a parameterized waveform model $\pSEOB$~\footnote{This
 waveform model is called {\tt pSEOBNRv4HM} in LAL.}.
 
@@ -140,7 +143,7 @@ where $P(\blambda | \mathcal{H})$ is the \emph{prior} probability distribution, 
 \label{eq:likelihood}
 \end{equation}
 %
-where $\langle . | . \rangle$ is the following noise-weighted inner product:
+where $\langle . | . \rangle$ is the usual noise-weighted inner product:
 %
 \begin{equation}
 \langle A | B \rangle = \int_{f_\mathrm{low}} ^{f_\mathrm{high}} df \frac{\tilde{A}^*(f)\tilde{B}(f) + \tilde{A}(f)\tilde{B}^*(f)}{S_n(f)}.
@@ -148,7 +151,7 @@ where $\langle . | . \rangle$ is the following noise-weighted inner product:
 \end{equation}
 %
 The quantity $\tilde{A}(f)$ denotes the Fourier transform of $A(t)$ and the $^*$ indicates complex conjugation. The limits of integration ${f_\mathrm{low}}$ and ${f_\mathrm{high}}$ define the bandwidth of the sensitivity of the GW detector. We usually assume ${f_\mathrm{high}}$ to be the Nyquist frequency whereas ${f_\mathrm{low}}$ is dictated by the performance of the
-GW detector at low-frequency and we follow the choice made in the LIGO-Virgo analysis~\cite{LIGOScientific:2018mvr,Abbott:2020niy}. Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in Eq.~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-chain Monte Carlo (MCMC)~\cite{Metropolis:1953am,Hastings:1970aa} or Nested Sampling~\cite{Skilling:2006gxv}. For this paper, we use the \verb+LALInference+~\cite{Veitch:2014wba} and \verb+Bilby+ codes~\cite{Ashton:2018jfp,Smith:2019ucc} that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions.
+GW detector at low-frequency. Here, we follow the choice made in the LIGO-Virgo analysis~\cite{LIGOScientific:2018mvr,Abbott:2020niy}. Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in Eq.~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-chain Monte Carlo (MCMC)~\cite{Metropolis:1953am,Hastings:1970aa} or Nested Sampling~\cite{Skilling:2006gxv}. For this paper, we use the \verb+LALInference+~\cite{Veitch:2014wba} and \verb+Bilby+ codes~\cite{Ashton:2018jfp,Smith:2019ucc} that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions.
 
 Given the full-dimensional posterior probability density function $P(\blambda | d, \mathcal{H})$, we can marginalize over the \emph{nuisance} parameters, to obtain the marginalized posterior probability density function over the QNM parameters $\bxingr$:
 
@@ -158,8 +161,8 @@ P(\bxingr | d, \mathcal{H})= \int P(\blambda | d, \mathcal{H}) d\bxigr\,.
 
 For most of the results discussed in this paper, we restrict ourselves
 to the $(\ell m) = (2,2)$ and/or $(3,3)$ modes. In those cases we assume $\bxingr = \{\df{220},\dtau{220}\}$ and/or $
-\{\df{330},\dtau{330}\}$, and all the other $(\ell m)$ modes to be
-fixed at their GR predictions (i.e., $\delta f_{\ell m 0} = \delta
+\{\df{330},\dtau{330}\}$, and \ab{fix} all the other $(\ell m)$ modes to \sout{be
+fixed at} their GR predictions (i.e., $\delta f_{\ell m 0} = \delta
 \tau_{\ell m 0} = 0$). This is because, for most of the high-mass BH
 events that we find most appropriate for this test, the LIGO-Virgo
 observations are consistent with nearly--equal-mass face-on/off BBHs
