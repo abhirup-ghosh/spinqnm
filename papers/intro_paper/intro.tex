@@ -1,14 +1,3 @@
-\comment{AB: Please make the citations in the bibliography uniform (I would stick with citations
-taken from InSpires and remove the URL links). We will be submitting to Physical Review D, so please
-stick with American English. Also, please be uniform when writing captions, when using colors and style
-of curves in plots, when building Tables. There is not a lot of discussion in the text on the main results of the paper (Sec. IV).
-The abstract would need to be tighten and made more crispy once the quantitative results for the
-bounds are included.}
-
-\abhi{The main body can now be considered stable in terms of text and results. Some of the fine tuning mentioned above,eg, reference formatting, cosmetic changes, etc are currently ongoing.}
-
-\abhi{All macros in the paper are currently highlighted in orange, and would require one final check before final draft.}
-
 The LIGO Scientific Collaboration~\cite{lsc} and the Virgo
 Collaboration~\cite{Virgo} have recently announced their catalogue of
 gravitational-wave (GW) signals from the first
@@ -27,16 +16,16 @@ has also allowed us to probe fundamental
 physics and test predictions of Einstein's theory of General Relativity
 (GR) in the previously unexplored highly-dynamical, and strong field
 regime~\cite{TheLIGOScientific:2016src,Abbott:2018lct,LIGOScientific:2019fpa,Abbott:2020jks}. In GR, a binary black hole (BBH) system is described by
-three distinct phases: an early \textit{inspiral}, where the two
-compact objects spiral in loosing energy because of the emission of GWs, a \textit{merger} marked by the
-formation of a common apparent horizon, and a \textit{ringdown}, during which the newly formed remnant object settles down to a Kerr BH emitting quasi-normal-modes (QNMs)~\cite{Vishveshwara:1970zz,Vishveshwara:1970cc,Press:1971wr,Chandrasekhar:1975zza,Detweiler:1980gk,Kokkotas:1999bd,Berti:2009kk}\abhi{cite some of the other early QNM papers}\rb{added a couple of important early QNM papers plus standard reviews on QNMs} (i.e., damped oscillations with specific, discrete frequencies and decay times).
+three distinct phases: an early \textit{inspiral}~\cite{Blanchet:2013haa}, where the two
+compact objects spiral in loosing energy because of the emission of GWs, a \textit{merger}~\cite{Pretorius:2005gq,Campanelli:2005dd,Baker:2005vv} marked by the
+formation of a common apparent horizon, and a \textit{ringdown}~\cite{Vishveshwara:1970zz,Vishveshwara:1970cc,Press:1971wr,Chandrasekhar:1975zza,Detweiler:1980gk}, during which the newly formed remnant object settles down to a Kerr BH emitting quasi-normal-modes (QNMs) (i.e., damped oscillations with specific, discrete frequencies and decay times). \comment{AB: I have left only  the QNM refs until 80s, and added the main refs for ``inspiral'' and ``merger''. I found the citation unbalanced.}
 
 The LIGO-Virgo collaborations have released companion papers detailing their results
-of tests of GR for GW150914 \cite{TheLIGOScientific:2016src} and for several GW events of
+of tests of GR for GW150914 \cite{TheLIGOScientific:2016src}, and for several GW events of
 the two transient catalogues (TC): GWTC-1 \cite{LIGOScientific:2018mvr,LIGOScientific:2019fpa}  and GWTC-2 \cite{Abbott:2020niy,Abbott:2020jks}.
 The results include tests of GW generation and source dynamics, where bounds are placed on
 parameterized deviations in the post-Newtonian (PN) coefficients describing
-the early inspiral and
+the early inspiral, and
 phenomenological coefficients describing the intermediate (plunge) and
 merger regimes of coalescence~\cite{Arun:2006hn,Arun:2006yw,Agathos:2013upa,Abbott:2018lct}; tests of GW
 propagation, which assume a generalized dispersion relation and place
@@ -51,12 +40,10 @@ noise~\cite{Ghonge:2020suv,LIGOScientific:2019fpa}. None of these tests report a
 departure from the predictions of GR.
 
 The first paper on tests of GR by the LIGO Collaboration~\cite{TheLIGOScientific:2016src} also provided us with the first measurement of the dominant damped-oscillation signal in the ringdown stage of a BBH
-coalescence, and more recently a similar measurement was made with the high-mass event GW190521~\cite{Abbott:2020tfl,Abbott:2020mjq}. The set of available measurements was greatly expanded in the latest LIGO-Virgo O3a testing GR paper~\cite{Abbott:2020jks} where a comprehensive analysis of the properties of the remnant object, including the ringdown stage, was reported for tens of GW events.\rb{slightly modified the previous two sentences to also include the GW190521 papers}
-The no-hair conjecture in GR~\cite{Carter:1971zc,Hansen:1974zz} states that an (electrically neutral) astrophysical BH is completely
-described by two observables: mass and spin angular momentum. One
+coalescence, and more recently a similar measurement was made with the high-mass event GW190521~\cite{Abbott:2020tfl,Abbott:2020mjq}. The set of available measurements was greatly expanded in the latest LIGO-Virgo O3a testing GR paper~\cite{Abbott:2020jks} where a comprehensive analysis of the properties of the remnant object, including the ringdown stage, was reported for tens of GW events. The no-hair conjecture in GR~\cite{Carter:1971zc,Hansen:1974zz} states that an (electrically neutral) astrophysical BH is completely described by two observables: mass and spin angular momentum \ab{(for short spin)}. One
 consequence of the no-hair conjecture is that the (complex) QNM
 frequencies of gravitational radiation emitted by a perturbed isolated
-BH are uniquely determined by its mass and spin angular momentum. Hence
+BH are uniquely determined by its mass and spin. Hence
 a test of the no-hair conjecture would involve checking for
 consistency between estimates of mass and spin of the remnant object
 across multiple QNM frequencies~\cite{Dreyer:2003bv,Berti:2005ys}. An inconsistency would either
@@ -68,8 +55,7 @@ Ref.~\cite{TheLIGOScientific:2016src} for GW150914, and confirmed through severa
 overtones in Refs.~\cite{Giesler:2019uxc,Isi:2019aib,Bhagwat:2019dtm,Forteza:2020hbw,Abbott:2020jks}. Consistency of the late-time waveform with a single QNM is a test of the ringdown of
 a BBH coalescence, but not necessarily a test of the no-hair
 conjecture, which requires the measurement of (at least) two QNMs (BH
-spectroscopy), and consistency between them~\cite{Dreyer:2003bv}. Recent work on the subject
-also include~\cite{Carullo:2018sfu,Carullo:2018gah,Bhagwat:2019bwv,Cabero:2019zyt}. The
+spectroscopy), and consistency between \ab{them~\cite{Dreyer:2003bv,Carullo:2018sfu,Carullo:2018gah,Bhagwat:2019bwv,Cabero:2019zyt,Maselli:2019mjd}}. The
 nature of the remnant object has also been explored through tests of
 BH thermodynamics, like the Hawking's area
 theorem~\cite{Cabero:2017avf,Isi:2020tac} or through search for echos in the
@@ -78,11 +64,11 @@ object (as described in GR) in LIGO-Virgo BBH observations.
 
 Ground-based detectors, such as LIGO and Virgo, are most sensitive to
 stellar-mass BH binaries that merge near the
-minimum of their sensitivity band ($\sim100$Hz). As a consequence, the
+minimum of their sensitivity band ($\sim 100$ Hz). As a consequence, the
 remnant object \textit{rings down} at frequencies where the sensitivity is worse, leaving
 very little signal-to-noise ratio (SNR) in the
-post-merger signal. Most of the tests mentioned above restrict the data to this post-merger signal, which signficantly reduces parameter estimation capabilities. However, added to a lack of SNR is the ambiguity in clearly defining a start time for the ringdown phase (discussed, for example, in \cite{Berti:2007fi,Baibhav:2017jhs,Bhagwat:2017tkm}). In some tests, for example \cite{Carullo:2018gah,Carullo:2019flw}, the ringdown start time have been left as a
-free parameter to be estimated directly from the data. Whereas, in other cases, the ringdown start time is predicted from corresponding full-signal parameter estimation analyses (see \texttt{PyRING} analysis in \cite{Abbott:2020jks}). Uncertainties
+post-merger signal. Most of the tests mentioned above restrict the data to this post-merger signal, which signficantly reduces parameter-estimation capabilities. However, added to a lack of SNR is the ambiguity in clearly defining a start time for the ringdown phase (discussed, for example, in Refs.~\cite{Berti:2007fi,Baibhav:2017jhs,Bhagwat:2017tkm}). In some tests~\cite{Carullo:2018gah,Carullo:2019flw}, the ringdown start time has been left as a
+free parameter to be estimated directly from the data. Whereas, in other cases, the ringdown start time is predicted from corresponding full-signal parameter-estimation analyses (see \texttt{PyRING} analysis in Ref.~\cite{Abbott:2020jks}). Uncertainties
 in estimates of the ringdown start-time, as well as an overall lack of
 SNR in the post-merger signal, given typical sensitivities of
 ground-based detectors, result in significant statistical uncertainties
@@ -108,8 +94,9 @@ source properties.
 
 The rest of the paper is organized as follows. Section~\ref{sec:model} describes our parameterized IMR
 waveform model. In Sec.~\ref{sec:method}, we define our framework to test GR, notably how we can measure
-complex QNM frequencies with our parameterized model within a Bayesian formalism. Then, in Sec.~\ref{sec:results},
-we demonstrate our method on real GW events, as well as simulated signals. In particular, we analyze
-the GWTC 1/2  events and constrain the QNM frequecies to be \macro{$\df{220} = 0.02^{+0.03}_{-0.03}$} and \macro{$\dtau{220} = 0.11 ^{+0.12} _{-0.12}$}. Finally, in Sec.~\ref{sec:discussion} we provide a summary of
+complex QNM frequencies with our parameterized model within a Bayesian formalism\ab{, and validate it using 
+several synthetic-signal injection studies in Gaussian noise}. Then, in Sec.~\ref{sec:results},
+we \sout{demonstrate} \ab{apply}  our method on real GW events \ab{using LIGO and Virgo data}.\sout{, as well as simulated signals}. In particular, we analyze
+the GWTC 1/2  events and \ab{obtain the most stringent constraints on the dominant (complex)} QNM frequecies \ab{with our method}\sout{to be \macro{$\df{220} = 0.02^{+0.03}_{-0.03}$} and \macro{$\dtau{220} = 0.11 ^{+0.12} _{-0.12}$}}. \comment{AB: I think it is too early to give the results here.} Finally, in Sec.~\ref{sec:discussion} we provide a summary of
 our results and discuss future developments.
 
