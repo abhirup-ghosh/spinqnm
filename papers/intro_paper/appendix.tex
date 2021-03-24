@@ -91,12 +91,21 @@ QNM properties. The fact that the measurement of ringdown quantities
 are robust against an incomplete description of \ab{the inspiral signal 
 is a crucial property of our method.} 
 
+
+\section{Correlation of the binary's total mass with the non-GR parameters}\label{sec:correlation}
+As mentioned in the main text, for low-SNR events with negligible higher-modes and for which only the post-merger is detectable, there is a strong degeneracy between the binary's total mass and the non-GR deviations $(\df{220}, \dtau{220})$. For those cases, only the reconstructed frequency and damping time $(f_{220},\tau _{220})$ can be independently measured from the data. 
+
+To justify this statement, in Fig.~\ref{fig:correlations} we show corner plots that illustrate the correlations between the non-GR parameters $(\df{220}, \dtau{220})$, the detector-frame total mass $M(1+z)$ and the reconstructed frequency and damping time $(f_{220},\tau _{220})$ for GW150914 (left panel), corresponding to an event for which both the pre- and post-merger phase are measurable, and for GW190521 (right panel), an event in which the post-merger has ${\rm SNR}> 8$ but the pre-merger has an SNR below 8. For GW190521, due the strong degeneracy between $\df{220}$ and the $M(1+z)$, the 1D posterior for $M(1+z)$ is pushed towards the upper boundary of its prior, despite the very wide prior employed in the analysis. This in turn renders the measurement of $\df{220}$ (and to a smaller degree of $\dtau{220}$) highly dependent on the upper boundary of the total mass prior. On the other hand, this issue does not significantly affect the posteriors for the reconstructed quantities $(f_{220},\tau _{220})$ which are well measured and nearly independent on the upper prior boundary for $M(1+z)$. 
+%
+This is to be contrasted with the results for GW150914. In this case, the extra information coming from the pre-merger phase allows to break the degeneracy between the non-GR parameters and the total mass, and therefore both $(\df{220}, \dtau{220})$ and $M(1+z)$ can be measured at the same time. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}
 \begin{center}
         \includegraphics[width=0.45\textwidth]{figures/mtotal_qnm_params_degeneracy_GW150914.pdf}\includegraphics[width=0.45\textwidth]{figures/mtotal_qnm_params_degeneracy_S190521g.pdf}
-        \caption{Left panel: GW150914, Right panel: GW190521. Describe the correlations in this caption}
+        \caption{Corner plots showing the correlations between the detector-frame total $(1+z)M$, the non-GR deviations $(\df{220}, \dtau{220})$ and the reconstructed frequency and damping time $(f_{220},\tau _{220})$. The left panel shows results for GW150914, for which ${\rm SNR}> 8$ in both the pre- and
+post-merger phase of the signal, whereas the right panel shows the results for GW190521,  which has ${\rm SNR}> 8$ in the post-merger phase but not in the pre-merger phase.}
         \label{fig:correlations}
 \end{center}
 \end{figure*}
