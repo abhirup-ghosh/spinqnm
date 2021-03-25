@@ -1,16 +1,16 @@
 A GW signal from the (quasi-circular) coalescence of two BHs is
 completely described in GR by $15$ parameters,
 $\bxigr$. These can be grouped into the \emph{intrinsic} parameters:
-the \ab{(source)} masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the component
+the (source) masses, $m_1, m_2$ and spins, $\bs1, \bs2$ of the component
 objects in the binary; and the
 \emph{extrinsic} parameters: a reference time $t_c$ and phase
 $\phi_c$, the sky position of the binary ($\alpha$,
 $\delta$), the luminosity distance, $d_L$, and the binary's orientation
 described through the inclination of the binary $\iota$ and its
-polarization $\psi$. We also introduce the total \ab{(source)} mass $M = m_1+m_2$,
-and the (dimensionless) symmetric mass ratio $\nu = m_1m_2/M^2$. \ab{When needed, 
+polarization $\psi$. We also introduce the total (source) mass $M = m_1+m_2$,
+and the (dimensionless) symmetric mass ratio $\nu = m_1m_2/M^2$. When needed, 
 we shall denote the detector masses as $m_{1\,\rm det}= (1+z)\,m_1$ and $m_{2 \,\rm det} = (1+z)\,m_2$, 
-where $z$ is the redshift.}
+where $z$ is the redshift. \abhi{We also follow the convention $m_1 > m_2$, and hence the asymmetric mass ratio, $q = m_1/m_2 \geq1$.}
 
 Here, we focus on BHs with spins aligned or anti-aligned
 with the orbital angular momentum (henceforth, aligned-spin). In this case,
@@ -106,28 +106,34 @@ version of the $\SEOB$ model where the frequency and the
 damping time of the ${\ell m 0}$ mode (i.e, $(f_{\ell m 0}, \tau
 _{\ell m 0})$) are defined through the fractional deviations, $(\delta
 f_{\ell m 0},\delta \tau_{\ell m 0})$, from the corresponding GR
-values.\sout{, which are obtained using NR fits}
-Thus~\cite{Gossan:2011ha,Meidam:2014jpa},
+values~\cite{Gossan:2011ha,Meidam:2014jpa}.
+
+
+Thus,
 \begin{subequations}
 \begin{eqnarray}
 f_{\ell m 0} &=& f_{\ell m 0}^{\text{GR}}\, (1 + \delta f_{\ell m 0})\,,\label{eq:nongr_freqs_a} \\ 
 \tau _{\ell m 0} &=& \tau _{\ell m 0}^{\text{GR}}\, (1 + \delta \tau_{\ell m 0})\,. \label{eq:nongr_freqs_b}
 \end{eqnarray}
 \end{subequations}
-\comment{AB: as discussed, please expalin very clearly how the GR frequency and decay times are computed, and mark in the equation above 
-their dependence on the mass and spin parameters.}
-We denote such a parameterized waveform model $\pSEOB$~\footnote{This
-waveform model is called {\tt pSEOBNRv4HM} in LAL.}.
 
-\sout{As said,} The GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are
-constructed using the \sout{same} NR--fitting--formula \ab{from Refs.~\cite{Taracchini:2013rva,Hofmann:2016yih}}.
-\sout{described above.} We note that when leaving $\sigma_{\ell m}$ to vary
+\comment{AB: as discussed, please expalin very clearly how the GR frequency and decay times are computed, and mark in the equation above 
+their dependence on the mass and spin parameters.}\abhi{The GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are
+constructed using the NR--fitting--formula from Refs.~\cite{Taracchini:2013rva,Hofmann:2016yih}, and are functions of the initial masses and spins, $(m_1, m_2, \chi_1, \chi_2)$. For every single instance of waveform generation, we choose a value for $(m_1, m_2, \chi_1, \chi_2, \delta f_{\ell m 0}, \delta \tau_{\ell m 0})$. While the mass and spin value go into the construction of $( f_{\ell m 0}^{\text{GR}}, \tau _{\ell m 0}^{\text{GR}})$, these GR quantities and then combined with the values of $(\delta f_{\ell m 0}, \delta \tau_{\ell m 0})$ as shown in the Eqs.~\ref{eq:nongr_freqs_a}-~\ref{eq:nongr_freqs_b}.. Hence,
+\begin{subequations}
+\begin{eqnarray}
+f_{\ell m 0} &=& f_{\ell m 0}(m_1, m_2, \chi_1, \chi_2, \delta f_{\ell m 0}, \delta \tau_{\ell m 0})\\ 
+\tau _{\ell m 0} &=& \tau _{\ell m 0}(m_1, m_2, \chi_1, \chi_2, \delta f_{\ell m 0}, \delta \tau_{\ell m 0})
+\end{eqnarray}
+\end{subequations}
+We denote such a parameterized waveform model $\pSEOB$~\footnote{This
+waveform model is called {\tt pSEOBNRv4HM} in LAL.}.} We note that when leaving $\sigma_{\ell m}$ to vary
 freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell
   m}(t)$ in general also differ from the GR predictions, since
 those functions depend on the QNM complex frequencies, as can be seen
 from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$ in Eqs.~(\ref{c1}),
-(\ref{c2}), and (\ref{d1}). \ab{As a consequence, the ringdown signal (amplitude and phase) 
-soon after merger deviates from the one predicted by GR.}
+(\ref{c2}), and (\ref{d1}). As a consequence, the ringdown signal (amplitude and phase) 
+soon after merger deviates from the one predicted by GR.
 
 
 \subsection{Bayesian parameter-estimation technique}
