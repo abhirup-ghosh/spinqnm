@@ -3,12 +3,12 @@
 
 Inferences of all parameters in this paper have been done under the
 assumption that the noise in the detectors is stationary and
-Gaussian. In other words, detector noise follows a normal distrubution
+Gaussian. In other words, detector noise follows a normal distribution
 with zero mean and a PSD, $S_n(f)$, that is not a function of time, at
-least during the internal of the GW signal. This
+least during the duration of the GW signal. This
 allows us to write the Bayesian likelihood function in the form given
 in Eqs.~(\ref{eq:likelihood}) and ~(\ref{eq:nwip}), and perform all the
-parameter estimation that follows in the results sections. However,,
+parameter estimation that follows in the results sections. However,
 LIGO-Virgo noise can often have features that deviate from
 stationarity and Gaussianity. If such features are not taken into
 account appropriately, final estimates of parameters can get
@@ -21,7 +21,7 @@ when our description of detector noise is not complete.
 \begin{figure}
 \begin{center}
         \includegraphics[width=0.4\textwidth]{figures/S190521g_swinjs.png}
-        \caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220})$ using synthetic \texttt{NRSur} signals with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (green dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 or the 5 real noise simulation are not. The black curve corresponds to the measurements of the real event GW190521 reported in Ref.~\cite{Abbott:2020jks}. All signals are recovered using the $\pSEOB$ model.}
+        \caption{\textcolor{red}{FINAL RESULT} 90 \% credible level on the posterior probability distribution of the frequency and damping time of $(2,\pm 2)$ mode, $(\fgr{220}, \taugr{220})$ using synthetic \texttt{NRSur} signals with parameters similar to the GW event, GW190521, in Gaussian noise (grey dot-dashed lines) and real interferometric noise (green dot dashed lines). The GR prediction for the frequency and damping time is indicated by the black cross. While the Gaussian noise simulations are consistent with the prediction, at least 3 of the 5 real noise simulation are not. The black curve corresponds to the measurements of the real event GW190521 reported in Ref.~\cite{Abbott:2020jks}. All signals are recovered using the $\pSEOB$ model.}
         \label{fig:21g_systematics}
 \end{center}
 \end{figure}
@@ -93,7 +93,7 @@ is a crucial property of our method.
 \section{Correlation of the binary's total mass with the non-GR parameters}\label{sec:correlation}
 As mentioned in the main text, for low-SNR events with negligible higher-modes and for which only the post-merger is detectable, there is a strong degeneracy between the binary's total mass and the non-GR deviations $(\df{220}, \dtau{220})$. For those cases, only the reconstructed frequency and damping time $(f_{220},\tau _{220})$ can be independently measured from the data. 
 
-To justify this statement, in Fig.~\ref{fig:correlations} we show corner plots that illustrate the correlations between the non-GR parameters $(\df{220}, \dtau{220})$, the detector-frame total mass $M(1+z)$ and the reconstructed frequency and damping time $(f_{220},\tau _{220})$ for GW150914 (left panel), corresponding to an event for which both the pre- and post-merger phase are measurable, and for GW190521 (right panel), an event in which the post-merger has ${\rm SNR}> 8$ but the pre-merger has an SNR below 8. For GW190521, due the strong degeneracy between $\df{220}$ and the $M(1+z)$, the 1D posterior for $M(1+z)$ is pushed towards the upper boundary of its prior, despite the very wide prior employed in the analysis. This in turn renders the measurement of $\df{220}$ (and to a smaller degree of $\dtau{220}$) highly dependent on the upper boundary of the total mass prior. On the other hand, this issue does not significantly affect the posteriors for the reconstructed quantities $(f_{220},\tau _{220})$ which are well measured and nearly independent on the upper prior boundary for $M(1+z)$. 
+To justify this statement, in Fig.~\ref{fig:correlations} we show corner plots that illustrate the correlations between the non-GR parameters $(\df{220}, \dtau{220})$, the detector-frame total mass $M(1+z)$ and the reconstructed frequency and damping time $(f_{220},\tau _{220})$ for GW150914 (left panel), corresponding to an event for which both the pre- and post-merger phase are measurable, and for GW190521 (right panel), an event in which the post-merger has ${\rm SNR}> 8$ but the pre-merger has an SNR below 8. For GW190521, due the strong degeneracy between $\df{220}$ and $M(1+z)$, the 1D posterior for $M(1+z)$ is pushed towards the upper boundary of its prior, despite the very wide prior employed in the analysis. This in turn renders the measurement of $\df{220}$ (and to a lesser degree of $\dtau{220}$) highly dependent on the upper boundary of the total mass prior. On the other hand, this issue does not significantly affect the posteriors for the reconstructed quantities $(f_{220},\tau _{220})$ which are well measured and nearly independent on the upper prior boundary for $M(1+z)$. 
 %
 This is to be contrasted with the results for GW150914. In this case, the extra information coming from the pre-merger phase allows to break the degeneracy between the non-GR parameters and the total mass, and therefore both $(\df{220}, \dtau{220})$ and $M(1+z)$ can be measured at the same time. 
 

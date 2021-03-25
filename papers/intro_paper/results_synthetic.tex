@@ -3,7 +3,7 @@
 We now demonstrate our method using synthetic-signal injections describing GWs
 from BBHs in GR. We employ coloured Gaussian noise with PSDs for LIGO and
 Virgo detectors during the fourth observing (O4) run (i.e., at design sensitivity), which 
-is expected to start yin the second half of 2022~\cite{AdvLIGOPSD,TheVirgo:2014hva}.
+is expected to start in the second half of 2022~\cite{AdvLIGOPSD,TheVirgo:2014hva}.
 For the mock BBH signals, we choose parameters similar to two specific GW events, GW150914~\cite{Abbott:2016blz} and
 GW190521~\cite{Abbott:2020tfl}. We list them in Table~\ref{tab:injection_values}.
 These two binary systems are representative of the kind of systems for which
@@ -51,9 +51,9 @@ we use an averaged (zero-noise) realization of the noise. \footnote{A detailed
 study on noise systematics for one of the GW events is presented in
 Appendix~\ref{sec:noise_systematics}.}  As in the case of the actual
 detections of GW150914 and GW190521, we consider a two-detector LIGO network at
-Hanford and Livingston, having identical PSDs. The distance to the two 
+Hanford and Livingston, having identical PSDs \textcolor{red}{RB:did we use Virgo? here it seems not, but above we say we used Virgo}. The distance to the two 
 synthetic events is rescaled such that the SNR in the detector network
-is the same as the actual events (i.e., 24 for GW150914 and 14
+is the same as the actual events (i.e., 24 for GW150914 and 14 \textcolor{red}{RB: $\rho_{\rm IMR}$ for the GW190521-like injection shown in the table is larger than this...}
 for GW190521). Since mearly--equal-mass binaries like GW150914 and
 GW190521 observed at moderately high SNRs are not expected to have a
 loud ringdown signal, we restrict ourselves to estimating the
@@ -166,10 +166,10 @@ $(\fngr{220}, \taungr{220})$ measurements for a signal with \emph{no
 Fig.~\ref{fig:simulated_signal_GR}). In other words, if the actual
 signal had deviations from GR as large as the $10\%$, the analysis
 with the GR signal $\SEOB$ would likely have reported \emph{no}
-deviation from the GR prediction. However in the case of the
+deviation from the GR prediction \textcolor{red}{RB: not sure what this means, since a GR waveform by itself cannot detect a non-GR deviation}. However in the case of the
 GW190521-like non-GR signal, a simple GR analysis of the non-GR signal
 would have yielded measurements distinctly different from either of
-the two parameterized estimates: with and without deviations.
+the two parameterized estimates: with and without deviations\textcolor{red}{RB: I don't understand this previous sentence. Discuss with Abhirup}.
 
 Finally, we investigate the impact on the estimation of the GR parameters $\bxigr$ as we change the
 magnitude of deviation in the non-GR parameters. We restrict ourselves 
@@ -229,7 +229,7 @@ predictions for a BBH merger in GR, indicated by the black plus sign.
 Using fitting formulae provided in Ref.~\cite{Berti:2005ys}, specifically,
 Eq.~(2.1), Eq.~(E1) and Eq.~(E3) and Tables VIII and IX for the fitting coefficients,
 we infer the 2D posterior probability distribution on the
-final mass and spin for the $(2, 2)$ (blue) and $(3, 3)$ (red)
+final mass and spin \rb{as predicted independently by} the $(2, 2)$ (blue) and $(3, 3)$ (red)
 QNMs in the right panel of Fig.~\ref{fig:nohair_sxs}. The two
 independent estimates are consistent with each other and correspond to
 a unique mass and spin for the remnant BH \macro{(83.08 $\Mo$, 0.37)}
@@ -237,9 +237,9 @@ indicated by the plus sign. As a consequence, this may be considered
 as a test of the no-hair conjecture. For most of the events observed
 so far, the power in the $(3, 3)$ has not been sufficient to
 measure it along with the $(2, 2)$, or in fact, in its
-place. However, it might also be possible to combine information from
+place \textcolor{red}{RB:"in its place" is weird, since the (2,2) is always louder than the (3,3) mode (unless you're thinking about very high mass BHs for which the (2,2) mode would be out-of-band, but the (3,3) still in band. But in any case, I would finish the sentence at "has not been sufficient to measure it along with the $(2, 2)$"}. However, it might also be possible to combine information from
 multiple observation over the coming few years to obtain meaningful
-constraints on the $(3, 3)$ and other sub-dominant QNMs.
+constraints on the $(3, 3)$ and other sub-dominant QNMs. \textcolor{red}{reminder: citations needed here}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
