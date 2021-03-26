@@ -49,12 +49,7 @@ $\SEOB$ (i.e., without allowing for deviations in the QNM parameters) to
 simulate our GW signal. And to avoid systematic biases due to noise,
 we use an averaged (zero-noise) realization of the noise. \footnote{A detailed
 study on noise systematics for one of the GW events is presented in
-Appendix~\ref{sec:noise_systematics}.}  As in the case of the actual
-detections of GW150914 and GW190521, we consider a two-detector LIGO network at
-Hanford and Livingston, having identical PSDs \textcolor{red}{RB:did we use Virgo? here it seems not, but above we say we used Virgo}. The distance to the two 
-synthetic events is rescaled such that the SNR in the detector network
-is the same as the actual events (i.e., 24 for GW150914 and 14 \textcolor{red}{RB: $\rho_{\rm IMR}$ for the GW190521-like injection shown in the table is larger than this...}
-for GW190521). Since mearly--equal-mass binaries like GW150914 and
+Appendix~\ref{sec:noise_systematics}.}  Since mearly--equal-mass binaries like GW150914 and
 GW190521 observed at moderately high SNRs are not expected to have a
 loud ringdown signal, we restrict ourselves to estimating the
 frequency and damping time of only one QNM $(\ell m) = (2,2)$ (i.e.,
@@ -156,47 +151,22 @@ resulting one- and two-dimensional posteriors are shown in the right
 panels of Fig.~\ref{fig:simulated_signal_nonGR} by red curves for the
 GW150914-like (top) and GW190521-like (bottom) signals
 respectively. For both signals, we find the $\SEOB$ estimates are
-markedly biased with respect to the $\pSEOB$ estimates. We also notice that the
-results are distinctly different for the two events. For the
-GW150914-like non-GR signal, the measurements of $(\fgr{220},
-\taugr{220})$ (top right panel in
-Fig.~\ref{fig:simulated_signal_nonGR}) are consistent with the
-$(\fngr{220}, \taungr{220})$ measurements for a signal with \emph{no
-  deviations} from GR (top right panel in
-Fig.~\ref{fig:simulated_signal_GR}). In other words, if the actual
-signal had deviations from GR as large as the $10\%$, the analysis
-with the GR signal $\SEOB$ would likely have reported \emph{no}
-deviation from the GR prediction \textcolor{red}{RB: not sure what this means, since a GR waveform by itself cannot detect a non-GR deviation}. However in the case of the
-GW190521-like non-GR signal, a simple GR analysis of the non-GR signal
-would have yielded measurements distinctly different from either of
-the two parameterized estimates: with and without deviations\textcolor{red}{RB: I don't understand this previous sentence. Discuss with Abhirup}.
-
-Finally, we investigate the impact on the estimation of the GR parameters $\bxigr$ as we change the
-magnitude of deviation in the non-GR parameters. We restrict ourselves 
+markedly biased with respect to the $\pSEOB$ estimates.  We investigate 
+this impact on the estimation of the GR parameters $\bxigr$ by changing the
+magnitude of deviation in the non-GR parameters more in Fig.~\ref{fig:gr_ngr_comparison}. We restrict ourselves 
 to a GW150914-like event, and for comparison, add a synthetic signal
 with $\df{220} = \dtau{220} = 0.5$, or 50 \% deviation, alongside the
 10\% non-GR signal and a signal with no deviation (essentially GR)
-mentioned above. We summarise the results in
-Fig.~\ref{fig:gr_ngr_comparison}. The left (right) panels show the
+mentioned above. The left (right) panels show the
 posterior probability distributions of the three signals using the GR,
 $\SEOB$ (non-GR, $\pSEOB$) waveform model. The first difference we
 note is the $\SEOB$ recoveries yield biased estimates when the
 underlying signal is non-GR, while the $\pSEOB$ recoveries do
 not. Furthermore, as we increase the deviations, while the $\SEOB$
 recoveries expectedly get more biased, the $\pSEOB$ measurements are
-robust in consistently recovering the injected value. Since the
-measurement of the frequency and damping time in the $\pSEOB$ model
-incorporate information from the masses and spins through the NR
-fitting formulae (as shown in
-Eqs.~(\ref{eq:nongr_freqs_a})---(\ref{eq:nongr_freqs_b})), one might have
-expected correlations between the mass, spins and the QNM frequencies,
-leading to biased estimates in the masses and spins. We confirm here
-that is not the case. \comment{AB: I don't see how from the figure I can  
-conclude that there are no correlations between masses/spins and QNMs.}
-
-
-
-
+robust in consistently recovering the injected value. \abhi{This gives us 
+confidence that the $\pSEOB$ model can accurately measure QNM 
+properties without biasing measurements of inspiral quantities, like masses and spins.}
 
 
 \subsection{Test of the no-hair conjecture}\label{ssec:nohairtheorem}
@@ -236,10 +206,9 @@ a unique mass and spin for the remnant BH \macro{(83.08 $\Mo$, 0.37)}
 indicated by the plus sign. As a consequence, this may be considered
 as a test of the no-hair conjecture. For most of the events observed
 so far, the power in the $(3, 3)$ has not been sufficient to
-measure it along with the $(2, 2)$, or in fact, in its
-place \textcolor{red}{RB:"in its place" is weird, since the (2,2) is always louder than the (3,3) mode (unless you're thinking about very high mass BHs for which the (2,2) mode would be out-of-band, but the (3,3) still in band. But in any case, I would finish the sentence at "has not been sufficient to measure it along with the $(2, 2)$"}. However, it might also be possible to combine information from
+measure it along with the $(2, 2)$. However, it might also be possible to combine information from
 multiple observation over the coming few years to obtain meaningful
-constraints on the $(3, 3)$ and other sub-dominant QNMs. \textcolor{red}{reminder: citations needed here}
+constraints on the $(3, 3)$ and other sub-dominant QNMs~\cite{Gossan:2011ha,Meidam:2014jpa,Yang:2017zxs}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
