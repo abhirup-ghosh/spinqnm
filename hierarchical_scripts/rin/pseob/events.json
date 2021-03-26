@@ -1,0 +1,20 @@
+{
+    "domega_220": {
+        "GW150914": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/GW150914/rin_GW150914_pseobnrv4hm_domega_220.dat.gz",
+        "S190630ag": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190630ag/rin_S190630ag_pseobnrv4hm_domega_220.dat.gz",
+        "S190519bj": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190519bj/rin_S190519bj_pseobnrv4hm_domega_220.dat.gz",
+        "GW170104": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/GW170104/rin_GW170104_pseobnrv4hm_domega_220.dat.gz",
+        "S190521r": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190521r/rin_S190521r_pseobnrv4hm_domega_220.dat.gz",
+        "S190828j": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190828j/rin_S190828j_pseobnrv4hm_domega_220.dat.gz",
+        "S190910s": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190910s/rin_S190910s_pseobnrv4hm_domega_220.dat.gz"
+    },
+    "dtau_220": {
+        "GW150914": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/GW150914/rin_GW150914_pseobnrv4hm_dtau_220.dat.gz",
+        "S190630ag": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190630ag/rin_S190630ag_pseobnrv4hm_dtau_220.dat.gz",
+        "S190519bj": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190519bj/rin_S190519bj_pseobnrv4hm_dtau_220.dat.gz",
+        "GW170104": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/GW170104/rin_GW170104_pseobnrv4hm_dtau_220.dat.gz",
+        "S190521r": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190521r/rin_S190521r_pseobnrv4hm_dtau_220.dat.gz",
+        "S190828j": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190828j/rin_S190828j_pseobnrv4hm_dtau_220.dat.gz",
+        "S190910s": "/Users/richardbrito/Desktop/Projects/spinqnm/data/rin/S190910s/rin_S190910s_pseobnrv4hm_dtau_220.dat.gz"
+    }
+}
