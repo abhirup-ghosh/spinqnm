@@ -210,8 +210,11 @@ analysis, was introduced in Ref.~\cite{Brito:2018rfr}
 on the post-merger signal, it employs the
 complete inspiral-merger-ringdown
 (IMR) waveform to measure the complex QNM
-frequencies. \rb{This method assumes that GR provides a very good description of the signal up to merger, while being agnostic about the complex QNM frequencies. This allows to access the full SNR of the signal, reducing
-measurement uncertainties.} Moreover, the definition of the
+frequencies. \ab{In the current version, this method assumes that GR provides a very good description of the signal up to merger, while being agnostic about the complex QNM frequencies. This allows to access the full SNR of the signal, reducing
+measurement uncertainties. However, we note that this method can incorporate deviations from GR, notably from the (known) PN coefficients,  
+also during the long inspiral stage~\cite{Abbott:2018lct,
+LIGOScientific:2019fpa,Abbott:2020jks}, and can in principle incorporate deviations from GR, notably from the parameters calibrated to NR simulations,  
+in the late inspiral and plunge.} Moreover, in this method, the definition of the
 ringdown start time is built into the merger-ringdown model and does not need to be
 either left as an additional free parameter or fixed using alternate
 definitions. While \paperone presented the method and tested it for non-spinning BBHs, here we extend the analysis to the more
@@ -520,22 +523,31 @@ two-dimensional posteriors are consistent with the GR predictions
 \subsection{Simulations using non-GR signals in Gaussian noise} \label{ssec:ngr_signal}
 
 To demonstrate the robustness of the method in detecting possible
-deviations from GR, we inject synthetic GW signals which are identical to
-the corresponding GR prediction up to merger, and differ in their post-merger
-description. We again choose binary-parameters
-similar to GW150914 and GW190521 (see Table ~\ref{tab:injection_values}), but
-set $\df{220} = \dtau{220} = 0.1 $.
-In other words, we assume that the frequency and damping time
-of our non-GR signal is 10\% more than the corresponding GR prediction,
-although the pre-merger signal is identical to GR. In Fig.~\ref{fig:nongr_waveform}
-we show this non-GR waveform, \texttt{pSEOBNR} with respect to the 
-original GR template, \texttt{SEOBNR}. We see that the waveforms are identical in amplitude
-and instanteneous frequency upto the merger (lower panel) , beyond which the 
-red (GR template) and blue (non-GR template) differ. We summarize the results of the Bayesian analysis in Fig.~\ref{fig:simulated_signal_nonGR} where we
-show the posterior probability distributions for $(\df{220}, \dtau{220})$, or equivalently
-$(\fngr{220}, \taungr{220})$. We find that they are consistent with the corresponding
-values of the injection parameters, indicated by the black dashed lines. 
-\abhi{We also note that at the SNRs we consider, since statistical uncertainties dominate systematic biases, the measurement excludes, at the 90\% credible level, the GR prediction on the frequency ($\df{220}=0$), but includes the prediction on the damping time ($\dtau{220}=0$). However, with louder events, one would expect these measurement errors to shrink and the $\taungr{220}$ measurement to be inconsistent with the GR prediction as well.}
+deviations from GR, we inject synthetic GW signals which are identical
+to the corresponding GR prediction up to merger, and differ in their
+post-merger description. We again choose binary-parameters similar to
+GW150914 and GW190521 (see Table ~\ref{tab:injection_values}), but set
+$\df{220} = \dtau{220} = 0.1 $.  In other words, we assume that the
+frequency and damping time of our non-GR signal is 10\% more than the
+corresponding GR prediction, although the pre-merger signal is
+identical to GR. In Fig.~\ref{fig:nongr_waveform} we show this non-GR
+waveform, \texttt{pSEOBNR} with respect to the original GR template,
+\texttt{SEOBNR}. We see that the waveforms are identical in amplitude
+and instanteneous frequency upto the merger (lower panel) , beyond
+which the red (GR template) and blue (non-GR template) differ. We
+summarize the results of the Bayesian analysis in
+Fig.~\ref{fig:simulated_signal_nonGR} where we show the posterior
+probability distributions for $(\df{220}, \dtau{220})$, or
+equivalently $(\fngr{220}, \taungr{220})$. We find that they are
+consistent with the corresponding values of the injection parameters,
+indicated by the black dashed lines.  \abhi{We also note that at the
+  SNRs we consider, since statistical uncertainties dominate
+  systematic biases, the measurement excludes, at the 90\% credible
+  level, the GR prediction \ab{of} the frequency ($\df{220}=0$), but
+  includes the prediction \ab{of} the damping time
+  ($\dtau{220}=0$). However, with louder events, one would expect
+  these measurement errors to shrink and the $\taungr{220}$
+  measurement to be inconsistent with the GR prediction, as well.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -600,11 +612,11 @@ recoveries expectedly get more biased, the $\pSEOB$ measurements are
 robust in consistently recovering the injected value. This gives us 
 confidence that the $\pSEOB$ model can accurately measure QNM 
 properties without biasing measurements of inspiral quantities, like masses and spins.
-\abhi{For the samples of the final mass and spin in the last row, we start from the samples
-of the complex QNM frequencies $(\fngr{220}, \taungr{220})$ that are obtained from the 
+\ab{To compute the samples of the final mass and spin in the last row, we start from the samples
+of the complex QNM frequencies $(\fngr{220}, \taungr{220})$, which are obtained from the 
 fractional deviation samples $(\df{220},\dtau{220})$ and the GR-quantities
-$(\fgr{220},\taugr{220})$ using Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b},
-and then invert them $(\fngr{220}, \taungr{220})$ using the fitting formula in~\cite{Berti:2005ys}.
+$(\fgr{220},\taugr{220})$ using Eqs.~(\ref{eq:nongr_freqs_a}) and Eq.~(\ref{eq:nongr_freqs_b})},
+\abhi{and then invert them \sout{$(\fngr{220}, \taungr{220})$} using the fitting formula in Ref.~\cite{Berti:2005ys}.
 The three BBH signals, $\df{220} = \dtau{220} = 0, 0.1, 0.5$, correspond to
 three unique sets of values for $(M_f,\chi_f)$. These predicted values are correctly 
 recovered by the $\pSEOB$ waveform (bottom-right plot in Fig.~\ref{fig:gr_ngr_comparison}),
