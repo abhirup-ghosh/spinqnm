@@ -138,7 +138,7 @@ Collaboration~\cite{Virgo} have recently announced their catalogue of
 gravitational-wave (GW) signals from the first
 half of the third observing run (O3a)~\cite{Abbott:2020niy}. Combined
 with the first and second observing-run catalogues~\cite{LIGOScientific:2018mvr}, the Advanced LIGO detectors at Hanford,
-Washington and Livingston, Louisiana~\cite{Aasi:2014mqd},
+Washington and Livingston, Louisiana~\cite{TheLIGOScientific:2014jea},
 and the Advanced Virgo detector in Cascina,
 Italy~\cite{TheVirgo:2014hva} have now detected $50$ GW
 events from the merger of compact objects like neutron stars and/or
@@ -189,7 +189,7 @@ Ref.~\cite{TheLIGOScientific:2016src} for GW150914, and confirmed through severa
 overtones in Refs.~\cite{Giesler:2019uxc,Isi:2019aib,Abbott:2020jks}. Consistency of the late-time waveform with a single QNM is a test of the ringdown of
 a BBH coalescence, but not necessarily a test of the no-hair
 conjecture, which requires the measurement of (at least) two QNMs (BH
-spectroscopy), and consistency between them~\cite{Dreyer:2003bv,Carullo:2018sfu,Isi:2019aib,Bhagwat:2019bwv,Cabero:2019zyt,Maselli:2019mjd,Bhagwat:2019dtm,Forteza:2020hbw}. The nature of the remnant object has also been explored through tests of BH thermodynamics, including the Hawking's area
+spectroscopy), and consistency between them~\cite{Dreyer:2003bv,Gossan:2011ha, Meidam:2014jpa,Carullo:2018sfu,Carullo:2018gah,Isi:2019aib,Bhagwat:2019bwv,Cabero:2019zyt,Maselli:2019mjd}. The nature of the remnant object has also been explored through tests of BH thermodynamics, including the Hawking's area
 theorem~\cite{Cabero:2017avf,Isi:2020tac}, the Bekenstein-Hod universal bound~\cite{Carullo:2021yxh}, the BH area quantization~\cite{Foit:2016uxn,Laghi:2020rgl}, \rb{the consistency of the merger frequency with predictions from NR simulations~\cite{Carullo:2018gah}} or through search for echos in the post-merger signal~\cite{Nielsen:2018lkf,Tsang:2019zra,Lo:2018sep,Abedi:2018npz,Abedi:2020sgg,Testa:2018bzd}.  None of these tests have found evidence for non-BH nature of the remnant
 object (as described in GR) in LIGO-Virgo BBH observations.
 
@@ -397,7 +397,7 @@ where $\langle . | . \rangle$ is the usual noise-weighted inner product:
 \end{equation}
 %
 The quantity $\tilde{A}(f)$ denotes the Fourier transform of $A(t)$ and the $^*$ indicates complex conjugation. The limits of integration ${f_\mathrm{low}}$ and ${f_\mathrm{high}}$ define the bandwidth of the sensitivity of the GW detector. We usually assume ${f_\mathrm{high}}$ to be the Nyquist frequency whereas ${f_\mathrm{low}}$ is dictated by the performance of the
-GW detector at low-frequency. Here, we follow the choice made in the LIGO-Virgo analysis~\cite{LIGOScientific:2018mvr,Abbott:2020niy}. Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in Eq.~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-chain Monte Carlo (MCMC)~\cite{Metropolis:1953am,Hastings:1970aa} or Nested Sampling~\cite{Skilling:2006gxv}. For this paper, we use the \verb+LALInference+~\cite{Veitch:2014wba} and \verb+Bilby+ codes~\cite{Ashton:2018jfp,Smith:2019ucc} that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions.
+GW detector at low-frequency. Here, we follow the choice made in the LIGO-Virgo analysis~\cite{LIGOScientific:2018mvr,Abbott:2020niy}. Owing to the large dimensionality of the parameter set $\blambda$, the posterior distribution $P(\blambda | d, \mathcal{H})$ in Eq.~(\ref{eq:Bayes_theorem}) is computed by stochastically sampling the parameter space using techniques such as Markov-chain Monte Carlo (MCMC)~\cite{Metropolis:1953am,Hastings:1970aa} or Nested Sampling~\cite{Skilling:2006gxv}. For this paper, we use the \verb+LALInference+~\cite{Veitch:2014wba} and \verb+Bilby+ codes~\cite{Ashton:2018jfp,Smith:2019ucc,Speagle_2020} that provide an implementation of the parallely tempered MCMC and Nested Sampling algorithms respectively, for computing the posterior distributions.
 
 Given the full-dimensional posterior probability density function $P(\blambda | d, \mathcal{H})$, we can marginalize over the \emph{nuisance} parameters, to obtain the marginalized posterior probability density function over the QNM parameters $\bxingr$:
 
@@ -562,22 +562,6 @@ GW150914-like (upper panel) and GW190521-like (lower panel) injections. The meas
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\iffalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% modified GR signal: GR vs nonGR recovery comparison
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}%[h!]
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_m1m2.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_m1m2.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_a1za2z.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_fgrtaugr.png}
-        \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p1_gr_ngr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW190521_simulated_signal_0p1_gr_ngr_Mfaf.png}
-        \caption{Comparison of binary's parameters when a non-GR signal ($\pSEOB$) is injected and recovered with a GR ($\SEOB$) or a non-GR ($\pSEOB$) waveform model. The left (right) panels refer to
-a GW150914-like (GW190521- like) injected signal (see Table~\ref{tab:injection_values}) with QNM deviation parameters of $\df{220} = \dtau{220} = 0.1$. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $\chi_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines.}
-        \label{fig:gr_ngr_comparison}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GW150914-like signal with different deviations: GR vs nonGR recovery
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -586,7 +570,7 @@ a GW150914-like (GW190521- like) injected signal (see Table~\ref{tab:injection_v
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_a1za2z.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_fgrtaugr.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_Mfaf.png}
-        \caption{Comparison of a GW150914-like injection's parameters when signals with zero, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $\chi_f$) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
+         \caption{Comparison of a GW150914-like injection's parameters when signals with zero, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $\chi_f$) \abhi{(fourth row)} from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
         \label{fig:gr_ngr_comparison}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -616,6 +600,16 @@ recoveries expectedly get more biased, the $\pSEOB$ measurements are
 robust in consistently recovering the injected value. This gives us 
 confidence that the $\pSEOB$ model can accurately measure QNM 
 properties without biasing measurements of inspiral quantities, like masses and spins.
+\abhi{For the samples of the final mass and spin in the last row, we start from the samples
+of the complex QNM frequencies $(\fngr{220}, \taungr{220})$ that are obtained from the 
+fractional deviation samples $(\df{220},\dtau{220})$ and the GR-quantities
+$(\fgr{220},\taugr{220})$ using Eqs.~\ref{eq:nongr_freqs_a} and ~\ref{eq:nongr_freqs_b},
+and then invert them $(\fngr{220}, \taungr{220})$ using the fitting formula in~\cite{Berti:2005ys}.
+The three BBH signals, $\df{220} = \dtau{220} = 0, 0.1, 0.5$, correspond to
+three unique sets of values for $(M_f,\chi_f)$. These predicted values are correctly 
+recovered by the $\pSEOB$ waveform (bottom-right plot in Fig.~\ref{fig:gr_ngr_comparison}),
+leading to three distinct and disjointed 2D posteriors on $(M_f,\chi_f)$, unlike the $\SEOB$
+analysis (to reduce clutter in the plot, we just plot the injection values for $\df{220} = \dtau{220} = 0$. }
 
 
 \subsection{Test of the no-hair conjecture}\label{ssec:nohairtheorem}
