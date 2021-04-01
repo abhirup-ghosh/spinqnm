@@ -1,4 +1,3 @@
-%\documentclass[twocolumn,prd,superscriptaddress,amsfonts,amssymb,amsmath,preprintnumbers,nofootinbib]{revtex4-1}
 \documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath]{revtex4-1}
 \usepackage{epsfig}
 \usepackage{graphics}
@@ -30,11 +29,6 @@
 \MakePerPage{footnote}
 
 \newcommand{\paperone}{Paper~I\xspace}
-\newcommand{\abhi}[1]{\textcolor{Emerald}{#1}}
-\newcommand{\rb}[1]{\textcolor{blue}{#1}}
-\newcommand{\ab}[1]{\textcolor{cyan}{#1}}
-\newcommand{\comment}[1]{\textcolor{red}{[#1]}}
-\newcommand{\macro}[1]{\textcolor{orange}{\textbf{#1}}}
 
 \newcommand{\h}{\mathpzc{h}}
 \newcommand{\Hhat}{\hat{\mathpzc{H}}}
@@ -84,11 +78,7 @@
 
 \begin{document}
 
-%\title{Black hole spectroscopy using a complete gravitational wave signal from a binary black coalescence}
-
-
 \title{Constraints on quasi--normal-mode frequencies with LIGO-Virgo binary--black-hole observations} 
-%by making full use of gravitational-wave modeling}
 
 \author{Abhirup Ghosh}
 \AEI
@@ -190,19 +180,19 @@ overtones in Refs.~\cite{Giesler:2019uxc,Isi:2019aib,Abbott:2020jks}. Consistenc
 a BBH coalescence, but not necessarily a test of the no-hair
 conjecture, which requires the measurement of (at least) two QNMs (BH
 spectroscopy), and consistency between them~\cite{Dreyer:2003bv,Gossan:2011ha, Meidam:2014jpa,Carullo:2018sfu,Carullo:2018gah,Isi:2019aib,Bhagwat:2019bwv,Cabero:2019zyt,Maselli:2019mjd}. The nature of the remnant object has also been explored through tests of BH thermodynamics, including the Hawking's area
-theorem~\cite{Cabero:2017avf,Isi:2020tac}, the Bekenstein-Hod universal bound~\cite{Carullo:2021yxh}, the BH area quantization~\cite{Foit:2016uxn,Laghi:2020rgl}, \rb{the consistency of the merger frequency with predictions from NR simulations~\cite{Carullo:2018gah}} or through search for echos in the post-merger signal~\cite{Nielsen:2018lkf,Tsang:2019zra,Lo:2018sep,Abedi:2018npz,Abedi:2020sgg,Testa:2018bzd}.  None of these tests have found evidence for non-BH nature of the remnant
+theorem~\cite{Cabero:2017avf,Isi:2020tac}, the Bekenstein-Hod universal bound~\cite{Carullo:2021yxh}, the BH area quantization~\cite{Foit:2016uxn,Laghi:2020rgl}, the consistency of the merger frequency with predictions from NR simulations~\cite{Carullo:2018gah} or through search for echos in the post-merger signal~\cite{Nielsen:2018lkf,Tsang:2019zra,Lo:2018sep,Abedi:2018npz,Abedi:2020sgg,Testa:2018bzd}.  None of these tests have found evidence for non-BH nature of the remnant
 object (as described in GR) in LIGO-Virgo BBH observations.
 
 Ground-based detectors, such as LIGO and Virgo, are most sensitive to
-stellar-mass BH binaries \rb{that form remnants with mass $\gtrsim 50 M_{\odot}$ and} merge near the
+stellar-mass BH binaries that form remnants with mass $\gtrsim 50 M_{\odot}$ and merge near the
 minimum of their sensitivity band ($\sim 100$ Hz). As a consequence, the
 remnant object \textit{rings down} at frequencies where the sensitivity is worse, leaving
 very little signal-to-noise ratio (SNR) in the
-post-merger signal. Most of the tests mentioned above restrict the data to this post-merger signal \rb{which, while being agnostic to deviations in the pre-merger dynamics, significantly} reduces parameter-estimation capabilities. Added to a lack of SNR is the ambiguity in clearly defining a start time for the ringdown phase (discussed, for example, in Refs.~\cite{Berti:2007fi,Baibhav:2017jhs,Bhagwat:2017tkm}). In some tests~\cite{Carullo:2018gah,Carullo:2019flw}, the ringdown start time has been left as a
+post-merger signal. Most of the tests mentioned above restrict the data to this post-merger signal which, while being agnostic to deviations in the pre-merger dynamics, significantly reduces parameter-estimation capabilities. Added to a lack of SNR is the ambiguity in clearly defining a start time for the ringdown phase (discussed, for example, in Refs.~\cite{Berti:2007fi,Baibhav:2017jhs,Bhagwat:2017tkm}). In some tests~\cite{Carullo:2018gah,Carullo:2019flw}, the ringdown start time has been left as a
 free parameter to be estimated directly from the data. Whereas, in other cases, the ringdown start time is predicted from corresponding full-signal parameter-estimation analyses (see \texttt{pyRing} analysis in Ref.~\cite{Abbott:2020jks}). Uncertainties
 in estimates of the ringdown start-time, as well as an overall lack of
 SNR in the post-merger signal, given typical sensitivities of
-ground-based detectors, \rb{can result in significant statistical uncertainties in the measurement of some of the QNM properties. This is especially true for the measurement of the QNM damping times which are, in general, harder to measure from the data}. Hence, one might want to look at alternate methods to measure QNMs using information from as much as the signal as possible.
+ground-based detectors, can result in significant statistical uncertainties in the measurement of some of the QNM properties. This is especially true for the measurement of the QNM damping times which are, in general, harder to measure from the data. Hence, one might want to look at alternate methods to measure QNMs using information from as much as the signal as possible.
 
 An independent approach to BH spectroscopy, based on the full-signal
 analysis, was introduced in Ref.~\cite{Brito:2018rfr}
@@ -210,11 +200,11 @@ analysis, was introduced in Ref.~\cite{Brito:2018rfr}
 on the post-merger signal, it employs the
 complete inspiral-merger-ringdown
 (IMR) waveform to measure the complex QNM
-frequencies. \ab{In the current version, this method assumes that GR provides a very good description of the signal up to merger, while being agnostic about the complex QNM frequencies. This allows to access the full SNR of the signal, reducing
+frequencies. In the current version, this method assumes that GR provides a very good description of the signal up to merger, while being agnostic about the complex QNM frequencies. This allows to access the full SNR of the signal, reducing
 measurement uncertainties. However, we note that this method can incorporate deviations from GR, notably from the (known) PN coefficients,  
 also during the long inspiral stage~\cite{Abbott:2018lct,
 LIGOScientific:2019fpa,Abbott:2020jks}, and can in principle incorporate deviations from GR, notably from the parameters calibrated to NR simulations,  
-in the late inspiral and plunge.} Moreover, in this method, the definition of the
+in the late inspiral and plunge. Moreover, in this method, the definition of the
 ringdown start time is built into the merger-ringdown model and does not need to be
 either left as an additional free parameter or fixed using alternate
 definitions. While \paperone presented the method and tested it for non-spinning BBHs, here we extend the analysis to the more
@@ -540,14 +530,14 @@ Fig.~\ref{fig:simulated_signal_nonGR} where we show the posterior
 probability distributions for $(\df{220}, \dtau{220})$, or
 equivalently $(\fngr{220}, \taungr{220})$. We find that they are
 consistent with the corresponding values of the injection parameters,
-indicated by the black dashed lines.  \abhi{We also note that at the
+indicated by the black dashed lines.  We also note that at the
   SNRs we consider, since statistical uncertainties dominate
   systematic biases, the measurement excludes, at the 90\% credible
-  level, the GR prediction \ab{of} the frequency ($\df{220}=0$), but
-  includes the prediction \ab{of} the damping time
+  level, the GR prediction of the frequency ($\df{220}=0$), but
+  includes the prediction of the damping time
   ($\dtau{220}=0$). However, with louder events, one would expect
   these measurement errors to shrink and the $\taungr{220}$
-  measurement to be inconsistent with the GR prediction, as well.}
+  measurement to be inconsistent with the GR prediction, as well.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -582,7 +572,7 @@ GW150914-like (upper panel) and GW190521-like (lower panel) injections. The meas
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_a1za2z.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_a1za2z.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_fgrtaugr.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_fgrtaugr.png}
         \includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_gr_Mfaf.png}\includegraphics[width=0.5\textwidth]{figures/GW150914_simulated_signal_0p0_0p1_0p5_ngr_Mfaf.png}
-         \caption{Comparison of a GW150914-like injection's parameters when signals with zero, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $\chi_f$) \abhi{(fourth row)} from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
+         \caption{Comparison of a GW150914-like injection's parameters when signals with zero, 10\% and 50\% deviations ($\df{220} = \dtau{220} = 0, 0.1, 0.5$) are recovered using a GR ($\SEOB$) (left panels) or a non-GR ($\pSEOB$) (right panels) waveform model. The panels (from top to bottom) show the 2D posteriors (with 90\% credible levels) and corresponding marginalised 1D posteriors (with 90\% credible levels) in (detector-frame) masses (first row), dimensionless spins (second row), GR predictions of frequency and damping time (third row) and the remnant mass and spin predictions ($M_f$, $\chi_f$) (fourth row) from the frequency and damping time. In each case, the injection values are indicated by the black dashed lines. In the lowermost panel, the injection values of the final mass and spin, correspond to the injection with no deviations. The $\df{220} = \dtau{220} = 0.1$ signal is identical to the results shown in Fig.~\ref{fig:simulated_signal_nonGR}.}
         \label{fig:gr_ngr_comparison}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -595,7 +585,7 @@ waveform model $\SEOB$ instead of the parameterized $\pSEOB$.  The
 resulting one- and two-dimensional posteriors are shown in the right
 panels of Fig.~\ref{fig:simulated_signal_nonGR} by purple curves for the
 GW150914-like (top) and GW190521-like (bottom) signals
-respectively. For both signals, we find the \abhi{2D} $\SEOB$ estimates are
+respectively. For both signals, we find the 2D $\SEOB$ estimates are
 markedly biased with respect to the $\pSEOB$ estimates.  We investigate 
 this impact on the estimation of the GR parameters $\bxigr$ by changing the
 magnitude of deviation in the non-GR parameters more in Fig.~\ref{fig:gr_ngr_comparison}. We restrict ourselves 
@@ -612,16 +602,16 @@ recoveries expectedly get more biased, the $\pSEOB$ measurements are
 robust in consistently recovering the injected value. This gives us 
 confidence that the $\pSEOB$ model can accurately measure QNM 
 properties without biasing measurements of inspiral quantities, like masses and spins.
-\ab{To compute the samples of the final mass and spin in the last row, we start from the samples
+To compute the samples of the final mass and spin in the last row, we start from the samples
 of the complex QNM frequencies $(\fngr{220}, \taungr{220})$, which are obtained from the 
 fractional deviation samples $(\df{220},\dtau{220})$ and the GR-quantities
-$(\fgr{220},\taugr{220})$ using Eqs.~(\ref{eq:nongr_freqs_a}) and Eq.~(\ref{eq:nongr_freqs_b})},
-\abhi{and then invert them \sout{$(\fngr{220}, \taungr{220})$} using the fitting formula in Ref.~\cite{Berti:2005ys}.
+$(\fgr{220},\taugr{220})$ using Eqs.~(\ref{eq:nongr_freqs_a}) and Eq.~(\ref{eq:nongr_freqs_b}),
+and then invert them using the fitting formula in Ref.~\cite{Berti:2005ys}.
 The three BBH signals, $\df{220} = \dtau{220} = 0, 0.1, 0.5$, correspond to
 three unique sets of values for $(M_f,\chi_f)$. These predicted values are correctly 
 recovered by the $\pSEOB$ waveform (bottom-right plot in Fig.~\ref{fig:gr_ngr_comparison}),
 leading to three distinct and disjointed 2D posteriors on $(M_f,\chi_f)$, unlike the $\SEOB$
-analysis (to reduce clutter in the plot, we just plot the injection values for $\df{220} = \dtau{220} = 0$. }
+analysis (to reduce clutter in the plot, we just plot the injection values for $\df{220} = \dtau{220} = 0$. 
 
 
 \subsection{Test of the no-hair conjecture}\label{ssec:nohairtheorem}
@@ -980,7 +970,7 @@ LIGOScientific:2019fpa,Abbott:2020jks}.
 %%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
-The authors thank Max Isi for generously allowing us to use the code developed in Ref.~\cite{Isi:2019asy} for the hierarchical inference analysis, and Gregorio Carullo for carefully reading the manuscript and providing useful comments. The authors would like to thank everyone at the frontline of the Covid-19 pandemic. \abhi{The authors are grateful for computational resources provided by the LIGO Laboratory and supported by the National Science Foundation Grants PHY-0757058 and PHY-0823459, as well as computational resources at the AEI, specifically the Hypatia cluster.} R.B. acknowledges financial support from the European Union's Horizon 2020 research and innovation programme under the Marie Sk\l odowska-Curie grant agreement No. 792862, from the European Union's H2020 ERC, Starting Grant agreement no.~DarkGRA--757480, and from the MIUR PRIN and FARE programmes (GW-NEXT, CUP:~B84I20000100001). We also acknowledge support from the Amaldi Research Center funded by the MIUR program ``Dipartimento di Eccellenza'' (CUP:~B81I18001170001).
+The authors thank Max Isi for generously allowing us to use the code developed in Ref.~\cite{Isi:2019asy} for the hierarchical inference analysis, and Gregorio Carullo for carefully reading the manuscript and providing useful comments. The authors would like to thank everyone at the frontline of the Covid-19 pandemic. The authors are grateful for computational resources provided by the LIGO Laboratory and supported by the National Science Foundation Grants PHY-0757058 and PHY-0823459, as well as computational resources at the AEI, specifically the Hypatia cluster. R.B. acknowledges financial support from the European Union's Horizon 2020 research and innovation programme under the Marie Sk\l odowska-Curie grant agreement No. 792862, from the European Union's H2020 ERC, Starting Grant agreement no.~DarkGRA--757480, and from the MIUR PRIN and FARE programmes (GW-NEXT, CUP:~B84I20000100001). We also acknowledge support from the Amaldi Research Center funded by the MIUR program ``Dipartimento di Eccellenza'' (CUP:~B81I18001170001).
 %%%%%%%%%%%%%%%%%
 
 
@@ -1016,7 +1006,7 @@ when our description of detector noise is not complete.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We choose a \abhi{spinning}, precessing NR-surrogate model \texttt{NRSur}~\footnote{This waveform model is 
+We choose a spinning, precessing NR-surrogate model \texttt{NRSur}~\footnote{This waveform model is 
 called \texttt{NRSur7dq4} in LAL.} (valid up to mass ratio 4) to simulate the actual GW190521 signal
 observed by the LIGO and Virgo detectors~\cite{Abbott:2020tfl} (see
 Table I of Ref.~\cite{Abbott:2020tfl})). The choice of the
