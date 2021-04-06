@@ -6,6 +6,7 @@ from optparse import OptionParser
 parser = OptionParser()
 parser.add_option("-p", "--post-loc-root", dest="post_loc_root", help="path to post loc")
 parser.add_option("--deltaLogP", dest="deltaLogP", help="deltaLogP")
+parser.add_option("--deltaLogP", dest="deltaLogP", help="deltaLogP")
 (options, args) = parser.parse_args()
 
 post_loc_root = options.post_loc_root
