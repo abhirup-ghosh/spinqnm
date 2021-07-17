@@ -120,6 +120,12 @@ catalog_id_to_superevent_id_dict = {
     "GW170817A" : "S170817",
     "GW170818A" : "S170818",
     "GW170823A" : "S170823",
+    "S191109d":"S191109d", 
+    "S200112r":"S200112r", 
+    "S200129m":"S200129m", 
+    "S200208q":"S200208q",         
+    "S200224ca":"S200224ca", 
+    "S200311bg":"S200311bg"
 }
 
 catalog_ids = sorted(catalog_id_to_superevent_id_dict.keys())
