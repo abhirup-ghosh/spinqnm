@@ -1,0 +1,387 @@
+\documentclass[aps,10pt,preprint,
+               notitlepage,onecolumn,superscriptaddress,
+               eqsecnum,
+               nofootinbib,tightenlines,floatfix]{revtex4-1}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{anyfontsize}
+\usepackage{mathtools}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[linktocpage,breaklinks]{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Comment this out if want to use times font
+% \usepackage{txfonts}
+\usepackage{tensor}
+\usepackage{bm}
+
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+
+\usepackage{natbib}
+
+\hypersetup{colorlinks=true,
+            citecolor=NavyBlue,
+            linkcolor=NavyBlue,
+            urlcolor=NavyBlue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add collaborators here
+\newcommand{\hs}[1]{{\color{magenta}[HS: #1]}}
+
+\newcommand{\dd}{{\rm d}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\xp}{x^{\prime}}
+\newcommand{\rp}{r^{\prime}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\lt}{\left}
+\newcommand{\rt}{\right}
+\newcommand{\pd}{\partial}
+\newcommand{\df}{\coloneqq}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\title{Some notes on quasinormal mode tests}
+
+\begin{abstract}
+Terse.
+\end{abstract}
+
+\author{Hector O. Silva}
+\email{hector.silva@aei.mpg.de}
+\affiliation{Max Planck Institute for Gravitational Physics,
+(Albert Einstein Institute), Am M\"uhlenberg 1, 14476 Potsdam, Germany}
+
+\date{{\today}}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+Here is a collection of thoughts on QNMs tests.
+%
+We follow the notations used in~\cite{Ghosh:2021mrv}.
+
+\section{Test of the Kerr metric}
+
+\subsection{Basic idea}
+
+The idea here is to use the post-Kerr formalism~\cite{Glampedakis:2017dvb} as a null test of
+the Kerr nature of the remnant BH.
+%
+Let us start by reviewing what was proposed there.
+
+According to the geometrical optics (eikonal limit)-null geodesic
+correspondence, the fundamental quasinormal mode frequencies are
+(see~e.g.~\cite{Ferrari:1984zz,Cardoso:2008bp}) related to the orbital frequency and Lyapunov
+exponent of a null particle (or a bundle of them for the later) at the black
+hole's light ring.
+
+The idea of the post-Kerr test is to write the true Kerr quasinormal mode as
+%
+\begin{equation}
+    \sigma_{\ell m 0}^{\rm Kerr} = \sigma_{\ell m 0}^{\rm eik.} + \beta_{\ell m 0}^{\rm off-set}\,,
+    \label{eq:qnm_kerr_exact}
+\end{equation}
+%
+where $\sigma_{\ell m 0}^{\rm eik.}$ is the result predicted by the eikonal
+calculation and $\beta_{\ell m 0}^{\rm off-set}$ is a known
+(\cite{Glampedakis:2017dvb}, Appendix A) off-set function that encapsulates the
+mismatch between eikonal and exact quasinormal frequencies.
+
+Next, suppose that from data we inferred a frequency $\sigma_{\ell m 0}^{\rm obs.}$
+which we decompose as
+%
+\begin{equation}
+    \sigma_{\ell m 0}^{\rm obs.} = \kappa_{\ell m 0} + \beta_{\ell m 0}^{\rm off-set}\,,
+\end{equation}
+%
+where $\beta$ is the same off-set function appearing
+in~\eqref{eq:qnm_kerr_exact} and $\kappa$ is an eikonal quasinormal frequency
+whose value is determined in practice subtracting off $\beta$ from the inferred
+$\sigma^{\rm obs.}$.
+
+Then, if both the spacetime and the light ring are non-Kerr
+we would expect that
+%
+\begin{equation}
+    \sigma_{\ell m 0}^{\rm obs} - \sigma_{\ell m 0}^{\rm Kerr} = \kappa_{\ell m 0} - \sigma^{\rm eik.}_{\ell m 0} \neq 0 \,.
+    \label{eq:qnm_obs}
+\end{equation}
+%
+If we assume that the `non-Kerrness' is small, we can write
+%
+\begin{equation}
+    \delta \sigma_{\ell m 0} \equiv  \sigma_{\ell m 0}^{\rm obs} - \sigma_{\ell m 0}^{\rm Kerr}
+\end{equation}
+%
+where the terms in the right-hand side differ, by construction, only through their eikonal contributions.
+%
+The good point about this `post-Kerr' approach is that $\kappa$ can be
+calculated analytically given a perturbed Kerr black hole spacetime and we can
+thus quantify the amount of non-Kerr of the remnant black hole.
+%
+Being more specific, we can quote how different is the light ring relative to Kerr.
+
+Let us elaborate on this last point some more. In the eikonal limit we propose:
+%
+\begin{equation}
+    {\rm Re}[\sigma] = m (\Omega_{\rm ph} + \epsilon \delta \Omega_0)
+\end{equation}
+%
+where $\Omega_{\rm ph}$ is the known Kerr light ring orbital frequency
+%
+\begin{align}
+    \Omega_{\rm ph} &= \pm \frac{M^{1/2}}{r_{\rm ph}^{3/2} \pm a M^{1/2}} \,,
+    \\
+    r_{\rm ph} &= 2M \left\{
+    1 + \cos\left[ \frac{2}{3} \cos^{-1} \left( \mp \frac{a}{M} \right)\right]
+    \right\}\,,
+\end{align}
+%
+with $r_{\rm ph}$ being the equatorial light ring for prograde (upper sign) and
+retrograde (lower sign) orbits. Also, $\delta \Omega_0$ is a small deviation
+which can be expressed in terms of the perturbations to the $\varphi\varphi$,
+$t\varphi$ and $tt$ components of the Kerr metric.
+%
+\hs{I thought that we could learn something about the black hole metric
+following this route, but maybe this is not worth pursuing because:
+%
+(i) if we were able to obtain information on the $\delta g^{\rm Kerr}$
+it would still be at a single point and it seems unclear how to generically reconstructed
+the deformed metric (see however~\cite{Volkel:2020daa});
+%
+(ii) the expressions for the post-Kerr modifications depend on quite a few
+metric components (three for the real part), meaning that to break the degeneracy of
+them we would need quite a number of $\sigma_{\ell m 0}$.
+%
+Perhaps then, it is more instructive to try to constraint some coordinate independent
+parameters.}
+%
+
+\subsection{An eikonal consistency check?}
+
+There is something simpler that could be applied right away.
+\hs{Not very sure about this. Discuss.}
+
+Suppose that from out parameter estimation we are given an
+%
+$\sigma_{\ell m 0}^{\rm obs.}$.
+%
+Further assume that we have two of such modes detected (as one would require
+for a no-hair test). Since we work in the eikonal limit we do cannot predict the
+overtone (see~\cite{Dolan:2009nk} for an alternative approach however), so say we know the fundamental $n=0$
+quasinormal modes of multipole $\ell = m = 2$.
+
+Then, from the decomposition~\eqref{eq:qnm_obs} we can write:
+%
+\begin{subequations}
+\begin{align}
+    2 \pi f_{220} &= 2 \left( \Omega_{\rm ph} + \epsilon \delta \Omega_{0} \right) + {\rm  Re}[\beta^{\rm off-set}_{\ell m 0}]\,,
+    \\
+    \tau^{-1}_{220} &= (1/2) |\gamma_{\rm ph} + \epsilon \delta \gamma_{0}| + {\rm  Im}[\beta^{\rm off-set}_{\ell m 0}]\,.
+\end{align}
+\end{subequations}
+%
+These equations can be cast in the form used in~\cite{Ghosh:2021mrv}, where $\delta f_{220}$
+and $\delta \tau_{220}$ now depend on $(\delta \Omega_0,\, \delta \gamma_0)$.
+%
+This allows us to translate the posterior distributions of~\cite{Ghosh:2021mrv} into posteriors of more
+physical observables.
+%
+\hs{TODO: can this be translated onto shadow properties~\cite{Yang:2021zqy}?}
+
+Another possibility is to simply test within GR the validity of the geometrical optics / null
+geodesic correspondence. The idea is as follows. First write:
+%
+\begin{equation}
+    \sigma_{\ell m 0} = 2 \pi f_{\ell m 0} + \ii / \tau_{\ell m 0}\,.
+\end{equation}
+%
+where in GR,
+%
+\begin{subequations}
+\begin{align}
+    2 \pi f_{\ell m 0} &= m \Omega_{\rm ph} + {\rm  Re}[\beta^{\rm off-set}_{\ell m 0}]\,,
+    \\
+    \tau^{-1}_{\ell m 0} &= (1/2) |\gamma_{\rm ph}|+ {\rm  Im}[\beta^{\rm off-set}_{\ell m 0}]\,,
+\label{eq:re_im_eikonal}
+\end{align}
+\end{subequations}
+%
+where $\beta^{\rm off-set}_{\ell m 0} = \beta^{\rm off-set}_{\ell m 0}(M_f, \chi_f)$ are known for $\ell = m $.
+%
+We can then promote ($\Omega_{\rm ph}$, $\gamma_{\rm ph}$) to free parameters in the
+doing parameter estimation together with $M_f(m_1, m_2, \chi_1, \chi_2)$ and $\chi_f(m_1, m_2, \chi_1, \chi_2)$.
+%
+\emph{If the geometrical optics / null geodesic picture is correct}:
+%
+\begin{itemize}
+    \item from a single QNM detection we would expect that the $(\Omega_{\rm ph}, \gamma_{\rm ph})$ joint posterior contour will be consistent
+    with the joint posterior obtained by transforming $(M_f, \chi_f) \mapsto (\Omega_{\rm ph}, \gamma_{\rm ph})$.
+    \item from two QNM detections we would expect that the posteriors of $\gamma_{\rm ph}$ (since
+    the eikonal formula is independent on $\ell$ and $m$) and of $\Omega_{\rm ph} / m$ would be consistent. (There would be three posteriors: two from each mode
+    and a third from $(M_f, \chi_f) \mapsto (\Omega_{\rm ph}, \gamma_{\rm ph})$).
+\end{itemize}
+
+In practice, this is not different from the usual no-hair test, but it allows us to test a \emph{physical image
+on how we interpret the QNMs}.
+
+
+\subsection{Assumptions and caveats}
+%
+There are two caveats that we need to keep in mind:
+%
+\begin{itemize}
+\item We assume that the off-set function $\beta$ is the same in the Kerr and
+non-Kerr spacetimes. This may not be the case in general and therefore any
+bound on the deviation parameters would at best \emph{be conservative} (one can
+imagine that knowing exactly $\beta$ for a given theory would only strengthen
+the constraints;
+%
+\item The quasinormal mode formulas of~\cite{Glampedakis:2017dvb} does not
+capture coupling between gravitational and extra degrees of freedom which
+are ubiquitous in beyond-GR theories.
+%
+However, one can imagine that if a beyond-GR theory is perturbatively away from
+GR there is a regime where the equation almost decouple the results are a
+good first approximation to be used in absence of exact quasinormal mode
+frequencies calculations.
+\end{itemize}
+
+\section{Theory-specific calculations}
+
+Here we summarize some classes of theories for which quasinormal modes
+of black holes have been computed in the past. We use the acronyms NR (nonrotating),
+SR (slowly-rotating) and RR (rapidly-rotating).
+
+\begin{itemize}
+    \item Einstein-dilaton-Gauss-Bonnet -- (NR)~\cite{Blazquez-Salcedo:2016enn},
+        (SR)~\cite{Pierini:2021jxd}.~\hs{Having results at both NR and SR approximations
+        could be useful to assess {\sc parSpec} truncated at different spin-orders};
+    \item dynamical Chern-Simons -- (NR)~\cite{Molina:2010fb}, (SR)~\cite{Wagle:2021tam,Srivastava:2021imr};
+    \item Einstein-Maxwell-dilaton -- (NR)~\cite{Ferrari:1984zz}, (SR)~\cite{Brito:2018hjh};
+\end{itemize}
+
+\section{Effective hydrodynamical properties of exotic matter}
+
+In~\cite{Yunes:2016jcc}, a few order-of-magnitude estimates were places on the effective
+viscosity of an `exotic matter alternative to BH' was placed.
+%
+The starting point is a Newtonian, quasi-incompressible star with a density $\rho$,
+radius $R$ and which perturbed by a spherical harmonic mode $Y_{\ell m}$.
+%
+From~\cite{Cutler:1987ApJ314}, the shear $\bar{\eta}$ and bulk $\bar{\zeta}$ viscosities of the oscillations are related to their
+respective damping times as $\tau_{\bar{\eta}}$ and $\tau_{\bar{\zeta}}$ as
+%
+\begin{align}
+    \bar{\eta}  &= \frac{1}{(\ell - 1) (2\ell + 1)} \frac{\rho R^2}{\tau_{\bar{\eta}}}\,,
+    \\
+    \bar{\zeta} &= \left(\frac{5}{4}\right)^{4} \frac{2 (2\ell +3)}{\ell^3} \frac{\rho R^2}{\tau_{\bar{\zeta}}}\,.
+\end{align}
+%
+
+Given these expressions, Ref.~\cite{Yunes:2016jcc} focuses of $\ell = 2$ and eliminates the density by using
+$\rho = m / [(4 \pi / 3) R^3]$, to obtain
+%
+\begin{align}
+    \bar{\eta}_{\rm eff} &\sim 4 \cdot 10^{28} \frac{{\rm g}}{{\rm cm} \cdot {\rm s}}
+    \left( \frac{m}{65 M_{\odot}} \right)
+    \left( \frac{370 \, {\rm km}}{R} \right)
+    \left( \frac{4 \, {\rm ms}}{\tau_{\bar{\eta}}} \right)
+    \\
+    \bar{\zeta}_{\rm eff} &\sim 3 \cdot 10^{30} \frac{{\rm g}}{{\rm cm} \cdot {\rm s}}
+    \left( \frac{m}{65 M_{\odot}} \right)
+    \left( \frac{370 \, {\rm km}}{R} \right)
+    \left( \frac{4 \, {\rm ms}}{\tau_{\bar{\eta}}} \right)
+\end{align}
+%
+where the expressions where rescalled by a fiducial damping times of $\tau = 4 ms$~\hs{Now we have posteriors on
+this can could be used.}, a total mass of $m = 65~M_{\odot}$ and a radius of $R = 370~{\rm km}$ (corresponding to
+the orbital separation at the end of the inspiral~\hs{Determined how?}).
+%
+These orders of magnitude are comparable with those of black holes (in the context of the membrane paradigm), but
+larger than other compact objects such as boson stars and neutron stars. See~\cite{Yunes:2016jcc}, Table V.
+
+\section{Others}
+
+\subsection{Overtones}
+%
+Can we include overtones to the pSEOBNR~\cite{Brito:2018rfr,Ghosh:2021mrv}?
+
+% \subsection{Isospectrality}
+% %
+% A firm prediction of GR is that the quasinormal modes
+
+\subsection{QNMs and multipole moments}
+%
+The Refs.~\cite{Krishnendu:2017shb,Krishnendu:2019tjp} binary black hole
+inspirals were used to constraint the spin-induced quadrupole moment by
+parametrizing it is as $M_2 = - (1 + \delta q) \chi^2 M^3 \equiv \kappa \chi^2 M^3$ (where we follow the
+notation of~\cite{Glampedakis:2017cgd}).
+%
+In~\cite{Glampedakis:2017cgd} the quasinormal mode in the eikonal limit were computed
+for a generic ultracompact objects (such that it has a light ring).
+%
+The final formulas for $\sigma_{220}$ depend on two deformation parameters:
+$\delta q$ (which null for Kerr) and a spin-octupole $\delta s_{3}$.
+%
+It seems possible to extend~\cite{Krishnendu:2017shb,Krishnendu:2019tjp}
+into a `inspiral-ringdown' consistency check now that $\delta q$ can be inferred
+both from the ringdown and from the inspiral. The spin-octupole would be something new.
+
+
+\subsection{Final spin and mass fits}
+%
+In obtaining the modes in~\cite{Ghosh:2021mrv}, we final mass $M_f$ and spin
+$\chi_f$ are obtained by a fit to the numerical relativity (NR) simulations, in
+particular, from~\cite{Taracchini:2013rva,Hofmann:2016yih}.
+%
+These papers are about five years old. Can we update these fits and/or use
+larger NR catalogs?
+%
+\hs{These references seem to have a done a very comprehensive work so the
+gain-by-effort ratio is probably small. Opinions?}
+
+Some works have followed Ref.~\cite{Buonanno:2007sv} to estimate the remnant black hole spin
+in both theory specific~\cite{Jai-akson:2017ldo} and generic set-ups.
+%
+Since $\chi_f$ in~\cite{Ghosh:2021mrv} is predicted using fits obtained in GR
+could we modify them a bit and perhaps related $\delta f$, $\delta \tau$ with
+some non-GR parameter $x$ building upon~\cite{Buonanno:2007sv}?
+%
+Imagining that $\chi_f$ could change dramatically due to $x$;
+could we use stack the posteriors on $\chi_f$ of all binary-black-hole events so far
+to constraint $x$?
+
+\section{A full parametrized inspiral-merger-ringdown template}
+
+The waveform model used in~\cite{Brito:2018rfr,Ghosh:2021mrv} assumes that
+only the merger-ringdown phase for the coalescence has significant GR deviations.
+%
+On the other hand, we know that the most of the waveform's SNR is contained in the
+inspiral.
+%
+Could include changes to the inspiral as well?
+
+It could be useful to remember that late-inspiral-ringdown waveforms which emulate
+GW150914 (examined in~\cite{Ghosh:2021mrv}) are publicly available for
+Einstein-dilaton-Gauss-Bonnet and dynamical-Chern-Simons
+theories~\cite{Okounkova:2019zjf,Okounkova:2020rqw}.
+
+
+
+\bibliography{biblio}
+
+\end{document}
