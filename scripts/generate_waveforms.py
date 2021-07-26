@@ -37,8 +37,8 @@ def generate_waveform(domega220, dtau220, alphaNGR, pNGR):
 
 # Define binary parameters
 nqcCoeffsInput=lal.CreateREAL8Vector(10) ##This will be unused, but it is necessary
-m1 = 50.0*lal.MSUN_SI
-m2 = 50.0*lal.MSUN_SI
+m1 = 35.0*lal.MSUN_SI
+m2 = 35.0*lal.MSUN_SI
 phi_c = 0.
 f_start22 = 20. #Frequency of the 22 mode at which the signal starts
 distance = 500e6*lal.PC_SI
@@ -52,6 +52,10 @@ domega440, dtau440 = 0., 0.
 domega550, dtau550 = 0., 0.
 
 pNGR = 2.
+alphaNGR = 100.
+
+z = distance * 70000.0 / 1.0e6 / lal.PC_SI / lal.C_SI
+gamma = (alphaNGR * lal.C_SI * lal.C_SI * (1. + z)/ lal.G_SI/ (m1+m2))**pNGR
 
 plt.figure()
 
@@ -63,13 +67,16 @@ plt.plot(t, hp, color='r')
 # plot data with no deviation
 t, hp, hc = generate_waveform(0, 0, 100, pNGR)
 plt.plot(t, hp, color='g', ls='dashdot')
+"""
+for idx in range(10000):
 
-for idx in range(100):
+	domega220 =  np.random.uniform(0.,1.)
+	dtau220 =  np.random.uniform(0.,1.)
 
-	domega220 =  np.random.rand()*20000. - 10000.
-	#print(domega220)
-	t, hp, hc = generate_waveform(domega220, 0, 1, pNGR)
+	t, hp, hc = generate_waveform(domega220, dtau220, 100, pNGR)
+	#t, hp, hc = generate_waveform(0.394314, -0.888588, 100, pNGR)
 	plt.plot(t, hp, alpha=0.1, color='k', lw=0.1)
 
 plt.xlim([0.32, 0.38])
-plt.savefig('../plots/parspec/pSEOB_parspec-no-dev_comparison_p2_df0.png')
+plt.savefig('../plots/parspec/pSEOB_parspec-no-dev_comparison_p2_df0_dtau0.png')
+"""
