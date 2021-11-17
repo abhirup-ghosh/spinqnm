@@ -6,8 +6,9 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
 \usepackage{times}
+% \usepackage[varg]{txfonts}
+\usepackage{txfonts}
 \usepackage{xspace}
-\usepackage[varg]{txfonts}
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
 \usepackage[colorlinks]{hyperref}
 \usepackage[caption=false]{subfig}
@@ -18,6 +19,7 @@
 \usepackage{lineno}
 %\linenumbers
 \usepackage{makecell}
+\usepackage{microtype}
 
 \definecolor{LinkColor}{rgb}{0.75, 0, 0}
 \definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
@@ -73,17 +75,27 @@
 \newcommand{\pSEOB}{\texttt{pSEOBNR}}
 \newcommand{\SEOB}{\texttt{SEOBNR}}
 
+\newcommand{\pd}{\partial}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\dV}{{\rm d}^{4}x \, \sqrt{-g} \,}
+\newcommand{\lame}{\lambda_{\rm e}}
+\newcommand{\lamo}{\lambda_{\rm o}}
+
+% Comment commands
+\newcommand{\ag}[1]{{\textcolor{cyan}{{[AG: #1]}} }}
+\newcommand{\hs}[1]{{\textcolor{blue}{{[HS: #1]}} }}
+\newcommand{\ab}[1]{{\textcolor{green}{{[AB: #1]}} }}
+
 \newcommand{\AEI}{\affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am M\"uhlenberg 1, Potsdam 14476, Germany}}
-\newcommand{\UMD}{\affiliation{Department of Physics, University of Maryland, College Park, MD 20742, USA}}
+\newcommand{\UMD}{\affiliation{Department of Physics, University of Maryland, College Park, Maryland 20742, USA}}
 
 \begin{document}
 
 \title{Super-awesome paper with super-cool results}
 
 \author{Abhirup Ghosh}
-\AEI
 \author{Hector O. Silva}
-\affiliation{Dipartimento di Fisica, ``Sapienza" Universit\`a di Roma $\&$ Sezione INFN Roma1, Piazzale Aldo Moro 5, 00185 Roma, Italia}
+\AEI
 \author{Alessandra Buonanno}
 \AEI
 \UMD
@@ -104,12 +116,45 @@
 %%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%
-\section{Method}
+\section{Methods}
 \label{sec:method}
 
-\subsection{Review of pSEOB}
-\subsection{Review of parspec}
-\subsection{Review of modGR predictions we use in this paper}
+\subsection{The parametrized waveform model}
+\label{sec:review_pSEOB}
+
+\subsection{The parametrized ringdown spin expansion coefficients}
+\label{sec:review_parspec}
+
+\subsection{Overview of modified gravity theories}
+\label{sec:review_theories}
+
+A broad class modified gravity theories are capture by the action
+%
+\begin{align}
+S &= \frac{1}{16 \pi G} \int \dd^4x \sqrt{-g}
+\left[ R + \dots \right.
+\nonumber \\
+&\quad
+\left.
+\right]
+\end{align}
+%
+
+\begin{table}[t]
+\begin{tabular}{c c c c c}
+\hline
+\hline
+Theory & $p$ & $\delta \omega$ & $\delta \tau$ & Refs. \\
+\hline
+\dots & \dots & \dots & \dots & \dots \\
+\hline
+\hline
+\end{tabular}
+\caption{Summary of theories consider in this paper.
+\hs{Add a column with the constraint (if any) that we placed.}}
+\label{tab:ref_stars}
+\end{table}
+
 %%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%
@@ -125,10 +170,17 @@
 %%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
+%
+We thank Emanuele Berti and Andrea Maselli for discussions.
+%
+The authors are grateful for the computational resources provided by the AEI,
+specifically the {\sc Hypatia} cluster.
+%
+The authors would like to thank everyone at the frontline of the Covid-19
+pandemic.
 %%%%%%%%%%%%%%%%%
 
-%
-\bibliographystyle{apsrev}
+% \bibliographystyle{apsrev}
 \bibliography{paper_alt_theor_bounds}
 
 \end{document}
