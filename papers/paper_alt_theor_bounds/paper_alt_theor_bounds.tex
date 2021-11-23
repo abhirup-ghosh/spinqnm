@@ -1,11 +1,11 @@
-\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath]{revtex4-1}
+\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath,longbibliography]{revtex4-2}
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
-\usepackage{times}
+% \usepackage{times}
 % \usepackage[varg]{txfonts}
 \usepackage{txfonts}
 \usepackage{xspace}
@@ -92,7 +92,8 @@
 \begin{document}
 
 % HS: temporary title. Feel free to add suggestions
-\title{Constraints on for higher-curvature gravity theories from binary black hole ringdown signals}
+\title{Constraints on higher-curvature gravity theories from binary black hole ringdown signals}
+% \title{Black-hole ringdown as probe of higher-curvature gravity theories}
 
 \author{Abhirup Ghosh}
 \author{Hector O. Silva}
@@ -120,14 +121,23 @@
 \section{Methods}
 \label{sec:method}
 
-\subsection{The parametrized waveform model}
-\label{sec:review_pSEOB}
-
 \subsection{The parametrized ringdown spin expansion coefficients}
 \label{sec:review_parspec}
 
+\hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
+
+\subsection{The parametrized waveform model}
+\label{sec:review_pSEOB}
+
+\hs{Here we present a short review of~\cite{Brito:2018rfr,Ghosh:2021mrv} and
+explain how we modified it to include the {\sc Parspec} parametrisation.}
+
 \subsection{Overview of modified gravity theories}
 \label{sec:review_theories}
+
+\hs{Here we review class of gravity theories we will consider.
+They all have higher-curvature terms, hence the `higher-curvature gravity theories'
+in the title.}
 
 A broad class modified gravity theories are capture by the action
 %
@@ -139,9 +149,15 @@ S &= \frac{1}{16 \pi G} \int \dd^4x \sqrt{-g}
 \left.
 \right]
 \end{align}
-%
 
-\begin{table}[t]
+%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+\section{Methods}
+\label{sec:methods}
+%%%%%%%%%%%%%%%%%
+
+\begin{table}[th]
 \begin{tabular}{c c c c c}
 \hline
 \hline
@@ -152,21 +168,52 @@ Theory & $p$ & $\delta \omega$ & $\delta \tau$ & Refs. \\
 \hline
 \end{tabular}
 \caption{Summary of theories consider in this paper.
-\hs{Add a column with the constraint (if any) that we placed.}}
-\label{tab:ref_stars}
+\hs{Add a column with the constraint (if any) that we placed.}
+\hs{TODO: add which runs are done and which need to be done.}
+}
+\label{tab:ref_theories}
 \end{table}
 
-%%%%%%%%%%%%%%%%%
+\hs{We {\it must very explicitly} state our working hypothesis here:
+%
+\begin{itemize}
+    \item That we include only the nonrotating, non-GR correction to the QNMs.
+    \item That due to absence of isospectrality, when translating to the theory specific result,
+    we {\it chose} to use the lowest damping, gravitational QNM of the theory.
+\end{itemize}
+%
+We can come back to these in the Sec.~\ref{sec:discussion} as things that we
+might want to revisit in the future.
+}
+
+\hs{In Table~\ref{tab:ref_theories} we summarize the relevant parameters for
+the {\sc Parspec} implementation of each theory and give credit to the papers
+which calculated the QNMs.}
+
+\hs{Say which GW event we will consider and justify why.}
 
 %%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%
 
+\hs{Here we summarise the results of our PE runs. Combine the posteriors on the
+the non-GR parameter coming from different events. We could have a short
+subsection for each theory. We should quote two thresholds for claiming
+that we placed a bound, one using the secondary BH mass and another with
+the final BH mass.}
+
 %%%%%%%%%%%%%%%%%
 \section{Discussion}
 \label{sec:discussion}
 %%%%%%%%%%%%%%%%%
+
+\hs{I think an important message of the paper is that we give indication that
+there are theories of gravity (such as dCS) which can by-pass observational
+constraints from the inspiral phase alone, {\it yet} they do not, if we
+analyse the ringdown. This is quite important because I've frequently heard
+that the ``inspiral is what will constrain theories''. I think this might be
+the most important message.}
 
 %%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
@@ -174,8 +221,10 @@ Theory & $p$ & $\delta \omega$ & $\delta \tau$ & Refs. \\
 %
 We thank Emanuele Berti and Andrea Maselli for discussions.
 %
-The authors are grateful for the computational resources provided by the AEI,
-specifically the {\sc Hypatia} cluster.
+\hs{Anyone else? Serguei, Deyan?}
+%
+We thank the computational resources provided by the AEI, specifically the
+{\sc Hypatia} cluster.
 %
 The authors would like to thank everyone at the frontline of the Covid-19
 pandemic.
