@@ -5,8 +5,6 @@
 \usepackage{bm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
-% \usepackage{times}
-% \usepackage[varg]{txfonts}
 \usepackage{txfonts}
 \usepackage{amssymb}
 \usepackage{xspace}
@@ -19,16 +17,15 @@
 \usepackage[bottom]{footmisc}
 \usepackage{lineno}
 \usepackage{mathrsfs}
-%\linenumbers
 \usepackage{makecell}
 \usepackage{microtype}
 
 \definecolor{LinkColor}{rgb}{0.75, 0, 0}
 \definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
 \definecolor{UrlColor}{rgb}{0, 0, 0.75}
-\hypersetup{linkcolor=LinkColor}
-\hypersetup{citecolor=CiteColor}
-\hypersetup{urlcolor=UrlColor}
+\hypersetup{linkcolor=NavyBlue}
+\hypersetup{citecolor=NavyBlue}
+\hypersetup{urlcolor=NavyBlue}
 \usepackage{perpage}
 \MakePerPage{footnote}
 
@@ -95,10 +92,10 @@
 
 % HS: temporary title. Feel free to add suggestions
 % \title{Probing higher-curvature gravity theories from binary black hole ringdown signals}
-\title{Black-hole ringdown as probe of higher-curvature gravity theories}
+\title{The black-hole ringdown as a probe of higher-curvature gravity theories}
 
-\author{Abhirup Ghosh}
 \author{Hector O. Silva}
+\author{Abhirup Ghosh}
 \AEI
 \author{Alessandra Buonanno}
 \AEI
@@ -113,12 +110,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \maketitle
-\tableofcontents
+% \tableofcontents
 
 %%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{sec:intro}
 %%%%%%%%%%%%%%%%%
+
+\hs{AB will do this.}
 
 %%%%%%%%%%%%%%%%%
 \section{Methods}
@@ -127,6 +126,7 @@
 \subsection{The parametrized ringdown spin expansion coefficients formalism}
 \label{sec:review_parspec}
 
+\hs{HS will do this.}
 \hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
 
 The formalism modifies the Kerr quasinormal mode frequency as
@@ -165,22 +165,25 @@ Also,
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
 
+\hs{AG will do this.}
 \hs{Here we present a short review of~\cite{Brito:2018rfr,Ghosh:2021mrv} and
 explain how we modified it to include the {\sc Parspec} parametrisation.}
 
 \subsection{Overview of modified gravity theories}
 \label{sec:review_theories}
 
-\hs{Here we review class of gravity theories we will consider.
-They all have higher-curvature terms, hence the `higher-curvature gravity theories'
-in the title.}
+\hs{HS will do this.}
+
+% \hs{Here we review class of gravity theories we will consider.
+% They all have higher-curvature terms, hence the `higher-curvature gravity theories'
+% in the title.}
 
 A broad class modified gravity theories are described by the action
 %
 \begin{equation}
 S = \frac{1}{16 \pi G} \int \dd^4x \sqrt{-g}
 \left[ R
-- \tfrac{1}{2}(\nabla \varphi)^2
+- \tfrac{\beta}{2}(\nabla \varphi)^2
 \right]
 +
 \sum_{n \geqslant 2} \frac{\ell^{2n - 2}}{16 \pi G} S^{(2n)},
@@ -256,23 +259,20 @@ $\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
 
 %%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%
-\section{Methods}
-\label{sec:methods}
-%%%%%%%%%%%%%%%%%
-
 \subsection{From theory-agnostic to theory-specific QNM results}
 
+\hs{HS will do this.}
+
 \begin{table*}[th]
-\begin{tabular}{c c c c c c}
+\begin{tabular}{c | c c c c c c c c}
 \hline
 \hline
-Theory & $p$ & $\delta \omega$ & $\delta \tau$ & QNM & Constraint \\
+Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
 \hline
-sGB      & 4 & \dots & \dots & \cite{Pierini:2021jxd} & $\alpha^{1/2}_{\rm GB} \ell \leqslant 1.7$~km~\cite{Perkins:2021mhb} \\
-dCS      & 4 & \dots & \dots & \cite{Wagle:2021tam} & $\alpha^{1/2}_{\rm GB} \ell \leqslant 8.5$~km~\cite{Silva:2020acr} \\
-cEFTofGR & 4 & \dots & \dots & \cite{Cano:2021myl} & -- \\
-qEFTofGR & 6 & \dots & \dots & \cite{Cano:2021myl} & -- \\
+sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots & \cite{Pierini:2021jxd} & $\alpha^{1/2}_{\rm GB} \ell \leqslant 1.7$~km~\cite{Perkins:2021mhb} & \dots \\
+dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam} & $\alpha^{1/2}_{\rm CS} \ell \leqslant 8.5$~km~\cite{Silva:2020acr} & \dots \\
+cEFTofGR & 4 & $-0.3680$ / $-0.5131$  & 1.9242 / 1.7000 & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
+qEFTofGR & 6 & \dots & \dots & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 \hline
 \hline
 \end{tabular}
@@ -280,9 +280,15 @@ qEFTofGR & 6 & \dots & \dots & \cite{Cano:2021myl} & -- \\
 %
 We summarize each theory we have considered together with: the exponent $p$ at
 which their QNM-modification enters, the corresponding modifications to the
-oscillation frequency $\delta \omega$ and decay time $\delta \tau$, the
+oscillation frequency $\delta \omega^{(i)}_{220}$ and decay time $\delta \tau^{(i)}_{220}$, the
 references from which we used the results from and the current best constraint
 (if applicable).
+%
+In the entries for cEFTofGR, the first entries in the $\delta
+\omega^{(i)}_{220}$, $\delta \tau^{(i)}_{220}$ are obtained by considering
+\emph{only parity-even correnctions} and the second entries by considering
+\emph{only parity-odd corrections}. In these cases, the dimensionless parameters
+$\lambda_{\rm e,o}$ are degenerate with the lengthscale $\ell$.
 %
 \hs{Add a column with the constraint (if any) that we placed.}
 \hs{TODO: add which runs are done and which need to be done.}
@@ -306,16 +312,12 @@ might want to revisit in the future.
 the {\sc Parspec} implementation of each theory and give credit to the papers
 which calculated the QNMs.}
 
-\subsection{Gravitational events used}
-
-\hs{Say that we use GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp} and justify why.}
-
-\subsection{Parameter estimation}
-
 %%%%%%%%%%%%%%%%%
-\section{Results}
+\section{Analysis using LIGO-Virgo data}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%
+
+\hs{Say that we use GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp} and justify why.}
 
 \hs{Here we summarize the results of our PE runs. Combine the posteriors on the
 the non-GR parameter coming from different events. We could have a short
@@ -339,8 +341,8 @@ the most important message.}
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
 %
-We thank Emanuele~Berti, Andrea~Maselli, Deyan~Mihailov and Serguei~Ossokine
-for discussions.
+We thank Emanuele~Berti, Andrea~Maselli, Caio~F.~B.~Macedo, Deyan~Mihailov, and
+Serguei~Ossokine for discussions.
 %
 We thank the computational resources provided by the AEI, specifically the
 {\sc Hypatia} cluster.
