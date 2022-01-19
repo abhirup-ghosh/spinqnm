@@ -1,4 +1,4 @@
-\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath,longbibliography]{revtex4-2}
+\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath,longbibliography]{revtex4-1}
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -20,6 +20,22 @@
 \usepackage{microtype}
 
 \usepackage{tikz}
+
+% -----------
+% Bibligraphy
+% -----------
+\AtBeginDocument{%
+    \newwrite\bibnotes
+    \def\bibnotesext{Notes.bib}
+    \immediate\openout\bibnotes=\jobname\bibnotesext
+    \immediate\write\bibnotes{@CONTROL{REVTEX41Control}}
+    \immediate\write\bibnotes{@CONTROL{%
+    apsrev41Control,author="08",editor="1",pages="1",title="0",year="1"}}
+    \if@filesw
+    \immediate\write\@auxout{\string\citation{apsrev41Control}}%
+    \fi
+}
+
 
 \definecolor{LinkColor}{rgb}{0.75, 0, 0}
 \definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
@@ -126,57 +142,7 @@
 
 \hs{AB will do this.}
 
-%%%%%%%%%%%%%%%%%
-\section{Methods}
-\label{sec:method}
-
-\subsection{The parametrized ringdown spin expansion coefficients formalism}
-\label{sec:review_parspec}
-
-\hs{HS will do this.}
-\hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
-
-The formalism modifies the Kerr quasinormal mode frequency as
-%
-\begin{subequations}
-\begin{align}
-\omega_{\iota} &= \omega^{\rm K}_{\iota} \, (1 + \delta \omega_{\iota}), \\
-\tau_{\iota}   &= \tau^{\rm K}_{\iota}   \, (1 + \delta \tau_{\iota}),
-\end{align}
-\label{eq:general_deviation}
-\end{subequations}
-%
-where the $\iota$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
-
-
-Further expand the Kerr expression as:
-%
-\begin{subequations}
-\begin{align}
-\omega_{\iota} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
-\tau_{\iota}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
-\end{align}
-\label{eq:kerr_expansion}
-\end{subequations}
-
-Also,
-%
-\begin{equation}
-\gamma = \frac{\kappa}{M_{\rm s}^{p}} = \frac{\kappa (1 + z)^{p}}{M^{p}}
-= \left[
-\frac{\ell c^2 (1 + z)}{G M}
-\right]^{p}
-\end{equation}
-%
-
-\subsection{The parametrized waveform model}
-\label{sec:review_pSEOB}
-
-\hs{AG will do this.}
-\hs{Here we present a short review of~\cite{Brito:2018rfr,Ghosh:2021mrv} and
-explain how we modified it to include the {\sc Parspec} parametrisation.}
-
-\subsection{Overview of modified gravity theories}
+\section{Overview of modified gravity theories}
 \label{sec:review_theories}
 
 We will consider several modified gravity theories as applications of the \pSEOB{}
@@ -186,7 +152,7 @@ In the following, we briefly review which theories we consider, what are the
 currents observational constraints in each of them and what we known about the
 QNMs of black holes in each of them.
 
-\subsubsection{scalar-Gauss-Bonnet gravity}
+\subsection{scalar-Gauss-Bonnet gravity}
 %
 This theory is given by the following action,
 %
@@ -264,7 +230,7 @@ and gravitational perturbations of polar parity \dots
 \caption{Quasinormal modes of black holes in scalar-Gauss-Bonnet gravity.}
 \end{figure}
 
-\subsubsection{dynamical Chern-Simons}
+\subsection{dynamical Chern-Simons}
 
 This theory is given by the following action,
 %
@@ -334,7 +300,7 @@ of axial parity~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb,Wagle:2021tam}.
 \caption{Quasinormal modes of black holes in dynamical Chern-Simons gravity.}
 \end{figure}
 
-\subsubsection{Effective-field-theory of GR}
+\subsection{Effective-field-theory of GR}
 
 This theory is given by the following action,
 %
@@ -418,6 +384,55 @@ Black holes in these theories were studied in \dots
 %
 % In Eqs.~\eqref{eq:action_mods}, $\alpha_{\rm GB}$, $\alpha_{\rm CS}$, $\lame$,
 % $\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
+
+
+%%%%%%%%%%%%%%%%%
+\section{Methods}
+\label{sec:method}
+
+\subsection{The parametrized ringdown spin expansion coefficients formalism}
+\label{sec:review_parspec}
+
+\hs{HS will do this.}
+\hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
+
+The formalism modifies the Kerr quasinormal mode frequency as
+%
+\begin{subequations}
+\begin{align}
+\omega_{\iota} &= \omega^{\rm K}_{\iota} \, (1 + \delta \omega_{\iota}), \\
+\tau_{\iota}   &= \tau^{\rm K}_{\iota}   \, (1 + \delta \tau_{\iota}),
+\end{align}
+\label{eq:general_deviation}
+\end{subequations}
+%
+where the $\iota$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
+
+Further expand the Kerr expression as:
+%
+\begin{subequations}
+\begin{align}
+\omega_{\iota} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
+\tau_{\iota}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
+\end{align}
+\label{eq:kerr_expansion}
+\end{subequations}
+
+Also,
+%
+\begin{equation}
+\gamma = \frac{\kappa}{M_{\rm s}^{p}} = \frac{\kappa (1 + z)^{p}}{M^{p}}
+= \left[
+\frac{\ell c^2 (1 + z)}{G M}
+\right]^{p}
+\end{equation}
+
+\subsection{The parametrized waveform model}
+\label{sec:review_pSEOB}
+
+\hs{AG will do this.}
+\hs{Here we present a short review of~\cite{Brito:2018rfr,Ghosh:2021mrv} and
+explain how we modified it to include the {\sc Parspec} parametrisation.}
 
 %%%%%%%%%%%%%%%%%
 
