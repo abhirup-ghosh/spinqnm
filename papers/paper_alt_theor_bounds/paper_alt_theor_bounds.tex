@@ -2,10 +2,9 @@
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
-\usepackage{bm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
-\usepackage{txfonts}
+% \usepackage{txfonts}
 \usepackage{amssymb}
 \usepackage{xspace}
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
@@ -20,12 +19,16 @@
 \usepackage{makecell}
 \usepackage{microtype}
 
+\usepackage{tikz}
+
 \definecolor{LinkColor}{rgb}{0.75, 0, 0}
 \definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
 \definecolor{UrlColor}{rgb}{0, 0, 0.75}
+\definecolor{rred}{RGB}{218,41,28}
 \hypersetup{linkcolor=NavyBlue}
 \hypersetup{citecolor=NavyBlue}
 \hypersetup{urlcolor=NavyBlue}
+
 \usepackage{perpage}
 \MakePerPage{footnote}
 
@@ -74,11 +77,15 @@
 \newcommand{\pSEOB}{\texttt{pSEOBNR}}
 \newcommand{\SEOB}{\texttt{SEOBNR}}
 
+% Modified gravity related
 \newcommand{\pd}{\partial}
 \newcommand{\dd}{{\rm d}}
 \newcommand{\dV}{{\rm d}^{4}x \, \sqrt{-g} \,}
+
 \newcommand{\lame}{\lambda_{\rm e}}
 \newcommand{\lamo}{\lambda_{\rm o}}
+\newcommand{\acs}{\ell_{\rm CS}}
+\newcommand{\agb}{\ell_{\rm GB}}
 
 % Comment commands
 \newcommand{\ag}[1]{{\textcolor{cyan}{{[AG: #1]}} }}
@@ -92,7 +99,7 @@
 
 % HS: temporary title. Feel free to add suggestions
 % \title{Probing higher-curvature gravity theories from binary black hole ringdown signals}
-\title{The black-hole ringdown as a probe of higher-curvature gravity theories}
+\title{Black-hole ringdown as a probe of higher-curvature gravity theories}
 
 \author{Hector O. Silva}
 \author{Abhirup Ghosh}
@@ -172,90 +179,245 @@ explain how we modified it to include the {\sc Parspec} parametrisation.}
 \subsection{Overview of modified gravity theories}
 \label{sec:review_theories}
 
-\hs{HS will do this.}
-
-% \hs{Here we review class of gravity theories we will consider.
-% They all have higher-curvature terms, hence the `higher-curvature gravity theories'
-% in the title.}
-
-A broad class modified gravity theories are described by the action
+We will consider several modified gravity theories as applications of the \pSEOB{}
+waveform model presented in Sec.~\ref{sec:review_pSEOB}.
 %
-\begin{equation}
-S = \frac{1}{16 \pi G} \int \dd^4x \sqrt{-g}
-\left[ R
-- \tfrac{\beta}{2}(\nabla \varphi)^2
-\right]
-+
-\sum_{n \geqslant 2} \frac{\ell^{2n - 2}}{16 \pi G} S^{(2n)},
+In the following, we briefly review which theories we consider, what are the
+currents observational constraints in each of them and what we known about the
+QNMs of black holes in each of them.
+
+\subsubsection{scalar-Gauss-Bonnet gravity}
+%
+This theory is given by the following action,
+%
+\begin{equation} \label{eq:action_sgb}
+    S_{\rm GB} = \frac{1}{16 \pi}
+    \int \dV
+    \left[
+    R - \tfrac{1}{2}(\nabla \varphi)^2
+    + \tfrac{1}{4} \ell^{2}_{\rm GB} f(\varphi) \mathscr{G}
+    \right],
 \end{equation}
 %
-where $\varphi$ is a dynamical scalar field, $\ell$ some length scale, assumed
-to be small compares to the length scale associated with a black hole, i.e.,
-$GM \gg \ell$, and $S^{(2n)}$ are corrections to the Einstein-Klein-Gordon
-action that introduce involving higher-order curvature tensors (with $2n$
-metric derivatives) and scalar field.
+where $R$ is the Ricci scalar associated with the metric $g_{\alpha\beta}$ and
+$\varphi$ is a dynamical scalar field which couples to the Gauss-Bonnet
+invariant $\mathscr{G}$,
+%
+\begin{equation} \label{eq:def_gb}
+    \mathscr{G} =
+    R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
+    - 4 R^{\mu\nu}R_{\mu\nu}
+    + R^2,
+\end{equation}
+%
+with strength set by the dimensionful coupling constant $\agb$ with dimensions
+of length.
 
-More specifically, we work up to dimension-eight operators (i.e., $n=4$),
+Different subclasses of this theory are determined by the function $f(\varphi)$
+and they can be classified into two classes based on the properties of their black hole solutions.
+%
+In the first class, the first derivative of the coupling
+function $f'(\varphi) = \dd f  / \dd \varphi$ is always nonzero and black holes
+are known to always support (secondary) scalar hair.
+%
+Examples include the shift-symmetric $f \propto \varphi$ and dilatonic
+$f \propto \exp(\varphi)$ couplings.
+%
+In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
+%
+In this case, one can show that theory admits the same stationary,
+asymptotically flat black hole solution of GR and scalarized black
+holes~\cite{Doneva:2017bvd,Silva:2017uqg,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+%
+Examples include the quadratic $f \propto \varphi^2$~\cite{Silva:2017uqg}
+and Gaussian $f \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} couplings.
+%
+Here will consider only the dilatonic theory.
+
+Black holes in both classes support monopolar scalar hair and thus, when in binaries,
+can source scalar dipole radiation and are therefore prone to be constrained with
+GWs observations of compact binaries~\cite{Nair:2019iur,Perkins:2021mhb}.
+%
+\dots
+
+The calculation of the QNMs in this theory is more complicated than in GR already for
+nonrotating black holes. The reason is due to the coupling between scalar field and
+the Gauss-Bonnet invariant, which manifests into a coupling between scalar perturbation
+and gravitational perturbations of polar parity \dots
+
+\begin{figure}
+\begin{tikzpicture}[baseline,>=stealth]
+    % \draw[help lines, gray] (-4, -2) grid (4, 2);
+    \draw[->] (-2.5, 0) -- (-1.75, +0.5);
+    \draw[->] (-2.5, 0) -- (-1.75, -0.5);
+
+    \node at (-3.25, 0) {$\{h_{\alpha\beta}, \, \varphi\}$};
+
+    \node at (-1, 1.25) {${\cal O}(\chi^{0})$};
+    \node at (-1, +0.5) {$\{ \textcolor{rred}{h^{\rm p}_{\alpha\beta}}, \, \varphi\}$};
+    \node at (-1, -0.5) {$h^{\rm a}_{\alpha\beta}$};
+
+    \node at (+1, 1.25) {${\cal O}(\chi^{1})$};
+    \node at (+1, +0.5) {\dots};
+    \node at (+1, -0.5) {\dots};
+\end{tikzpicture}
+\caption{Quasinormal modes of black holes in scalar-Gauss-Bonnet gravity.}
+\end{figure}
+
+\subsubsection{dynamical Chern-Simons}
+
+This theory is given by the following action,
+%
+\begin{equation} \label{eq:action_dcs}
+    S_{\rm CS} = \frac{1}{16 \pi}
+    \int \dV
+    \left[
+    R - \tfrac{1}{2}(\nabla \vartheta)^2
+    + \tfrac{1}{4} \ell^{2}_{\rm CS} \, \vartheta \, {}^{*}RR
+    \right],
+\end{equation}
+%
+where $\vartheta$ is a pseudo-scalar field, which couples
+to the Pontryagin density,
+%
+\begin{equation}
+    {}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma},
+\end{equation}
+%
+where ${}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma}$ is the dual of the Riemann tensor,
+defined as
+%
+${}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} =
+\tfrac{1}{2} \epsilon^{\mu}{}_{\nu\gamma\delta}
+R^{\gamma\delta\rho\sigma}$,
+%
+and where $\epsilon^{\mu}{}_{\nu\gamma\delta}$ is the Levi-Civita tensor.
+%
+The coupling between scalar field and the Pontryagin density is set by the
+$\ell_{\rm CS}$ with dimensions of length.
+
+The theory admits the Schwarzschild black hole solution of GR, but predicts
+that spinning black holes have (secondary) scalar hair, which, unlike in
+scalar-Gauss-Bonnet gravity, is dipolar~\cite{Yunes:2009hc,Konno:2009kg}.
+%
+Consequently, the leading-scalar radiation channel is quadrupolar making this
+theory presently unconstrained by from the GWs from the inspiral of black hole
+binaries alone~\cite{Nair:2019iur,Perkins:2021mhb}.
+%
+However, the theory has been constrained by Ref~\cite{Silva:2020acr} through a
+combination information of x-ray observations of the isolated neutron star PSR
+J0030+0451~\cite{Lommen:2000yt,NANOGrav:2017wvv} by the
+NICER~\cite{Riley:2019yda,Miller:2019cac} and gravitational-wave observation of
+the binary neutron star event GW170817~\cite{TheLIGOScientific:2017qsa}.
+
+Similarly to the case of scalar-Gauss-Bonnet gravity, the perturbations of nonrotating
+black holes in dynamical Chern-Simons gravity also have a coupling between scalar and
+metric perturbations. However, the coupling is between the scalar and gravitational perturbations
+of axial parity~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb,Wagle:2021tam}.
+
+\begin{figure}
+\begin{tikzpicture}[baseline,>=stealth]
+    % \draw[help lines, gray] (-4, -2) grid (4, 2);
+    \draw[->] (-2.5, 0) -- (-1.75, +0.5);
+    \draw[->] (-2.5, 0) -- (-1.75, -0.5);
+
+    \node at (-3.25, 0) {$\{h_{\alpha\beta}, \, \vartheta\}$};
+
+    \node at (-1, 1.25) {${\cal O}(\chi^{0})$};
+    \node at (-1, +0.5) {$h^{\rm p}_{\alpha\beta}$};
+    \node at (-1, -0.5) {$\{ \textcolor{rred}{h^{\rm a}_{\alpha\beta}}, \, \vartheta\}$};
+
+    \node at (+1, 1.25) {${\cal O}(\chi^{1})$};
+    \node at (+1, +0.5) {\dots};
+    \node at (+1, -0.5) {\dots};
+\end{tikzpicture}
+\caption{Quasinormal modes of black holes in dynamical Chern-Simons gravity.}
+\end{figure}
+
+\subsubsection{Effective-field-theory of GR}
+
+This theory is given by the following action,
+%
+\begin{equation} \label{eq:action_eft}
+    S_{\rm EFT} = \frac{1}{16 \pi}
+    \int \dd^4x \sqrt{-g}
+    \left[ R
+    +
+    \footnotesize{\sum}_{n \geqslant 2} \ell^{2n - 2} L^{(2n)}
+    \right],
+\end{equation}
+%
+where $\ell$ is some length scale, assumed to be small compares to the length
+scale associated with a black hole, i.e., $\ell / M \ll 1$, and
+$L^{(2n)}$ are corrections to the Einstein-Hilbert term action that
+introduce involving higher-order curvature tensors (with $2n$ metric
+derivatives).
+
+More specifically, we follow Refs.~\cite{Cano:2020cao,Cano:2021myl} and work up
+to dimension-eight operators (i.e., $n=4$),
 %
 \begin{subequations}
+\label{eq:action_mods}
 \begin{align}
-S^{(4)} &= \alpha_{\rm GB} R^{2}_{\rm GB} + \alpha_{\rm CS} {}^{*}RR,
-\label{eq:s_4}
-\\
-S^{(6)} &= \lame R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} R_{\gamma \delta}{}^{\mu\nu}
-+ \lamo \ell^4 R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} \tilde{R}_{\gamma \delta}{}^{\mu\nu},
-\label{eq:s_6}
-\\
-S^{(8)} &= \epsilon_{1} \mathcal{C}^2  + \epsilon_{2} \tilde{\mathcal{C}}^{2}
-+ \epsilon_{3} \mathcal{C} \tilde{\mathcal{C}},
+    L^{(6)} &= \lame R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} R_{\gamma \delta}{}^{\mu\nu}
+    \nonumber \\
+            &\quad + \lamo R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} \tilde{R}_{\gamma \delta}{}^{\mu\nu},
+    \label{eq:s_6}
+    \\
+    L^{(8)} &= \varepsilon_{1} \mathcal{C}^2
+    + \varepsilon_{2} \tilde{\mathcal{C}}^{2}
+    + \varepsilon_{3} \mathcal{C} \tilde{\mathcal{C}},
 \label{eq:s_8}
 \end{align}
-\label{eq:action_mods}
 \end{subequations}
 %
-where we defined the Gauss-Bonnet and Pontryagin densities, respectively,
-%
-\begin{subequations}
-\begin{align}
-    R^{2}_{\rm GB} &= R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} - 4 R_{\mu\nu} R^{\mu\nu} + R^2,
-    \\
-    {}^{*}RR &= \tfrac{1}{2} R_{\nu\mu\rho\sigma} {}^{*}R^{\mu\nu\rho\sigma},
-\end{align}
-\end{subequations}
-%
-and where $R_{\mu\nu\rho\sigma}$ is the Riemann tensor
-and $\tilde{R}_{\mu\nu\rho\sigma}$ its dual, defined as
-%
-\begin{equation}
-\tilde{R}_{\mu\nu\alpha\beta} = \tfrac{1}{2} \epsilon_{\mu\nu\rho\sigma} R^{\rho\sigma}{}_{\alpha\beta},
-\end{equation}
-%
-with $\epsilon_{\mu\nu\rho\sigma}$ being the Levi-Civita tensor.
+where $\lambda_{\rm o, e}$ and $\varepsilon_{i}$ ($i=1,2,3$) are dimensionless parameters.
 
-This action encapsulates various modified gravity theories, which often are studied on their own,
-namely,
-%
-\begin{itemize}
-    \item scalar Gauss-Bonnet gravity (sGB): corresponds to $\alpha_{\rm GB}$
-          nonzero and all other dimensionless coupling constants equal to zero.
-    \item dynamical Chern-Simons (dCS): this corresponds to $\alpha_{\rm CS}$
-          nonzero and all other dimensionless coupling constants equal to zero.
-    \item cubic effective field theory of GR (cEFTofGR): this corresponds to $\lame$, $\lamo$ nonzero
-          and all other dimensionless coupling constants equal to zero.
-    \item quartic effective field theory of GR (qEFTofGR): this corresponds to $\varepsilon_{i}$
-          ($i = 1,2,3$) nonzero and all other dimensionless coupling constants equal to zero.
-\end{itemize}
+Black holes in these theories were studied in \dots
 
-In each of these theories, slowly-rotating black hole and their quasinormal mode spectra
-to leading order in spin have been calculated.
-%
-We can use this results to establish a mapping between theory-specific calculations and
-the theory-agnostic {\sc Parspec} parametrization.
-%
-We discuss how we do this in the section.
+% where we defined the Gauss-Bonnet and Pontryagin densities, respectively,
+% %
+% \begin{subequations}
+% \begin{align}
+%     R^{2}_{\rm GB} &= R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} - 4 R_{\mu\nu} R^{\mu\nu} + R^2,
+%     \\
+%     {}^{*}RR &= \tfrac{1}{2} R_{\nu\mu\rho\sigma} {}^{*}R^{\mu\nu\rho\sigma},
+% \end{align}
+% \end{subequations}
+% %
+% and where $R_{\mu\nu\rho\sigma}$ is the Riemann tensor
+% and $\tilde{R}_{\mu\nu\rho\sigma}$ its dual, defined as
+% %
+% \begin{equation}
+% \tilde{R}_{\mu\nu\alpha\beta} = \tfrac{1}{2} \epsilon_{\mu\nu\rho\sigma} R^{\rho\sigma}{}_{\alpha\beta},
+% \end{equation}
+% %
+% with $\epsilon_{\mu\nu\rho\sigma}$ being the Levi-Civita tensor.
 
-In Eqs.~\eqref{eq:action_mods}, $\alpha_{\rm GB}$, $\alpha_{\rm CS}$, $\lame$,
-$\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
+% This action encapsulates various modified gravity theories, which often are studied on their own,
+% namely,
+% %
+% \begin{itemize}
+%     \item scalar Gauss-Bonnet gravity (sGB): corresponds to $\alpha_{\rm GB}$
+%           nonzero and all other dimensionless coupling constants equal to zero.
+%     \item dynamical Chern-Simons (dCS): this corresponds to $\alpha_{\rm CS}$
+%           nonzero and all other dimensionless coupling constants equal to zero.
+%     \item cubic effective field theory of GR (cEFTofGR): this corresponds to $\lame$, $\lamo$ nonzero
+%           and all other dimensionless coupling constants equal to zero.
+%     \item quartic effective field theory of GR (qEFTofGR): this corresponds to $\varepsilon_{i}$
+%           ($i = 1,2,3$) nonzero and all other dimensionless coupling constants equal to zero.
+% \end{itemize}
+%
+% In each of these theories, slowly-rotating black hole and their quasinormal mode spectra
+% to leading order in spin have been calculated.
+% %
+% We can use this results to establish a mapping between theory-specific calculations and
+% the theory-agnostic {\sc Parspec} parametrization.
+% %
+% We discuss how we do this in the section.
+%
+% In Eqs.~\eqref{eq:action_mods}, $\alpha_{\rm GB}$, $\alpha_{\rm CS}$, $\lame$,
+% $\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
 
 %%%%%%%%%%%%%%%%%
 
