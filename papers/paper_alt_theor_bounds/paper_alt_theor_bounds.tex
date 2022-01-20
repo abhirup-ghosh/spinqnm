@@ -5,6 +5,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
 % \usepackage{txfonts}
+\usepackage{natbib}
 \usepackage{amssymb}
 \usepackage{xspace}
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
@@ -100,8 +101,6 @@
 
 \newcommand{\lame}{\lambda_{\rm e}}
 \newcommand{\lamo}{\lambda_{\rm o}}
-\newcommand{\acs}{\ell_{\rm CS}}
-\newcommand{\agb}{\ell_{\rm GB}}
 
 % Comment commands
 \newcommand{\ag}[1]{{\textcolor{cyan}{{[AG: #1]}} }}
@@ -145,12 +144,12 @@
 \section{Overview of modified gravity theories}
 \label{sec:review_theories}
 
-We will consider several modified gravity theories as applications of the \pSEOB{}
-waveform model presented in Sec.~\ref{sec:review_pSEOB}.
+% We will consider several modified gravity theories as applications of the \pSEOB{}
+% waveform model presented in Sec.~\ref{sec:review_pSEOB}.
 %
-In the following, we briefly review which theories we consider, what are the
-currents observational constraints in each of them and what we known about the
-QNMs of black holes in each of them.
+We briefly review which theories we consider, what are the currents
+observational constraints in each of them and what we known about the QNMs of
+black holes in each of them.
 
 \subsection{scalar-Gauss-Bonnet gravity}
 %
@@ -176,7 +175,7 @@ invariant $\mathscr{G}$,
     + R^2,
 \end{equation}
 %
-with strength set by the dimensionful coupling constant $\agb$ with dimensions
+with strength set by the dimensionful coupling constant $\ell_{\rm GB}$ with dimensions
 of length.
 
 Different subclasses of this theory are determined by the function $f(\varphi)$
@@ -339,7 +338,8 @@ to dimension-eight operators (i.e., $n=4$),
 %
 where $\lambda_{\rm o, e}$ and $\varepsilon_{i}$ ($i=1,2,3$) are dimensionless parameters.
 
-Black holes in these theories were studied in \dots
+Black holes in these theories were found in Refs.~\cite{deRham:2020ejn,Cano:2020cao} for the dimension-six EFT
+and in Refs.~\cite{Cardoso:2018ptl} for the dimension-eight EFT.
 
 % where we defined the Gauss-Bonnet and Pontryagin densities, respectively,
 % %
@@ -529,6 +529,6 @@ pandemic.
 %%%%%%%%%%%%%%%%%
 
 % \bibliographystyle{apsrev}
-\bibliography{paper_alt_theor_bounds}
+\bibliography{biblio}
 
 \end{document}
