@@ -421,10 +421,16 @@ Further expand the Kerr expression as:
 Also,
 %
 \begin{equation}
-\gamma = \frac{\kappa}{M_{\rm s}^{p}} = \frac{\kappa (1 + z)^{p}}{M^{p}}
+\gamma
+%
+= \frac{\ell^{p}}{M_{\rm s}^{p}}
+%
+% = \frac{\ell^{p} (1 + z)^{p}}{M^{p}}
+%
 = \left[
 \frac{\ell c^2 (1 + z)}{G M}
 \right]^{p}
+\label{eq:def_gamma}
 \end{equation}
 
 \subsection{The parametrized waveform model}
@@ -504,8 +510,35 @@ the final BH mass.}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_GW200129.pdf}
-\caption{Preliminary plot.}
+\caption{Posterior probability distribution on $\ell_{\rm CS}$ with GW200129.
+The posterior shows that information was gained on this parameter relative to
+the initial uniform prior distribution $\ell_{\rm CS} \in [0,\, 200]$~km.
+%
+The vertical lines represent two threshold for the validity of the theory as
+an EFT.
+%
+The dotted line (labelled ``$m_2$'') at $\ell_{\rm CS} \approx 21.3$~km is
+given by the median value of the secondary's mass $\epsilon \, (G m_2 / c^2)$.
+%
+The dot-dashed line (labelled ``$M_{f}$'') at $\ell_{\rm CS} \approx 43.8$~km is
+given by the median value of the remnant's mass $\epsilon \, (G M_{f} / c^2)$.
+%
+For both, we used $\epsilon = 0.5$.
+%
+If we take the latter as a lengthscale for the validity of dCS as an EFT, we
+have place upper bound on $\ell_{\rm CS} \leqslant 43.8$, within the
+approximation of our formalism.
+}
 \label{fig:dCS_bounds}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/dcs_gamma_GW200129.pdf}
+\caption{Posterior probability distribution on $\gamma_{\rm CS}$ with GW200129.
+The posterior shows that the parameter $\gamma$ [see Eq.~\eqref{eq:def_gamma}]
+in dynamical Chern-Simons has a peak at zero, indicating consistency with GR.
+}
+\label{fig:dCS_gamma_plot}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%
