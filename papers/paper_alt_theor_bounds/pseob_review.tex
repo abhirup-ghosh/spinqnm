@@ -1,75 +1,70 @@
 
 
-In this section we describe the waveform model used in this paper to measure properties of the underlying GW signal. As in \cite{Brito:2018rfr,Ghosh:2021mrv}, we use an inspiral-merger-ringdown (IMR) BBH waveform model where the parameters describing the remnant object are left additionally free and estimated directly from the data.
+In this section we describe the waveform model used in this paper to measure properties of a BBH ringdown. As in \cite{Brito:2018rfr,Ghosh:2021mrv}, we use an inspiral-(plunge)-merger-ringdown (IMR) BBH waveform model where the parameters describing the remnant object are left additionally free and estimated directly from the data.
 
-We use, as our baseline model, the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in \cite{Mihaylov:2021bpf},  henceforth referred to as \SEOB{} \footnote{This waveform model is available in \texttt{LALSuite} \cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.} in this paper. The model uses an effective-one-body approach combined with a post-adiabatic solution of the equations of motion to describe the inspiral. An accurate description of the merger is incorporated through calibration with NR simulations, as described in~\cite{Cotesta:2018fcv}, along with information for the merger and ringdown phases, from BH perturbation theory.
+The GW signal from a BBH merger can be determined in GR by a unique set of parameters -- the masses and spins of the two BHs, $(m_1. m_2. \vec{s}_1, \vec{s}_2)$, the sky location determined by the luminosity distance $d_L$, right ascension $\alpha$ and declination $\delta$, and the orientation of the binary given by the inclination and polarisation angles, $(\iota, \psi)$. The set is completed by the choice of a reference time and phase, $(t_0. \phi_0)$. If we further assume that the spins of the individual BHs are restricted to be parallel to the orbital angular momentum, then we reduce the 6 components of spin to just 2, $(\chi_1, \chi_2)$ and our entire parameter set from 15 to 11. We define some additional parameters and set some conventions that will be useful in our analysis later, namely, the totat mass $M=m_1+m_2$, the chirp mass $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$, the asymmetric mass ratio $q=m_1/m_2$ with the convention $m_1 \geq m_2; q \geq 1$ and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$.
 
-In the observer's frame, the GW polarizations can be written as
+The polarisations of the GW signal (in the observer's frame) are,
 %
 \begin{equation}
 h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{\ell, m} {}_{-\!2}Y_{\ell m}(\iota,\varphi_0)\, h_{\ell m}(t)\,,
 \end{equation}
 %
-where $\varphi_0$ is the azimuthal direction to the observer (note that without loss of generality we can take $\phi_c\equiv\varphi_0$), while ${}_{-\!2}Y_{\ell m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical harmonics where $(\ell,m)$ are the usual indices that describe the angular dependence of the spin-weighted spherical harmonics, with $\ell\geq 2$, $-\ell\leq m\leq \ell$. The $\SEOB$ model we employ includes the $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$ modes~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}. For each $(\ell, m)$, the inspiral-(plunge-)merger-ringdown $\SEOB$ waveform is schematically given by
-%
+where ${}_{-\!2}Y_{\ell m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical harmonics described by standard angular dependence indices $(\ell,m)$. As our baseline model, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in \cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{} \footnote{This waveform model is available in \texttt{LALSuite} \cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(\ell, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}. The model uses an effective-one-body approach combined with a post-adiabatic solution of the equations of motion to describe the inspiral-plunge waveform, $h_{\ell m}^\mathrm{insp-plunge}$. An accurate description of the merger is incorporated through calibration with NR simulations, as described in~\cite{Cotesta:2018fcv}, along with information for the merger and ringdown phases, from BH perturbation theory. The merger-ringdown waveform, $h_{\ell m}^\mathrm{merger-RD}$, is then stitched to inspiral-plunge waveform, $h_{\ell m}^\mathrm{insp-plunge}$ at a certain time $t = t_{\textrm{match}}^{\ell m}$, as
 \begin{equation}
 h_{\ell m}(t) = h_{\ell m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{\ell m} - t) + h_{\ell m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{match}^{\ell m})\,,
 \end{equation}
-where $\theta(t)$ is the Heaviside step function, $h_{\ell m}^\mathrm{insp-plunge}$ represents the inspiral-plunge part of the waveform, whereas $h_{\ell m}^\mathrm{merger-RD}$ denotes the merger-ringdown waveform, which reads~\citep{Bohe:2016gbl,Cotesta:2018fcv}
-%
+where $\theta(t)$ is the Heaviside step function. The merger-ringdown waveform is expressed as an exponentially damped sinusoid ~\citep{Bohe:2016gbl,Cotesta:2018fcv,Mihaylov:2021bpf}
 \begin{equation}
 \label{RD}
 h_{\ell m}^{\textrm{merger-RD}}(t) = \nu \ \tilde{A}_{\ell m}(t)\ e^{i \tilde{\phi}_{\ell m}(t)} \ e^{-i \sigma_{\ell m 0}(t-t_{\textrm{match}}^{\ell m})},
 \end{equation}
-%
-where $\nu$ is the symmetric mass ratio of the binary and $\sigma_{\ell m0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ denotes the complex frequency of the fundamental QNMs of the remnant BH, i.e. QNMs with overtone index $n=0$. We denote the oscillation frequencies by $f_{\ell m  0}\equiv \Re(\sigma_{\ell m0})/(2\pi)$ and the decay times by $\tau_{\ell m 0}\equiv -1/\Im(\sigma_{\ell m0}) $.
-The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are given by~\cite{Bohe:2016gbl,Cotesta:2018fcv}:
-%
-\begin{subequations}
-\begin{eqnarray}
-\label{eq:ansatz_amp}
-\tilde{A}_{\ell m}(t) &=& c_{1,c}^{\ell m} \tanh[c_{1,f}^{\ell m}\ (t-t_{\textrm{match}}^{\ell m}) \ +\ c_{2,f}^{\ell m}] \ + \ c_{2,c}^{\ell m},\\
-\label{eq:ansatz_phase}
-\tilde{\phi}_{\ell m}(t) &=& \phi_{\textrm{match}}^{\ell m} - d_{1,c}^{\ell m} \log\left[\frac{1+d_{2,f}^{\ell m} e^{-d_{1,f}^{\ell m}(t-t_{\textrm{match}}^{\ell m})}}{1+d_{2,f}^{\ell m}}\right],
-\end{eqnarray}
-\end{subequations}
-%
-where $ \phi_{\textrm{match}}^{\ell m}$ is the phase of the inspiral-plunge mode $(\ell, m)$ computed at $t = t_{\textrm{match}}^{\ell m}$. The coefficients $d_{1,c}^{\ell m}$ and $c_{i,c}^{\ell m}$ with $i = 1,2$
-are fixed by imposing that the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are of class $C^1$ at $t = t_{\textrm{match}}^{\ell m}$, when matching the merger-ringdown waveform to the inspiral-plunge $\SEOB$ waveform $h_{\ell m}^\mathrm{inspiral-plunge}(t)$. This allows us to write the coefficients $c_{i,c}^{\ell m}$ as~\cite{Cotesta:2018fcv}:
-%
-\begin{subequations}
-\begin{align}
-\label{c1}
-c_{1,c}^{\ell m} &= \frac{1}{c_{1,f}^{\ell
-    m} \nu} \big[ \partial_t|h_{\ell
-    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m})| \nonumber \\
-    &- \sigma^\textrm{R}_{\ell m} |h_{\ell
-    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
-    m})|\big] \cosh^2{(c_{2,f}^{\ell m})}, \\
-\label{c2}
-c_{2,c}^{\ell m} &= -\frac{ |h_{\ell
-    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
-    m})|}{\nu} + \frac{1}{c_{1,f}^{\ell
-    m} \nu} \big[ \partial_t|h_{\ell
-    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m})|  \nonumber \\
-    &- \sigma^\textrm{R}_{\ell m} |h_{\ell
-    m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell
-    m})|\big] \cosh{(c_{2,f}^{\ell m})}\sinh{(c_{2,f}^{\ell m})}, \\ \nonumber
-\end{align}
-\end{subequations}
-and $d_{1,c}^{\ell m}$ as
-\begin{align}
-\label{d1}
-d_{1,c}^{\ell m} &= \left[\omega_{\ell m}^{\textrm{insp-plunge}}(t_{\textrm{match}}^{\ell m}) -  \sigma^\textrm{I}_{\ell
-      m}\right]\frac{1+ d_{2,f}^{\ell m}}{d_{1,f}^{\ell m}d_{2,f}^{\ell m}}\,,
-\end{align}
-%
-where we denoted $\sigma_{\ell m}^\textrm{R} \equiv \Im (\sigma_{\ell m0}) < 0$ and  $\sigma_{\ell m}^\textrm{I} \equiv -\Re (\sigma_{\ell m0})$, and $\omega_{\ell m}^{\textrm{insp-plunge}}(t)$ is the frequency of the inspiral-plunge EOB mode. The coefficients $c_{i,f}^{\ell m}$ and $d_{i,f}^{\ell m}$ are obtained through fits to NR and
-Teukolsky-equation--based waveforms and can be found in Appendix C of Ref.~\cite{Cotesta:2018fcv}.
+where $\sigma_{\ell m0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ are the complex frequencies of the fundamental (n=0 overtone) QNMs of the remnant BH. The frequencies $f_{\ell m}$ and damping times $/\tau_{\ell m}$ of the $(\ell m)$ QNM can be read off from the real and imaginary parts of  $\sigma_{\ell m0}$ respetively. The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are defined in~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
 
-In the $\SEOB$ model constructed in Ref.~\cite{Mihaylov:2021bpf}, the
+\subsection{Construction of the merger-ringdown signal}
+In the $\SEOB$ model~\cite{Mihaylov:2021bpf}, the complex frequencies $\sigma_{\ell m 0}$ are computed by first determining the final mass and spin from estimates oof the initial masses and spins through NR--fitting--formulas~\cite{Taracchini:2013rva,Hofmann:2016yih}. and then converting these estimates of the final mass and spin to the complex frequencies using BH perturbation theory--inspiral analytical fits outlined in~\cite{Berti:2005ys,Berti:2009kk}.
+
+
+\iffalse
+In the $\SEOB$ model constructed in Ref.~\cite{Cotesta:2018fcv}, the
 complex frequencies $\sigma_{\ell m 0}$ are expressed in terms of the
 final BH mass and spin~\cite{Berti:2005ys,Berti:2009kk}, and the
 latter are related to the BBH's component masses and spins through
 NR--fitting-formulas obtained in
-GR~\cite{Taracchini:2013rva,Hofmann:2016yih}.
+GR~\cite{Taracchini:2013rva,Hofmann:2016yih}. Here instead, in the
+spirit of what was done in \paperone, we promote the QNM (complex)
+frequencies to be free parameters of the model, while keeping the
+inspiral-plunge modes $h_{\ell m}^\mathrm{inspiral-plunge}(t)$ fixed
+to their GR values. More explicitly, we introduce a parameterized
+version of the $\SEOB$ model where the frequency and the
+damping time of the ${\ell m 0}$ mode (i.e, $(f_{\ell m 0}, \tau
+_{\ell m 0})$) are defined through the fractional deviations, $(\delta
+f_{\ell m 0},\delta \tau_{\ell m 0})$, from the corresponding GR
+values~\cite{Gossan:2011ha,Meidam:2014jpa}.
+
+
+Thus,
+\begin{subequations}
+\begin{eqnarray}
+f_{\ell m 0} &=& f_{\ell m 0}^{\text{GR}}\, (1 + \delta f_{\ell m 0})\,,\label{eq:nongr_freqs_a} \\ 
+\tau _{\ell m 0} &=& \tau _{\ell m 0}^{\text{GR}}\, (1 + \delta \tau_{\ell m 0})\,. \label{eq:nongr_freqs_b}
+\end{eqnarray}
+\end{subequations}
+
+The GR quantities $( f_{\ell m 0}^{GR},\tau_{\ell m 0}^{GR})$ are
+constructed using the NR--fitting--formula from Refs.~\cite{Taracchini:2013rva,Hofmann:2016yih}, and are functions of the initial masses and spins, $(m_1, m_2, \chi_1, \chi_2)$. Hence,
+\begin{subequations}
+\begin{eqnarray}
+f_{\ell m 0} &=& f_{\ell m 0}(m_1, m_2, \chi_1, \chi_2, \delta f_{\ell m 0}, \delta \tau_{\ell m 0})\,,\\ 
+\tau _{\ell m 0} &=& \tau _{\ell m 0}(m_1, m_2, \chi_1, \chi_2, \delta f_{\ell m 0}, \delta \tau_{\ell m 0})\,.
+\end{eqnarray}
+\end{subequations}
+We denote such a parameterized waveform model $\pSEOB$~\footnote{This
+waveform model is called {\tt pSEOBNRv4HM} in LAL.}. We note that when leaving $\sigma_{\ell m}$ to vary
+freely, the functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell
+  m}(t)$ in general also differ from the GR predictions, since
+those functions depend on the QNM complex frequencies, as can be seen
+from the expressions for $c_{i,c}^{\ell m}$ and $d_{1,c}^{\ell m}$ in Eqs.~(\ref{c1}),
+(\ref{c2}), and (\ref{d1}). As a consequence, the ringdown signal (amplitude and phase) 
+soon after merger deviates from the one predicted by GR.
+\fi
