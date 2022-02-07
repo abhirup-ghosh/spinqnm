@@ -19,10 +19,60 @@ where $\theta(t)$ is the Heaviside step function. The merger-ringdown waveform i
 \label{RD}
 h_{\ell m}^{\textrm{merger-RD}}(t) = \nu \ \tilde{A}_{\ell m}(t)\ e^{i \tilde{\phi}_{\ell m}(t)} \ e^{-i \sigma_{\ell m 0}(t-t_{\textrm{match}}^{\ell m})},
 \end{equation}
-where $\sigma_{\ell m0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ are the complex frequencies of the fundamental (n=0 overtone) QNMs of the remnant BH. The frequencies $f_{\ell m}$ and damping times $/\tau_{\ell m}$ of the $(\ell m)$ QNM can be read off from the real and imaginary parts of  $\sigma_{\ell m0}$ respetively. The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are defined in~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
+where $\sigma_{\ell m0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ are the complex frequencies of the fundamental (n=0 overtone) QNMs of the remnant BH. The frequencies $f_{\ell m 0}$ and damping times $\tau_{\ell m 0}$ of the $(\ell m)$ QNM can be read off from the real and imaginary parts of  $\sigma_{\ell m0}$ respetively. The functions $\tilde{A}_{\ell m}(t)$ and $\tilde{\phi}_{\ell m}(t)$ are defined in~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
 
-\subsection{Construction of the merger-ringdown signal}
-In the $\SEOB$ model~\cite{Mihaylov:2021bpf}, the complex frequencies $\sigma_{\ell m 0}$ are computed by first determining the final mass and spin from estimates oof the initial masses and spins through NR--fitting--formulas~\cite{Taracchini:2013rva,Hofmann:2016yih}. and then converting these estimates of the final mass and spin to the complex frequencies using BH perturbation theory--inspiral analytical fits outlined in~\cite{Berti:2005ys,Berti:2009kk}.
+\subsection{The PARSPEC formalism and the construction of the merger-ringdown signal}
+In the $\SEOB$ model~\cite{Mihaylov:2021bpf}, the complex frequencies $\sigma_{\ell m 0} = 2\pi f_{\ell m 0} -i/\tau_{\ell m 0}$ are computed by first determining the final mass and spin from estimates of the initial masses and spins through NR--fitting--formulas~\cite{Taracchini:2013rva,Hofmann:2016yih}. and then converting these estimates of the final mass and spin to the complex frequencies using BH perturbation theory--inspiral analytical fits outlined in~\cite{Berti:2005ys,Berti:2009kk}.Hence,
+
+\begin{subequations}
+\begin{eqnarray}
+f_{\ell m 0}^{\text{GR}} &=& f_{\ell m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,\\ 
+\tau _{\ell m 0}^{\text{GR}} &=& \tau _{\ell m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,.
+\end{eqnarray}
+\end{subequations}
+
+Instead, for our parameterised model, we replace the above ringdown prescription with one introduced in~\cite{Maselli:2019mjd} and followed up by~\cite{Carullo:2021dui}.
+
+\ag{Copied over current content of III A. We can follow this plan: HS writes the small PARSPEC overview, after which AG goes back to how that formalism was actually coded up in the model. We might need to adapt the PARSPEC notation to be uniform with the $\ell m 0$ notations used above.}
+\hs{HS will do this.}
+\hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
+
+The formalism modifies the Kerr quasinormal mode frequency as
+%
+\begin{subequations}
+\begin{align}
+\omega_{\iota} &= \omega^{\rm K}_{\iota} \, (1 + \delta \omega_{\iota}), \\
+\tau_{\iota}   &= \tau^{\rm K}_{\iota}   \, (1 + \delta \tau_{\iota}),
+\end{align}
+\label{eq:general_deviation}
+\end{subequations}
+%
+where the $\iota$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
+
+Further expand the Kerr expression as:
+%
+\begin{subequations}
+\begin{align}
+\omega_{\iota} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
+\tau_{\iota}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
+\end{align}
+\label{eq:kerr_expansion}
+\end{subequations}
+
+Also,
+%
+\begin{equation}
+\gamma
+%
+= \frac{\ell^{p}}{M_{\rm s}^{p}}
+%
+% = \frac{\ell^{p} (1 + z)^{p}}{M^{p}}
+%
+= \left[
+\frac{\ell c^2 (1 + z)}{G M}
+\right]^{p}
+\label{eq:def_gamma}
+\end{equation}
 
 
 \iffalse
