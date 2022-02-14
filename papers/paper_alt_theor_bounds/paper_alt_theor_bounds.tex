@@ -97,6 +97,7 @@
 % Modified gravity related
 \newcommand{\pd}{\partial}
 \newcommand{\dd}{{\rm d}}
+\newcommand{\ii}{{\rm i}}
 \newcommand{\dV}{{\rm d}^{4}x \, \sqrt{-g} \,}
 
 \newcommand{\lame}{\lambda_{\rm e}}
@@ -445,7 +446,57 @@ explain how we modified it to include the {\sc Parspec} parametrisation.}
 
 \subsection{From theory-agnostic to theory-specific QNM results}
 
-\hs{HS will do this.}
+Let us now establish the connection between theory-agnostic framework of the
+$\pSEOB$ waveform model and the theory-specific QNM calculations.
+%
+We begin by expanding $\omega$ and $\tau$, given by Eqs.~\eqref{eq:kerr_expansion} as,
+%
+\begin{subequations}
+\begin{align}
+M \omega_{220} &= \gamma (\delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)})
++ \sum_{j=0}^{N} \chi^{j} \omega^{j}\,,
+\\
+\tau_{220}/M   &= \gamma (\delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)})
++ \sum_{j=0}^{N} \chi^{j} \tau^{j}\,,
+\end{align}
+\label{eq:qnm_nongr_iso}
+\end{subequations}
+%
+where we are already focusing on the dominant $\ell = m = 2$, $n=0$ QNM and
+pulled out of the sum all beyond-GR corrections, rescriting ourselves to the nonspinning ($j=0$) and linear-order in spin ($j=1$)
+corrections to the Kerr QNMs, encoded in the coefficients $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$.
+
+Just as in GR where the coefficients $\omega^{j}$, $\tau^{j}$ are determined by
+comparison against the Kerr QNMs, a theory-specific calculation predicts the
+numerical values of $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$
+%
+This means that using the $\pSEOB$ waveform model with theory-specific informed
+QNMs we reduce the parameters space of beyond-GR parameters to one, i.e., to
+only $\gamma$, which in turn contains information about the length scale $\ell$.
+
+Now as we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating black holes
+is modified gravity theories come in two families depending on their transformation upon a parity
+transformation: axial and polar. Which is the one we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
+%
+To answer this question one has to work on a theory-by-theory case and in each theory perform a
+a translation between the metric perturbations $h_{\mu\nu}$ in the Regger-Wheeler-Zerilli gauge and
+connect it with the transverse-traceless gauge used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
+%
+In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
+QNM we use to model the ringdown makes no difference.
+%
+In beyond-GR theories, isospectrality is in general broken (see the discussion in Ref.~\cite{Hui:2021cpm} for a counterexample).
+and thus how axial and polar gravitational QNMs appear in the GW signal has to be answered in theory-by-theory.
+%
+This is outside the scope of this paper and here we take the more pragmatic approach
+of simply choosing the \emph{least damped gravitational mode between the two parities.}
+%
+The justification is this is the mode which, if excited during the merger, is
+the most likely to appear in the signal.
+
+In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
+the {\sc Parspec} implementation of each theory and give credit to the papers
+which calculated the QNMs.
 
 \begin{table*}[th]
 \begin{tabular}{c | c c c c c c c c}
@@ -453,8 +504,8 @@ explain how we modified it to include the {\sc Parspec} parametrisation.}
 \hline
 Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
 \hline
-sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.7$~km~\cite{Perkins:2021mhb} & \dots \\
-dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~\cite{Silva:2020acr}   & \dots \\
+sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.7$~km~\cite{Perkins:2021mhb} (GW) & \dots \\
+dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~\cite{Silva:2020acr} (EM+GW)  & \dots \\
 cEFTofGR & 4 & $-0.3680$ $(-0.5131)$  & 1.9242 (1.7000) & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 qEFTofGR & 6 & \dots & \dots & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 \hline
@@ -480,21 +531,21 @@ $\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
 \label{tab:ref_theories_qnms}
 \end{table*}
 
-\hs{We {\it must very explicitly} state our working hypothesis here:
-%
-\begin{itemize}
-    \item That we include only the nonrotating, non-GR correction to the QNMs.
-    \item That due to absence of isospectrality, when translating to the theory specific result,
-    we {\it chose} to use the lowest damping, gravitational QNM of the theory.
-\end{itemize}
-%
-We can come back to these in the Sec.~\ref{sec:discussion} as things that we
-might want to revisit in the future.
-}
+% \hs{We {\it must very explicitly} state our working hypothesis here:
+% %
+% \begin{itemize}
+%     \item That we include only the nonrotating, non-GR correction to the QNMs.
+%     \item That due to absence of isospectrality, when translating to the theory specific result,
+%     we {\it chose} to use the lowest damping, gravitational QNM of the theory.
+% \end{itemize}
+% %
+% We can come back to these in the Sec.~\ref{sec:discussion} as things that we
+% might want to revisit in the future.
+% }
 
-\hs{In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
-the {\sc Parspec} implementation of each theory and give credit to the papers
-which calculated the QNMs.}
+% \hs{In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
+% the {\sc Parspec} implementation of each theory and give credit to the papers
+% which calculated the QNMs.}
 
 %%%%%%%%%%%%%%%%%
 \section{Analysis using LIGO-Virgo data}
