@@ -5,8 +5,10 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
 \usepackage{txfonts}
+% \usepackage{newtxtext}
+% \usepackage{newtxmath}
 \usepackage{natbib}
-\usepackage{amssymb}
+% \usepackage{amssymb}
 \usepackage{xspace}
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
 \usepackage[colorlinks]{hyperref}
@@ -519,7 +521,7 @@ Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
 %
 and similarly for the imaginary part ${\rm Im}(\sigma_{220}) = \omega^{\rm CS}_{220} = 1 / \tau^{\rm CS}_{220}$.
 %
-Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [such that $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
+Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [thus $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
 and $c_{i}$ are fitting coefficients.
 %
 In the context of a binary BH merger, $M$ is interpreted as the remnant mass $\Mf$.
@@ -549,14 +551,14 @@ p_{\rm cs} = 4\,, \quad \delta \omega^{(0)}_{\rm cs} = 3.1964\,, \quad \delta \o
 \label{eq:cs_omega_coefs}
 \end{equation}
 %
-The same procedure can be made for $\tau^{(i)}$, which results in,
+The same procedure can be carried for $\tau^{(i)}$, which results in,
 %
 \begin{equation}
 \delta \tau^{(0)}_{\rm cs} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm cs} = 794.66\,.
 \label{eq:cs_tau_coefs}
 \end{equation}
 %
-which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB waveform model.
+which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB{} waveform model.
 %
 As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
 
@@ -618,13 +620,85 @@ $\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
 \label{sec:results}
 %%%%%%%%%%%%%%%%%
 
-\hs{Say that we use GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp} and justify why.}
+% \hs{Say that we use GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp} and justify why.}
+
+We will consider the events GW150915~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp}.
+%
+They are suitable for ringdown studies due to the high-masses and high signal-to-noise ratios (SNR).
+
+
+
+\begin{equation}
+P(\bm{\lambda} \vert d, \mathcal{H}) =
+\frac{P(\bm{\lambda} \vert \mathcal{H}) P(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
+\label{eq:bayes}
+\end{equation}
+%
+where $d$ is the data and $\bm{\lambda}$ is a set of vectors that fully
+characterize the waveform.
+%
+$P(\bm{\lambda} \vert \mathcal{H})$ is prior probability distribution,
+$P(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
+$P(d \vert \mathcal{H})$ the evidence.
+
+
+
+Our set of parameters is $\bm{\lambda} = \bm{\theta}_{\rm GR} \cup \bm{\theta}_{\rm nGR}$, where
+$\bm{\theta}_{\rm nGR} = \{\ell_{i}\}$ is a set of beyond-GR coupling constants.
+%
+As discussed in Sec.~\ref{sec:review_theories} there is a single coupling
+constants in the cases of EdGB and dCS theories, but two in the cubic and
+quartic EFTofGR.
+
+
+Assuming Gaussian and stationary noise, we can write the (log) likelihood function as,
+%
+\begin{equation}
+\ln \mathcal{L}(d \vert \bm{\lambda},\mathcal{H}) \propto
+- \tfrac{1}{2}
+\langle
+d - h(\bm{\lambda}) \vert d - h(\bm{\lambda})
+\rangle\,,
+\end{equation}
+%
+with noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
+%
+\begin{equation}
+\langle A | B \rangle =
+\int_{f_{\rm low}}^{f_{\rm high}} \, \dd f \,
+\frac{\tilde{A}^{\ast}(f) \tilde{B}(f) + \tilde{A}(f) \tilde{B}^{\ast}(f)}{S_{n}(f)}
+\end{equation}
+%
+where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk
+denotes complex conjugation and $S_{n}(f)$ is the power spectrum density
+of the detector.
+
+With the posterior distribution function $P(\bm{\lambda} | d, \mathcal{H})$ determined, we can then
+marginalize over all nuisance parameters to obtain the posterior
+distribution function the $i$-th beyond-GR coupling constants $\ell_{i}$,
+%
+\begin{equation}
+P(\ell_{i} | d, \mathcal{H}) =
+\int \dd \xi_{\rm GR} \,
+P(\bm{\lambda} | d, \mathcal{H}) \,.
+\label{eq:marg_posterior}
+\end{equation}
+%
 
 \hs{Here we summarize the results of our PE runs. Combine the posteriors on the
 the non-GR parameter coming from different events. We could have a short
 subsection for each theory. We should quote two thresholds for claiming
 that we placed a bound, one using the secondary BH mass and another with
 the final BH mass.}
+
+\subsection{Einstein-dilaton-Gauss-Bonnet}
+\label{sec:results_edgb}
+
+\subsection{Dynamical Chern-Simons}
+\label{sec:results_dcs}
+
+\subsection{Effective-field-theory of general relativity}
+\label{sec:results_efts}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_GW200129.pdf}
