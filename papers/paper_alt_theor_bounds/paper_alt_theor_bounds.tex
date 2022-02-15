@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{bm}
-% \usepackage{txfonts}
+\usepackage{txfonts}
 \usepackage{natbib}
 \usepackage{amssymb}
 \usepackage{xspace}
@@ -453,10 +453,10 @@ We begin by expanding $\omega$ and $\tau$, given by Eqs.~\eqref{eq:kerr_expansio
 %
 \begin{subequations}
 \begin{align}
-M \omega_{220} &= \gamma (\delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)})
+M \omega_{220} &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
 + \sum_{j=0}^{N} \chi^{j} \omega^{j}\,,
 \\
-\tau_{220}/M   &= \gamma (\delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)})
+\tau_{220}/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
 + \sum_{j=0}^{N} \chi^{j} \tau^{j}\,,
 \end{align}
 \label{eq:qnm_nongr_iso}
@@ -473,6 +473,11 @@ numerical values of $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$
 This means that using the $\pSEOB$ waveform model with theory-specific informed
 QNMs we reduce the parameters space of beyond-GR parameters to one, i.e., to
 only $\gamma$, which in turn contains information about the length scale $\ell$.
+%
+It is important to emphasize that our procedure is different from that of~\cite{Carullo:2021dui}
+which, for a given value of $p$, varied all $\ell$, $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ parameters.
+%
+% As we will see later, our theory-informed approach can result to stronger constraints to certain modified ....
 
 Now as we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating black holes
 is modified gravity theories come in two families depending on their transformation upon a parity
@@ -493,6 +498,67 @@ of simply choosing the \emph{least damped gravitational mode between the two par
 %
 The justification is this is the mode which, if excited during the merger, is
 the most likely to appear in the signal.
+
+% ---------------------------
+% CONCRETE EXAMPLE OF MAPPING
+% ---------------------------
+Let us show one concrete example of how this mapping is done.
+%
+In Ref.~\cite{Wagle:2021tam} the QNMs of slow-rotating BHs in dCS gravity were calculated
+and it was found that the axial gravitational modes have their damping time increased as we
+increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
+%
+Having selected this mode we can now obtain $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
+%
+Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
+%
+\begin{equation}
+    M \omega^{\rm CS}_{220} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
+    \label{eq:omega_dsc_eg}
+\end{equation}
+%
+and similarly for the imaginary part ${\rm Im}(\sigma_{220}) = \omega^{\rm CS}_{220} = 1 / \tau^{\rm CS}_{220}$.
+%
+Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [such that $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
+and $c_{i}$ are fitting coefficients.
+%
+In the context of a binary BH merger, $M$ is interpreted as the remnant mass $\Mf$.
+
+We can now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm CS}$, and
+gather the terms proportional to $\ell_{\rm CS}$.
+%
+Doing so, we find,
+%
+\begin{align}
+    \Mf \, \omega^{\rm CS}_{220} &=
+    \left[ 0.3722 + 1.1945 (\ell_{\rm CS} / \Mf)^4 \right]
+    \nonumber \\
+    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm CS} / \Mf)^4 \right] \, \chi\,,
+\end{align}
+%
+where we made use of the numerical value of the coefficients $c_{i}$ and,
+reassuringly, the nonrotating and linear-in-spin coefficients above agree with those
+of~\cite{Maselli:2019mjd} to xx\%.
+%
+We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso}.
+%
+Doing so, we can make the identifications,
+%
+\begin{equation}
+p_{\rm cs} = 4\,, \quad \delta \omega^{(0)}_{\rm cs} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm cs} = 41.199\,.
+\label{eq:cs_omega_coefs}
+\end{equation}
+%
+The same procedure can be made for $\tau^{(i)}$, which results in,
+%
+\begin{equation}
+\delta \tau^{(0)}_{\rm cs} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm cs} = 794.66\,.
+\label{eq:cs_tau_coefs}
+\end{equation}
+%
+which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB waveform model.
+%
+As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
 
 In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
 the {\sc Parspec} implementation of each theory and give credit to the papers
