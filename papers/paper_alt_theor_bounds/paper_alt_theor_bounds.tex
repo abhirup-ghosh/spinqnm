@@ -679,8 +679,9 @@ $\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
 \section{Results using LIGO-Virgo events}
 \label{sec:results}
 %%%%%%%%%%%%%%%%%
+\subsection{Parameter Inference}
 
-\subsection{Bayesian formalism}
+\subsubsection{Bayesian formalism}
 If we assume that a GW signal observed in detector data $d$ is accurately described by our waveform model \pSEOB{}, we can infer the parameters of the model, $\bm{\lambda}$, given the hypotheis $\mathcal{H}$, using the Bayes theorem,
 %
 \begin{equation}
@@ -693,7 +694,7 @@ where $P(\bm{\lambda} \vert d, \mathcal{H})$ is the posterior probability distri
 $P(\bm{\lambda} \vert \mathcal{H})$ the prior,
 $P(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
 $P(d \vert \mathcal{H})$ the evidence. The set of parameters, $\bm{\lambda}$, detailed in Sec.~\ref{sec:review_pSEOB}
-include the set of beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$.
+include the set of beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}, \delta \tau_k^{(j)}\}$.
 %
 As discussed in Secs.~\ref{sec:review_theories} and \ref{sec:theory_specific_qnm}, there is a single coupling
 constants in the cases of EdGB and dCS theories, but two in the cubic and
@@ -728,8 +729,14 @@ algorithm.~\cite{lallsuite}. We subsequently marginalise over the
 remaining parameters to obtain the posterior probability distribution on $\ell$. 
 An example of this is shown in Fig. XX.
 
+\subsubsection{Priors}
 
-\subsection{Event selection}
+The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the z-components~\footnote{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.} The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
+
+Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)}\}$, as already mentioned in the previous section, we would mostly hold $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions allowing only $\ell$ to freely vary. For such cases, we assume a prior uniform between appropriate ranges on $\ell$.
+
+
+\subsubsection{Event selection}
 
 % \hs{Say that we use GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp} and justify why.}
 
@@ -747,10 +754,12 @@ subsection for each theory. We should quote two thresholds for claiming
 that we placed a bound, one using the secondary BH mass and another with
 the final BH mass.}
 
-\subsection{Einstein-dilaton-Gauss-Bonnet}
+\subsection{Results}
+
+\subsubsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
 
-\subsection{Dynamical Chern-Simons}
+\subsubsection{Dynamical Chern-Simons}
 \label{sec:results_dcs}
 
 \begin{figure}[t]
@@ -763,7 +772,7 @@ the final BH mass.}
 
 
 
-\subsection{Effective-field-theory of general relativity}
+\subsubsection{Effective-field-theory of general relativity}
 \label{sec:results_efts}
 
 \begin{figure}[t]
