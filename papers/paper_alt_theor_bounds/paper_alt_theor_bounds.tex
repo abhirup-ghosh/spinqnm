@@ -410,8 +410,8 @@ Further expand the Kerr expression as:
 %
 \begin{subequations}
 \begin{align}
-\omega_{\iota} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
-\tau_{\iota}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
+\omega_{J} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
+\tau_{J}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
 \end{align}
 \label{eq:kerr_expansion}
 \end{subequations}
@@ -422,8 +422,6 @@ Also,
 \gamma
 %
 = \frac{\ell^{p}}{M_{\rm s}^{p}}
-%
-% = \frac{\ell^{p} (1 + z)^{p}}{M^{p}}
 %
 = \left[
 \frac{\ell c^2 (1 + z)}{G M}
@@ -490,7 +488,10 @@ In this formalism our QNM frequencies are expressed through functions,
 %
 where the estimates of $(m_1,\, m_2,\, \chi_1,\, \chi_1)$ are used to predict the final mass and spin $(M_f,\, \chi_f)$ through~\cite{Taracchini:2013rva,Hofmann:2016yih}.
 %
-Additionally, $(\omega_k,\, \tau_k)$ depend on the coupling constant $\ell$ defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$, where $j$ ranges from 0 to the power of spin in Eqs.~\ref{eq:kerr_expansion} upto which we include corrections.
+Additionally, $(\omega_k,\, \tau_k)$ depend on the coupling constant $\ell$
+defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta \omega_k^{(j)}\},$ and
+$\{\delta \tau_k^{(j)}\}$, where $j$ ranges from zero to the power of spin in Eqs.~\eqref{eq:kerr_expansion}
+up to which we include corrections.
 %
 For example, if we restrict ourselves to corrections in the $j=0$, or $\chi_f^0$, terms for just the $k=(2,2,0)$ mode, then we would just have two additional degrees of freedom, $(\delta \omega_0^{(0)}, \delta \tau_0^{(0)})$. In this paper, we would restrict ourselves to corrections to the $j=0$ and $j=1$ terms, i.e., leading and next-to-leading order corrections to the spin, $\chi_f$.
 %
@@ -535,12 +536,12 @@ This means that using the $\pSEOB$ waveform model with theory-specific informed
 QNMs we reduce the parameters space of beyond-GR parameters to one, i.e., to
 only $\gamma$, which in turn contains information about the length scale $\ell$.
 %
-It is important to emphasize that our procedure is different from that of~\cite{Carullo:2021dui}
+It is important to emphasize that our procedure is different from that of Ref.~\cite{Carullo:2021dui}
 which, for a given value of $p$, varied all $\ell$, $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ parameters.
 %
 % As we will see later, our theory-informed approach can result to stronger constraints to certain modified ....
 
-Now as we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating BHs
+As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating BHs
 is modified gravity theories come in two families depending on their transformation upon a parity
 transformation: axial and polar. Which is the one we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
@@ -734,10 +735,10 @@ complex conjugation and $S_{n}(f)$ is the power spectrum density of the
 detector.
 %
 Assuming a specific prior distribution for our parameters, we stochastically
-sample over the parameter space using a \texttt{LALInference} Markov Chain
+sample over the parameter space using a \texttt{LALInference} Markov-Chain
 Monte Carlo algorithm.~\cite{lalsuite}. We subsequently marginalize over the
-remaining parameters to obtain the posterior probability distribution on
-$\ell$. An example of this is shown in Fig. XX.
+remaining parameters to obtain the posterior probability distribution
+function~(PDF) on $\ell$. An example of this is shown in Fig. XX.
 
 \subsubsection{Priors}
 
