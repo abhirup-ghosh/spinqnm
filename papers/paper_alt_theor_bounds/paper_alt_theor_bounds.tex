@@ -116,7 +116,6 @@
 \begin{document}
 
 % HS: temporary title. Feel free to add suggestions
-% \title{Probing higher-curvature gravity theories from binary BH ringdown signals}
 \title{Black-hole ringdown as a probe of higher-curvature gravity theories}
 
 \author{Hector O. Silva}
@@ -399,13 +398,13 @@ The formalism modifies the Kerr quasinormal mode frequency as
 %
 \begin{subequations}
 \begin{align}
-\omega_{\iota} &= \omega^{\rm K}_{\iota} \, (1 + \delta \omega_{\iota}), \\
-\tau_{\iota}   &= \tau^{\rm K}_{\iota}   \, (1 + \delta \tau_{\iota}),
+\omega_{J} &= \omega^{\rm K}_{J} \, (1 + \delta \omega_{J}), \\
+\tau_{J}   &= \tau^{\rm K}_{J}   \, (1 + \delta \tau_{J}),
 \end{align}
 \label{eq:general_deviation}
 \end{subequations}
 %
-where the $\iota$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
+where the $J$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
 
 Further expand the Kerr expression as:
 %
@@ -570,7 +569,7 @@ In Ref.~\cite{Wagle:2021tam} the QNMs of slow-rotating BHs in dCS gravity were c
 and it was found that the axial gravitational modes have their damping time increased as we
 increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
 %
-Having selected this mode we can now obtain $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
+Having selected this branch of QNMs we can proceed to determine $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
 %
 Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
 %
@@ -632,8 +631,8 @@ which calculated the QNMs.
 \hline
 Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
 \hline
-sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.7$~km~\cite{Perkins:2021mhb} (GW) & \dots \\
-dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~\cite{Silva:2020acr} (EM+GW)  & \dots \\
+sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & \dots \\
+dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & \dots \\
 cEFTofGR & 4 & $-0.3680$ $(-0.5131)$  & 1.9242 (1.7000) & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 qEFTofGR & 6 & \dots & \dots & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 \hline
@@ -679,13 +678,20 @@ $\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
 \section{Results using LIGO-Virgo events}
 \label{sec:results}
 
-In this section, we provide a basic outline of the Bayesian formalism we use to infer the properties of the underlying GW signal, identify the most promising events from the catalog of GW observations to base our analyses on, and discuss the key insights they provide in constraining predictions of momdified gravity theories.
+In this section, we provide a basic outline of the Bayesian formalism we use to
+infer the properties of the underlying GW signal, identify the most promising
+events from the catalog of GW observations to base our analyses on, and discuss
+the key insights they provide in constraining predictions of modified gravity
+theories.
 
 %%%%%%%%%%%%%%%%%
 \subsection{Parameter Inference}
 
 \subsubsection{Bayesian formalism}
-If we assume that a GW signal observed in detector data $d$ is accurately described by our waveform model \pSEOB{}, we can infer the parameters of the model, $\bm{\lambda}$, given the hypotheis $\mathcal{H}$, using the Bayes theorem,
+If we assume that a GW signal observed in detector data $d$ is accurately
+described by our waveform model \pSEOB{}, we can infer the parameters of the
+model, $\bm{\lambda}$, given the hypothesis $\mathcal{H}$, using the Bayes
+theorem,
 %
 \begin{equation}
 P(\bm{\lambda} \vert d, \mathcal{H}) =
@@ -708,7 +714,7 @@ fixed to theory-specific predictions. Hence, our set of beyond--GR parameters on
 Assuming Gaussian and stationary noise, we can write the (log) likelihood function as,
 %
 \begin{equation}
-\ln \mathcal{L}(d \vert \bm{\lambda},\mathcal{H}) \propto
+\ln P(d \vert \bm{\lambda},\mathcal{H}) \propto
 - \tfrac{1}{2}
 \langle
 d - h(\bm{\lambda}) \vert d - h(\bm{\lambda})
@@ -723,14 +729,15 @@ with noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
 \frac{\tilde{A}^{\ast}(f) \tilde{B}(f) + \tilde{A}(f) \tilde{B}^{\ast}(f)}{S_{n}(f)}
 \end{equation}
 %
-where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk
-denotes complex conjugation and $S_{n}(f)$ is the power spectrum density
-of the detector. Assuming a speicifc prior distribution for our parameters, 
-we stochastically sample over the parameter space 
-using a \texttt{LALInference} Markhov Chain Monte Carlo 
-algorithm.~\cite{lallsuite}. We subsequently marginalise over the 
-remaining parameters to obtain the posterior probability distribution on $\ell$. 
-An example of this is shown in Fig. XX.
+where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
+complex conjugation and $S_{n}(f)$ is the power spectrum density of the
+detector.
+%
+Assuming a specific prior distribution for our parameters, we stochastically
+sample over the parameter space using a \texttt{LALInference} Markov Chain
+Monte Carlo algorithm.~\cite{lalsuite}. We subsequently marginalize over the
+remaining parameters to obtain the posterior probability distribution on
+$\ell$. An example of this is shown in Fig. XX.
 
 \subsubsection{Priors}
 
@@ -753,6 +760,12 @@ that we placed a bound, one using the secondary BH mass and another with
 the final BH mass.}
 
 \subsection{Results}
+
+\hs{Note to ourselves: as mentioned in~\cite{Maselli:2019mjd}:
+%
+``As customary in parametrized approaches, we focus on perturbative corrections by assuming $\gamma_{i} \delta \omega^{(n)} \ll 1$, $\gamma_{i} \delta \tau^{(n)} \ll 1$ and GR is recovered in the limit $\gamma_{i} \to 0$.''
+We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
+}
 
 \subsubsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
@@ -782,10 +795,10 @@ the initial uniform prior distribution $\ell_{\rm CS} \in [0,\, 200]$~km.
 The vertical lines represent two threshold for the validity of the theory as
 an EFT.
 %
-The dotted line (labelled ``$m_2$'') at $\ell_{\rm CS} \approx 21.3$~km is
+The dotted line (labeled ``$m_2$'') at $\ell_{\rm CS} \approx 21.3$~km is
 given by the median value of the secondary's mass $\varepsilon \, (G m_2 / c^2)$.
 %
-The dot-dashed line (labelled ``$M_{f}$'') at $\ell_{\rm CS} \approx 43.8$~km is
+The dot-dashed line (labeled ``$M_{f}$'') at $\ell_{\rm CS} \approx 43.8$~km is
 given by the median value of the remnant's mass $\varepsilon \, (G M_{f} / c^2)$.
 %
 For both, we used $\varepsilon = 0.5$.
