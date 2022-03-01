@@ -749,50 +749,150 @@ Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)
 
 \subsubsection{Event selection}
 
-The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an \emph{IMR} model which infers the properties of the underlying GW signal, including (independently) its ringdown properties, using the Bayesian formalism above. Naturally, the most promising candidates for our analyses are high-mass \emph{and} loud GW observations with a significant signal-to-noise ratio (SNR) in the post-merger part of the signal. The latest LVK GW catalog~\cite{LIGOScientific:2021djp} reported 90 observed signals not all of which are relevant for a BH ringdown analysis. In fact, in an accompanying paper~\cite{LIGOScientific:2021sio}, the \textit{pSEOBNRv4HM} analysis~\footnote{Sec.VIII A.2 in ~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model presented in this paper, identified two events which provided the strongest bounds on measurements of the dominant $(220)$ QNM -- GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp}. These two events, with a total mass of $XX \Mo$ and $XX \Mo$ respectively, are extremely similar in their source properties. These are also two of the loudest BBH signals observed to date with a total network SNR of XX and XX respectively. Moreover, and what is more relevant for our analysis, is their post-inspiral (merger-ringdown) SNRs, which at XX and XX respectively (see the columns for $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and Table IV of ~\cite{LIGOScientific:2021sio}). In this paper, we are going to focus on these two GW events as our probes of the BH ringdown in alternative theories of gravity.
+The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an \emph{IMR} model which infers the properties of the underlying GW signal, including (independently) its ringdown properties, using the Bayesian formalism above. Naturally, the most promising candidates for our analyses are high-mass \emph{and} loud GW observations with a significant signal-to-noise ratio (SNR) in the post-merger part of the signal. The latest LVK GW catalog~\cite{LIGOScientific:2021djp} reported 90 observed signals not all of which are relevant for a BH ringdown analysis. In fact, in an accompanying paper~\cite{LIGOScientific:2021sio}, the \textsc{pSEOBNRv4HM} analysis~\footnote{Sec.VIII A.2 in ~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model presented in this paper, identified two events which provided the strongest bounds on measurements of the dominant $(220)$ QNM -- GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp}. These two events, with a total mass of $XX \Mo$ and $XX \Mo$ respectively, are extremely similar in their source properties. These are also two of the loudest BBH signals observed to date with a total network SNR of XX and XX respectively. Moreover, and what is more relevant for our analysis, is their post-inspiral (merger-ringdown) SNRs, which at XX and XX respectively (see the columns for $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and Table IV of ~\cite{LIGOScientific:2021sio}). In this paper, we are going to focus on these two GW events as our probes of the BH ringdown in alternative theories of gravity.
 
-The parameter inference in this paper follow configurations identical to the ones used on these events for the \textit{pSEOBNRv4HM} analysis in~\cite{LIGOScientific:2021sio}. GW150914 was a 2-detector event (HL) while GW200129 was 3-detector (HLV). We consequently use the same strain data $h(t)$, detector power-spectral-densities $S_n(f)$ and calibration envelopes as were used for the analyses in~\cite{LIGOScientific:2021sio}. The only difference between the sampling configurations is that we do not sample over the fractional deviations in the $(220)$ QNM frequencies and damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions. In the section to follow, we enumerate through the different theories and outline the highlight results. Wherever possible, we also combine results from multiple events to obtain the strongest possible bound on $\ell$.
+The parameter inference in this paper follows configurations identical to the
+ones used on these events for the \textsc{pSEOBNRv4HM} analysis in
+Ref.~\cite{LIGOScientific:2021sio}. GW150914 was a 2-detector event (HL) while
+GW200129 was 3-detector (HLV).
+%
+We consequently use the same strain data $h(t)$, detector
+power-spectral-densities $S_n(f)$ and calibration envelopes as were used for
+the analyses in Ref.~\cite{LIGOScientific:2021sio}.
+%
+The only difference between the sampling configurations is that we do not
+sample over the fractional deviations in the $(220)$ QNM frequencies and
+damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$
+and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions.
+%
+In the section to follow, we enumerate through the different theories and
+outline the highlight results. Wherever possible, we also combine results from
+multiple events to obtain the strongest possible bound on $\ell$.
 
+% -----------------
+% Corner plots here
+% -----------------
 
-\hs{Here we summarize the results of our PE runs. Combine the posteriors on the
-the non-GR parameter coming from different events. We could have a short
-subsection for each theory. We should quote two thresholds for claiming
-that we placed a bound, one using the secondary BH mass and another with
-the final BH mass.}
+As a first test ...
 
 \subsection{Results}
 
-\hs{Note to ourselves: as mentioned in~\cite{Maselli:2019mjd}:
+% -----------------
+% Explain threshold
+% -----------------
+
+\subsubsection{General remarks for the interpretation of our results}
+\label{sec:remaks}
+
+There are two requirements that we must take into account before
+we can confidently claim to have placed a constraint, with our model assumptions,
+with our parameter estimation study.
+
+First, as described in Sec.~\ref{sec:review_theories}, all theories that we consider must be considered as an
+effective field theory, meaning it has a sensible description only below an energy, or equivalently an length scale.
 %
-``As customary in parametrized approaches, we focus on perturbative corrections by assuming $\gamma_{i} \delta \omega^{(n)} \ll 1$, $\gamma_{i} \delta \tau^{(n)} \ll 1$ and GR is recovered in the limit $\gamma_{i} \to 0$.''
-We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
-}
+As a threshold for the validity of the EFT we use
+%
+\begin{equation}
+T_{\rm EFT} (\varepsilon; \, \mathfrak{m}) = \varepsilon \,  (G \mathfrak{m} / c^2)\,,
+\end{equation}
+%
+where $\varepsilon$ is a dimensionless number and $\mathfrak{m}$ the median value of one of the
+masses involved in the problem.
+%
+We also momentarily restored factor of $c$ and $G$ to emphasize that this is a quantity
+with dimensions of length and can hence be compared with the coupling strength $\ell$.
+%
+The parameter $T_{\rm EFT}$ was used in both
+Refs.~\cite{Nair:2019iur,Perkins:2021mhb} with $\varepsilon = 1/2$,
+but here we will assume $\varepsilon \in [0, 1]$.
+%
+We will say that a bound has been placed on $\ell$, if most of the support of
+the posterior distribution function $P(\ell)$ is in the interval $[0, \, T_{\rm EFT}(\varepsilon; \, \mathfrak{m})]$.
+%
+In practice, this can be quantified by the cumulative distribution function
+(CDF) associated to the marginalized posterior distribution $P(\ell)$,
+%
+\begin{equation}
+P(\ell \leqslant x) = \int_{-\infty}^{x} P(x) \, \dd x\,.
+\end{equation}
+%
+We will demand, for instance, that for a bound with 90\% credibility to be meaningfully placed that,
+%
+\begin{equation}
+% \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
+P(\ell \leqslant T_{\rm EFT}) \leqslant 0.9 \,.
+\end{equation}
+
+%
+Another question to consider is: what is the mass $\mathfrak{m}$ that we should use?
+%
+In Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which attempted to constrain dCS and shift-symmetric sGB theories with the \emph{inspiral}
+signal alone, it was natural to chose the secondary's mass $m_2$ as the most conservative choice, since it is by definition the smallest mass
+and hence places the lowest threshold for the validity of either theory as an EFT.
+%
+In our problem, the answer is not as clear. On the one hand, since we are
+interested in the ringdown portion of the signal, it is natural to use the
+final mass $M_f$ to compute the threshold $T_{\rm EFT}$.
+%
+On the other hand, one may argue that the modified gravity theory under study
+should be be able to predict a full inspiral, merger, and ringdown of the black
+hole binary, and thus the same most conservative $m_2$ should be used.
+%
+Here we take an agnostic approach and consider both masses, $m_2$ and $M_f$, to
+establish $T_{\rm EFT}$, and we will compare how different assumptions yield
+different interpretations of the results of our parameter estimations.
+
+There is a second criteria we must also take into account. As already emphasized in Ref.~\cite{Maselli:2019mjd},
+the {\sc Parspec} is by construction perturbative. This means that the non-GR deformation parameters are small,
+i.e.,
+%
+\begin{equation}
+\gamma \delta \omega^{(j)} \ll 1 \,, \quad \textrm{and} \quad \gamma \delta \tau^{(j)} \ll 1 \,.
+\end{equation}
+%
+for all indices $j$ in the expansion in dimensionless spin $\chi$.
+%
+We will also construct posterior distributions on the parameters and check if most of their support
+is constrained to be much less than unity.
+
+% \hs{Note to ourselves: as mentioned in~\cite{Maselli:2019mjd}:
+% %
+% ``As customary in parametrized approaches, we focus on perturbative corrections by assuming $\gamma_{i} \delta \omega^{(n)} \ll 1$, $\gamma_{i} \delta \tau^{(n)} \ll 1$ and GR is recovered in the limit $\gamma_{i} \to 0$.''
+% We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
+% }
 
 \subsubsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/ssgb_posteriors.pdf}
+\caption{Template.}
+\label{fig:sGB_exec_sum}
+\end{figure}
 
 \subsubsection{Dynamical Chern-Simons}
 \label{sec:results_dcs}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
-\caption{Summary of our results.
-\hs{Maybe have some like this for an `executive summary'?}
+\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm CS}$ for
+GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+%
+In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
+in spin QNM correction.
 }
 \label{fig:dCS_exec_sum}
 \end{figure}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
-\caption{.
+\caption{(Color online).~The cumulative distribution function evaluated at the threshold $T(\varepsilon;\, m)$
+as a function of the parameter $\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source mass,
+and (orange curves) $m = M_{f}$, the remnant's source mass, without (solid curve) and with (dashed curves)
+linear in spin QNM corrections.
 }
-\label{fig:dCS_exec_sum}
-\end{figure}
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/ssgb_posteriors.pdf}
-\caption{Template.}
-\label{fig:sGB_exec_sum}
+\label{fig:dcs_cdf}
 \end{figure}
 
 
@@ -848,10 +948,10 @@ the most important message.}
 \section*{Acknowledgements}
 \label{sec:acknowledgements}
 %
-We thank Emanuele~Berti, Andrea~Maselli, Caio~F.~B.~Macedo, Deyan~Mihaylov, and
-Serguei~Ossokine for discussions.
+We thank Emanuele~Berti, Andrea~Maselli, Caio~F.~B.~Macedo, Deyan~Mihaylov,
+Serguei~Ossokine, and Helvi~Witek for discussions.
 %
-We thank the computational resources provided by the AEI, specifically the
+We also thank the computational resources provided by the AEI, specifically the
 {\sc Hypatia} cluster and Steffen Grunewald for assistance.
 %
 The authors would like to thank everyone at the frontline of the Covid-19
