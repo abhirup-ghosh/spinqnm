@@ -767,7 +767,7 @@ damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$
 and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions.
 %
 In the section to follow, we enumerate through the different theories and
-outline the highlight results. Wherever possible, we also combine results from
+outline the highlight results. Whenever possible, we also combine results from
 multiple events to obtain the strongest possible bound on $\ell$.
 
 % -----------------
@@ -782,7 +782,7 @@ As a first test ...
 % Explain threshold
 % -----------------
 
-\subsubsection{General remarks for the interpretation of our results}
+\subsubsection{General remarks on the interpretation of our results}
 \label{sec:remaks}
 
 There are two conditions that we must take into account before
@@ -867,6 +867,22 @@ We will also construct posterior distributions on the parameters and check if
 most of their support is concentrated to a domain with values much smaller than
 unity.
 
+When possible, we also combine the marginalized posterior distribution on
+$\ell$ for both event GW150914 and GW200129. To do so, we employ the same
+approach as Ref.~\cite{Perkins:2021mhb} which relies in obtaining a kerneld
+density estimator (KDE) as an approximation for the posterior distribution on
+$\ell$ for each individual events which are then multiplied together to yield
+the cumulative posterior.
+%
+This method can have difficulties in dealing with hard cut-offs in the
+distribution, such as the one we impose at $\ell = 0$. We address this issue as
+done in Ref.~\cite{Perkins:2021mhb}, by first doubling our number of samples as
+$\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
+%
+We then renormalize the associated KDE numerically in the range $\ell = [0,
+\infty]$.
+
+
 % \hs{Note to ourselves: as mentioned in~\cite{Maselli:2019mjd}:
 % %
 % ``As customary in parametrized approaches, we focus on perturbative corrections by assuming $\gamma_{i} \delta \omega^{(n)} \ll 1$, $\gamma_{i} \delta \tau^{(n)} \ll 1$ and GR is recovered in the limit $\gamma_{i} \to 0$.''
@@ -916,9 +932,10 @@ For GW150914, we see that with $\gm = m_2$ that Eq.~\eqref{eq:eft_bound} is not
 satisfied unless $\varepsilon \approx 0.9$ (with only $j=0$ corrections) and
 $\varepsilon \approx 0.7$ (with both $j=0$ and $1$ corrections).
 %
-The situation is different if we use $\gm = M_f$. We find that with or without spin corrections
-that Eq.~\eqref{eq:eft_bound} can be satisfied with $\varepsilon \leq 1/2$, i.e., below the criteria
-used Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+The situation is different if we use $\gm = M_f$. In this case, we find that
+with or without spin corrections that Eq.~\eqref{eq:eft_bound} can be satisfied
+with $\varepsilon \leq 1/2$, i.e., below the criteria used
+Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
 %
 This means that with our model's assumptions and using the remnant's source mass $M_f$ to set the
 cut-off scale that we can claim an upper bound
@@ -931,8 +948,7 @@ cut-off scale that we can claim an upper bound
 on dCS gravity and would constitute the first bound on this theory with
 gravitational-wave observations alone.
 %
-Let us consider GW200129 now.
-
+These conclusions for GW150914 are shared with GW200129.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
@@ -950,7 +966,7 @@ in spin QNM correction.
 \caption{(Color online).~The cumulative distribution function evaluated at the threshold $T(\varepsilon;\, m)$
 as a function of the parameter $\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source mass,
 and (orange curves) $m = M_{f}$, the remnant's source mass, without (solid curve) and with (dashed curves)
-linear in spin QNM corrections.
+linear in spin QNM corrections. The horizontal lines lay at 0.68 and 0.90.
 }
 \label{fig:dcs_cdf}
 \end{figure}
