@@ -776,11 +776,23 @@ multiple events to obtain the strongest possible bound on $\ell$.
 
 As a first test ...
 
-\subsection{Results}
+\subsubsection{Stacking posteriors}
+\label{sec:stack}
 
-% -----------------
-% Explain threshold
-% -----------------
+When possible, we also combine the marginalized posterior distribution on
+$\ell$ for both event GW150914 and GW200129. To do so, we employ the same
+approach as Ref.~\cite{Perkins:2021mhb} which relies in obtaining a kerneld
+density estimator (KDE) as an approximation for the posterior distribution on
+$\ell$ for each individual events which are then multiplied together to yield
+the cumulative posterior.
+%
+This method can have difficulties in dealing with hard cut-offs in the
+distribution, such as the one we impose at $\ell = 0$. We address this issue as
+done in Ref.~\cite{Perkins:2021mhb}, by first doubling our number of samples as
+$\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
+%
+We then renormalize the associated KDE numerically in the range $\ell = [0,
+\infty]$.
 
 \subsubsection{General remarks on the interpretation of our results}
 \label{sec:remaks}
@@ -867,20 +879,12 @@ We will also construct posterior distributions on the parameters and check if
 most of their support is concentrated to a domain with values much smaller than
 unity.
 
-When possible, we also combine the marginalized posterior distribution on
-$\ell$ for both event GW150914 and GW200129. To do so, we employ the same
-approach as Ref.~\cite{Perkins:2021mhb} which relies in obtaining a kerneld
-density estimator (KDE) as an approximation for the posterior distribution on
-$\ell$ for each individual events which are then multiplied together to yield
-the cumulative posterior.
-%
-This method can have difficulties in dealing with hard cut-offs in the
-distribution, such as the one we impose at $\ell = 0$. We address this issue as
-done in Ref.~\cite{Perkins:2021mhb}, by first doubling our number of samples as
-$\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
-%
-We then renormalize the associated KDE numerically in the range $\ell = [0,
-\infty]$.
+
+\subsection{Results}
+
+% -----------------
+% Explain threshold
+% -----------------
 
 
 % \hs{Note to ourselves: as mentioned in~\cite{Maselli:2019mjd}:
@@ -893,9 +897,26 @@ We then renormalize the associated KDE numerically in the range $\ell = [0,
 \label{sec:results_edgb}
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/ssgb_posteriors.pdf}
-\caption{Template.}
+\includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
+\caption{(Color online).~Posterior distribution function in EdGB gravity
+for the coupling constant $\ell_{\rm GB}$ for GW150914 (top panel), GW200129 (middle panel)
+and combined events (bottom panel).
+%
+In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
+in spin QNM correction.}
 \label{fig:sGB_exec_sum}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
+\caption{(Color online).~The cumulative distribution function evaluated at the
+threshold $T(\varepsilon;\, m)$ EdGB gravity as a function of the parameter
+$\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source
+mass, and (orange curves) $m = M_{f}$, the remnant's source mass, without
+(solid curve) and with (dashed curves) linear in spin QNM corrections. The
+horizontal lines lay at 0.68 and 0.90.
+}
+\label{fig:dcs_cdf}
 \end{figure}
 
 \subsubsection{Dynamical Chern-Simons}
