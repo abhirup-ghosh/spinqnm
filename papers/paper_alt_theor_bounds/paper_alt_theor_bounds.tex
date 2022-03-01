@@ -1,4 +1,4 @@
-\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,eqsecnum,amsfonts,amsmath,longbibliography]{revtex4-1}
+\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,amsfonts,amsmath,longbibliography]{revtex4-1}
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -96,6 +96,7 @@
 \newcommand{\pSEOB}{\texttt{pSEOBNR}}
 \newcommand{\SEOB}{\texttt{SEOBNR}}
 \newcommand{\gm}{\mathfrak{m}}
+\newcommand{\msun}{~{\rm M}_{\odot}}
 
 % Modified gravity related
 \newcommand{\pd}{\partial}
@@ -445,7 +446,7 @@ The polarisations of the GW signal (in the observer's frame) are,
 h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{l, m} {}_{-\!2}Y_{l m}(\iota,\varphi_0)\, h_{l m}(t)\,,
 \end{equation}
 %
-where ${}_{-\!2}Y_{l m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical harmonics described by standard angular dependence indices $(l,m)$.\footnote{Note that we use $l$ to denote the angular dependence index and $\ell$ to denote the coupling constant in Sec.~\ref{sec:review_parspec}.} As our baseline model, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in \cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{} \footnote{This waveform model is available in \texttt{LALSuite} \cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}. The model uses an effective-one-body approach combined with a post-adiabatic solution of the equations of motion to describe the inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$. An accurate description of the merger is incorporated through calibration with NR simulations, as described in~\cite{Cotesta:2018fcv}, along with information for the merger and ringdown phases, from BH perturbation theory. The merger-ringdown waveform, $h_{l m}^\mathrm{merger-RD}$, is then stitched to inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$ at a certain time $t = t^{\textrm{match}}_{l m}$, as
+where ${}_{-\!2}Y_{l m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical harmonics described by standard angular dependence indices $(l,m)$.\footnote{Note that we use $l$ to denote the angular dependence index and $\ell$ to denote the coupling constant in Sec.~\ref{sec:review_parspec}.} As our baseline model, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in \cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{}\footnote{This waveform model is available in \texttt{LALSuite} \cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}. The model uses an effective-one-body approach combined with a post-adiabatic solution of the equations of motion to describe the inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$. An accurate description of the merger is incorporated through calibration with NR simulations, as described in~\cite{Cotesta:2018fcv}, along with information for the merger and ringdown phases, from BH perturbation theory. The merger-ringdown waveform, $h_{l m}^\mathrm{merger-RD}$, is then stitched to inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$ at a certain time $t = t^{\textrm{match}}_{l m}$, as
 %
 \begin{equation}
 h_{l m}(t) = h_{l m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{l m} - t) + h_{l m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{match}^{l m})\,,
@@ -750,7 +751,7 @@ Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)
 
 \subsubsection{Event selection}
 
-The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an \emph{IMR} model which infers the properties of the underlying GW signal, including (independently) its ringdown properties, using the Bayesian formalism above. Naturally, the most promising candidates for our analyses are high-mass \emph{and} loud GW observations with a significant signal-to-noise ratio (SNR) in the post-merger part of the signal. The latest LVK GW catalog~\cite{LIGOScientific:2021djp} reported 90 observed signals not all of which are relevant for a BH ringdown analysis. In fact, in an accompanying paper~\cite{LIGOScientific:2021sio}, the \textsc{pSEOBNRv4HM} analysis~\footnote{Sec.VIII A.2 in ~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model presented in this paper, identified two events which provided the strongest bounds on measurements of the dominant $(220)$ QNM -- GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp}. These two events, with a total mass of $XX \Mo$ and $XX \Mo$ respectively, are extremely similar in their source properties. These are also two of the loudest BBH signals observed to date with a total network SNR of XX and XX respectively. Moreover, and what is more relevant for our analysis, is their post-inspiral (merger-ringdown) SNRs, which at XX and XX respectively (see the columns for $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and Table IV of ~\cite{LIGOScientific:2021sio}). In this paper, we are going to focus on these two GW events as our probes of the BH ringdown in alternative theories of gravity.
+The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an \emph{IMR} model which infers the properties of the underlying GW signal, including (independently) its ringdown properties, using the Bayesian formalism above. Naturally, the most promising candidates for our analyses are high-mass \emph{and} loud GW observations with a significant signal-to-noise ratio (SNR) in the post-merger part of the signal. The latest LVK GW catalog~\cite{LIGOScientific:2021djp} reported 90 observed signals not all of which are relevant for a BH ringdown analysis. In fact, in an accompanying paper~\cite{LIGOScientific:2021sio}, the \textsc{pSEOBNRv4HM} analysis~\footnote{Sec.VIII A.2 in ~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model presented in this paper, identified two events which provided the strongest bounds on measurements of the dominant $(220)$ QNM -- GW150914~\cite{LIGOScientific:2016aoc} and GW200129~\cite{LIGOScientific:2021djp}. These two events, with a total mass of $XX \Mo$ and $XX \Mo$ respectively, are extremely similar in their source properties. These are also two of the loudest BBH signals observed to date with a total network SNR of XX and XX respectively. Moreover, and what is more relevant for our analysis, is their post-inspiral (merger-ringdown) SNRs, which at XX and XX respectively (see the columns for $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and Table IV of ~\cite{LIGOScientific:2021sio}). In this paper, we are going to focus on these two GW events as our probes of the BH ringdown in modified theories of gravity.
 
 The parameter inference in this paper follows configurations identical to the
 ones used on these events for the \textsc{pSEOBNRv4HM} analysis in
@@ -808,7 +809,8 @@ considered valid only below an energy scale, or equivalently, a length scale.
 As a cut-off length scale for the validity of the EFT we use,
 %
 \begin{equation}
-\Lambda_{\rm EFT} (\varepsilon; \, \mathfrak{m}) = \varepsilon \,  (G \mathfrak{m} / c^2)\,,
+\Lambda_{\rm EFT} (\varepsilon, \mathfrak{m}) = \varepsilon \, G \mathfrak{m} / c^2 \,,
+\label{eq:def_cutoff}
 \end{equation}
 %
 where $\varepsilon$ is a dimensionless number and $\mathfrak{m}$ is the median
@@ -817,14 +819,14 @@ value of one of the masses involved in the problem.
 We also momentarily restored factors of $c$ and $G$ to emphasize that $\Lambda_{\rm EFT}$ has
 dimensions of length and hence can be compared to the coupling strength $\ell$.
 %
-The parameter $\Lambda_{\rm EFT}$ was used
-Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} with $\varepsilon = 1/2$,
-but here we  $\varepsilon \in [0, 1]$.
+In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
+but here we consider $\varepsilon \in [0, 1]$.
 %
 We will say that a bound has been placed on $\ell$, if most of the support of
-the posterior distribution function $P(\ell)$ is in the interval $[0, \, \Lambda_{\rm EFT}(\varepsilon; \, \mathfrak{m})]$.
+the posterior distribution function $P(\ell)$ is in the interval
+$[0, \, \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})]$.
 %
-In practice, this can be quantified by the cumulative distribution function
+In practice, this can be quantified through the cumulative distribution function
 (CDF) associated to the marginalized posterior distribution $P(\ell)$,
 %
 \begin{equation}
@@ -836,16 +838,18 @@ For instance, we will demand that for a bound with 90\% credibility to be meanin
 %
 \begin{equation}
 % \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
-P(\ell \leqslant \Lambda_{\rm EFT}) \leqslant 0.9 \,.
+P(\ell \leqslant \Lambda_{\rm EFT}) \leqslant 0.9 \,,
 \label{eq:eft_bound}
 \end{equation}
-
 %
-Another question to consider is the following: what is the mass $\mathfrak{m}$ that we should use?
+and likewise for other percentiles.
+
+Another question we must consider is the following: what is the mass $\mathfrak{m}$ that we should use
+in Eq.~\eqref{eq:def_cutoff}?
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, which attempted to
 constrain dCS and shift-symmetric sGB theories with the \emph{inspiral} part of
-signal alone, it was natural to chose the secondary's mass $m_2$ as the most
+the GW signal alone, it was natural to chose the secondary's mass $m_2$ as the most
 conservative choice, for it is by definition the smallest mass and hence
 places the lowest threshold for the validity of either theory as an EFT.
 %
@@ -855,9 +859,10 @@ final mass $M_f$ to compute the cut-off $\Lambda_{\rm EFT}$.
 %
 On the other hand, one may argue that the modified gravity theory under study
 should be able to predict a full inspiral, merger, and ringdown of the black
-hole binary, and thus the same most conservative $m_2$ should be used.
+hole binary before we can even make such a test, and thus the same, more conservative choice
+$\gm = m_2$ should be used.
 %
-Here we adopt an agnostic view and consider both masses, $m_2$ and $M_f$, to
+Here we adopt an agnostic view to this question and consider \emph{both} masses, $m_2$ and $M_f$, to
 determine $\Lambda_{\rm EFT}$. We will then compare how different assumptions
 yield to different interpretations of the results of our parameter estimations.
 
@@ -910,7 +915,7 @@ in spin QNM correction.}
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The cumulative distribution function evaluated at the
-threshold $T(\varepsilon;\, m)$ EdGB gravity as a function of the parameter
+cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the parameter
 $\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source
 mass, and (orange curves) $m = M_{f}$, the remnant's source mass, without
 (solid curve) and with (dashed curves) linear in spin QNM corrections. The
@@ -962,14 +967,43 @@ This means that with our model's assumptions and using the remnant's source mass
 cut-off scale that we can claim an upper bound
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant \Lambda_{\rm EFT}(1/2; \, M_{f}) = \dots \,.
+\ell_{\rm CS} \leqslant 46.5~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
 \quad \textrm{at 90\% credibility},
 \end{equation}
 %
 on dCS gravity and would constitute the first bound on this theory with
 gravitational-wave observations alone.
 %
-These conclusions for GW150914 are shared with GW200129.
+We also note that since the CDF grows fast in approximate domain $\varepsilon = [0.2, 0.4]$,
+that a stronger, albeit at lower credibility,
+%
+\begin{equation}
+\ell_{\rm CS} \leqslant 27.4~\textrm{km}~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
+\quad \textrm{at 68\% credibility},
+\end{equation}
+%
+can also be placed, when we include the $j=1$ QNM correction.
+
+We can draw qualitatively similar conclusions from the GW200129 event.
+In particular, we find,
+%
+\begin{equation}
+\ell_{\rm CS} \leqslant 43.9~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
+\quad \textrm{at 90\% credibility},
+\end{equation}
+%
+and
+%
+\begin{equation}
+\ell_{\rm CS} \leqslant 19.3~\textrm{km}~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
+\quad \textrm{at 68\% credibility},
+\end{equation}
+%
+when we include the $j=1$ QNM correction.
+
+These slightly stronger bound are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
+for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
+the smaller median remmant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
@@ -984,10 +1018,14 @@ in spin QNM correction.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
-\caption{(Color online).~The cumulative distribution function evaluated at the threshold $T(\varepsilon;\, m)$
+\caption{(Color online).~The cumulative distribution function evaluated at the cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$
 as a function of the parameter $\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source mass,
 and (orange curves) $m = M_{f}$, the remnant's source mass, without (solid curve) and with (dashed curves)
 linear in spin QNM corrections. The horizontal lines lay at 0.68 and 0.90.
+%
+We see that the CDF at $\varepsilon = 1/2$ is approximately one when $\gm =
+M_{f}$ for both events, with and without including the $j = 1$ dCS corrections
+to the dominat QNM.
 }
 \label{fig:dcs_cdf}
 \end{figure}
