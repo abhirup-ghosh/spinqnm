@@ -2,7 +2,7 @@
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
-\usepackage[dvipsnames]{xcolor}
+\usepackage[dvipsnames,table]{xcolor}
 \usepackage{bm}
 \usepackage{txfonts}
 % \usepackage{newtxtext}
@@ -21,6 +21,7 @@
 \usepackage{mathrsfs}
 \usepackage{makecell}
 \usepackage{microtype}
+
 
 \usepackage{tikz}
 
@@ -635,7 +636,7 @@ which calculated the QNMs.
 Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
 \hline
 sGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & \dots \\
-dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & \dots \\
+EdGB      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
 cEFTofGR & 4 & $-0.3680$ $(-0.5131)$  & 1.9242 (1.7000) & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 qEFTofGR & 6 & \dots & \dots & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 \hline
@@ -651,12 +652,12 @@ references from which we used the results from and the current best constraint
 %
 In the entries for cEFTofGR, the first entries in the $\delta
 \omega^{(i)}_{220}$, $\delta \tau^{(i)}_{220}$ are obtained by considering
-\emph{only parity-even corrections} and the second entries by considering
-\emph{only parity-odd corrections}. In these cases, the dimensionless parameters
-$\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
+only parity-even corrections and the second entries by considering
+only parity-odd corrections.
 %
-% \hs{Add a column with the constraint (if any) that we placed.}
-% \hs{TODO: add which runs are done and which need to be done.}
+In these cases, the dimensionless parameters $\lambda_{\rm e,o}$ are degenerate
+with the length scale $\ell$.
+%
 }
 \label{tab:ref_theories_qnms}
 \end{table*}
@@ -830,7 +831,7 @@ In practice, this can be quantified through the cumulative distribution function
 (CDF) associated to the marginalized posterior distribution $P(\ell)$,
 %
 \begin{equation}
-P(\ell \leqslant \ell') = \int_{-\infty}^{\,\ell'} P(\ell') \, \dd \ell'\,.
+P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} P(\ell') \, \dd \ell'\,.
 \label{eq:def_cdf}
 \end{equation}
 %
@@ -928,6 +929,38 @@ horizontal lines lay at 0.68 and 0.90.
 \subsubsection{Dynamical Chern-Simons}
 \label{sec:results_dcs}
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
+\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm CS}$ for
+GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+%
+In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
+in spin QNM correction.
+%
+We stress that posteriors obtained including $j=1$ corrections, violated conditions~\eqref{eq:parspec_bound}
+and therefore should not be used to draw meaningful conclusions. We show them for illustrative purposes
+and also to emphasize the importance of taking conditions~\eqref{eq:eft_bound} and~\eqref{eq:parspec_bound}
+simultaneously into consideration when analyzing the results of the parameter estimation.
+}
+\label{fig:dCS_exec_sum}
+\end{figure}
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
+\caption{(Color online).~The cumulative distribution function evaluated at the
+cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$ as a function of the parameter $\varepsilon$ for both
+$\gm = m_2$ (solid and dashed lines) and $\gm = M_{f}$ (dot-dashed and dotted lines) without
+(blue lines) and with (orange lines) linear-in-spin QNM corrections.
+The horizontal lines lay at 0.68 and 0.90.
+%
+We see that the CDF curves for $\gm = M_{f}$ are above 90\% for $\varepsilon =
+1/2$ for both events, with and without including the $j = 1$ dCS corrections to
+the dominant QNM.
+}
+\label{fig:dcs_cdf}
+\end{figure}
+
+
 We now turn our attention to dCS gravity.
 %
 In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
@@ -950,7 +983,7 @@ posterior peaks.
 Finally, in the bottom panel, we show the combined result for both events.
 
 In Fig.~\ref{fig:dcs_cdf} we show the cumulative distribution function (CDF) as
-evaluates with Eq.~\eqref{eq:def_cdf}, with $\ell' = \Lambda_{\rm EFT}$,
+evaluates with Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT}$,
 for both GW150914 (top panel) and GW200129 (bottom panel), where $\Lambda_{\rm EFT}$
 is calculated with either $\mathfrak{m} = m_2$ (blue curves) or $M_{f}$ (orange curves),
 and with $\varepsilon \in [0,\, 1]$.
@@ -961,15 +994,16 @@ $\varepsilon \approx 0.7$ (with both $j=0$ and $1$ corrections).
 %
 The situation is different if we use $\gm = M_f$. In this case, we find that
 with or without spin corrections that Eq.~\eqref{eq:eft_bound} can be satisfied
-with $\varepsilon \leq 1/2$, i.e., below the criteria used
+with $\varepsilon \leqslant 1/2$, i.e., below the criteria used
 Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
 %
 This means that with our model's assumptions and using the remnant's source mass $M_f$ to set the
 cut-off scale that we can claim an upper bound
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 46.5~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
-\quad \textrm{at 90\% credibility},
+\ell_{\rm CS} \leqslant 42.6~\textrm{km}
+% ~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
+\quad \textrm{(90\% credibility)},
 \end{equation}
 %
 on dCS gravity and would constitute the first bound on this theory with
@@ -979,111 +1013,126 @@ We also note that since the CDF grows fast in approximate domain $\varepsilon = 
 that a stronger, albeit at lower credibility,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 27.4~\textrm{km}~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
+\ell_{\rm CS} \leqslant 37.4~\textrm{km}
+% ~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
 \quad \textrm{at 68\% credibility},
 \end{equation}
 %
-can also be placed, when we include the $j=1$ QNM correction.
+can also be placed, when $j=0$.
 
 We can draw qualitatively similar conclusions from the GW200129 event.
 In particular, we find,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 43.9~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
-\quad \textrm{at 90\% credibility},
+\ell_{\rm CS} \leqslant 36.6~\textrm{km}
+% 43.9~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
+\quad \textrm{(90\% credibility)},
 \end{equation}
 %
 and
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 19.3~\textrm{km}~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
-\quad \textrm{at 68\% credibility},
+\ell_{\rm CS} \leqslant 29.1~\textrm{km}
+% ~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
+\quad \textrm{(68\% credibility)},
 \end{equation}
 %
-when we include the $j=1$ QNM correction.
-
-These slightly stronger bound are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
+when $j=0$.
+%
+These stronger bound are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
 for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
-the smaller median remmant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
+the smaller median remnant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm CS}$ for
-GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+We also found for both GW events, that the
+perturbative-conditions~\ref{eq:parspec_bound} imposed by the {\sc Parspec}
+formalism are violated for the $\gamma_{\rm CS} \delta \tau^{(1)}$ coefficient.
 %
-In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
-in spin QNM correction.
-}
-\label{fig:dCS_exec_sum}
-\end{figure}
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
-\caption{(Color online).~The cumulative distribution function evaluated at the cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$
-as a function of the parameter $\varepsilon$ for both $\gm = m_2$ (blue curves), the secondary's source mass,
-and $\gm = M_{f}$ (orange curves), the remnant's source mass, without (solid curve) and with (dashed curves)
-linear in spin QNM corrections. The horizontal lines lay at 0.68 and 0.90.
+This means that we cannot use these posterior to infer any meaningful bound on dCS gravity.
 %
-We see that the CDF at $\varepsilon = 1/2$ is approximately one when $\gm =
-M_{f}$ for both events, with and without including the $j = 1$ dCS corrections
-to the dominat QNM.
-}
-\label{fig:dcs_cdf}
-\end{figure}
+Now, since both event individually led to a bound on $\ell_{\rm CS}$ (assuming a cut-off scale for $\gm = M_{f}$
+and $j = 0$), we can combine the posteriors to obtain the cumulative bound,
+%
+\begin{equation}
+\ell_{\rm CS} \leqslant 34.5~\textrm{km}
+\quad \textrm{(90\% credibility)},
+\end{equation}
+%
+which is the main result of this section.
+%
+This bound is approximately a factor of four weaker than that placed by
+Ref.~\cite{Silva:2020acr}, but
+%
+(i) relies only on GW observations and
+%
+(ii) suggests that a ringdown analysis can potentially place constraints on
+theories which evade GW tests using inspiral information alone, such as the
+case of dCS gravity~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+%
+In Table~\ref{tab:summary_dcs} we summarize our findings of this section.
 
 \begin{table}[h]
 \begin{tabular}{l l c c c}
 \hline
 \hline
-Event & $j$ & Eq.~\eqref{eq:eft_bound}? & Eq.~\eqref{eq:parspec_bound}?  & Bound \\
+Event & $j$ & Eq.~\eqref{eq:eft_bound}? & Eq.~\eqref{eq:parspec_bound}?  & Bound ($\gm = M_{f}$) \\
 \hline
-GW150914 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant \dots$~km \\
+GW150914 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant 46.5$~km \\
 GW150914 & $j = 0, 1$ & Yes & No  & --                                 \\
-GW200129 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant \dots$~km \\
+GW200129 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant 43.9$~km \\
 GW200129 & $j = 0, 1$ & Yes & No  & --                                 \\
+Combined & $j = 0$    & Yes & Yes & \cellcolor{blue!10}$\ell_{\rm CS} \leqslant 34.5$~km \\
+Combined & $j = 0, 1$ & Yes & No  & --                                 \\
 \hline
 \hline
 \end{tabular}
-\caption{Detailed summary of our results for dCS gravity.
+\caption{Detailed summary of our results for dCS gravity for GW150914, GW200129, and
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
-We assume $\varepsilon = 1/2$.}
+We found that while our posteriors satisfy the condition~\eqref{eq:eft_bound} (with $\varepsilon = 1/2$),
+they do not obey the condition~\eqref{eq:parspec_bound} for $j = 1$. This means
+that our results for $j=0$ are the only ones we can confidently quote.
+%
+The combined bound, which is also quoted in Table~\ref{tab:ref_theories_qnms},
+is $\ell_{\rm CS} \leqslant 34.5$~km.
+}
+\label{tab:summary_dcs}
 \end{table}
 
 \subsubsection{Effective-field-theory of general relativity}
 \label{sec:results_efts}
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/dcs_GW200129.pdf}
-\caption{Posterior probability distribution on $\ell_{\rm CS}$ with GW200129.
-The posterior shows that information was gained on this parameter relative to
-the initial uniform prior distribution $\ell_{\rm CS} \in [0,\, 200]$~km.
+% \begin{figure}[t]
+% \includegraphics[width=\columnwidth]{figs/dcs_GW200129.pdf}
+% \caption{Posterior probability distribution on $\ell_{\rm CS}$ with GW200129.
+% The posterior shows that information was gained on this parameter relative to
+% the initial uniform prior distribution $\ell_{\rm CS} \in [0,\, 200]$~km.
+% %
+% The vertical lines represent two threshold for the validity of the theory as
+% an EFT.
+% %
+% The dotted line (labeled ``$m_2$'') at $\ell_{\rm CS} \approx 21.3$~km is
+% given by the median value of the secondary's mass $\varepsilon \, (G m_2 / c^2)$.
+% %
+% The dot-dashed line (labeled ``$M_{f}$'') at $\ell_{\rm CS} \approx 43.8$~km is
+% given by the median value of the remnant's mass $\varepsilon \, (G M_{f} / c^2)$.
+% %
+% For both, we used $\varepsilon = 0.5$.
+% %
+% If we take the latter as a length scale for the validity of dCS as an EFT, we
+% have place upper bound on $\ell_{\rm CS} \leqslant 43.8$~km, within the
+% approximation of our formalism.
+% }
+% \label{fig:dCS_bounds}
+% \end{figure}
 %
-The vertical lines represent two threshold for the validity of the theory as
-an EFT.
-%
-The dotted line (labeled ``$m_2$'') at $\ell_{\rm CS} \approx 21.3$~km is
-given by the median value of the secondary's mass $\varepsilon \, (G m_2 / c^2)$.
-%
-The dot-dashed line (labeled ``$M_{f}$'') at $\ell_{\rm CS} \approx 43.8$~km is
-given by the median value of the remnant's mass $\varepsilon \, (G M_{f} / c^2)$.
-%
-For both, we used $\varepsilon = 0.5$.
-%
-If we take the latter as a length scale for the validity of dCS as an EFT, we
-have place upper bound on $\ell_{\rm CS} \leqslant 43.8$~km, within the
-approximation of our formalism.
-}
-\label{fig:dCS_bounds}
-\end{figure}
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/dcs_gamma_GW200129.pdf}
-\caption{Posterior probability distribution on $\gamma_{\rm CS}$ with GW200129.
-The posterior shows that the parameter $\gamma$ [see Eq.~\eqref{eq:def_gamma}]
-in dynamical Chern-Simons has a peak at zero, indicating consistency with GR.
-}
-\label{fig:dCS_gamma_plot}
-\end{figure}
+% \begin{figure}[t]
+% \includegraphics[width=\columnwidth]{figs/dcs_gamma_GW200129.pdf}
+% \caption{Posterior probability distribution on $\gamma_{\rm CS}$ with GW200129.
+% The posterior shows that the parameter $\gamma$ [see Eq.~\eqref{eq:def_gamma}]
+% in dynamical Chern-Simons has a peak at zero, indicating consistency with GR.
+% }
+% \label{fig:dCS_gamma_plot}
+% \end{figure}
 
 %%%%%%%%%%%%%%%%%
 \section{Discussion}
@@ -1111,7 +1160,7 @@ how the QNM appear in the GW signal.}
 \label{sec:acknowledgements}
 %
 We thank Emanuele~Berti, Andrea~Maselli, Caio~F.~B.~Macedo, Deyan~Mihaylov,
-Serguei~Ossokine, and Helvi~Witek for discussions.
+Serguei~Ossokine, Scott~E.~Perkins, and Helvi~Witek for discussions.
 %
 We also thank the computational resources provided by the AEI, specifically the
 {\sc Hypatia} cluster and Steffen Grunewald for assistance.
