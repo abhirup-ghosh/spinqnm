@@ -655,8 +655,8 @@ In the entries for cEFTofGR, the first entries in the $\delta
 \emph{only parity-odd corrections}. In these cases, the dimensionless parameters
 $\lambda_{\rm e,o}$ are degenerate with the length scale $\ell$.
 %
-\hs{Add a column with the constraint (if any) that we placed.}
-\hs{TODO: add which runs are done and which need to be done.}
+% \hs{Add a column with the constraint (if any) that we placed.}
+% \hs{TODO: add which runs are done and which need to be done.}
 }
 \label{tab:ref_theories_qnms}
 \end{table*}
@@ -876,6 +876,7 @@ deformation parameters are small, i.e.,
 \gamma \, \delta \omega^{(j)} \ll 1 \,,
 \quad \textrm{and} \quad
 \gamma \, \delta \tau^{(j)} \ll 1 \,.
+\label{eq:parspec_bound}
 \end{equation}
 %
 for all $j$ of the expansion in dimensionless spin $\chi$.
@@ -916,8 +917,8 @@ in spin QNM correction.}
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The cumulative distribution function evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the parameter
-$\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source
-mass, and (orange curves) $m = M_{f}$, the remnant's source mass, without
+$\varepsilon$ for both (blue curves) $\gm = m_2$, the secondary's source
+mass, and (orange curves) $\gm = M_{f}$, the remnant's source mass, without
 (solid curve) and with (dashed curves) linear in spin QNM corrections. The
 horizontal lines lay at 0.68 and 0.90.
 }
@@ -1019,8 +1020,8 @@ in spin QNM correction.
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
 \caption{(Color online).~The cumulative distribution function evaluated at the cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$
-as a function of the parameter $\varepsilon$ for both (blue curves) $m = m_2$, the secondary's source mass,
-and (orange curves) $m = M_{f}$, the remnant's source mass, without (solid curve) and with (dashed curves)
+as a function of the parameter $\varepsilon$ for both $\gm = m_2$ (blue curves), the secondary's source mass,
+and $\gm = M_{f}$ (orange curves), the remnant's source mass, without (solid curve) and with (dashed curves)
 linear in spin QNM corrections. The horizontal lines lay at 0.68 and 0.90.
 %
 We see that the CDF at $\varepsilon = 1/2$ is approximately one when $\gm =
@@ -1030,6 +1031,23 @@ to the dominat QNM.
 \label{fig:dcs_cdf}
 \end{figure}
 
+\begin{table}[h]
+\begin{tabular}{l l c c c}
+\hline
+\hline
+Event & $j$ & Eq.~\eqref{eq:eft_bound}? & Eq.~\eqref{eq:parspec_bound}?  & Bound \\
+\hline
+GW150914 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant \dots$~km \\
+GW150914 & $j = 0, 1$ & Yes & No  & --                                 \\
+GW200129 & $j = 0$    & Yes & Yes & $\ell_{\rm CS} \leqslant \dots$~km \\
+GW200129 & $j = 0, 1$ & Yes & No  & --                                 \\
+\hline
+\hline
+\end{tabular}
+\caption{Detailed summary of our results for dCS gravity.
+%
+We assume $\varepsilon = 1/2$.}
+\end{table}
 
 \subsubsection{Effective-field-theory of general relativity}
 \label{sec:results_efts}
