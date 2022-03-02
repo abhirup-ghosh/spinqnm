@@ -150,6 +150,24 @@
 
 \hs{AB will do this.}
 
+% ---------------------------------------------------
+% Template. Complete when we have the main text done.
+% ---------------------------------------------------
+% This paper is organized as follows.
+% %
+% In Sec.~\ref{sec:review_theories} we present a short overview of the modified gravity theories
+% which we will consider and (if any) the current constraints on them.
+% %
+% In Sec.~\ref{sec:method} we review the two frameworks we combine in our work: the {\sc Parspec}
+% parametrization for the QNMs and the {\sc pSEOBNR} waveform model. We also explain how the
+% theory-specific QNM calculation can be mapped onto the theory-agnostic {\sc Parspec} framework.
+% %
+% In Sec.~\ref{sec:results} we explain how we carry ...
+% %
+% Finally, we present our conclusion in Sec.~\ref{sec:discussion} and point directions for future work.
+% %
+% Unless stated otherwise, we use geometrical unit $c = G = 1$.
+
 \section{Overview of modified gravity theories}
 \label{sec:review_theories}
 
@@ -609,9 +627,8 @@ where we made use of the numerical value of the coefficients $c_{i}$ and,
 reassuringly, the nonrotating and linear-in-spin coefficients above agree with those
 of~\cite{Maselli:2019mjd} to xx\%.
 %
-We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso}.
-%
-Doing so, we can make the identifications,
+We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso},
+whcih yields,
 %
 \begin{equation}
 p_{\rm CS} = 4\,, \quad \delta \omega^{(0)}_{\rm CS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm CS} = 41.199\,.
@@ -630,7 +647,7 @@ which completes the set of fixed parameters beyond-GR parameters in the ringdown
 We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and $\delta \tau_{\rm CS}^{(1)}$
 are compensated by the assumptions that $(\ell_{\rm CS} / M_f)^2$ and $\chi$ are much less than unity. These
 are the assumptions use to calculate the QNM frequencies both in Ref.~\cite{Wagle:2021tam} and also in
-other gravity considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
+other gravity theories considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
 %
 As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
 
@@ -644,9 +661,9 @@ which calculated the QNMs.
 \hline
 Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
 \hline
-EdGB      & 4 & 0.0107 & 0.0044 & \dots & \dots &  \cite{Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & \dots \\
-dCS      & 4 & 3.1964 & 6.3619 & \dots & \dots &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
-cEFTofGR & 4 & $-0.3680$ $(-0.5131)$  & 1.9242 (1.7000) & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
+EdGB      & 4 & 0.0107 & 0.0044 & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
+dCS       & 4 & 3.1964 & 6.3619 & 41.199 & 794.66 &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
+cEFTofGR  & 4 & $-0.3680$ $(-0.5131)$  & 1.9242 (1.7000) & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 % qEFTofGR & 6 & \dots & \dots & \dots & \dots & \cite{Cano:2021myl} & --  & \dots \\
 \hline
 \hline
@@ -872,9 +889,9 @@ deformation parameters are small, i.e.,
 \label{eq:parspec_bound}
 \end{equation}
 %
-for all $j$ of the expansion in dimensionless spin $\chi$.
+for all $j$ in the expansion in dimensionless spin $\chi$.
 %
-We will also construct posterior distributions on the parameters and check if
+We will also construct posterior distributions for these parameters and check if
 most of their support is concentrated to a domain with values much smaller than
 unity.
 
@@ -889,9 +906,9 @@ each event.
 % $\ell$ for both event GW150914 and GW200129.
 %
 To do so, we employ one of the approaches of Ref.~\cite{Perkins:2021mhb} which
-is based on obtaining a kernel density estimator (KDE) as an approximation for
-the posterior distribution on $\ell$ for each individual events. These are then
-multiplied together to yield the cumulative posterior.
+is relies on first obtaining a kernel density estimator (KDE) as an approximation for
+the posterior distribution on $\ell$ for each individual events. Next, we multiply
+these posteriors together to obtain the cumulative posterior.
 %
 (See also Refs.~\cite{DelPozzo:2011pg,Cardenas-Avendano:2019zxd,Carullo:2021dui}.)
 %
@@ -937,10 +954,36 @@ cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the p
 $\varepsilon$ for both (blue curves) $\gm = m_2$, the secondary's source
 mass, and (orange curves) $\gm = M_{f}$, the remnant's source mass, without
 (solid curve) and with (dashed curves) linear in spin QNM corrections. The
-horizontal lines lay at 0.68 and 0.90.
+horizontal lines lay at 0.68 and 0.90. We see that in no situation the curves pass
+through the 0.68 or 0.90 lines even at $\varepsilon = 1$. This means that no bound on $\ell_{\rm GB}$
+can be placed with the event we analyzed.
 }
 \label{fig:dcs_cdf}
 \end{figure}
+
+\begin{table}[h]
+\begin{tabular}{l l c c c}
+\hline
+\hline
+Event & $j$ & Eq.~\eqref{eq:eft_bound}? & Eq.~\eqref{eq:parspec_bound}?  & Bound ($\gm = M_{f}$) \\
+\hline
+GW150914 & $j = 0$    & No  & Yes & -- \\
+GW150914 & $j = 0, 1$ & No  & Yes & -- \\
+GW200129 & $j = 0$    & No  & Yes & -- \\
+GW200129 & $j = 0, 1$ & No  & Yes & -- \\
+Combined & $j = 0$    & --  & Yes & -- \\
+Combined & $j = 0, 1$ & --  & Yes & -- \\
+\hline
+\hline
+\end{tabular}
+\caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+%
+We conclude that we cannot place any constraint on $\ell_{\rm GB}$ with any of the GW events
+studied here.~\hs{TODO: update when completed.}
+}
+\label{tab:summary_edgb}
+\end{table}
 
 \subsubsection{Dynamical Chern-Simons}
 \label{sec:results_dcs}
@@ -1154,24 +1197,54 @@ is $\ell_{\rm CS} \leqslant 34.5$~km.
 % \end{figure}
 
 %%%%%%%%%%%%%%%%%
-\section{Discussion}
-\label{sec:discussion}
+\section{Conclusions}
+\label{sec:conclusions}
 %%%%%%%%%%%%%%%%%
 
-\hs{Try to draw some conclusions that apply to all theories.}
+% -------------------------------------------------------------
+% \hs{Try to draw some conclusions that apply to all theories.}
+% -------------------------------------------------------------
 
-\hs{I think an important message of the paper is that we give indication that
-there are theories of gravity (such as dCS) which can by-pass observational
-constraints from the inspiral phase alone, {\it yet} they do not, if we
-analyze the ringdown. This is quite important because I've frequently heard
-that the ``inspiral is what will constrain theories''. I think this might be
-the most important message.}
+We presented an unified framework to combine the parametrized formalism introduced
+to model deviations to the GR QNMs~\cite{Maselli:2019mjd} with the \pSEOB~waveform model.
+%
+We showed through concrete examples how theory-specific calculations QNM of
+slowly-rotating BHs in modified gravity theories can be mapped upon the
+theory-agnostic beyond-GR parameters of the {\sc ParSpec} formalism.
+%
+Together this allowed us to apply the \pSEOB~waveform model to test three
+modified gravity theories (EdGB, dCS and cubic EFTofGR) using real
+observational data from the GW events GW150914 and GW200129.
+%
+We found, in particular that, within the assumptions of our model and by
+stacking posteriors, that the coupling constant of dCS gravity is bound to
+$\ell_{\rm CS} \leqslant 34.5$~km.
+%
+In contrast, we could place any constraint of the coupling constants in EdGB gravity $\ell_{\rm GB}$.
+%
+This dichotomy between these theories has an analogy with works that considered the inspiral part of the GW signal alone.
+%
+There it is dCS which is unconstrained, while EdGB, in principle can be constrained, based on results for the closely
+related shift-symmetric version of this theory.
 
-\hs{Say that the fact we spin correction look important reinforces the
-importance of calculation QNMs of spinning black holes beyond-GR.}
+Our work shows that there are theories of gravity (such as dCS) which can by-pass observational
+constraints from the inspiral phase alone, {\it yet} would not, if we
+analyze the ringdown.
+%
+We hope that our result thus serve as additional motivation for future work
+modeling the late-inspiral, merger and ringdown of coalescing BHs in modified
+gravity theories.
 
-\hs{Say it is important to go beyond mode calculation and actually understand
-how the QNM appear in the GW signal.}
+Let us discuss some avenues for future work \dots
+
+
+% -----------------------------------------------------------------------------
+% \hs{Say that the fact we spin correction look important reinforces the
+% importance of calculation QNMs of spinning black holes beyond-GR.}
+%
+% \hs{Say it is important to go beyond mode calculation and actually understand
+% how the QNM appear in the GW signal.}
+% -----------------------------------------------------------------------------
 
 
 %%%%%%%%%%%%%%%%%
