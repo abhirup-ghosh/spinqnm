@@ -980,7 +980,7 @@ posteriors distribution on $\ell$, allowing us to place a stronger bound on this
 Let us review how do we calculate this \emph{cumulative posterior distribution} on $\ell$.
 
 % 1. Description of data and assumption o \ell being shared
-Suppose we have a set of $N$ GW events $\{d_{i}\}$ that are described by
+Suppose we have a data set $\{d_{i}\}$ of $N$ events which is described by
 model parameters $\bm{\lambda}_{i}$, where $i$ labels each event.
 %
 We assume that the value of the coupling constant $\ell$, given a specific theory,
@@ -993,7 +993,7 @@ data $\{d_{i}\}$, is
 %
 \begin{equation}
 P(\ell, \{\btheta_i\} | \{d_{i}\})
-= \frac{ P(\ell_i, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) }.
+= \frac{ P(\ell, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) }.
 \label{eq:def_joint_posterior}
 \end{equation}
 %
@@ -1008,24 +1008,25 @@ all parameters $\{ \btheta_i \}$, i.e.,
 \begin{align}
 P(\ell | \{d_i\}) &= \int \dd \{\btheta_i\} \, P(\ell, \{\btheta_i\} | \{d_{i}\}),
 \nonumber \\
-                  &= \int \dd \{\btheta_i\} \, \frac{ P(\ell_i, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) },
+                  &= \int \dd \{\btheta_i\} \, \frac{ P(\ell, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) },
 \nonumber \\
-                  &= \frac{P(\ell_i)}{P(\{d_i\})} \int \dd \{\btheta_i\} \, P(\{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ),
+                  &= \frac{P(\ell)}{P(\{d_i\})} \int \dd \{\btheta_i\} \, P(\{\btheta_i\}) \, P( \{d_i\} | \ell, \{\btheta_i\} ),
 \end{align}
 %
 where we have assumed that the prior on $\ell$, $P(\ell)$, is independent of
 the other parameters $\{\btheta_i\}$.
 %
-This allow us to factor $P(\lambda, \{\btheta_i\} = P(\ell) P(\{\btheta\})$
+This allow us to write $P(\ell, \{\btheta_i\} = P(\ell) P(\{\btheta_i\})$
 and then move $P(\ell)$ out of the integral
 %
 We also moved out integral the evidence $P(\{d_i\})$, which is a normalization constant.
 %
 % 4. Factor the integrals in a product due to statistical independence
-We can now factor the probabilities inside the integral, because each event is independent from one another:
+%
+We can now factor the probabilities inside the integral, since each event is independent from another:
 %
 \begin{equation}
-P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
+P(\ell | \{d_i\}) = \frac{P(\ell)}{P(\{d_i\})}
 \prod_{i=1}^{N}
 \int \dd \btheta_i \, P(\btheta_i) \, P( d_i | \ell_i, \btheta_i ).
 \end{equation}
@@ -1034,59 +1035,77 @@ P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
 We can now identify the integral as the marginalized likelihood for each individual event
 %
 \begin{equation}
-P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
+P(\ell | \{d_i\}) = \frac{P(\ell)}{P(\{d_i\})}
 \prod_{i=1}^{N} P( d_i | \ell_i ),
 \end{equation}
 %
-which we can rewritte as
+which we can rewrite as
 %
-\begin{equation}
-P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
-\prod_{i=1}^{N} \frac{P(d_i)}{P(\ell_i)} P(\ell_i | d_i).
+\begin{align}
+P(\ell | \{d_i\}) &= \frac{P(\ell)}{P(\{d_i\})}
+\prod_{i=1}^{N} \frac{P(d_i)}{P(\ell_i)} P(\ell_i | d_i)
+\nonumber \\
+&= P(\ell)
+\prod_{i=1}^{N} \frac{P(\ell_i | d_i)}{P(\ell_i)}.
 \label{eq:cumulative_dist_ell}
-\end{equation}
+\end{align}
 %
-using Bayes' theorem. This is our final result.
+by using Bayes' theorem in the first line and cancelling the evidences in the
+second line. This is our final result.
 
-In our parameter estimation studies, we found that depending on which event and
-on which theory we adopt for our parameter estimation, that we had to adjust
-the prior on $\ell$.
 %
-The reasons are twofold. First, we found that depending on the source parameters $\btheta$,
-certain large values of $\ell$ could result in unphysical waveforms in the frequency band we considered.
-For instance, they could feature a ringdown multiple times longer than the inspiral-merger part.
+\hs{Abhirup, maybe move this to the prior subsection?}
+In our parameter estimation runs that we had to adjust our prior on $\ell$ depending on which event and
+on which theory we examined.
 %
-Such waveform are perhaps not surprising since we are, by construction, adding corrections to the GR QNM
-which \emph{delay} its damping.
+The reasons are twofold.
 %
+% Describe problem 1
 %
-In practice, we found these edge cases were problematic to deal with \texttt{LALInferenceMCMC}.
+First, we found that depending on the source parameters $\btheta$,
+large values of $\ell$ could result in unphysical waveforms in the frequency
+band we considered. More specifically, these waveforms have a ringdown which is
+considerable longer than the inspiral-merger part in the detector frequency band.
 %
-We addressed this issue, by reducing the prior range on $\ell$, which does not pose a problem to our parameter
-estimation runs because these edge-case waveforms differ grossly from the true signal and thus have
-negligible likelihood
+The fact that our sampled over these waveforms is perhaps not surprising,
+because, after all, we are by construction adding corrections to the GR QNM
+which \emph{increase} the damping timescale.
+%
+In practice, we found that these edge-cases were problematic to deal with
+\texttt{LALInferenceMCMC}.
+%
+We overcome this problem, we reduced the prior upper-value of our prior on $\ell$.
+%
+This choice does not pose a problem to our parameter estimations, because these
+waveforms differ grossly from the data and thus have negligible likelihood.
+%
+% Describe problem 2
 %
 However, we cannot reduce the prior on $\ell$ too much. If we do so,
-to the individual posterior to rail against the prior and to result in GW
-waveform which are physical.
+to the marginalized posterior distribution on $\ell$ would rail against
+the prior or, in a more extreme case, even be a uninformative, flat posterior.
+%
+% Summary
 %
 Altogether, this means that the priors $P(\ell)$ are not shared between events and
 they must be taken into account when calculation the cumulative posterior function~\eqref{eq:cumulative_dist_ell}.
 
-To do so, we employ one of the approaches of Ref.~\cite{Perkins:2021mhb} which
-is relies on first obtaining a kernel density estimator (KDE) as an approximation for
-the posterior distribution on $\ell$ for each individual events. Next, we multiply
-these posteriors together to obtain the cumulative posterior.
+Finally, we use one of the approaches of Ref.~\cite{Perkins:2021mhb} to
+compute the product in Eq.~\eqref{eq:cumulative_dist_ell}.
+%
+It method relies on first obtaining a kernel density estimator (KDE) for
+the posterior distribution on $\ell$ for each individual event.
+%
+Next, we multiply these posteriors according to Eq.~\eqref{eq:cumulative_dist_ell}.
 %
 (See also Refs.~\cite{DelPozzo:2011pg,Cardenas-Avendano:2019zxd,Carullo:2021dui}.)
 %
-This method can have difficulties in dealing with hard cut-offs in the
+This approach based on the KDE can have difficulties in dealing with hard cut-offs in the
 distribution, such as the one we impose at $\ell = 0$. We address this issue as
 done in Ref.~\cite{Perkins:2021mhb}, by first doubling our number of samples as
 $\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
 %
-We then renormalize the associated KDE numerically in the range $\ell = [0,
-\infty]$.
+We then renormalize the associated KDE numerically in the range $\ell = [0, \infty]$.
 
 \subsection{Results}
 
