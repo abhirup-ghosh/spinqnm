@@ -462,8 +462,6 @@ Also,
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
 
-
-
 In this section we describe the waveform model used in our paper to measure properties of a BBH ringdown. As in \cite{Brito:2018rfr,Ghosh:2021mrv}, we use an inspiral-(plunge)-merger-ringdown (IMR) BBH waveform model where the parameters describing the remnant object are left additionally free and estimated directly from the data.
 
 The GW signal from a BBH merger can be determined in GR by a unique set of parameters -- the masses and spins of the two BHs, $(m_1,\, m_2,\, \vec{s}_1,\, \vec{s}_2)$, the sky location determined by the luminosity distance $d_L$, right ascension $\alpha$ and declination $\delta$, and the orientation of the binary given by the inclination and polarisation angles, $(\iota, \psi)$. The set is completed by the choice of a reference time and phase, $(t_0,\, \phi_0)$. If we further assume that the spins of the individual BHs are restricted to be parallel to the orbital angular momentum, then we reduce the 6 components of spin to just 2, $(\chi_1, \chi_2)$ and our entire parameter set from 15 to 11. We define some additional parameters and set some conventions that will be useful in our analysis later, namely, the totat mass $M=m_1+m_2$, the chirp mass $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$, the asymmetric mass ratio $q=m_1/m_2$ with the convention $m_1 \geqslant m_2; q \geqslant 1$ and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$.
@@ -524,7 +522,6 @@ $\{\delta \tau_k^{(j)}\}$, where $j$ ranges from zero to the power of spin in Eq
 up to which we include corrections.
 %
 For example, if we restrict ourselves to corrections in the $j=0$, or $\chi_f^0$, terms for just the $k=(2,2,0)$ mode, then we would just have two additional degrees of freedom, $(\delta \omega_0^{(0)}, \delta \tau_0^{(0)})$. In this paper, we would restrict ourselves to corrections to the $j=0$ and $j=1$ terms, i.e., leading and next-to-leading order corrections to the spin, $\chi_f$.
-%
 
 Using this parameterized waveform model, which we will call $\pSEOB$ in this paper, we infer bounds on our beyond-GR parameters for specific cases of modified gravity theories outlined in Sec.~\ref{sec:review_theories}. We detail these results in Sec.~\ref{sec:results}.
 %
@@ -568,8 +565,6 @@ only $\gamma$, which in turn contains information about the length scale $\ell$.
 %
 It is important to emphasize that our procedure is different from that of Ref.~\cite{Carullo:2021dui}
 which, for a given value of $p$, varied all $\ell$, $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ parameters.
-%
-% As we will see later, our theory-informed approach can result to stronger constraints to certain modified ....
 
 As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating BHs
 is modified gravity theories come in two families depending on their transformation upon a parity
@@ -582,11 +577,14 @@ connect it with the transverse-traceless gauge used to described GWs (see e.g.~R
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
 QNM we use to model the ringdown makes no difference.
 %
-In beyond-GR theories, isospectrality is in general broken (see the discussion in Ref.~\cite{Hui:2021cpm} for a counterexample).
-and thus how axial and polar gravitational QNMs appear in the GW signal has to be answered in theory-by-theory.
+In beyond-GR theories, isospectrality is in general broken (see the discussion
+in Ref.~\cite{Hui:2021cpm} for a counterexample). and thus how axial and polar
+gravitational QNMs appear in the GW signal has to be answered in
+theory-by-theory.
 %
-This is outside the scope of this paper and here we take the more pragmatic approach
-of simply choosing the \emph{least damped gravitational mode between the two parities.}
+This is outside the scope of this paper and here we take the more pragmatic
+approach of simply choosing the \emph{least damped gravitational mode between
+the two parities.}
 %
 The justification is this is the mode which, if excited during the merger, is
 the most likely to appear in the signal.
@@ -778,7 +776,14 @@ function~(PDF) on $\ell$. An example of this is shown in Fig. XX.
 
 The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the z-components~\footnote{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.} The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
 
-Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)}\}$, as already mentioned in the previous section, we would mostly hold $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions allowing only $\ell$ to freely vary. For such cases, we assume a prior uniform between appropriate ranges on $\ell$, making sure that our marginalized posterior distributions on $\ell$ do not rail over the maximum prior value on $\ell$.
+Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)}\}$,
+as already mentioned in the previous section, we hold $\{\delta \omega_k^{(j)}\},$
+and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions allowing only $\ell$
+to freely vary.
+%
+For such cases, we assume a prior uniform between appropriate ranges on $\ell$,
+making sure that our marginalized posterior distributions on $\ell$ do not rail
+over the maximum prior value on $\ell$.
 
 
 \subsubsection{Event selection}
@@ -961,6 +966,8 @@ We then renormalize the associated KDE numerically in the range $\ell = [0,
 \infty]$.
 
 \subsection{Results}
+
+\hs{Quote 90\% credibility results.}
 
 % -----------------
 % Explain threshold
