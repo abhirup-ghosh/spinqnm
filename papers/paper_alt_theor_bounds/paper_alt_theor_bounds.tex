@@ -1,4 +1,14 @@
-\documentclass[twocolumn,prd,aps,superscriptaddress,preprintnumbers,tightenlines,showpacs,nofootinbib,amsfonts,amsmath,longbibliography]{revtex4-1}
+\documentclass[twocolumn,
+               prd,
+               aps,
+               superscriptaddress,
+               tightenlines,
+               nofootinbib,
+               eqsecnum,
+               amsfonts,
+               amsmath,
+               longbibliography]{revtex4-1}
+
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -782,7 +792,7 @@ detector.
 %
 Assuming a specific prior distribution for our parameters, we stochastically
 sample over the parameter space using a \texttt{LALInference} Markov-Chain
-Monte Carlo algorithm~\cite{lalsuite}.
+Monte Carlo algorithm~\cite{Rover:2006ni,vanderSluys:2008qx,Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
 posterior probability distribution function~(PDF) on $\ell$.
@@ -941,9 +951,11 @@ yield to different interpretations of the results of our parameter estimations.
 
 There is a second criteria we must also consider.
 %
-As already emphasized in Ref.~\cite{Maselli:2019mjd}, the {\sc Parspec}
+As already emphasized in Ref.~\cite{Maselli:2019mjd}, the {\sc ParSpec}
 formalism is by construction perturbative. This means that the non-GR
-deformation parameters are small, i.e.,
+deformation parameters are small, that is,
+% $\gamma \, \delta \omega^{(j)} \ll 1$ and
+% $\gamma \, \delta \tau^{(j)} \ll 1$
 %
 \begin{equation}
 \gamma \, \delta \omega^{(j)} \ll 1 \,,
@@ -965,7 +977,7 @@ If we find that our posterior obey both conditions~\eqref{eq:eft_bound}
 and~\eqref{eq:parspec_bound}, we combine individual posteriors on $\ell$ from
 each event.
 
-Suppose we have a set of $N$ GW signals $\{D_{i}\}$, described by the ...
+Suppose we have a set of $N$ GW detections $\{D_{i}\}$ described by model parameters $\bm{\lambda}$.
 %
 % When possible, we also combine the marginalized posterior distribution on
 % $\ell$ for both event GW150914 and GW200129.
