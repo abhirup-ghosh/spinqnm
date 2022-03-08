@@ -464,9 +464,10 @@ Also,
 
 In this section we describe the waveform model used in our paper to measure properties of a BBH ringdown. As in \cite{Brito:2018rfr,Ghosh:2021mrv}, we use an inspiral-(plunge)-merger-ringdown (IMR) BBH waveform model where the parameters describing the remnant object are left additionally free and estimated directly from the data.
 
-The GW signal from a BBH merger can be determined in GR by a unique set of parameters -- the masses and spins of the two BHs, $(m_1,\, m_2,\, \vec{s}_1,\, \vec{s}_2)$, the sky location determined by the luminosity distance $d_L$, right ascension $\alpha$ and declination $\delta$, and the orientation of the binary given by the inclination and polarisation angles, $(\iota, \psi)$. The set is completed by the choice of a reference time and phase, $(t_0,\, \phi_0)$. If we further assume that the spins of the individual BHs are restricted to be parallel to the orbital angular momentum, then we reduce the 6 components of spin to just 2, $(\chi_1, \chi_2)$ and our entire parameter set from 15 to 11. We define some additional parameters and set some conventions that will be useful in our analysis later, namely, the totat mass $M=m_1+m_2$, the chirp mass $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$, the asymmetric mass ratio $q=m_1/m_2$ with the convention $m_1 \geqslant m_2; q \geqslant 1$ and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$.
+The GW signal from a BBH merger can be determined in GR by a unique set of parameters $\bm{\theta}$, that
+includes the masses and spins of the two BHs, $(m_1,\, m_2,\, \vec{s}_1,\, \vec{s}_2)$, the sky location determined by the luminosity distance $d_L$, right ascension $\alpha$ and declination $\delta$, and the orientation of the binary given by the inclination and polarization angles, $(\iota, \psi)$. The set is completed by the choice of a reference time and phase, $(t_0,\, \phi_0)$. If we further assume that the spins of the individual BHs are restricted to be parallel to the orbital angular momentum, then we reduce the 6 components of spin to just 2, $(\chi_1, \chi_2)$ and our entire parameter set from 15 to 11. We define some additional parameters and set some conventions that will be useful in our analysis later, namely, the totat mass $M=m_1+m_2$, the chirp mass $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$, the asymmetric mass ratio $q=m_1/m_2$ with the convention $m_1 \geqslant m_2; q \geqslant 1$ and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$.
 
-The polarisations of the GW signal (in the observer's frame) are,
+The polarization of the GW signal (in the observer's frame) are,
 %
 \begin{equation}
 h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{l, m} {}_{-\!2}Y_{l m}(\iota,\varphi_0)\, h_{l m}(t)\,,
@@ -728,21 +729,34 @@ theorem,
 %
 \begin{equation}
 P(\bm{\lambda} \vert d, \mathcal{H}) =
-\frac{P(\bm{\lambda} \vert \mathcal{H}) P(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
+\frac{P(\bm{\lambda} \vert \mathcal{H}) \, P(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
 \label{eq:bayes}
 \end{equation}
 %
 where $P(\bm{\lambda} \vert d, \mathcal{H})$ is the posterior probability distribution,
 $P(\bm{\lambda} \vert \mathcal{H})$ the prior,
 $P(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
-$P(d \vert \mathcal{H})$ the evidence. The set of parameters, $\bm{\lambda}$, detailed in Sec.~\ref{sec:review_pSEOB}
-include the set of beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}, \delta \tau_k^{(j)}\}$.
+$P(d \vert \mathcal{H})$ the evidence.
 %
-As discussed in Secs.~\ref{sec:review_theories} and \ref{sec:theory_specific_qnm}, there is a single coupling
-constants in the cases of EdGB and dCS theories, but two in the cubic and
-quartic EFTofGR. We also hold the other beyond-GR parameters, $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$
-fixed to theory-specific predictions. Hence, our set of beyond--GR parameters only includes the parameter $\{\ell \}$.
+The set of parameters, $\bm{\lambda}$ is the union between the GR waveform
+model parameters~$\bm{\theta}$, detailed in Sec.~\ref{sec:review_pSEOB}, and
+the non-GR parameter of $\ell$, i.e.,
 %
+\begin{equation}
+\bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
+\end{equation}
+%
+which, we recall, set the characteristic lengthscale in which deviations from
+GR become relevant in each of the theories described in
+Sec.~\ref{sec:review_theories}.
+
+% As discussed in Secs.~\ref{sec:review_theories} and \ref{sec:theory_specific_qnm}, there is a single coupling
+% constants in the cases of EdGB and dCS theories, but two in the cubic and
+% quartic EFTofGR.
+% %
+% We also hold the other beyond-GR parameters, $\{\delta \omega_k^{(j)}\},$ and $\{\delta \tau_k^{(j)}\}$
+% fixed to theory-specific predictions. Hence, our set of beyond--GR parameters only includes the parameter $\{\ell \}$.
+% %
 
 Assuming Gaussian and stationary noise, we can write the (log) likelihood function as,
 %
@@ -768,9 +782,12 @@ detector.
 %
 Assuming a specific prior distribution for our parameters, we stochastically
 sample over the parameter space using a \texttt{LALInference} Markov-Chain
-Monte Carlo algorithm.~\cite{lalsuite}. We subsequently marginalize over the
-remaining parameters to obtain the posterior probability distribution
-function~(PDF) on $\ell$. An example of this is shown in Fig. XX.
+Monte Carlo algorithm~\cite{lalsuite}.
+%
+We subsequently marginalize over the remaining parameters to obtain the
+posterior probability distribution function~(PDF) on $\ell$.
+%
+An example of this is shown in Fig. XX.
 
 \subsubsection{Priors}
 
@@ -946,6 +963,8 @@ unity.
 If we find that our posterior obey both conditions~\eqref{eq:eft_bound}
 and~\eqref{eq:parspec_bound}, we combine individual posteriors on $\ell$ from
 each event.
+
+Suppose we have a set of $N$ GW signals $\{D_{i}\}$, described by the ...
 %
 % When possible, we also combine the marginalized posterior distribution on
 % $\ell$ for both event GW150914 and GW200129.
