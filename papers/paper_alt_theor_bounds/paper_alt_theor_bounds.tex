@@ -23,7 +23,6 @@
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
 \usepackage[colorlinks]{hyperref}
 \usepackage[caption=false]{subfig}
-\usepackage{booktabs}
 \usepackage{url}
 \usepackage{float}
 \usepackage[bottom]{footmisc}
@@ -32,8 +31,7 @@
 \usepackage{makecell}
 \usepackage{microtype}
 
-
-\usepackage{tikz}
+% \usepackage{tikz}
 
 % -----------
 % Bibligraphy
@@ -49,11 +47,8 @@
     \immediate\write\@auxout{\string\citation{apsrev41Control}}%
     \fi
 }
+% -----------
 
-
-\definecolor{LinkColor}{rgb}{0.75, 0, 0}
-\definecolor{CiteColor}{rgb}{0, 0.5, 0.5}
-\definecolor{UrlColor}{rgb}{0, 0, 0.75}
 \definecolor{rred}{RGB}{218,41,28}
 \hypersetup{linkcolor=NavyBlue}
 \hypersetup{citecolor=NavyBlue}
@@ -131,15 +126,11 @@
 % HS: temporary title. Feel free to add suggestions
 \title{Black-hole ringdown as a probe of higher-curvature gravity theories}
 
-\author{Hector O. Silva}
-\author{Abhirup Ghosh}
-\AEI
-\author{Alessandra Buonanno}
-\AEI
-\UMD
+\author{Hector O. Silva}     \AEI
+\author{Abhirup Ghosh}       \AEI
+\author{Alessandra Buonanno} \AEI \UMD
 
 \date{\today}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
@@ -151,12 +142,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \maketitle
-% \tableofcontents
 
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{sec:intro}
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 
 \hs{AB will do this.}
 
@@ -178,8 +168,10 @@
 % %
 % Unless stated otherwise, we use geometrical unit $c = G = 1$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview of modified gravity theories}
 \label{sec:review_theories}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % We will consider several modified gravity theories as applications of the \pSEOB{}
 % waveform model presented in Sec.~\ref{sec:review_pSEOB}.
@@ -424,9 +416,10 @@ space studied in~\cite{Sennett:2019bpc}.
 % $\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
 
 
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
 \section{Methods}
 \label{sec:method}
+%%%%%%%%%%%%%%%%%%
 
 \subsection{The parametrized ringdown spin expansion coefficients formalism}
 \label{sec:review_parspec}
@@ -718,9 +711,10 @@ with the length scale $\ell$.
 % the {\sc Parspec} implementation of each theory and give credit to the papers
 % which calculated the QNMs.}
 
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results using LIGO-Virgo events}
 \label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this section, we provide a basic outline of the Bayesian formalism we use to
 infer the properties of the underlying GW signal, identify the most promising
@@ -870,11 +864,16 @@ multiple events to obtain the strongest possible bound on $\ell$.
 % -----------------
 
 As a first test ...
+\hs{Move to an appendix.}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/tmp_corner_plot.pdf}
-\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$ and remnant mass $M_f$
-in our non-GR parameter estimation run is consistent with an equivalent GR run.~\hs{Complete.}}
+\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
+detector-frame remnant mass $M_f$, and redshift $z$ for GW150915, using the same waveform model,
+but without (blue contours) and with the non-GR parameters different from zero (orange contours, for
+dCS gravity and $j=0$). The contours represent 90\% credible regions.
+%
+We see that the introduction of the non-GR parameters does not bias the inference on the source parameters.}
 \label{fig:corner_plot}
 \end{figure}
 
@@ -1387,10 +1386,10 @@ is $\ell_{\rm CS} \leqslant 34.5$~km.
 % \label{fig:dCS_gamma_plot}
 % \end{figure}
 
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 \label{sec:conclusions}
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
 
 % -------------------------------------------------------------
 % \hs{Try to draw some conclusions that apply to all theories.}
