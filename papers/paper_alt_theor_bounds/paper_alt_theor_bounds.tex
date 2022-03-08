@@ -754,6 +754,7 @@ the non-GR parameter of $\ell$, i.e.,
 %
 \begin{equation}
 \bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
+\label{eq:def_params}
 \end{equation}
 %
 which, we recall, set the characteristic lengthscale in which deviations from
@@ -791,8 +792,9 @@ complex conjugation and $S_{n}(f)$ is the power spectrum density of the
 detector.
 %
 Assuming a specific prior distribution for our parameters, we stochastically
-sample over the parameter space using a \texttt{LALInference} Markov-Chain
-Monte Carlo algorithm~\cite{Rover:2006ni,vanderSluys:2008qx,Veitch:2014wba,lalsuite}.
+sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
+\texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx},
+which is part of \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
 posterior probability distribution function~(PDF) on $\ell$.
@@ -954,8 +956,6 @@ There is a second criteria we must also consider.
 As already emphasized in Ref.~\cite{Maselli:2019mjd}, the {\sc ParSpec}
 formalism is by construction perturbative. This means that the non-GR
 deformation parameters are small, that is,
-% $\gamma \, \delta \omega^{(j)} \ll 1$ and
-% $\gamma \, \delta \tau^{(j)} \ll 1$
 %
 \begin{equation}
 \gamma \, \delta \omega^{(j)} \ll 1 \,,
@@ -973,15 +973,106 @@ unity.
 \subsubsection{Stacking posteriors}
 \label{sec:stack}
 
-If we find that our posterior obey both conditions~\eqref{eq:eft_bound}
-and~\eqref{eq:parspec_bound}, we combine individual posteriors on $\ell$ from
-each event.
+If, for each event, we find that the constraints~\eqref{eq:eft_bound}
+and~\eqref{eq:parspec_bound} are satisfied, we further combine the individual
+posteriors distribution on $\ell$, allowing us to place a stronger bound on this parameter.
+%
+Let us review how do we calculate this \emph{cumulative posterior distribution} on $\ell$.
 
-Suppose we have a set of $N$ GW detections $\{D_{i}\}$ described by model parameters $\bm{\lambda}$.
+% 1. Description of data and assumption o \ell being shared
+Suppose we have a set of $N$ GW events $\{d_{i}\}$ that are described by
+model parameters $\bm{\lambda}_{i}$, where $i$ labels each event.
 %
-% When possible, we also combine the marginalized posterior distribution on
-% $\ell$ for both event GW150914 and GW200129.
+We assume that the value of the coupling constant $\ell$, given a specific theory,
+is common to all events.
 %
+% 2. Define joint posterior
+%
+The joint posterior for the parameters $\bm{\lambda}_{i}$, that describe the
+data $\{d_{i}\}$, is
+%
+\begin{equation}
+P(\ell, \{\btheta_i\} | \{d_{i}\})
+= \frac{ P(\ell_i, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) }.
+\label{eq:def_joint_posterior}
+\end{equation}
+%
+where we separated $\ell$ from the GR waveform model parameters $\btheta$ [cf.~Eq.~\eqref{eq:def_params}].
+%
+% 3. Marginalisation to obtain the cumulative posterior
+%
+To obtain the cumulative posterior distribution on $\ell$, we marginalize
+the joint posterior~\eqref{eq:def_joint_posterior} over
+all parameters $\{ \btheta_i \}$, i.e.,
+%
+\begin{align}
+P(\ell | \{d_i\}) &= \int \dd \{\btheta_i\} \, P(\ell, \{\btheta_i\} | \{d_{i}\}),
+\nonumber \\
+                  &= \int \dd \{\btheta_i\} \, \frac{ P(\ell_i, \{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ) }{ P(\{d_i\}) },
+\nonumber \\
+                  &= \frac{P(\ell_i)}{P(\{d_i\})} \int \dd \{\btheta_i\} \, P(\{\btheta_i\}) \, P( \{d_i\} | \ell_i, \{\btheta_i\} ),
+\end{align}
+%
+where we have assumed that the prior on $\ell$, $P(\ell)$, is independent of
+the other parameters $\{\btheta_i\}$.
+%
+This allow us to factor $P(\lambda, \{\btheta_i\} = P(\ell) P(\{\btheta\})$
+and then move $P(\ell)$ out of the integral
+%
+We also moved out integral the evidence $P(\{d_i\})$, which is a normalization constant.
+%
+% 4. Factor the integrals in a product due to statistical independence
+We can now factor the probabilities inside the integral, because each event is independent from one another:
+%
+\begin{equation}
+P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
+\prod_{i=1}^{N}
+\int \dd \btheta_i \, P(\btheta_i) \, P( d_i | \ell_i, \btheta_i ).
+\end{equation}
+%
+% 5. Final formula
+We can now identify the integral as the marginalized likelihood for each individual event
+%
+\begin{equation}
+P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
+\prod_{i=1}^{N} P( d_i | \ell_i ),
+\end{equation}
+%
+which we can rewritte as
+%
+\begin{equation}
+P(\ell | \{d_i\}) = \frac{P(\ell_i)}{P(\{d_i\})}
+\prod_{i=1}^{N} \frac{P(d_i)}{P(\ell_i)} P(\ell_i | d_i).
+\label{eq:cumulative_dist_ell}
+\end{equation}
+%
+using Bayes' theorem. This is our final result.
+
+In our parameter estimation studies, we found that depending on which event and
+on which theory we adopt for our parameter estimation, that we had to adjust
+the prior on $\ell$.
+%
+The reasons are twofold. First, we found that depending on the source parameters $\btheta$,
+certain large values of $\ell$ could result in unphysical waveforms in the frequency band we considered.
+For instance, they could feature a ringdown multiple times longer than the inspiral-merger part.
+%
+Such waveform are perhaps not surprising since we are, by construction, adding corrections to the GR QNM
+which \emph{delay} its damping.
+%
+%
+In practice, we found these edge cases were problematic to deal with \texttt{LALInferenceMCMC}.
+%
+We addressed this issue, by reducing the prior range on $\ell$, which does not pose a problem to our parameter
+estimation runs because these edge-case waveforms differ grossly from the true signal and thus have
+negligible likelihood
+%
+However, we cannot reduce the prior on $\ell$ too much. If we do so,
+to the individual posterior to rail against the prior and to result in GW
+waveform which are physical.
+%
+Altogether, this means that the priors $P(\ell)$ are not shared between events and
+they must be taken into account when calculation the cumulative posterior function~\eqref{eq:cumulative_dist_ell}.
+
 To do so, we employ one of the approaches of Ref.~\cite{Perkins:2021mhb} which
 is relies on first obtaining a kernel density estimator (KDE) as an approximation for
 the posterior distribution on $\ell$ for each individual events. Next, we multiply
