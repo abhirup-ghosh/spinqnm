@@ -873,7 +873,10 @@ detector-frame remnant mass $M_f$, and redshift $z$ for GW150915, using the same
 but without (blue contours) and with the non-GR parameters different from zero (orange contours, for
 dCS gravity and $j=0$). The contours represent 90\% credible regions.
 %
-We see that the introduction of the non-GR parameters does not bias the inference on the source parameters.}
+We see that the introduction of the non-GR parameters does not bias the inference on the source parameters.
+%
+\hs{TODO: increase font size and move it to an Appendix.}
+}
 \label{fig:corner_plot}
 \end{figure}
 
@@ -1053,7 +1056,7 @@ by using Bayes' theorem in the first line and cancelling the evidences in the
 second line. This is our final result.
 
 %
-\hs{Abhirup, maybe move this to the prior subsection?}
+\hs{Abhirup, maybe move this to the subsection on priors?}
 In our parameter estimation runs that we had to adjust our prior on $\ell$ depending on which event and
 on which theory we examined.
 %
@@ -1108,7 +1111,7 @@ We then renormalize the associated KDE numerically in the range $\ell = [0, \inf
 
 \subsection{Results}
 
-\hs{Quote 90\% credibility results.}
+\hs{Convention: us 90\% credibility for the final bounds.}
 
 % -----------------
 % Explain threshold
@@ -1366,6 +1369,30 @@ in spin QNM correction.
 \label{fig:cEFT_exec_sum}
 \end{figure}
 
+\begin{table}[h]
+\begin{tabular}{l l c c c}
+\hline
+\hline
+Event & $j$ & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
+      &     & bound? & bound?  &                            \\
+\hline
+GW150914 & $j = 0$    &     &     &    \\
+GW150914 & $j = 0, 1$ &     &     &    \\
+GW200129 & $j = 0$    &     &     &    \\
+GW200129 & $j = 0, 1$ &     &     &    \\
+Combined & $j = 0$    &     &     &    \\
+Combined & $j = 0, 1$ &     &     &    \\
+\hline
+\hline
+\end{tabular}
+\caption{Detailed summary of our results the cubic EFT of GR for GW150914, GW200129, and
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+%
+\hs{TODO: update when completed.}
+}
+\label{tab:summary_ceft}
+\end{table}
+
 \subsubsection{quartic effective-field-theory of general relativity}
 \label{sec:results_qeft}
 
@@ -1381,6 +1408,30 @@ in spin QNM correction.
 }
 \label{fig:qEFT_exec_sum}
 \end{figure}
+
+\begin{table}[h]
+\begin{tabular}{l l c c c}
+\hline
+\hline
+Event & $j$ & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
+      &     & bound? & bound?  &                            \\
+\hline
+GW150914 & $j = 0$    &     &     &    \\
+GW150914 & $j = 0, 1$ &     &     &    \\
+GW200129 & $j = 0$    &     &     &    \\
+GW200129 & $j = 0, 1$ &     &     &    \\
+Combined & $j = 0$    &     &     &    \\
+Combined & $j = 0, 1$ &     &     &    \\
+\hline
+\hline
+\end{tabular}
+\caption{Detailed summary of our results the quartic EFT of GR for GW150914, GW200129, and
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+%
+\hs{TODO: update when completed.}
+}
+\label{tab:summary_qeft}
+\end{table}
 
 % \begin{figure}[t]
 % \includegraphics[width=\columnwidth]{figs/dcs_GW200129.pdf}
@@ -1431,9 +1482,9 @@ We showed through concrete examples how theory-specific calculations QNM of
 slowly-rotating BHs in modified gravity theories can be mapped upon the
 theory-agnostic beyond-GR parameters of the {\sc ParSpec} formalism.
 %
-Together this allowed us to apply the \pSEOB~waveform model to test three
-modified gravity theories (EdGB, dCS and cubic EFTofGR) using real
-observational data from the GW events GW150914 and GW200129.
+Together this allowed us to apply the \pSEOB~waveform model to test four
+modified gravity theories (EdGB, dCS, cubic, and quartic
+effective-field-theories of GR) using data from the GW events GW150914 and GW200129.
 %
 We found, in particular that, within the assumptions of our model and by
 stacking posteriors, that the coupling constant of dCS gravity is bound to
