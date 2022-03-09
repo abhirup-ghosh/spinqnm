@@ -737,10 +737,8 @@ with the length scale $\ell$.
 % the {\sc Parspec} implementation of each theory and give credit to the papers
 % which calculated the QNMs.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results using LIGO-Virgo events}
-\label{sec:results}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\section{Parameter Inference}
 
 In this section, we provide a basic outline of the Bayesian formalism we use to
 infer the properties of the underlying GW signal, identify the most promising
@@ -748,10 +746,7 @@ events from the catalog of GW observations to base our analyses on, and discuss
 the key insights they provide in constraining predictions of modified gravity
 theories.
 
-%%%%%%%%%%%%%%%%%
-\subsection{Parameter Inference}
-
-\subsubsection{Bayesian formalism}
+\subsection{Bayesian formalism}
 If we assume that a GW signal observed in detector data $d$ is accurately
 described by our waveform model \pSEOB{}, we can infer the parameters of the
 model, $\bm{\lambda}$, given the hypothesis $\mathcal{H}$, using the Bayes
@@ -821,7 +816,7 @@ posterior probability distribution function~(PDF) on $\ell$.
 %
 An example of this is shown in Fig. XX.
 
-\subsubsection{Priors}
+\subsection{Priors}
 
 The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
 This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.
@@ -838,7 +833,7 @@ making sure that our marginalized posterior distributions on $\ell$ do not rail
 over the maximum prior value on $\ell$.
 
 
-\subsubsection{Event selection}
+\subsection{Event selection}
 
 The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an
 \emph{IMR} model which infers the properties of the underlying GW signal,
@@ -910,7 +905,7 @@ We see that the introduction of the non-GR parameters does not bias the inferenc
 \end{figure}
 
 
-\subsubsection{General remarks on the interpretation of our results}
+\subsection{General remarks on the interpretation of our results}
 \label{sec:remaks}
 
 There are two conditions that we must take into account before
@@ -1001,7 +996,7 @@ We will also construct posterior distributions for these parameters and check if
 most of their support is concentrated to a domain with values much smaller than
 unity.
 
-\subsubsection{Stacking posteriors}
+\subsection{Stacking posteriors}
 \label{sec:stack}
 
 If, for each event, we find that the constraints~\eqref{eq:eft_bound}
@@ -1138,7 +1133,11 @@ $\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
 %
 We then renormalize the associated KDE numerically in the range $\ell = [0, \infty]$.
 
-\subsection{Results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results using LIGO-Virgo events}
+\label{sec:results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \hs{Convention: us 90\% credibility for the final bounds.}
 
@@ -1153,7 +1152,7 @@ We then renormalize the associated KDE numerically in the range $\ell = [0, \inf
 % We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
 % }
 
-\subsubsection{Einstein-dilaton-Gauss-Bonnet}
+\subsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
 
 \begin{figure}[t]
@@ -1206,7 +1205,7 @@ studied here.~\hs{TODO: update when completed.}
 \label{tab:summary_edgb}
 \end{table}
 
-\subsubsection{Dynamical Chern-Simons}
+\subsection{Dynamical Chern-Simons}
 \label{sec:results_dcs}
 
 \begin{figure}[t]
@@ -1382,7 +1381,7 @@ is $\ell_{\rm CS} \leqslant 34.5$~km.
 \label{tab:summary_dcs}
 \end{table}
 
-\subsubsection{cubic effective-field-theory of general relativity}
+\subsection{cubic effective-field-theory of general relativity}
 \label{sec:results_ceft}
 
 \begin{figure}[t]
@@ -1422,7 +1421,7 @@ combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% c
 \label{tab:summary_ceft}
 \end{table}
 
-\subsubsection{quartic effective-field-theory of general relativity}
+\subsection{quartic effective-field-theory of general relativity}
 \label{sec:results_qeft}
 
 \begin{figure}[t]
