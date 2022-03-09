@@ -439,28 +439,54 @@ The formalism modifies the Kerr quasinormal mode frequency as
 %
 where the $J$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
 
-Further expand the Kerr expression as:
+We expand the Kerr expression as:
 %
 \begin{subequations}
-\begin{align}
-\omega_{J} &= (1/M) \sum_{j = 0}^{N} \, \chi^{j} \omega^{(j)}_{k} \, \left( 1 + \gamma \delta \omega^{(j)}_{k} \right), \\
-\tau_{J}   &= M     \sum_{j = 0}^{N} \, \chi^{j} \tau^{(j)}_{k}   \, \left( 1 + \gamma \delta \tau^{(j)}_{k} \right),
-\end{align}
 \label{eq:kerr_expansion}
+\begin{align}
+\omega_{J} &= \frac{1}{M} \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \omega^{(n)}_{J} \, \left( 1 + \gamma \delta \omega^{(n)}_{J} \right), \\
+\tau_{J}   &= M     \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \tau^{(n)}_{J}   \, \left( 1 + \gamma \delta \tau^{(n)}_{J} \right),
+\end{align}
 \end{subequations}
-
-Also,
+%
+where $M$ and $\chi$ are the detector-frame mass and dimensionless spin of the
+remnant black hole; $\omega_{K}^{n}$, $\tau_{K}^{n}$ are dimensionless coefficients
+of the spin expansion for Kerr QNMs; $\delta\omega_{K}^{n}$, $\delta\tau_{K}^{n}$ are
+source-independent dimensionless coefficients that characterize the corrections to the Kerr QNM at each spin-order;
+and finally $N_{\rm max}$ is the order of the spin expansion.
+%
+All source dependence on the beyond-GR modification is encapsulated in the dimensionless
+parameter $\gamma$,
 %
 \begin{equation}
 \gamma
 %
-= \frac{\ell^{p}}{M_{\rm s}^{p}}
+= \left(\frac{\ell}{M_{\rm s}}\right)^{p}
 %
 = \left[
 \frac{\ell c^2 (1 + z)}{G M}
 \right]^{p}
 \label{eq:def_gamma}
 \end{equation}
+%
+which depends on the parameter $\ell$, with dimensions of lenght, which sets the
+lenghtscale in which beyond-GR modification become important and the exponent $p$
+which is related to how the beyond-GR modifications are included to the Einstein-Hilbert action.
+%
+In Eq.~\eqref{eq:def_gamma} we made $\ell$ dimensionless by the other
+lenghtscale associated to the remnant black hole, i.e., its source-frame mass
+$M_{\rm s}$, which we can also in terms of the detector-frame mass $M$ through
+a the redshift $z$.
+
+In principle, a modification to GR would also affect $M$ and $\chi$ and the expansion should be written
+in terms of non-GR mass and spin, say $\bar{M}$ and $\bar{\chi}$. If we assume that the beyond-GR corrections
+are included perturbatively, the modifications to the BH mass and spin can be absorved into the deviations
+parameters $\delta\omega$ and $\delta\tau$.
+%
+This means we can identify the $M$ and $\chi$ with their corresponding GR values.
+
+\hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
+\hs{TODO: say that we check a posteriori if our PE runs agree with this.}
 
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
@@ -797,7 +823,10 @@ An example of this is shown in Fig. XX.
 
 \subsubsection{Priors}
 
-The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the z-components~\footnote{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.} The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
+The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
+This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.
+%
+The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
 
 Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)}\}$,
 as already mentioned in the previous section, we hold $\{\delta \omega_k^{(j)}\},$
@@ -1098,9 +1127,9 @@ compute the product in Eq.~\eqref{eq:cumulative_dist_ell}.
 It method relies on first obtaining a kernel density estimator (KDE) for
 the posterior distribution on $\ell$ for each individual event.
 %
-Next, we multiply these posteriors according to Eq.~\eqref{eq:cumulative_dist_ell}.
-%
 (See also Refs.~\cite{DelPozzo:2011pg,Cardenas-Avendano:2019zxd,Carullo:2021dui}.)
+%
+Next, we multiply these posteriors according to Eq.~\eqref{eq:cumulative_dist_ell}.
 %
 This approach based on the KDE can have difficulties in dealing with hard cut-offs in the
 distribution, such as the one we impose at $\ell = 0$. We address this issue as
@@ -1492,10 +1521,12 @@ $\ell_{\rm CS} \leqslant 34.5$~km.
 %
 In contrast, we could place any constraint of the coupling constants in EdGB gravity $\ell_{\rm GB}$.
 %
-This dichotomy between these theories has an analogy with works that considered the inspiral part of the GW signal alone.
+This dichotomy between these theories has an analogy with works that considered
+the inspiral part of the GW signal alone.
 %
-There it is dCS which is unconstrained, while EdGB, in principle can be constrained, based on results for the closely
-related shift-symmetric version of this theory.
+In that case, it is dCS which is unconstrained, while EdGB, in principle can be
+constrained, based on results for the closely related shift-symmetric version
+of this theory.
 
 Our work shows that there are theories of gravity (such as dCS) which can by-pass observational
 constraints from the inspiral phase alone, {\it yet} would not, if we
