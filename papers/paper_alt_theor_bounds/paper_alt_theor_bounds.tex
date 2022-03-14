@@ -424,20 +424,22 @@ space studied in~\cite{Sennett:2019bpc}.
 \subsection{The parametrized ringdown spin expansion coefficients formalism}
 \label{sec:review_parspec}
 
-% \hs{HS will do this.}
-% \hs{Here we briefly review~\cite{Maselli:2019mjd,Carullo:2021dui}.}
-
-The formalism modifies the Kerr quasinormal mode frequency as
+We start by reviewing the parametrized ringdown spin expansion coefficients formalism (ParSpec)
+introduced in Ref.~\cite{Maselli:2019mjd}, but following some of the notation of Ref.~\cite{Carullo:2021dui}.
+%
+The formalism modifies the Kerr quasinormal mode frequency $\omega_{J}^{\rm K}$ and
+damping time $\tau_{J}^{\rm K}$ as
 %
 \begin{subequations}
+\label{eq:general_deviation}
 \begin{align}
 \omega_{J} &= \omega^{\rm K}_{J} \, (1 + \delta \omega_{J}), \\
 \tau_{J}   &= \tau^{\rm K}_{J}   \, (1 + \delta \tau_{J}),
 \end{align}
-\label{eq:general_deviation}
 \end{subequations}
 %
-where the $J$ collectively represents the QNM labels $\{l,\, m,\, n\}$.
+where the $J$ collectively represents the QNM labels $\{l,\, m,\, n\}$, where $l$ is
+the , $m$ and $n$ the ove
 
 We expand the Kerr expression as:
 %
@@ -685,7 +687,7 @@ other gravity theories considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
 As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
 
 In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
-the {\sc ParSpec} implementation of each theory and give credit to the papers
+the ParSpec implementation of each theory and give credit to the papers
 which calculated the QNMs.
 
 \begin{table*}[th]
@@ -696,7 +698,7 @@ Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta
 \hline
 EdGB      & 4 & 0.0107 & 0.0044 & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
 dCS       & 4 & 3.1964 & 6.3619 & 41.199 & 794.66 &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
-cEFT  & 4 & -0.5813  & 1.3234 & \dots & \dots & \cite{Cano:2021myl} & \dots  & \dots \\
+cEFT  & 4 & -0.5813  & 2.6469 & -3.8620 & 265.12 & \cite{Cano:2021myl} & \dots  & \dots \\
 qEFT  & 6 & \dots  & \dots & \dots & \dots & \cite{Cano:2021myl} & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & \dots \\
 \hline
 \hline
@@ -709,11 +711,6 @@ oscillation frequency $\delta \omega^{(i)}_{220}$ and decay time $\delta \tau^{(
 references from which we used the results from and the current best constraint
 (if applicable).
 %
-% In the entries for cEFTofGR, the first entries in the $\delta
-% \omega^{(i)}_{220}$, $\delta \tau^{(i)}_{220}$ are obtained by considering
-% only parity-even corrections and the second entries by considering
-% only parity-odd corrections.
-%
 In these cases, the dimensionless parameters $\lambda_{\rm e,o}$ are degenerate
 with the length scale $\ell$.
 %
@@ -721,21 +718,6 @@ with the length scale $\ell$.
 \label{tab:ref_theories_qnms}
 \end{table*}
 
-% \hs{We {\it must very explicitly} state our working hypothesis here:
-% %
-% \begin{itemize}
-%     \item That we include only the nonrotating, non-GR correction to the QNMs.
-%     \item That due to absence of isospectrality, when translating to the theory specific result,
-%     we {\it chose} to use the lowest damping, gravitational QNM of the theory.
-% \end{itemize}
-% %
-% We can come back to these in the Sec.~\ref{sec:discussion} as things that we
-% might want to revisit in the future.
-% }
-
-% \hs{In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
-% the {\sc Parspec} implementation of each theory and give credit to the papers
-% which calculated the QNMs.}
 
 %%%%%%%%%%%%%%%%%
 \section{Parameter Inference}
@@ -979,7 +961,7 @@ yield to different interpretations of the results of our parameter estimations.
 
 There is a second criteria we must also consider.
 %
-As already emphasized in Ref.~\cite{Maselli:2019mjd}, the {\sc ParSpec}
+As already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
 formalism is by construction perturbative. This means that the non-GR
 deformation parameters are small, that is,
 %
@@ -1251,7 +1233,7 @@ Perhaps the most salient feature of these posteriors is that they are not
 peaked at $\ell_{\rm CS}$, which may mislead us to believe that we are seeing a
 deviation from GR. This is not the case.
 %
-We must remember that in the {\sc ParSpec} formalism that the GR deviations
+We must remember that in the ParSpec formalism that the GR deviations
 are controlled by $\gamma \, \delta \omega^{(j)}$~and~$\gamma \, \delta \tau^{(j)}$.
 We verified that these quantities do indeed peak at zero indicating consistency with GR.
 %
@@ -1324,7 +1306,7 @@ for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}),
 the smaller median remnant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
 
 We also found for both GW events, that the
-perturbative-conditions~\eqref{eq:parspec_bound} required by the {\sc ParSpec}
+perturbative-conditions~\eqref{eq:parspec_bound} required by the ParSpec
 formalism is violated for the $\gamma_{\rm CS} \, \delta \tau^{(1)}$ coefficient.
 %
 This means that we cannot use these posterior to infer any meaningful bound on dCS gravity
@@ -1508,7 +1490,7 @@ to model deviations to the GR QNMs~\cite{Maselli:2019mjd} with the \pSEOB~wavefo
 %
 We showed through concrete examples how theory-specific calculations QNM of
 slowly-rotating BHs in modified gravity theories can be mapped upon the
-theory-agnostic beyond-GR parameters of the {\sc ParSpec} formalism.
+theory-agnostic beyond-GR parameters of the ParSpec formalism.
 %
 Together this allowed us to apply the \pSEOB~waveform model to test four
 modified gravity theories (EdGB, dCS, cubic, and quartic
