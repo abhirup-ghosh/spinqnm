@@ -677,31 +677,32 @@ BHs is modified gravity theories come in two families depending on their
 transformation upon a parity transformation: axial and polar. Which is the one
 we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
-To answer this question one has to work on a theory-by-theory case and in each
-theory perform a translation between the metric perturbations $h_{\mu\nu}$ in
-the Regger-Wheeler-Zerilli gauge and connect it with the transverse-traceless
-gauge used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
+To answer this question one has to work with a chosen theory and perform a
+translation between the metric perturbations $h_{\mu\nu}$ in the
+Regger-Wheeler-Zerilli gauge and connect it with the transverse-traceless gauge
+used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
 %
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
 QNM we use to model the ringdown makes no difference.
 %
 In beyond-GR theories, isospectrality is in general broken (see the discussion
-in Ref.~\cite{Hui:2021cpm} for a counterexample). and thus how axial and polar
-gravitational QNMs appear in the GW signal has to be answered in
-theory-by-theory.
+in Ref.~\cite{Hui:2021cpm} for a counterexample).
+%
+Thus, how axial and polar gravitational QNMs appear in the GW signal has to be
+answered on theory-by-theory basis.
 %
 This is outside the scope of this paper and here we take the more pragmatic
 approach of simply choosing the \emph{least damped gravitational mode between
 the two parities.}
 %
-The justification is this is the mode which, if excited during the merger, is
+The justification is this is the mode (if excited during the merger) which is
 the most likely to appear in the signal.
 
 We performed the mapping between theory-specific QNM calculation and the ParSpec framework
 under the hypothesis above for the theories listed in Sec.~\ref{sec:review_theories}.
 %
-We leave the details of our calculation to Appendix~\ref{app:map_details} and
-summarize our result in Table~\ref{tab:ref_theories_qnms}.
+We summarize our result in Table~\ref{tab:ref_theories_qnms} and
+leave the details of our calculations to Appendix~\ref{app:map_details}.
 
 \begin{table}[t]
 \begin{tabular}{c | c c c c c c}
@@ -726,8 +727,23 @@ references from which we used the results from.
 \label{tab:ref_theories_qnms}
 \end{table}
 
-In Fig.~\ref{fig:example_waveform} we show an illustrative waveform for the case of the cubic EFT
-of gravity include the leading-order $n = 0$ deformations to the fundamental QNM.
+In Fig.~\ref{fig:example_waveform} we show an illustrative waveform for GR (solid line; using the \texttt{SEOBNR} model) and in the cubic EFT of gravity (dashed line; using the \pSEOB{} model),
+including the leading-order $n = 0$ deformations to the fundamental QNM (see Table~\ref{tab:ref_theories_qnms}).
+%
+We chose binary parameters similar to GW150914, consisting of a quasicircular,
+nonspinning binary with detector-frame masses
+$m_1^{\rm dec} = 39\msun$ and $m_2^{\rm dec} = 31\msun$.
+%
+The top panel shows the $+$ polarization of the GW $h_{+}$ in both theories,
+while the bottom panel shows the amplitude $|h| = \sqrt{h_{+}^2 + h_{\times}^2}$
+and instantaneous frequency $f$, all as functions of time $t$.
+%
+The signal are identical up to the merger, after which they differ during the ringdown.
+%
+By construction, the ringdown is lasts longer for the cubic EFT of GR waveform and
+with a smaller instantaneous frequency (see the bottom panel) due to the negative value of the
+$\delta\omega^{(0)}$ coefficient in this theory.
+
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
@@ -1567,6 +1583,8 @@ gravity theories.
 
 Let us discuss some avenues for future work \dots
 
+\hs{I suspect that by construction the $N_{\rm max} = 1$ will fail to satisfy our
+perturbative bounds. If so, add explanation here.}
 
 % -----------------------------------------------------------------------------
 % \hs{Say that the fact we spin correction look important reinforces the
