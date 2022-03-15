@@ -150,23 +150,20 @@
 
 \hs{AB will do this.}
 
-% ---------------------------------------------------
-% Template. Complete when we have the main text done.
-% ---------------------------------------------------
-% This paper is organized as follows.
-% %
-% In Sec.~\ref{sec:review_theories} we present a short overview of the modified gravity theories
-% which we will consider and (if any) the current constraints on them.
-% %
-% In Sec.~\ref{sec:method} we review the two frameworks we combine in our work: the {\sc Parspec}
-% parametrization for the QNMs and the {\sc pSEOBNR} waveform model. We also explain how the
-% theory-specific QNM calculation can be mapped onto the theory-agnostic {\sc Parspec} framework.
-% %
-% In Sec.~\ref{sec:results} we explain how we carry ...
-% %
-% Finally, we present our conclusion in Sec.~\ref{sec:discussion} and point directions for future work.
-% %
-% Unless stated otherwise, we use geometrical unit $c = G = 1$.
+\begin{table}[th]
+\begin{tabular}{c | c c}
+\hline \hline
+Theory & Constraint & This work \\
+\hline
+EdGB        & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
+dCS         & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
+cubic EFT   & \dots & \dots \\
+quartic EFT & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & \dots \\
+\hline \hline
+\end{tabular}
+\caption{\hs{Mention it in the Introduction later, in a sort of `executive summary'.}}
+\label{tab:bound_summary}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview of modified gravity theories}
@@ -428,26 +425,26 @@ We start by reviewing the parametrized ringdown spin expansion coefficients (Par
 framework introduced in Ref.~\cite{Maselli:2019mjd}, but following
 some of the notation used in Ref.~\cite{Carullo:2021dui}.
 
-A general procedure to describe deviations from the Kerr QNM frequencies $\omega_{J}^{\rm K}$ and
-damping times $\tau_{J}^{\rm K}$ is to write,
+A general procedure to describe deviations from the Kerr QNM frequencies $\omega_{k}^{\rm Kerr}$ and
+damping times $\tau_{k}^{\rm Kerr}$ is to write,
 %
 \begin{subequations}
 \label{eq:general_deviation}
 \begin{align}
-\omega_{J} &= \omega^{\rm K}_{J} \, (1 + \delta \omega_{J}), \\
-\tau_{J}   &= \tau^{\rm K}_{J}   \, (1 + \delta \tau_{J}),
+\omega_{k} &= \omega^{\rm Kerr}_{k} \, (1 + \delta \omega_{k}), \\
+\tau_{k}   &= \tau^{\rm Kerr}_{k}   \, (1 + \delta \tau_{k}),
 \end{align}
 \end{subequations}
 %
-where $\delta\omega_{J}$ and $\delta\tau_{J}$ are the deformation parameters.
+where $\delta\omega_{k}$ and $\delta\tau_{k}$ are the deformation parameters.
 %
-Here we use the subscript $J$ to represent the QNM labels $\{l,\, m,\, n\}$,
+Here we use the subscript $k$ to represent the QNM labels $\{l,\, m,\, n\}$,
 where $l$ and $m$ are the multipole indices, and $n$ the overtone number.
 %
 This approach was adopted, e.g., in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
 
-A caveat of the parametrizations of the form~\eqref{eq:general_deviation}, is that
-$\delta\omega_{J}$ and $\delta\tau_{J}$ depend, in general, on the BH's source mass and spin.
+A caveat of parametrizations of the form~\eqref{eq:general_deviation}, is that
+$\delta\omega_{k}$ and $\delta\tau_{k}$ depend, in general, on the BH's source mass and spin.
 %
 Ideally, one would like to explicitly reinstate the dependence the source-frame
 BH mass and spin for it would
@@ -465,14 +462,14 @@ spin, namely
 \begin{subequations}
 \label{eq:kerr_expansion}
 \begin{align}
-\omega_{J} &= \frac{1}{M} \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \omega^{(n)}_{J} \, \left( 1 + \gamma \delta \omega^{(n)}_{J} \right), \\
-\tau_{J}   &= M     \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \tau^{(n)}_{J}   \, \left( 1 + \gamma \delta \tau^{(n)}_{J} \right),
+\omega_{k} &= \frac{1}{M} \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \omega^{(n)}_{k} \, \left( 1 + \gamma \delta \omega^{(n)}_{k} \right), \\
+\tau_{k}   &= M     \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \tau^{(n)}_{k}   \, \left( 1 + \gamma \delta \tau^{(n)}_{k} \right),
 \end{align}
 \end{subequations}
 %
 where $M$ and $\chi$ are the detector-frame mass and dimensionless spin of the
-black hole; $\omega_{K}^{n}$, $\tau_{K}^{n}$ are dimensionless coefficients
-of the spin expansion for Kerr QNMs; $\delta\omega_{K}^{n}$, $\delta\tau_{K}^{n}$ are
+black hole; $\omega_{k}^{n}$, $\tau_{k}^{n}$ are dimensionless coefficients
+of the spin expansion for Kerr QNMs; $\delta\omega_{k}^{(n)}$, $\delta\tau_{k}^{(n)}$ are
 source-independent dimensionless coefficients that characterize the corrections to the Kerr QNM at each spin-order;
 and finally $N_{\rm max}$ is the order of the spin expansion.
 %
@@ -507,11 +504,11 @@ parameters $\delta\omega$ and $\delta\tau$.
 %
 This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}.
 
-We remark that in the GR limit, where $\delta\omega_{J}^{(n)} = \delta\tau_{J}^{(n)} = 0$ $\forall\, n$,
+We remark that in the GR limit, where $\delta\omega_{k}^{(n)} = \delta\tau_{k}^{(n)} = 0$ $\forall\, n$,
 the series~\eqref{eq:kerr_expansion} truncated at $N_{\rm max} = 4$, reproduces with 1\% accuracy
 the Kerr QNMs for spins $\chi \lesssim 0.7$.
 %
-The values of the fitting coefficients $\omega_{J}^{(n)}$ and $\tau_{J}^{(n)}$
+The values of the fitting coefficients $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$
 can be found in Ref.~\cite{Maselli:2019mjd}, Table I.
 
 % \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
@@ -537,7 +534,7 @@ where ${}_{-\!2}Y_{l m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical h
 h_{l m}(t) = h_{l m}^\mathrm{insp-plunge}\, \theta(t_\mathrm{match}^{l m} - t) + h_{l m}^\mathrm{merger-RD}\,\theta(t-t_\mathrm{match}^{l m})\,,
 \end{equation}
 %
-where $\theta(t)$ is the Heaviside step function. The merger-ringdown waveform is expressed as an exponentially damped sinusoid ~\citep{Bohe:2016gbl,Cotesta:2018fcv,Mihaylov:2021bpf}
+where $\theta(t)$ is the Heaviside step function. The merger-ringdown waveform is expressed as an exponentially damped sinusoid~\citep{Bohe:2016gbl,Cotesta:2018fcv,Mihaylov:2021bpf}
 %
 \begin{equation}
 \label{RD}
@@ -552,37 +549,71 @@ where
 &= \omega_{l m 0} - i / \tau_{l m 0}\,,
 \end{align}
 %
-are the complex frequencies of the fundamental (n=0 overtone) QNMs of the remnant BH. The frequencies $\omega_{l m 0}$ and damping times $\tau_{l m 0}$ of the $(l, m)$ QNM can be read off from the real and imaginary parts of  $\sigma_{l m0}$ respetively. The functions $\tilde{A}_{l m}(t)$ and $\tilde{\phi}_{l m}(t)$ are defined in~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
+are the complex frequencies of the fundamental ($n=0$ overtone) QNMs of the remnant BH.
+%
+The frequencies $\omega_{l m 0}$ and damping times $\tau_{l m 0}$ of the $(l,
+m)$ QNM can be read off from the real and imaginary parts of $\sigma_{l m 0}$
+respectively.
+%
+The functions $\tilde{A}_{l m}(t)$ and $\tilde{\phi}_{l m}(t)$ are defined in~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
 
 In the $\SEOB$ model~\cite{Mihaylov:2021bpf}, the complex frequencies $\sigma_{l m 0}$ are computed by first determining the final mass and spin from estimates of the initial masses and spins through NR--fitting--formulas~\cite{Taracchini:2013rva,Hofmann:2016yih} and then converting them to the complex frequencies using BH perturbation theory--inspiral analytical fits outlined in~\cite{Berti:2005ys,Berti:2009kk}. Hence,
-
+%
 \begin{subequations}
-\begin{eqnarray}
-\omega_{l m 0}^{\text{GR}} &=& \omega_{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,\\
-\tau _{l m 0}^{\text{GR}} &=& \tau _{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,.
-\end{eqnarray}
+\begin{align}
+\omega_{l m 0}^{\text{GR}} &= \omega_{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,\\
+\tau _{l m 0}^{\text{GR}} &= \tau _{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,.
+\end{align}
 \end{subequations}
-where $(\omega_{l m 0}^{\text{GR}}, \tau _{l m 0}^{\text{GR}} )$ refer to the QNM predictions in baseline \SEOB{} model.  In this paper, however, we introduce a completely different expression of the QNM frequencies $(\omega_{l m 0}, \tau _{l m 0})$, as a series expansion on the spin of the remnant object $\chi_f$ [see Eqs.~\eqref{eq:kerr_expansion}].  For the rest of the paper, in keeping with the conventions introduced in Sec.~\ref{sec:review_parspec}, we are going to use the index $k$ to refer to $(l, m,n=0)$ mode. Accordingly, we are going to use $(\omega_k, \tau _k)$ to refer to $(\omega_{l m 0}, \tau _{l m 0})$ respectively.
+%
+where $(\omega_{l m 0}^{\text{GR}}, \tau_{l m 0}^{\text{GR}} )$ refer to the
+QNM predictions in baseline \SEOB{} model.
+%
+In this paper, however, we introduce a completely different expression of the
+QNM frequencies $(\omega_{l m 0}, \tau_{l m 0})$, as a series expansion on the
+spin of the remnant object $\chi_f$ [see Eqs.~\eqref{eq:kerr_expansion}].
+%
+For the rest of the paper, in keeping with the conventions introduced in
+Sec.~\ref{sec:review_parspec}, we are going to use the index $k$ to refer to
+$(l, m,n=0)$ mode. Accordingly, we are going to use $(\omega_k, \tau _k)$ to
+refer to $(\omega_{l m 0}, \tau _{l m 0})$ respectively.
 
 In this formalism our QNM frequencies are expressed through functions,
 %
 \begin{subequations}
 \begin{align}
-\omega_k &= \omega_k(m_1, m_2, \chi_1, \chi_2,\ell, \{\delta \omega_k^{(j)}\})\\
-\tau_k   &= \tau _k(m_1, m_2, \chi_1, \chi_2, \ell, \{\delta \tau_k^{(j)}\})
+\omega_k &= \omega_k(m_1, m_2, \chi_1, \chi_2,\ell, \{\delta \omega_k^{(j)}\}),\\
+\tau_k   &= \tau _k(m_1, m_2, \chi_1, \chi_2, \ell, \{\delta \tau_k^{(j)}\}),
 \end{align}
 \end{subequations}
 %
-where the estimates of $(m_1,\, m_2,\, \chi_1,\, \chi_1)$ are used to predict the final mass and spin $(M_f,\, \chi_f)$ through~\cite{Taracchini:2013rva,Hofmann:2016yih}.
+where we fixed a certain value of $p$, and the estimates of $(m_1,\, m_2,\, \chi_1,\, \chi_1)$ are used to predict
+the final mass and spin $(M_f,\, \chi_f)$ through~\cite{Taracchini:2013rva,Hofmann:2016yih}.
+%
+% HS: we implicitly fixed p here. Could we leave it free in PE study. This is similar
+% to the 'number of dimensions'-like studies. Here it would tells us quite generically
+% what is the dimension of the modification to the EH-action we include!
 %
 Additionally, $(\omega_k,\, \tau_k)$ depend on the coupling constant $\ell$
-defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta \omega_k^{(j)}\},$ and
-$\{\delta \tau_k^{(j)}\}$, where $j$ ranges from zero to the power of spin in Eqs.~\eqref{eq:kerr_expansion}
-up to which we include corrections.
+defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta
+\omega_k^{(n)}\},$ and $\{\delta \tau_k^{(n)}\}$, where $n$ ranges from zero to
+the power of spin in Eqs.~\eqref{eq:kerr_expansion} up to which we include
+corrections.
 %
-For example, if we restrict ourselves to corrections in the $j=0$, or $\chi_f^0$, terms for just the $k=(2,2,0)$ mode, then we would just have two additional degrees of freedom, $(\delta \omega_0^{(0)}, \delta \tau_0^{(0)})$. In this paper, we would restrict ourselves to corrections to the $j=0$ and $j=1$ terms, i.e., leading and next-to-leading order corrections to the spin, $\chi_f$.
+For example, if we restrict ourselves to corrections with $n=0$, or
+$\chi_f^0$, to the $k=(2,2,0)$ mode only, then we would just have two
+additional parameters, $(\delta \omega_0^{(0)}, \delta \tau_0^{(0)})$.
+%
+In this paper, we will restrict ourselves to corrections to the $n=0$ and
+$n=1$ terms, i.e., leading and next-to-leading order corrections to the spin,
+$\chi_f$.
 
-Using this parameterized waveform model, which we will call $\pSEOB$ in this paper, we infer bounds on our beyond-GR parameters for specific cases of modified gravity theories outlined in Sec.~\ref{sec:review_theories}. We detail these results in Sec.~\ref{sec:results}.
+Using this parameterized waveform model, which we will call $\pSEOB$ in this
+paper, we infer bounds on our beyond-GR parameters for specific cases of
+modified gravity theories outlined in Sec.~\ref{sec:review_theories}. We detail
+these results in Sec.~\ref{sec:results}.
+%
+\hs{Should we call this waveform differently to distinguish it from your previous papers?}
 %
 %In this paper, we will restrict ourselves to the $k=(2,2,0)$ QNM and corrections to the $j=0$ and $j=1$ terms, i.e., leading and next-to-leading order corrections to the spin, $\chi_f$. Assuming a prior which is uniform on the beyond-GR parameters, $(\ell, \{\delta \omega_k^{(j)}\},\{\delta \tau_k^{(j)}\})$, we employ a Bayesian framework to stochastically sample over the parameter space using the \texttt{LALInference} algorithm.~\cite{lallsuite}.
 %
@@ -597,44 +628,59 @@ Using this parameterized waveform model, which we will call $\pSEOB$ in this pap
 Let us now establish the connection between theory-agnostic framework of the
 $\pSEOB$ waveform model and the theory-specific QNM calculations.
 %
-We begin by expanding $\omega$ and $\tau$, given by Eqs.~\eqref{eq:kerr_expansion} as,
+We begin by rewriting $\omega_{k}$ and $\tau_{k}$, given by Eqs.~\eqref{eq:kerr_expansion} as,
 %
 \begin{subequations}
 \label{eq:qnm_nongr_iso}
 \begin{align}
-M \omega_{220} &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
+M \omega_{k} &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
 + \sum_{n=0}^{N_{\rm max}} \chi^{j} \omega^{j}\,,
 \\
-\tau_{220}/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
-+ \sum_{n=0}^{N_{\rm max}} \chi^{j} \tau^{j}\,,
+\tau_{k}/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
++ \sum_{n=0}^{N_{\rm max}} \chi^{(n)} \tau^{(n)}\,,
 \end{align}
 \end{subequations}
 %
 We will work exclusively with the $\ell = m = 2$ and $n = 0$ (fundamental mode)
-QNM in this work, that is, $J = \{2,\, 2,\, 0\}$, and we  have pulled out of
-the sum all beyond-GR corrections, restricting ourselves to the nonspinning
-($n=0$) and linear-order in spin ($n=1$) corrections to the Kerr QNMs.
+QNM, i.e., $k = \{2,\, 2,\, 0\}$. For this reason we will omit the subcripts
+$k$ hereafter and no ambiguity in notation between the overtone index and the
+subscript $n$ in the series should arise.
 %
-These corrections are encoded in the coefficients $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$.
+We have also pulled out from the sum all beyond-GR corrections, restricting
+ourselves to the nonspinning ($n=0$) and linear-order in spin ($n=1$)
+corrections to the Kerr QNMs.
+%
+% These corrections are encoded in the coefficients $\delta\omega^{(n)}$ and $\delta\tau^{(n)}$.
 
-Just as in GR where the coefficients $\omega^{j}$, $\tau^{j}$ are determined by
-comparison against the Kerr QNMs, a theory-specific calculation predicts the
-numerical values of $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$
+How can we determine the beyond-GR corrections? In GR, comparison between the numerically determined
+Kerr QNMs against the fitting formula~\eqref{eq:qnm_nongr_iso} fixes the GR expansion coefficients
+$\omega^{(n)}$, $\tau^{(n)}$.
 %
+We can proceed in a similar way with QNMs calculated in the context of a beyond-GR theory.
+%
+In particular, in the literature, we can already find fitting formulas relating
+the QNMs to the BHs mass, spin and coupling constant $\ell$, the latter being
+specific to each theory, up to $n=1$ in the spin expansion.
+%
+The idea is then to compare these formulas against Eq.~\eqref{eq:qnm_nongr_iso}
+to fix $p$, $\delta\omega^{(n)}$, and $\delta\tau^{(n)}$.
+
 This means that using the $\pSEOB$ waveform model with theory-specific informed
-QNMs we reduce the parameters space of beyond-GR parameters to one, i.e., to
-only $\gamma$, which in turn contains information about the length scale $\ell$.
+QNMs we reduce the parameter space of beyond-GR parameters to $\ell$ alone.
 %
-It is important to emphasize that our procedure is different from that of Ref.~\cite{Carullo:2021dui}
-which, for a given value of $p$, varied all $\ell$, $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ parameters.
+We emphasize that our procedure is different from that of
+Ref.~\cite{Carullo:2021dui} which, for a given value of $p$, varied all $\ell$,
+$\delta\omega^{(n)}$ and $\delta\tau^{(n)}$ parameters.
 
-As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating BHs
-is modified gravity theories come in two families depending on their transformation upon a parity
-transformation: axial and polar. Which is the one we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
+As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating
+BHs is modified gravity theories come in two families depending on their
+transformation upon a parity transformation: axial and polar. Which is the one
+we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
-To answer this question one has to work on a theory-by-theory case and in each theory perform a
-a translation between the metric perturbations $h_{\mu\nu}$ in the Regger-Wheeler-Zerilli gauge and
-connect it with the transverse-traceless gauge used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
+To answer this question one has to work on a theory-by-theory case and in each
+theory perform a translation between the metric perturbations $h_{\mu\nu}$ in
+the Regger-Wheeler-Zerilli gauge and connect it with the transverse-traceless
+gauge used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
 %
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
 QNM we use to model the ringdown makes no difference.
@@ -651,103 +697,67 @@ the two parities.}
 The justification is this is the mode which, if excited during the merger, is
 the most likely to appear in the signal.
 
-% ---------------------------
-% CONCRETE EXAMPLE OF MAPPING
-% ---------------------------
-Let us show one concrete example of how this mapping is done.
+We performed the mapping between theory-specific QNM calculation and the ParSpec framework
+under the hypothesis above for the theories listed in Sec.~\ref{sec:review_theories}.
 %
-In Ref.~\cite{Wagle:2021tam} the QNMs of slow-rotating BHs in dCS gravity were calculated
-and it was found that the axial gravitational modes have their damping time increased as we
-increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
-%
-Having selected this branch of QNMs we can proceed to determine $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
-%
-Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
-%
-\begin{equation}
-    M \omega^{\rm CS}_{220} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
-    \label{eq:omega_dsc_eg}
-\end{equation}
-%
-and similarly for the imaginary part ${\rm Im}(\sigma_{220}) =  - 1 / \tau^{\rm CS}_{220}$.
-%
-Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [thus $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
-and $c_{i}$ are fitting coefficients.
-%
-In the context of a binary BH merger, $M$ is interpreted as the remnant mass $\Mf$.
-
-We can now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm CS}$, and
-gather the terms proportional to $\ell_{\rm CS}$.
-%
-Doing so, we find,
-%
-\begin{align}
-    \Mf \, \omega^{\rm CS}_{220} &=
-    \left[ 0.3722 + 1.1945 (\ell_{\rm CS} / \Mf)^4 \right]
-    \nonumber \\
-    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm CS} / \Mf)^4 \right] \, \chi\,,
-\end{align}
-%
-where we made use of the numerical value of the coefficients $c_{i}$ and,
-reassuringly, the nonrotating and linear-in-spin coefficients above agree with those
-of~\cite{Maselli:2019mjd} to xx\%.
-%
-We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso},
-whcih yields,
-%
-\begin{equation}
-p_{\rm CS} = 4\,, \quad \delta \omega^{(0)}_{\rm CS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm CS} = 41.199\,.
-\label{eq:cs_omega_coefs}
-\end{equation}
-%
-The same procedure can be carried for $\tau^{(i)}$, which results in,
-%
-\begin{equation}
-\delta \tau^{(0)}_{\rm CS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm CS} = 794.66\,.
-\label{eq:cs_tau_coefs}
-\end{equation}
-%
-which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB{} waveform model.
-%
-We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and $\delta \tau_{\rm CS}^{(1)}$
-are compensated by the assumptions that $(\ell_{\rm CS} / M_f)^2$ and $\chi$ are much less than unity. These
-are the assumptions use to calculate the QNM frequencies both in Ref.~\cite{Wagle:2021tam} and also in
-other gravity theories considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
-%
-As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
+We leave the details of our calculation to Appendix~\ref{app:map_details} and
+summarize our result in Table~\ref{tab:ref_theories_qnms}.
 
 In Table~\ref{tab:ref_theories_qnms} we summarize the relevant parameters for
 the ParSpec implementation of each theory and give credit to the papers
 which calculated the QNMs.
 
-\begin{table*}[th]
-\begin{tabular}{c | c c c c c c c c}
+% \begin{table*}[th]
+% \begin{tabular}{c | c c c c c c c c}
+% \hline
+% \hline
+% Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
+% \hline
+% EdGB      & 4 & 0.0107 & 0.0044 & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
+% dCS       & 4 & 3.1964 & 6.3619 & 41.199 & 794.66 &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
+% cEFT  & 4 & -0.5813  & 2.6469 & -3.8620 & 265.12 & \cite{Cano:2021myl} & \dots  & \dots \\
+% qEFT  & 6 & \dots  & \dots & \dots & \dots & \cite{Cano:2021myl} & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & \dots \\
+% \hline
+% \hline
+% \end{tabular}
+% \caption{Summary of the quasinormal modes calculations.
+% %
+% We summarize each theory we have considered together with: the exponent $p$ at
+% which their QNM-modification enters, the corresponding modifications to the
+% oscillation frequency $\delta \omega^{(i)}_{220}$ and decay time $\delta \tau^{(i)}_{220}$, the
+% references from which we used the results from and the current best constraint
+% (if applicable).
+% %
+% In these cases, the dimensionless parameters $\lambda_{\rm e,o}$ are degenerate
+% with the length scale $\ell$.
+% %
+% }
+% \label{tab:ref_theories_qnms}
+% \end{table*}
+
+\begin{table}[t]
+\begin{tabular}{c | c c c c c c}
 \hline
 \hline
-Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & QNM & Constraint & This work \\
+Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & Ref.  \\
 \hline
-EdGB      & 4 & 0.0107 & 0.0044 & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
-dCS       & 4 & 3.1964 & 6.3619 & 41.199 & 794.66 &  \cite{Wagle:2021tam}   & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
-cEFT  & 4 & -0.5813  & 2.6469 & -3.8620 & 265.12 & \cite{Cano:2021myl} & \dots  & \dots \\
-qEFT  & 6 & \dots  & \dots & \dots & \dots & \cite{Cano:2021myl} & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & \dots \\
+EdGB        & 4 & 0.0107 & 0.0044 & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} \\
+dCS         & 4 & 3.1964 & 6.3619 & 41.199 & 794.66 &  \cite{Wagle:2021tam}  \\
+cubic EFT   & 4 & -0.5813  & 2.6469 & -3.8620 & 265.12 & \cite{Cano:2021myl} \\
+quartic EFT & 6 & \dots  & \dots & \dots & \dots & \cite{Cano:2021myl}  \\
 \hline
 \hline
 \end{tabular}
-\caption{Summary of the quasinormal modes calculations.
+\caption{Summary of theory-specific QNM calculations.
 %
 We summarize each theory we have considered together with: the exponent $p$ at
 which their QNM-modification enters, the corresponding modifications to the
 oscillation frequency $\delta \omega^{(i)}_{220}$ and decay time $\delta \tau^{(i)}_{220}$, the
 references from which we used the results from and the current best constraint
 (if applicable).
-%
-In these cases, the dimensionless parameters $\lambda_{\rm e,o}$ are degenerate
-with the length scale $\ell$.
-%
 }
 \label{tab:ref_theories_qnms}
-\end{table*}
-
+\end{table}
 
 %%%%%%%%%%%%%%%%%
 \section{Parameter Inference}
@@ -1557,6 +1567,77 @@ Let us discuss some avenues for future work \dots
 % \hs{Say it is important to go beyond mode calculation and actually understand
 % how the QNM appear in the GW signal.}
 % -----------------------------------------------------------------------------
+
+\appendix
+
+\section{Details of the determination of the theory-specific
+ParSpec coefficients}
+\label{app:map_details}
+
+\subsection{dynamical Chern-Simons}
+\label{app:map_dcs}
+
+Let us show one concrete example of how this mapping is done.
+%
+In Ref.~\cite{Wagle:2021tam} the QNMs of slow-rotating BHs in dCS gravity were calculated
+and it was found that the axial gravitational modes have their damping time increased as we
+increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
+%
+Having selected this branch of QNMs we can proceed to determine $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
+%
+Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
+%
+\begin{equation}
+    M \omega^{\rm CS}_{220} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
+    \label{eq:omega_dsc_eg}
+\end{equation}
+%
+and similarly for the imaginary part ${\rm Im}(\sigma_{220}) =  - 1 / \tau^{\rm CS}_{220}$.
+%
+Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [thus $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
+and $c_{i}$ are fitting coefficients.
+%
+In the context of a binary BH merger, $M$ is interpreted as the remnant mass $\Mf$.
+
+We can now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm CS}$, and
+gather the terms proportional to $\ell_{\rm CS}$.
+%
+Doing so, we find,
+%
+\begin{align}
+    \Mf \, \omega^{\rm CS}_{220} &=
+    \left[ 0.3722 + 1.1945 (\ell_{\rm CS} / \Mf)^4 \right]
+    \nonumber \\
+    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm CS} / \Mf)^4 \right] \, \chi\,,
+\end{align}
+%
+where we made use of the numerical value of the coefficients $c_{i}$ and,
+reassuringly, the nonrotating and linear-in-spin coefficients above agree with those
+of~\cite{Maselli:2019mjd} to xx\%.
+%
+We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso},
+whcih yields,
+%
+\begin{equation}
+p_{\rm CS} = 4\,, \quad \delta \omega^{(0)}_{\rm CS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm CS} = 41.199\,.
+\label{eq:cs_omega_coefs}
+\end{equation}
+%
+The same procedure can be carried for $\tau^{(i)}$, which results in,
+%
+\begin{equation}
+\delta \tau^{(0)}_{\rm CS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm CS} = 794.66\,.
+\label{eq:cs_tau_coefs}
+\end{equation}
+%
+which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB{} waveform model.
+%
+We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and $\delta \tau_{\rm CS}^{(1)}$
+are compensated by the assumptions that $(\ell_{\rm CS} / M_f)^2$ and $\chi$ are much less than unity. These
+are the assumptions use to calculate the QNM frequencies both in Ref.~\cite{Wagle:2021tam} and also in
+other gravity theories considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
+%
+As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
 
 
 %%%%%%%%%%%%%%%%%
