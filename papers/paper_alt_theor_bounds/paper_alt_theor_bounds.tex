@@ -825,7 +825,7 @@ with noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
 \begin{equation}
 \langle A | B \rangle =
 \int_{f_{\rm low}}^{f_{\rm high}} \, \dd f \,
-\frac{\tilde{A}^{\ast}(f) \tilde{B}(f) + \tilde{A}(f) \tilde{B}^{\ast}(f)}{S_{n}(f)}
+\frac{\tilde{A}^{\ast}(f) \tilde{B}(f) + \tilde{A}(f) \tilde{B}^{\ast}(f)}{S_{n}(f)}\,,
 \end{equation}
 %
 where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
@@ -835,7 +835,7 @@ detector.
 Assuming a specific prior distribution for our parameters, we stochastically
 sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
 \texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx},
-which is part of \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
+which is part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
 posterior probability distribution function~(PDF) on $\ell$.
