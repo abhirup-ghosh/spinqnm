@@ -424,11 +424,12 @@ space studied in~\cite{Sennett:2019bpc}.
 \subsection{The parametrized ringdown spin expansion coefficients formalism}
 \label{sec:review_parspec}
 
-We start by reviewing the parametrized ringdown spin expansion coefficients formalism (ParSpec)
-introduced in Ref.~\cite{Maselli:2019mjd}, but following some of the notation of Ref.~\cite{Carullo:2021dui}.
+We start by reviewing the parametrized ringdown spin expansion coefficients
+formalism (ParSpec) introduced in Ref.~\cite{Maselli:2019mjd}, but following
+some of the notation of Ref.~\cite{Carullo:2021dui}.
 %
-The formalism modifies the Kerr quasinormal mode frequency $\omega_{J}^{\rm K}$ and
-damping time $\tau_{J}^{\rm K}$ as
+A general procedure to describe deviations from the Kerr quasinormal mode frequencies $\omega_{J}^{\rm K}$ and
+damping time $\tau_{J}^{\rm K}$ is to write them as,
 %
 \begin{subequations}
 \label{eq:general_deviation}
@@ -438,8 +439,12 @@ damping time $\tau_{J}^{\rm K}$ as
 \end{align}
 \end{subequations}
 %
-where the $J$ collectively represents the QNM labels $\{l,\, m,\, n\}$, where $l$ is
-the , $m$ and $n$ the ove
+as done e.g., in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
+%
+Here we use $J$ to collectively represents the QNM labels $\{l,\, m,\, n\}$,
+where $l$ and $m$ are the multipole indices, and $n$ the overtone number.
+%
+We work exclusively with $\ell = m = 2$ and $n = 0$ (fundamental mode) in this work.
 
 We expand the Kerr expression as:
 %
@@ -452,13 +457,13 @@ We expand the Kerr expression as:
 \end{subequations}
 %
 where $M$ and $\chi$ are the detector-frame mass and dimensionless spin of the
-remnant black hole; $\omega_{K}^{n}$, $\tau_{K}^{n}$ are dimensionless coefficients
+black hole; $\omega_{K}^{n}$, $\tau_{K}^{n}$ are dimensionless coefficients
 of the spin expansion for Kerr QNMs; $\delta\omega_{K}^{n}$, $\delta\tau_{K}^{n}$ are
 source-independent dimensionless coefficients that characterize the corrections to the Kerr QNM at each spin-order;
 and finally $N_{\rm max}$ is the order of the spin expansion.
 %
 All source dependence on the beyond-GR modification is encapsulated in the dimensionless
-parameter $\gamma$,
+parameter $\gamma$ given by,
 %
 \begin{equation}
 \gamma
@@ -467,18 +472,19 @@ parameter $\gamma$,
 %
 = \left[
 \frac{\ell c^2 (1 + z)}{G M}
-\right]^{p}
+\right]^{p},
 \label{eq:def_gamma}
 \end{equation}
 %
-which depends on the parameter $\ell$, with dimensions of lenght, which sets the
-lenghtscale in which beyond-GR modification become important and the exponent $p$
-which is related to how the beyond-GR modifications are included to the Einstein-Hilbert action.
+which depends on the parameter $\ell$, with dimensions of length (and sets the
+lengthscale at which beyond-GR modifications become important), and
+the exponent $p$ which is related to how the beyond-GR modifications are
+included to the Einstein-Hilbert action.
 %
-In Eq.~\eqref{eq:def_gamma} we made $\ell$ dimensionless by the other
+In Eq.~\eqref{eq:def_gamma} we made $\ell$ dimensionless by using the other
 lenghtscale associated to the remnant black hole, i.e., its source-frame mass
-$M_{\rm s}$, which we can also in terms of the detector-frame mass $M$ through
-a the redshift $z$.
+$M_{\rm s}$, which we can also write in terms of the detector-frame mass $M$ through
+the redshift $z$~\cite{Krolak:1987ofj}.
 
 In principle, a modification to GR would also affect $M$ and $\chi$ and the expansion should be written
 in terms of non-GR mass and spin, say $\bar{M}$ and $\bar{\chi}$. If we assume that the beyond-GR corrections
@@ -486,6 +492,7 @@ are included perturbatively, the modifications to the BH mass and spin can be ab
 parameters $\delta\omega$ and $\delta\tau$.
 %
 This means we can identify the $M$ and $\chi$ with their corresponding GR values.
+%
 
 \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
 \hs{TODO: say that we check a posteriori if our PE runs agree with this.}
