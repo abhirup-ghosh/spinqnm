@@ -424,12 +424,12 @@ space studied in~\cite{Sennett:2019bpc}.
 \subsection{The parametrized ringdown spin expansion coefficients formalism}
 \label{sec:review_parspec}
 
-We start by reviewing the parametrized ringdown spin expansion coefficients
-formalism (ParSpec) introduced in Ref.~\cite{Maselli:2019mjd}, but following
-some of the notation of Ref.~\cite{Carullo:2021dui}.
-%
-A general procedure to describe deviations from the Kerr quasinormal mode frequencies $\omega_{J}^{\rm K}$ and
-damping time $\tau_{J}^{\rm K}$ is to write them as,
+We start by reviewing the parametrized ringdown spin expansion coefficients (ParSpec)
+framework introduced in Ref.~\cite{Maselli:2019mjd}, but following
+some of the notation used in Ref.~\cite{Carullo:2021dui}.
+
+A general procedure to describe deviations from the Kerr QNM frequencies $\omega_{J}^{\rm K}$ and
+damping times $\tau_{J}^{\rm K}$ is to write,
 %
 \begin{subequations}
 \label{eq:general_deviation}
@@ -439,14 +439,31 @@ damping time $\tau_{J}^{\rm K}$ is to write them as,
 \end{align}
 \end{subequations}
 %
-as done e.g., in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
+where $\delta\omega_{J}$ and $\delta\tau_{J}$ are the deformation parameters.
 %
-Here we use $J$ to collectively represents the QNM labels $\{l,\, m,\, n\}$,
+Here we use the subscript $J$ to represent the QNM labels $\{l,\, m,\, n\}$,
 where $l$ and $m$ are the multipole indices, and $n$ the overtone number.
 %
-We work exclusively with $\ell = m = 2$ and $n = 0$ (fundamental mode) in this work.
+We will work exclusively with the $\ell = m = 2$ and $n = 0$ (fundamental mode)
+QNM in this work, that is, $J = \{2,\, 2,\, 0\}$.
+%
+This approach was adopted, e.g., in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
 
-We expand the Kerr expression as:
+A caveat of the parametrizations of the form~\eqref{eq:general_deviation}, is that
+$\delta\omega_{J}$ and $\delta\tau_{J}$ depend, in general, on the BH's source mass and spin.
+%
+Ideally, one would like to explicitly reinstate the dependence the source-frame
+BH mass and spin for it would
+%
+%
+(i) introduce deformation parameters which can be determined, once and for
+all, from a specific gravity theory, and
+%
+(ii) make it easy to combine constraints from multiple source.
+
+In the ParSpec framework this is accomplished by performing a bivariate
+expansion of Eq.~\eqref{eq:general_deviation} in the detector-frame mass and
+spin, namely
 %
 \begin{subequations}
 \label{eq:kerr_expansion}
@@ -491,10 +508,9 @@ in terms of non-GR mass and spin, say $\bar{M}$ and $\bar{\chi}$. If we assume t
 are included perturbatively, the modifications to the BH mass and spin can be absorved into the deviations
 parameters $\delta\omega$ and $\delta\tau$.
 %
-This means we can identify the $M$ and $\chi$ with their corresponding GR values.
-%
+This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}.
 
-\hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
+% \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
 \hs{TODO: say that we check a posteriori if our PE runs agree with this.}
 
 \subsection{The parametrized waveform model}
@@ -580,19 +596,21 @@ $\pSEOB$ waveform model and the theory-specific QNM calculations.
 We begin by expanding $\omega$ and $\tau$, given by Eqs.~\eqref{eq:kerr_expansion} as,
 %
 \begin{subequations}
+\label{eq:qnm_nongr_iso}
 \begin{align}
 M \omega_{220} &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
-+ \sum_{j=0}^{N} \chi^{j} \omega^{j}\,,
++ \sum_{n=0}^{N_{\rm max}} \chi^{j} \omega^{j}\,,
 \\
 \tau_{220}/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
-+ \sum_{j=0}^{N} \chi^{j} \tau^{j}\,,
++ \sum_{n=0}^{N_{\rm max}} \chi^{j} \tau^{j}\,,
 \end{align}
-\label{eq:qnm_nongr_iso}
 \end{subequations}
 %
-where we are already focusing on the dominant $\ell = m = 2$, $n=0$ QNM and
-pulled out of the sum all beyond-GR corrections, rescriting ourselves to the nonspinning ($j=0$) and linear-order in spin ($j=1$)
-corrections to the Kerr QNMs, encoded in the coefficients $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$.
+where, recall, we focus on the $\ell = m = 2$, $n=0$ QNM and have pulled out of
+the sum all beyond-GR corrections, restricting ourselves to the nonspinning
+($n=0$) and linear-order in spin ($n=1$) corrections to the Kerr QNMs.
+%
+These corrections are encoded in the coefficients $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$.
 
 Just as in GR where the coefficients $\omega^{j}$, $\tau^{j}$ are determined by
 comparison against the Kerr QNMs, a theory-specific calculation predicts the
@@ -743,13 +761,13 @@ theorem,
 %
 \begin{equation}
 P(\bm{\lambda} \vert d, \mathcal{H}) =
-\frac{P(\bm{\lambda} \vert \mathcal{H}) \, P(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
+\frac{P(\bm{\lambda} \vert \mathcal{H}) \, \mathcal{L}(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
 \label{eq:bayes}
 \end{equation}
 %
 where $P(\bm{\lambda} \vert d, \mathcal{H})$ is the posterior probability distribution,
 $P(\bm{\lambda} \vert \mathcal{H})$ the prior,
-$P(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
+$\mathcal{L}(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
 $P(d \vert \mathcal{H})$ the evidence.
 %
 The set of parameters, $\bm{\lambda}$ is the union between the GR waveform
