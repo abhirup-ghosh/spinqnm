@@ -1,0 +1,185 @@
+\documentclass[twocolumn,
+               prd,
+               aps,
+               superscriptaddress,
+               tightenlines,
+               nofootinbib,
+               eqsecnum,
+               amsfonts,
+               amsmath,
+               longbibliography]{revtex4-1}
+
+\usepackage{epsfig}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{bm}
+\usepackage{txfonts}
+% \usepackage{newtxtext}
+% \usepackage{newtxmath}
+\usepackage{natbib}
+\usepackage{amssymb}
+\usepackage{xspace}
+\usepackage[normalem]{ulem} % To get strikethrough (\sout)
+\usepackage[colorlinks]{hyperref}
+\usepackage[caption=false]{subfig}
+\usepackage{url}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage{lineno}
+\usepackage{mathrsfs}
+\usepackage{makecell}
+\usepackage{microtype}
+
+% \usepackage{tikz}
+
+% -----------
+% Bibligraphy
+% -----------
+\AtBeginDocument{%
+    \newwrite\bibnotes
+    \def\bibnotesext{Notes.bib}
+    \immediate\openout\bibnotes=\jobname\bibnotesext
+    \immediate\write\bibnotes{@CONTROL{REVTEX41Control}}
+    \immediate\write\bibnotes{@CONTROL{%
+    apsrev41Control,author="08",editor="1",pages="1",title="0",year="1"}}
+    \if@filesw
+    \immediate\write\@auxout{\string\citation{apsrev41Control}}%
+    \fi
+}
+% -----------
+
+\definecolor{rred}{RGB}{218,41,28}
+\hypersetup{linkcolor=NavyBlue}
+\hypersetup{citecolor=NavyBlue}
+\hypersetup{urlcolor=NavyBlue}
+
+\usepackage{perpage}
+\MakePerPage{footnote}
+
+\newcommand{\paperone}{Paper~I\xspace}
+
+\newcommand{\h}{\mathpzc{h}}
+\newcommand{\Hhat}{\hat{\mathpzc{H}}}
+\newcommand{\B}{\mathpzc{B}}
+\newcommand{\hlm}{\mathpzc{h}_{\ell m}}
+\newcommand{\xilm}{\xi_{\ell m}}
+\newcommand{\Ylm}{{Y}^{-2}_{\ell m}}
+\newcommand{\Y}{{Y}^{-2}}
+\newcommand{\hc}{h_\times}
+\newcommand{\hp}{h_+}
+\newcommand{\Fc}{F_\times}
+\newcommand{\Fp}{F_+}
+\newcommand{\Mf}{M_f}
+\newcommand{\cA}{\mathpzc{A}}
+\newcommand{\lm}{_{\ell m}}
+\newcommand{\deff}{d_\mathrm{eff}}
+\newcommand{\rmi}{\mathrm{i}}
+\newcommand{\blambda}{\bm{\lambda}}
+\newcommand{\btheta}{\bm{\theta}}
+\newcommand{\bxi}{\bm{\xi}}
+\newcommand{\bxigr}{\bm{\xi}_{\text{GR}}}
+\newcommand{\bxingr}{\bm{\xi}_{\text{nGR}}}
+\newcommand{\bzeta}{\bm{\zeta}}
+\newcommand{\bs}[1]{\bm{\vec{S}_{#1}}}
+\newcommand{\Mo}{M_{\odot}}
+\newcommand{\FFe}{\mathrm{FF}_\mathrm{eff}}
+\newcommand{\FF}{\mathrm{FF}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\rhoopt}{\rho_\mathrm{opt}}
+\newcommand{\rhosubopt}{\rho_\mathrm{subopt}}
+\newcommand{\fqnm}{f}
+\newcommand{\sigmaqnm}{\sigma}
+\newcommand{\n}{\mathbf{n}}
+\newcommand*{\skymapscale}{0.5}
+\newcommand*{\paramestscale}{0.455}
+\newcommand{\df}[1]{\delta f_{\text{#1}}}
+\newcommand{\dtau}[1]{\delta \tau_{\text{#1}}}
+\newcommand{\fngr}[1]{f_{\text{#1}}}
+\newcommand{\taungr}[1]{\tau_{\text{#1}}}
+\newcommand{\fgr}[1]{f ^{\text{GR}}_{\text{#1}}}
+\newcommand{\taugr}[1]{\tau ^{\text{GR}}_{\text{#1}}}
+\newcommand{\pSEOB}{\texttt{pSEOBNR}}
+\newcommand{\SEOB}{\texttt{SEOBNR}}
+\newcommand{\gm}{\mathfrak{m}}
+\newcommand{\msun}{~{\rm M}_{\odot}}
+
+% Modified gravity related
+\newcommand{\pd}{\partial}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\ii}{{\rm i}}
+\newcommand{\dV}{{\rm d}^{4}x \, \sqrt{-g} \,}
+
+\newcommand{\lame}{\lambda_{\rm e}}
+\newcommand{\lamo}{\lambda_{\rm o}}
+
+% Comment commands
+\newcommand{\ag}[1]{{\textcolor{cyan}{{[AG: #1]}} }}
+\newcommand{\mg}[1]{{\textcolor{red}{{[EM #1]}} }}
+\newcommand{\hs}[1]{{\textcolor{blue}{{[HS: #1]}} }}
+\newcommand{\ab}[1]{{\textcolor{green}{{[AB: #1]}} }}
+
+\newcommand{\AEI}{\affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am M\"uhlenberg 1, Potsdam 14476, Germany}}
+\newcommand{\UMD}{\affiliation{Department of Physics, University of Maryland, College Park, Maryland 20742, USA}}
+
+\begin{document}
+
+% HS: temporary title. Feel free to add suggestions
+\title{Testing general relativity in the nonlinear regime:
+\\
+a parametrized merger-ringdown waveform model}
+
+% ------------------------------
+% Order to be defined in the end
+% ------------------------------
+% \author{Abhirup Ghosh}       \AEI
+% \author{Elisa Maggio}        \AEI
+% \author{Hector O. Silva}     \AEI
+% \author{Alessandra Buonanno} \AEI \UMD
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+% General
+% Motivation
+% What we do
+% Main conclusion
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:intro}
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Methods}
+\label{sec:methods}
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Parameter estimation studies}
+\label{sec:pe}
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:conclusions}
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+%
+We thank \dots for discussions.
+%
+We also thank the computational resources provided by the AEI, specifically the
+{\sc Hypatia} cluster and Steffen Grunewald for assistance.
+%%%%%%%%%%%%%%%%%
+
+\bibliography{notes_mrd_param}
+
+\end{document}
