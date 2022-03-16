@@ -660,7 +660,7 @@ We can proceed in a similar way with QNMs calculated in the context of a beyond-
 %
 In particular, in the literature, we can already find fitting formulas relating
 the QNMs to the BHs mass, spin and coupling constant $\ell$, the latter being
-specific to each theory, up to $n=1$ in the spin expansion.
+specific to each theory, up to $n=1$ in the spin expansion (see Table~\ref{tab:ref_theories_qnms}).
 %
 The idea is then to compare these formulas against Eq.~\eqref{eq:qnm_nongr_iso}
 to fix $p$, $\delta\omega^{(n)}$, and $\delta\tau^{(n)}$.
@@ -735,7 +735,7 @@ nonspinning binary with detector-frame masses
 $m_1^{\rm dec} = 39\msun$ and $m_2^{\rm dec} = 31\msun$.
 %
 The top panel shows the $+$ polarization of the GW $h_{+}$ in both theories,
-while the bottom panel shows the amplitude $|h| = \sqrt{h_{+}^2 + h_{\times}^2}$
+while the bottom panel shows the amplitude $|h| = (h_{+}^2 + h_{\times}^2)^{1/2}$
 and instantaneous frequency $f$, all as functions of time $t$.
 %
 The signal are identical up to the merger, after which they differ during the ringdown.
@@ -747,7 +747,17 @@ $\delta\omega^{(0)}$ coefficient in this theory.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
-\caption{(Color online).~Example of an waveform.}
+\caption{(Color online).~Example GW signal with GW1509140-like parameters
+for both GR (solid line) and cubic EFT of GR (dashed line) with the leading-order
+$n=0$ modifications to the fundamental QNM.
+%
+The former is computed with the \SEOB{} model, while the latter with the
+\pSEOB{} model, with ringdown modifications according to the results in
+Table~\ref{tab:ref_theories_qnms}.
+%
+Top panel: the $+$ polarization $h_{+}(t)$. Bottom panel: the GW amplitude
+$|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes).
+}
 \label{fig:example_waveform}
 \end{figure}
 
@@ -854,9 +864,9 @@ sample over the parameter space using a Markov-Chain Monte Carlo algorithm as im
 which is part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
-posterior probability distribution function~(PDF) on $\ell$.
+posterior probability distribution function~(PDF) on $\ell$, our main quantity of interest.
 %
-An example of this is shown in Fig. XX.
+% An example of this is shown in Fig. XX.
 
 \subsection{Priors}
 
@@ -1603,53 +1613,66 @@ ParSpec coefficients}
 \subsection{dynamical Chern-Simons}
 \label{app:map_dcs}
 
-Let us show one concrete example of how this mapping is done.
+% Let us show one concrete example of how this mapping is done.
 %
 In Ref.~\cite{Wagle:2021tam} the QNMs of slow-rotating BHs in dCS gravity were calculated
 and it was found that the axial gravitational modes have their damping time increased as we
 increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
 %
-Having selected this branch of QNMs we can proceed to determine $\delta\omega^{(i)}$ and $\delta\tau^{(i)}$ as follows.
+Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm}, this is the branch of QNMs we will select.
+
+We can now proceed to determine $\delta\omega^{(n)}$ and $\delta\tau^{(n)}$ as follows.
 %
 Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
 %
 \begin{equation}
-    M \omega^{\rm CS}_{220} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
+    M \omega_{\rm CS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
     \label{eq:omega_dsc_eg}
 \end{equation}
 %
-and similarly for the imaginary part ${\rm Im}(\sigma_{220}) =  - 1 / \tau^{\rm CS}_{220}$.
+and similarly for the imaginary part ${\rm Im}(\sigma_{\rm CS}) =  - 1 / \tau_{\rm CS}$.
 %
-Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$ [thus $\kappa \zeta = (\ell_{\rm CS} / M)^4$]
-and $c_{i}$ are fitting coefficients.
+Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M^4 \kappa)$, and thus
+%
+\begin{equation}
+\kappa \zeta = (\ell_{\rm CS} / M)^4 \,,
+\end{equation}
+%
+and $c_{i}$ are fitting coefficients which can be found in Ref.~\cite{Wagle:2021tam}, Table II.
 %
 In the context of a binary BH merger, $M$ is interpreted as the remnant mass $\Mf$.
 
 We can now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm CS}$, and
 gather the terms proportional to $\ell_{\rm CS}$.
 %
-Doing so, we find,
+We obtain
 %
 \begin{align}
     \Mf \, \omega^{\rm CS}_{220} &=
     \left[ 0.3722 + 1.1945 (\ell_{\rm CS} / \Mf)^4 \right]
     \nonumber \\
     &\quad + \left[0.1861 + 5.1828 (\ell_{\rm CS} / \Mf)^4 \right] \, \chi\,,
+    \label{eq:omega_dcs_interm}
 \end{align}
 %
-where we made use of the numerical value of the coefficients $c_{i}$ and,
-reassuringly, the nonrotating and linear-in-spin coefficients above agree with those
-of~\cite{Maselli:2019mjd} to xx\%.
+where we made use of the numerical value of the coefficients $c_{i}$.
 %
-We now isolate the dCS corrections and compare against Eq.~\eqref{eq:qnm_nongr_iso},
-which yields,
+We find that (reassuringly) that the nonrotating GR part of the expression above agree with $\omega^{(0)}$ of Ref.~\cite{Maselli:2019mjd}
+to 0.5\% relative percent error. The same error estimate is larger ($\approx 20$\%) for the linear-in-spin coefficient;
+0.1861 in comparison to 0.1258 of Ref.~\cite{Maselli:2019mjd}.
+%
+We attribute this difference to Ref.~\cite{Wagle:2021tam} having fitted Eq.~\eqref{eq:omega_dsc_eg} to QNM data compute to linear-order in spin, whereas~\cite{Maselli:2019mjd}
+fitted Eq.~\eqref{eq:kerr_expansion} to Kerr QNM valid to all orders in spin.
+
+We can now isolate the dCS corrections from Eq.~\eqref{eq:omega_dcs_interm} and
+compare against Eq.~\eqref{eq:qnm_nongr_iso}, to find
 %
 \begin{equation}
 p_{\rm CS} = 4\,, \quad \delta \omega^{(0)}_{\rm CS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm CS} = 41.199\,.
 \label{eq:cs_omega_coefs}
 \end{equation}
-%
-We carry the same steps for $\tau^{(i)}$, which results in,
+
+We can carry the same steps for $\tau_{\rm CS}$ and find
 %
 \begin{equation}
 \delta \tau^{(0)}_{\rm CS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm CS} = 794.66\,.
@@ -1660,10 +1683,7 @@ which completes the set of fixed parameters beyond-GR parameters in the ringdown
 %
 We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and $\delta \tau_{\rm CS}^{(1)}$
 are compensated by the assumptions that $(\ell_{\rm CS} / M_f)^2$ and $\chi$ are much less than unity. These
-are the assumptions use to calculate the QNM frequencies both in Ref.~\cite{Wagle:2021tam} and also in
-other gravity theories considered here~\cite{Pierini:2021jxd,Cano:2021myl}.
-%
-As we said before, the only free beyond-GR parameter left is now $\ell_{\rm CS}$.
+are the assumptions use to calculate the QNM frequencies both in Ref.~\cite{Wagle:2021tam}.
 
 
 %%%%%%%%%%%%%%%%%
