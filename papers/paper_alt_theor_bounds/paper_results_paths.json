@@ -34,8 +34,8 @@
         },
     "spin1":
         {
-        "GW150914": "/home/hosilva/parspec/pe/GW150914/p4_l_df0_dtau0_df1_dtau1_cEFT/cbcBayes/posterior_samples.dat",
-        "GW200129": "/home/hosilva/parspec/pe/GW200129/p4_l_df0_dtau0_df1_dtau1_cEFT/cbcBayes/posterior_samples.dat"
+        "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
+        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
         }
     },
 "qEFT":
@@ -43,12 +43,12 @@
     "spin0":
         {
         "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+        "GW200129": "/home/abhirup.ghosh/Documents/Work/spinqnm/runs/parspec/GW200129/p6_l_df0_dtau0_EFT/cbcBayes/posterior_samples.dat"
         },
     "spin1":
         {
         "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+        "GW200129": "/home/abhirup.ghosh/Documents/Work/spinqnm/runs/parspec/GW200129/p6_l_df0_dtau0_spin_EFT/cbcBayes/posterior_samples.dat"
         }
     }
 }
