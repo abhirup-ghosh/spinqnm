@@ -12,27 +12,26 @@ theorem,
 %
 \begin{equation}
 P(\bm{\lambda} \vert d, \mathcal{H}) =
-\frac{P(\bm{\lambda} \vert \mathcal{H}) \, \mathcal{L}(d \vert \bm{\lambda},\mathcal{H})}{P(d \vert \mathcal{H})}\,,
+\frac{p(\bm{\lambda} \vert \mathcal{H}) \, \mathcal{L}(d \vert \bm{\lambda},\mathcal{H})}{E(d \vert \mathcal{H})}\,,
 \label{eq:bayes}
 \end{equation}
 %
 where $P(\bm{\lambda} \vert d, \mathcal{H})$ is the posterior probability distribution,
-$P(\bm{\lambda} \vert \mathcal{H})$ the prior,
+$p(\bm{\lambda} \vert \mathcal{H})$ the prior,
 $\mathcal{L}(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
-$P(d \vert \mathcal{H})$ the evidence.
+$E(d \vert \mathcal{H})$ the evidence.
 %
-The set of parameters, $\bm{\lambda}$ is the union between the GR waveform
-model parameters~$\bm{\theta}$, detailed in Sec.~\ref{sec:review_pSEOB}, and
-the non-GR parameter of $\ell$, i.e.,
+The set of parameters, $\bm{\lambda}$ is a union of the GR waveform
+model parameters~$\bm{\theta}$ (c.f.  Sec.~\ref{sec:review_pSEOB}), and
+$\ell$,  the only non-GR parameter in this problem which, we recall, set 
+the characteristic length-scale in which deviations from
+GR become relevant in each of the theories described in
+Sec.~\ref{sec:review_theories}. Hence, 
 %
 \begin{equation}
 \bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
 \label{eq:def_params}
 \end{equation}
-%
-which, we recall, set the characteristic lengthscale in which deviations from
-GR become relevant in each of the theories described in
-Sec.~\ref{sec:review_theories}.
 
 % As discussed in Secs.~\ref{sec:review_theories} and \ref{sec:theory_specific_qnm}, there is a single coupling
 % constants in the cases of EdGB and dCS theories, but two in the cubic and
@@ -42,10 +41,10 @@ Sec.~\ref{sec:review_theories}.
 % fixed to theory-specific predictions. Hence, our set of beyond--GR parameters only includes the parameter $\{\ell \}$.
 % %
 
-Assuming Gaussian and stationary noise, we can write the (log) likelihood function as,
+Assuming stationary Gaussian noise, we can write the (log) likelihood function as,
 %
 \begin{equation}
-\ln P(d \vert \bm{\lambda},\mathcal{H}) \propto
+\ln \mathcal{L}(d \vert \bm{\lambda},\mathcal{H}) \propto
 - \tfrac{1}{2}
 \langle
 d - h(\bm{\lambda}) \vert d - h(\bm{\lambda})
@@ -64,15 +63,24 @@ where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
 complex conjugation and $S_{n}(f)$ is the power spectrum density of the
 detector.
 %
-Assuming a specific prior distribution for our parameters, we stochastically
+Assuming a specific prior distribution for our parameters (discussed further in the subsequent section), we stochastically
 sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
 \texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx},
-which is part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
+a package part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
-posterior probability distribution function~(PDF) on $\ell$, our main quantity of interest.
+posterior probability distribution function~(PDF) on $\ell$,  $P_j(\ell \vert d_j,\mathcal{H})$, our main parameter of interest.
 %
 % An example of this is shown in Fig. XX.
+
+For $N$ independent GW observations $\{d_j\}, j=1,...N$, each characterised by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the joint posterior can be written as:
+%
+\begin{equation}
+P(\ell | \{d_j\}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j)}{p_j(\ell)}.
+\label{eq:cumulative_dist_ell}
+\end{equation}
+%
+where $p_j(\ell)$ are the priors used for each observation, and $p(\ell)$ is an overall prior.  Since we assume a uniform prior on $\ell$, joint posterior is identically equal to the joint likelihood.
 
 \subsection{Priors}
 
@@ -253,6 +261,7 @@ We will also construct posterior distributions for these parameters and check if
 most of their support is concentrated to a domain with values much smaller than
 unity.
 
+\iffalse
 \subsection{Stacking posteriors}
 \label{sec:stack}
 
@@ -389,3 +398,4 @@ done in Ref.~\cite{Perkins:2021mhb}, by first doubling our number of samples as
 $\{ s_i \} \cup \{ - s_i \}$, i.e., mirroring the samples across $\ell = 0$.
 %
 We then renormalize the associated KDE numerically in the range $\ell = [0, \infty]$.
+\fi
