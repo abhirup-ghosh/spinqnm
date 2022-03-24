@@ -3,30 +3,30 @@
 	{
 	"spin0":
 		{
-		"GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-		"GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+		"GW150914": "/home/hosilva/parspec/pe/GW150914/parspec_runs/p4_l_df0_dtau0_GB_220227/cbcBayes/posterior_samples.dat",
+		"GW200129": "/home/abhirup.ghosh/Documents/Work/spinqnm/runs/parspec/GW200129/p4_l_df0_dtau0_GB/cbcBayes/posterior_samples.dat"
 		},
 	"spin1":
         {
-        "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+        "GW150914": "/home/abhirup.ghosh/Documents/Work/spinqnm/runs/parspec/GW150914/p4_l_df0_dtau0_spin_GB/cbcBayes/posterior_samples.dat",
+        "GW200129": "/home/abhirup.ghosh/Documents/Work/spinqnm/runs/parspec/GW200129/p4_l_df0_dtau0_spin_GB/cbcBayes/posterior_samples.dat"
         }
 	},
 "dCS":
-    {   
+    {
     "spin0":
         {
-        "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+        "GW150914": "/home/hosilva/parspec/pe/GW150914/parspec_runs/p4_l_df0_dtau0_CS_220203_1052/cbcBayes/posterior_samples.dat",
+        "GW200129": "/home/hosilva/parspec/pe/GW200129/p4_l_df0_dtau0_CS_220124/cbcBayes/posterior_samples.dat"
         },
     "spin1":
         {
-        "GW150914": "/full/path/to/cbcBayes/posterior_samples.dat",
-        "GW200129": "/full/path/to/cbcBayes/posterior_samples.dat"
+        "GW150914": "/home/hosilva/parspec/pe/GW150914/parspec_runs/p4_l_df0_dtau0_df1_dtau1_CS_220215/cbcBayes/posterior_samples.dat",
+        "GW200129": "/home/hosilva/parspec/pe/GW200129/p4_l_df0_dtau0_df1_dtau1_CS_220215/cbcBayes/posterior_samples.dat"
         }
     },
 "cEFT":
-    {   
+    {
     "spin0":
         {
         "GW150914": "/home/hosilva/parspec/pe/GW150914/p4_l_df0_dtau0_cEFT/cbcBayes/posterior_samples.dat",
@@ -39,7 +39,7 @@
         }
     },
 "qEFT":
-    {   
+    {
     "spin0":
         {
         "GW150914": "/home/hosilva/parspec/pe/GW150914/p6_l_df0_dtau0_qEFT/cbcBayes/posterior_samples.dat",
