@@ -156,9 +156,9 @@
 Theory & Constraint & This work \\
 \hline
 EdGB        & $\ell_{\rm GB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
-dCS         & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 34.5$~km \\
-cubic EFT   & \dots & \dots \\
-quartic EFT & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & \dots \\
+dCS         & $\ell_{\rm CS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm CS} \leqslant 38.7$~km \\
+cubic EFT   & -- & $\ell_{\rm cEFT} \leqslant 38.2$~km \\
+quartic EFT & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & $\ell_{\rm qEFT} \leqslant 51.3$~km \\
 \hline \hline
 \end{tabular}
 \caption{\hs{Mention it in the Introduction later, in a sort of `executive summary'.}}
@@ -749,7 +749,7 @@ $\delta\omega^{(0)}$ coefficient in this theory.
 \includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
 \caption{(Color online).~Example GW signal with GW1509140-like parameters
 for both GR (solid line) and cubic EFT of GR (dashed line) with the leading-order
-$n=0$ modifications to the fundamental QNM.
+$n=0$ modifications to the fundamental QNM, for $\ell_{\rm cEFT} = 65$~km.
 %
 The former is computed with the \SEOB{} model, while the latter with the
 \pSEOB{} model, with ringdown modifications according to the results in
@@ -861,7 +861,7 @@ $N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
 We conclude that we cannot place any constraint on $\ell_{\rm GB}$ with any of the GW events
-studied here.~\hs{TODO: update when completed.}
+studied here.
 }
 \label{tab:summary_edgb}
 \end{table}
@@ -959,7 +959,7 @@ that a stronger, albeit at lower credibility,
 \quad \textrm{at 68\% credibility},
 \end{equation}
 %
-can also be placed, when $j=0$.
+can also be placed, when $N_{\rm max}=0$.
 
 We can draw qualitatively similar conclusions from the GW200129 event.
 In particular, we find,
@@ -978,7 +978,7 @@ and
 \quad \textrm{(68\% credibility)},
 \end{equation}
 %
-when $j=0$.
+when $N_{\rm max}=0$.
 %
 These stronger bound are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
 for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
@@ -989,14 +989,14 @@ perturbative-conditions~\eqref{eq:parspec_bound} required by the ParSpec
 formalism is violated for the $\gamma_{\rm CS} \, \delta \tau^{(1)}$ coefficient.
 %
 This means that we cannot use these posterior to infer any meaningful bound on dCS gravity
-and that is why we quoted only the $j=0$ bound above.
+and that is why we quoted only the $N_{\rm max}=0$ bound above.
 
 Finally, since both event individually led to a bound on $\ell_{\rm CS}$
 (assuming a cut-off scale for $\gm = M_{f}$ and $j = 0$), we can combine the
 posteriors to obtain the cumulative bound,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 34.5~\textrm{km}
+\ell_{\rm CS} \leqslant 38.7~\textrm{km}
 \quad \textrm{(90\% credibility)},
 \end{equation}
 %
@@ -1020,13 +1020,16 @@ In Table~\ref{tab:summary_dcs} we summarize our findings of this section.
 $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
               &       & bound? & bound?  &                            \\
 \hline
-      & GW150914 & Yes & Yes & $\ell_{\rm CS} \leqslant 46.5$~km \\
-0     & GW200129 & Yes & Yes & $\ell_{\rm CS} \leqslant 43.9$~km \\
-      & Combined & Yes & Yes & \cellcolor{blue!10}$\ell_{\rm CS} \leqslant 34.5$~km \\
+%       & GW150914 & Yes & Yes & $\ell_{\rm CS} \leqslant 46.5$~km \\
+% 0     & GW200129 & Yes & Yes & $\ell_{\rm CS} \leqslant 43.9$~km \\
+%       & Combined & Yes & Yes & \cellcolor{blue!10}$\ell_{\rm CS} \leqslant 34.5$~km \\
+      & GW150914 & Yes & Yes & $\ell_{\rm CS} \leqslant 41.9$~km \\
+0     & GW200129 & Yes & Yes & $\ell_{\rm CS} \leqslant 35.8$~km \\
+      & Combined &     &     & \cellcolor{black!10}$\ell_{\rm CS} \leqslant 38.7$~km \\
 \hline
       & GW150914 & Yes & No  & --                                 \\
 1     & GW200129 & Yes & No  & --                                 \\
-      & Combined & Yes & No  & --                                 \\
+      & Combined &     &     & --                                 \\
 \hline
 \hline
 \end{tabular}
@@ -1035,10 +1038,10 @@ combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% c
 %
 We found that while our posteriors satisfy the condition~\eqref{eq:eft_bound} (with $\varepsilon = 1/2$),
 they do not obey the condition~\eqref{eq:parspec_bound} for $j = 1$. This means
-that our results for $j=0$ are the only ones we can confidently quote.
+that our results for $N_{\rm max}=0$ are the only ones we can confidently quote.
 %
 The combined bound, which is also quoted in Table~\ref{tab:ref_theories_qnms},
-is $\ell_{\rm CS} \leqslant 34.5$~km.
+is $\ell_{\rm CS} \leqslant 38.7$~km.
 }
 \label{tab:summary_dcs}
 \end{table}
@@ -1066,20 +1069,18 @@ in spin QNM correction.
 $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
               &       & bound? & bound?  &                            \\
 \hline
-  & GW150914 &  &     &    \\
-0 & GW200129 &  &     &    \\
-  & Combined &  &     &    \\
+  & GW150914  & Yes & Yes &  $38.2$~km \\
+0 & GW200129  & Yes & Yes &  $42.5$~km \\
+  & Combined  &     &     &  \cellcolor{black!10}$38.2$~km \\
 \hline
-  & GW150914 &  &     &    \\
-1 & GW200129 &  &     &    \\
-  & Combined &  &     &    \\
+  & GW150914  & Yes  & No  &  -- \\
+1 & GW200129  & Yes  & No  &  -- \\
+  & Combined  &      &     &  -- \\
 \hline
 \hline
 \end{tabular}
 \caption{Detailed summary of our results the cubic EFT of GR for GW150914, GW200129, and
 combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
-%
-\hs{TODO: update when completed.}
 }
 \label{tab:summary_ceft}
 \end{table}
@@ -1107,9 +1108,9 @@ in spin QNM correction.
 $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
               &       & bound? & bound?  &                            \\
 \hline
-  & GW150914 &  &     &    \\
-0 & GW200129 &  &     &    \\
-  & Combined &  &     &    \\
+  & GW150914 & Yes & Yes  & $51.7$~km \\
+0 & GW200129 & Yes & Yes  & $54.8$~km \\
+  & Combined &     &      & \cellcolor{black!10}$51.3$~km \\
 \hline
   & GW150914 &  &     &    \\
 1 & GW200129 &  &     &    \\
@@ -1120,7 +1121,6 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 \caption{Detailed summary of our results the quartic EFT of GR for GW150914, GW200129, and
 combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
-\hs{TODO: update when completed.}
 }
 \label{tab:summary_qeft}
 \end{table}
