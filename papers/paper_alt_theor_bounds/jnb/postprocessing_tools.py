@@ -43,7 +43,7 @@ def get_threshold(smp_mass, thr_coef=1/2.):
     
     smp_mass_geo = np.median(smp_mass) * Msun_to_km
     
-    return thr_coef * m_in_km
+    return thr_coef * smp_mass_geo
 
 def get_kde_l(smp_l, l_min = 0, l_max = 60, vis=False):
     """
@@ -199,6 +199,12 @@ def do_posterior_combine(x1, y1, prior_limits1,
 
 def joint_likelihood_and_posterior(df1, df2, pr1max, pr2max):
 
+    import scipy.ndimage.filters as filter
+    from scipy.interpolate import InterpolatedUnivariateSpline as ius
+    
+    def gf(P):
+        return filter.gaussian_filter(P, sigma=2.0)
+    
     # priors ranges
     pr1range = [0, pr1max]
     pr2range = [0, pr2max]
@@ -229,14 +235,15 @@ def joint_likelihood_and_posterior(df1, df2, pr1max, pr2max):
     likel1 /= np.sum(likel1) * dl1
     likel2 /= np.sum(likel2) * dl2
     
-    # HS: Abhirup, if dl1 \neq dl2, which one should we use?
     # joint likelihood
     if (pr1max > pr2max) or (pr2max == pr2max):
         dl = dl1
         pr = prl1
+        lintp = lintp1
     else:        
         dl = dl2
         pr = prl2
+        lintp = lintp2
         
     likel = likel1*likel2
     likel /= np.sum(likel) * dl # chose dl1 because dl1=dl2
@@ -245,4 +252,22 @@ def joint_likelihood_and_posterior(df1, df2, pr1max, pr2max):
     Pl = likel * pr # chose one of the priors because they were identical
     Pl /= np.sum(Pl) * dl # chose dl1 because dl1=dl2
     
-    return lintp1, lintp2, likel, Pl
+    # return lintp1, lintp2, likel, Pl
+
+    l_vals = np.arange(0, pr.max() + 1)
+    jlike = gf(likel)
+    jpost = gf(Pl)
+    
+    jlike_interp = ius(lintp, jlike, k=1)
+    jpost_interp = ius(lintp, jpost, k=1)
+    
+#     plt.plot(lintp, gf(likel))
+#     plt.plot(l_vals, jlike_interp(l_vals))
+    
+#     plt.plot(lintp, gf(Pl))
+#     plt.plot(l_vals, jpost_interp(l_vals))
+    
+    
+    return l_vals, jlike_interp(l_vals) / jlike_interp.integral(l_vals.min(), l_vals.max()), jpost_interp(l_vals) / jpost_interp.integral(l_vals.min(), l_vals.max())
+
+
