@@ -196,3 +196,53 @@ def do_posterior_combine(x1, y1, prior_limits1,
         ax.legend(loc='best', fontsize=8)
     
     return x12_vals, yx12_combined(np.array(x1)) / yx12_normalisation
+
+def joint_likelihood_and_posterior(df1, df2, pr1max, pr2max):
+
+    # priors ranges
+    pr1range = [0, pr1max]
+    pr2range = [0, pr2max]
+
+    Nbins = 50
+    
+    lbins1 = np.linspace(pr1range[0], pr1range[1], Nbins)
+    lintp1 = (lbins1[:-1] + lbins1[1:])/2.
+
+    lbins2 = np.linspace(pr2range[0], pr2range[1], Nbins)
+    lintp2 = (lbins2[:-1] + lbins2[1:])/2.
+
+    dl1 = np.mean(np.diff(lbins1))
+    dl2 = np.mean(np.diff(lbins2))
+    
+    # prior histograms
+    prl1, lbins1 = np.histogram(np.random.uniform(pr1range[0], pr1range[1], 100000), bins=lbins1, density=True)
+    prl2, lbins2 = np.histogram(np.random.uniform(pr2range[0], pr2range[1], 100000), bins=lbins1, density=True)
+    
+    # posterior histograms
+    Pl1, lbins1 = np.histogram(df1['alphangr'], bins=lbins1, density=True)
+    Pl2, lbins2 = np.histogram(df2['alphangr'], bins=lbins2, density=True)
+    
+    # likelihoods
+    likel1 = Pl1/prl1
+    likel2 = Pl2/prl2
+
+    likel1 /= np.sum(likel1) * dl1
+    likel2 /= np.sum(likel2) * dl2
+    
+    # HS: Abhirup, if dl1 \neq dl2, which one should we use?
+    # joint likelihood
+    if (pr1max > pr2max) or (pr2max == pr2max):
+        dl = dl1
+        pr = prl1
+    else:        
+        dl = dl2
+        pr = prl2
+        
+    likel = likel1*likel2
+    likel /= np.sum(likel) * dl # chose dl1 because dl1=dl2
+
+    # joint posterior
+    Pl = likel * pr # chose one of the priors because they were identical
+    Pl /= np.sum(Pl) * dl # chose dl1 because dl1=dl2
+    
+    return lintp1, lintp2, likel, Pl
