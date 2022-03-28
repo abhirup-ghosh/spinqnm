@@ -231,11 +231,18 @@ def joint_likelihood_and_posterior(df1, df2, pr1max, pr2max):
     
     # HS: Abhirup, if dl1 \neq dl2, which one should we use?
     # joint likelihood
+    if (pr1max > pr2max) or (pr2max == pr2max):
+        dl = dl1
+        pr = prl1
+    else:        
+        dl = dl2
+        pr = prl2
+        
     likel = likel1*likel2
-    likel /= np.sum(likel) * dl1 # chose dl1 because dl1=dl2
+    likel /= np.sum(likel) * dl # chose dl1 because dl1=dl2
 
     # joint posterior
-    Pl = likel * prl1 # chose one of the priors because they were identical
-    Pl /= np.sum(Pl) * dl1 # chose dl1 because dl1=dl2
+    Pl = likel * pr # chose one of the priors because they were identical
+    Pl /= np.sum(Pl) * dl # chose dl1 because dl1=dl2
     
     return lintp1, lintp2, likel, Pl
