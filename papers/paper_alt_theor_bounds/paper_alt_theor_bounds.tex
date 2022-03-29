@@ -817,11 +817,33 @@ $|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes)
 \subsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
 
-We start by presenting our result for EdGB gravity.
+We start by presenting our results for EdGB gravity.
 %
 In Fig.~\ref{fig:edgb_exec_sum} we show the margelized posteriors of the coupling constant $\ell_{\rm GB}$,
 for GW150914 (top panel) and GW200129 (middle panel), with and without the spin correction to the $(2,2,0)$
-QNM.
+QNM. The bottom panel panel shows the joint posterior combining both events.
+%
+We see for both events events the $N_{\rm max} = 0$ posteriors are characterized by a peak away from zero.
+%
+This does not mean that we are observing a deviantion from GR. We recall that the deviations from GR in the ParSpec framework
+are controlled by $\gamma$, which here reads,
+%
+\begin{equation}
+    \gamma_{\rm GB} = \left(\frac{c^2 \ell_{\rm GB}}{ G M_{\rm s}}\right)^4\,.
+\end{equation}
+%
+As shown in Fig.~xxx, $\gamma_{\rm GB}$ does indeed have a posterior with maximum support near zero, indicating consistency
+of our data with GR.
+%
+We also observe that the inclusion of the spin corrections (i.e., $N_{\rm max} = 1$) displaces the posteriors towards
+smaller values of $\ell_{\rm GB}$.
+
+As we stressed in Sec.~\ref{sec:remarks}, before we can draw any conclusions on
+the allowed values for $\ell_{\rm GB}$ from our parameter estimation study, we
+must first check whether the ``EFT''~\eqref{eq:eft_bound} and
+``ParSpec''~\eqref{eq:parspec_bound} bounds are satisfied.
+%
+We do the former in Fig.~\ref{fig:edgb_cdf}.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
@@ -902,7 +924,7 @@ $\gm = m_2$ (solid and dashed lines) and $\gm = M_{f}$ (dot-dashed and dotted li
 The horizontal lines lay at 0.68 and 0.90.
 %
 We see that the CDF curves for $\gm = M_{f}$ are above 90\% for $\varepsilon =
-1/2$ for both events, with and without including the $j = 1$ dCS corrections to
+1/2$ for both events, with and without including the $n = 1$ dCS corrections to
 the dominant QNM.
 }
 \label{fig:dcs_cdf}
