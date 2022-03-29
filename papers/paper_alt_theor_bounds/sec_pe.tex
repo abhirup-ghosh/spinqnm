@@ -23,10 +23,10 @@ $E(d \vert \mathcal{H})$ the evidence.
 %
 The set of parameters, $\bm{\lambda}$ is a union of the GR waveform
 model parameters~$\bm{\theta}$ (c.f.  Sec.~\ref{sec:review_pSEOB}), and
-$\ell$,  the only non-GR parameter in this problem which, we recall, set 
+$\ell$,  the only non-GR parameter in this problem which, we recall, set
 the characteristic length-scale in which deviations from
 GR become relevant in each of the theories described in
-Sec.~\ref{sec:review_theories}. Hence, 
+Sec.~\ref{sec:review_theories}. Hence,
 %
 \begin{equation}
 \bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
@@ -73,25 +73,34 @@ posterior probability distribution function~(PDF) on $\ell$,  $P_j(\ell \vert d_
 %
 % An example of this is shown in Fig. XX.
 
-For $N$ independent GW observations $\{d_j\}, j=1,...N$, each characterised by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the joint posterior can be written as:
+For $N$ independent GW observations $\{d_j\}$, $j=1,...,N$, each characterised by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the joint posterior can be written as:
 %
 \begin{equation}
-P(\ell | \{d_j\}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j)}{p_j(\ell)}.
+P(\ell | \{d_j\}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j)}{p_j(\ell)}\,.
 \label{eq:cumulative_dist_ell}
 \end{equation}
 %
-where $p_j(\ell)$ are the priors used for each observation, and $p(\ell)$ is an overall prior.  Since we assume a uniform prior on $\ell$, joint posterior is identically equal to the joint likelihood.
+where $p_j(\ell)$ are the priors used for each observation, and $p(\ell)$ is an overall prior.
+%
+Since we assume a uniform prior on $\ell$, the joint posterior is identically
+equal to the joint likelihood.
+%
+In some cases, we found it necessary to work with different prior ranges across
+different events, within the context of a given theory.
+%
+In this situation, when combining the posteriors we use chose as our overall
+prior the widest one among the individual events.
 
 \subsection{Priors}
 
-The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \text{sin} \iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
+The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \sin\iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
 This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.
 %
 The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
 
-Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(j)}\delta \tau_k^{(j)}\}$,
-as already mentioned in the previous section, we hold $\{\delta \omega_k^{(j)}\},$
-and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions allowing only $\ell$
+Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(n)}\delta \tau_k^{(n)}\}$,
+as already mentioned in the previous section, we hold $\{\delta \omega_k^{(n)}\}$
+and $\{\delta \tau_k^{(n)}\}$ fixed to theory-specific predictions, and allow only $\ell$
 to freely vary.
 %
 For such cases, we assume a prior uniform between appropriate ranges on $\ell$,
@@ -100,6 +109,19 @@ over the maximum prior value on $\ell$.
 
 
 \subsection{Event selection}
+
+\begin{figure}[t]
+\includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
+\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
+detector-frame remnant mass $(1 + z) \, M_f$ for GW150915, using the same waveform model,
+but without (blue contours) and with the non-GR parameters different from zero (orange contours, for
+dCS gravity and $j=0$). The contours represent 90\% credible regions.
+%
+We see that the introduction of the non-GR parameters does not bias the
+inference on the source parameters.
+}
+\label{fig:corner_plot}
+\end{figure}
 
 The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an
 \emph{IMR} model which infers the properties of the underlying GW signal,
@@ -156,22 +178,8 @@ multiple events to obtain the strongest possible bound on $\ell$.
 As a first test ...
 \hs{Move to an appendix.}
 
-\begin{figure}[t]
-\includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
-\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
-detector-frame remnant mass $(1 + z) \, M_f$ for GW150915, using the same waveform model,
-but without (blue contours) and with the non-GR parameters different from zero (orange contours, for
-dCS gravity and $j=0$). The contours represent 90\% credible regions.
-%
-We see that the introduction of the non-GR parameters does not bias the
-inference on the source parameters.
-}
-\label{fig:corner_plot}
-\end{figure}
-
-
 \subsection{General remarks on the interpretation of our results}
-\label{sec:remaks}
+\label{sec:remarks}
 
 There are two conditions that we must take into account before
 we can confidently claim to have placed a constraint, within our model's assumptions,
@@ -189,7 +197,7 @@ As a cut-off length scale for the validity of the EFT we use,
 \end{equation}
 %
 where $\varepsilon$ is a dimensionless number and $\mathfrak{m}$ is the median
-value of one of the masses involved in the problem.
+value of one of the mass scales involved in the problem.
 %
 We also momentarily restored factors of $c$ and $G$ to emphasize that $\Lambda_{\rm EFT}$ has
 dimensions of length and hence can be compared to the coupling strength $\ell$.
@@ -220,18 +228,36 @@ P(\ell \leqslant \Lambda_{\rm EFT}) \leqslant 0.9 \,,
 %
 and likewise for other percentiles.
 
+Second, as already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
+formalism is by construction perturbative. This means that the non-GR
+deformation parameters are small, that is,
+%
+\begin{equation}
+\gamma \, \delta \omega^{(n)} \ll 1 \,,
+\,\, \textrm{and} \,\,
+\gamma \, \delta \tau^{(n)} \ll 1 \,, \quad \textrm{(ParSpec bound)},
+\label{eq:parspec_bound}
+\end{equation}
+%
+for all orders $n$ in the expansion in dimensionless spin $\chi$ and where $\gamma$
+is given by Eq.~\eqref{eq:def_gamma}.
+%
+We will also construct posterior distributions for these parameters and check if
+most of their support is concentrated to a domain with values much smaller than
+unity.
+
 Another question we must consider is the following: what is the mass $\mathfrak{m}$ that we should use
 in Eq.~\eqref{eq:def_cutoff}?
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, which attempted to
 constrain dCS and shift-symmetric sGB theories with the \emph{inspiral} part of
 the GW signal alone, it was natural to chose the secondary's mass $m_2$ as the most
-conservative choice, for it is by definition the smallest mass and hence
-places the lowest threshold for the validity of either theory as an EFT.
-%
+conservative choice, since it is (by definition) the smallest mass and hence
+places the lowest cut-off scale $\Lambda_{\rm EFT}$ for the validity of either of these theories as an EFT.
+
 In our problem, the answer is not as clear. On the one hand, since we are
 interested in the ringdown part of the signal, it is natural to use the
-final mass $M_f$ to compute the cut-off $\Lambda_{\rm EFT}$.
+final mass $M_f$ to compute $\Lambda_{\rm EFT}$.
 %
 On the other hand, one may argue that the modified gravity theory under study
 should be able to predict a full inspiral, merger, and ringdown of the black
@@ -242,24 +268,6 @@ Here we adopt an agnostic view to this question and consider \emph{both} masses,
 determine $\Lambda_{\rm EFT}$. We will then compare how different assumptions
 yield to different interpretations of the results of our parameter estimations.
 
-There is a second criteria we must also consider.
-%
-As already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
-formalism is by construction perturbative. This means that the non-GR
-deformation parameters are small, that is,
-%
-\begin{equation}
-\gamma \, \delta \omega^{(j)} \ll 1 \,,
-\quad \textrm{and} \quad
-\gamma \, \delta \tau^{(j)} \ll 1 \, \quad \textrm{(ParSpec bound)},
-\label{eq:parspec_bound}
-\end{equation}
-%
-for all $j$ in the expansion in dimensionless spin $\chi$.
-%
-We will also construct posterior distributions for these parameters and check if
-most of their support is concentrated to a domain with values much smaller than
-unity.
 
 \iffalse
 \subsection{Stacking posteriors}
