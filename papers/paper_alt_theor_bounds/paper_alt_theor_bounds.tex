@@ -418,7 +418,7 @@ space studied in~\cite{Sennett:2019bpc}.
 \label{sec:method}
 %%%%%%%%%%%%%%%%%%
 
-\subsection{The parametrized ringdown spin expansion coefficients formalism}
+\subsection{The parametrized ringdown spin expansion coefficients framework}
 \label{sec:review_parspec}
 
 We start by reviewing the parametrized ringdown spin expansion coefficients (ParSpec)
@@ -602,7 +602,7 @@ corrections.
 %
 For example, if we restrict ourselves to corrections with $n=0$, or
 $\chi_f^0$, to the $k=(2,2,0)$ mode only, then we would just have two
-additional parameters, $(\delta \omega_0^{(0)}, \delta \tau_0^{(0)})$.
+additional parameters, $\{\delta \omega_0^{(0)}, \delta \tau_0^{(0)}\}$.
 %
 In this paper, we will restrict ourselves to corrections to the $n=0$ and
 $n=1$ terms, i.e., leading and next-to-leading order corrections to the spin,
@@ -679,7 +679,7 @@ we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
 To answer this question one has to work with a chosen theory and perform a
 translation between the metric perturbations $h_{\mu\nu}$ in the
-Regger-Wheeler-Zerilli gauge and connect it with the transverse-traceless gauge
+Regger-Wheeler-Zerilli gauge~\cite{Regge:1957td,Zerilli:1970se} and connect it with the transverse-traceless gauge
 used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
 %
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
@@ -799,7 +799,9 @@ $|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes)
 \label{sec:results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\hs{Convention: us 90\% credibility for the final bounds.}
+% ----------------------------------------------------------
+% \hs{Convention: us 90\% credibility for the final bounds.}
+% ----------------------------------------------------------
 
 % -----------------
 % Explain threshold
@@ -815,6 +817,12 @@ $|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes)
 \subsection{Einstein-dilaton-Gauss-Bonnet}
 \label{sec:results_edgb}
 
+We start by presenting our result for EdGB gravity.
+%
+In Fig.~\ref{fig:edgb_exec_sum} we show the margelized posteriors of the coupling constant $\ell_{\rm GB}$,
+for GW150914 (top panel) and GW200129 (middle panel), with and without the spin correction to the $(2,2,0)$
+QNM.
+
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
 \caption{(Color online).~Posterior distribution function in EdGB gravity
@@ -823,7 +831,7 @@ and combined events (bottom panel).
 %
 In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
 in spin QNM correction.}
-\label{fig:sGB_exec_sum}
+\label{fig:edgb_exec_sum}
 \end{figure}
 
 \begin{figure}[t]
@@ -837,7 +845,7 @@ horizontal lines lay at 0.68 and 0.90. We see that in no situation the curves pa
 through the 0.68 or 0.90 lines even at $\varepsilon = 1$. This means that no bound on $\ell_{\rm GB}$
 can be placed with the event we analyzed.
 }
-\label{fig:dcs_cdf}
+\label{fig:edgb_cdf}
 \end{figure}
 
 \begin{table}[h]
