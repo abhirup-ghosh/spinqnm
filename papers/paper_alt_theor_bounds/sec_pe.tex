@@ -7,8 +7,7 @@ theories.
 \subsection{Bayesian formalism}
 If we assume that a GW signal observed in detector data $d$ is accurately
 described by our waveform model \pSEOB{}, we can infer the parameters of the
-model, $\bm{\lambda}$, given the hypothesis $\mathcal{H}$, using the Bayes
-theorem,
+model, $\bm{\lambda}$, given the hypothesis $\mathcal{H}$, using Bayes' theorem,
 %
 \begin{equation}
 P(\bm{\lambda} \vert d, \mathcal{H}) =
@@ -69,9 +68,8 @@ sample over the parameter space using a Markov-Chain Monte Carlo algorithm as im
 a package part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
-posterior probability distribution function~(PDF) on $\ell$,  $P_j(\ell \vert d_j,\mathcal{H})$, our main parameter of interest.
-%
-% An example of this is shown in Fig. XX.
+posterior probability distribution function~(PDF) on $\ell$,  i.e., $P_j(\ell \vert d_j,\mathcal{H})$,
+our main parameter of interest.
 
 For $N$ independent GW observations $\{d_j\}$, $j=1,...,N$, each characterised by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the joint posterior can be written as:
 %
