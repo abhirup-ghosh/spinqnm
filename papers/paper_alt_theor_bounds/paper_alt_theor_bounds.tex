@@ -853,7 +853,7 @@ We check the validity of the EFT bound in Fig.~\ref{fig:edgb_cdf}. In the top (b
 the cumulative density function of the $\ell_{\rm GB}$ posteriors for GW150914 (GW200129), obtained
 evaluating the integral~\eqref{eq:def_cdf} with $\Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})$,
 with the mass scale set by the secondary's mass (i.e., $\mathfrak{m} = m_2$, dashed lines) or
-the remnant's mass ($\mathfrak{m} = M_f$, solid lines), while varying $\varepsilon$.
+the remnant's mass ($\mathfrak{m} = M_f$, solid lines), while varying $\varepsilon$ between 0 and 1.
 %
 For GW150914, we see that for the $N_{\rm max} = 0$ curves, that the CDF never goes
 past $0.2$, regardless of the mass scale $\mathfrak{m}$ used and even at $\varepsilon =
@@ -862,7 +862,7 @@ never met at a significant credibility and thus that we cannot place a bound on
 $\ell_{\rm GB}$.
 %
 The situation is similar for GW200129 with $N_{\rm max} = 0$ and does not
-change for either event when we include spin corrections to the EdGB QNM.
+change for either event when we add spin corrections to the EdGB QNM.
 %
 Altogether, \emph{we conclude that we cannot constrain EdGB gravity with our
 present model}.
@@ -879,13 +879,9 @@ of Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which placed the bound $\ell_{\rm 
 a selection of black hole binaries from the GWTC-1 and GWTC-1 catalogs~\cite{}\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and take into consideration only the leading-order
 scalar field contribution arising from the dilatonic coupling.}
-%
-
-
 
 % which relies on post-Newtonian calculations of the GW phase shift in this theory~\cite{Yagi:2011xp,Shiralilou:2020gah,Shiralilou:2021mfl}
 % combined with parametrized post-Einsteinian (ppE) framework~\cite{Yunes:2009ke,Chatziioannou:2012rf,Tahura:2019dgr}.
-
 
 Based on the later, but now here confirmed, within the assumptions of our waveform model,
 in the case of comparable mass binaries.
@@ -896,8 +892,8 @@ in the case of comparable mass binaries.
 for the coupling constant $\ell_{\rm GB}$ for GW150914 (top panel), GW200129 (middle panel)
 and combined events (bottom panel).
 %
-In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
-in spin QNM correction.}
+In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
+of the linear-in-spin QNM correction.}
 \label{fig:edgb_exec_sum}
 \end{figure}
 
@@ -905,9 +901,9 @@ in spin QNM correction.}
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The cumulative distribution function evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the parameter
-$\varepsilon$ for both (blue curves) $\gm = m_2$, the secondary's source
-mass, and (orange curves) $\gm = M_{f}$, the remnant's source mass, without
-(solid curve) and with (dashed curves) linear in spin QNM corrections. The
+$\varepsilon$ for both (dashed curves) $\gm = m_2$, the secondary's source
+mass, and (solid curves) $\gm = M_{f}$, the remnant's source mass, without
+(black curves) and with (purple curves) linear in spin QNM corrections. The
 horizontal lines lay at 0.68 and 0.90. We see that in no situation the curves pass
 through the 0.68 or 0.90 lines even at $\varepsilon = 1$. This means that no bound on $\ell_{\rm GB}$
 can be placed with the events we analyzed.
@@ -919,8 +915,8 @@ can be placed with the events we analyzed.
 \begin{tabular}{l l c c c}
 \hline
 \hline
-$N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
-              &       &  bound? & bound?  &                            \\
+$N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint      \\
+              &       &  bound? & bound?  & ($\gm = M_{f}$) \\
 \hline
   & GW150914 & No  & Yes & -- \\
 0 & GW200129 & No  & Yes & -- \\
@@ -935,8 +931,7 @@ $N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 \caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
 combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
-We conclude that we cannot place any constraint on $\ell_{\rm GB}$ with any of the GW events
-studied here.
+We find that we cannot place any constraint on $\ell_{\rm GB}$ with our waveform model from either GW event.
 }
 \label{tab:summary_edgb}
 \end{table}
