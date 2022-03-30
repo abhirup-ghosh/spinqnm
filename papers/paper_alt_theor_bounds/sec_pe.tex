@@ -203,22 +203,21 @@ We also momentarily restored factors of $c$ and $G$ to emphasize that $\Lambda_{
 dimensions of length and hence can be compared to the coupling strength $\ell$.
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
-but here we consider $\varepsilon \in [0, 1]$.
+but here we consider $\varepsilon \in [0, 1]$ for generality.
 %
 We will say that a bound has been placed on $\ell$, if most of the support of
 the posterior distribution function $P(\ell)$ is in the interval
 $[0, \, \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})]$.
 %
 In practice, this can be quantified through the cumulative distribution function
-(CDF) associated with the marginalized posterior distribution $P(\ell)$,
+(CDF) associated with the marginalized posterior distribution $P(\ell)$, namely
 %
 \begin{equation}
 P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} P(\ell') \, \dd \ell'\,.
 \label{eq:def_cdf}
 \end{equation}
 %
-For instance, we will demand that for a bound with 90\% credibility to be meaningfully placed that
-up to $\ell_{\rm max} = \Lambda_{\rm EFT}$ we have,
+For instance, we will demand that for a bound with 90\% credibility to be meaningfully placed on $\ell$ that
 %
 \begin{equation}
 % \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
@@ -227,7 +226,8 @@ P(\ell \leqslant \Lambda_{\rm EFT}) \leqslant 0.9 \,,
 \label{eq:eft_bound}
 \end{equation}
 %
-and likewise for other credibility percentiles.
+where we let $\ell_{\rm max} = \Lambda_{\rm EFT}$ in Eq.~\eqref{eq:def_cdf}, and
+likewise for other credibility percentiles.
 
 Second, as already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
 formalism is by construction perturbative. This means that the non-GR
