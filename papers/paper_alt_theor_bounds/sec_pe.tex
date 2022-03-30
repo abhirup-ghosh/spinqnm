@@ -62,7 +62,7 @@ where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
 complex conjugation and $S_{n}(f)$ is the power spectrum density of the
 detector.
 %
-Assuming a specific prior distribution for our parameters (discussed further in the subsequent section), we stochastically
+Assuming a specific prior distribution for our parameters (discussed further in the next section), we stochastically
 sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
 \texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx},
 a package part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
@@ -71,7 +71,9 @@ We subsequently marginalize over the remaining parameters to obtain the
 posterior probability distribution function~(PDF) on $\ell$,  i.e., $P_j(\ell \vert d_j,\mathcal{H})$,
 our main parameter of interest.
 
-For $N$ independent GW observations $\{d_j\}$, $j=1,...,N$, each characterised by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the joint posterior can be written as:
+For $N$ independent GW observations $\{d_j\}$, $j=1,...,N$, each characterised
+by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the
+joint posterior can be written as:
 %
 \begin{equation}
 P(\ell | \{d_j\}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j)}{p_j(\ell)}\,.
@@ -134,7 +136,7 @@ an accompanying paper~\cite{LIGOScientific:2021sio}, the \textsc{pSEOBNRv4HM}
 analysis\footnote{See, in particular, Sec.VIII A.2
 in~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model
 presented in this paper, identified two events which provided the strongest
-bounds on measurements of the dominant $(220)$ QNM --
+bounds on measurements of the dominant $(220)$ QNM:
 GW150914~\cite{LIGOScientific:2016aoc} and
 GW200129~\cite{LIGOScientific:2021djp}.
 %
