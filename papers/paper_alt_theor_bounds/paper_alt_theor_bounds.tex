@@ -170,67 +170,91 @@ quartic EFT & $\ell_{\rm qEFT} = \dots$~km~\cite{Sennett:2019bpc}  & $\ell_{\rm 
 \label{sec:review_theories}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% We will consider several modified gravity theories as applications of the \pSEOB{}
-% waveform model presented in Sec.~\ref{sec:review_pSEOB}.
-%
-We briefly review the theories we consider in this paper, what the currents
-observational constraints are in each of them and what we know about BH QNMs in each of them.
+We start by briefly reviewing the modified gravity theories we consider in this
+paper, what are the currents observational constraints and what we do know
+about BH QNMs in each of them.
 
-\subsection{scalar-Gauss-Bonnet gravity}
-%
-This theory is given by the following action,
+\subsection{Einstein-dilaton-Gauss-Bonnet gravity}
+\label{sec:review_edgb}
+
+This theory belongs to the class of scalar-Gauss-Bonnet theories, described by
+the action
 %
 \begin{equation} \label{eq:action_sgb}
     S_{\rm GB} = \frac{1}{16 \pi}
     \int \dV
     \left[
     R - \tfrac{1}{2}(\nabla \varphi)^2
-    + \tfrac{1}{4} \ell^{2}_{\rm GB} f(\varphi) \mathscr{G}
-    \right],
+    + \tfrac{1}{4} \ell^{2}_{\rm GB} f(\varphi) \, \mathcal{G}
+    \right]\,,
 \end{equation}
 %
-where $R$ is the Ricci scalar associated with the metric $g_{\alpha\beta}$ and
-$\varphi$ is a dynamical scalar field which couples to the Gauss-Bonnet
-invariant $\mathscr{G}$,
+where $g = \textrm{det} \, g$ is the metric determinant, $R$ is the Ricci
+scalar and $\varphi$ is a dynamical, massless scalar field that couples to the
+Gauss-Bonnet invariant
 %
-\begin{equation} \label{eq:def_gb}
-    \mathscr{G} =
-    R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
-    - 4 R^{\mu\nu}R_{\mu\nu}
-    + R^2,
-\end{equation}
+% \begin{equation} \label{eq:def_gb}
+$ \mathcal{G} =
+R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
+- 4 R^{\mu\nu}R_{\mu\nu}
++ R^2$,
+% \end{equation}
 %
-with strength set by the dimensionful coupling constant $\ell_{\rm GB}$ with dimensions
-of length. Different subclasses of this theory are determined by the function $f(\varphi)$
-and they can be classified into two classes based on the properties of their BH solutions.
+where $R_{\mu\nu\rho\sigma}$ and $R_{\mu\nu}$ are respectively the Riemann and Ricci tensors.
 %
-In the first class, the first derivative of the coupling
-function $f'(\varphi) = \dd f  / \dd \varphi$ is always nonzero and BHs
-are known to always support (secondary) scalar hair.
+By itself, $\int \dV \mathcal{G}$ is a boundary term in four dimensions
+and hence does not contribute to the field equations~\cite{Myers:1987yn}.
 %
-Examples include the shift-symmetric $f \propto \varphi$ and dilatonic
-$f \propto \exp(\varphi)$ couplings.
+It can however contribute to the field equation when coupled to $\varphi$, as
+done through function $f(\varphi)$. The strength of the coupling is
+set by $\ell_{\rm GB}$, with dimensions of length.
+
+Different subclasses of this theory are determined by the function $f(\varphi)$
+and they can be classified into two classes based on the properties of their BH
+solutions.
+%
+In the first class, the first derivative of the coupling function $f'(\varphi) = \dd f  / \dd \varphi$
+is always nonzero and BHs are known to always support scalar hair.
+%
+This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f = \exp(\varphi)$.
+%
+% Examples include the shift-symmetric $f \propto \varphi$ and dilatonic
+% $f \propto \exp(\varphi)$ couplings.
 %
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
-In this case, one can show that theory admits the same stationary,
-asymptotically flat BH solution of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+In this case, the theory admits the same stationary, asymptotically flat BH
+solution of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
 Examples include the quadratic $f \propto \varphi^2$~\cite{Silva:2017uqg}
-and Gaussian $f \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} couplings.
-%
-Here we will consider only the dilatonic theory.
+and Gaussian $f \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} coupling functions.
 
-BHs in both classes support monopolar scalar hair and thus, when in binaries,
-can source scalar dipole radiation and are therefore prone to be constrained with
-GWs observations of compact binaries~\cite{Nair:2019iur,Perkins:2021mhb}.
+BHs in both classes of theories have hair, to which we can associate a (monopole) scalar charge,
+related to the asymptotic $1/r$ decay of the scalar field.
 %
-\dots
+This charge is not an independent parameter, and depends on the BH's mass and spin,
+thus being a ``secondary charge''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
+%
+Since the scalar field is coupled to a curvature invariant, the scalar charge is larger (smaller)
+the smaller (larger) the BH's mass is.
+
+These properties are not mere theoretical curiosities, but have important observational consequences.
+%
+First, the presence of the scalar charge implies that when in binaries, BHs can source
+scalar dipole radiation~\cite{Yagi:2011xp,Julie:2019sab,Shiralilou:2020gah,Shiralilou:2021mfl,Julie:2022huo} making
+the theory prone to be constraint with present
+GWs observations of BH binaries (BBH)~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+%
+Second, the scalar field does influence the response of BHs to linearized perturbations in this theory,
+affecting their QNM spectra.
 
 The calculation of the QNMs in this theory is more complicated than in GR already for
 nonrotating BHs. The reason is due to the coupling between scalar field and
 the Gauss-Bonnet invariant, which manifests into a coupling between scalar perturbation
-and gravitational perturbations of polar parity \dots
+and gravitational perturbations of polar parity.
+%
+BH QNMs in EdGB gravity were first computed in Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations
+were extended to leading-order in BH spin effects in Ref.~\cite{Pierini:2021jxd}.
 
 % \begin{figure}
 % \begin{tikzpicture}[baseline,>=stealth]
@@ -251,7 +275,8 @@ and gravitational perturbations of polar parity \dots
 % \caption{Quasinormal modes of BHs in scalar-Gauss-Bonnet gravity.}
 % \end{figure}
 
-\subsection{dynamical Chern-Simons gravity}
+\subsection{Dynamical Chern-Simons gravity}
+\label{sec:review_dcs}
 
 This theory is given by the following action,
 %
