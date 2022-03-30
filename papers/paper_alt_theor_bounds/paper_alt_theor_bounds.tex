@@ -499,12 +499,15 @@ the redshift $z$~\cite{Krolak:1987ofj}.
 
 In principle, a modification to GR would also affect $M$ and $\chi$ and the expansion should be written
 in terms of non-GR mass and spin, say $\bar{M}$ and $\bar{\chi}$. If we assume that the beyond-GR corrections
-are included perturbatively, the modifications to the BH mass and spin can be absorved into the deviations
+are included perturbatively, the modifications to the BH mass and spin can be absorbed into the deviations
 parameters $\delta\omega$ and $\delta\tau$.
 %
 This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}.
+%
+\hs{TODO: say that we check a posteriori if our PE runs agree with this.}
 
-We remark that in the GR limit, where $\delta\omega_{k}^{(n)} = \delta\tau_{k}^{(n)} = 0$ $\forall\, n$,
+We remark that in the GR limit ($\gamma \to 0$)
+% where $\delta\omega_{k}^{(n)} = \delta\tau_{k}^{(n)} = 0$ $\forall\, n$,
 the series~\eqref{eq:kerr_expansion} truncated at $N_{\rm max} = 4$, reproduces with 1\% accuracy
 the Kerr QNMs for spins $\chi \lesssim 0.7$.
 %
@@ -512,7 +515,6 @@ The values of the fitting coefficients $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$
 can be found in Ref.~\cite{Maselli:2019mjd}, Table I.
 
 % \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
-\hs{TODO: say that we check a posteriori if our PE runs agree with this.}
 
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
@@ -851,7 +853,11 @@ for the coupling constant $\ell_{\rm GB}$ for GW150914 (top panel), GW200129 (mi
 and combined events (bottom panel).
 %
 In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
-of the linear-in-spin QNM correction.}
+of the linear-in-spin QNM correction.
+%
+The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
+in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}.
+}
 \label{fig:edgb_exec_sum}
 \end{figure}
 
@@ -914,31 +920,43 @@ $\ell_{\rm GB}$.
 The situation is similar for GW200129 with $N_{\rm max} = 0$ and does not
 change for either event when we add spin corrections to the EdGB QNM.
 %
-Altogether, \emph{we conclude that we cannot constrain EdGB gravity with our
+Taken together we are led to \emph{conclude that we cannot constrain EdGB gravity with our
 present model}.
 %
-These conclusions are summarized in Table~\ref{tab:summary_edgb}.
+We summarize our findings in Table~\ref{tab:summary_edgb}.
 
-Let us contrast our results with those of Ref.~\cite{Lyu:2022gdr} which placed
-the bound
+Let us place our results in a broader context. In particular, let us contrast
+them against those of Ref.~\cite{Lyu:2022gdr} which placed the bound
 %
 $\ell_{\rm GB} \leqslant 1.33$~km
 %
-using the \emph{inspiral} portion of the neutron star-black hole binaries GW200105 and GW200115~\cite{LIGOScientific:2021qlt} or
-of Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which placed the bound $\ell_{\rm GB} \leqslant 1.7$~km, by considering
-a selection of black hole binaries from the GWTC-1 and GWTC-1 catalogs~\cite{}\footnote{These bounds
-are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
-take into consideration only the leading-order scalar field contribution arising from the dilatonic coupling.}
+using the neutron star-black hole binaries GW200105 and GW200115~\cite{LIGOScientific:2021qlt}, and
+of Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which placed the bound
 %
-In this cases
-
-
-% which relies on post-Newtonian calculations of the GW phase shift in this theory~\cite{Yagi:2011xp,Shiralilou:2020gah,Shiralilou:2021mfl}
-% combined with parametrized post-Einsteinian (ppE) framework~\cite{Yunes:2009ke,Chatziioannou:2012rf,Tahura:2019dgr}.
-
-Based on the later, but now here confirmed, within the assumptions of our waveform model,
-in the case of comparable mass binaries.
-
+$\ell_{\rm GB} \leqslant 1.7$~km,
+%
+by stacking the posterior of $\ell_{\rm GB}$ from a  selection of black hole binaries from the GWTC-1 and GWTC-2 catalogs
+with at least one relatively low-mass binary component~\cite{}\footnote{These bounds
+are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
+take into consideration only the leading-order scalar field contribution arising from the dilatonic coupling.}.
+%
+These works use the \emph{inspiral} portion of GW event only and a constraint
+on EdGB gravity can be obtained because black holes in this theory carry a
+monopole scalar charge which in turn can source dipolar scalar radiation,
+that affects the GW phase at $-1$PN order, relative to the dominant GR contribution, and
+is proportional to the difference between the charges of binary components.
+%
+Now, the magnitude of the scalar charge scales roughly with the inverse of the black hole's mass squared, that is,
+smaller (larger) back holes carry large (smaller) scalar charges. Qualitatively, this is because the scalar field
+is sourced by the Gauss-Bonnet curvature invariant, which is large for black holes with small masses.
+%
+Beyond-GR corrections to the inspiral are, by construction, not present in our
+waveform model and constitutes a important ingredient to be added in forthcoming
+versions of the model.
+%
+In addition to the larger mass (which suppresses the black hole's charge), the
+QNM of EdGB gravity differ very little from GR as observed in~\cite{Blazquez-Salcedo:2016enn}.
+%
 Hence, here we have an example of a theory in which the inspiral portion of the signal
 is more constraining then the ringdown portion of the signal.
 %
@@ -956,7 +974,7 @@ GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel)
 In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
 in spin QNM correction.
 %
-We stress that posteriors obtained including $j=1$ corrections, violated conditions~\eqref{eq:parspec_bound}
+We stress that posteriors obtained including $n=1$ corrections, violated conditions~\eqref{eq:parspec_bound}
 and therefore should not be used to draw meaningful conclusions. We show them for illustrative purposes
 and also to emphasize the importance of taking conditions~\eqref{eq:eft_bound} and~\eqref{eq:parspec_bound}
 simultaneously into consideration when analyzing the results of the parameter estimation.
@@ -984,15 +1002,20 @@ We now turn our attention to dCS gravity.
 In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
 function of $\ell_{\rm CS}$ for both events GW150914 (top panel) and GW200129
 (middle panel), with (dashed line) and without (solid line) spin corrections to
-dominant $l = m = 2$,~$n=0$~QNM.
+dominant $(2,2,0)$~QNM.
 %
 Perhaps the most salient feature of these posteriors is that they are not
 peaked at $\ell_{\rm CS}$, which may mislead us to believe that we are seeing a
-deviation from GR. This is not the case.
+deviation from GR. This is not the case and the situation is that same as the
+one we discussed in the previous section for EdGB gravity.
 %
-We must remember that in the ParSpec formalism that the GR deviations
-are controlled by $\gamma \, \delta \omega^{(j)}$~and~$\gamma \, \delta \tau^{(j)}$.
-We verified that these quantities do indeed peak at zero indicating consistency with GR.
+We verified that
+%
+\begin{equation}
+    \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{\rm s}} \right)^{4}\,,
+\end{equation}
+%
+does indeed peak at zero indicating consistency with GR, similarly to what is shown in Fig.~\ref{} for $\gamma_{\rm GB}$.
 %
 We also see that in both cases, that the inclusion leading-order-in-spin
 correction to the mode, displaces the posteriors towards smaller values of
@@ -1001,15 +1024,15 @@ posterior peaks.
 %
 Finally, in the bottom panel, we show the combined result for both events.
 
-In Fig.~\ref{fig:dcs_cdf} we show the cumulative distribution function (CDF) as
-evaluates with Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT}$,
+In Fig.~\ref{fig:dcs_cdf} we show the cumulative distribution function,
+obtained from Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT} (\varepsilon, \gm)$,
 for both GW150914 (top panel) and GW200129 (bottom panel), where $\Lambda_{\rm EFT}$
-is calculated with either $\mathfrak{m} = m_2$ (blue curves) or $M_{f}$ (orange curves),
-and with $\varepsilon \in [0,\, 1]$.
+is calculated with either $\gm = m_2$ (dashed lines) or $M_{f}$ (solid lines),
+and in the range $\varepsilon \in [0,1]$.
 %
 For GW150914, we see that with $\gm = m_2$ that Eq.~\eqref{eq:eft_bound} is not
-satisfied unless $\varepsilon \approx 0.9$ (with only $j=0$ corrections) and
-$\varepsilon \approx 0.7$ (with both $j=0$ and $1$ corrections).
+satisfied unless $\varepsilon \approx 0.9$ (with only $n=0$ corrections) and
+$\varepsilon \approx 0.7$ (with both $n=0$ and $1$ corrections).
 %
 The situation is different if we use $\gm = M_f$. In this case, we find that
 with or without spin corrections that Eq.~\eqref{eq:eft_bound} can be satisfied
@@ -1021,7 +1044,6 @@ cut-off scale that we can claim an upper bound
 %
 \begin{equation}
 \ell_{\rm CS} \leqslant 42.6~\textrm{km}
-% ~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
 \quad \textrm{(90\% credibility)},
 \end{equation}
 %
