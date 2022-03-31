@@ -193,12 +193,10 @@ where $g = \textrm{det} \, g$ is the metric determinant, $R$ is the Ricci
 scalar and $\varphi$ is a dynamical scalar field that couples to the
 Gauss-Bonnet invariant
 %
-% \begin{equation} \label{eq:def_gb}
-$ \mathcal{G} =
+$\mathcal{G} =
 R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
 - 4 R^{\mu\nu}R_{\mu\nu}
 + R^2$,
-% \end{equation}
 %
 where $R_{\mu\nu\rho\sigma}$ and $R_{\mu\nu}$ are respectively the Riemann and Ricci tensors.
 %
@@ -221,10 +219,6 @@ This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f(\
 % \begin{equation}
 % f = \exp(\varphi)\,,
 % \end{equation}
-%
-%
-% Examples include the shift-symmetric $f \propto \varphi$ and dilatonic
-% $f \propto \exp(\varphi)$ couplings.
 %
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
@@ -265,46 +259,19 @@ by stacking the posteriors of $\ell_{\rm GB}$ from a selection of black hole bin
 from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
 take into account only the leading-order scalar field contribution arising from the dilatonic coupling.}.
-%
-% These works use the \emph{inspiral} portion of GW event only and a constraint
-% on EdGB gravity can be obtained because black holes in this theory carry a
-% monopole scalar charge which in turn can source dipolar scalar radiation,
-% that affects the GW phase at $-1$PN order, relative to the dominant GR contribution, and
-% is proportional to the difference between the charges of binary components.
 
 Second, the scalar field does influence the response of BHs to linearized perturbations and thus
 affects the BH's QNM spectra.
 %
-% The calculation of the QNMs in this theory is more complicated than in GR already for
-% nonrotating BHs. The reason is due to
 The coupling between scalar field and the Gauss-Bonnet invariant, which
 manifests into a coupling between scalar perturbation and gravitational
 perturbations of polar parity, which, e.g., breaks the familiar equivalence
-between the QNM spectra of polar and axial gravitational perturbations (isospectrality) of
-Schwarzschild BHs in GR.
+between the QNM spectra of polar and axial gravitational perturbations
+(isospectrality) of Schwarzschild BHs in GR.
 %
 The QNMs on nonrotating BHs in EdGB gravity were first computed in
 Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations were
 extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
-
-% \begin{figure}
-% \begin{tikzpicture}[baseline,>=stealth]
-%     % \draw[help lines, gray] (-4, -2) grid (4, 2);
-%     \draw[->] (-2.5, 0) -- (-1.75, +0.5);
-%     \draw[->] (-2.5, 0) -- (-1.75, -0.5);
-%
-%     \node at (-3.25, 0) {$\{h_{\alpha\beta}, \, \varphi\}$};
-%
-%     \node at (-1, 1.25) {${\cal O}(\chi^{0})$};
-%     \node at (-1, +0.5) {$\{ \textcolor{rred}{h^{\rm p}_{\alpha\beta}}, \, \varphi\}$};
-%     \node at (-1, -0.5) {$h^{\rm a}_{\alpha\beta}$};
-%
-%     \node at (+1, 1.25) {${\cal O}(\chi^{1})$};
-%     \node at (+1, +0.5) {\dots};
-%     \node at (+1, -0.5) {\dots};
-% \end{tikzpicture}
-% \caption{Quasinormal modes of BHs in scalar-Gauss-Bonnet gravity.}
-% \end{figure}
 
 \subsection{Dynamical Chern-Simons gravity}
 \label{sec:review_dcs}
@@ -324,10 +291,6 @@ where $\vartheta$ is a pseudoscalar field, which couples to the Pontryagin
 density
 ${}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma}$,
 %
-% \begin{equation}
-%     {}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma},
-% \end{equation}
-%
 where ${}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma}$ is the dual of the Riemann tensor,
 defined as
 %
@@ -337,8 +300,9 @@ R^{\gamma\delta\rho\sigma} / 2$,
 %
 and where $\epsilon^{\mu}{}_{\nu\gamma\delta}$ is the Levi-Civita tensor.
 %
-As in scalar-Gauss-Bonnet theories, $\int \dV {}^{*}RR$ alone is a boundary term~\cite{Jackiw:2003pm},
-hence cannot contribute to the field equations in four-dimensions.
+As in scalar-Gauss-Bonnet theories, $\int \dV {}^{*}RR$ alone is a boundary
+term~\cite{Jackiw:2003pm}, thus does not contribute to the field equations in
+four-dimensions.
 %
 However, this terms can modify the theory's field equation by coupling it to
 $\vartheta$.
@@ -353,7 +317,7 @@ These BHs support a scalar field which asymptotically falls-off as $r^{-2}$, to 
 a scalar dipole charge.
 %
 As a consequence, the leading-scalar radiative channel of BBH to lose energy is quadrupolar,
-which affects the GW phase at 2PN order.
+which affects the GW phase at 2PN order~\cite{Yagi:2011xp,Alexander:2017jmt}.
 %
 Deviations from GR at this PN order are poorly constrained with present GW
 observations~\cite{LIGOScientific:2021sio}, making dCS gravity unconstrained by
@@ -374,25 +338,6 @@ that found that scalar perturbations and gravitational perturbations of axial pa
 %
 This yields in a breakdown of isospectrality. The QNM spectra of slowly-rotating BHs in dCS gravity was
 studied in Ref.~\cite{Wagle:2021tam}.
-
-% \begin{figure}
-% \begin{tikzpicture}[baseline,>=stealth]
-%     % \draw[help lines, gray] (-4, -2) grid (4, 2);
-%     \draw[->] (-2.5, 0) -- (-1.75, +0.5);
-%     \draw[->] (-2.5, 0) -- (-1.75, -0.5);
-%
-%     \node at (-3.25, 0) {$\{h_{\alpha\beta}, \, \vartheta\}$};
-%
-%     \node at (-1, 1.25) {${\cal O}(\chi^{0})$};
-%     \node at (-1, +0.5) {$h^{\rm p}_{\alpha\beta}$};
-%     \node at (-1, -0.5) {$\{ \textcolor{rred}{h^{\rm a}_{\alpha\beta}}, \, \vartheta\}$};
-%
-%     \node at (+1, 1.25) {${\cal O}(\chi^{1})$};
-%     \node at (+1, +0.5) {\dots};
-%     \node at (+1, -0.5) {\dots};
-% \end{tikzpicture}
-% \caption{Quasinormal modes of BHs in dynamical Chern-Simons gravity.}
-% \end{figure}
 
 \subsection{Effective-field-theory of GR}
 
@@ -421,8 +366,6 @@ to dimension-eight operators (i.e., $n=4$),
 \label{eq:action_mods}
 \begin{align}
     L^{(6)} &= \lame R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} R_{\gamma \delta}{}^{\mu\nu}
-    % \nonumber \\
-    %         &\quad
     + \lamo R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} \tilde{R}_{\gamma \delta}{}^{\mu\nu},
     \label{eq:s_6}
     \\
@@ -441,51 +384,6 @@ and in Refs.~\cite{Cardoso:2018ptl} for the dimension-eight EFT.
 Here we will consider $\lame = \lamo = 1$ for simplicity in the cubic EFT, while in quartic,
 we will $\varepsilon_{1} = 1$ and $\varepsilon_{1,\,2} = 0$. This is the same subset of the EFT's parameter
 space studied in~\cite{Sennett:2019bpc}.
-
-% where we defined the Gauss-Bonnet and Pontryagin densities, respectively,
-% %
-% \begin{subequations}
-% \begin{align}
-%     R^{2}_{\rm GB} &= R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} - 4 R_{\mu\nu} R^{\mu\nu} + R^2,
-%     \\
-%     {}^{*}RR &= \tfrac{1}{2} R_{\nu\mu\rho\sigma} {}^{*}R^{\mu\nu\rho\sigma},
-% \end{align}
-% \end{subequations}
-% %
-% and where $R_{\mu\nu\rho\sigma}$ is the Riemann tensor
-% and $\tilde{R}_{\mu\nu\rho\sigma}$ its dual, defined as
-% %
-% \begin{equation}
-% \tilde{R}_{\mu\nu\alpha\beta} = \tfrac{1}{2} \epsilon_{\mu\nu\rho\sigma} R^{\rho\sigma}{}_{\alpha\beta},
-% \end{equation}
-% %
-% with $\epsilon_{\mu\nu\rho\sigma}$ being the Levi-Civita tensor.
-
-% This action encapsulates various modified gravity theories, which often are studied on their own,
-% namely,
-% %
-% \begin{itemize}
-%     \item scalar Gauss-Bonnet gravity (sGB): corresponds to $\alpha_{\rm GB}$
-%           nonzero and all other dimensionless coupling constants equal to zero.
-%     \item dynamical Chern-Simons (dCS): this corresponds to $\alpha_{\rm CS}$
-%           nonzero and all other dimensionless coupling constants equal to zero.
-%     \item cubic effective field theory of GR (cEFTofGR): this corresponds to $\lame$, $\lamo$ nonzero
-%           and all other dimensionless coupling constants equal to zero.
-%     \item quartic effective field theory of GR (qEFTofGR): this corresponds to $\varepsilon_{i}$
-%           ($i = 1,2,3$) nonzero and all other dimensionless coupling constants equal to zero.
-% \end{itemize}
-%
-% In each of these theories, slowly-rotating BH and their quasinormal mode spectra
-% to leading order in spin have been calculated.
-% %
-% We can use this results to establish a mapping between theory-specific calculations and
-% the theory-agnostic {\sc Parspec} parametrization.
-% %
-% We discuss how we do this in the section.
-%
-% In Eqs.~\eqref{eq:action_mods}, $\alpha_{\rm GB}$, $\alpha_{\rm CS}$, $\lame$,
-% $\lamo$ and $\varepsilon_{i}$ are dimensionless constants.
-
 
 %%%%%%%%%%%%%%%%%%
 \section{Methods}
