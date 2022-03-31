@@ -177,8 +177,8 @@ about BH QNMs in each of them.
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{sec:review_edgb}
 
-This theory belongs to the class of scalar-Gauss-Bonnet theories, described by
-the action
+This theory belongs to the class of scalar-Gauss-Bonnet theories, which are
+described by the action
 %
 \begin{equation} \label{eq:action_sgb}
     S_{\rm GB} = \frac{1}{16 \pi}
@@ -190,7 +190,7 @@ the action
 \end{equation}
 %
 where $g = \textrm{det} \, g$ is the metric determinant, $R$ is the Ricci
-scalar and $\varphi$ is a dynamical, massless scalar field that couples to the
+scalar and $\varphi$ is a dynamical scalar field that couples to the
 Gauss-Bonnet invariant
 %
 % \begin{equation} \label{eq:def_gb}
@@ -206,7 +206,7 @@ By itself, $\int \dV \mathcal{G}$ is a boundary term in four dimensions
 and hence does not contribute to the field equations~\cite{Myers:1987yn}.
 %
 It can however contribute to the field equation when coupled to $\varphi$, as
-done through function $f(\varphi)$. The strength of the coupling is
+done through the coupling function $f(\varphi)$. The strength of the coupling is
 set by $\ell_{\rm GB}$, with dimensions of length.
 
 Different subclasses of this theory are determined by the function $f(\varphi)$
@@ -216,7 +216,12 @@ solutions.
 In the first class, the first derivative of the coupling function $f'(\varphi) = \dd f  / \dd \varphi$
 is always nonzero and BHs are known to always support scalar hair.
 %
-This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f = \exp(\varphi)$.
+This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f(\varphi) = \exp(\varphi)$~\cite{Kanti:1995vq}.
+%
+% \begin{equation}
+% f = \exp(\varphi)\,,
+% \end{equation}
+%
 %
 % Examples include the shift-symmetric $f \propto \varphi$ and dilatonic
 % $f \propto \exp(\varphi)$ couplings.
@@ -224,37 +229,63 @@ This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f =
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
 In this case, the theory admits the same stationary, asymptotically flat BH
-solution of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+solution of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
-Examples include the quadratic $f \propto \varphi^2$~\cite{Silva:2017uqg}
-and Gaussian $f \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} coupling functions.
+Examples include the Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
+the quadratic $f(\varphi) \propto \varphi^2$~\cite{Silva:2017uqg} coupling functions.
 
-BHs in both classes of theories have hair, to which we can associate a (monopole) scalar charge,
-related to the asymptotic $1/r$ decay of the scalar field.
+BHs in EdGB gravity have scalar hair, to which we can associate a (monopole) scalar charge $Q$,
+related to the asymptotic $1/r$ fall-off of the scalar field.
 %
-This charge is not an independent parameter, and depends on the BH's mass and spin,
-thus being a ``secondary charge''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
+This charge is not an independent parameter, and depends on the BH's mass and spin, %~\cite{Berti:2018cxi},
+thus being a ``secondary hair''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
 %
-Since the scalar field is coupled to a curvature invariant, the scalar charge is larger (smaller)
+Since the scalar field is coupled to a curvature scalar, the $Q$ is larger (smaller)
 the smaller (larger) the BH's mass is.
 
-These properties are not mere theoretical curiosities, but have important observational consequences.
+These properties are not mere theoretical curiosities; they have important observational consequences.
 %
 First, the presence of the scalar charge implies that when in binaries, BHs can source
-scalar dipole radiation~\cite{Yagi:2011xp,Julie:2019sab,Shiralilou:2020gah,Shiralilou:2021mfl,Julie:2022huo} making
-the theory prone to be constraint with present
-GWs observations of BH binaries (BBH)~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+scalar dipole radiation (see e.g., Refs.~\cite{Yagi:2011xp,Julie:2019sab,Shiralilou:2020gah,Shiralilou:2021mfl,Julie:2022huo})
+which affects the GW phase at $-1$PN order (relative to the dominant GR
+contribution), with magnitude proportional to the difference between the
+charges of binary components. This makes EdGB gravity testable with present GWs
+observations of compact binaries where at least one component is a BH.
 %
-Second, the scalar field does influence the response of BHs to linearized perturbations in this theory,
-affecting their QNM spectra.
+More specifically, Ref.~\cite{Lyu:2022gdr} placed the bound
+%
+$\ell_{\rm GB} \leqslant 1.33$~km
+%
+using the neutron star-black hole binaries GW200105 and
+GW200115~\cite{LIGOScientific:2021qlt} while Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, obtained
+%
+$\ell_{\rm GB} \leqslant 1.7$~km,
+%
+by stacking the posteriors of $\ell_{\rm GB}$ from a selection of black hole binaries (BBH)
+from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}\footnote{These bounds
+are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
+take into account only the leading-order scalar field contribution arising from the dilatonic coupling.}.
+%
+% These works use the \emph{inspiral} portion of GW event only and a constraint
+% on EdGB gravity can be obtained because black holes in this theory carry a
+% monopole scalar charge which in turn can source dipolar scalar radiation,
+% that affects the GW phase at $-1$PN order, relative to the dominant GR contribution, and
+% is proportional to the difference between the charges of binary components.
 
-The calculation of the QNMs in this theory is more complicated than in GR already for
-nonrotating BHs. The reason is due to the coupling between scalar field and
-the Gauss-Bonnet invariant, which manifests into a coupling between scalar perturbation
-and gravitational perturbations of polar parity.
+Second, the scalar field does influence the response of BHs to linearized perturbations and thus
+affects the BH's QNM spectra.
 %
-BH QNMs in EdGB gravity were first computed in Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations
-were extended to leading-order in BH spin effects in Ref.~\cite{Pierini:2021jxd}.
+% The calculation of the QNMs in this theory is more complicated than in GR already for
+% nonrotating BHs. The reason is due to
+The coupling between scalar field and the Gauss-Bonnet invariant, which
+manifests into a coupling between scalar perturbation and gravitational
+perturbations of polar parity, which, e.g., breaks the familiar equivalence
+between the QNM spectra of polar and axial gravitational perturbations of
+Schwarzschild BHs in GR.
+%
+The QNMs on nonrotating BHs in EdGB gravity were first computed in
+Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations were
+extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
 
 % \begin{figure}
 % \begin{tikzpicture}[baseline,>=stealth]
@@ -278,7 +309,7 @@ were extended to leading-order in BH spin effects in Ref.~\cite{Pierini:2021jxd}
 \subsection{Dynamical Chern-Simons gravity}
 \label{sec:review_dcs}
 
-This theory is given by the following action,
+This theory is described by the action~\cite{Jackiw:2003pm},
 %
 \begin{equation} \label{eq:action_dcs}
     S_{\rm CS} = \frac{1}{16 \pi}
@@ -290,23 +321,24 @@ This theory is given by the following action,
 \end{equation}
 %
 where $\vartheta$ is a pseudo-scalar field, which couples
-to the Pontryagin density,
+to the Pontryagin density
+${}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma}$,
 %
-\begin{equation}
-    {}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma},
-\end{equation}
+% \begin{equation}
+%     {}^{*}RR = {}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} R^{\nu}_{\mu\rho\sigma},
+% \end{equation}
 %
 where ${}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma}$ is the dual of the Riemann tensor,
 defined as
 %
 ${}^{*}R^{\mu}{}_{\nu}{}^{\rho\sigma} =
-\tfrac{1}{2} \epsilon^{\mu}{}_{\nu\gamma\delta}
-R^{\gamma\delta\rho\sigma}$,
+\epsilon^{\mu}{}_{\nu\gamma\delta}
+R^{\gamma\delta\rho\sigma} / 2$,
 %
 and where $\epsilon^{\mu}{}_{\nu\gamma\delta}$ is the Levi-Civita tensor.
 %
-The coupling between scalar field and the Pontryagin density is set by the
-$\ell_{\rm CS}$ with dimensions of length.
+The coupling strength between scalar field and the Pontryagin density is set by the
+coupling constant $\ell_{\rm CS}$, with dimensions of length.
 
 The theory admits the Schwarzschild BH solution of GR, but predicts
 that spinning BHs have (secondary) scalar hair, which, unlike in
