@@ -326,7 +326,7 @@ observations~\cite{LIGOScientific:2021sio}, making dCS gravity unconstrained by
 analyses that rely on the inspiral portion of GWs from BBH
 binaries~\cite{Nair:2019iur,Perkins:2021mhb}.
 %
-Nonetheless, the theory has been constrained by Ref.~\cite{Silva:2020acr}, that found
+Nonetheless, the theory has been constrained in Ref.~\cite{Silva:2020acr}, that found
 %
 $\ell_{\rm CS} \leqslant 8.5$~km,
 %
@@ -340,6 +340,9 @@ that found that scalar perturbations and gravitational perturbations of axial pa
 %
 This yields in a breakdown of isospectrality. The QNM spectra of slowly-rotating BHs in dCS gravity was
 studied in Ref.~\cite{Wagle:2021tam}.
+%
+They were also extracted from numerical relativity (NR) simulations of head-on BH collisions
+in Ref.~\cite{Okounkova:2019dfo}.
 
 \subsection{Effective-field-theory of GR}
 
@@ -362,30 +365,44 @@ associated with a BH, i.e., $\ell / M \ll 1$, and $L^{(2n)}$ are corrections to
 that introduce higher-order curvature tensors (with $2n$ metric derivatives).
 
 More specifically, we follow Refs.~\cite{Cano:2020cao,Cano:2021myl} and work up
-to dimension-eight operators (i.e., $n=4$),
+to dimension-eight operators ($n=4$),
 %
 \begin{subequations}
 \label{eq:action_mods}
 \begin{align}
     L^{(6)} &= \lame R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} R_{\gamma \delta}{}^{\mu\nu}
-    + \lamo R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} \tilde{R}_{\gamma \delta}{}^{\mu\nu},
+    + \lamo R_{\mu\nu}{}^{\rho\sigma} R_{\rho\sigma}{}^{\gamma\delta} \tilde{R}_{\gamma \delta}{}^{\mu\nu}\,,
     \label{eq:s_6}
     \\
     L^{(8)} &= \varepsilon_{1} \mathcal{C}^2
     + \varepsilon_{2} \tilde{\mathcal{C}}^{2}
-    + \varepsilon_{3} \mathcal{C} \tilde{\mathcal{C}},
+    + \varepsilon_{3} \mathcal{C} \tilde{\mathcal{C}}\,,
 \label{eq:s_8}
 \end{align}
 \end{subequations}
 %
-where $\lambda_{\rm o, e}$ and $\varepsilon_{i}$ ($i=1,2,3$) are dimensionless parameters.
+where ${\cal C} = R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}$,
+$\tilde{\cal C} = R_{\mu\nu\gamma\delta} \epsilon^{\mu\nu}{}_{\rho\sigma} R^{\rho\sigma\gamma\delta}$,
+and where $\lambda_{\rm o, e}$ and $\varepsilon_{i}$ ($i=1,2,3$) are dimensionless parameters.
+%
+Due to the large number of free parameters in this theory, we will work only with a subset of the theory's
+parameter space.
+%
+In particular, we will consider dimension-six and dimension-eight operators separately.
+%
+In the dimension-six case we further assume that $\lame = \lamo = 1$, leaving us with $\ell = \ell_{\rm cEFT}$
+as our single free parameter.
+%
+In the dimension-eight case, we will set $\varepsilon_{1} = 1$ and $\varepsilon_{2} = \varepsilon_{3} = 0$,
+as done in Ref.~\cite{Sennett:2019bpc}.
+%
+This leaves us with $\ell = \ell_{\rm qEFT}$ as our single free parameter.
 
-BHs in these theories were found in Refs.~\cite{deRham:2020ejn,Cano:2020cao} for the dimension-six EFT
-and in Refs.~\cite{Cardoso:2018ptl} for the dimension-eight EFT.
+BHs in these theories were found in Refs.~\cite{deRham:2020ejn,Cano:2020cao} in the dimension-six EFT
+and in Refs.~\cite{Cardoso:2018ptl} in the dimension-eight EFT.
+%
+In general
 
-Here we will consider $\lame = \lamo = 1$ for simplicity in the cubic EFT, while in quartic,
-we will $\varepsilon_{1} = 1$ and $\varepsilon_{1,\,2} = 0$. This is the same subset of the EFT's parameter
-space studied in~\cite{Sennett:2019bpc}.
 
 %%%%%%%%%%%%%%%%%%
 \section{Methods}
@@ -422,7 +439,6 @@ $\delta\omega_{k}$ and $\delta\tau_{k}$ depend, in general, on the BH's source m
 %
 Ideally, one would like to explicitly reinstate the dependence the source-frame
 BH mass and spin for it would
-%
 %
 (i) introduce deformation parameters which can be determined, once and for
 all, from a specific gravity theory, and
