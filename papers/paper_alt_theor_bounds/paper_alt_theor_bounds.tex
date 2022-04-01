@@ -234,7 +234,7 @@ related to the asymptotic $r^{-1}$ fall-off of the scalar field.
 This charge is not an independent parameter, and depends on the BH's mass and spin, %~\cite{Berti:2018cxi},
 thus being a ``secondary hair''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
 %
-Since the scalar field is coupled to a curvature scalar, $Q$ is larger (smaller)
+Since the scalar field is sourced by a curvature scalar, $Q$ is larger (smaller)
 the smaller (larger) the BH's mass is.
 
 These properties are not mere theoretical curiosities; they have important observational consequences.
@@ -243,7 +243,7 @@ First, the presence of the scalar charge implies that when in binaries, BHs can 
 scalar dipole radiation (see e.g., Refs.~\cite{Yagi:2011xp,Julie:2019sab,Shiralilou:2020gah,Shiralilou:2021mfl,Julie:2022huo})
 which affects the GW phase at $-1$PN order (relative to the dominant GR
 contribution), with magnitude proportional to the difference between the
-charges of binary components. This makes EdGB gravity testable with present GWs
+charges of binary components. This makes EdGB gravity testable with present GW
 observations of compact binaries where at least one component is a BH.
 %
 More specifically, Ref.~\cite{Lyu:2022gdr} placed the bound
@@ -364,8 +364,9 @@ where $\ell$ is a lengthscale, assumed to be small compares to the lengthscale
 associated with a BH, i.e., $\ell / M \ll 1$, and $L^{(2n)}$ are corrections to
 that introduce higher-order curvature tensors (with $2n$ metric derivatives).
 
-More specifically, we follow Refs.~\cite{Cano:2020cao,Cano:2021myl} and work up
-to dimension-eight operators ($n=4$),
+More specifically, we follow the notation of
+Refs.~\cite{Cano:2020cao,Cano:2021myl} and work up to dimension-eight operators
+($n=4$),
 %
 \begin{subequations}
 \label{eq:action_mods}
@@ -385,7 +386,7 @@ where ${\cal C} = R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}$,
 $\tilde{\cal C} = R_{\mu\nu\gamma\delta} \epsilon^{\mu\nu}{}_{\rho\sigma} R^{\rho\sigma\gamma\delta}$,
 and where $\lambda_{\rm o, e}$ and $\varepsilon_{i}$ ($i=1,2,3$) are dimensionless parameters.
 %
-Due to the large number of free parameters in this theory, we will work only with a subset of the theory's
+Due to the large number of free parameters in this theory, we will focus on a subset of the theory's
 parameter space.
 %
 In particular, we will consider dimension-six and dimension-eight operators separately.
@@ -489,8 +490,8 @@ each spin-order;
 %
 and finally $N_{\rm max}$ is the order of the spin expansion.
 %
-All source dependence on the beyond-GR modification is encapsulated in the dimensionless
-parameter $\gamma$ given by,
+All source dependence on a given modified gravity theory is encapsulated in the
+dimensionless parameter $\gamma$, given by
 %
 \begin{equation}
 \gamma
@@ -503,32 +504,38 @@ parameter $\gamma$ given by,
 \label{eq:def_gamma}
 \end{equation}
 %
-which depends on the parameter $\ell$, with dimensions of length (and sets the
+which depends on a parameter $\ell$, with dimensions of length (and sets the
 lengthscale at which beyond-GR modifications become important), and
 the exponent $p$ which is related to how the beyond-GR modifications are
-included to the Einstein-Hilbert action.
+added to the Einstein-Hilbert action.
 %
 In Eq.~\eqref{eq:def_gamma} we made $\ell$ dimensionless by using the other
 lenghtscale associated to the remnant black hole, i.e., its source-frame mass
 $M_{\rm s}$, which we can also write in terms of the detector-frame mass $M$ through
 the redshift $z$~\cite{Krolak:1987ofj}.
 
-In principle, a modification to GR would also affect $M$ and $\chi$ and the expansion should be written
-in terms of non-GR mass and spin, say $\bar{M}$ and $\bar{\chi}$. If we assume that the beyond-GR corrections
-are included perturbatively, the modifications to the BH mass and spin can be absorbed into the deviations
+In principle, a modification to GR would also affect $M$ and $\chi$ and the
+expansion should be written in terms of non-GR mass and spin, say $\bar{M}$ and
+$\bar{\chi}$. If we assume that the beyond-GR corrections are included perturbatively
+(as is the case for all theories described in Sec.~\ref{sec:review_theories}),
+the modifications to the BH mass and spin can be absorbed into the deviations
 parameters $\delta\omega$ and $\delta\tau$.
 %
 This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}.
 %
-\hs{TODO: say that we check a posteriori if our PE runs agree with this.}
+We will see that in Sec.~\ref{sec:pe} that this is assumption is indeed
+satisfied in our parameter estimation studies (cf.~Fig.~\ref{fig:corner_plot}).
 
-We remark that in the GR limit ($\gamma \to 0$)
-% where $\delta\omega_{k}^{(n)} = \delta\tau_{k}^{(n)} = 0$ $\forall\, n$,
+Finally, we remark that in the GR limit ($\gamma \to 0$)
 the series~\eqref{eq:kerr_expansion} truncated at $N_{\rm max} = 4$, reproduces with 1\% accuracy
 the Kerr QNMs for spins $\chi \lesssim 0.7$.
 %
 The values of the fitting coefficients $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$
 can be found in Ref.~\cite{Maselli:2019mjd}, Table I.
+%
+The fitting coefficients for $N_{\rm max} = 9$, which extend the validity of
+the spin-expansion up to $\chi \lesssim 0.99$ where obtained in
+Ref.~\cite{Carullo:2021dui}.
 
 % \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
 
@@ -699,7 +706,7 @@ we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
 To answer this question one has to work with a chosen theory and perform a
 translation between the metric perturbations $h_{\mu\nu}$ in the
-Regger-Wheeler-Zerilli gauge~\cite{Regge:1957td,Zerilli:1970se} and connect it with the transverse-traceless gauge
+Regge-Wheeler-Zerilli gauge~\cite{Regge:1957td,Zerilli:1970se} and connect it with the transverse-traceless gauge
 used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
 %
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
@@ -811,6 +818,7 @@ $|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes)
 
 %%%%%%%%%%%%%%%%%
 \section{Parameter Inference}
+\label{sec:pe}
 \input{sec_pe}
 
 
