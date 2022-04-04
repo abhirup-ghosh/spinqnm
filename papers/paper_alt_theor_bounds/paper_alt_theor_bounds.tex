@@ -752,11 +752,33 @@ $\delta\omega^{(n)}$, and $\delta\tau^{(n)}$ parameters, and then proceeded
 to use the posteriors on $\ell$ to draw conclusions to any theory that predict
 corrections at a given $p$.
 %
-This is a critical different between our study and Ref.~\cite{Carullo:2021dui}.
+This is a critical difference between our work and Ref.~\cite{Carullo:2021dui}.
 In particular, as we will see in Sec.~\ref{sec:results}, adding theory-specific
-information to the ParSpec expansion \emph{can lead to different interpretation
-of the final results, even for different theories which predict modifications
-with the exponent $p$.}
+information to the ParSpec expansion coefficients \emph{can lead to different interpretations
+of the final bounds on $\ell$, even for different theories which predict value of the exponent $p$.}
+
+\begin{table}[t]
+\begin{tabular}{c | c c c c c c}
+\hline
+\hline
+Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & Ref.  \\
+\hline
+EdGB        & 4 & 0.0107    & 0.0044    & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} \\
+dCS         & 4 & 3.1964    & 6.3619    & 41.199    & 794.66   &  \cite{Wagle:2021tam}  \\
+cubic EFT   & 4 & $-$0.5813 & 2.6469    & $-$3.8620 & 265.12   & \cite{Cano:2021myl} \\
+quartic EFT & 6 & $-$0.2114 & $-$0.6070 & $-$1.5263 & 171.35   & \cite{Cano:2021myl}  \\
+\hline
+\hline
+\end{tabular}
+\caption{Summary of theory-specific QNM calculations.
+%
+We summarize each theory we have considered together with: the exponent $p$ at
+which their QNM-modification enters, the corresponding modifications to the
+oscillation frequency $\delta \omega^{(n)}_{220}$ and decay time $\delta \tau^{(n)}_{220}$, and the
+references from which we used the results from.
+}
+\label{tab:ref_theories_qnms}
+\end{table}
 
 As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating
 BHs is modified gravity theories come in two families depending on their
@@ -789,29 +811,6 @@ under the hypothesis above for the theories listed in Sec.~\ref{sec:review_theor
 %
 We summarize our result in Table~\ref{tab:ref_theories_qnms} and
 leave the details of our calculations to Appendix~\ref{app:map_details}.
-
-\begin{table}[t]
-\begin{tabular}{c | c c c c c c}
-\hline
-\hline
-Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & Ref.  \\
-\hline
-EdGB        & 4 & 0.0107    & 0.0044    & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} \\
-dCS         & 4 & 3.1964    & 6.3619    & 41.199    & 794.66   &  \cite{Wagle:2021tam}  \\
-cubic EFT   & 4 & $-$0.5813 & 2.6469    & $-$3.8620 & 265.12   & \cite{Cano:2021myl} \\
-quartic EFT & 6 & $-$0.2114 & $-$0.6070 & $-$1.5263 & 171.35   & \cite{Cano:2021myl}  \\
-\hline
-\hline
-\end{tabular}
-\caption{Summary of theory-specific QNM calculations.
-%
-We summarize each theory we have considered together with: the exponent $p$ at
-which their QNM-modification enters, the corresponding modifications to the
-oscillation frequency $\delta \omega^{(n)}_{220}$ and decay time $\delta \tau^{(n)}_{220}$, and the
-references from which we used the results from.
-}
-\label{tab:ref_theories_qnms}
-\end{table}
 
 In Fig.~\ref{fig:example_waveform} we show an illustrative waveform for GR (solid line; using the \texttt{SEOBNR} model) and in the cubic EFT of gravity (dashed line; using the \pSEOB{} model),
 including the leading-order $n = 0$ deformations to the fundamental QNM (see Table~\ref{tab:ref_theories_qnms}).
