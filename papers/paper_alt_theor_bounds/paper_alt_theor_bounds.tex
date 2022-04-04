@@ -223,7 +223,7 @@ This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f(\
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
 In this case, the theory admits the same stationary, asymptotically flat BH
-solution of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+solutions of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
 Examples include the Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
 the quadratic $f(\varphi) \propto \varphi^2$~\cite{Silva:2017uqg} coupling functions.
@@ -401,7 +401,7 @@ This leaves us with $\ell = \ell_{\rm qEFT}$ as our single free parameter.
 
 In general \dots
 %
-\hs{Describe PN works.}
+\hs{Alessandra, can you include a short description of~\cite{Sennett:2019bpc} for the quartic EFT?}
 
 The QNMs of nonrotating BHs where calculated in in Refs.~\cite{deRham:2020ejn,Cano:2020cao} in the dimension-six EFT
 and in Refs.~\cite{Cardoso:2018ptl,Cano:2020cao} in the dimension-eight EFT.
@@ -490,7 +490,7 @@ each spin-order;
 %
 and finally $N_{\rm max}$ is the order of the spin expansion.
 %
-All source dependence on a given modified gravity theory is encapsulated in the
+All source dependence on a given modified gravity theory is contained in the
 dimensionless parameter $\gamma$, given by
 %
 \begin{equation}
@@ -539,12 +539,10 @@ which extend the validity of the spin-expansion up to $\chi \lesssim 0.99$.
 As we will discuss in Sec.~\ref{sec:pe}, the expansion to $N_{\rm max} = 4$ is
 sufficient for our purposes.
 
-% \hs{TODO: in figures and tables use $N_{\rm max} = 0$ ($N_{\rm max} = 1$) instead of $j=0$ ($j=0,1$).}
-
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
 
-We now describe the waveform model used in our paper to measure properties of a
+We now describe the waveform model used in our paper to infer properties of a
 BBH ringdown.
 %
 As in Refs.~\cite{Brito:2018rfr,Ghosh:2021mrv}, we use an IMR BBH waveform
@@ -590,7 +588,7 @@ harmonics described by standard angular dependence indices $l$ and $m$.
 % \footnote{Note that we use $l$ to denote the angular dependence index and $\ell$ to denote the coupling constant in Sec.~\ref{sec:review_parspec}.}
 % --------------------------------
 %
-As our baseline model, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in Ref.~\cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{}\footnote{This waveform model is available in \texttt{LALSuite}~\cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}.
+As our baseline model, that is, the GR model upon which non-GR modifications will be added to, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in Ref.~\cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{}\footnote{This waveform model is available in \texttt{LALSuite}~\cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}.
 %
 The model uses an effective-one-body (EOB) approach combined with a
 post-adiabatic solution of the equations of motion to describe the
@@ -599,8 +597,8 @@ inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$.
 An accurate description of the merger is incorporated through calibration with
 NR simulations, as described in Ref.~\cite{Cotesta:2018fcv}, along with
 information for the merger and ringdown phases, from BH perturbation theory.
-The merger-ringdown waveform, $h_{l m}^\mathrm{merger-RD}$, is then stitched to
-inspiral-plunge waveform, $h_{l m}^\mathrm{insp-plunge}$ at a certain time $t = t^{\textrm{match}}_{l m}$, as
+The merger-ringdown waveform, $h_{l m}^\textrm{merger-RD}$, is then stitched to
+inspiral-plunge waveform, $h_{l m}^\textrm{insp-plunge}$ at a certain time $t = t^{\textrm{match}}_{l m}$, as
 %
 \begin{equation}
 h_{l m}(t) =
@@ -644,8 +642,9 @@ Hence,
 %
 \begin{subequations}
 \begin{align}
-\omega_{l m 0}^{\text{GR}} &= \omega_{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,\\
-\tau _{l m 0}^{\text{GR}} &= \tau _{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,.
+\omega_{l m 0}^{\text{GR}} &= \omega_{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
+\\
+\tau _{l m 0}^{\text{GR}} &= \tau _{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
 \end{align}
 \end{subequations}
 %
@@ -672,10 +671,6 @@ Following the ParSpec expansion, our QNM frequencies are expressed through funct
 %
 where we fixed a certain value of $p$, and the estimates of $(m_1,\, m_2,\, \chi_1,\, \chi_1)$ are used to predict
 the final BH mass $M_f$ and spin $\chi_f$ through~\cite{Taracchini:2013rva,Hofmann:2016yih}.
-%
-% HS: we implicitly fixed p here. Could we leave it free in PE study. This is similar
-% to the 'number of dimensions'-like studies. Here it would tells us quite generically
-% what is the dimension of the modification to the EH-action we include!
 %
 Additionally, both $\omega_k$ and $\tau_k$ depend on the coupling constant $\ell$
 defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta
@@ -1694,6 +1689,13 @@ perturbative bounds. If so, add explanation here.}
 % \hs{Say it is important to go beyond mode calculation and actually understand
 % how the QNM appear in the GW signal.}
 % -----------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------------
+% HS: we fixed p in our work. We could leave it free in future studies study.
+% This is similar to the 'number of dimensions'-like studies. Here it would
+% tells us quite generically what is the dimension of the modification to the
+% EH-action we include!
+% ------------------------------------------------------------------------------------
 
 \appendix
 
