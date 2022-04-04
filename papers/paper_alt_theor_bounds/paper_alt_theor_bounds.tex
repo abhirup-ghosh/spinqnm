@@ -683,8 +683,7 @@ $\chi_f^0$, to the $k=(2,2,0)$ mode only, then we would just have two
 additional parameters, $\{\delta \omega_0^{(0)}, \delta \tau_0^{(0)}\}$.
 %
 In this paper, we will restrict ourselves to corrections to the $n=0$ and
-$n=1$ terms, i.e., leading and next-to-leading order corrections to the spin,
-$\chi_f$.
+$n=1$ terms, that is, only up to the leading-order in spin $\chi_f$ term.
 
 Using this parameterized waveform model, which we will call $\pSEOB$ in this
 paper, we infer bounds on our beyond-GR parameters for specific cases of
@@ -692,7 +691,7 @@ modified gravity theories presented Sec.~\ref{sec:review_theories}.
 %
 We detail these results in Sec.~\ref{sec:results}.
 %
-\hs{Should we call this waveform differently to distinguish it from your previous papers?}
+\hs{Alessandra, Abhirup, should we call this waveform differently to distinguish it from your previous papers?}
 %
 %In this paper, we will restrict ourselves to the $k=(2,2,0)$ QNM and corrections to the $j=0$ and $j=1$ terms, i.e., leading and next-to-leading order corrections to the spin, $\chi_f$. Assuming a prior which is uniform on the beyond-GR parameters, $(\ell, \{\delta \omega_k^{(j)}\},\{\delta \tau_k^{(j)}\})$, we employ a Bayesian framework to stochastically sample over the parameter space using the \texttt{LALInference} algorithm.~\cite{lallsuite}.
 %
@@ -713,10 +712,10 @@ We begin by rewriting $\omega_{k}$ and $\tau_{k}$, given by Eqs.~\eqref{eq:kerr_
 \label{eq:qnm_nongr_iso}
 \begin{align}
 M \omega_{k} &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
-+ \sum_{n=0}^{N_{\rm max}} \chi^{j} \omega^{j}\,,
++ \sum_{n=0}^{N_{\rm max}} \chi^{n} \omega^{(n)}\,,
 \\
 \tau_{k}/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
-+ \sum_{n=0}^{N_{\rm max}} \chi^{(n)} \tau^{(n)}\,,
++ \sum_{n=0}^{N_{\rm max}} \chi^{n} \tau^{(n)}\,,
 \end{align}
 \end{subequations}
 %
@@ -749,7 +748,15 @@ QNMs we reduce the parameter space of beyond-GR parameters to $\ell$ alone.
 %
 We emphasize that our procedure is different from that of
 Ref.~\cite{Carullo:2021dui} which, for a given value of $p$, varied all $\ell$,
-$\delta\omega^{(n)}$ and $\delta\tau^{(n)}$ parameters.
+$\delta\omega^{(n)}$, and $\delta\tau^{(n)}$ parameters, and then proceeded
+to use the posteriors on $\ell$ to draw conclusions to any theory that predict
+corrections at a given $p$.
+%
+This is a critical different between our study and Ref.~\cite{Carullo:2021dui}.
+In particular, as we will see in Sec.~\ref{sec:results}, adding theory-specific
+information to the ParSpec expansion \emph{can lead to different interpretation
+of the final results, even for different theories which predict modifications
+with the exponent $p$.}
 
 As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating
 BHs is modified gravity theories come in two families depending on their
@@ -1351,7 +1358,7 @@ We now turn our attention to dCS gravity.
 %
 In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
 function of $\ell_{\rm CS}$ for both events GW150914 (top panel) and GW200129
-(middle panel), with (purple line) and without (black line) spin corrections to
+(middle panel), with different colors distinguishing cases with and without spin corrections to
 dominant $(2,2,0)$~QNM.
 %
 Perhaps the most salient feature of these posteriors is that they are not
