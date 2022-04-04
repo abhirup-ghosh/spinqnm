@@ -1351,7 +1351,7 @@ We now turn our attention to dCS gravity.
 %
 In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
 function of $\ell_{\rm CS}$ for both events GW150914 (top panel) and GW200129
-(middle panel), with (dashed line) and without (solid line) spin corrections to
+(middle panel), with (purple line) and without (black line) spin corrections to
 dominant $(2,2,0)$~QNM.
 %
 Perhaps the most salient feature of these posteriors is that they are not
@@ -1499,18 +1499,45 @@ is $\ell_{\rm CS} \leqslant 38.7$~km.
 \subsection{cubic effective-field-theory of general relativity}
 \label{sec:results_ceft}
 
-We now consider the cubic EFT of GR, a case in which our results bear
-similarity with what we found in dCS.
+We now consider the cubic EFT of GR.
+%
+In Fig.~\ref{fig:cEFT_exec_sum} we show the marginalized posterior distributions
+functions of $\ell_{\rm cEFT}$ for GW150914 (top panel) and GW200129 (middle panel),
+with black (purple) curve corresponding to $N_{\rm max} = 0$ ($N_{\rm max} = 1$) in
+the spin expansion.
+%
+We find that in this theory, the posterior distributions are mostly uniform for
+$\ell_{\rm cEFT} \lesssim 40$~km (contrast this with the EdGB and dCS gravity
+cases; cf.~Figs.~\ref{fig:edgb_exec_sum} and~\ref{fig:dCS_exec_sum}).
+%
+For values $\ell_{\rm cEFT} \gtrsim 40$~km, the posteriors smoothly approach zero.
+
+In Fig.~\ref{fig:cEFT_cdf} we show the cumulative distribution functions for
+both events, calculated as done in EdGB and dCS cases.
+%
+We see that curves are very similar to those of dCS gravity for GW200129 (cf.
+bottom panel in Fig.~\ref{fig:cEFT_cdf}).
+%
+We find that for both events both the EFT~\eqref{eq:eft_bound} and ParSpec~\eqref{eq:parspec_bound}
+bounds are satisfied for $\mathfrak{m} = M_f$ and $N_{\rm max} = 1/2$, allowing us to obtain the
+combined bound from both events
+%
+\begin{equation}
+    \ell_{\rm cEFT} \leqslant 51.3~\textrm{km},
+\end{equation}
+%
+at 90\% credibility. As also happened for our study for dCS, the find that for
+the cubic EFT that the ParSpec bound is violated by the $n = 1$ corrections to
+the QNMs, implying that we cannot use the associated posterior distributions on
+$\ell_{\rm cEFT}$ to draw any meaningful constraint on this parameter.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined.pdf}
 \caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm cEFT}$ for
 GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
 %
-In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
+In all panels, we use purple (black) lines correspond to the inclusion (or not) of the linear
 in spin QNM correction.
-%
-\hs{TODO}
 }
 \label{fig:cEFT_exec_sum}
 \end{figure}
@@ -1522,7 +1549,7 @@ in spin QNM correction.
 \label{fig:cEFT_cdf}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \begin{tabular}{l l c c c}
 \hline
 \hline
