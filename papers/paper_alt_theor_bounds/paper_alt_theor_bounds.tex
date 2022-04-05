@@ -265,9 +265,9 @@ affects the BH's QNM spectra.
 %
 The coupling between scalar field and the Gauss-Bonnet invariant, which
 manifests into a coupling between scalar perturbation and gravitational
-perturbations of polar parity, which, e.g., breaks the familiar equivalence
+perturbations of polar parity, which, e.g., breaks the equivalence
 between the QNM spectra of polar and axial gravitational perturbations
-(isospectrality) of Schwarzschild BHs in GR.
+(isospectrality~\cite{Chandrasekhar:1985kt}) of Schwarzschild BHs in GR.
 %
 The QNMs on nonrotating BHs in EdGB gravity were first computed in
 Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations were
@@ -335,8 +335,10 @@ PSR~J0030+0451~\cite{Lommen:2000yt,NANOGrav:2017wvv} by
 NICER~\cite{Riley:2019yda,Miller:2019cac} and from the GW observation of the binary
 neutron star (BNS) GW170817~\cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki}.
 
-The QNMs of the Schwarzschild BH in dCS gravity where studied in Refs.~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb},
-that found that scalar perturbations and gravitational perturbations of axial parity couple. (Contrast with EdGB gravity).
+The QNMs of the Schwarzschild BH in dCS gravity where studied in
+Refs.~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb}, that found that scalar
+perturbations and gravitational perturbations of axial parity couple. (Contrast
+with EdGB gravity).
 %
 This yields in a breakdown of isospectrality. The QNM spectra of slowly-rotating BHs in dCS gravity was
 studied in Ref.~\cite{Wagle:2021tam}.
@@ -755,7 +757,7 @@ corrections at a given $p$.
 This is a critical difference between our work and Ref.~\cite{Carullo:2021dui}.
 In particular, as we will see in Sec.~\ref{sec:results}, adding theory-specific
 information to the ParSpec expansion coefficients \emph{can lead to different interpretations
-of the final bounds on $\ell$, even for different theories which predict value of the exponent $p$.}
+of the final bounds on $\ell$, even for different theories which predict the same value of the exponent $p$.}
 
 \begin{table}[t]
 \begin{tabular}{c | c c c c c c}
@@ -788,16 +790,16 @@ we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
 To answer this question one has to work with a chosen theory and perform a
 translation between the metric perturbations $h_{\mu\nu}$ in the
 Regge-Wheeler-Zerilli gauge~\cite{Regge:1957td,Zerilli:1970se} and connect it with the transverse-traceless gauge
-used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Sec. xxx),
+used to described GWs (see e.g.~Ref.~\cite{Maggiore:2018sht}, Chapter~12),
 %
 In GR, both axial and polar QNMs are the same (a property known as \emph{isospectrality}) and therefore which
 QNM we use to model the ringdown makes no difference.
 %
-In beyond-GR theories, isospectrality is in general broken (see the discussion
+In beyond-GR theories, isospectrality is in general broken (see
 in Ref.~\cite{Hui:2021cpm} for a counterexample).
 %
 Thus, how axial and polar gravitational QNMs appear in the GW signal has to be
-answered on theory-by-theory basis.
+answered on a theory-by-theory basis.
 %
 This is outside the scope of this paper and here we take the more pragmatic
 approach of simply choosing the \emph{least damped gravitational mode between
@@ -982,8 +984,7 @@ The prior on $t_0$ is uniform and its range is informed by our detection pipelin
 
 Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(n)}\delta \tau_k^{(n)}\}$,
 as already mentioned in the previous section, we hold $\{\delta \omega_k^{(n)}\}$
-and $\{\delta \tau_k^{(n)}\}$ fixed to theory-specific predictions, and allow only $\ell$
-to freely vary.
+and $\{\delta \tau_k^{(n)}\}$ fixed to theory-specific predictions, and allow only $\ell$ to freely vary.
 %
 We assume an uniform prior between appropriate ranges on $\ell$,
 say $\ell \in [0, \ell_{\rm max}]$.
@@ -1053,9 +1054,17 @@ the analyses in Ref.~\cite{LIGOScientific:2021sio}.
 The only difference between the sampling configurations is that we do not
 sample over the fractional deviations in the $(220)$ QNM frequencies and
 damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$
-and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions.
+and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions, summarized
+in Table~\ref{tab:ref_theories_qnms}.
 %
-In the section to follow, we enumerate through the different theories and
+In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_f$ and
+detector-frame remnant mass $(1 + z) M_f$ for GW150914 for GR and the
+illustrative case of dCS gravity. We see that our waveform models does not
+introduce a substantial change to the GR estimates on this parameters, as
+required by the ParSpec expansion (see discussion in
+Sec.~\ref{sec:review_parspec}).
+
+In Sec.~\ref{sec:results}, we will enumerate through the different theories and
 outline the highlight results. Whenever possible, we also combine results from
 multiple events to obtain the strongest possible bound on $\ell$.
 
@@ -1063,21 +1072,21 @@ multiple events to obtain the strongest possible bound on $\ell$.
 % Corner plots here
 % -----------------
 
-As a first test ...
-\hs{Move to an appendix.}
+% As a first test ...
+% \hs{Move to an appendix.}
 
 \subsection{General remarks on the interpretation of our results}
 \label{sec:remarks}
 
-There are two conditions that we must take into account before
-we can confidently claim to have placed a constraint, within our model's assumptions,
-with our parameter estimation study.
+There are two conditions that we must verify before we can confidently claim to
+have placed a constraint, within our model's assumptions, with our parameter
+estimation study.
 
 First, as we explained in Sec.~\ref{sec:review_theories}, all theories that we
 consider must be considered as an effective field theory, meaning it should be
-considered valid only below an energy scale, or equivalently, a length scale.
+considered valid only below an energy scale, or equivalently, a lengthscale.
 %
-As a cut-off length scale for the validity of the EFT we use,
+As a cut-off lengthscale for the validity of the EFT we use,
 %
 \begin{equation}
 \Lambda_{\rm EFT} (\varepsilon, \mathfrak{m}) = \varepsilon \, G \mathfrak{m} / c^2 \,,
@@ -1101,11 +1110,13 @@ In practice, this can be quantified through the cumulative distribution function
 (CDF) associated with the marginalized posterior distribution $P(\ell)$, namely
 %
 \begin{equation}
-P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
+% P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
+% HS: changed lower limit to zero since we don't have support for negative \ell-values
+P(\ell \leqslant \ell_{\rm max}) = \int_{0}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
 \label{eq:def_cdf}
 \end{equation}
 %
-For instance, we will demand that for a bound with 90\% credibility to be meaningfully placed on $\ell$ that
+For instance, we will require that for a bound with 90\% credibility to be placed on $\ell$ that
 %
 \begin{equation}
 % \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
@@ -1129,7 +1140,7 @@ deformation parameters are small, that is,
 \end{equation}
 %
 for all orders $n$ in the expansion in dimensionless spin $\chi$ and where $\gamma$
-is given by Eq.~\eqref{eq:def_gamma}.
+was defined in Eq.~\eqref{eq:def_gamma}.
 %
 We will also construct posterior distributions for these parameters and check if
 most of their support is concentrated to a domain with values much smaller than
@@ -1139,9 +1150,9 @@ Another question we must consider is the following: what is the mass $\mathfrak{
 in Eq.~\eqref{eq:def_cutoff}?
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, which attempted to
-constrain dCS and shift-symmetric sGB theories with the \emph{inspiral} part of
+constrain dCS and EdGB theories with the \emph{inspiral} part of
 the GW signal alone, it was natural to chose the secondary's mass $m_2$ as the most
-conservative choice, since it is (by definition) the smallest mass and hence
+conservative choice, since it is by definition the smallest component mass and hence
 places the lowest cut-off scale $\Lambda_{\rm EFT}$ for the validity of either of these theories as an EFT.
 
 In our problem, the answer is not as clear. On the one hand, since we are
@@ -1153,9 +1164,12 @@ consideration should be able to predict a full inspiral, merger, and ringdown
 of the black hole binary before we can even make such a test, and thus the
 same, more conservative choice $\gm = m_2$ should be used.
 %
-Here we adopt an agnostic view to this question and consider \emph{both} masses, $m_2$ and $M_f$, to
-determine $\Lambda_{\rm EFT}$. We will then compare how different assumptions
-yield to different interpretations of the results of our parameter estimations.
+Here we adopt a pragmatic approach to this issue and consider \emph{both}
+masses, $m_2$ and $M_f$, to determine $\Lambda_{\rm EFT}$.
+%
+We will then compare how different assumptions yield to different
+interpretations of the results of our parameter estimations.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
