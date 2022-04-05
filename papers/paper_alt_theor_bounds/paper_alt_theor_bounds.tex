@@ -264,10 +264,10 @@ Second, the scalar field does influence the response of BHs to linearized pertur
 affects the BH's QNM spectra.
 %
 The coupling between scalar field and the Gauss-Bonnet invariant, which
-manifests into a coupling between scalar perturbation and gravitational
+result into a coupling between scalar perturbation and gravitational
 perturbations of polar parity, which, e.g., breaks the equivalence
 between the QNM spectra of polar and axial gravitational perturbations
-(isospectrality~\cite{Chandrasekhar:1985kt}) of Schwarzschild BHs in GR.
+(isospectrality~\cite{Chandrasekhar:1985kt}, see also Refs.~\cite{Glampedakis:2017rar,Lenzi:2021njy}) of Schwarzschild BHs in GR.
 %
 The QNMs on nonrotating BHs in EdGB gravity were first computed in
 Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations were
@@ -1212,7 +1212,7 @@ Recall that the deviations from GR in the ParSpec framework are controlled
 by $\gamma$, which here reads,
 %
 \begin{equation}
-    \gamma_{\rm GB} = \left(\frac{c^2 \ell_{\rm GB}}{ G M_{\rm s}}\right)^4\,.
+    \gamma_{\rm GB} = \left(\frac{c^2 \ell_{\rm GB}}{ G M_{f}}\right)^4\,.
 \end{equation}
 %
 As shown in Fig.~xxx, $\gamma_{\rm GB}$ does indeed have a posterior
@@ -1410,13 +1410,13 @@ one we discussed in the previous section for EdGB gravity.
 We verified that
 %
 \begin{equation}
-    \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{\rm s}} \right)^{4}\,,
+    \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{f}} \right)^{4}\,,
 \end{equation}
 %
 does indeed peak at zero indicating consistency with GR, similarly to what is shown in Fig.~\ref{} for $\gamma_{\rm GB}$.
 %
-We also see that in both cases, that the inclusion leading-order-in-spin
-correction to the mode, displaces the posteriors towards smaller values of
+We also see that in both cases that the inclusion leading-order-in-spin
+correction to the mode displaces the posteriors towards smaller values of
 $\ell_{\rm CS}$. This can be seen more evidently by looking at the location of
 posterior peaks.
 %
@@ -1580,6 +1580,8 @@ at 90\% credibility. As also happened for our study for dCS, the find that for
 the cubic EFT that the ParSpec bound is violated by the $n = 1$ corrections to
 the QNMs, implying that we cannot use the associated posterior distributions on
 $\ell_{\rm cEFT}$ to draw any meaningful constraint on this parameter.
+%
+We summarize our results in Table~\ref{tab:summary_ceft}.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined.pdf}
@@ -1644,6 +1646,15 @@ Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final r
 \end{equation}
 %
 
+In this theory, we considered only $N_{\rm max} = 0$. We found that the
+inclusion of the spin corrections yields waveforms which for $\ell_{\rm qEFT} \gtrsim 50$~km
+with ringdowns portions of the larger than the inspiral-plunge part \dots
+%
+To avoid this issue we lowered the value of $\ell^{\rm max}_{\rm qEFT}$, but at doing so we obtained which
+were essentially uniform. Thus, we do not quote any results for $N_{\rm max} = 1$.
+%
+Table~\ref{tab:summary_qeft} summarizes our findings for the quartic EFT of GR.
+
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/qeft_posteriors_combined.pdf}
@@ -1670,10 +1681,10 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
   & GW150914 & Yes & Yes  & $\ell_{\rm qEFT} \leqslant 51.7$~km \\
 0 & GW200129 & Yes & Yes  & $\ell_{\rm qEFT} \leqslant 54.8$~km \\
   & Combined &     &      & \cellcolor{black!10}$\ell_{\rm qEFT} \leqslant 51.3$~km \\
-\hline
-  & GW150914 &  &     &    \\
-1 & GW200129 &  &     &    \\
-  & Combined &  &     &    \\
+% \hline
+%   & GW150914 &  &     &    \\
+% 1 & GW200129 &  &     &    \\
+%   & Combined &  &     &    \\
 \hline
 \hline
 \end{tabular}
