@@ -1213,9 +1213,10 @@ by $\gamma$, which here reads,
 %
 \begin{equation}
     \gamma_{\rm GB} = \left(\frac{c^2 \ell_{\rm GB}}{ G M_{f}}\right)^4\,.
+    \label{eq:def_gamma_gb}
 \end{equation}
 %
-As shown in Fig.~xxx, $\gamma_{\rm GB}$ does indeed have a posterior
+As shown in Fig.~\ref{fig:gamma_gb}, $\gamma_{\rm GB}$ does indeed have a posterior
 distribution with largest support at zero, indicating consistency between data
 and GR.
 %
@@ -1235,6 +1236,15 @@ The joint posteriors are shown for illustrative purposes only. As we explain in 
 in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}.
 }
 \label{fig:edgb_exec_sum}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
+\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm GB}$,
+defined in Eq.~\eqref{eq:def_gamma_gb}. We see that this parameter controls the ParSpec expansion in EdGB gravity
+does have maximum support at $\gamma_{\rm GB} = 0$. This shows that our model is consistent with GR.
+}
+\label{fig:gamma_gb}
 \end{figure}
 
 \begin{figure}[t]
@@ -1420,7 +1430,7 @@ We verified that
     \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{f}} \right)^{4}\,,
 \end{equation}
 %
-does indeed peak at zero indicating consistency with GR, similarly to what is shown in Fig.~\ref{} for $\gamma_{\rm GB}$.
+does indeed peak at zero indicating consistency with GR, similarly to what is shown in Fig.~\ref{fig:gamma_gb} for $\gamma_{\rm GB}$.
 %
 We also see that in both cases that the inclusion leading-order-in-spin
 correction to the mode displaces the posteriors towards smaller values of
@@ -1655,13 +1665,16 @@ Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final r
 \end{equation}
 
 In this theory, we considered only $N_{\rm max} = 0$. We found that the
-inclusion of the spin corrections yields waveforms which for $\ell_{\rm qEFT} \gtrsim 50$~km
-with ringdowns portions of the larger than the inspiral-plunge part \dots
+inclusion of the spin corrections yields waveforms which for $\ell_{\rm qEFT} \gtrsim 80$~km
+for which the ringdown portions of the larger than the inspiral-plunge part \dots
 %
 To avoid this issue we lowered the value of $\ell^{\rm max}_{\rm qEFT}$, but by doing so we obtained posteriors
 which were essentially uniform. Thus, we do not quote any results for $N_{\rm max} = 1$.
 %
 Table~\ref{tab:summary_qeft} summarizes our findings for the quartic EFT of GR.
+%
+\hs{Discuss. I don't have a good argument for why the $N_{\rm max} = 1$ are breaking down other than
+we just fail to compute the waveform for $\ell_{\rm qEFT} = 80~$~km for GW150914-like masses.}
 
 
 \begin{figure}[t]
