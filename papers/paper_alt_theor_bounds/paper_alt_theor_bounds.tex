@@ -1363,11 +1363,13 @@ As we will next, the situation is the opposite for dCS gravity.
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm CS}$ for
-GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+\caption{(Color online).~Similar to Fig.~\ref{fig:dCS_exec_sum}, but for dCS gravity.
 %
-In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
-in spin QNM correction.
+% ~Posterior distribution function for the coupling constant $\ell_{\rm CS}$ for
+% GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+% %
+% In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
+% in spin QNM correction.
 %
 We stress that posteriors obtained including $n=1$ corrections, violated conditions~\eqref{eq:parspec_bound}
 and therefore should not be used to draw meaningful conclusions. We show them for illustrative purposes
@@ -1476,9 +1478,11 @@ and
 %
 when $N_{\rm max}=0$.
 %
-These stronger bound are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
+These stronger bounds are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
 for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
 the smaller median remnant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
+%
+\hs{Should we remove these and just quote the 90\% results?}
 
 We also found for both GW events, that the
 perturbative-conditions~\eqref{eq:parspec_bound} required by the ParSpec
@@ -1623,17 +1627,28 @@ combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% c
 \subsection{Quartic Effective-Field-Theory of General Relativity}
 \label{sec:results_qeft}
 
-Finally, let us consider the quartic EFT of GR.
+At last, let us consider the quartic EFT of GR.
+%
+In Fig.~\ref{fig:qEFT_exec_sum} we show the posteriors on $\ell_{\rm qEFT}$ for GW150914 (top panel),
+GW200129 (middle panel) for $N_{\rm max} = 0$, which are qualitatively similar to the cubic EFT of GR
+%
+We find that both the ``EFT''~\eqref{eq:eft_bound} and ``ParSpec''~\eqref{eq:parspec_bound} are satisfied,
+hence allowing us to infer bounds on $\ell_{\rm qEFT}$.
+%
+As Fig.~\ref{fig:qEFT_cdf} shows the CDFs for both events reach 90\% for $\gm = M_f$ before $\varepsilon = 1/2$.
+%
+Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final result,
+%
+\begin{equation}
+    \ell_{\rm qEFT} \leqslant 51.3~\textrm{km}\,.
+\end{equation}
+%
+
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/qeft_posteriors_combined.pdf}
 \caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm qEFT}$ for
 GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
-%
-In all panels, we use solid and dashed lines to correspond to the inclusion or not of the linear
-in spin QNM correction.
-%
-\hs{TODO}
 }
 \label{fig:qEFT_exec_sum}
 \end{figure}
@@ -1664,9 +1679,6 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 \end{tabular}
 \caption{Detailed summary of our results the quartic EFT of GR for GW150914, GW200129, and
 combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
-%
-\hs{Need to debug $N_{\rm max} = 1$ runs.}
-%
 }
 \label{tab:summary_qeft}
 \end{table}
@@ -1728,7 +1740,7 @@ We found, in particular that, within the assumptions of our model and by
 stacking posteriors, that the coupling constant of dCS gravity is bound to
 $\ell_{\rm CS} \leqslant 34.5$~km.
 %
-In contrast, we could place any constraint of the coupling constants in EdGB gravity $\ell_{\rm GB}$.
+In contrast, we could not place any constraint of the coupling constants in EdGB gravity $\ell_{\rm GB}$.
 %
 This dichotomy between these theories has an analogy with works that considered
 the inspiral part of the GW signal alone.
