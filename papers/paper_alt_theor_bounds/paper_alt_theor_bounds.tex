@@ -985,9 +985,15 @@ as already mentioned in the previous section, we hold $\{\delta \omega_k^{(n)}\}
 and $\{\delta \tau_k^{(n)}\}$ fixed to theory-specific predictions, and allow only $\ell$
 to freely vary.
 %
-For such cases, we assume a prior uniform between appropriate ranges on $\ell$,
-making sure that our marginalized posterior distributions on $\ell$ do not rail
-over the maximum prior value on $\ell$.
+We assume an uniform prior between appropriate ranges on $\ell$,
+say $\ell \in [0, \ell_{\rm max}]$.
+%
+The lower limit is set by the fact the modified gravity theories we consider
+all have $p$ even and hence we can assume $\ell > 0$ without loss of
+generality.
+%
+The upper limit is chosen as to make sure that our marginalized posterior
+distributions on $\ell$ do not rail against $\ell_{\rm max}$.
 
 
 \subsection{Event selection}
@@ -1022,13 +1028,13 @@ bounds on measurements of the dominant $(220)$ QNM:
 GW150914~\cite{LIGOScientific:2016aoc} and
 GW200129~\cite{LIGOScientific:2021djp}.
 %
-These two events, with a total mass of $XX \Mo$ and $XX \Mo$ respectively, are
+These two events, with a total mass of $65 \Mo$ and $63.4 \Mo$ respectively, are
 extremely similar in their source properties. These are also two of the loudest
-BBH signals observed to date with a total network SNR of XX and XX
+BBH signals observed to date with a total network SNR of 24 and 26.8
 respectively.
 %
 Moreover, and what is more relevant for our analysis, is their post-inspiral
-(merger-ringdown) SNRs, which at XX and XX respectively (see the columns for
+(merger-ringdown) SNRs, which at 16.1 and 16 respectively (see the columns for
 $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and
 Table IV of~\cite{LIGOScientific:2021sio}).
 %
@@ -1095,7 +1101,7 @@ In practice, this can be quantified through the cumulative distribution function
 (CDF) associated with the marginalized posterior distribution $P(\ell)$, namely
 %
 \begin{equation}
-P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} P(\ell') \, \dd \ell'\,.
+P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
 \label{eq:def_cdf}
 \end{equation}
 %
@@ -1219,14 +1225,16 @@ in the main text, our analysis of these events fails to satisfy the EFT bound~\e
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
-\caption{(Color online).~The cumulative distribution function evaluated at the
+\caption{(Color online).~The CDF evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the parameter
 $\varepsilon$ for both (dashed curves) $\gm = m_2$, the secondary's source
 mass, and (solid curves) $\gm = M_{f}$, the remnant's source mass, without
 (black curves) and with (purple curves) linear in spin QNM corrections. The
 horizontal lines lay at 0.68 and 0.90. We see that in no situation the curves pass
-through the 0.68 or 0.90 lines even at $\varepsilon = 1$. This means that no bound on $\ell_{\rm GB}$
-can be placed with the events we analyzed.
+through the 0.68 or 0.90 lines even at $\varepsilon = 1$.
+%
+This means that no bound on $\ell_{\rm GB}$ can be placed with the events we
+analyzed.
 }
 \label{fig:edgb_cdf}
 \end{figure}
@@ -1256,20 +1264,22 @@ We find that we cannot place any constraint on $\ell_{\rm GB}$ with our waveform
 \label{tab:summary_edgb}
 \end{table}
 
-As we emphasized in Sec.~\ref{sec:remarks}, before drawing any conclusions on
-the allowed values for $\ell_{\rm GB}$ from our parameter estimations, we
-must first check whether the ``EFT''~\eqref{eq:eft_bound} and
-``ParSpec''~\eqref{eq:parspec_bound} bounds are satisfied.
+As we emphasized in Sec.~\ref{sec:remarks}, we must first check whether the
+``EFT''~\eqref{eq:eft_bound} and ``ParSpec''~\eqref{eq:parspec_bound} bounds
+are satisfied, before drawing any conclusions on the allowed values for
+$\ell_{\rm GB}$ from our parameter estimations
 %
 We check the validity of the EFT bound in Fig.~\ref{fig:edgb_cdf}. In the top (bottom) panel we show
-the cumulative density function of the $\ell_{\rm GB}$ posteriors for GW150914 (GW200129), obtained
-evaluating the integral~\eqref{eq:def_cdf} with $\Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})$,
+the CDF of the $\ell_{\rm GB}$ posteriors for GW150914 (GW200129), obtained
+by evaluating the integral~\eqref{eq:def_cdf} with $\ell_{\rm max} = \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})$,
 with the mass scale set by the secondary's mass (i.e., $\mathfrak{m} = m_2$, dashed lines) or
 the remnant's mass ($\mathfrak{m} = M_f$, solid lines), while varying $\varepsilon$ between 0 and 1.
 %
 For GW150914, we see that for the $N_{\rm max} = 0$ curves, that the CDF never goes
 past $0.2$, regardless of the mass scale $\mathfrak{m}$ used and even at $\varepsilon =
-1$. This shows that that the ``EFT bound'' given by Eq.~\eqref{eq:eft_bound} is
+1$, at which the EFT description of the theory would not be valid anyway.
+%
+This shows that that the ``EFT bound'' given by Eq.~\eqref{eq:eft_bound} is
 never met at a significant credibility and thus that we cannot place a bound on
 $\ell_{\rm GB}$.
 %
@@ -1281,42 +1291,57 @@ present model}.
 %
 We summarize our findings in Table~\ref{tab:summary_edgb}.
 
-Let us place our results in a broader context. In particular, let us contrast
-them against those of Ref.~\cite{Lyu:2022gdr} which placed the bound
+Our result contrasts with those of Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}
+which relied on the BBH inspiral to constrain $\ell_{\rm GB}$, as discussed in Sec.~\ref{sec:review_edgb}.
 %
-$\ell_{\rm GB} \leqslant 1.33$~km
+We see that EdGB provides an example of a theory in which the inspiral portion
+of the signal is more constraining then the ringdown portion of the signal.
 %
-using the neutron star-black hole binaries GW200105 and GW200115~\cite{LIGOScientific:2021qlt}, and
-of Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which placed the bound
-%
-$\ell_{\rm GB} \leqslant 1.7$~km,
-%
-by stacking the posterior of $\ell_{\rm GB}$ from a  selection of black hole binaries from the GWTC-1 and GWTC-2 catalogs
-with at least one relatively low-mass binary component~\cite{}\footnote{These bounds
-are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
-take into consideration only the leading-order scalar field contribution arising from the dilatonic coupling.}.
-%
-These works use the \emph{inspiral} portion of GW event only and a constraint
-on EdGB gravity can be obtained because black holes in this theory carry a
-monopole scalar charge which in turn can source dipolar scalar radiation,
-that affects the GW phase at $-1$PN order, relative to the dominant GR contribution, and
-is proportional to the difference between the charges of binary components.
-%
-Now, the magnitude of the scalar charge scales roughly with the inverse of the black hole's mass squared, that is,
-smaller (larger) back holes carry large (smaller) scalar charges. Qualitatively, this is because the scalar field
-is sourced by the Gauss-Bonnet curvature invariant, which is large for black holes with small masses.
-%
-Beyond-GR corrections to the inspiral are, by construction, not present in our
-waveform model and constitutes a important ingredient to be added in forthcoming
-versions of the model.
-%
-In addition to the larger mass (which suppresses the black hole's charge), the
-QNM of EdGB gravity differ very little from GR as observed in~\cite{Blazquez-Salcedo:2016enn}.
-%
-Hence, here we have an example of a theory in which the inspiral portion of the signal
-is more constraining then the ringdown portion of the signal.
+Two reasons together can explain our negative results. First, as observed by
+Ref.~\cite{Blazquez-Salcedo:2016enn}, the QNMs of EdGB BHs only differ slightly
+from their Schwarzschild counterparts. Second, the larger mass $M_f$ of the
+remnant BH, suppresses scalar field's charge relatively to the initial binary
+components.~\hs{This is a general `limitation' of ringdown test of higher-curvature theories in present detectors.
+Point this out in the conclusions after all specific theories are discussed.}
 %
 As we will next, the situation is the opposite for dCS gravity.
+
+% Let us place our results in a broader context. In particular, let us contrast
+% them against those of Ref.~\cite{Lyu:2022gdr} which placed the bound
+% %
+% $\ell_{\rm GB} \leqslant 1.33$~km
+% %
+% using the neutron star-black hole binaries GW200105 and GW200115~\cite{LIGOScientific:2021qlt}, and
+% of Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, which placed the bound
+% %
+% $\ell_{\rm GB} \leqslant 1.7$~km,
+% %
+% by stacking the posterior of $\ell_{\rm GB}$ from a  selection of black hole binaries from the GWTC-1 and GWTC-2 catalogs
+% with at least one relatively low-mass binary component~\cite{}\footnote{These bounds
+% are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
+% take into consideration only the leading-order scalar field contribution arising from the dilatonic coupling.}.
+% %
+% These works use the \emph{inspiral} portion of GW event only and a constraint
+% on EdGB gravity can be obtained because black holes in this theory carry a
+% monopole scalar charge which in turn can source dipolar scalar radiation,
+% that affects the GW phase at $-1$PN order, relative to the dominant GR contribution, and
+% is proportional to the difference between the charges of binary components.
+% %
+% Now, the magnitude of the scalar charge scales roughly with the inverse of the black hole's mass squared, that is,
+% smaller (larger) back holes carry large (smaller) scalar charges. Qualitatively, this is because the scalar field
+% is sourced by the Gauss-Bonnet curvature invariant, which is large for black holes with small masses.
+% %
+% Beyond-GR corrections to the inspiral are, by construction, not present in our
+% waveform model and constitutes a important ingredient to be added in forthcoming
+% versions of the model.
+% %
+% In addition to the larger mass (which suppresses the black hole's charge), the
+% QNM of EdGB gravity differ very little from GR as observed in~\cite{Blazquez-Salcedo:2016enn}.
+% %
+% Hence, here we have an example of a theory in which the inspiral portion of the signal
+% is more constraining then the ringdown portion of the signal.
+%
+% As we will next, the situation is the opposite for dCS gravity.
 
 
 \subsection{Dynamical Chern-Simons}
@@ -1340,11 +1365,12 @@ simultaneously into consideration when analyzing the results of the parameter es
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/dcs_cdf_varying_threshold.pdf}
-\caption{(Color online).~The cumulative distribution function evaluated at the
-cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$ as a function of the parameter $\varepsilon$ for both
-$\gm = m_2$ (solid and dashed lines) and $\gm = M_{f}$ (dot-dashed and dotted lines) without
-(blue lines) and with (orange lines) linear-in-spin QNM corrections.
-The horizontal lines lay at 0.68 and 0.90.
+\caption{(Color online).~Similar to Fig.~\ref{fig:edgb_cdf}, but for dCS gravity.
+% The cumulative distribution function evaluated at the
+% cut-off $\Lambda_{\rm EFT}(\varepsilon, \gm)$ as a function of the parameter $\varepsilon$ for both
+% $\gm = m_2$ (solid and dashed lines) and $\gm = M_{f}$ (dot-dashed and dotted lines) without
+% (blue lines) and with (orange lines) linear-in-spin QNM corrections.
+% The horizontal lines lay at 0.68 and 0.90.
 %
 We see that the CDF curves for $\gm = M_{f}$ are above 90\% for $\varepsilon =
 1/2$ for both events, with and without including the $n = 1$ dCS corrections to
@@ -1353,7 +1379,7 @@ the dominant QNM.
 \label{fig:dcs_cdf}
 \end{figure}
 
-We now turn our attention to dCS gravity.
+We now consider dCS gravity.
 %
 In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
 function of $\ell_{\rm CS}$ for both events GW150914 (top panel) and GW200129
@@ -1380,7 +1406,7 @@ posterior peaks.
 %
 Finally, in the bottom panel, we show the combined result for both events.
 
-In Fig.~\ref{fig:dcs_cdf} we show the cumulative distribution function,
+In Fig.~\ref{fig:dcs_cdf} we show the CDF
 obtained from Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT} (\varepsilon, \gm)$,
 for both GW150914 (top panel) and GW200129 (bottom panel), where $\Lambda_{\rm EFT}$
 is calculated with either $\gm = m_2$ (dashed lines) or $M_{f}$ (solid lines),
@@ -1518,7 +1544,7 @@ cases; cf.~Figs.~\ref{fig:edgb_exec_sum} and~\ref{fig:dCS_exec_sum}).
 %
 For values $\ell_{\rm cEFT} \gtrsim 40$~km, the posteriors smoothly approach zero.
 
-In Fig.~\ref{fig:cEFT_cdf} we show the cumulative distribution functions for
+In Fig.~\ref{fig:cEFT_cdf} we show the CDF for
 both events, calculated as already described for the EdGB and dCS cases.
 %
 We see that curves are very similar to those of dCS gravity for GW200129 (cf.
@@ -1542,15 +1568,17 @@ $\ell_{\rm cEFT}$ to draw any meaningful constraint on this parameter.
 \caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm cEFT}$ for
 GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
 %
-In all panels, we use purple (black) lines correspond to the inclusion (or not) of the linear
-in spin QNM correction.
+The colors distinguish different $N_{\rm max}$ in the spin expansion.
 }
 \label{fig:cEFT_exec_sum}
 \end{figure}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_cdf_varying_threshold.pdf}
-\caption{
+\caption{(Color online).~Similar to Fig.~\ref{fig:edgb_cdf}, but for the cubic EFT of GR.
+We see that the CDF curves for $\gm = M_{f}$ are above 90\% for $\varepsilon =
+1/2$ for both events, with and without including the $n = 1$ corrections to
+the dominant QNM.
 }
 \label{fig:cEFT_cdf}
 \end{figure}
