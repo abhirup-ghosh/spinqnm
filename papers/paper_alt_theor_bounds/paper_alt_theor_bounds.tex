@@ -688,7 +688,7 @@ In this paper, we will restrict ourselves to corrections to the $n=0$ and
 $n=1$ terms, that is, only up to the leading-order in spin $\chi_f$ term.
 
 Using this parameterized waveform model, which we will call $\pSEOB$ in this
-paper, we infer bounds on our beyond-GR parameters for specific cases of
+paper, we infer bounds on our non-GR parameter $\ell$ for specific cases of
 modified gravity theories presented Sec.~\ref{sec:review_theories}.
 %
 We detail these results in Sec.~\ref{sec:results}.
@@ -1305,7 +1305,14 @@ present model}.
 %
 We summarize our findings in Table~\ref{tab:summary_edgb}.
 
-Our result contrasts with those of Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}
+We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui}, which obtained $\ell_{\rm GB} \lesssim 35$~km,
+by setting $p=4$, \emph{but not} including theory-specific QNM information on $\delta \omega^{(n)}$ and $\delta \tau^{(n)}$.
+%
+Our results provide a concrete example of the importance of including
+theory-specific QNM calculations information into the parameter estimation
+and how this can dramatically change the outcome of the results.
+
+Let us also contrasts our results with those of Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}
 which relied on the BBH inspiral to constrain $\ell_{\rm GB}$, as discussed in Sec.~\ref{sec:review_edgb}.
 %
 We see that EdGB provides an example of a theory in which the inspiral portion
@@ -1562,24 +1569,26 @@ cases; cf.~Figs.~\ref{fig:edgb_exec_sum} and~\ref{fig:dCS_exec_sum}).
 %
 For values $\ell_{\rm cEFT} \gtrsim 40$~km, the posteriors smoothly approach zero.
 
-In Fig.~\ref{fig:cEFT_cdf} we show the CDF for
-both events, calculated as already described for the EdGB and dCS cases.
+In Fig.~\ref{fig:cEFT_cdf} we show the CDF for both events, calculated in the
+same way as already described for the EdGB and dCS theories.
 %
 We see that curves are very similar to those of dCS gravity for GW200129 (cf.
 bottom panel in Fig.~\ref{fig:cEFT_cdf}).
 %
-Moreover, we find that for both events both the EFT~\eqref{eq:eft_bound} and
-ParSpec~\eqref{eq:parspec_bound} bounds are satisfied for $\mathfrak{m} = M_f$
-and $N_{\rm max} = 1/2$, allowing us to obtain the combined bound
+Moreover, we find that the EFT~\eqref{eq:eft_bound} and
+ParSpec~\eqref{eq:parspec_bound} bounds are satisfied for both events both when
+$\mathfrak{m} = M_f$ and $N_{\rm max} = 1/2$.
+%
+This allows us to place the combined bound of
 %
 \begin{equation}
-    \ell_{\rm cEFT} \leqslant 51.3~\textrm{km},
+    \ell_{\rm cEFT} \leqslant 38.2~\textrm{km}\,,
 \end{equation}
 %
 at 90\% credibility. As also happened for our study for dCS, the find that for
 the cubic EFT that the ParSpec bound is violated by the $n = 1$ corrections to
-the QNMs, implying that we cannot use the associated posterior distributions on
-$\ell_{\rm cEFT}$ to draw any meaningful constraint on this parameter.
+the QNMs, meaning that we cannot use this case to draw any meaningful
+constraint on this parameter.
 %
 We summarize our results in Table~\ref{tab:summary_ceft}.
 
@@ -1629,7 +1638,7 @@ combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% c
 \subsection{Quartic Effective-Field-Theory of General Relativity}
 \label{sec:results_qeft}
 
-At last, let us consider the quartic EFT of GR.
+Let us now consider the quartic EFT of GR as our final example.
 %
 In Fig.~\ref{fig:qEFT_exec_sum} we show the posteriors on $\ell_{\rm qEFT}$ for GW150914 (top panel),
 GW200129 (middle panel) for $N_{\rm max} = 0$, which are qualitatively similar to the cubic EFT of GR
@@ -1665,7 +1674,9 @@ GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel)
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/qeft_cdf_varying_threshold.pdf}
-\caption{
+\caption{Similar to Fig.~\ref{fig:edgb_cdf}, but for the quartic EFT of GR.
+We find that similarly to what happens in dCS gravity and the cubic EFT of GR, we
+can place a constrain on $\ell_{\rm qEFT}$ when $\gm = M_f$ for both events at 90\% credibility.
 }
 \label{fig:qEFT_cdf}
 \end{figure}
@@ -1688,7 +1699,8 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 \hline
 \end{tabular}
 \caption{Detailed summary of our results the quartic EFT of GR for GW150914, GW200129, and
-combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$, and $N_{\rm max} = 0$. The quoted
+result correspond to 90\% credible values.
 }
 \label{tab:summary_qeft}
 \end{table}
