@@ -114,7 +114,9 @@
 \newcommand{\lamo}{\lambda_{\rm o}}
 
 % Comment commands
-\newcommand{\ag}[1]{{\textcolor{cyan}{{[AG: #1]}} }}
+\usepackage{xcolor}
+\newcommand{\agcomm}[1]{{\textcolor{red}{{[AG: #1]}} }}
+\newcommand{\ag}[1]{{\textcolor{Maroon}{{#1}} }}
 \newcommand{\hs}[1]{{\textcolor{blue}{{[HS: #1]}} }}
 \newcommand{\ab}[1]{{\textcolor{green}{{[AB: #1]}} }}
 
@@ -171,8 +173,8 @@ quartic EFT & $\ell_{\rm qEFT} \leqslant 150$~km~\cite{Sennett:2019bpc}  & $\ell
 % --------------------------------------------------------------------------------- %
 
 We start by briefly reviewing the modified gravity theories we consider in this
-paper, what are the currents observational constraints and what we do know
-about BH QNMs in each of them.
+paper, what the current observational constraints are and what we know
+about BH QNMs in each of these theories.
 
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{sec:review_edgb}
@@ -196,19 +198,19 @@ Gauss-Bonnet invariant
 $\mathcal{G} =
 R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
 - 4 R^{\mu\nu}R_{\mu\nu}
-+ R^2$,
++ R^2$.
 %
-where $R_{\mu\nu\rho\sigma}$ and $R_{\mu\nu}$ are respectively the Riemann and Ricci tensors.
+$R_{\mu\nu\rho\sigma}$ and $R_{\mu\nu}$ are the Riemann and Ricci tensors respectively.
 %
 By itself, $\int \dV \mathcal{G}$ is a boundary term in four dimensions
 and hence does not contribute to the field equations~\cite{Myers:1987yn}.
 %
-It can however contribute to the field equation when coupled to $\varphi$, as
-done through the coupling function $f(\varphi)$. The strength of the coupling is
+However,  when coupled to $\varphi$, it can contribute to the field equation
+through the coupling function $f(\varphi)$. The strength of the coupling is
 set by $\ell_{\rm GB}$, with dimensions of length.
 
 Different subclasses of this theory are determined by the function $f(\varphi)$
-and they can be classified into two classes based on the properties of their BH
+and can be divided into two classes based on the properties of their BH
 solutions.
 %
 In the first class, the first derivative of the coupling function $f'(\varphi) = \dd f  / \dd \varphi$
@@ -223,19 +225,18 @@ This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f(\
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
 In this case, the theory admits the same stationary, asymptotically flat BH
-solutions of GR and scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+solutions as GR and those of scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
 Examples include the Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
 the quadratic $f(\varphi) \propto \varphi^2$~\cite{Silva:2017uqg} coupling functions.
-
 BHs in EdGB gravity have scalar hair, to which we can associate a (monopole) scalar charge $Q$,
-related to the asymptotic $r^{-1}$ fall-off of the scalar field.
+related to the asymptotic $r^{-1}$\agcomm{In most of these cases $r$ might be intuitive, but just wanted to leave this comment to remind myself that we never define it explicitly.} fall-off of the scalar field. 
 %
 This charge is not an independent parameter, and depends on the BH's mass and spin, %~\cite{Berti:2018cxi},
 thus being a ``secondary hair''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
 %
-Since the scalar field is sourced by a curvature scalar, $Q$ is larger (smaller)
-the smaller (larger) the BH's mass is.
+Since the scalar field is sourced by a curvature scalar, $Q$ is larger (smaller), 
+ smaller (larger) the BH mass is.
 
 These properties are not mere theoretical curiosities; they have important observational consequences.
 %
@@ -259,18 +260,18 @@ by stacking the posteriors of $\ell_{\rm GB}$ from a selection of black hole bin
 from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small, i.e., $\varphi \ll 1$, and
 take into account only the leading-order scalar field contribution arising from the dilatonic coupling.}.
-
-Second, the scalar field does influence the response of BHs to linearized perturbations and thus
-affects the BH's QNM spectra.
+Secondly, the scalar field does influence the response of BHs to linearized perturbations and thus
+affects the BH QNM spectra.
 %
 The coupling between scalar field and the Gauss-Bonnet invariant, which
-result into a coupling between scalar perturbation and gravitational
-perturbations of polar parity, which, e.g., breaks the equivalence
+result in a coupling between scalar perturbations and gravitational
+perturbations of polar parity can, for example break the equivalence
 between the QNM spectra of polar and axial gravitational perturbations
-(isospectrality~\cite{Chandrasekhar:1985kt}, see also Refs.~\cite{Glampedakis:2017rar,Lenzi:2021njy}) of Schwarzschild BHs in GR.
+(isospectrality~\cite{Chandrasekhar:1985kt}, see also Refs.~\cite{Glampedakis:2017rar,Lenzi:2021njy}) for Schwarzschild BHs in GR.
 %
-The QNMs on nonrotating BHs in EdGB gravity were first computed in
-Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and these calculations were
+
+The QNMs for nonrotating BHs in EdGB gravity were first computed in
+Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and were
 extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
 
 \subsection{Dynamical Chern-Simons gravity}
@@ -287,42 +288,41 @@ This theory is described by the action~\cite{Jackiw:2003pm,Alexander:2009tp},
     \right],
 \end{equation}
 %
-where $\vartheta$ is a pseudoscalar field, which couples to the Pontryagin
+where $\vartheta$ is a pseudoscalar field which couples to the Pontryagin
 density
 ${}^{*}RR = {}^{*}R_{\mu\nu}{}^{\rho\sigma} R^{\nu\mu}{}_{\rho\sigma}$,
 %
-where ${}^{*}R^{\mu\nu\rho\sigma}$ is the dual of the Riemann tensor,
+where ${}^{*}R^{\mu\nu\rho\sigma}$ is the dual of the Riemann tensor
 defined as
 %
 ${}^{*}R^{\mu\nu\rho\sigma} =
 \epsilon^{\mu\nu}{}_{\gamma\delta}
 R^{\gamma\delta\rho\sigma} / 2$,
 %
-and where $\epsilon_{\mu\nu\gamma\delta}$ is the Levi-Civita tensor.
+and $\epsilon_{\mu\nu\gamma\delta}$ is the Levi-Civita tensor.
 %
-As in scalar-Gauss-Bonnet theories, $\int \dV {}^{*}RR$ alone is a boundary
-term~\cite{Jackiw:2003pm}, thus does not contribute to the field equations in
+As in scalar-Gauss-Bonnet theories, $\int \dV {}^{*}RR$ by itself is a boundary
+term~\cite{Jackiw:2003pm} that does not contribute to the field equations in
 four-dimensions.
 %
-However, this terms can modify the theory's field equation by coupling it to
-$\vartheta$.
+However, a coupling with $\vartheta$ can modify the field equations.
 %
 The coupling strength is set by the coupling constant $\ell_{\rm CS}$, with
 dimensions of length.
 
-The theory admits as solution the garden-variety Schwarzschild BH of GR. This
-is not case when rotation is included and the Kerr metric is not a solution of
+The theory admits as a solution, the garden-variety Schwarzschild BH of GR. This
+is not the case when rotation is included and the Kerr metric is not a solution of
 the theory~\cite{Jackiw:2003pm}.
 %
-These rotating BHs support a scalar field which falls-off as
+These rotating BHs support a scalar field which fall off as
 $r^{-2}$ asymptically, to which we can associate a scalar dipole
 charge~\cite{Yunes:2009hc,Konno:2009kg}.
 %
 As a consequence, the leading-scalar radiative channel of BBH to lose energy is quadrupolar,
-which affects the GW phase at 2PN order~\cite{Yagi:2011xp,Alexander:2017jmt}.
+which affects the GW phase at 2PN order~\cite{Yagi:2011xp,Alexander:2017jmt}.\agcomm{I am not sure I understand this sentence.}
 %
 Deviations from GR at this PN order are poorly constrained with present GW
-observations~\cite{LIGOScientific:2021sio}, making dCS gravity unconstrained by
+observations~\cite{LIGOScientific:2021sio}\agcomm{might want to quantify what we mean by poor. Looking at Table VI of the reference, I see that the 90\% credible bounds are $\sim 1-0\%$ using the hierarchical approach and $\sim 50\%$ using the restricted approach for $\varphi_4$. Perhaps we want to mention this?}, making dCS gravity unconstrained by
 analyses that rely on the inspiral portion of GWs from BBH
 binaries~\cite{Nair:2019iur,Perkins:2021mhb}.
 %
@@ -330,12 +330,12 @@ Nonetheless, the theory has been constrained in Ref.~\cite{Silva:2020acr}, that 
 %
 $\ell_{\rm CS} \leqslant 8.5$~km,
 %
-by folding data from the x-ray observations of the isolated neutron star (NS)
+by folding data from the X-ray observations of the isolated neutron star (NS)
 PSR~J0030+0451~\cite{Lommen:2000yt,NANOGrav:2017wvv} by
 NICER~\cite{Riley:2019yda,Miller:2019cac} and from the GW observation of the binary
 neutron star (BNS) GW170817~\cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki}.
 
-The QNMs of the Schwarzschild BH in dCS gravity where studied in
+The QNMs of the Schwarzschild BH in dCS gravity were studied in
 Refs.~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb}, that found that scalar
 perturbations and gravitational perturbations of axial parity couple. (Contrast
 with EdGB gravity).
