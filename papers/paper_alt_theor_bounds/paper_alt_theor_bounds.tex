@@ -415,15 +415,15 @@ Ref.~\cite{Cano:2020cao} calculated the leading-order BH spin corrections to the
 % --------------------------------------------------------------------------------- %
 
 Having reviewed the modified gravity theories we will consider, we now present
-the frameworks upon which we will build our waveform model to confront these
-theories against GW observations.
+the sequential building blocks for the waveform model we use to test these theories
+against GW observations.
 %
-We will start by reviewing the theory-agnostic parametrized ringdown
-spin-expansion coefficients (ParSpec) expansion in Sec.~\ref{sec:review_parspec}.
+We start by reviewing the theory-agnostic parametrized ringdown
+spin-expansion coefficients (ParSpec) \sout{expansion} \ag{framework} \agcomm{replaced `framework' to prevent duplication.  The original parspec authors call this a data-analysis framework, so I think it would be safe to use it. I have left the term ``ParSpec expansion" in other places, because ParSpec is always abbreviated in those places.} in Sec.~\ref{sec:review_parspec}.
 %
-Next, in Sec.~\ref{sec:review_pSEOB}, we will review the
-inspiral-(plunge)-merger-ringdown (IMR) BBH waveform
-model~\cite{Brito:2018rfr,Ghosh:2021mrv} we will use and explain how we modify
+Next, in Sec.~\ref{sec:review_pSEOB}, we review our baseline
+parametrized inspiral-(plunge)-merger-ringdown (IMR) BBH waveform
+model~\cite{Brito:2018rfr,Ghosh:2021mrv} and explain how we modify
 it to include the ParSpec expansion.
 %
 Finally, in Sec.~\ref{sec:theory_specific_qnm}, we show how we can map
@@ -452,27 +452,29 @@ damping times $\tau_{k}^{\rm Kerr}$ of the GR Kerr BH is to write,
 \end{align}
 \end{subequations}
 %
-where $\delta\omega_{k}$ and $\delta\tau_{k}$ are the deformation parameters.
+where $\delta\omega_{k}$ and $\delta\tau_{k}$ are the fractional deformation parameters.
 %
 Here we use the subscript $k$ to represent the QNM labels $\{l,\, m,\, n\}$,
 where $l$ and $m$ are the multipole indices, and $n$ the overtone number.
 %
 This type of parametrization was adopted, for instance, in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
 
-A caveat of parametrizations of the form~\eqref{eq:general_deviation}, is that
-$\delta\omega_{k}$ and $\delta\tau_{k}$ depend, in general, on the BH's source mass and spin.
+\ag{The current LIGO-Virgo-Kagra tests of BH ringdown (see Sec.VII.A of~\cite{LIGOScientific:2020tif} or Sec.VIII.A of~\cite{LIGOScientific:2021sio}) take a restrictive theory-agnostic approach towards the inference of $\delta\omega_{k}$ and $\delta\tau_{k}$. These deviations are either assumed to occur identically across all observed sources or belong to a generic underlying Gaussian population. A more realistic scenario, however, is that these parameters depend on the source BH's mass and spin.}
+\sout{A caveat of parametrizations of the form~\eqref{eq:general_deviation}, is that
+$\delta\omega_{k}$ and $\delta\tau_{k}$ depend, in general, on the BH's source mass and spin.}
 %
-Ideally, one would like to explicitly reinstate the dependence the source-frame
-BH mass and spin for it would
+Ideally, one would like to explicitly reinstate \sout{the dependence the source-frame
+BH mass and spin} \ag{this dependence} for it would
 %
 (i) introduce deformation parameters which can be determined, once and for
 all, from a specific gravity theory (GR included), and
 %
-(ii) make it simpler to combine constraints coming from multiple source.
+(ii) make it simpler to combine constraints coming from multiple \ag{(independently observed)} sources.
 
-In the ParSpec expansion this is accomplished by performing a bivariate
+ParSpec is such an observable-based
+\sout{In the ParSpec expansion this is accomplished by performing a} bivariate
 expansion of Eq.~\eqref{eq:general_deviation} in the detector-frame BH's mass
-$M$ and spin $\chi$, namely
+$M$ and spin $\chi$, \sout{namely}
 %
 \begin{subequations}
 \label{eq:kerr_expansion}
@@ -482,14 +484,14 @@ $M$ and spin $\chi$, namely
 \end{align}
 \end{subequations}
 %
-where $\omega_{k}^{n}$ and $\tau_{k}^{n}$ are dimensionless coefficients of the
+where $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$ are dimensionless coefficients of the
 expansion in spin for Kerr QNMs;
 %
 $\delta\omega_{k}^{(n)}$ and $\delta\tau_{k}^{(n)}$ are source-independent
 dimensionless coefficients that characterize the corrections to the Kerr QNM at
 each spin-order;
 %
-and finally $N_{\rm max}$ is the order of the spin expansion.
+and $N_{\rm max}$ is the order of the spin expansion.
 %
 All source dependence on a given modified gravity theory is contained in the
 dimensionless parameter $\gamma$, given by
@@ -506,25 +508,27 @@ dimensionless parameter $\gamma$, given by
 \end{equation}
 %
 which depends on a parameter $\ell$, with dimensions of length (and sets the
-lengthscale at which beyond-GR modifications become important), and
+length-scale at which beyond-GR modifications become important), and
 the exponent $p$ which is related to how the beyond-GR modifications are
 added to the Einstein-Hilbert action.
 %
-In Eq.~\eqref{eq:def_gamma} we made $\ell$ dimensionless by using the other
-lenghtscale associated to the remnant black hole, i.e., its source-frame mass
+In Eq.~\eqref{eq:def_gamma} we made \sout{$\ell$} \ag{$\gamma$} dimensionless  by using the other
+length-scale associated with the remnant black hole, i.e., its source-frame mass
 $M_{\rm s}$, which we can also write in terms of the detector-frame mass $M$ through
-the redshift $z$~\cite{Krolak:1987ofj}.
+the redshift $z$~\cite{Krolak:1987ofj}. \ag{Also, dividing by the factor $G/c^2$ allows us to
+express $\ell$ in physically intuitive metric units.}
 
 In principle, a modification to GR would also affect $M$ and $\chi$ and the
-expansion should be written in terms of non-GR mass and spin, say $\bar{M}$ and
+expansion should be written in terms of the non-GR mass and spin, say $\bar{M}$ and
 $\bar{\chi}$. If we assume that the beyond-GR corrections are included perturbatively
-(as is the case for all theories described in Sec.~\ref{sec:review_theories}),
+(as is the case of all theories described in Sec.~\ref{sec:review_theories}),
 the modifications to the BH mass and spin can be absorbed into the deviations
 parameters $\delta\omega$ and $\delta\tau$.
 %
-This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}.
+This means we can identify the $M$ and $\chi$ with their \emph{corresponding GR values}
+\footnote{\ag{For a more detailed discussion, see Appendix A in ~\cite{Maselli:2019mjd}.}}.
 %
-We will see that in Sec.~\ref{sec:pe} that this is assumption is indeed
+We will see that in Sec.~\ref{sec:pe} that this assumption is indeed
 satisfied in our parameter estimation studies (cf.~Fig.~\ref{fig:corner_plot}).
 
 Finally, we remark that in the GR limit ($\gamma \to 0$)
@@ -532,7 +536,8 @@ the series~\eqref{eq:kerr_expansion} truncated at $N_{\rm max} = 4$, reproduces 
 the Kerr QNMs for spins $\chi \lesssim 0.7$.
 %
 The values of the fitting coefficients $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$
-can be found in Ref.~\cite{Maselli:2019mjd}, Table I.
+can be found in Ref.~\cite{Maselli:2019mjd}, Table I\agcomm{This sentence would need
+to be adapted if we put the GR coefficients in our current Table II.}.
 %
 In Ref.~\cite{Carullo:2021dui}, the fitting coefficients were calculated up to $N_{\rm max} = 9$,
 which extend the validity of the spin-expansion up to $\chi \lesssim 0.99$.
