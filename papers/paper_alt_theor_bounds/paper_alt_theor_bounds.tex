@@ -485,7 +485,9 @@ $M$ and spin $\chi$, \sout{namely}
 \end{subequations}
 %
 where $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$ are dimensionless coefficients of the
-expansion in spin for Kerr QNMs;
+expansion in spin for Kerr QNMs\footnote{\ag{From this point onwards, to prevent ambiguity,
+we will use $n$ to denote the series expansion index, and not the spherical 
+harmonic overtone.}};
 %
 $\delta\omega_{k}^{(n)}$ and $\delta\tau_{k}^{(n)}$ are source-independent
 dimensionless coefficients that characterize the corrections to the Kerr QNM at
@@ -514,7 +516,9 @@ added to the Einstein-Hilbert action.
 %
 In Eq.~\eqref{eq:def_gamma} we made \sout{$\ell$} \ag{$\gamma$} dimensionless  by using the other
 length-scale associated with the remnant black hole, i.e., its source-frame mass
-$M_{\rm s}$, which we can also write in terms of the detector-frame mass $M$ through
+$M_{\rm s}$\footnote{\ag{Throughout this paper, we maintain the convention of 
+using the subscript ``s" to denote source-frame quantities and plain baseline 
+symbols for detector-frame measurements.}} which we can also write in terms of the detector-frame mass $M$ through
 the redshift $z$~\cite{Krolak:1987ofj}. \ag{Also, dividing by the factor $G/c^2$ allows us to
 express $\ell$ in physically intuitive metric units.}
 
@@ -577,7 +581,7 @@ the chirp mass
 %
 $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$,
 %
-the asymmetric mass ratio $q=m_1/m_2$, with the convention $m_1 \geqslant m_2$ (thus $q \geqslant 1$),
+the asymmetric mass ratio $q=m_1/m_2$, with the convention $m_1 \geqslant m_2$ (and thus $q \geqslant 1$),
 and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$.
 
 The polarization of the GW signal (in the observer's frame) is,
@@ -587,14 +591,20 @@ h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{l, m} {}_{-\!2}Y
 \end{equation}
 %
 where ${}_{-\!2}Y_{l m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical
-harmonics described by standard angular dependence indices $l$ and $m$.
+harmonics.
 %
 % --------------------------------
 % HS: maybe not necessary anymore:
 % \footnote{Note that we use $l$ to denote the angular dependence index and $\ell$ to denote the coupling constant in Sec.~\ref{sec:review_parspec}.}
 % --------------------------------
 %
-As our baseline model, that is, the GR model upon which non-GR modifications will be added to, we use the computationally efficient (time-domain) multipolar waveform model for quasicircular spin-aligned BBH mergers described in Ref.~\cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{}\footnote{This waveform model is available in \texttt{LALSuite}~\cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}.
+As our baseline model, that is, the GR model upon which non-GR modifications 
+will be added, we use the computationally efficient (time-domain) multipolar 
+waveform model for quasicircular spin-aligned BBH mergers described in 
+Ref.~\cite{Mihaylov:2021bpf} (henceforth referred to as \SEOB{}\footnote{This waveform 
+model is available in \texttt{LALSuite}~\cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA} 
+waveform approximant.}) which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$, 
+and $(5,5)$~\cite{Cotesta:2018fcv,Mihaylov:2021bpf}.
 %
 The model uses an effective-one-body (EOB) approach combined with a
 post-adiabatic solution of the equations of motion to describe the
@@ -608,11 +618,12 @@ inspiral-plunge waveform, $h_{l m}^\textrm{insp-plunge}$ at a certain time $t = 
 %
 \begin{equation}
 h_{l m}(t) =
-h_{l m}^\textrm{insp-plunge}\, \theta(t_\textrm{match}^{l m} - t)
-+ h_{l m}^\textrm{merger-RD}\,\theta(t-t_\textrm{match}^{l m})\,,
+h_{l m}^\textrm{insp-plunge}\, \Theta(t_\textrm{match}^{l m} - t)
++ h_{l m}^\textrm{merger-RD}\,\Theta(t-t_\textrm{match}^{l m})\,,
 \end{equation}
 %
-where $\theta(t)$ is the Heaviside step function.
+where $\Theta(t)$ is the Heaviside step function \agcomm{Changed $\theta(t)$ to $\Theta(t)$,
+because $\theta$ was already used to denote the parameter space.}.
 %
 The merger-ringdown waveform is expressed as an exponentially damped
 sinusoid~\cite{Bohe:2016gbl,Cotesta:2018fcv,Mihaylov:2021bpf}
@@ -629,67 +640,56 @@ where
 = \omega_{l m 0} - i / \tau_{l m 0}\,,
 \end{align}
 %
-are the complex frequencies of the fundamental ($n=0$ overtone) QNMs of the remnant BH.
+are the complex frequencies of the fundamental ($0$-th overtone) QNMs of the remnant BH.
 %
-The frequencies $\omega_{l m 0}$ and damping times $\tau_{l m 0}$ of the $(l,
-m)$ QNM can be read off from the real and imaginary parts of $\sigma_{l m 0}$
-respectively.
+\ag{Going back to the convention established above to use the index $k$ to now denote the $(l, m,0)$
+mode,  the frequencies $\omega_k$ and damping times $\tau_k$ can be read off from the 
+real and imaginary parts of $\sigma_k$ respectively.}
 %
 The functions $\tilde{A}_{l m}(t)$ and $\tilde{\phi}_{l m}(t)$ are defined
 in Ref.~\cite{Bohe:2016gbl,Cotesta:2018fcv}.
 
 In the $\SEOB$ model~\cite{Mihaylov:2021bpf}, the complex frequencies
-$\sigma_{l m 0}$ are computed by first determining the final mass and spin from
+$\sigma_k$ are computed by first determining the final mass and spin from
 estimates of the initial masses and spins through NR-fitting-formulas~\cite{Taracchini:2013rva,Hofmann:2016yih}
 and then converting them to the complex frequencies using BH perturbation
-theory-inspiral analytical fits~\cite{Berti:2005ys,Berti:2009kk}.
+theory-inspired analytical fits~\cite{Berti:2005ys,Berti:2009kk}.
 %
 Hence,
 %
 \begin{subequations}
 \begin{align}
-\omega_{l m 0}^{\text{GR}} &= \omega_{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
+\omega_k^{\text{GR}} &= \omega_k^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
 \\
-\tau _{l m 0}^{\text{GR}} &= \tau _{l m 0}^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
+\tau _k^{\text{GR}} &= \tau _k^{\text{GR}}(m_1, m_2, \chi_1, \chi_2)\,,
 \end{align}
 \end{subequations}
 %
-where $(\omega_{l m 0}^{\text{GR}}, \tau_{l m 0}^{\text{GR}} )$ refer to the
-QNM predictions in baseline \SEOB{} model.
+where $(\omega_k^{\text{GR}}, \tau_k^{\text{GR}} )$ refer to the
+GR QNM predictions in the baseline \SEOB{} model.
 
-In this paper, however, we introduce a completely different expression of the
-QNM frequencies $(\omega_{l m 0}, \tau_{l m 0})$, as a series expansion on the
-spin of the remnant object $\chi_f$ as we described in Sec.~\ref{sec:review_parspec}; cf.~Eqs.~\eqref{eq:kerr_expansion}.
-%
-For the rest of the paper, in keeping with the conventions introduced in
-Sec.~\ref{sec:review_parspec}, we are going to use the index $k$ to refer to
-$(l, m,n=0)$ mode. Accordingly, we are going to use $(\omega_k, \tau _k)$ to
-refer to $(\omega_{l m 0}, \tau _{l m 0})$ respectively.
-
-Following the ParSpec expansion, our QNM frequencies are expressed through functions,
+\ag{In this paper, we replace these GR predictions with QNM 
+frequencies defined through the ParSpec expansion introduced in 
+Sec.~\ref{sec:review_parspec}; cf.~Eqs.~\eqref{eq:kerr_expansion}. Hence,}
 %
 \begin{subequations}
 \begin{align}
-\omega_k &= \omega_k(m_1, m_2, \chi_1, \chi_2,\ell, \{\delta \omega_k^{(j)}\}),\\
-\tau_k   &= \tau _k(m_1, m_2, \chi_1, \chi_2, \ell, \{\delta \tau_k^{(j)}\}),
+\omega_k &= \omega_k(m_1, m_2, \chi_1, \chi_2,\ell, \{\delta \omega_k^{(n)}\}),\\
+\tau_k   &= \tau _k(m_1, m_2, \chi_1, \chi_2, \ell, \{\delta \tau_k^{(n)}\}),
 \end{align}
 \end{subequations}
 %
-where we fixed a certain value of $p$, and the estimates of $(m_1,\, m_2,\, \chi_1,\, \chi_1)$ are used to predict
-the final BH mass $M_f$ and spin $\chi_f$ through~\cite{Taracchini:2013rva,Hofmann:2016yih}.
-%
-Additionally, both $\omega_k$ and $\tau_k$ depend on the coupling constant $\ell$
-defined in Eq.~\eqref{eq:def_gamma} as well as the sets, $\{\delta
-\omega_k^{(n)}\},$ and $\{\delta \tau_k^{(n)}\}$, where $n$ ranges from zero to
-the power of spin in Eqs.~\eqref{eq:kerr_expansion} up to which we include
-corrections.
-%
-For example, if we restrict ourselves to corrections with $n=0$, or
+\ag{where the mass and spin of the remnant object $(M_f,\chi_f)$ are themselves functions of
+$(m_1,\, m_2,\, \chi_1,\, \chi_2)$ (through~\cite{Taracchini:2013rva,Hofmann:2016yih}), and we fix $p$
+to a certain theory-specific value. Additionally,  the frequencies depend on the ParSpec coefficients $\{\delta
+\omega_k^{(n)},\delta \tau_k^{(n)}\}$,  and the coupling constant $\ell$.}
+
+\sout{For example, if we restrict ourselves to corrections with $n=0$, or
 $\chi_f^0$, to the $k=(2,2,0)$ mode only, then we would just have two
 additional parameters, $\{\delta \omega_0^{(0)}, \delta \tau_0^{(0)}\}$.
 %
 In this paper, we will restrict ourselves to corrections to the $n=0$ and
-$n=1$ terms, that is, only up to the leading-order in spin $\chi_f$ term.
+$n=1$ terms, that is, only up to the leading-order in spin $\chi_f$ term.}
 
 Using this parameterized waveform model, which we will call $\pSEOB$ in this
 paper, we infer bounds on our non-GR parameter $\ell$ for specific cases of
@@ -709,28 +709,29 @@ We detail these results in Sec.~\ref{sec:results}.
 \subsection{From theory-agnostic to theory-specific QNM results}
 \label{sec:theory_specific_qnm}
 
-Let us now establish the connection between theory-agnostic framework of the
-$\pSEOB$ waveform model and the theory-specific QNM calculations.
-%
-We begin by rewriting $\omega_{k}$ and $\tau_{k}$, given by Eqs.~\eqref{eq:kerr_expansion} as,
+Let us now establish the connection between the theory-agnostic \agcomm{or independent?} framework of the
+$\pSEOB$ waveform model and the theory-specific QNM calculations.  \ag{In this paper we will restrict ourselves to
+corrections to the leading and next-to-leading order terms in the ParSpec expansion, as well as the fundamental 
+$k = \{2,\, 2,\, 0\}$ QNM. For this reason,  we will omit the subscripts $k$ hereafter 
+and rewrite $\omega$ and $\tau$, given by} Eqs.~\eqref{eq:kerr_expansion} as,
 %
 \begin{subequations}
 \label{eq:qnm_nongr_iso}
 \begin{align}
-    M \omega_{k} &= \gamma \left( \delta\omega^{(0)}_{k} \omega^{(0)}_{k} + \chi \delta\omega^{(1)}_{k} \omega^{(1)}_{k} \right)
-    + \sum_{n=0}^{N_{\rm max}} \chi^{n} \omega^{(n)}_{k} \,,
+    M \omega &= \gamma \left( \delta\omega^{(0)} \omega^{(0)} + \chi \delta\omega^{(1)} \omega^{(1)} \right)
+    + \sum_{n=0}^{N_{\rm max}} \chi^{n} \omega^{(n)} \,,
 \\
-    \tau_{k}/M   &= \gamma \left( \delta\tau^{(0)}_{k} \tau^{(0)}_{k} + \chi \delta\tau^{(1)}_{k} \tau^{(1)}_{k} \right)
-    + \sum_{n=0}^{N_{\rm max}} \chi^{n} \tau^{(n)}_{k}\,,
+    \tau/M   &= \gamma \left( \delta\tau^{(0)} \tau^{(0)} + \chi \delta\tau^{(1)} \tau^{(1)} \right)
+    + \sum_{n=0}^{N_{\rm max}} \chi^{n} \tau^{(n)}\,,
 \end{align}
 \end{subequations}
 %
-We will work exclusively with the $\ell = m = 2$ and $n = 0$ (fundamental mode)
+\sout{We will work exclusively with the $\ell = m = 2$ and $n = 0$ (fundamental mode)
 QNM, i.e., $k = \{2,\, 2,\, 0\}$. For this reason we will omit the subcripts
 $k$ hereafter and no ambiguity in notation between the overtone index and the
-subscript $n$ in the series should arise.
+subscript $n$ in the series should arise.}
 %
-We have also pulled out from the sum all beyond-GR corrections, restricting
+We have \sout{also} pulled out from the sum all beyond-GR corrections, restricting
 ourselves to the nonspinning ($n=0$) and linear-order in spin ($n=1$)
 corrections to the Kerr QNMs.
 %
@@ -756,7 +757,7 @@ changes as calculations beyond-leading order in spin are accomplished.
 That is not the case for the $n=0$ coefficients and the situation is the same as in GR,
 in which the $n=0$ coefficients are simply the QNMs of the Schwarzschild BH.
 
-In the end, the $\pSEOB$ waveform model with theory-specific informed
+In the end, the $\pSEOB$ waveform model with theory-specific
 QNMs has only $\ell$ as a free beyond-GR parameter.
 %
 We emphasize that our procedure is different from that of
@@ -788,15 +789,16 @@ quartic EFT & 6 & $-$0.2114 & $-$0.6070 & $-$1.5263 & 171.35   & \cite{Cano:2021
 We summarize each theory we have considered together with: the exponent $p$ at
 which their QNM-modification enters, the corresponding modifications to the
 oscillation frequency $\delta \omega^{(n)}_{220}$ and decay time $\delta \tau^{(n)}_{220}$, and the
-references from which we used the results from.
+references from which we used the results from.\agcomm{Just leaving this comment 
+as a reminder to expand this table to include the GR values from Maselli et al.}
 }
 \label{tab:ref_theories_qnms}
 \end{table}
 
-As we have seen in Sec.~\ref{sec:review_theories}, the QNM of slowly-rotating
-BHs is modified gravity theories come in two families depending on their
-transformation upon a parity transformation: axial and polar. Which is the one
-we use to match against Eqs.~\eqref{eq:qnm_nongr_iso}?
+As we have seen in Sec.~\ref{sec:review_theories}, QNMs of slowly-rotating
+BHs in modified gravity theories can belong to two families depending on how 
+they behave under a parity transformation: axial and polar. Which one do
+we use to match with Eqs.~\eqref{eq:qnm_nongr_iso}?
 %
 To answer this question one has to work with a chosen theory and perform a
 translation between the metric perturbations $h_{\mu\nu}$ in the
@@ -818,34 +820,35 @@ the two parities.}
 %
 The justification is this is the mode (if excited during the merger) which is
 the most likely to appear in the signal.
-
-We performed the mapping between theory-specific QNM calculation and the ParSpec framework
-under the hypothesis above for the theories listed in Sec.~\ref{sec:review_theories}.
+We performed the mapping between theory-specific QNM calculations and the ParSpec framework
+under the hypothesis above, for the theories listed in Sec.~\ref{sec:review_theories}.
 %
-We summarize our result in Table~\ref{tab:ref_theories_qnms} and
+We summarize our results in Table~\ref{tab:ref_theories_qnms} and
 leave the details of our calculations to Appendix~\ref{app:map_details}.
 
 In Fig.~\ref{fig:example_waveform} we show an illustrative waveform for GR (solid line; using the \texttt{SEOBNR} model) and in the cubic EFT of gravity (dashed line; using the \pSEOB{} model),
 including the leading-order $n = 0$ deformations to the fundamental QNM (see Table~\ref{tab:ref_theories_qnms}).
 %
-We chose binary parameters similar to GW150914, consisting of a quasicircular,
-nonspinning binary with detector-frame masses
-$m_1^{\rm dec} = 39\msun$ and $m_2^{\rm dec} = 31\msun$.
+We chose binary parameters similar to GW150914,  but non-spinning, with detector-frame masses
+\sout{$m_1^{\rm dec} = 39\msun$ and $m_2^{\rm dec} = 31\msun$}
+\ag{$m_1 = 39\msun$ and $m_2 = 31\msun$} \agcomm{My suggestion would be to follow what
+I have written in footnote 2, and use unsubscripted symbols to denote detector frame quantities throughout.}.
 %
-The top panel shows the $+$ polarization of the GW $h_{+}$ in both theories,
+The top panel shows the $+$ GW polarization $h_{+}$ in both theories,
 while the bottom panel shows the amplitude $|h| = (h_{+}^2 + h_{\times}^2)^{1/2}$
 and instantaneous frequency $f$, all as functions of time $t$.
 %
-The signal are identical up to the merger, after which they differ during the ringdown.
+The signals are identical up to the merger,  \ag{specifically, the time $t_\textrm{match}$ 
+defined in Sec.~\ref{sec:review_pSEOB}}, after which they differ during the ringdown.
 %
-By construction, the ringdown is lasts longer for the cubic EFT of GR waveform and
+By construction, the ringdown lasts longer for the cubic EFT of GR waveform and
 with a smaller instantaneous frequency (see the bottom panel) due to the negative value of the
 $\delta\omega^{(0)}$ coefficient in this theory.
 
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
-\caption{(Color online).~Example GW signal with GW1509140-like parameters
+\caption{(Color online).~Example GW signal with GW150914-like parameters
 for both GR (solid line) and cubic EFT of GR (dashed line) with the leading-order
 $n=0$ modifications to the fundamental QNM, for $\ell_{\rm cEFT} = 65$~km.
 %
