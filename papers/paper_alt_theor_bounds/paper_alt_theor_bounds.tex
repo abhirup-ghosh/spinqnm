@@ -1,4 +1,4 @@
-\documentclass[twocolumn,
+	\documentclass[twocolumn,
                prd,
                aps,
                superscriptaddress,
@@ -1213,18 +1213,18 @@ interpretations of the results of our parameter estimation.
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{sec:results_edgb}
 
-We start by showing our results for EdGB gravity.
+We start \sout{by showing our results for} \ag{with} EdGB gravity.
 %
-In Fig.~\ref{fig:edgb_exec_sum} we show the marginalized posteriors of the
+In Fig.~\ref{fig:edgb_exec_sum} we show the marginalized PDFs of the
 coupling constant $\ell_{\rm GB}$, for GW150914 (top panel) and GW200129
 (middle panel), with and without the spin corrections to the $(2,2,0)$ QNM.
 %
-The bottom panel panel shows the joint posterior combining both events.
+The bottom panel shows the joint posterior from combining both events.
 %
-We see that for both events events, the $N_{\rm max} = 0$ posteriors are
+We see, for both events events, the $N_{\rm max} = 0$ posteriors are
 characterized by a peak away from zero.
 %
-This does not mean that we are inferring a deviation from GR from data.
+This does not mean that we are inferring a deviation from GR.
 %
 Recall that the deviations from GR in the ParSpec framework are controlled
 by $\gamma$, which here reads,
@@ -1235,17 +1235,21 @@ by $\gamma$, which here reads,
 \end{equation}
 %
 As shown in Fig.~\ref{fig:gamma_gb}, $\gamma_{\rm GB}$ does indeed have a posterior
-distribution with largest support at zero, indicating consistency between data
+distribution with largest support at zero, indicating consistency between \sout{data} 
+\ag{the underlying signal} \agcomm{whenever possible, I replaced ``data" when we 
+meant signal, simply because earlier we defined data to also include noise, and by a
+GR prediction we conventionally refer to the signal. }
 and GR.
 %
 We also observe that the inclusion of the spin corrections (i.e., curves with $N_{\rm max} = 1$)
-displaces the posteriors distributions towards smaller values of $\ell_{\rm GB}$.
+displaces the posteriors distributions towards smaller values of $\ell_{\rm GB}$ \ag{(Fig.~\ref{fig:edgb_exec_sum}).
+and larger values of $\gamma_{\rm GB}$ (Fig.~\ref{fig:gamma_gb}).}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function in EdGB gravity
-for the coupling constant $\ell_{\rm GB}$ for GW150914 (top panel), GW200129 (middle panel)
-and combined events (bottom panel).
+\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm GB}$ in EdGB gravity
+for GW150914 (top panel), GW200129 (middle panel)
+and from combining results (bottom panel).
 %
 In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
 of the linear-in-spin QNM correction.
@@ -1268,12 +1272,15 @@ does have maximum support at $\gamma_{\rm GB} = 0$. This shows that our model is
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The CDF evaluated at the
-cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ EdGB gravity as a function of the parameter
+cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ for EdGB gravity as a function of the parameter
 $\varepsilon$ for both (dashed curves) $\gm = m_2$, the secondary's source
 mass, and (solid curves) $\gm = M_{f}$, the remnant's source mass, without
 (black curves) and with (purple curves) linear in spin QNM corrections. The
-horizontal lines lay at 0.68 and 0.90. We see that in no situation the curves pass
+horizontal lines \sout{lay at 0.68 and 0.90}\ag{mark the 68\% and 90\% credible levels}. 
+We see that in no situation the curves pass
 through the 0.68 or 0.90 lines even at $\varepsilon = 1$.
+\agcomm{Am I missing something something? The Nmax=1 lines for GW150914 does 
+cross the credible levels, as well as the m2 Nmax=1 line for GW200129.}
 %
 This means that no bound on $\ell_{\rm GB}$ can be placed with the events we
 analyzed.
@@ -1309,7 +1316,7 @@ We find that we cannot place any constraint on $\ell_{\rm GB}$ with our waveform
 As we emphasized in Sec.~\ref{sec:remarks}, we must first check whether the
 ``EFT''~\eqref{eq:eft_bound} and ``ParSpec''~\eqref{eq:parspec_bound} bounds
 are satisfied, before drawing any conclusions on the allowed values for
-$\ell_{\rm GB}$ from our parameter estimations
+$\ell_{\rm GB}$ from our parameter estimations.
 %
 We check the validity of the EFT bound in Fig.~\ref{fig:edgb_cdf}. In the top (bottom) panel we show
 the CDF of the $\ell_{\rm GB}$ posteriors for GW150914 (GW200129), obtained
