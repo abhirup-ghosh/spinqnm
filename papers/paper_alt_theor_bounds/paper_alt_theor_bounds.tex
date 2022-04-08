@@ -920,15 +920,15 @@ $E(d \vert \mathcal{H})$ the evidence.
 %
 The set of parameters, $\bm{\lambda}$ is a union of the GR waveform
 model parameters~$\bm{\theta}$ (c.f.  Sec.~\ref{sec:review_pSEOB}), and
-$\ell$,  the only non-GR parameter in this problem which, we recall, set
+$\ell$,  the only non-GR parameter in this problem which, we recall, sets
 the characteristic length-scale in which deviations from
 GR become relevant in each of the theories described in
-Sec.~\ref{sec:review_theories}. Hence,
+Sec.~\ref{sec:review_theories}. %Hence,
 %
-\begin{equation}
-\bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
-\label{eq:def_params}
-\end{equation}
+%\begin{equation}
+%\bm{\lambda} = \{\ell\} \cup \{\bm{\theta}\}.
+%\label{eq:def_params}
+%\end{equation}
 
 % As discussed in Secs.~\ref{sec:review_theories} and \ref{sec:theory_specific_qnm}, there is a single coupling
 % constants in the cases of EdGB and dCS theories, but two in the cubic and
@@ -948,7 +948,7 @@ d - h(\bm{\lambda}) \vert d - h(\bm{\lambda})
 \rangle\,,
 \end{equation}
 %
-with noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
+with the noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
 %
 \begin{equation}
 \langle A | B \rangle =
@@ -957,58 +957,63 @@ with noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as,
 \end{equation}
 %
 where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
-complex conjugation and $S_{n}(f)$ is the power spectrum density of the
-detector.
+complex conjugation, $S_{n}(f)$ is the power spectrum density of the
+detector \ag{and $[f_{\rm low}, f_{\rm high}]$ span the detector sensitivity band.}
 %
 Assuming a specific prior distribution for our parameters (discussed further in the next section), we stochastically
 sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
-\texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx},
-a package part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
+\texttt{LALInferenceMCMC}~\cite{Rover:2006ni,vanderSluys:2008qx} as part of the \texttt{LALInference} software suite~\cite{Veitch:2014wba,lalsuite}.
 %
 We subsequently marginalize over the remaining parameters to obtain the
-posterior probability distribution function~(PDF) on $\ell$,  i.e., $P_j(\ell \vert d_j,\mathcal{H})$,
+posterior probability distribution function~(PDF) on $\ell$,  i.e., $P(\ell \vert d,\mathcal{H})$,
 our main parameter of interest.
 
 For $N$ independent GW observations $\{d_j\}$, $j=1,...,N$, each characterised
-by a posterior probability distribution $P_j(\ell \vert d_j,\mathcal{H})$, the
+by a PDF $P_j(\ell \vert d_j,\mathcal{H})$, the
 joint posterior can be written as:
 %
 \begin{equation}
-P(\ell | \{d_j\}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j)}{p_j(\ell)}\,.
+P(\ell | \{d_j\},\mathcal{H}) = p(\ell) \prod_{j=1}^{N} \frac{P_j(\ell | d_j,\mathcal{H})}{p_j(\ell|\mathcal{H})}\,.
 \label{eq:cumulative_dist_ell}
 \end{equation}
 %
-where $p_j(\ell)$ are the priors used for each observation, and $p(\ell)$ is an overall prior.
+where $p_j(\ell | \mathcal{H})$ are the priors used for each observation, and $p(\ell | \mathcal{H})$ is an overall prior.
 %
-Since we assume a uniform prior on $\ell$, the joint posterior is identically
-equal to the joint likelihood.
+Since we assume a uniform prior on $\ell$, the joint posterior is 
+equal to the joint likelihood. Hereafter, we will drop the explicit usage of
+$\mathcal{H}$.
 %
-In some cases, we found it necessary to work with different prior ranges across
-different events, within the context of a given theory.
+%In some cases, we found it necessary to work with different prior ranges across
+%different events, within the context of a given theory.
 %
-In this situation, when combining the posteriors we use chose as our overall
-prior the widest one among the individual events.
+%In this situation, when combining the posteriors we use chose as our overall
+%prior the widest one among the individual events.
+
 
 \subsection{Priors}
 
-The prior probability distribution functions on the GR parameters are assumed to be uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic on the binary orientation, $p(\iota, \psi, \phi_0) \propto \sin\iota$. For the spins $(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
-This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.
+The prior distribution functions on the GR parameters are assumed to be 
+uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a 
+sphere in the sky for the source location with $p(d_L) \propto d_L^2$, and isotropic 
+on the binary orientation, $p(\iota, \psi, \phi_0) \propto \sin\iota$. For the spins 
+$(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes and restrict ourselves to the $z$-components.
+\footnote{\ag{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior}.}}
 %
-The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
+%The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
 
-Among our beyond-GR parameters, $\{\ell, \delta \omega_k^{(n)}\delta \tau_k^{(n)}\}$,
-as already mentioned in the previous section, we hold $\{\delta \omega_k^{(n)}\}$
-and $\{\delta \tau_k^{(n)}\}$ fixed to theory-specific predictions, and allow only $\ell$ to freely vary.
+Among our beyond-GR parameters $\{\ell, \delta \omega^{(n)}\delta \tau^{(n)}\}$,
+as already mentioned in the previous section, we hold $\{\delta \omega^{(n)},\delta \tau^{(n)}\}$ 
+fixed to theory-specific predictions, and only allow $\ell$ to vary freely.
 %
-We assume an uniform prior between appropriate ranges on $\ell$,
+We assume an uniform prior on $\ell$ between appropriate ranges,
 say $\ell \in [0, \ell_{\rm max}]$.
 %
 The lower limit is set by the fact the modified gravity theories we consider
 all have $p$ even and hence we can assume $\ell > 0$ without loss of
 generality.
 %
-The upper limit is chosen as to make sure that our marginalized posterior
-distributions on $\ell$ do not rail against $\ell_{\rm max}$.
+%The upper limit is chosen as to make sure that our marginalized posterior
+%distributions on $\ell$ do not rail against $\ell_{\rm max}$.
 
 
 \subsection{Event selection}
@@ -1043,13 +1048,13 @@ bounds on measurements of the dominant $(220)$ QNM:
 GW150914~\cite{LIGOScientific:2016aoc} and
 GW200129~\cite{LIGOScientific:2021djp}.
 %
-These two events, with a total mass of $65 \Mo$ and $63.4 \Mo$ respectively, are
+These two events, with a total (source-frame) mass of $65 \Mo$ and $63.4 \Mo$ respectively, are
 extremely similar in their source properties. These are also two of the loudest
 BBH signals observed to date with a total network SNR of 24 and 26.8
 respectively.
 %
-Moreover, and what is more relevant for our analysis, is their post-inspiral
-(merger-ringdown) SNRs, which at 16.1 and 16 respectively (see the columns for
+Moreover, and what is more relevant for our analysis, are their post-inspiral
+(merger-ringdown) SNRs which are both $\sim `6$ (see the columns for
 $\rho_{\text{post-insp}}$ in Table III of~\cite{LIGOScientific:2019fpa} and
 Table IV of~\cite{LIGOScientific:2021sio}).
 %
@@ -1058,26 +1063,26 @@ the BH ringdown in modified theories of gravity.
 
 The parameter inference in this paper follows configurations identical to the
 ones used on these events for the \textsc{pSEOBNRv4HM} analysis in
-Ref.~\cite{LIGOScientific:2021sio}. GW150914 was a 2-detector event (HL) while
+Ref.~\cite{LIGOScientific:2021sio}. GW150914 was a 2-detector  (HL) event while
 GW200129 was 3-detector (HLV).
 %
 We consequently use the same strain data $h(t)$, detector
 power-spectral-densities $S_n(f)$ and calibration envelopes as were used for
 the analyses in Ref.~\cite{LIGOScientific:2021sio}.
 %
-The only difference between the sampling configurations is that we do not
-sample over the fractional deviations in the $(220)$ QNM frequencies and
-damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$
-and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions, summarized
-in Table~\ref{tab:ref_theories_qnms}.
+%The only difference between the sampling configurations is that we do not
+%sample over the fractional deviations in the $(220)$ QNM frequencies and
+%damping times, but instead on $\ell$ while holding $\{\delta \omega_k^{(j)}\},$
+%and $\{\delta \tau_k^{(j)}\}$ fixed to theory-specific predictions, summarized
+%in Table~\ref{tab:ref_theories_qnms}.
 %
-In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_f$ and
+\sout{In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_f$ and
 detector-frame remnant mass $(1 + z) M_f$ for GW150914 for GR and the
 illustrative case of dCS gravity. We see that our waveform models does not
 introduce a substantial change to the GR estimates on this parameters, as
 required by the ParSpec expansion (see discussion in
-Sec.~\ref{sec:review_parspec}).
-
+Sec.~\ref{sec:review_parspec}).}\agcomm{This reference to Fig.2 appears misplaced here. IMO, Fig 2. has two purposes. 1) to show that we do not need the high-spin version of the fits Carullo used, because our spin posteriors are well-localised around 0.7, and 2) to assure the reader that we were right in using the GR values of the final mass and spin in the ParSpec expansion, because introducing nonGR parameters has not ended up biasing our estimates of Mf-chif.  I think those are the points at which we need to refer to this figure.}
+%
 In Sec.~\ref{sec:results}, we will enumerate through the different theories and
 outline the highlight results. Whenever possible, we also combine results from
 multiple events to obtain the strongest possible bound on $\ell$.
@@ -1093,14 +1098,11 @@ multiple events to obtain the strongest possible bound on $\ell$.
 \label{sec:remarks}
 
 There are two conditions that we must verify before we can confidently claim to
-have placed a constraint, within our model's assumptions, with our parameter
-estimation study.
-
-First, as we explained in Sec.~\ref{sec:review_theories}, all theories that we
+have placed a constraint on $\ell$. First, as we explained in Sec.~\ref{sec:review_theories}, all theories that we
 consider must be considered as an effective field theory, meaning it should be
-considered valid only below an energy scale, or equivalently, a lengthscale.
+considered valid only below an energy scale, or equivalently, a length-scale.
 %
-As a cut-off lengthscale for the validity of the EFT we use,
+As a cut-off length-scale for the validity of the EFT we use,
 %
 \begin{equation}
 \Lambda_{\rm EFT} (\varepsilon, \mathfrak{m}) = \varepsilon \, G \mathfrak{m} / c^2 \,,
@@ -1111,22 +1113,21 @@ where $\varepsilon$ is a dimensionless number and $\mathfrak{m}$ is the median
 value of one of the mass scales involved in the problem.
 %
 We also momentarily restored factors of $c$ and $G$ to emphasize that $\Lambda_{\rm EFT}$ has
-dimensions of length and hence can be compared to the coupling strength $\ell$.
+dimensions of length and hence can be compared to the coupling strength $\ell$ \agcomm{Note, that we have also restored G,c factors in Eq.3.3}.
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
 but here we consider $\varepsilon \in [0, 1]$ for generality.
 %
-We will say that a bound has been placed on $\ell$, if most of the support of
-the posterior distribution function $P(\ell)$ is in the interval
+We will say that a bound has been placed on $\ell$, if most of the PDF $P(\ell | d)$ support is in the interval
 $[0, \, \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})]$.
 %
 In practice, this can be quantified through the cumulative distribution function
-(CDF) associated with the marginalized posterior distribution $P(\ell)$, namely
+(CDF) associated with the marginalized posterior distribution $P(\ell | d)$, namely
 %
 \begin{equation}
 % P(\ell \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
 % HS: changed lower limit to zero since we don't have support for negative \ell-values
-P(\ell \leqslant \ell_{\rm max}) = \int_{0}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
+P(\ell \leqslant \ell_{\rm max} | d) = \int_{0}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell' | d) \,.
 \label{eq:def_cdf}
 \end{equation}
 %
@@ -1134,13 +1135,16 @@ For instance, we will require that for a bound with 90\% credibility to be place
 %
 \begin{equation}
 % \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
-P(\ell \leqslant \Lambda_{\rm EFT}) \leqslant 0.9 \,,
+P(\ell \leqslant \Lambda_{\rm EFT} | d) \leqslant 0.9 \,,
 \quad \textrm{(EFT bound)},
 \label{eq:eft_bound}
 \end{equation}
 %
 where we let $\ell_{\rm max} = \Lambda_{\rm EFT}$ in Eq.~\eqref{eq:def_cdf}, and
-likewise for other credibility percentiles.
+likewise for other credibility percentiles\agcomm{Note that we were using $\ell_{\rm max}$
+in the previous section to denote the upper end of the prior. I suggest that we remove the 
+$\ell_{\rm max}$ reference from the previous section. No need to go into details about prior
+boundaries.}.
 
 Second, as already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
 formalism is by construction perturbative. This means that the non-GR
@@ -1165,15 +1169,15 @@ in Eq.~\eqref{eq:def_cutoff}?
 %
 In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, which attempted to
 constrain dCS and EdGB theories with the \emph{inspiral} part of
-the GW signal alone, it was natural to chose the secondary's mass $m_2$ as the most
-conservative choice, since it is by definition the smallest component mass and hence
+the GW signal alone, it was natural to choose the secondary's mass $m_2$ as the most
+conservative choice, since it is by definition the smaller component mass and hence
 places the lowest cut-off scale $\Lambda_{\rm EFT}$ for the validity of either of these theories as an EFT.
 
 In our problem, the answer is not as clear. On the one hand, since we are
 interested in the ringdown part of the signal, it is natural to use the
 final mass $M_f$ to compute $\Lambda_{\rm EFT}$.
 %
-On the other hand, one may argue that the modified gravity theory being
+On the other hand, one may argue that the modified gravity theory under
 consideration should be able to predict a full inspiral, merger, and ringdown
 of the black hole binary before we can even make such a test, and thus the
 same, more conservative choice $\gm = m_2$ should be used.
@@ -1182,7 +1186,7 @@ Here we adopt a pragmatic approach to this issue and consider \emph{both}
 masses, $m_2$ and $M_f$, to determine $\Lambda_{\rm EFT}$.
 %
 We will then compare how different assumptions yield to different
-interpretations of the results of our parameter estimations.
+interpretations of the results of our parameter estimation.
 
 
 
@@ -1257,7 +1261,7 @@ in the main text, our analysis of these events fails to satisfy the EFT bound~\e
 \caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm GB}$,
 defined in Eq.~\eqref{eq:def_gamma_gb}. We see that this parameter controls the ParSpec expansion in EdGB gravity
 does have maximum support at $\gamma_{\rm GB} = 0$. This shows that our model is consistent with GR.
-}
+\agcomm{I was thinking a bit more about the colors we choose for the plots, and I think Figs. 1-2 should have a different set of colors from Figs. 3-10. That is because the former have GR-nonGR comparisons, while the latter has comparisons between different spin corrections. Casual readers sometimes make an unconscious connection of quantities with colors. }}
 \label{fig:gamma_gb}
 \end{figure}
 
