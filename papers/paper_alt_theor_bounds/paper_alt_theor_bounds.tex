@@ -1437,19 +1437,21 @@ the dominant QNM.
 \label{fig:dcs_cdf}
 \end{figure}
 
-We now consider dCS gravity.
+We now consider dCS gravity \ag{where the main results are summarised in Fig.~\ref{fig:dCS_exec_sum}}.
 %
-In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
+\sout{In Fig.~\ref{fig:dCS_exec_sum} we show the marginalized posterior distribution
 function of $\ell_{\rm CS}$ for both events GW150914 (top panel) and GW200129
 (middle panel), with different colors distinguishing cases with and without spin corrections to
-dominant $(2,2,0)$~QNM.
+dominant $(2,2,0)$~QNM.}\agcomm{A lot of the language here is a repetition of the previous section.}
 %
-Perhaps the most salient feature of these posteriors is that they are not
+\sout{Perhaps the most salient feature of these posteriors is that they are not
 peaked at $\ell_{\rm CS}$, which may mislead us to believe that we are seeing a
 deviation from GR. This is not the case and the situation is that same as the
-one we discussed in the previous section for EdGB gravity.
+one we discussed in the previous section for EdGB gravity.}
+\ag{As with EdGB gravity (Sec.~\ref{sec:results_edgb}) although the PDF of $\ell_{\rm CS}$
+is peaked away from 0, this does not signify a deviation from GR, as we have verified that,}
 %
-We verified that
+\sout{We verified that}
 %
 \begin{equation}
     \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{f}} \right)^{4}\,,
@@ -1463,14 +1465,18 @@ $\ell_{\rm CS}$. This can be seen more evidently by looking at the location of
 posterior peaks.
 %
 Finally, in the bottom panel, we show the combined result for both events.
+\agcomm{Just a thought.  Since, Figs 3,6,8,10 and Figs.4,6,9,11 show the same basic thing,
+should we have one description at the top of the section for each figure? We can follow this up
+by what is special for each theory in each section? Currently, we are repeating a lot of the 
+language to describe these figures for each theory?}
 
 In Fig.~\ref{fig:dcs_cdf} we show the CDF
-obtained from Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT} (\varepsilon, \gm)$,
+\sout{obtained from Eq.~\eqref{eq:def_cdf}, with $\ell_{\rm max} = \Lambda_{\rm EFT} (\varepsilon, \gm)$,
 for both GW150914 (top panel) and GW200129 (bottom panel), where $\Lambda_{\rm EFT}$
 is calculated with either $\gm = m_2$ (dashed lines) or $M_{f}$ (solid lines),
-and in the range $\varepsilon \in [0,1]$.
+and in the range $\varepsilon \in [0,1]$.}
 %
-For GW150914, we see that with $\gm = m_2$ that Eq.~\eqref{eq:eft_bound} is not
+\sout{For}\ag{for} GW150914, we see that with $\gm = m_2$ that Eq.~\eqref{eq:eft_bound} is not
 satisfied unless $\varepsilon \approx 0.9$ (with only $n=0$ corrections) and
 $\varepsilon \approx 0.7$ (with both $n=0$ and $1$ corrections).
 %
@@ -1486,9 +1492,12 @@ cut-off scale that we can claim an upper bound
 \ell_{\rm CS} \leqslant 42.6~\textrm{km}
 \quad \textrm{(90\% credibility)},
 \end{equation}
+\agcomm{I am not familiar with the term ``credibility", and am more used to the phrase, ``at X\% credible level". 
+Are they the same thing?}
 %
-on dCS gravity and would constitute the first bound on this theory with
-gravitational-wave observations alone.
+on dCS gravity and would constitute \emph{the first bound on this theory with
+gravitational-wave observations alone}.\agcomm{Since this is an extremely important
+result, would it make sense to reorder the theories such that dCS comes first among results?}
 %
 We also note that since the CDF grows fast in approximate domain $\varepsilon = [0.2, 0.4]$,
 that a stronger, albeit at lower credibility,
@@ -1524,7 +1533,9 @@ These stronger bounds are a consequence of the larger support for $\ell_{\rm CS}
 for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
 the smaller median remnant ($M_{f} \approx 59.5\msun$ versus $M_{f} \approx 61.8\msun$ for GW150914).
 %
-\hs{Should we remove these and just quote the 90\% results?}
+\hs{Should we remove these and just quote the 90\% results?}\agcomm{I think
+it's fine to give point estimates, because it's easier for reader to interpret results 
+rather than having to make sense of error bars.}
 
 We also found for both GW events, that the
 perturbative-conditions~\eqref{eq:parspec_bound} required by the ParSpec
@@ -1533,8 +1544,8 @@ formalism is violated for the $\gamma_{\rm CS} \, \delta \tau^{(1)}$ coefficient
 This means that we cannot use these posterior to infer any meaningful bound on dCS gravity
 and that is why we quoted only the $N_{\rm max}=0$ bound above.
 
-Finally, since both event individually led to a bound on $\ell_{\rm CS}$
-(assuming a cut-off scale for $\gm = M_{f}$ and $j = 0$), we can combine the
+Finally, since both events individually led to a bound on $\ell_{\rm CS}$
+(assuming a cut-off scale for $\gm = M_{f}$ and $N_{\rm max}=0$), we can combine the
 posteriors to obtain the cumulative bound,
 %
 \begin{equation}
@@ -1576,10 +1587,10 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 \hline
 \end{tabular}
 \caption{Detailed summary of our results for dCS gravity for GW150914, GW200129, and
-combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible bounds.
 %
 We found that while our posteriors satisfy the condition~\eqref{eq:eft_bound} (with $\varepsilon = 1/2$),
-they do not obey the condition~\eqref{eq:parspec_bound} for $j = 1$. This means
+they do not obey the condition~\eqref{eq:parspec_bound} for $N_{\rm max} = 1$. This means
 that our results for $N_{\rm max}=0$ are the only ones we can confidently quote.
 %
 The combined bound, which is also quoted in Table~\ref{tab:ref_theories_qnms},
