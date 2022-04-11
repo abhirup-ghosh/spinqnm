@@ -1021,9 +1021,11 @@ generality.
 \begin{figure}[t]
 \includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
 \caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
-detector-frame remnant mass $(1 + z) \, M_f$ for GW150915, using the same waveform model,
-but without (blue contours) and with the non-GR parameters different from zero (orange contours, for
-dCS gravity and $j=0$). The contours represent 90\% credible regions.
+detector-frame remnant mass $(1 + z) \, M_f$ for GW150914, using the same waveform model,
+but without (blue contours) \agcomm{colors are not up to date; needs to be 
+finalised after we finalise the color scheme} and with the non-GR parameters 
+different from zero (orange contours, for
+dCS gravity and $N_{\rm max}=0$). The contours represent 90\% credible \sout{regions}\ag{levels}\agcomm{we have to be particular about the use of credible regions. If its 2D they are ``levels", if they are 1D then ``intervals". If we are quoting the difference of the 1D intervals, then we say ``credible bounds"}.
 %
 We see that the introduction of the non-GR parameters does not bias the
 inference on the source parameters.
@@ -1844,6 +1846,25 @@ as done in~\cite{Jai-akson:2017ldo,Li:2020wse}. Say that ultimately we will need
 \hs{I suspect that by construction the $N_{\rm max} = 1$ cases will often fail to satisfy our
 perturbative bounds. If so, add explanation here.}
 
+\agcomm{Mention that we do not use the high-spin version of the fits, and refer to the 
+chif measurements Fig.~\ref{fig:corner_plot} (which should be near the text here).}
+
+\agcomm{Mention that our alternate ringdown formalism does not bias estimates of GR quantities 
+and refer to Fig.~\ref{fig:corner_plot_all}}
+
+\begin{figure*}[t]
+\includegraphics[width=0.9\textwidth]{figs/tmp_GW150914_intrinsic_params.pdf}
+\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
+detector-frame remnant mass $(1 + z) \, M_f$ for GW150914, using the same waveform model,
+but without (blue contours)\agcomm{colors to be updated.} and with the non-GR parameters different from zero (orange contours, for
+dCS gravity and $N_{\rm max}=0$). The contours represent 90\% credible levels.
+%
+We see that the introduction of the non-GR parameters does not bias the
+inference on the source parameters.
+}
+\label{fig:corner_plot_all}
+\end{figure*}
+
 % -----------------------------------------------------------------------------
 % \hs{Say that the fact we spin correction look important reinforces the
 % importance of calculation QNMs of spinning black holes beyond-GR.}
@@ -1864,6 +1885,10 @@ perturbative bounds. If so, add explanation here.}
 \section{Details of the determination of the theory-specific
 ParSpec coefficients}
 \label{app:map_details}
+\agcomm{Reorder sections, such that the appendix comes after the Acknowledgments?}
+
+\agcomm{Have not gone through the appendices, because there might be sections that still
+need to be completed.}
 
 \subsection{Einstein-dilaton-Gauss-Bonnet}
 \label{app:map_edgb}
