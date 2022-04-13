@@ -34,7 +34,7 @@
 % \usepackage{tikz}
 
 % -----------
-% Bibligraphy
+% Bibliography
 % -----------
 \AtBeginDocument{%
     \newwrite\bibnotes
@@ -118,7 +118,8 @@
 \newcommand{\agcomm}[1]{{\textcolor{red}{{[AG: #1]}} }}
 \newcommand{\ag}[1]{{\textcolor{Maroon}{{#1}} }}
 \newcommand{\hs}[1]{{\textcolor{blue}{{[HS: #1]}} }}
-\newcommand{\ab}[1]{{\textcolor{green}{{[AB: #1]}} }}
+\newcommand{\ab}[1]{{\textcolor{cyan}{{#1}} }}
+\newcommand{\abcomm}[1]{{\textcolor{red}{{[AB: #1]}} }}
 
 \newcommand{\AEI}{\affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am M\"uhlenberg 1, Potsdam 14476, Germany}}
 \newcommand{\UMD}{\affiliation{Department of Physics, University of Maryland, College Park, Maryland 20742, USA}}
@@ -142,27 +143,27 @@ allows us to explore the dynamical, nonlinear regime of general relativity
 and to constrain modifications to it.
 %
 Some of these gravitational-wave events are detected with sufficiently high
-signal-to-noise ratio, allowing us to probe the relaxation of the remnant black
-hole to its final, stationary state -- the so-called black-hole ringdown,
+signal-to-noise ratio \ab{in the merger}, allowing us to probe the relaxation of the remnant black
+hole to its final, stationary state --- the so-called black-hole ringdown,
 characterized by a set of quasinormal modes.
 % Main question:
 Can we use the ringdown to constrain deviations to general relativity,
 as predicted by several of its contenders?
 % What we do:
-Here, we take a first step to address this question, by using an
+Here, we \sout{take a first step to} address this question by using an
 inspiral-merger-ringdown waveform model in the effective-one-body formalism,
 augmented with a parametrization of the ringdown based on an expansion on the
 final black hole's spin.
 %
-We give a prescription on how to include to this waveform model the quasinormal mode frequencies
-calculated on a theory-by-theory basis, in particular, for theories that deviate
-from general relativity through higher-curvature corrections, namely,
+We give a prescription on how to include \ab{in} this waveform model the quasinormal mode frequencies
+calculated on a theory-by-theory basis. \ab{In particular, we focus on gravity} theories that deviate
+from general relativity through higher-order curvature corrections, namely,
 Einstein-dilaton-Gauss-Bonnet, dynamical Chern-Simons, cubic- and quartic-order
 effective-field-theories of general relativity.
 %
 % Main conclusion:
-We confront the resultant waveform models against GW150914 and GW200129 data,
-finding that while Einstein-dilaton-Gauss-Bonnet cannot be constrained with
+We confront the resultant waveform models against \ab{the two loudest gravitational-wave ringdown signals,
+  notably, GW150914 and GW200129, and we find} that while the Einstein-dilaton-Gauss-Bonnet theory cannot be constrained with
 these events, we can place upper bounds on the coupling constants of cubic-
 ($\ell_{\rm cEFT} \leqslant 38.2$~km) and quartic-order ($\ell_{\rm qEFT}
 \leqslant 51.3$~km) effective-field-theories of general relativity, and
@@ -170,7 +171,7 @@ of dynamical Chern-Simons gravity ($\ell_{\rm CS} \leqslant 38.7$~km).
 %
 The latter result is a concrete example of a theory presently
 unconstrained by inspiral-only analyses which, however, can be constrained by
-merger-ringdown studies.
+merger-ringdown studies \ab{with current gravitational-wave data}.
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%
 
