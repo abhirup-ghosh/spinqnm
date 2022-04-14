@@ -223,7 +223,7 @@ described by the action
     \right]\,,
 \end{equation}
 %
-where $g = \textrm{det} \, g$ is the metric determinant, $R$ is the Ricci
+where $g = \textrm{det}(g)$ is the metric determinant, $R$ is the Ricci
 scalar and $\varphi$ is a dynamical scalar field that couples to the
 Gauss-Bonnet invariant
 %
@@ -446,21 +446,20 @@ Ref.~\cite{Cano:2020cao} calculated the leading-order BH spin corrections to the
 \label{sec:method}
 % --------------------------------------------------------------------------------- %
 
-Having reviewed the modified gravity theories we will consider, we now present
+\ab{Having reviewed the modified gravity theories we will consider, we now present
 the sequential building blocks for the waveform model we use to test these theories
 against GW observations.
 %
-We start by reviewing the theory-agnostic parametrized ringdown
-spin-expansion coefficients (ParSpec) \sout{expansion} \ag{framework} \agcomm{replaced `framework' to prevent duplication.  The original parspec authors call this a data-analysis framework, so I think it would be safe to use it. I have left the term ``ParSpec expansion" in other places, because ParSpec is always abbreviated in those places.} in Sec.~\ref{sec:review_parspec}.
+We start by reviewing the parametrized ringdown spin-expansion coefficients (ParSpec) framework in Sec.~\ref{sec:review_parspec}.
 %
 Next, in Sec.~\ref{sec:review_pSEOB}, we review our baseline
-parametrized inspiral-(plunge)-merger-ringdown (IMR) BBH waveform
-model~\cite{Brito:2018rfr,Ghosh:2021mrv} and explain how we modify
-it to include the ParSpec expansion.
+parametrized inspiral(--plunge)-merger-ringdown (IMR) BBH waveform
+model~\cite{Brito:2018rfr,Ghosh:2021mrv} and explain how we extend 
+it to include the ParSpec.
 %
 Finally, in Sec.~\ref{sec:theory_specific_qnm}, we show how we can map
 theory-specific QNM calculations in modified gravity theories onto the
-theory-agnostic free coefficients in the ParSpec expansion.
+free coefficients in the ParSpec framework.}
 %
 Ultimately, this provides us with an IMR BBH waveform model, with the ringdown
 portion of the model informed by QNM calculations in specific beyond-GR
@@ -469,82 +468,75 @@ theories.
 \subsection{The parametrized ringdown spin expansion coefficients framework}
 \label{sec:review_parspec}
 
-We start by reviewing the ParSpec
-framework introduced in Ref.~\cite{Maselli:2019mjd}, but following
-some of the notation used in Ref.~\cite{Carullo:2021dui}.
-%
-A general procedure to describe deviations to the QNM frequencies $\omega_{k}^{\rm Kerr}$ and
-damping times $\tau_{k}^{\rm Kerr}$ of the GR Kerr BH is to write,
+\ab{A general procedure to describe deviations to the QNM frequencies $\omega_{\ell m n}^{\rm Kerr}$ and
+damping times $\tau_{\ell m n}^{\rm Kerr}$ of the GR Kerr BH is to write,}
 %
 \begin{subequations}
 \label{eq:general_deviation}
 \begin{align}
-\omega_{k} &= \omega^{\rm Kerr}_{k} \, (1 + \delta \omega_{k}), \\
-\tau_{k}   &= \tau^{\rm Kerr}_{k}   \, (1 + \delta \tau_{k}),
+\omega_{\ell m n} &= \omega^{\rm Kerr}_{\ell m n} \, (1 + \delta \omega_{\ell m n}), \\
+\tau_{\ell m n }   &= \tau^{\rm Kerr}_{\ell m  n}   \, (1 + \delta \tau_{\ell m n }),
 \end{align}
 \end{subequations}
 %
-where $\delta\omega_{k}$ and $\delta\tau_{k}$ are the fractional deformation parameters.
+\ab{where $\delta\omega_{\ell m n}$ and $\delta\tau_{\ell m  n}$ are the fractional deformation parameters,
+$l$ and $m$ are the multipole indices, and $n$ the overtone number.}
 %
-Here we use the subscript $k$ to represent the QNM labels $\{l,\, m,\, n\}$,
-where $l$ and $m$ are the multipole indices, and $n$ the overtone number.
-%
-This type of parametrization was adopted, for instance, in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Carullo:2018sfu}.
+This type of parametrization was adopted, for instance, in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Brito:2018rfr,Carullo:2018sfu,Ghosh:2021mrv}.
 
-\ag{The current LIGO-Virgo-Kagra tests of BH ringdown (see Sec.VII.A of~\cite{LIGOScientific:2020tif} or Sec.VIII.A of~\cite{LIGOScientific:2021sio}) take a restrictive theory-agnostic approach towards the inference of $\delta\omega_{k}$ and $\delta\tau_{k}$. These deviations are either assumed to occur identically across all observed sources or belong to a generic underlying Gaussian population. A more realistic scenario, however, is that these parameters depend on the source BH's mass and spin.}
-\sout{A caveat of parametrizations of the form~\eqref{eq:general_deviation}, is that
-$\delta\omega_{k}$ and $\delta\tau_{k}$ depend, in general, on the BH's source mass and spin.}
+The current LIGO-Virgo-Kagra tests of BH ringdown (see Sec.VII.A
+of Ref.~\cite{LIGOScientific:2020tif} or Sec.VIII.A
+of Ref.~\cite{LIGOScientific:2021sio}) take a restrictive theory-agnostic
+approach towards the inference of $\delta\omega_{\ell m n}$ and
+$\delta\tau_{\ell m n}$. These deviations are either assumed to occur
+identically across all observed sources or belong to a generic
+underlying Gaussian population. A more realistic scenario, however, is
+that these parameters depend on the source BH's mass and spin.
 %
-Ideally, one would like to explicitly reinstate \sout{the dependence the source-frame
-BH mass and spin} \ag{this dependence} for it would
+Ideally, one would like to explicitly reinstate this dependence, by 
 %
-(i) introduce deformation parameters which can be determined, once and for
+(i) introducing deformation parameters which can be determined, once and for
 all, from a specific gravity theory (GR included), and
 %
-(ii) make it simpler to combine constraints coming from multiple \ag{(independently observed)} sources.
+(ii) making it simpler to combine constraints coming from multiple (independently observed) sources.
 
-ParSpec is such an observable-based
-\sout{In the ParSpec expansion this is accomplished by performing a} bivariate
-expansion of Eq.~\eqref{eq:general_deviation} in the detector-frame BH's mass
-$M$ and spin $\chi$, \sout{namely}
+\ab{The ParSpec framework was introduced in Ref.~\cite{Maselli:2019mjd}. It is} an observable-based
+bivariate expansion of Eq.~\eqref{eq:general_deviation}, given by
 %
 \begin{subequations}
 \label{eq:kerr_expansion}
 \begin{align}
-\omega_{k} &= \frac{1}{M} \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \omega^{(n)}_{k} \, \left( 1 + \gamma \delta \omega^{(n)}_{k} \right), \\
-\tau_{k}   &= M     \sum_{n = 0}^{N_{\rm max}} \, \chi^{n} \tau^{(n)}_{k}   \, \left( 1 + \gamma \delta \tau^{(n)}_{k} \right),
+\omega_{\ell m n} &= \frac{1}{M_{\rm f}} \sum_{j = 0}^{N_{\rm max}} \, \chi_{\rm f}^{j} \omega^{(j)}_{\ell m n} \, \left( 1 + \gamma\, \delta \omega^{(j)}_{\ell m n} \right), \\
+\tau_{\ell m n}   &= M_{\rm f}     \sum_{j = 0}^{N_{\rm max}} \, \chi_{\rm f}^{j} \tau^{(j)}_{\ell m n}   \, \left( 1 + \gamma\, \delta \tau^{(j)}_{\ell m n} \right),
 \end{align}
 \end{subequations}
 %
-where $\omega_{k}^{(n)}$ and $\tau_{k}^{(n)}$ are dimensionless coefficients of the
-expansion in spin for Kerr QNMs\footnote{\ag{From this point onwards, to prevent ambiguity,
-we will use $n$ to denote the series expansion index, and not the spherical
-harmonic overtone.}};
-%
-$\delta\omega_{k}^{(n)}$ and $\delta\tau_{k}^{(n)}$ are source-independent
+\ab{where $M_{\rm f}$ and $\chi_{\rm f}$ are the detector-frame final mass and spin, respectively;}
+$\omega_{\ell m n}^{(j)}$ and $\tau_{\ell m n}^{(j)}$ are dimensionless coefficients of the
+expansion in spin for Kerr QNMs; $\delta\omega_{\ell m n}^{(j)}$ and $\delta\tau_{\ell m n}^{(j)}$ are source-independent
 dimensionless coefficients that characterize the corrections to the Kerr QNM at
-each spin-order;
+each spin-order, 
 %
 and $N_{\rm max}$ is the order of the spin expansion.
 %
-All source dependence on a given modified gravity theory is contained in the
-dimensionless parameter $\gamma$, given by
+All source dependence for a given modified gravity theory is contained in the
+dimensionless parameter $\gamma$, which reads
 %
 \begin{equation}
 \gamma
 %
-= \left(\frac{\ell}{M_{\rm s}}\right)^{p}
+= \left(\frac{\ell}{M_{\rm f}}\right)^{p}
 %
 = \left[
-\frac{\ell c^2 (1 + z)}{G M}
+\frac{\ell c^2 (1 + z)}{G M_{\rm f}}
 \right]^{p},
 \label{eq:def_gamma}
 \end{equation}
 %
-which depends on a parameter $\ell$, with dimensions of length (and sets the
-length-scale at which beyond-GR modifications become important), and
+which depends on \ab{the length-scale parameter $\ell$ (non-GR modifications will become
+important at distances $\lesssim \ell$) and 
 the exponent $p$ which is related to how the beyond-GR modifications are
-added to the Einstein-Hilbert action.
+added to the Einstein-Hilbert action.}
 %
 In Eq.~\eqref{eq:def_gamma} we made \sout{$\ell$} \ag{$\gamma$} dimensionless  by using the other
 length-scale associated with the remnant black hole, i.e., its source-frame mass
