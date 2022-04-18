@@ -795,16 +795,18 @@ In particular, as we will see in Sec.~\ref{sec:results}, adding theory-specific
 information to the ParSpec expansion coefficients \emph{can lead to different interpretations
 of the final bounds on $\ell$, even for different theories which predict the same value of the exponent $p$.}
 
-\begin{table}[t]
-\begin{tabular}{c | c c c c c c}
+\begin{table*}[t]
+\begin{tabular}{c | c c c c c c c c c c}
 \hline
 \hline
-Theory & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & Ref.  \\
+Theory      & $\omega^{(0)}_{220}$ & $\tau^{(0)}_{220}$ & $\omega^{(1)}_{220}$ & $\tau^{(1)}_{220}$ & $p$ & $\delta \omega^{(0)}_{220}$ & $\delta \tau^{(0)}_{220}$ & $\delta \omega^{(1)}_{220}$ & $\delta \tau^{(1)}_{220}$ & Ref.  \\
 \hline
-EdGB        & 4 & 0.0107    & 0.0044    & $-$0.2480 & $-$1.101 &  \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} \\
-dCS         & 4 & 3.1964    & 6.3619    & 41.199    & 794.66   &  \cite{Wagle:2021tam}  \\
-cubic EFT   & 4 & $-$0.5813 & 2.6469    & $-$3.8620 & 265.12   & \cite{Cano:2021myl} \\
-quartic EFT & 6 & $-$0.2114 & $-$0.6070 & $-$1.5263 & 171.35   & \cite{Cano:2021myl}  \\
+GR          & 0.3737               & 11.2407            &  0.1258              & 0.2522             & --  & --                          & --                        & --                          & --                        & \cite{Maselli:2019mjd} \\
+\hline
+EdGB        & --                   & --                 &  --                  &                    & 4   & 0.0107                      & 0.0044                    & $-$0.2480                   & $-$1.101                  & \cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} \\
+dCS         & --                   & --                 &  --                  &                    & 4   & 3.1964                      & 6.3619                    & 41.199                      & 794.66                    & \cite{Wagle:2021tam}  \\
+cubic EFT   & --                   & --                 &  --                  &                    & 4   & $-$0.5813                   & 2.6469                    & $-$3.8620                   & 265.12                    & \cite{Cano:2021myl} \\
+quartic EFT & --                   & --                 &  --                  &                    & 6   & $-$0.2114                   & $-$0.6070                 & $-$1.5263                   & 171.35                    & \cite{Cano:2021myl}  \\
 \hline
 \hline
 \end{tabular}
@@ -813,11 +815,15 @@ quartic EFT & 6 & $-$0.2114 & $-$0.6070 & $-$1.5263 & 171.35   & \cite{Cano:2021
 We summarize each theory we have considered together with: the exponent $p$ at
 which their QNM-modification enters, the corresponding modifications to the
 oscillation frequency $\delta \omega^{(n)}_{220}$ and decay time $\delta \tau^{(n)}_{220}$, and the
-references from which we used the results from.\agcomm{Just leaving this comment
-as a reminder to expand this table to include the GR values from Maselli et al.}
+references from which we used the results from.
+%
+We also included for comparison the GR coefficients, up to $j=1$, obtained in Ref.~\cite{Maselli:2019mjd}.
+%
+The remaining GR coefficients for $1< j \leqslant 4$, for which their non-GR counterpart cannot be determined as of yet for
+the theories under consideration, can be found in Table~I of Ref.~\cite{Maselli:2019mjd}.
 }
 \label{tab:ref_theories_qnms}
-\end{table}
+\end{table*}
 
 As we have seen in Sec.~\ref{sec:review_theories}, QNMs of slowly-rotating
 BHs in modified gravity theories can belong to two families depending on how
@@ -1932,17 +1938,25 @@ pandemic.
 
 \appendix
 
-\section{Details of the determination of the theory-specific
-ParSpec coefficients}
+\section{Details of the determination of the theory-specific ParSpec coefficients}
 \label{app:map_details}
 % HS: done.
 % \agcomm{Reorder sections, such that the appendix comes after the Acknowledgments?}
 
-\agcomm{Have not gone through the appendices, because there might be sections that still
-need to be completed.}
+% \agcomm{Have not gone through the appendices, because there might be sections that still
+% need to be completed.}
+
+In this Appendix, we show how we fixed the coefficients in the ParSpec using
+QNM calculations found in the literature for the theories described in
+Sec.~\ref{sec:review_theories}.
 
 \subsection{Einstein-dilaton-Gauss-Bonnet}
 \label{app:map_edgb}
+
+We start by considering EdGB gravity, for which the QNMs of nonrotating and
+slowly-rotating BHs where calculated in
+Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and~\cite{Pierini:2021jxd},
+respectively.
 
 \subsection{dynamical Chern-Simons}
 \label{app:map_dcs}
