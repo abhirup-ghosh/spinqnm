@@ -1345,8 +1345,14 @@ with vertical lines theh $90\%$ upper credible intervals.}
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
 \caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
-defined in Eq.~\eqref{eq:def_gamma_gb}. We see that this parameter controls the ParSpec expansion in EdGB gravity
-does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.}
+defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
+different line styles distinguish between different $N_{\rm max}$.
+%
+We see that this parameter which controls the ParSpec expansion in EdGB gravity
+does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.
+\hs{The right panel shows the PDFs in the range $0 \leqslant \gamma_{\rm EdGB} \leqslant 1$. Note how
+the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
+}
 \label{fig:gamma_gb}
 \end{figure}
 
@@ -1978,57 +1984,99 @@ pandemic.
 \label{app:map_details}
 
 In this Appendix, we show how we determined the coefficients in the ParSpec
+and summarized in Table~\ref{tab:ref_theories_qnms},
 using QNM calculations found in the literature for the theories described in
 Sec.~\ref{sec:review_theories}.
+%
+Here, we consider only the fundamental QNM $(\ell, m, n) = (2, 2, 0)$ and
+hence we omit the QNM subscript ``$(2,2,0)$'' for brevity.
 
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{app:map_edgb}
 
 We start by considering EdGB gravity, for which the QNMs of nonrotating and
-slowly-rotating BHs where calculated in
-Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and~\cite{Pierini:2021jxd},
-respectively.
+slowly-rotating BHs where calculated in Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn,Blazquez-Salcedo:2017txk}
+and~\cite{Pierini:2021jxd}, respectively.
+%
+In particular, Ref.~\cite{Blazquez-Salcedo:2016enn} found that the damping time
+of the polar gravitational-led modes increases as the coupling constant
+$\ell_{\rm EdGB}$ is increased.
+%
+Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
+this is the gravitational-led branch of QNMs we select.
+
+For the nonrotating QNMs we used the numerical data of Ref.~\cite{Blazquez-Salcedo:2016enn} and
+generated a new quartic in $\ell_{\rm EdCS}$ fit to the data valid for small
+values of the coupling constant [see, in particular, Eq.~(27) and Fig.~2 of~\cite{Blazquez-Salcedo:2016enn}].
+%
+We find,
+%
+\begin{subequations}
+\begin{align}
+    M {\rm Re}(\sigma)_{\rm EdGB} &= M {\rm Re}(\sigma)_{\rm GR} \, \left[ 1 + 0.0107 (\ell_{\rm EdGB} / M)^4 \right],
+    \\
+    M {\rm Im}(\sigma)_{\rm EdGB} &= M {\rm Im}(\sigma)_{\rm GR} \, \left[ 1 - 0.0044 (\ell_{\rm EdGB} / M)^4 \right].
+\end{align}
+\end{subequations}
+%
+The smallness of the numerical prefactors of $\ell_{\rm EdGB}^4$ are a consequence of the how weakly the QNMs
+of BHs in EdGB gravity deviate from their GR counterparts, even at moderate values $(\ell_{\rm EdGB} / M)^4 \approx 0.3$.
+
+The rotating corrections are included using the results of Ref.~\cite{Pierini:2021jxd}, in particular their Eqs.~(51) and~(52),
+which for consistency, with our previous discussion, we truncated at quartic-order in $\ell_{\rm EdGB}$.
+%
+Taken together, all use as our fitting expressions for the QNM is EdGB gravity
+%
+\begin{subequations}
+\begin{align}
+    M {\rm Re}(\sigma)_{\rm EdGB} &= \dots % {\rm Re}(\omega)_{\rm GR} \, \left[ 1 + 0.0107 (\ell_{\rm EdGB} / M)^4 \right],
+    \\
+    M {\rm Im}(\sigma)_{\rm EdGB} &= \dots % {\rm Im}(\omega)_{\rm GR} \, \left[ 1 - 0.0044 (\ell_{\rm EdGB} / M)^4 \right].
+\end{align}
+\end{subequations}
+
+\dots
+
 
 \subsection{Dynamical Chern-Simons gravity}
 \label{app:map_dcs}
 
-% Let us show one concrete example of how this mapping is done.
+For dCS gravity, we follow Ref.~\cite{Wagle:2021tam} which numerically calculated the QNMs of slowly-rotating BHs in this theory
+and found that the axial gravitational modes have their damping time increased as we
+increase the Chern-Simons coupling $\ell_{\rm dCS}$ at fixed spin $\chi$ of the BH.
 %
-In Ref.~\cite{Wagle:2021tam} the QNMs of slowly-rotating BHs in dCS gravity were numerically determined
-and it was found that the axial gravitational modes have their damping time increased as we
-increase the Chern-Simons coupling $\ell_{\rm CS}$ at fixed spin $\chi$ of the BH.
-%
-Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm}, this is the branch of QNMs we will select.
+Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
+this is the branch of QNMs we will select.
 
 We can now proceed to determine $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$ as follows.
 %
 Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
 %
 \begin{equation}
-    M_{\rm f} \omega_{\rm CS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
+    M \omega_{\rm CS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
     \label{eq:omega_dsc_eg}
 \end{equation}
 %
-and similarly for the imaginary part ${\rm Im}(\sigma_{\rm CS}) =  - 1 / \tau_{\rm CS}$.
+and similarly for the imaginary part ${\rm Im}(\sigma_{\rm dCS}) =  - 1 / \tau_{\rm dCS}$.
 %
-Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm CS}^{4} / (M_{\rm f}^4 \kappa)$, and thus
+Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm dCS}^{4} / (M^4 \kappa)$, and thus
 %
 \begin{equation}
-    \kappa \zeta = (\ell_{\rm CS} / M_{\rm f})^4 \,,
+    \kappa \zeta = (\ell_{\rm dCS} / M)^4 \,,
 \end{equation}
 %
 and $c_{i}$ are fitting coefficients which can be found in Ref.~\cite{Wagle:2021tam}, Table II.
 
-We now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm CS}$, and
-gather the terms proportional to $\ell_{\rm CS}$.
+We now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm dCS}$, and
+gather the terms proportional to $\ell_{\rm dCS}$.
 %
 We obtain
 %
 \begin{align}
-    M_{\rm f} \, \omega_{\rm CS} &=
-    \left[ 0.3722 + 1.1945 (\ell_{\rm CS} / M_{\rm f})^4 \right]
+    M \, \omega_{\rm dCS} &=
+    \left[ 0.3722 + 1.1945 (\ell_{\rm dCS} / M)^4 \right]
     \nonumber \\
-    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm CS} / M_{\rm f})^4 \right] \, \chi\,,
+    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm dCS} / M)^4 \right] \, \chi\,,
     \label{eq:omega_dcs_interm}
 \end{align}
 %
@@ -2045,22 +2093,22 @@ We can now isolate the dCS corrections from Eq.~\eqref{eq:omega_dcs_interm} and
 compare against Eq.~\eqref{eq:qnm_nongr_iso}, to find
 %
 \begin{equation}
-p_{\rm CS} = 4\,, \quad \delta \omega^{(0)}_{\rm CS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm CS} = 41.199\,.
+p_{\rm dCS} = 4\,, \quad \delta \omega^{(0)}_{\rm dCS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm dCS} = 41.199\,.
 \label{eq:cs_omega_coefs}
 \end{equation}
 
-We can carry the same steps for $\tau_{\rm CS}$ and find
+We can carry the same steps for $\tau_{\rm dCS}$ and find
 %
 \begin{equation}
-\delta \tau^{(0)}_{\rm CS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm CS} = 794.66\,.
+\delta \tau^{(0)}_{\rm dCS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm dCS} = 794.66\,.
 \label{eq:cs_tau_coefs}
 \end{equation}
 %
 which completes the set of fixed parameters beyond-GR parameters in the ringdown of the \pSEOB{} waveform model.
 %
-We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and $\delta \tau_{\rm CS}^{(1)}$
-are compensated by the assumptions that $(\ell_{\rm CS} / M_{\rm f})^2$ and $\chi$ are much less than unity. These
-are the assumptions used to calculate the QNM frequencies in Ref.~\cite{Wagle:2021tam}.
+We remark that the alarmingly large values of $\delta \omega_{\rm dCS}^{(1)}$ and $\delta \tau_{\rm dCS}^{(1)}$
+are compensated by the assumptions that $(\ell_{\rm dCS} / M_{\rm f})^2$ and $\chi$ are much less than unity,
+which are the assumptions in Ref.~\cite{Wagle:2021tam}.
 
 \subsection{Effective-field-theory of General Relativity}
 \label{app:map_eftofgr}
