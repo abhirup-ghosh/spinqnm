@@ -20,7 +20,11 @@
 \usepackage{natbib}
 \usepackage{amssymb}
 \usepackage{xspace}
+
 \usepackage[normalem]{ulem} % To get strikethrough (\sout)
+\newcommand\redsout{\bgroup\markoverwith{\textcolor{red}{\rule[0.5ex]{8pt}{1pt}}}\ULon} % To get a red strikethrough
+% (which is easier to spot)
+
 \usepackage[colorlinks]{hyperref}
 \usepackage[caption=false]{subfig}
 \usepackage{url}
@@ -115,11 +119,12 @@
 
 % Comment commands
 \usepackage{xcolor}
-\newcommand{\agcomm}[1]{{\textcolor{red}{{[AG: #1]}} }}
-\newcommand{\ag}[1]{{\textcolor{Maroon}{{#1}} }}
-\newcommand{\hs}[1]{{\textcolor{blue}{{[HS: #1]}} }}
-\newcommand{\ab}[1]{{\textcolor{cyan}{{#1}} }}
-\newcommand{\abcomm}[1]{{\textcolor{red}{{[AB: #1]}} }}
+\newcommand{\agcomm}[1]{{\textcolor{red}{{[AG: #1]}}}}
+\newcommand{\ag}[1]{{\textcolor{Maroon}{{#1}}}}
+\newcommand{\hs}[1]{{\textcolor{TealBlue}{{#1}}}}
+\newcommand{\hscomm}[1]{{\textcolor{TealBlue}{{[HS: #1]}}}}
+\newcommand{\ab}[1]{{\textcolor{cyan}{{#1}}}}
+\newcommand{\abcomm}[1]{{\textcolor{red}{{[AB: #1]}}}}
 
 \newcommand{\AEI}{\affiliation{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am M\"uhlenberg 1, Potsdam 14476, Germany}}
 \newcommand{\UMD}{\affiliation{Department of Physics, University of Maryland, College Park, Maryland 20742, USA}}
@@ -142,36 +147,38 @@ The detection of gravitational waves produced by coalescing compact binaries
 allows us to explore the dynamical, nonlinear regime of general relativity
 and to constrain modifications to it.
 %
-\ab{Some of these gravitational-wave events have sufficiently high
+Some of these gravitational-wave events have sufficiently high
 signal-to-noise ratio in the merger, allowing us to probe the relaxation of the remnant black
-hole to its final, stationary state --- the so-called black-hole ringdown, which is}
+hole to its final, stationary state --- the so-called black-hole ringdown, which is
 characterized by a set of quasinormal modes.
 % Main question:
 Can we use the ringdown to constrain deviations to general relativity,
 as predicted by several of its contenders?
 % What we do:
-Here, we \sout{take a first step to} address this question by using an
-inspiral-merger-ringdown waveform model in the effective-one-body formalism,
-augmented with a parametrization of the ringdown based on an expansion \ab{in} the
-final black hole's spin.
+Here, we  address this question by using an inspiral-merger-ringdown waveform
+model in the effective-one-body formalism, augmented with a parametrization of
+the ringdown based on an expansion in the final black hole's spin.
 %
-We give a prescription on how to include \ab{in} this waveform model the quasinormal mode frequencies
-calculated on a theory-by-theory basis. \ab{In particular, we focus on gravity} theories that deviate
+We give a prescription on how to include in this waveform model the quasinormal mode frequencies
+calculated on a theory-by-theory basis. In particular, we focus on gravity theories that deviate
 from general relativity through higher-order curvature corrections, namely,
 Einstein-dilaton-Gauss-Bonnet, dynamical Chern-Simons, cubic- and quartic-order
 effective-field-theories of general relativity.
 %
 % Main conclusion:
-We confront the resultant waveform models against \ab{the two loudest gravitational-wave ringdown signals, so far,
-  notably, GW150914 and GW200129. We find} that while the Einstein-dilaton-Gauss-Bonnet theory cannot be constrained with
-these events, we can place upper bounds on the coupling constants of cubic-
-($\ell_{\rm cEFT} \leqslant 38.2$~km) and quartic-order ($\ell_{\rm qEFT}
-\leqslant 51.3$~km) effective-field-theories of general relativity, and
-of dynamical Chern-Simons gravity ($\ell_{\rm CS} \leqslant 38.7$~km).
+We confront the resultant waveform models against the two loudest
+gravitational-wave ringdown signals, so far, notably, GW150914 and GW200129.
 %
-The latter result is a concrete example of a theory presently
-unconstrained by inspiral-only analyses which, however, can be constrained by
-merger-ringdown studies \ab{with current gravitational-wave data}.
+We find that while the Einstein-dilaton-Gauss-Bonnet theory cannot be
+constrained with these events, we can place upper bounds on the coupling
+constants of cubic- ($\ell_{\rm cEFT} \leqslant 38.2$~km) and quartic-order
+($\ell_{\rm qEFT} \leqslant 51.3$~km) effective-field-theories of general
+relativity, and of dynamical Chern-Simons gravity ($\ell_{\rm dCS} \leqslant 38.7$~km).
+%
+The latter result is a concrete example of a theory presently unconstrained by
+inspiral-only analyses which, however, can be constrained by merger-ringdown
+studies with current gravitational-wave data.
+%
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -217,15 +224,15 @@ This theory belongs to the class of scalar-Gauss-Bonnet theories, which are
 described by the action
 %
 \begin{equation} \label{eq:action_sgb}
-    S_{\rm GB} = \frac{1}{16 \pi}
+    S_{\rm EdGB} = \frac{1}{16 \pi}
     \int \dV
     \left[
     R - \tfrac{1}{2}(\nabla \varphi)^2
-    + \tfrac{1}{4} \ell^{2}_{\rm GB} f(\varphi) \, \mathcal{G}
+    + \tfrac{1}{4} \ell^{2}_{\rm EdGB} f(\varphi) \, \mathcal{G}
     \right]\,,
 \end{equation}
 %
-where \ab{$g \equiv \textrm{det}(g_{\mu \nu})$} is the metric determinant, $R$ is the Ricci
+where $g \equiv \textrm{det}(g_{\mu \nu})$ is the metric determinant, $R$ is the Ricci
 scalar, $\varphi$ is a dynamical scalar field that couples to the
 Gauss-Bonnet invariant
 %
@@ -247,50 +254,49 @@ Different subclasses of this theory are determined by the function $f(\varphi)$
 and can be divided into two classes based on the properties of their BH
 solutions.
 %
-In the first class, the first derivative of the coupling function $f'(\varphi) \equiv \dd f  / \dd \varphi$
-is always nonzero and BHs are known to always support scalar hair.
+In the first class, the first derivative of the coupling function $f'(\varphi)
+\equiv \dd f  / \dd \varphi$ is always nonzero and BHs are known to always
+support scalar hair.
 %
-This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which $f(\varphi) = \exp(\varphi)$~\cite{Kanti:1995vq}.
-%
-% \begin{equation}
-% f = \exp(\varphi)\,,
-% \end{equation}
+This is the case of Einstein-dilaton-Gauss-Bonnet (EdGB) gravity, for which
+$f(\varphi) = \exp(\varphi)$~\cite{Kanti:1995vq}.
 %
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
 In this case, the theory admits the same stationary, asymptotically flat BH
-solutions as GR and those of scalarized BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
+solutions as GR and those of scalarized
+BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
 Examples include the Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
 the quadratic $f(\varphi) \propto \varphi^2$~\cite{Silva:2017uqg} coupling functions.
 BHs in EdGB gravity have scalar hair, to which we can associate a (monopole) scalar charge $Q$,
-related to the asymptotic $r^{-1}$ fall-off of the scalar field, \ab{where $r$ is the distance from the BH.}
+related to the asymptotic $r^{-1}$ fall-off of the scalar field, where $r$ is the distance from the BH.
 %
-This charge is not an independent parameter, and depends on the BH's mass and spin, %~\cite{Berti:2018cxi},
+This charge is not an independent parameter, and depends on the BH's mass and spin,
 thus being a ``secondary hair''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
 %
 Since the scalar field is sourced by a curvature scalar, $Q$ is larger (smaller),
-\ab{the} smaller (larger) the BH mass is.
+the smaller (larger) the BH mass is.
 
 These properties are not mere theoretical curiosities; they have important observational consequences.
 %
 First, the presence of the scalar charge implies that when in binaries, BHs can source
 scalar-dipole radiation (see, e.g., Refs.~\cite{Yagi:2011xp,Julie:2019sab,Shiralilou:2020gah,Shiralilou:2021mfl,Julie:2022huo})
-which affects the GW phase at $-1$PN order (relative to the dominant \ab{quadrupolar} GR
+which affects the GW phase at $-1$PN order (relative to the dominant quadrupolar GR
 contribution), with magnitude proportional to the difference between the
 charges of binary components. This makes EdGB gravity testable with present GW
-observations of compact binaries where at least \ab{if} one component is a BH.
+observations of compact binaries where at least if one component is a BH.
 %
 More specifically, Ref.~\cite{Lyu:2022gdr} placed the bound
 %
-$\ell_{\rm GB} \leqslant 1.33$~km
+$\ell_{\rm EdGB} \leqslant 1.33$~km
 %
 using the neutron-star--black-hole binaries GW200105 and
 GW200115~\cite{LIGOScientific:2021qlt} while Refs.~\cite{Nair:2019iur,Perkins:2021mhb}, obtained
 %
-$\ell_{\rm GB} \leqslant 1.7$~km,
+$\ell_{\rm EdGB} \leqslant 1.7$~km,
 %
-by stacking the posteriors of $\ell_{\rm GB}$ from a selection of binary BHs (BBH)
+by stacking the posteriors of $\ell_{\rm EdGB}$ from a selection of binary BHs (BBH)
 from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}~\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small (i.e., $\varphi \ll 1$), and
 take into account only the leading-order scalar field contribution arising from the dilatonic coupling.}.
@@ -300,8 +306,8 @@ affects the BH QNM spectra.
 The coupling between scalar field and the Gauss-Bonnet invariant, which
 result in a coupling between scalar perturbations and gravitational
 perturbations of polar parity can, for example break the equivalence
-between the QNM spectra of polar and axial gravitational \ab{perturbations~\cite{Glampedakis:2017rar,Lenzi:2021njy}
-(i.e., the isospectrality~\cite{Chandrasekhar:1985kt}) for Schwarzschild BHs in GR.}
+between the QNM spectra of polar and axial gravitational perturbations~\cite{Glampedakis:2017rar,Lenzi:2021njy}
+(i.e., the isospectrality~\cite{Chandrasekhar:1985kt}) for Schwarzschild BHs in GR.
 %
 
 The QNMs for nonrotating BHs in EdGB gravity were first computed in
@@ -313,14 +319,15 @@ extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
 
 This theory is described by the action~\cite{Jackiw:2003pm,Alexander:2009tp},
 %
-\begin{equation} \label{eq:action_dcs}
-    S_{\rm CS} = \frac{1}{16 \pi}
+\begin{align} \label{eq:action_dcs}
+    S_{\rm dCS} = \frac{1}{16 \pi}
     \int \dV
     \left[
     R - \tfrac{1}{2}(\nabla \vartheta)^2
-    + \tfrac{1}{4} \ell^{2}_{\rm CS} \, \vartheta \, {}^{*}RR
+    + \tfrac{1}{4} \ell^{2}_{\rm dCS} \, \vartheta \, {}^{*}RR
     \right],
-\end{equation}
+    \nonumber \\
+\end{align}
 %
 where $\vartheta$ is a pseudoscalar field which couples to the Pontryagin
 density
@@ -341,7 +348,7 @@ four-dimensions.
 %
 However, a coupling with $\vartheta$ can modify the field equations.
 %
-The coupling strength is set by the coupling constant $\ell_{\rm CS}$, with
+The coupling strength is set by the coupling constant $\ell_{\rm dCS}$, with
 dimensions of length.
 
 The theory admits as a solution, the garden-variety Schwarzschild BH of GR. This
@@ -362,7 +369,7 @@ analyses that rely on the inspiral portion of GWs when using current BBH observa
 %
 Nonetheless, the theory has been constrained in Ref.~\cite{Silva:2020acr}, which found
 %
-$\ell_{\rm CS} \leqslant 8.5$~km,
+$\ell_{\rm dCS} \leqslant 8.5$~km,
 %
 by folding data from the X-ray observations of the isolated neutron star
 PSR~J0030+0451~\cite{Lommen:2000yt,NANOGrav:2017wvv} by
@@ -371,11 +378,11 @@ neutron star GW170817~\cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki}.
 
 The QNMs of the Schwarzschild BH in dCS gravity were studied in
 Refs.~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb}, which found that scalar
-perturbations couple to gravitational perturbations of axial parity, \ab{in contrast
-with EdGB gravity.}
+perturbations couple to gravitational perturbations of axial parity, in contrast
+with EdGB gravity.
 %
 This leads to a breakdown of isospectrality. The QNM spectra of slowly-rotating BHs in dCS gravity was
-studied in Ref.~\cite{Wagle:2021tam}.
+studied in Ref.~\cite{Srivastava:2021imr,Wagle:2021tam}.
 %
 They were also extracted from numerical-relativity simulations of head-on BH collisions
 in Ref.~\cite{Okounkova:2019dfo}.
@@ -396,13 +403,13 @@ They are described by the action
     \right]\,,
 \end{equation}
 %
-where $\ell_{\rm EFT}$ is a length-scale assumed to be small compared to the \ab{length-scale $M$
-associated with a BH (i.e., $\ell_{\rm EFT} / M \ll 1$),} and $L^{(2n)}$ are corrections
+where $\ell_{\rm EFT}$ is a length-scale assumed to be small compared to the length-scale $M$
+associated with a BH (i.e., $\ell_{\rm EFT} / M \ll 1$), and $L^{(2n)}$ are corrections
 that introduce higher-order curvature tensors (with $2n$ metric derivatives).
 
 More specifically, we follow the notation of
-Refs.~\cite{Cano:2020cao,Cano:2021myl} and \sout{work up} \ab{consider up} to dimension-eight operators
-($n=4$),
+Refs.~\cite{Cano:2020cao,Cano:2021myl} and consider up to dimension-eight
+operators ($n=4$),
 %
 \begin{subequations}
 \label{eq:action_mods}
@@ -420,23 +427,23 @@ Refs.~\cite{Cano:2020cao,Cano:2021myl} and \sout{work up} \ab{consider up} to di
 %
 where ${\cal C} = R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}$,
 $\tilde{\cal C} = R_{\mu\nu\gamma\delta} \epsilon^{\mu\nu}{}_{\rho\sigma} R^{\rho\sigma\gamma\delta}$,
-and $(\lambda_{\rm o, e},\varepsilon_{i})$,  $i=1,2,3$, are dimensionless parameters.
+and $(\lambda_{\rm o, e},\varepsilon_{i})$, $i=$~1, 2, 3, are dimensionless parameters.
 %
 Due to the large number of free parameters in this theory, we focus on a subset of the parameter space.
 %
 In particular, we consider dimension-six and dimension-eight operators separately.
 %
-\ab{For simplicity,} in the dimension-six case we further assume that $\lame = \lamo = 1$, leaving us with $\ell = \ell_{\rm cEFT}$
-as our single free parameter.
+In addition, in the dimension-six case we further assume that $\lame = \lamo = 1$,
+leaving us with \redsout{$\ell =$} $\ell_{\rm cEFT}$ as our single free parameter.
 %
-\ab{Similarly,} in the dimension-eight case, we set $\varepsilon_{1} = 1$ and $\varepsilon_{2} = \varepsilon_{3} = 0$,
+Similarly, in the dimension-eight case, we set $\varepsilon_{1} = 1$ and $\varepsilon_{2} = \varepsilon_{3} = 0$,
 as done in Ref.~\cite{Sennett:2019bpc}.
 %
-This leaves us with $\ell = \ell_{\rm qEFT}$ as our single free parameter.
+This leaves us with \redsout{$\ell =$} $\ell_{\rm qEFT}$ as our single free parameter.
 
 In general \dots
 %
-\hs{Alessandra, can you include a short description of~\cite{Sennett:2019bpc} for the quartic EFT?}
+\hscomm{Alessandra, can you include a short description of~\cite{Sennett:2019bpc} for the quartic EFT?}
 
 The QNMs of nonrotating BHs where calculated in Refs.~\cite{deRham:2020ejn,Cano:2020cao} in the dimension-six EFT
 and in Refs.~\cite{Cardoso:2018ptl,Cano:2020cao} in the dimension-eight EFT.
@@ -448,11 +455,12 @@ Reference~\cite{Cano:2020cao} calculated the leading-order BH spin corrections t
 \label{sec:method}
 % --------------------------------------------------------------------------------- %
 
-\ab{Having reviewed the modified gravity theories that we will consider, we now present
+Having reviewed the modified gravity theories that we will consider, we now present
 the sequential building blocks for the waveform model we use to test these theories
 against GW observations.
 %
-We start by reviewing the parametrized ringdown spin-expansion coefficients (ParSpec) framework in Sec.~\ref{sec:review_parspec}.
+We start by reviewing the parametrized ringdown spin-expansion coefficients
+(ParSpec) framework~\cite{Maselli:2019mjd} in Sec.~\ref{sec:review_parspec}.
 %
 Next, in Sec.~\ref{sec:review_pSEOB}, we review our baseline
 parametrized inspiral(--plunge)-merger-ringdown (IMR) waveform
@@ -461,7 +469,7 @@ it to include the ParSpec.
 %
 Finally, in Sec.~\ref{sec:theory_specific_qnm}, we show how we can map
 theory-specific QNM calculations in modified gravity theories onto the
-free coefficients in the ParSpec framework.}
+free coefficients in the ParSpec framework.
 %
 Ultimately, this provides us with an IMR waveform model, with the ringdown
 portion of the model informed by QNM calculations in specific beyond-GR
@@ -470,8 +478,8 @@ theories.
 \subsection{The parametrized ringdown spin expansion coefficients framework}
 \label{sec:review_parspec}
 
-\ab{A general procedure to describe deviations to the QNM frequencies $\omega^{\rm GR}_{\ell m n}$ and
-damping times $\tau^{\rm GR}_{\ell m n}$ of the GR BH is to write,}
+A general procedure to describe deviations to the QNM frequencies $\omega^{\rm GR}_{\ell m n}$ and
+damping times $\tau^{\rm GR}_{\ell m n}$ of BHs of GR is to write,
 %
 \begin{subequations}
 \label{eq:general_deviation}
@@ -481,14 +489,17 @@ damping times $\tau^{\rm GR}_{\ell m n}$ of the GR BH is to write,}
 \end{align}
 \end{subequations}
 %
-\ab{where $\delta\omega_{\ell m n}$ and $\delta\tau_{\ell m  n}$ are the fractional deformation parameters,
-$\ell$ and $m$ are the multipole indices, and $n$ the overtone number.}
+where $\delta\omega_{\ell m n}$ and $\delta\tau_{\ell m  n}$ are the fractional deformation parameters,
+$\ell$ and $m$ are the multipole indices, and $n$ the overtone number.
 %
-This type of parametrization was adopted, for instance, in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Brito:2018rfr,Carullo:2018sfu,Ghosh:2021mrv}.
+This type of parametrization\footnote{\hs{See also
+Refs.~\cite{Glampedakis:2017dvb,Glampedakis:2019dqh,Silva:2019scu} and
+Refs.~\cite{Cardoso:2019mqo,McManus:2019ulj,Kimura:2020mrh} for alternative parametrizations.}}
+was adopted, for instance, in Refs.~\cite{Gossan:2011ha,Meidam:2014jpa,Brito:2018rfr,Carullo:2018sfu,Ghosh:2021mrv}.
 
 The current LIGO-Virgo-KAGRA tests of BH ringdown (see Sec.VII.A
 of Ref.~\cite{LIGOScientific:2020tif} or Sec.VIII.A
-of Ref.~\cite{LIGOScientific:2021sio}) take a restrictive \ab{theory-independent}
+of Ref.~\cite{LIGOScientific:2021sio}) take a restrictive theory-independent
 approach towards the inference of $\delta\omega_{\ell m n}$ and
 $\delta\tau_{\ell m n}$. These deviations are either assumed to occur
 identically across all observed sources or belong to a generic
@@ -502,8 +513,9 @@ all, from a specific gravity theory (GR included), and
 %
 (ii) making it simpler to combine constraints coming from multiple (independently observed) sources.
 
-\ab{The ParSpec framework was introduced in Ref.~\cite{Maselli:2019mjd} and can be used to our purpose. It is} an observable-based
-bivariate expansion of Eq.~\eqref{eq:general_deviation}, given by
+The ParSpec framework was introduced in Ref.~\cite{Maselli:2019mjd} and can be
+used to our purpose. It is an observable-based bivariate expansion of
+Eq.~\eqref{eq:general_deviation}, given by
 %
 \begin{subequations}
 \label{eq:kerr_expansion}
@@ -513,15 +525,15 @@ bivariate expansion of Eq.~\eqref{eq:general_deviation}, given by
 \end{align}
 \end{subequations}
 %
-\ab{where $M_{\rm f}$ and $\chi_{\rm f}$ are the detector-frame final mass and spin, respectively;}
+where $M_{\rm f}$ and $\chi_{\rm f}$ are the detector-frame final mass and spin, respectively;
 the quantities $\omega_{\ell m n}^{(j)}$ and $\tau_{\ell m n}^{(j)}$ are dimensionless coefficients of the
-expansion in spin for BH QNMs in GR, while $\delta\omega_{\ell m n}^{(j)}$ and $\delta\tau_{\ell m n}^{(j)}$ are
+expansion in spin for the QNMs of BHs in GR, while $\delta\omega_{\ell m n}^{(j)}$ and $\delta\tau_{\ell m n}^{(j)}$ are
 source-independent dimensionless coefficients that characterize the corrections to the GR QNM at
 each spin-order,
 %
 and $N_{\rm max}$ is the order of the spin expansion.
 %
-All source dependence for a given modified gravity theory is contained in the
+All source dependence due to a given modified gravity theory is contained in the
 dimensionless parameter $\gamma$, which reads
 %
 \begin{equation}
@@ -535,18 +547,18 @@ dimensionless parameter $\gamma$, which reads
 \label{eq:def_gamma}
 \end{equation}
 %
-which depends on \ab{the length-scale parameter $\ell_{\rm th}$ of the specific gravity theory
+which depends on the length-scale parameter $\ell_{\rm th}$ of the specific gravity theory
 (non-GR modifications become important at distances $\lesssim \ell_{\rm th}$), and
 the exponent $p$ is related to how the non-GR modifications are
-added to the Einstein-Hilbert action.}
+added to the Einstein-Hilbert action.
 %
-In Eq.~\eqref{eq:def_gamma} we made $\gamma$ dimensionless by using the other
+In Eq.~\eqref{eq:def_gamma} we made $\gamma$ dimensionless by \redsout{using} the \redsout{other}
 length-scale associated with the remnant black hole (i.e., its source-frame mass
 $M^{\rm s}_{\rm f}$\footnote{Throughout this paper, we maintain the convention of
 using the upperscript ``s" to denote source-frame quantities and plain baseline
 symbols for detector-frame measurements.}), which we can also write in terms of the detector-frame mass $M_{\rm f}$
 through the redshift $z$~\cite{Krolak:1987ofj}. Also, dividing by the factor $G/c^2$ allows us to
-express $\ell$ in physically intuitive metric units.
+express $\ell_{\rm th}$ in physically intuitive metric units.
 
 In principle, a modification to GR would also affect $M_{\rm f}$ and $\chi_{\rm f}$ and the
 expansion should be written in terms of the non-GR mass and spin, say $\bar{M}_{\rm f}$ and
@@ -555,11 +567,11 @@ $\bar{\chi}_{\rm f}$. If we assume that the non-GR corrections are included pert
 the modifications to the BH mass and spin can be absorbed into the deviations
 parameters $\delta\omega^{(j)}_{\ell m n}$ and $\delta\tau^{(j)}_{\ell m n}$.
 %
-This means we can identify the $M_{\rm f}$ and $\chi_{\rm f}$ with their \emph{corresponding {\rm GR} values}
-\footnote{For a more detailed discussion, see Appendix A in Ref.~\cite{Maselli:2019mjd}.}.
+This means we can identify the $M_{\rm f}$ and $\chi_{\rm f}$ with their
+\emph{corresponding {\rm GR} values}\footnote{For a more detailed discussion, see Appendix A in Ref.~\cite{Maselli:2019mjd}.}.
 %
 We will see in Sec.~\ref{sec:pe}  that this assumption is indeed
-satisfied in our parameter estimation studies (e.g., see Fig.~\ref{fig:corner_plot}).
+satisfied in our parameter estimation studies (see, for instance, Fig.~\ref{fig:corner_plot}).
 
 Finally, we remark that in the GR limit ($\gamma \to 0$)
 the series~\eqref{eq:kerr_expansion} truncated at $N_{\rm max} = 4$, reproduces with 1\% accuracy
@@ -572,8 +584,8 @@ In Ref.~\cite{Carullo:2021dui}, the fitting coefficients were calculated up to $
 which extend the validity of the spin-expansion up to $\chi \lesssim 0.99$.
 %
 As we will discuss in Sec.~\ref{sec:pe}, the expansion to $N_{\rm max} = 4$ is
-sufficient for our purposes. \ab{For convenience we list the coefficients in the case of
-GR in Table~\ref{tab:ref_theories_qnms}.}
+sufficient for our purposes. For convenience we list the coefficients in the case of
+GR in Table~\ref{tab:ref_theories_qnms}.
 
 \subsection{The parametrized waveform model}
 \label{sec:review_pSEOB}
@@ -582,23 +594,25 @@ We now describe the waveform model used in our paper to infer properties of a
 BBH ringdown.
 %
 As in Refs.~\cite{Brito:2018rfr,Ghosh:2021mrv}, we use an IMR BBH waveform
-model where the \ab{(complex) frequencies} \sout{parameters} describing the remnant object
+model where the (complex\hs{-valued}) frequencies describing the remnant object
 are left additionally free and estimated directly from the data.
 
-The GW signal from a \ab{quasicircular} BBH can be \ab{described} \sout{determined} in GR by a unique set of
+The GW signal from a quasicircular BBH can be described  in GR by a unique set of
 parameters $\bm{\theta}$, that includes the masses and spins of the two BHs,
 $(m_1,\, m_2,\, \mathbf{S}_1,\, \mathbf{S}_2)$, the sky location determined by the
-luminosity distance $D_L$\abcomm{I changed to capital $d$ because later we call the
-data ``d''.}, right ascension $\alpha$ and declination $\delta$,
+luminosity distance $D_L$,
+% \abcomm{I changed to capital $d$ because later we call the
+% data ``d''.},
+right ascension $\alpha$ and declination $\delta$,
 and the orientation of the binary given by the inclination $\iota$ and polarization $\psi$
 angles.
 %
 The set is completed by the choice of a reference time $t_0$ and phase
 $\phi_0$. If we further assume that the spins of the individual BHs are
-restricted to be \sout{parallel} \ab{aligned or anti-aligned (for short, aligned) to the unit vector
+restricted to be aligned or anti-aligned (for short, aligned) to the unit vector
 perpendicular to the orbital plane ($\mathbf{\hat{L}}$), we reduce the six
 components of the spins to just two, $\chi_i \equiv \mathbf{S}_i\cdot \mathbf{\hat{L}} /m_i^2$ with $i = 1,2$,
-and our entire parameter set from 15 to 11.}
+and our entire parameter set from 15 to 11.
 %
 Let us also define some additional parameters and set some conventions that
 will be useful in our analysis later, namely, the total mass
@@ -610,12 +624,12 @@ the chirp mass
 $\mathcal {M}=(m_{1}m_{2})^{3/5}/(m_{1}+m_{2})^{1/5}$,
 %
 the asymmetric mass ratio $q=m_1/m_2$, with the convention $m_1 \geqslant m_2$ (and thus $q \geqslant 1$),
-and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$. \ab{Note that for BHs $-1 \leq \chi_i \leq 1$.}
+and the symmetric mass ratio of the binary, $\nu = m_1m_2/(m_1+m_2)^2$. Note that for BHs $-1 \leqslant \chi_i \leqslant 1$.
 
 For the polarizations of the GW signal (in the observer's frame) we have
 %
 \begin{equation}
-h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{l, m} {}_{-\!2}Y_{l m}(\iota,\varphi_0)\, h_{l m}(t)\,,
+h_+(\iota,\varphi_0;t ) - i h_\times(\iota,\varphi_0;t) = \sum_{l, m} {}_{-\!2}Y_{l m}(\iota,\varphi_0)\, h_{l m}(t),
 \end{equation}
 %
 where ${}_{-\!2}Y_{l m}(\iota,\varphi_0)$ are the $-2$ spin-weighted spherical
@@ -630,16 +644,14 @@ As our baseline model, that is, the GR model upon which non-GR modifications
 are added, we use the computationally efficient (time-domain) multipolar
 waveform model for quasicircular spin-aligned BBHs described in
 Ref.~\cite{Mihaylov:2021bpf}, which contains the modes, $(l, |m|)=(2,2),(2,1)$, $(3,3)$, $(4,4)$,
-and $(5,5)$. \ab{Such a model was built by applying the post-adiabatic approximation~\cite{Nagar:2018gnk}
+and $(5,5)$. Such a model was built by applying the post-adiabatic approximation~\cite{Nagar:2018gnk}
 to the multipolar spin-aligned effective-one-body (EOB) waveform model of Refs.~\cite{Bohe:2016gbl,Cotesta:2018fcv}
-(henceforth we refer to our baseline model as \SEOB{}~\footnote{This waveform
+(henceforth we refer to our baseline model as \SEOB{}\footnote{This waveform
 model is available in \texttt{LALSuite}~\cite{lalsuite} as the \texttt{SEOBNRv4HM\_PA}
-waveform approximant.}).}
+waveform approximant.}).
 
-
-%
 An accurate description of the merger is incorporated through calibration with
-NR simulations, as described in Refs.~\cite{Bohe:2016gbl,Cotesta:2018fcv}, along with
+numerical relativity (NR) simulations, as described in Refs.~\cite{Bohe:2016gbl,Cotesta:2018fcv}, along with
 information for the merger and ringdown phases, from BH perturbation theory.
 The merger-ringdown waveform, $h_{l m}^\textrm{merger-RD}$, is then stitched to
 inspiral-plunge waveform, $h_{l m}^\textrm{insp-plunge}$ at a certain time $t = t^{\textrm{match}}_{l m}$, as
@@ -706,10 +718,10 @@ Sec.~\ref{sec:review_parspec} (see Eqs.~\eqref{eq:kerr_expansion}). Hence,
 %
 where the mass and spin of the remnant object $(M_{\rm f},\chi_{\rm f})$ are themselves functions of
 $(m_1,\, m_2,\, \chi_1,\, \chi_2)$~\cite{Taracchini:2013rva,Hofmann:2016yih}, and we fix $p$
-to a certain theory-specific value. Additionally,  the frequencies depend on the ParSpec coefficients $\{\delta
-\omega_{\ell m 0}^{(j)},\delta \tau_{\ell m 0}^{(j)}\}$,  and the \ab{length-scale} $\ell_{\rm th}$.
+to a certain theory-specific value. Additionally, the frequencies depend on the ParSpec coefficients $\{\delta
+\omega_{\ell m 0}^{(j)},\delta \tau_{\ell m 0}^{(j)}\}$, and the length-scale $\ell_{\rm th}$.
 
-Using this parameterized waveform model, which we denote $\pSEOB$,
+Using this parameterized waveform model, which we call $\pSEOB$,
 we infer bounds on our non-GR parameter $\ell_{\rm th}$ for the specific cases of
 modified gravity theories presented Sec.~\ref{sec:review_theories}.
 %
@@ -727,10 +739,10 @@ We detail our results in Sec.~\ref{sec:results}.
 \subsection{From theory-independent to theory-specific QNM results}
 \label{sec:theory_specific_qnm}
 
-Let us now establish the connection between the theory-\ab{independent} framework of the
+Let us now establish the connection between the theory-independent framework of the
 $\pSEOB$ waveform model and the theory-specific QNM calculations. In this paper we restrict ourselves
-\ab{to the leading and next-to-leading order terms} in the ParSpec expansion, as well as to the fundamental QNM
-$(\ell, m, n) = (2,\, 2,\, 0)$. For this reason, \ab{for simplicity}, we omit the subscripts hereafter
+to the leading and next-to-leading order terms in the ParSpec expansion, as well as to the fundamental QNM
+$(\ell, m, n) = (2,\, 2,\, 0)$. For this reason, for simplicity, we omit the subscripts hereafter
 and rewrite $\omega_{\ell m n}$ and $\tau_{\ell m n}$, given by Eqs.~\eqref{eq:kerr_expansion} as,
 %
 \begin{subequations}
@@ -744,11 +756,9 @@ and rewrite $\omega_{\ell m n}$ and $\tau_{\ell m n}$, given by Eqs.~\eqref{eq:k
 \end{align}
 \end{subequations}
 %
-\ab{where we pull out from the sum all non-GR corrections, restricting
+where we pull out from the sum all non-GR corrections, restricting
 ourselves to the nonspinning ($j=0$) and linear-order in spin ($j=1$)
-corrections to the GR QNMs.}
-%
-% These corrections are encoded in the coefficients $\delta\omega^{(n)}$ and $\delta\tau^{(n)}$.
+corrections to the GR QNMs.
 
 \begin{table*}[t]
 \begin{tabular}{c | c c c c c c c c c c}
@@ -780,15 +790,14 @@ the theories under consideration, can be found in Table~I of Ref.~\cite{Maselli:
 \label{tab:ref_theories_qnms}
 \end{table*}
 
-
 How can we determine the beyond-GR corrections? In GR, comparison between the numerically determined
 Kerr QNMs against the fitting formula~\eqref{eq:qnm_nongr_iso} fixes the GR expansion coefficients
-$\omega^{(j)}$, $\tau^{(j)}$.
+$\omega^{(j)}$ and $\tau^{(j)}$.
 %
 We can proceed in a similar way with QNMs calculated in the context of a non-GR theory.
 %
 In particular, in the literature, we can already find fitting formulas relating
-the QNMs to the BHs mass, spin and coupling constant $\ell_{\rm thh}$, the latter being
+the QNMs to the BHs mass, spin and coupling constant $\ell_{\rm th}$, the latter being
 specific to each theory, up to $j=1$ in the spin expansion (see Table~\ref{tab:ref_theories_qnms}).
 %
 The idea is then to compare these formulas against Eq.~\eqref{eq:qnm_nongr_iso}
@@ -796,7 +805,7 @@ to fix $p$, $\delta\omega^{(j)}$, and $\delta\tau^{(j)}$.
 %
 Because QNMs of rotating BHs in modified gravity theories are not known to
 all spin values, we can expect that the $j=1$ coefficients to be susceptible to
-changes as calculations beyond-leading order in spin are accomplished \ab{in the future}.
+changes as calculations beyond-leading order in spin are accomplished in the future.
 %
 That is not the case for the $j=0$ coefficients and the situation is the same as in GR,
 in which the $j=0$ coefficients are simply the QNMs of the Schwarzschild BH.
@@ -810,7 +819,7 @@ $\delta\omega^{(j)}$, and $\delta\tau^{(j)}$ parameters, and then proceeded
 to use the posteriors on $\ell_{\rm th}$ to draw conclusions to any theory that predict
 corrections at a given $p$.
 %
-This is a critical difference between our work and Ref.~\cite{Carullo:2021dui}.
+This is a important difference between our work and Ref.~\cite{Carullo:2021dui}.
 In particular, as we will see in Sec.~\ref{sec:results}, adding theory-specific
 information to the ParSpec coefficients \emph{can lead to different interpretations
 of the final bounds on $\ell_{\rm th}$, even for different theories that predict the same
@@ -864,7 +873,6 @@ By construction, the ringdown lasts longer for the cubic EFT of GR waveform and
 with a smaller instantaneous frequency (see the bottom panel) due to the negative value of the
 $\delta\omega^{(0)}$ coefficient in this theory.
 
-
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
 \caption{(Color online). Gravitational-wave signal with GW150914-like parameters
@@ -912,15 +920,13 @@ $|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes)
 % --------------------------------------------------------------------------------- %
 \section{Parameter inference and validity of our bounds}
 \label{sec:pe}
-% \input{sec_pe}
 % --------------------------------------------------------------------------------- %
 
-In this section, we \ab{first} provide a basic outline of the Bayesian formalism that we use to
-infer the properties of the underlying GW signal; \ab{then, we} identify the most promising
-events from the catalog of \ab{LIGO-Virgo-KAGRA} GW observations to base our analyses on. \ab{Finally,
+In this section, we first provide a basic outline of the Bayesian formalism that we use to
+infer the properties of the underlying GW signal; then, we identify the most promising
+events from the catalog of LIGO-Virgo-KAGRA GW observations to base our analyses on. Finally,
 we discuss how we can interpret our results after taking into account the region of validity of
-the non-GR theories that we are considering, which are EFTs.}
-
+the non-GR theories that we are considering, which are EFTs.
 
 \subsection{Bayesian formalism}
 If we assume that a GW signal observed in detector data $d$ is accurately
@@ -939,9 +945,10 @@ $\mathcal{L}(d \vert \bm{\lambda},\mathcal{H})$ the likelihood, and
 $E(d \vert \mathcal{H})$ the evidence.
 %
 The set of parameters, $\bm{\lambda}$ is a union of the GR waveform
-model parameters~$\bm{\theta}$ (see Sec.~\ref{sec:review_pSEOB}) \abcomm{It seems to
-me that PRD does not use ``c.f.''. Does it? I am replacing it with ''see''.}, and
-$\ell_{\rm th}$,  the only non-GR parameter in this problem which, we recall, sets
+model parameters~$\bm{\theta}$ (see Sec.~\ref{sec:review_pSEOB})
+% \abcomm{It seems to
+% me that PRD does not use ``c.f.''. Does it? I am replacing it with ''see''.},
+and $\ell_{\rm th}$, the only non-GR parameter in this problem which, we recall, sets
 the characteristic length-scale in which deviations from
 GR become relevant in each of the theories described in
 Sec.~\ref{sec:review_theories}. %Hence,
@@ -979,7 +986,7 @@ with the noise-weighted inner product $\langle \cdot | \cdot \rangle$ defined as
 %
 where $\tilde{A}(f)$ is the Fourier transform of $A(t)$, the asterisk denotes
 complex conjugation, $S_{n}(f)$ is the power spectrum density of the
-detector, and $[f_{\rm low}, f_{\rm high}]$ span the detector sensitivity \ab{frequency} band.
+detector, and $[f_{\rm low}, f_{\rm high}]$ span the detector sensitivity frequency band.
 %
 Assuming a specific prior distribution for our parameters (discussed further in the next section), we stochastically
 sample over the parameter space using a Markov-Chain Monte Carlo algorithm as implemented in
@@ -1017,7 +1024,7 @@ The prior distribution functions on the GR parameters are assumed to be
 uniform over the component masses, $(m_1, m_2)$, isotropically distributed on a
 sphere in the sky for the source location with $p(D_L) \propto D_L^2$, and isotropic
 on the binary orientation, $p(\iota, \psi, \phi_0) \propto \sin\iota$. For the spins
-$(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes.\sout{ and restrict ourselves to the $z$-components.} \footnote{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior.}}.
+$(\chi_1, \chi_2)$, we assume a prior uniform and isotropic in the spin magnitudes\footnote{This spin-prior choice can be specified in \texttt{LALInference} using the option \texttt{alignedspin-zprior.}}.
 %
 %The prior on $t_0$ is uniform and its range is informed by our detection pipelines.
 
@@ -1025,8 +1032,8 @@ Among our non-GR parameters $\{\ell_{\rm th}, \delta \omega^{(j)}\delta \tau^{(j
 as already mentioned in the previous section, we hold $\{\delta \omega^{(j)},\delta \tau^{(j)}\}$
 fixed to theory-specific predictions, and only allow $\ell_{\rm th}$ to vary freely.
 %
-We assume an uniform prior on $\ell_{\rm th}$ between appropriate ranges\sout{,
-say $\ell_{\rm th} \in [0, \ell_{\rm max}]$}.
+We assume an uniform prior on $\ell_{\rm th}$ between appropriate ranges.
+% \sout{, say $\ell_{\rm th} \in [0, \ell_{\rm max}]$}.
 %
 The lower limit is set by the fact that the modified gravity theories we consider
 all have $p$ even and hence we can assume $\ell_{\rm th} > 0$ without loss of
@@ -1041,11 +1048,12 @@ generality.
 \begin{figure}[t]
 \includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
 \caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
-detector-frame remnant mass $(1 + z) \, M_{\rm f}$ for GW150914, using the same waveform model,
-but without (blue contours) \agcomm{colors are not up to date; needs to be
-finalised after we finalise the color scheme} and with the non-GR parameters
-different from zero (orange contours, for
-dCS gravity and $N_{\rm max}=0$). The contours represent 90\% credible \sout{regions}\ag{levels}\agcomm{we have to be particular about the use of credible regions. If its 2D they are ``levels", if they are 1D then ``intervals". If we are quoting the difference of the 1D intervals, then we say ``credible bounds"}.
+remnant mass $M_{\rm f}$ for GW150914, using the same waveform model,
+but without (purple contours) and with the non-GR parameters
+different from zero (blue contours), for
+dCS gravity and $N_{\rm max}=0$ as an example.
+%
+The contours represent 90\% credible levels.
 %
 We see that the introduction of the non-GR parameters does not bias the
 inference on the source parameters.
@@ -1061,7 +1069,7 @@ above. Naturally, the most promising candidates for our analyses are high-mass
 in the post-merger part of the signal.
 %
 The latest LIGO-Virgo-KAGRA GW catalog~\cite{LIGOScientific:2021djp} reported 90 observed
-signals not all of which are relevant for \ab{our} BH ringdown analysis. In fact, in
+signals not all of which are relevant for our BH ringdown analysis. In fact, in
 the accompanying paper~\cite{LIGOScientific:2021sio} on tests of GR, the \texttt{pSEOBNRv4HM}
 ~\cite{Brito:2018rfr,Ghosh:2021mrv} analysis~\footnote{See, in particular, Sec.VIII A.2
 in Ref.~\cite{LIGOScientific:2021sio}}, which is most similar to the \pSEOB{} model
@@ -1103,19 +1111,12 @@ In Sec.~\ref{sec:results}, we enumerate through the different theories and
 outline the main results. Whenever possible, we also combine results from
 multiple events to obtain the strongest possible bound on $\ell_{\rm th}$.
 
-% -----------------
-% Corner plots here
-% -----------------
-
-% As a first test ...
-% \hs{Move to an appendix.}
-
 \subsection{Interpretation of our results}
 \label{sec:remarks}
 
 There are two conditions that we must verify before we can confidently claim to
 have placed a constraint on $\ell_{\rm th}$. First, as we have explained in Sec.~\ref{sec:review_theories}, all theories that we
-consider must be \ab{interpreted} as an effective field theory, meaning that it should be
+consider must be interpreted as an effective field theory, meaning that it should be
 considered valid only below an energy scale, or equivalently, a length-scale.
 %
 As a cut-off length-scale for the validity of the EFT we use,
@@ -1130,32 +1131,34 @@ value of one of the mass scales involved in the problem.
 %
 We note that $\Lambda_{\rm EFT}$ has dimensions of length and hence can be compared to the coupling strength $\ell_{\rm th}$.
 %
-In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
-but here we consider $\varepsilon \in [0, 1]$ for generality.
-%
+\hs{Here we explore the range $\varepsilon \in [0, 1]$, but following
+the Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} we quote our final results using
+$\varepsilon = 1/2$.}
+% %
+% In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
+% but here we explore $\varepsilon \in [0, 1]$ for generality.
+% %
 We say that a bound has been placed on $\ell_{\rm th}$, if most of the PDF $P(\ell_{\rm th} | d)$ support is in the interval
-$[0, \, \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})]$.
+$[0, \, \Lambda_{\rm EFT}(\hs{1/2}, \mathfrak{m})]$.
 %
 In practice, this can be quantified through the cumulative distribution function
 (CDF) associated with the marginalized posterior distribution $P(\ell_{\rm th} | d)$, namely
 %
 \begin{equation}
-% P(\ell_{\rm th} \leqslant \ell_{\rm max}) = \int_{-\infty}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell') \,.
-% HS: changed lower limit to zero since we don't have support for negative \ell-values
-P(\ell_{\rm th} \leqslant \ell_{\rm max} | d) = \int_{0}^{\,\ell_{\rm max}} \dd \ell'\, P(\ell' | d) \,.
+P(\ell_{\rm th} \leqslant \ell^{\rm max}_{\rm th} | d) = \int_{0}^{\,\ell^{\rm max}_{\rm th}} \dd \ell'\, P(\ell' | d).
 \label{eq:def_cdf}
 \end{equation}
 %
-For instance, we require that for a bound \ab{at 90\% credible level} to be placed on $\ell_{\rm th}$ that
+For instance, we require that for a bound at 90\% credible level to be placed on $\ell_{\rm th}$ that
 %
 \begin{equation}
 % \textrm{CDF}(\ell) \leqslant \textrm{CDF}(T_{\rm EFT}(\varepsilon; \, \mathfrak{m})).
-P(\ell_{\rm th} \leqslant \Lambda_{\rm EFT} | d) \leqslant 0.9 \,,
+P(\ell_{\rm th} \leqslant \Lambda_{\rm EFT} | d) \leqslant 0.9,
 \quad \textrm{(EFT bound)},
 \label{eq:eft_bound}
 \end{equation}
 %
-where we let $\ell_{\rm max} = \Lambda_{\rm EFT}$ in Eq.~\eqref{eq:def_cdf}, and
+where we let $\ell^{\rm max}_{\rm th} = \Lambda_{\rm EFT}$ in Eq.~\eqref{eq:def_cdf}, and
 likewise for other credibility percentiles.
 
 Second, as already emphasized in Ref.~\cite{Maselli:2019mjd}, the ParSpec
@@ -1163,9 +1166,9 @@ formalism is by construction perturbative. This means that the non-GR
 deformation parameters are small, that is,
 %
 \begin{equation}
-\gamma \, \delta \omega^{(j)} \ll 1 \,,
+\gamma \, \delta \omega^{(j)} \ll 1,
 \,\, \textrm{and} \,\,
-\gamma \, \delta \tau^{(j)} \ll 1 \,, \quad \textrm{(ParSpec bound)},
+\gamma \, \delta \tau^{(j)} \ll 1, \quad \textrm{(ParSpec bound)},
 \label{eq:parspec_bound}
 \end{equation}
 %
@@ -1231,32 +1234,32 @@ In Fig.~\ref{fig:edgb_exec_sum} we show the marginalized PDFs of the
 coupling constant $\ell_{\rm GB}$, for GW150914 (top panel) and GW200129
 (middle panel), with and without the spin corrections to the $(2,2,0)$ QNM.
 %
-The bottom panel shows the joint posterior \ab{obtained by} combining both events.
+The bottom panel shows the joint posterior obtained by combining both events.
 %
 We see, for both events, the $N_{\rm max} = 0$ posteriors are
 characterized by a peak away from zero.
 %
 This does not mean that we are inferring a deviation from GR.
 %
-\ab{We recall} that the deviations from GR in the ParSpec framework are controlled
-by \ab{the dimensionless parameter} $\gamma$, which here reads,
+We recall that the deviations from GR in the ParSpec framework are controlled
+by the dimensionless parameter $\gamma$, which here reads,
 %
 \begin{equation}
-    \gamma_{\rm GB} = \left(\frac{c^2 \ell_{\rm GB}}{ G M_{f}}\right)^4\,.
+    \gamma_{\rm EdGB} = \left(\frac{c^2 \ell_{\rm EdGB}}{ G M_{f}}\right)^4\,.
     \label{eq:def_gamma_gb}
 \end{equation}
 %
-As shown in Fig.~\ref{fig:gamma_gb}, $\gamma_{\rm GB}$ does indeed have a posterior
+As shown in Fig.~\ref{fig:gamma_gb}, $\gamma_{\rm EdGB}$ does indeed have a posterior
 distribution with largest support at zero, indicating consistency between
 the underlying signal and GR.
 %
 We also observe that the inclusion of the spin corrections (i.e., the curves with $N_{\rm max} = 1$)
-displaces the posteriors distributions towards smaller values of $\ell_{\rm GB}$ (see Fig.~\ref{fig:edgb_exec_sum}),
-and larger values of $\gamma_{\rm GB}$ (see Fig.~\ref{fig:gamma_gb}).
+displaces the posteriors distributions towards smaller values of $\ell_{\rm EdGB}$ (see Fig.~\ref{fig:edgb_exec_sum}),
+and larger values of $\gamma_{\rm EdGB}$ (see Fig.~\ref{fig:gamma_gb}).
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm GB}$ in EdGB gravity
+\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
 for GW150914 (top panel), GW200129 (middle panel)
 and from combining results (bottom panel).
 %
@@ -1264,16 +1267,16 @@ In all panels, different line colors correspond to the inclusion ($N_{\rm max} =
 of the linear-in-spin QNM correction.
 %
 The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
-in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. \ab{We mark
-with vertical lines theh $90\%$ upper credible intervals.}}
+in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. We mark
+with vertical lines theh $90\%$ upper credible intervals.}
 \label{fig:edgb_exec_sum}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
-\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm GB}$,
+\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
 defined in Eq.~\eqref{eq:def_gamma_gb}. We see that this parameter controls the ParSpec expansion in EdGB gravity
-does have maximum support at $\gamma_{\rm GB} = 0$. This shows that our model is consistent with GR.}
+does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.}
 \label{fig:gamma_gb}
 \end{figure}
 
@@ -1282,11 +1285,11 @@ does have maximum support at $\gamma_{\rm GB} = 0$. This shows that our model is
 \caption{(Color online).~The CDF evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ for EdGB gravity as a function of the parameter
 $\varepsilon$ for both (dashed curves) $\gm = m_2$, the secondary's source
-mass, and (solid curves) $\gm = M_{f}$, the remnant's source mass, without
+mass, and (solid curves) $\gm = M_{\rm f}$, the remnant's source mass, without
 (black curves) and with (purple curves) linear in spin QNM corrections. The
-horizontal lines mark the $90\%$ credible levels. \ab{Having set the maximum value
-of $\varepsilon$ to be 1/2, we see} that in no situation the curves pass
-through the 0.90 lines. This means that no bound on $\ell_{\rm GB}$ can be placed
+horizontal lines mark the $90\%$ credible levels. Having set the maximum value
+of $\varepsilon$ to be 1/2, we see that in no situation the curves pass
+through the 0.90 lines. This means that no bound on $\ell_{\rm EdGB}$ can be placed
 with the events we analyzed.
 }
 \label{fig:edgb_cdf}
@@ -1310,9 +1313,9 @@ $N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint      \\
 \hline
 \end{tabular}
 \caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
-combined events using $\gm = M_{f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+combined events using $\gm = M_{\rm f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
-We find that we cannot place any constraint on $\ell_{\rm GB}$ with our waveform model from either GW event.
+We find that we cannot place any constraint on $\ell_{\rm EdGB}$ with our waveform model from either GW event.
 }
 \label{tab:summary_edgb}
 \end{table}
@@ -1320,11 +1323,11 @@ We find that we cannot place any constraint on $\ell_{\rm GB}$ with our waveform
 As we have emphasized in Sec.~\ref{sec:remarks}, we must first check whether the
 ``EFT''~\eqref{eq:eft_bound} and ``ParSpec''~\eqref{eq:parspec_bound} bounds
 are satisfied, before drawing any conclusions on the allowed values for
-$\ell_{\rm GB}$ from our parameter estimations.
+$\ell_{\rm EdGB}$ from our parameter estimations.
 %
 We check the validity of the EFT bound in Fig.~\ref{fig:edgb_cdf}. In the top (bottom) panel we show
-the CDF of the $\ell_{\rm GB}$ posteriors for GW150914 (GW200129), obtained
-by evaluating the integral~\eqref{eq:def_cdf} with $\ell_{\rm max} = \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})$,
+the CDF of the $\ell_{\rm EdGB}$ posteriors for GW150914 (GW200129), obtained
+by evaluating the integral~\eqref{eq:def_cdf} with $\ell^{\rm max}_{\rm th} = \Lambda_{\rm EFT}(\varepsilon, \mathfrak{m})$,
 with the mass scale set by the secondary's mass (i.e., $\mathfrak{m} = m_2$, dashed lines) or
 the remnant's mass ($\mathfrak{m} = M_{\rm f}$, solid lines), while varying $\varepsilon$ between 0 and 1.
 %
@@ -1334,20 +1337,20 @@ past $0.2$, regardless of the mass scale $\mathfrak{m}$ used and even at $\varep
 %
 This shows that that the ``EFT bound'' given by Eq.~\eqref{eq:eft_bound} is
 never met at a significant credibility and thus that we cannot place a bound on
-$\ell_{\rm GB}$.
+$\ell_{\rm EdGB}$.
 %
 The situation is similar for GW200129 with $N_{\rm max} = 0$ and does not
 change for either event when we add spin corrections to the EdGB QNM.
 %
-\ab{For the case with $N_{\rm max} = 1$, we find that the ``EFT bound'' is satisfied
-only for $\varepsilon \approx 0.8$ and $\approx1$ for GW150914 aand GW200129, respectively.
-However, we set the maximum value of $\varepsilon$ to be 1/2, thus,}
+For the case with $N_{\rm max} = 1$, we find that the ``EFT bound'' is satisfied
+only for $\varepsilon \approx 0.8$ and $\approx1$ for GW150914 and GW200129, respectively.
+However, we set the maximum value of $\varepsilon$ to be 1/2, thus,
 taken together we are led to \emph{conclude that we cannot constrain EdGB gravity with our
 present model}.
 %
 We summarize our findings in Table~\ref{tab:summary_edgb}.
 
-We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui}, which obtained $\ell_{\rm GB} \lesssim 35$~km,
+We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui}, which obtained $\ell_{\rm EdGB} \lesssim 35$~km,
 by setting $p=4$, \emph{but not} including theory-specific QNM information on $\delta \omega^{(j)}$ and $\delta \tau^{(j)}$.
 %
 Our results provide a concrete example of the importance of including
@@ -1355,16 +1358,16 @@ theory-specific QNM calculations information into the parameter estimation
 and how this can dramatically change the outcome of the results.
 
 Let us also contrasts our results with those of Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}
-which relied on the BBH inspiral to constrain $\ell_{\rm GB}$, as discussed in Sec.~\ref{sec:review_edgb}.
+which relied on the BBH inspiral to constrain $\ell_{\rm EdGB}$, as discussed in Sec.~\ref{sec:review_edgb}.
 %
-We see that EdGB provides an example of a theory in which, \ab{with current GW events,} the inspiral portion
-of the signal \ab{can be} more constraining than the ringdown portion of the signal.
+We see that EdGB gravity provides an example of a theory in which, with current GW events, the inspiral portion
+of the signal can be more constraining than the ringdown portion of the signal.
 %
 Two reasons together can explain our negative results. First, as observed by
 Ref.~\cite{Blazquez-Salcedo:2016enn}, the QNMs of EdGB BHs only differ slightly
 from their Schwarzschild counterparts. Second, the larger mass $M_{\rm f}$ of the
 remnant BH, suppresses scalar field's charge relatively to the initial binary
-components.~\hs{This is a general `limitation' of ringdown test of higher-curvature theories in present detectors.
+components.~\hscomm{This is a general `limitation' of ringdown test of higher-curvature theories in present detectors.
 Point this out in the conclusions after all specific theories are discussed.}
 %
 As we will next, the situation is the opposite for dCS gravity.
@@ -1446,25 +1449,26 @@ the dominant QNM.
 
 We now consider dCS gravity where the main results are summarized in Fig.~\ref{fig:dCS_exec_sum}.
 %
-As with EdGB gravity (see Sec.~\ref{sec:results_edgb}) although the PDF of $\ell_{\rm CS}$
+As with EdGB gravity (see Sec.~\ref{sec:results_edgb}) although the PDF of $\ell_{\rm dCS}$
 is peaked away from 0, this does not signify a deviation from GR, as we have verified that,
 %
 \begin{equation}
-    \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm CS}}{G M_{f}} \right)^{4}\,,
+    \gamma_{\rm CS} = \left( \frac{c^2 \ell_{\rm dCS}}{G M_{f}} \right)^{4}\,,
 \end{equation}
 %
-does indeed peak at zero indicating consistency with GR, similarly to what is shown in Fig.~\ref{fig:gamma_gb} for $\gamma_{\rm GB}$.
+does indeed peak at zero indicating consistency with GR, similarly to what is
+shown in Fig.~\ref{fig:gamma_gb} for $\gamma_{\rm EdGB}$.
 %
 We also see that in both cases the inclusion of leading-order--in-spin
 correction to the QNM displaces the posteriors towards smaller values of
-$\ell_{\rm CS}$. This can be seen more evidently by looking at the location of
+$\ell_{\rm dCS}$. This can be seen more evidently by looking at the location of
 posterior peaks.
 %
 Finally, in the bottom panel, we show the combined result for both events.
-\agcomm{Just a thought.  Since, Figs 3,6,8,10 and Figs.4,6,9,11 show the same basic thing,
-should we have one description at the top of the section for each figure? We can follow this up
-by what is special for each theory in each section? Currently, we are repeating a lot of the
-language to describe these figures for each theory?}
+% \agcomm{Just a thought.  Since, Figs 3,6,8,10 and Figs.4,6,9,11 show the same basic thing,
+% should we have one description at the top of the section for each figure? We can follow this up
+% by what is special for each theory in each section? Currently, we are repeating a lot of the
+% language to describe these figures for each theory?}
 
 In Fig.~\ref{fig:dcs_cdf} we show the CDF for GW150914, we see that with $\gm = m_2$,
 Eq.~\eqref{eq:eft_bound} is not satisfied unless $\varepsilon \approx 0.9$ (with only $j=0$ corrections) and
@@ -1479,7 +1483,7 @@ This means that with our model's assumptions and using the remnant's source mass
 cut-off scale that we can claim an upper bound
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 42.6~\textrm{km}
+\ell_{\rm dCS} \leqslant 42.6~\textrm{km}
 \quad \textrm{at 90\% credible level},
 \end{equation}
 %
@@ -1490,7 +1494,7 @@ We also note that since the CDF grows fast in approximate domain $\varepsilon = 
 that a stronger, albeit at lower credibility,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 37.4~\textrm{km}
+\ell_{\rm dCS} \leqslant 37.4~\textrm{km}
 % ~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
 \quad \textrm{at 68\% credible level},
 \end{equation}
@@ -1501,7 +1505,7 @@ We can draw qualitatively similar conclusions from the GW200129 event.
 In particular, we find,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 36.6~\textrm{km}
+\ell_{\rm dCS} \leqslant 36.6~\textrm{km}
 % 43.9~\textrm{km}~( = \Lambda_{\rm EFT}(\tfrac{1}{2}, M_{f}) )
 \quad \textrm{at 90\% credible level},
 \end{equation}
@@ -1509,42 +1513,42 @@ In particular, we find,
 and
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 29.1~\textrm{km}
+\ell_{\rm dCS} \leqslant 29.1~\textrm{km}
 % ~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
 \quad \textrm{at 68\% credible level},
 \end{equation}
 %
 when $N_{\rm max}=0$.
 %
-These stronger bounds are a consequence of the larger support for $\ell_{\rm CS} \lessapprox 15$~km
+These stronger bounds are a consequence of the larger support for $\ell_{\rm dCS} \lessapprox 15$~km
 for GW200129 (compare the top and middle panels in Fig.~\ref{fig:dCS_exec_sum}), and in part due to
 the smaller median remnant ($M_{\rm f} \approx 59.5\msun$ versus $M_{\rm f} \approx 61.8\msun$ for GW150914).
 %
 We also found for both GW events, that the perturbative-conditions~\eqref{eq:parspec_bound} required by the ParSpec
-formalism is violated for the $\gamma_{\rm CS} \, \delta \tau^{(1)}$ coefficient.
+is violated for the $\gamma_{\rm dCS} \, \delta \tau^{(1)}$ coefficient.
 %
 This means that we cannot use this posterior to infer any meaningful bound on dCS gravity
 and that is why we quoted only the $N_{\rm max}=0$ bound above.
 
-Finally, since both events individually lead to a bound on $\ell_{\rm CS}$
+Finally, since both events individually lead to a bound on $\ell_{\rm dCS}$
 (assuming a cut-off scale for $\gm = M_{\rm f}$ and $N_{\rm max}=0$), we can combine the
 posteriors to obtain the cumulative bound,
 %
 \begin{equation}
-\ell_{\rm CS} \leqslant 38.7~\textrm{km}
+\ell_{\rm dCS} \leqslant 38.7~\textrm{km}
 \quad \textrm{ at 90\% credible level},
 \end{equation}
 %
 which is the main result of this section.
 %
 This bound is approximately a factor of four weaker than that placed by
-Ref.~\cite{Silva:2020acr}, but \ab{it}
+Ref.~\cite{Silva:2020acr}, but it
 %
 (i) relies only on GW observations, and
 %
 (ii) suggests that a ringdown analysis can potentially place constraints on
-theories \ab{that, with current GW events, can evade GR tests} using inspiral information alone, such as the
-case of dCS gravity~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+theories that, with current GW events, can evade GR tests using inspiral information
+alone, such as the case of dCS gravity~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
 %
 In Table~\ref{tab:summary_dcs} we summarize our findings of this section.
 
@@ -1558,9 +1562,9 @@ $N_{\rm max}$ & Event & EFT    & ParSpec & Constraint ($\gm = M_{f}$) \\
 %       & GW150914 & Yes & Yes & $\ell_{\rm CS} \leqslant 46.5$~km \\
 % 0     & GW200129 & Yes & Yes & $\ell_{\rm CS} \leqslant 43.9$~km \\
 %       & Combined & Yes & Yes & \cellcolor{blue!10}$\ell_{\rm CS} \leqslant 34.5$~km \\
-      & GW150914 & Yes & Yes & $\ell_{\rm CS} \leqslant 41.9$~km \\
-0     & GW200129 & Yes & Yes & $\ell_{\rm CS} \leqslant 35.8$~km \\
-      & Combined &     &     & \cellcolor{black!10}$\ell_{\rm CS} \leqslant 38.7$~km \\
+      & GW150914 & Yes & Yes & $\ell_{\rm dCS} \leqslant 41.9$~km \\
+0     & GW200129 & Yes & Yes & $\ell_{\rm dCS} \leqslant 35.8$~km \\
+      & Combined &     &     & \cellcolor{black!10}$\ell_{\rm dCS} \leqslant 38.7$~km \\
 \hline
       & GW150914 & Yes & No  & --                                 \\
 1     & GW200129 & Yes & No  & --                                 \\
@@ -1576,7 +1580,7 @@ they do not obey the condition~\eqref{eq:parspec_bound} for $N_{\rm max} = 1$. T
 that our results for $N_{\rm max}=0$ are the only ones we can confidently quote.
 %
 The combined bound, which is also quoted in Table~\ref{tab:ref_theories_qnms},
-is $\ell_{\rm CS} \leqslant 38.7$~km \ab{at 90\% credible level}.
+is $\ell_{\rm dCS} \leqslant 38.7$~km at 90\% credible level.
 }
 \label{tab:summary_dcs}
 \end{table}
@@ -1589,7 +1593,7 @@ required by the ParSpec expansion (see discussion in
 Sec.~\ref{sec:review_parspec}).}\agcomm{This reference to Fig.2 appears misplaced here. IMO, Fig 2. has two purposes. 1) to show that we do not need the high-spin version of the fits Carullo used, because our spin posteriors are well-localised around 0.7, and 2) to assure the reader that we were right in using the GR values of the final mass and spin in the ParSpec expansion, because introducing nonGR parameters has not ended up biasing our estimates of Mf-chif.  I think both of these points can be addressed in the discussions section. That is also where we can put the other corner plot with the remaining intrinsic parameters. One side-advantage of this is that the figures would then also appear slightly later in the paper, as we had originally planned.}
 %
 
-\subsection{Cubic Effective-FieXld-Theory of General Relativity}
+\subsection{Cubic Effective-Field-Theory of General Relativity}
 \label{sec:results_ceft}
 
 We now consider the cubic EFT of GR.
@@ -1690,13 +1694,15 @@ Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final r
     \ell_{\rm qEFT} \leqslant 51.3~\textrm{km} \quad \textrm{at 90\% credible level}\,.
 \end{equation}
 %
-\abcomm{Please update the paragraph below.}
+% \abcomm{Please update the paragraph below.}
+\hs{
 In this theory, we have considered only $N_{\rm max} = 0$. We found that the
 inclusion of the spin corrections yields waveforms which for $\ell_{\rm qEFT} \gtrsim 80$~km
-for which the ringdown portions of the larger than the inspiral-plunge part \dots
+for which the ringdown portions of the larger than the inspiral-plunge part.
 %
 To avoid this issue we have lowered the value of $\ell^{\rm max}_{\rm qEFT}$, but by doing so we have obtained posteriors
-which were essentially uniform. Thus, we do not quote any results for $N_{\rm max} = 1$.
+which were essentially uniform, as our prior, and thus uninformative. Hence, we do not quote any results for $N_{\rm max} = 1$.
+}
 %
 Table~\ref{tab:summary_qeft} summarizes our findings for the quartic EFT of GR.
 %
@@ -1783,30 +1789,31 @@ result correspond to 90\% credible values.
 % \hs{Try to draw some conclusions that apply to all theories.}
 % -------------------------------------------------------------
 
-We presented an \ab{unified framework to combine the ParSpec formalism} introduced
+We presented an unified framework to combine the ParSpec formalism introduced
 to model deviations to the GR QNMs~\cite{Maselli:2019mjd} with the \pSEOB~waveform model~\cite{Brito:2018rfr,Ghosh:2021mrv}.
 %
-We showed with concrete examples, \ab{how theory-specific QNM calculations of
+We showed with concrete examples, how theory-specific QNM calculations of
 slowly-rotating BHs in modified gravity theories can be mapped onto the
-non-GR parameters of the ParSpec formalism}.
+non-GR parameters of the ParSpec formalism.
 %
 Put together this allowed us to use the \pSEOB~waveform model to test four
 modified gravity theories (EdGB, dCS, cubic, and quartic EFTs of GR) using
 observational data from the LIGO-Virgo-KAGRA's events GW150914 and GW200129.
 %
-We found, in particular that, \ab{within the interpretation of our non-GR theories as EFTs and the
+We found, in particular that, within the interpretation of our non-GR theories as EFTs and the
 region of validity of the ParSpec framework, the coupling constant of dCS gravity is bound to
 $\ell_{\rm CS} \leqslant 34.5$~km, at 90\% credible level, when stacking the posteriors
-of GW150914 and GW200129.}
+of GW150914 and GW200129.
 %
 In contrast, we could not place any constraint of the coupling constants in EdGB gravity $\ell_{\rm GB}$.
 %
 This dichotomy between these theories has an analogy with works that considered
 the inspiral part of the GW signal alone.
 %
-In that case, it is dCS which is unconstrained, while EdGB, in principle can be
-constrained, based on results for the closely related shift-symmetric version
-of this theory.
+In that case, it is dCS which is unconstrained \hs{with already observed GW
+events}, while EdGB can be constrained, as shown in Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+%
+\hscomm{I will a sentence here on Refs.~\cite{Alexander:2017jmt,Loutrel:2018ydv,Loutrel:2018rxs}.}
 
 Our work shows that there are theories of gravity (such as dCS) which can by-pass observational
 constraints from the inspiral phase alone, {\it yet} would not, if we
@@ -1818,14 +1825,14 @@ gravity theories.
 
 Let us discuss some avenues for future work \dots
 
-\hs{TODO: say that we could try to expand the waveform model to include modification to
+\hscomm{TODO: say that we could try to expand the waveform model to include modification to
 the inspiral part too; maybe through FTI~\cite{Mehta:2022pcn}?}
 
-\hs{TODO: add that we could try to parametrize the final black hole mass and spin estimates formulas we
+\hscomm{TODO: add that we could try to parametrize the final black hole mass and spin estimates formulas we
 use at the moment~\cite{Hofmann:2016yih}. Maybe comment that a possible first attempt could follow~\cite{Buonanno:2007sv},
 as done in~\cite{Jai-akson:2017ldo,Li:2020wse}. Say that ultimately we will need to informed by NR in beyond-GR.}
 
-\hs{I suspect that by construction the $N_{\rm max} = 1$ cases will often fail to satisfy our
+\hscomm{I suspect that by construction the $N_{\rm max} = 1$ cases will often fail to satisfy our
 perturbative bounds. If so, add explanation here.}
 
 \agcomm{Mention that we do not use the high-spin version of the fits, and refer to the
@@ -1839,6 +1846,9 @@ and refer to Fig.~\ref{fig:corner_plot_all}}
 \caption{(Color online).~Corner plot showing that the inferred source binary parameters for GW150914,
 using the same waveform model \pSEOB, but with (purple contours) and without setting the non-GR parameters different
 from zero (blue contours), having as an illustrative example dCS gravity and $N_{\rm max}=0$.
+%
+\hs{Here, $\chi_{\rm eff}$ is the dimensionless effective-spin parameter, related to the individual spins $\chi_{i}$
+and masses $m_{i}$ of each binary component as $\chi_{\rm eff} \equiv (m_1 \chi_1 + m_2 \chi_2) / (m_1 + m_2)$.}
 %
 All contours correspond to 90\% credible levels.
 %
@@ -1901,7 +1911,7 @@ In this Appendix, we show how we determined the coefficients in the ParSpec
 using QNM calculations found in the literature for the theories described in
 Sec.~\ref{sec:review_theories}.
 
-\subsection{Einstein-dilaton-Gauss-Bonnet}
+\subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{app:map_edgb}
 
 We start by considering EdGB gravity, for which the QNMs of nonrotating and
@@ -1909,7 +1919,7 @@ slowly-rotating BHs where calculated in
 Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and~\cite{Pierini:2021jxd},
 respectively.
 
-\subsection{dynamical Chern-Simons}
+\subsection{Dynamical Chern-Simons gravity}
 \label{app:map_dcs}
 
 % Let us show one concrete example of how this mapping is done.
@@ -1982,7 +1992,7 @@ We remark that the alarmingly large values of $\delta \omega_{\rm CS}^{(1)}$ and
 are compensated by the assumptions that $(\ell_{\rm CS} / M_{\rm f})^2$ and $\chi$ are much less than unity. These
 are the assumptions used to calculate the QNM frequencies in Ref.~\cite{Wagle:2021tam}.
 
-\subsection{Effective-field-theories GR}
+\subsection{Effective-field-theory of General Relativity}
 \label{app:map_eftofgr}
 
 The QNMs of slowly-rotating BHs in both cubic and quartic EFT of GR where calculated in Ref.~\cite{Cano:2021myl}.
