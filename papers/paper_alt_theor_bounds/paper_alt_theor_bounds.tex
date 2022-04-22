@@ -1438,7 +1438,7 @@ from their Schwarzschild counterparts. Second, the larger mass $M_{\rm f}$ of th
 remnant BH, suppresses scalar field's charge relatively to the initial binary
 components.
 %
-As we will next, the situation is the opposite for dCS gravity.
+% As we will next, the situation is the opposite for dCS gravity.
 
 % Let us place our results in a broader context. In particular, let us contrast
 % them against those of Ref.~\cite{Lyu:2022gdr} which placed the bound
@@ -1670,14 +1670,21 @@ is $\ell_{\rm dCS} \leqslant 38.7$~km at 90\% credible level.
 
 \hscomm{Alessandra, I moved the plot here as we discussed.}
 %
-In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_{\rm f}$ and
-remnant mass $M_{\rm f}$ for GW150914 for GR and dCS gravity.
+As an additional check, to verify the robustness of our constraint, we show in
+Fig.~\ref{fig:corner_plot}, the final spin $\chi_{\rm f}$ and remnant mass
+$M_{\rm f}$ for GW150914 for GR and dCS gravity.
 %
-We see that indeed our waveform models does not introduce substantial changes
+We see that our \pSEOB waveform model does not introduce substantial changes
 to the GR estimates on these parameters, as required by the ParSpec expansion
 (see discussion in Sec.~\ref{sec:review_parspec}).
 %
-We observed the same in all other theories we studied.
+In fact, we observed no bias on the estimation of $\Mf$ and $\chi_{\rm f}$
+for all theories considered here.
+%
+In Appendix~\ref{app:big_contour} we show how all other intrinsic parameter parameters
+remain unbiased.
+
+
 
 % \agcomm{This reference to Fig.2 appears misplaced here. IMO, Fig 2. has two purposes. 1) to show that we do not need the high-spin version of the fits Carullo used, because our spin posteriors are well-localised around 0.7, and 2) to assure the reader that we were right in using the GR values of the final mass and spin in the ParSpec expansion, because introducing nonGR parameters has not ended up biasing our estimates of Mf-chif.  I think both of these points can be addressed in the discussions section. That is also where we can put the other corner plot with the remaining intrinsic parameters. One side-advantage of this is that the figures would then also appear slightly later in the paper, as we had originally planned.}
 %
@@ -1787,12 +1794,12 @@ Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final r
 In this theory, we have considered only $N_{\rm max} = 0$.
 %
 \hs{We found that the inclusion of the spin corrections produced waveforms which for $\ell_{\rm qEFT} \gtrsim 80$~km
-had a ringdown segment larger (sometimes seconds long) that the inspiral-plugne segment.}
+had a ringdown segment larger (sometimes seconds long) that the inspiral-plunge segment in the detectors frequency bands.}
 % for which the ringdown portions of the larger than the inspiral-plunge part. \abcomm{The last sentence
 % has some problems in English. I do not udnerstand it.}
 %
 To avoid this issue we have lowered the value of $\ell^{\rm max}_{\rm qEFT}$, but by doing so we have obtained posteriors
-which were essentially uniform, as our prior, and thus uninformative. Hence, we do not quote any results for $N_{\rm max} = 1$.
+which were flat, just as our prior, and were thus uninformative. Hence, we do not quote any results for $N_{\rm max} = 1$.
 %
 Table~\ref{tab:summary_qeft} summarizes our findings for the quartic EFT of GR.
 %
@@ -1891,7 +1898,8 @@ region of validity of the ParSpec framework, the coupling constant of dCS gravit
 $\ell_{\rm dCS} \leqslant 34.5$~km, at 90\% credible level, when stacking the posteriors
 of GW150914 and GW200129.
 %
-In contrast, we could not place any constraint of the coupling constants in EdGB gravity $\ell_{\rm EdGB}$.
+In contrast, we could not place any constraint of the coupling constants in
+EdGB gravity $\ell_{\rm EdGB}$.
 %
 This dichotomy between the two theories has an analogy with works that considered
 the inspiral part of the GW signal alone.
@@ -1899,11 +1907,11 @@ the inspiral part of the GW signal alone.
 In that case, it is dCS gravity which cannot be constrained with current GW
 events, while EdGB can, as shown in Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
 %
+This result also shows how the inclusion of theory-specific information into the ParSpec framework
+can result in different outcomes for different theories, even if they predict same exponent $p$.
+
 % HS: changed my mind -- I think it would divert from the original flow.
 % \hscomm{I will add a sentence here on Refs.~\cite{Alexander:2017jmt,Loutrel:2018ydv,Loutrel:2018rxs}.}
-%
-We hope that our results serve as further motivation to address these
-challenging problems.
 
 Let us discuss some avenues for future work \dots
 
@@ -1936,29 +1944,9 @@ further work on modeling of the late-inspiral-(plunge)-merger and ringdown of
 coalescing BHs  (with NR simulations) and, complementary, the calculations of
 QNMs of rapidly-rotating BHs in modified gravity theories (with BH perturbation
 theory) are necessary.
-
-\begin{figure*}[t]
-\includegraphics[width=0.9\textwidth]{figs/tmp_GW150914_intrinsic_params.pdf}
-\caption{(Color online).~Corner plot showing that the inferred source binary parameters for GW150914,
-using the same waveform model \pSEOB, but with (purple contours) and without setting the non-GR parameters different
-from zero (blue contours), having as an illustrative example dCS gravity and $N_{\rm max}=0$.
 %
-Here, $\chi_{\rm eff}$ is the dimensionless effective-spin parameter, related to the individual spins $\chi_{i}$
-and masses $m_{i}$ of each binary component as $\chi_{\rm eff} \equiv (m_1 \chi_1 + m_2 \chi_2) / (m_1 + m_2)$.
-%
-All contours correspond to 90\% credible levels.
-%
-We see that the addition of the non-GR parameters does not introduce biases in the
-inference of the source parameters.
-%
-We found the same qualitative behavior in the posteriors distributions of the
-source binary parameters for the other modified gravity theories studied in the
-main text.
-%
-The same conclusions apply for the other GW event studied here, GW200129.
-}
-\label{fig:corner_plot_all}
-\end{figure*}
+We hope that our results serve as further motivation to address these
+challenging, and outstanding, problems.
 
 % -----------------------------------------------------------------------------
 % \hs{Say that the fact we spin correction look important reinforces the
@@ -2173,8 +2161,41 @@ We then find
     \delta \omega_{\rm qEFT}^{(1)} = -1.5263, \quad \delta \tau_{\rm qEFT}^{(1)} = 171.35.
 \end{align}
 
+\section{Intrinsic binary parameters}
+\label{app:big_contour}
+
+In this Appendix, we show in Fig.~\ref{fig:corner_plot_all} a corner plot with all intrinsic binary parameters from our parameter estimation for GW150914
+using the \pSEOB{} waveform models for GR and dCS.
+%
+We see that median of the distribution is not affected substantially by the inclusion of the non-GR parameters.
+%
+That is the case for $\Mf$ and $\chi_{\rm f}$ is an underlying assumption of the ParSpec framework.
+%
+We qualitative similar results for GW200129 and the other modified gravity theories considered in our work.
 
 
+\begin{figure*}[t]
+\includegraphics[width=0.9\textwidth]{figs/tmp_GW150914_intrinsic_params.pdf}
+\caption{(Color online).~Corner plot showing that the inferred source binary parameters for GW150914,
+using the same waveform model \pSEOB, but with (purple contours) and without setting the non-GR parameters different
+from zero (blue contours), having as an illustrative example dCS gravity and $N_{\rm max}=0$.
+%
+Here, $\chi_{\rm eff}$ is the dimensionless effective-spin parameter, related to the individual spins $\chi_{i}$
+and masses $m_{i}$ of each binary component as $\chi_{\rm eff} \equiv (m_1 \chi_1 + m_2 \chi_2) / (m_1 + m_2)$.
+%
+All contours correspond to 90\% credible levels.
+%
+We see that the addition of the non-GR parameters does not introduce biases in the
+inference of the source parameters.
+%
+We found the same qualitative behavior in the posteriors distributions of the
+source binary parameters for the other modified gravity theories studied in the
+main text.
+%
+The same conclusions apply for the other GW event studied here, GW200129.
+}
+\label{fig:corner_plot_all}
+\end{figure*}
 
 
 \bibliography{paper_alt_theor_bounds}
