@@ -160,8 +160,8 @@ model in the effective-one-body formalism, augmented with a parametrization of
 the ringdown based on an expansion in the final black hole's spin.
 %
 We give a prescription on how to include in this waveform model the quasinormal mode frequencies
-calculated on a theory-by-theory basis. In particular, we focus on gravity theories that deviate
-from general relativity through higher-order curvature corrections, namely,
+calculated on a theory-by-theory basis. In particular, we focus on theories that deviate
+from general relativity by higher-order curvature corrections, namely,
 Einstein-dilaton-Gauss-Bonnet, dynamical Chern-Simons, cubic- and quartic-order
 effective-field-theories of general relativity.
 %
@@ -190,8 +190,8 @@ studies with current gravitational-wave data.
 % --------------------------------------------------------------------------------- %
 
 Since the first detection of gravitational waves (GWs) from a binary black-hole (BBH) merger in 2015~\cite{LIGOScientific:2016aoc},
-the LIGO~\cite{LIGOScientific:2014pky} and Virgo~\cite{VIRGO:2014yos} detectors have observed about 90 GWs signals \cite{LIGOScientific:2021djp} from mergers
-of BHs, neutron stars (NSs) \cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki,LIGOScientific:2020aai} and their mixture \cite{LIGOScientific:2021qlt}. These results have been confirmed
+the LIGO~\cite{LIGOScientific:2014pky} and Virgo~\cite{VIRGO:2014yos} detectors have observed about 90 GWs signals~\cite{LIGOScientific:2021djp} from mergers
+of BHs, neutron stars (NSs) \cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki,LIGOScientific:2020aai} and their mixture~\cite{LIGOScientific:2021qlt}. These results have been confirmed
 by independent analyses, which have also identified a few new GW signals~\cite{Nitz:2018imz,Nitz:2019hdf,Venumadhav:2019lyq,Zackay:2019btq,Nitz:2021zwj,Olsen:2022pin}.
 
 The large number of GW observations has allowed us to infer relevant astrophysical~\cite{LIGOScientific:2021aug} and cosmological~\cite{LIGOScientific:2021psn} information on the compact-object population in our local Universe, and also to probe General Relativity (GR) in the high-velocity, dynamical and strong-field regime of gravity~\cite{LIGOScientific:2021sio}. The latter complement tests of GR in the low-velocity, quasi-static or linear regimes available with Solar-System experiments~\cite{Will:2014kxa}, binary-pulsar~\cite{Wex:2014nva,Kramer:2021jcw} and galactic-center~\cite{GRAVITY:2018ofz,Do:2019txf,EventHorizonTelescope:2019ths} observations,
@@ -201,7 +201,7 @@ The coalescence of two BHs in GR is characterized by a long \textit{inspiral} st
 holes adiabatically and steadly come closer and closer to each other, loosing energy because of the emission
 of GWs. Then, they \textit{merge}, forming a common apparent horizon. Subsequently, during the \textit{ringdown} stage, the newly formed remnant object settles down to a Kerr BH emitting quasinormal modes (QNMs)~\cite{Vishveshwara:1970cc,Press:1971wr,Chandrasekhar:1975zza}. Because of the no-hair conjecture in GR~\cite{Carter:1971zc,Israel:1967wq,Hawking:1971vc,Robinson:1975bv}, the QNM (complex) frequencies of (electrically neutral) astrophysical BHs are only described by the BH's mass and spin. In GR, the QNM frequencies are labeled by the harmonic indices $(\ell,m)$ and the overtone number $n$.
 
-Several null tests have been proposed to probe the nature of gravity with GW signals~\cite{TheLIGOScientific:2016src,Yunes:2016jcc,Abbott:2018lct,LIGOScientific:2019fpa,Abbott:2020jks,LIGOScientific:2021sio}. They include tests of GW generation~\cite{Arun:2006yw,Yunes:2009ke,Li:2011cg,Agathos:2013upa,Mehta:2022pcn}, where deviations in the post-Newtonian (PN) coefficients in the inspiral, and phenomenological coefficients in the intermediate (plunge) and merger stages can be bounded; tests of GW propagation~\cite{Will:1997bb}, which allow to set upper limit on coefficients entering generalized dispersion relations, including the Compton wavelength associated to the
+Several null tests have been proposed to probe the nature of gravity with GW signals~\cite{TheLIGOScientific:2016src,Yunes:2016jcc,Abbott:2018lct,LIGOScientific:2019fpa,Abbott:2020jks,LIGOScientific:2021sio}. They include tests of GW generation~\cite{Arun:2006yw,Yunes:2009ke,Li:2011cg,Agathos:2013upa,Mehta:2022pcn}, where deviations in the post-Newtonian (PN) coefficients in the inspiral, and phenomenological coefficients in the plunge and merger stages can be bounded; tests of GW propagation~\cite{Will:1997bb}, which allow to set upper limit on coefficients entering generalized dispersion relations, including the Compton wavelength associated to the
 mass of the graviton; tests of the polarization of gravitational radiation~\cite{Will:2014kxa}, for which more than
 two GW detectors are needed to set statistically significant bounds, and tests of the remnant properties~\cite{Meidam:2014jpa,Carullo:2018sfu,Brito:2018rfr,Carullo:2019flw,Isi:2019aib,Ghosh:2021mrv,Carullo:2021dui}
 during the post-merger stage. So far, none of these null tests have reported any deviation from GR.
@@ -1288,6 +1288,9 @@ interpretations of the results of our parameter estimation.
 % We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
 % }
 
+\subsection{Einstein-dilaton-Gauss-Bonnet gravity}
+\label{sec:results_edgb}
+
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
 \caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
@@ -1302,22 +1305,6 @@ in the main text, our analysis of these events fails to satisfy the EFT bound~\e
 with vertical lines theh $90\%$ upper credible intervals.}
 \label{fig:edgb_exec_sum}
 \end{figure}
-
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
-\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
-defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
-different line styles distinguish between different $N_{\rm max}$.
-%
-We see that this parameter which controls the ParSpec expansion in EdGB gravity
-does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.
-The right panel shows the PDFs in the range $0 \leqslant \gamma_{\rm EdGB} \leqslant 1$. Note how
-the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
-\label{fig:gamma_gb}
-\end{figure}
-
-\subsection{Einstein-dilaton-Gauss-Bonnet gravity}
-\label{sec:results_edgb}
 
 We start with EdGB gravity.
 %
@@ -1349,6 +1336,19 @@ displaces the posteriors distributions towards smaller values of $\ell_{\rm EdGB
 and larger values of $\gamma_{\rm EdGB}$ (see Fig.~\ref{fig:gamma_gb}).
 
 \begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
+\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
+defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
+different line styles distinguish between different $N_{\rm max}$.
+%
+We see that this parameter which controls the ParSpec expansion in EdGB gravity
+does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.
+The right panel shows the PDFs in the range $0 \leqslant \gamma_{\rm EdGB} \leqslant 1$. Note how
+the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
+\label{fig:gamma_gb}
+\end{figure}
+
+\begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The CDF evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ for EdGB gravity as a function of the parameter
@@ -1362,31 +1362,6 @@ with the events we analyzed.
 }
 \label{fig:edgb_cdf}
 \end{figure}
-
-\begin{table}[b]
-\begin{tabular}{l l c c c}
-\hline
-\hline
-$N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint      \\
-              &       &  bound? & bound?  & ($\gm = M_{f}$) \\
-\hline
-  & GW150914 & No  & Yes & -- \\
-0 & GW200129 & No  & Yes & -- \\
-  & Combined & --  & Yes & -- \\
-\hline
-  & GW150914 & No  & Yes & -- \\
-1 & GW200129 & No  & Yes & -- \\
-  & Combined & --  & Yes & -- \\
-\hline
-\hline
-\end{tabular}
-\caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
-combined events using $\gm = M_{\rm f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
-%
-We find that we cannot place any constraint on $\ell_{\rm EdGB}$ with our waveform model from either GW event.
-}
-\label{tab:summary_edgb}
-\end{table}
 
 As we have emphasized in Sec.~\ref{sec:remarks}, we must first check whether the
 ``EFT''~\eqref{eq:eft_bound} and ``ParSpec''~\eqref{eq:parspec_bound} bounds
@@ -1417,6 +1392,32 @@ taken together we are led to \emph{conclude that we cannot constrain EdGB gravit
 present model}.
 %
 We summarize our findings in Table~\ref{tab:summary_edgb}.
+
+\begin{table}[h]
+\begin{tabular}{l l c c c}
+\hline
+\hline
+$N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint      \\
+              &       &  bound? & bound?  & ($\gm = M_{f}$) \\
+\hline
+  & GW150914 & No  & Yes & -- \\
+0 & GW200129 & No  & Yes & -- \\
+  & Combined & --  & Yes & -- \\
+\hline
+  & GW150914 & No  & Yes & -- \\
+1 & GW200129 & No  & Yes & -- \\
+  & Combined & --  & Yes & -- \\
+\hline
+\hline
+\end{tabular}
+\caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
+combined events using $\gm = M_{\rm f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
+%
+We find that we cannot place any constraint on $\ell_{\rm EdGB}$ with our waveform model from either GW event.
+}
+\label{tab:summary_edgb}
+\end{table}
+
 
 We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui}, which obtained $\ell_{\rm EdGB} \lesssim 35$~km,
 by setting $p=4$, \emph{but not} including theory-specific QNM information on $\delta \omega^{(j)}$ and $\delta \tau^{(j)}$.
