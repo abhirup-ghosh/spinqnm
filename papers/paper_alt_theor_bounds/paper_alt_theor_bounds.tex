@@ -167,7 +167,7 @@ effective-field-theories of general relativity.
 %
 % Main conclusion:
 We confront the resultant waveform models against the two loudest
-gravitational-wave ringdown signals, so far, notably, GW150914 and GW200129.
+gravitational-wave ringdown signals observed so far, notably, GW150914 and GW200129.
 %
 We find that while the Einstein-dilaton-Gauss-Bonnet theory cannot be
 constrained with these events, we can place upper bounds on the coupling
@@ -191,7 +191,7 @@ studies with current gravitational-wave data.
 
 Since the first detection of gravitational waves (GWs) from a binary black-hole (BBH) merger in 2015~\cite{LIGOScientific:2016aoc},
 the LIGO~\cite{LIGOScientific:2014pky} and Virgo~\cite{VIRGO:2014yos} detectors have observed about 90 GWs signals \cite{LIGOScientific:2021djp} from mergers
-of BHs, neutron stars (NSs) \cite{TheLIGOScientific:2017qsa,LIGOScientific:2020aai} and their mixture \cite{LIGOScientific:2021qlt}. These results have been confirmed
+of BHs, neutron stars (NSs) \cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki,LIGOScientific:2020aai} and their mixture \cite{LIGOScientific:2021qlt}. These results have been confirmed
 by independent analyses, which have also identified a few new GW signals~\cite{Nitz:2018imz,Nitz:2019hdf,Venumadhav:2019lyq,Zackay:2019btq,Nitz:2021zwj,Olsen:2022pin}.
 
 The large number of GW observations has allowed us to infer relevant astrophysical~\cite{LIGOScientific:2021aug} and cosmological~\cite{LIGOScientific:2021psn} information on the compact-object population in our local Universe, and also to probe General Relativity (GR) in the high-velocity, dynamical and strong-field regime of gravity~\cite{LIGOScientific:2021sio}. The latter complement tests of GR in the low-velocity, quasi-static or linear regimes available with Solar-System experiments~\cite{Will:2014kxa}, binary-pulsar~\cite{Wex:2014nva,Kramer:2021jcw} and galactic-center~\cite{GRAVITY:2018ofz,Do:2019txf,EventHorizonTelescope:2019ths} observations,
@@ -302,15 +302,15 @@ described by the action
     S_{\rm EdGB} = \frac{1}{16 \pi}
     \int \dV
     \left[
-    R - \tfrac{1}{2}(\nabla \varphi)^2
+    R - \tfrac{1}{2}(\partial \varphi)^2
     + \tfrac{1}{4} \ell^{2}_{\rm EdGB} f(\varphi) \, \mathcal{G}
-    \right]\,,
+    \right],
     \nonumber \\
 \end{align}
 %
 where $g \equiv \textrm{det}(g_{\mu \nu})$ is the metric determinant, $R$ is the Ricci
-scalar, $\varphi$ is a dynamical scalar field that couples to the
-Gauss-Bonnet invariant
+scalar, $\varphi$ is a dynamical scalar field, with kinetic term $(\partial \varphi)^2 = g^{\mu\nu} \partial_{\mu} \varphi \partial_{\nu} \varphi$,
+which couples to the Gauss-Bonnet invariant
 %
 $\mathcal{G} =
 R^{\mu\nu\rho\sigma}R_{\mu\nu\rho\sigma}
@@ -340,16 +340,17 @@ $f(\varphi) = \exp(\varphi)$~\cite{Kanti:1995vq}.
 In the second class, $f'(\varphi) = 0$ can vanish for some constant $\varphi_0$.
 %
 In this case, the theory admits the same stationary, asymptotically flat BH
-solutions as GR and those of scalarized
+solutions as GR~\cite{Silva:2017uqg} and those of scalarized
 BHs~\cite{Doneva:2017bvd,Silva:2017uqg,Macedo:2019sem,Dima:2020yac,Herdeiro:2020wei,Berti:2020kgk}.
 %
-Examples include the Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
+Examples include Gaussian $f(\varphi) \propto \exp(-\varphi^2)$~\cite{Doneva:2017bvd} and
 the quadratic $f(\varphi) \propto \varphi^2$~\cite{Silva:2017uqg} coupling functions.
+
 BHs in EdGB gravity have scalar hair, to which we can associate a (monopole) scalar charge $Q$,
 related to the asymptotic $r^{-1}$ fall-off of the scalar field, where $r$ is the distance from the BH.
 %
 This charge is not an independent parameter, and depends on the BH's mass and spin,
-thus being a ``secondary hair''~\cite{Coleman:1991ku,Herdeiro:2015waa}.
+thus being a ``secondary hair''~\cite{Coleman:1991ku,Kanti:1995vq,Herdeiro:2015waa}.
 %
 Since the scalar field is sourced by a curvature scalar, $Q$ is larger (smaller),
 the smaller (larger) the BH mass is.
@@ -361,7 +362,7 @@ scalar-dipole radiation (see, e.g., Refs.~\cite{Yagi:2011xp,Julie:2019sab,Shiral
 which affects the GW phase at $-1$PN order (relative to the dominant quadrupolar GR
 contribution), with magnitude proportional to the difference between the
 charges of binary components. This makes EdGB gravity testable with present GW
-observations of compact binaries where at least if one component is a BH.
+observations of compact binaries where at least one component is a BH.
 %
 More specifically, Ref.~\cite{Lyu:2022gdr} placed the bound
 %
@@ -373,22 +374,23 @@ GW200115~\cite{LIGOScientific:2021qlt} while Refs.~\cite{Nair:2019iur,Perkins:20
 $\ell_{\rm EdGB} \leqslant 1.7$~km,
 %
 by stacking the posteriors of $\ell_{\rm EdGB}$ from a selection of BBHs
-from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}~\footnote{These bounds
+from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small (i.e., $\varphi \ll 1$), and
 take into account only the leading-order scalar field contribution arising from the dilatonic coupling.}.
-Secondly, the scalar field does influence the response of BHs to linearized perturbations and thus
-affects the BH QNM spectra.
+Secondly, the scalar field influences the response of BHs to linearized perturbations and thus
+affects the BH's QNM spectra.
 %
 The coupling between scalar field and the Gauss-Bonnet invariant, which
 result in a coupling between scalar perturbations and gravitational
 perturbations of polar parity can, for example break the equivalence
 between the QNM spectra of polar and axial gravitational perturbations~\cite{Glampedakis:2017rar,Lenzi:2021njy}
 (i.e., the isospectrality~\cite{Chandrasekhar:1985kt}) for Schwarzschild BHs in GR.
-%
 
-The QNMs for nonrotating BHs in EdGB gravity were first computed in
-Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn} and were
-extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
+Using BH perturbation theory, the QNMs for nonrotating BHs in EdGB gravity
+were first computed in Refs.~\cite{Pani:2009wy,Blazquez-Salcedo:2016enn}
+and were extended to leading-order in BH spin in Ref.~\cite{Pierini:2021jxd}.
+%
+See also Refs.~\cite{Witek:2018dmd,Okounkova:2019zep} for NR studies.
 
 \subsection{Dynamical Chern-Simons gravity}
 \label{sec:review_dcs}
@@ -399,7 +401,7 @@ This theory is described by the action~\cite{Jackiw:2003pm,Alexander:2009tp},
     S_{\rm dCS} = \frac{1}{16 \pi}
     \int \dV
     \left[
-    R - \tfrac{1}{2}(\nabla \vartheta)^2
+    R - \tfrac{1}{2}(\partial \vartheta)^2
     + \tfrac{1}{4} \ell^{2}_{\rm dCS} \, \vartheta \, {}^{*}RR
     \right],
     \nonumber \\
@@ -422,26 +424,28 @@ As in scalar-Gauss-Bonnet theories, $\int \dV {}^{*}RR$ by itself is a boundary
 term~\cite{Jackiw:2003pm} that does not contribute to the field equations in
 four-dimensions.
 %
-However, a coupling with $\vartheta$ can modify the field equations.
+The Pontryagin density can, however, modify the field equation when coupled to $\vartheta$;
+the strength of the coupling set by $\ell_{\rm dCS}$, with dimensions of length.
 %
-The coupling strength is set by the coupling constant $\ell_{\rm dCS}$, with
-dimensions of length.
+% However, a coupling with $\vartheta$ can modify the field equations.
+% %
+% The coupling strength is set by the coupling constant $\ell_{\rm dCS}$, with
+% dimensions of length.
 
-The theory admits as a solution, the garden-variety Schwarzschild BH of GR. This
-is not the case when rotation is included and the Kerr metric is not a solution of
-the theory~\cite{Jackiw:2003pm}.
+The theory admits as a solution, the garden-variety Schwarzschild BH of GR.
+This is not the case when rotation is included and the Kerr metric is not a
+solution of the theory~\cite{Jackiw:2003pm}.
 %
 These rotating BHs support a scalar field which fall off as
 $r^{-2}$ asymptotically, to which we can associate a scalar dipole
-charge~\cite{Yunes:2009hc,Konno:2009kg}.
+charge~\cite{Yunes:2009hc,Konno:2009kg} and
 %
-As a consequence, the leading-scalar radiative channel of BBH to lose energy is quadrupolar,
-which affects the GW phase at 2PN order~\cite{Yagi:2011xp,Alexander:2017jmt}.
+the leading-order modification to the GW phase enters at 2PN~\cite{Yagi:2011xp}.
 %
 Deviations from GR at this PN order are constrained with present GW observations~\cite{LIGOScientific:2021sio}
-\ab{only at the level of $\sim 50\%$ (see the constraint on the 2PN parameter $\varphi_4$ in Fig.XXX of
-Ref.~\cite{LIGOScientific:2021sio}). Thus, dCS gravity is poorly constrained by
-analyses that rely on the inspiral portion of GWs when using current BBH observations are used~\cite{Nair:2019iur,Perkins:2021mhb}.}
+only at the level of $\sim 50\%$ (see the constraint on the 2PN parameter $\varphi_4$ in Fig.~6 of
+Ref.~\cite{LIGOScientific:2021sio}). Thus, so far, dCS gravity has remained
+unconstrained by works which use only on the inspiral portion of BBH GW signals~\cite{Nair:2019iur,Perkins:2021mhb}.
 %
 Nonetheless, the theory has been constrained in Ref.~\cite{Silva:2020acr}, which found
 %
@@ -450,7 +454,8 @@ $\ell_{\rm dCS} \leqslant 8.5$~km,
 by folding data from the X-ray observations of the isolated NS
 PSR~J0030+0451~\cite{Lommen:2000yt,NANOGrav:2017wvv} by
 NICER~\cite{Riley:2019yda,Miller:2019cac} and from the GW observation of the binary
-NS GW170817~\cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki}.
+NS GW170817~\cite{TheLIGOScientific:2017qsa,LIGOScientific:2018cki}, using
+equation-of-state independent relations between NS moment of inertia and tidal deformability~\cite{Yagi:2013bca,Yagi:2013awa,Gupta:2017vsl}.
 
 The QNMs of the Schwarzschild BH in dCS gravity were studied in
 Refs.~\cite{Yunes:2007ss,Cardoso:2009pk,Molina:2010fb}, which found that scalar
@@ -460,8 +465,7 @@ with EdGB gravity.
 This leads to a breakdown of isospectrality. The QNM spectra of slowly-rotating BHs in dCS gravity was
 studied in Ref.~\cite{Srivastava:2021imr,Wagle:2021tam}.
 %
-They were also extracted from numerical-relativity simulations of head-on BH collisions
-in Ref.~\cite{Okounkova:2019dfo}.
+They were also extracted from NR simulations of BH head-on collisions in Ref.~\cite{Okounkova:2019dfo}.
 
 \subsection{Effective-field-theory of General Relativity}
 
@@ -510,12 +514,12 @@ Due to the large number of free parameters in this theory, we focus on a subset 
 In particular, we consider dimension-six and dimension-eight operators separately.
 %
 In addition, in the dimension-six case we further assume that $\lame = \lamo = 1$,
-leaving us with \redsout{$\ell =$} $\ell_{\rm cEFT}$ as our single free parameter.
+leaving us with $\ell_{\rm cEFT}$ as our single free parameter.
 %
 Similarly, in the dimension-eight case, we set $\varepsilon_{1} = 1$ and $\varepsilon_{2} = \varepsilon_{3} = 0$,
 as done in Ref.~\cite{Sennett:2019bpc}.
 %
-This leaves us with \redsout{$\ell =$} $\ell_{\rm qEFT}$ as our single free parameter.
+This leaves us with $\ell_{\rm qEFT}$ as our single free parameter.
 
 In general \dots
 %
