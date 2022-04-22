@@ -1124,22 +1124,6 @@ generality.
 
 \subsection{Events selection}
 
-\begin{figure}[t]
-\includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
-\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
-remnant mass $M_{\rm f}$ for GW150914, using the same waveform model,
-but without (purple contours) and with the non-GR parameters
-different from zero (blue contours), for
-dCS gravity and $N_{\rm max}=0$ as an example.
-%
-The contours represent 90\% credible levels.
-%
-We see that the introduction of the non-GR parameters does not bias the
-inference on the source parameters.
-}
-\label{fig:corner_plot}
-\end{figure}
-
 The \pSEOB{} model, as described in Sec.~\ref{sec:review_pSEOB}, is an
 IMR model that infers the properties of the underlying GW signal,
 including (independently) its ringdown properties, using the Bayesian formalism
@@ -1304,6 +1288,34 @@ interpretations of the results of our parameter estimation.
 % We should check this \emph{in addition} to the small-coupling approximation to argue whether we placed a bound or not.
 % }
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
+\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
+for GW150914 (top panel), GW200129 (middle panel)
+and from combining results (bottom panel).
+%
+In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
+of the linear-in-spin QNM correction.
+%
+The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
+in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. We mark
+with vertical lines theh $90\%$ upper credible intervals.}
+\label{fig:edgb_exec_sum}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
+\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
+defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
+different line styles distinguish between different $N_{\rm max}$.
+%
+We see that this parameter which controls the ParSpec expansion in EdGB gravity
+does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.
+The right panel shows the PDFs in the range $0 \leqslant \gamma_{\rm EdGB} \leqslant 1$. Note how
+the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
+\label{fig:gamma_gb}
+\end{figure}
+
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{sec:results_edgb}
 
@@ -1337,34 +1349,6 @@ displaces the posteriors distributions towards smaller values of $\ell_{\rm EdGB
 and larger values of $\gamma_{\rm EdGB}$ (see Fig.~\ref{fig:gamma_gb}).
 
 \begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
-for GW150914 (top panel), GW200129 (middle panel)
-and from combining results (bottom panel).
-%
-In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
-of the linear-in-spin QNM correction.
-%
-The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
-in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. We mark
-with vertical lines theh $90\%$ upper credible intervals.}
-\label{fig:edgb_exec_sum}
-\end{figure}
-
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
-\caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
-defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
-different line styles distinguish between different $N_{\rm max}$.
-%
-We see that this parameter which controls the ParSpec expansion in EdGB gravity
-does have maximum support at $\gamma_{\rm EdGB} = 0$. This shows that our model is consistent with GR.
-The right panel shows the PDFs in the range $0 \leqslant \gamma_{\rm EdGB} \leqslant 1$. Note how
-the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
-\label{fig:gamma_gb}
-\end{figure}
-
-\begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The CDF evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ for EdGB gravity as a function of the parameter
@@ -1379,7 +1363,7 @@ with the events we analyzed.
 \label{fig:edgb_cdf}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \begin{tabular}{l l c c c}
 \hline
 \hline
@@ -1574,11 +1558,10 @@ on dCS gravity and would constitute \emph{the first bound on this theory with GW
 observations alone}.
 %
 We also note that since the CDF grows fast in approximate domain $\varepsilon = [0.2, 0.4]$,
-that a stronger, albeit at lower credibility,
+that a stronger, albeit at lower credible level,
 %
 \begin{equation}
 \ell_{\rm dCS} \leqslant 37.4~\textrm{km}
-% ~( = \Lambda_{\rm EFT}(0.3, M_{f}) )
 \quad \textrm{at 68\% credible level},
 \end{equation}
 %
@@ -1635,6 +1618,22 @@ alone, such as the case of dCS gravity~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:20
 %
 In Table~\ref{tab:summary_dcs} we summarize our findings of this section.
 
+\begin{figure}[t]
+\includegraphics[width=0.9\columnwidth]{figs/tmp_GW150914_intrinsic_params_remnant.pdf}
+\caption{(Color online).~Corner plot showing that the inferred final spin $\chi_f$,
+remnant mass $M_{\rm f}$ for GW150914, using the same waveform model,
+but without (purple contours) and with the non-GR parameters
+different from zero (blue contours), for
+dCS gravity and $N_{\rm max}=0$.
+%
+The contours represent 90\% credible levels.
+%
+We see that the introduction of the non-GR parameters does not bias the
+inference on the source parameters as required by the ParSpec.
+}
+\label{fig:corner_plot}
+\end{figure}
+
 \begin{table}[h]
 \begin{tabular}{l l c c c}
 \hline
@@ -1668,12 +1667,18 @@ is $\ell_{\rm dCS} \leqslant 38.7$~km at 90\% credible level.
 \label{tab:summary_dcs}
 \end{table}
 
-\sout{In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_f$ and
-detector-frame remnant mass $(1 + z) M_{\rm f}$ for GW150914 for GR and the
-illustrative case of dCS gravity. We see that our waveform models does not
-introduce a substantial change to the GR estimates on this parameters, as
-required by the ParSpec expansion (see discussion in
-Sec.~\ref{sec:review_parspec}).}\agcomm{This reference to Fig.2 appears misplaced here. IMO, Fig 2. has two purposes. 1) to show that we do not need the high-spin version of the fits Carullo used, because our spin posteriors are well-localised around 0.7, and 2) to assure the reader that we were right in using the GR values of the final mass and spin in the ParSpec expansion, because introducing nonGR parameters has not ended up biasing our estimates of Mf-chif.  I think both of these points can be addressed in the discussions section. That is also where we can put the other corner plot with the remaining intrinsic parameters. One side-advantage of this is that the figures would then also appear slightly later in the paper, as we had originally planned.}
+\hscomm{Alessandra, I moved the plot here as we discussed.}
+%
+In Fig.~\ref{fig:corner_plot}, we show the final spin $\chi_{\rm f}$ and
+remnant mass $M_{\rm f}$ for GW150914 for GR and dCS gravity.
+%
+We see that indeed our waveform models does not introduce substantial changes
+to the GR estimates on these parameters, as required by the ParSpec expansion
+(see discussion in Sec.~\ref{sec:review_parspec}).
+%
+We observed the same in all other theories we studied.
+
+% \agcomm{This reference to Fig.2 appears misplaced here. IMO, Fig 2. has two purposes. 1) to show that we do not need the high-spin version of the fits Carullo used, because our spin posteriors are well-localised around 0.7, and 2) to assure the reader that we were right in using the GR values of the final mass and spin in the ParSpec expansion, because introducing nonGR parameters has not ended up biasing our estimates of Mf-chif.  I think both of these points can be addressed in the discussions section. That is also where we can put the other corner plot with the remaining intrinsic parameters. One side-advantage of this is that the figures would then also appear slightly later in the paper, as we had originally planned.}
 %
 
 \subsection{Cubic Effective-Field-Theory of General Relativity}
@@ -1892,8 +1897,8 @@ In contrast, we could not place any constraint of the coupling constants in EdGB
 This dichotomy between these theories has an analogy with works that considered
 the inspiral part of the GW signal alone.
 %
-In that case, it is dCS which is \ab{poorly constrained with current observed GW
-events}, while EdGB can be constrained, as shown in Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
+In that case, it is dCS gravity which cannot be constrained with current GW
+events, while EdGB can, as shown in Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
 %
 \hscomm{I will add a sentence here on Refs.~\cite{Alexander:2017jmt,Loutrel:2018ydv,Loutrel:2018rxs}.}
 
@@ -2083,16 +2088,16 @@ Here $\kappa = 1/(16 \pi)$, $\zeta = \ell_{\rm dCS}^{4} / (M^4 \kappa)$, and thu
 and $c_{i}$ (with $i=1, \dots, 6$) are fitting coefficients which can be found in
 Ref.~\cite{Wagle:2021tam},~Table II.
 
-We now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\ell_{\rm dCS}$, and
-gather the terms proportional to $\ell_{\rm dCS}$.
+We now expand Eq.~\eqref{eq:omega_dsc_eg} to leading-orders in $\chi$ and $\gamma_{\rm dCS}$, and
+gather the terms proportional to $\gamma_{\rm dCS}$.
 %
 We obtain
 %
 \begin{align}
-    M \, \omega_{\rm dCS} &=
-    \left[ 0.3722 + 1.1945 (\ell_{\rm dCS} / M)^4 \right]
+    M \, \omega_{\rm dCS} =
+    \left( 0.3722 + 1.1945 \gamma_{\rm dCS}^4 \right)
+    + \left(0.1861 + 5.1828 \gamma_{\rm dCS}^4 \right) \, \chi,
     \nonumber \\
-    &\quad + \left[0.1861 + 5.1828 (\ell_{\rm dCS} / M)^4 \right] \, \chi\,,
     \label{eq:omega_dcs_interm}
 \end{align}
 %
