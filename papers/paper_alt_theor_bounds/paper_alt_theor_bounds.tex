@@ -2046,9 +2046,9 @@ We find,
 %
 \begin{subequations}
 \begin{align}
-    M {\rm Re}(\sigma)_{\rm EdGB} &= M {\rm Re}(\sigma)_{\rm GR} \, \left( 1 + 0.0107 \, \gamma_{\rm EdGB}^4 \right),
+    M {\rm Re}(\sigma)_{\rm EdGB} &= M {\rm Re}(\sigma)_{\rm GR} \, \left( 1 + 0.0107 \, \gamma_{\rm EdGB} \right),
     \\
-    M {\rm Im}(\sigma)_{\rm EdGB} &= M {\rm Im}(\sigma)_{\rm GR} \, \left( 1 - 0.0044 \, \gamma_{\rm EdGB}^4 \right).
+    M {\rm Im}(\sigma)_{\rm EdGB} &= M {\rm Im}(\sigma)_{\rm GR} \, \left( 1 - 0.0044 \, \gamma_{\rm EdGB} \right).
 \end{align}
 \end{subequations}
 %
@@ -2061,15 +2061,20 @@ which for consistency with our previous discussion, we truncated at quartic-orde
 The resulting formula can then be expanded in $\gamma_{\rm EdGB}$ and the coefficients $\delta \omega^{(i)}$ and $\delta \tau^{(i)}$, $i=1,2$
 read-off by comparison against Eqs.~\eqref{eq:qnm_nongr_iso}.
 %
-These steps yield,
+These steps yield $p_{\rm EdGB} = 4$,
 %
 \begin{align}
-    p_{\rm EdGB} = 4, \quad \delta \omega_{\rm EdGB}^{(0)} = -0.0107, \quad \delta \tau_{\rm EdGB}^{(0)} = -0.2480,
-    \nonumber \\
-    \delta \omega_{\rm EdGB}^{(1)} = -0.2480, \quad \delta \tau_{\rm EdGB}^{(1)} = -1.101.
+     \delta \omega_{\rm EdGB}^{(0)} = -0.0107, \quad \delta \tau_{\rm EdGB}^{(0)} = -0.2480,
 \end{align}
-
 %
+for the $j=0$ coefficients and
+%
+\begin{equation}
+    \delta \omega_{\rm EdGB}^{(1)} = -0.2480, \quad \delta \tau_{\rm EdGB}^{(1)} = -1.101.
+\end{equation}
+%
+for the $j=1$ coefficients.
+
 % Taken together, use as our fitting expressions for the QNM is EdGB gravity
 % %
 % \begin{subequations}
@@ -2120,8 +2125,8 @@ We obtain
 %
 \begin{align}
     M \, \omega_{\rm dCS} =
-    \left( 0.3722 + 1.1945 \gamma_{\rm dCS}^4 \right)
-    + \left(0.1861 + 5.1828 \gamma_{\rm dCS}^4 \right) \, \chi,
+    \left( 0.3722 + 1.1945 \gamma_{\rm dCS} \right)
+    + \left(0.1861 + 5.1828 \gamma_{\rm dCS} \right) \, \chi,
     \nonumber \\
     \label{eq:omega_dcs_interm}
 \end{align}
@@ -2137,9 +2142,10 @@ fitted Eq.~\eqref{eq:kerr_expansion} to Kerr QNM valid to all orders in spin.
 
 We can now isolate the dCS corrections from Eq.~\eqref{eq:omega_dcs_interm} and
 compare against Eq.~\eqref{eq:qnm_nongr_iso}, to find
+$p_{\rm dCS} = 4$,
 %
 \begin{equation}
-p_{\rm dCS} = 4\,, \quad \delta \omega^{(0)}_{\rm dCS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm dCS} = 41.199.
+\delta \omega^{(0)}_{\rm dCS} = 3.1964\,, \quad \delta \omega^{(1)}_{\rm dCS} = 41.199.
 \label{eq:cs_omega_coefs}
 \end{equation}
 %
@@ -2154,7 +2160,7 @@ which completes the set of fixed non-GR parameters in the ringdown of the \pSEOB
 %
 As for the case of EdGB gravity, we remark that the alarmingly large values of
 $\delta \omega_{\rm dCS}^{(1)}$ and $\delta \tau_{\rm dCS}^{(1)}$ are
-compensated by the assumptions that $(\ell_{\rm dCS} / M_{\rm f})^2$ and $\chi$
+compensated by the assumptions that $\gamma_{dCS}$ and $\chi$
 are much less than unity, which are the assumptions used in Ref.~\cite{Wagle:2021tam}
 to compute the QNMs.
 
@@ -2167,12 +2173,12 @@ For the cubic EFT, we use their Eq.~(67), particularizing to $\lame = \lamo = 1$
 %
 We further linearize that equation in $\chi$ and particularize $m=2$.
 %
-This process, shows that the mode labelled ``-'' is the least damped and it is the one we use.
+This process, shows that the mode labeled ``-'' is the least damped and it is the one we use.
 %
-Direct comparison with Eqs.~\eqref{eq:qnm_nongr_iso} results in,
+Direct comparison with Eqs.~\eqref{eq:qnm_nongr_iso} results in $p_{\rm cEFT} = 4$,
 %
 \begin{align}
-    p_{\rm cEFT} = 4, \quad \delta \omega_{\rm cEFT}^{(0)} = - 0.5813, \quad \delta \tau_{\rm cEFT}^{(0)} = 2.6469,
+    \delta \omega_{\rm cEFT}^{(0)} = - 0.5813, \quad \delta \tau_{\rm cEFT}^{(0)} = 2.6469,
     \nonumber \\
     \delta \omega_{\rm cEFT}^{(1)} = -3.8620, \quad \delta \tau_{\rm cEFT}^{(1)} = 265.12.
 \end{align}
@@ -2184,13 +2190,16 @@ Ref.~\cite{Cano:2021myl},
 In this case we found that both modes (``-'' and ``+'' in the notation of Ref.~\cite{Cano:2020cao}) make the
 fundamental QNM damp fast and we chose the ``-'' mode which decreases less the damping time.
 %
-We then find
+We then find this time that $p_{\rm qEFT} = 6$,
 %
 \begin{align}
-    p_{\rm qEFT} = 6, \quad \delta \omega_{\rm qEFT}^{(0)} = -0.2114, \quad \delta \tau_{\rm qEFT}^{(0)} = -0.6070,
+    \delta \omega_{\rm qEFT}^{(0)} = -0.2114, \quad \delta \tau_{\rm qEFT}^{(0)} = -0.6070,
     \nonumber \\
     \delta \omega_{\rm qEFT}^{(1)} = -1.5263, \quad \delta \tau_{\rm qEFT}^{(1)} = 171.35.
 \end{align}
+%
+As with the previous theories, the larger values of some of these parameters are compensated
+by the assumptions of small coupling and small spin used to calculate the QNM frequencies.
 
 \section{Intrinsic binary parameters}
 \label{app:big_contour}
