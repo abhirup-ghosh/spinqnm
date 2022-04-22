@@ -1703,6 +1703,16 @@ cases in Figs.~\ref{fig:edgb_exec_sum} and~\ref{fig:dCS_exec_sum}).
 %
 For values $\ell_{\rm cEFT} \gtrsim 40$~km, the posteriors smoothly approach zero.
 
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined.pdf}
+\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm cEFT}$ for
+GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+%
+The colors distinguish different $N_{\rm max}$ in the spin expansion.
+}
+\label{fig:cEFT_exec_sum}
+\end{figure}
+
 In Fig.~\ref{fig:cEFT_cdf} we show the CDF for both events, calculated in the
 same way as already described for the EdGB and dCS theories.
 %
@@ -1716,7 +1726,7 @@ $\mathfrak{m} = M_{\rm f}$ and $\varepsilon = 1/2$.
 This allows us to place the combined bound of
 %
 \begin{equation}
-    \ell_{\rm cEFT} \leqslant 38.2~\textrm{km} \quad \textrm{at 90\% credible level}\,.
+    \ell_{\rm cEFT} \leqslant 38.2~\textrm{km}, \quad \textrm{at 90\% credible level}\,.
 \end{equation}
 %
 As also happened for our study for dCS, the find that, for
@@ -1726,15 +1736,6 @@ constraint on this parameter.
 %
 We summarize our results in Table~\ref{tab:summary_ceft}.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function for the coupling constant $\ell_{\rm cEFT}$ for
-GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
-%
-The colors distinguish different $N_{\rm max}$ in the spin expansion.
-}
-\label{fig:cEFT_exec_sum}
-\end{figure}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_cdf_varying_threshold.pdf}
@@ -1746,7 +1747,7 @@ the dominant QNM.
 \label{fig:cEFT_cdf}
 \end{figure}
 
-\begin{table}[b]
+\begin{table}[h]
 \begin{tabular}{l l c c c}
 \hline
 \hline
@@ -2052,22 +2053,34 @@ We find,
 \end{subequations}
 %
 The small values of the numerical prefactors of $\gamma_{\rm EdGB}^4$ are a consequence of the how weakly the QNMs
-of BHs in EdGB gravity deviate from their GR counterparts, even at moderate values $(\ell_{\rm EdGB} / M)^4 \approx 0.3$.
+of BHs in EdGB gravity deviate from their GR counterparts, even at moderate values $\gamma_{\rm EdGB} \approx 0.3$.
 
 The rotating corrections are included using the results of Ref.~\cite{Pierini:2021jxd}, in particular their Eqs.~(51) and~(52),
 which for consistency with our previous discussion, we truncated at quartic-order in $\gamma_{\rm EdGB}$.
 %
-Taken together, use as our fitting expressions for the QNM is EdGB gravity
+The resulting formula can then be expanded in $\gamma_{\rm EdGB}$ and the coefficients $\delta \omega^{(i)}$ and $\delta \tau^{(i)}$, $i=1,2$
+read-off by comparison against Eqs.~\eqref{eq:qnm_nongr_iso}.
 %
-\begin{subequations}
+These steps yield,
+%
 \begin{align}
-    M {\rm Re}(\sigma)_{\rm EdGB} &= {\rm Re}(\omega)_{\rm GR} \, \left[ 1 + 0.0107 (\ell_{\rm EdGB} / M)^4 \right],
-    \\
-    M {\rm Im}(\sigma)_{\rm EdGB} &= \dots % {\rm Im}(\omega)_{\rm GR} \, \left[ 1 - 0.0044 (\ell_{\rm EdGB} / M)^4 \right].
+    p_{\rm EdGB} = 4, \quad \delta \omega_{\rm EdGB}^{(0)} = -0.0107, \quad \delta \tau_{\rm EdGB}^{(0)} = -0.2480,
+    \nonumber \\
+    \delta \omega_{\rm EdGB}^{(1)} = -0.2480, \quad \delta \tau_{\rm EdGB}^{(1)} = -1.101.
 \end{align}
-\end{subequations}
 
-\dots
+%
+% Taken together, use as our fitting expressions for the QNM is EdGB gravity
+% %
+% \begin{subequations}
+% \begin{align}
+%     M {\rm Re}(\sigma)_{\rm EdGB} &= {\rm Re}(\omega)_{\rm GR} \, \left[ 1 + 0.0107 (\ell_{\rm EdGB} / M)^4 \right],
+%     \\
+%     M {\rm Im}(\sigma)_{\rm EdGB} &= \dots % {\rm Im}(\omega)_{\rm GR} \, \left[ 1 - 0.0044 (\ell_{\rm EdGB} / M)^4 \right].
+% \end{align}
+% \end{subequations}
+%
+% \dots
 
 
 \subsection{Dynamical Chern-Simons gravity}
