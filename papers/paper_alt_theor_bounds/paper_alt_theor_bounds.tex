@@ -2056,19 +2056,19 @@ Taken together, use as our fitting expressions for the QNM is EdGB gravity
 \subsection{Dynamical Chern-Simons gravity}
 \label{app:map_dcs}
 
-For dCS gravity, we follow Ref.~\cite{Wagle:2021tam} which numerically calculated the QNMs of slowly-rotating BHs in this theory
-and found that the axial gravitational modes have their damping time increased as we
+For dCS gravity, we follow Ref.~\cite{Wagle:2021tam} which numerically calculated the QNMs, $\sigma_{\rm dCS}$,
+of slowly-rotating BHs in this theory and found that the axial gravitational modes have their damping time increased as we
 increase the Chern-Simons coupling $\ell_{\rm dCS}$ at fixed spin $\chi$ of the BH.
 %
 Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
 this is the branch of QNMs we chose to work with.
 
-We can now proceed to determine $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$ as follows.
+We then proceed to determine $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$ as follows.
 %
 Using the fitting formula Eq.~(54a) of~\cite{Wagle:2021tam}, namely,
 %
 \begin{equation}
-    M {\rm Re}(\omega)_{\rm dCS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
+    M \, {\rm Re}(\sigma)_{\rm dCS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi)^{c_{5} + c_{6} \kappa \zeta},
     \label{eq:omega_dsc_eg}
 \end{equation}
 %
@@ -2142,11 +2142,29 @@ This process, shows that the mode labelled ``-'' is the least damped and it is t
 Direct comparison with Eqs.~\eqref{eq:qnm_nongr_iso} results in,
 %
 \begin{align}
-    p_{\rm cEFT} = 6, \quad \delta \omega_{\rm cEFT}^{(0)} = - 0.5813, \quad \delta \tau_{\rm cEFT}^{(0)} = 2.6469,
+    p_{\rm cEFT} = 4, \quad \delta \omega_{\rm cEFT}^{(0)} = - 0.5813, \quad \delta \tau_{\rm cEFT}^{(0)} = 2.6469,
     \nonumber \\
     \delta \omega_{\rm cEFT}^{(1)} = -3.8620, \quad \delta \tau_{\rm cEFT}^{(1)} = 265.12.
 \end{align}
+
+We proceed in the same away for the quartic EFT. Here we use Eq.~(68) (with
+$\epsilon_{1} = 1$ and $\epsilon_{2} = 0$) and Eq.~(70) of
+Ref.~\cite{Cano:2021myl},
 %
+In this case we found that both modes (``-'' and ``+'' in the notation of Ref.~\cite{Cano:2020cao}) make the
+fundamental QNM damp fast and we chose the ``-'' mode which decreases less the damping time.
+%
+We then find
+%
+\begin{align}
+    p_{\rm qEFT} = 6, \quad \delta \omega_{\rm qEFT}^{(0)} = -0.2114, \quad \delta \tau_{\rm qEFT}^{(0)} = -0.6070,
+    \nonumber \\
+    \delta \omega_{\rm qEFT}^{(1)} = -1.5263, \quad \delta \tau_{\rm qEFT}^{(1)} = 171.35.
+\end{align}
+
+
+
+
 
 \bibliography{paper_alt_theor_bounds}
 
