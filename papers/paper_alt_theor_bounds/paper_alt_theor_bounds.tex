@@ -2046,10 +2046,10 @@ pandemic.
 \section{Details of the determination of the theory-specific ParSpec coefficients}
 \label{app:map_details}
 
-\ab{Here, for the theories described in Sec.~\ref{sec:review_theories}, we
+Here, for the theories described in Sec.~\ref{sec:review_theories}, we
 use QNM calculations from the literature and determine
 the coefficients in the ParSpec, which we have summarized
-in Table~\ref{tab:ref_theories_qnms}.}
+in Table~\ref{tab:ref_theories_qnms}.
 %
 We consider only the fundamental QNM $(\ell, m, n) = (2, 2, 0)$,
 hence we omit the QNM subscript ``$(2,2,0)$'' for brevity and, likewise,
@@ -2072,11 +2072,14 @@ polar-branch of QNMs was studied in Ref.~\cite{Pierini:2021jxd}.
 Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
 \hs{we select the axial-parity branch of QNMs.}
 
-For the nonrotating QNMs we use\sout{d} \abcomm{We are using present tense when
-describing results in the paper, so I would suggest with stick with that consistently
-in the Appendix.} the numerical data of Ref.~\cite{Blazquez-Salcedo:2016enn} and
-generate a new quartic fit in $\gamma_{\rm EdGB} = \ell_{\rm EdCS} / M$ using numerical QNM data valid for small
-values of the coupling constant (see, in particular, Eq.~(27) and Fig.~2 of
+For the nonrotating QNMs we use
+% HS: I agree.
+% \abcomm{We are using present tense when
+% describing results in the paper, so I would suggest with stick with that consistently
+% in the Appendix.}
+the numerical data of Ref.~\cite{Blazquez-Salcedo:2016enn} and
+generate a new \hs{linear} fit in $\gamma_{\rm EdGB} = \ell_{\rm EdCS} / M$ using numerical QNM data valid for small
+values of the $\gamma_{\rm EdGB}$ (see, in particular, Eq.~(27) and Fig.~1 of
 Ref.~\cite{Blazquez-Salcedo:2016enn}).
 %
 We find,
@@ -2099,9 +2102,10 @@ The small values of the numerical prefactors of $\gamma_{\rm EdGB}$ are a conseq
 of BHs in EdGB gravity deviate from their GR counterparts, even at moderate values $\gamma_{\rm EdGB} \approx 0.3$.
 
 The rotating corrections are included using the results of Ref.~\cite{Pierini:2021jxd}, in particular their Eqs.~(51) and~(52),
-which for consistency with our previous discussion, we truncate at quartic-order in $\gamma_{\rm EdGB}$ \abcomm{$\ell_{\rm EdCS}^4$?}.
+which for consistency with our previous discussion, we truncate at \hs{leading-order in} $\gamma_{\rm EdGB}$
+% \abcomm{$\ell_{\rm EdCS}^4$?}.
 %
-The resulting formula can then be expanded in $\gamma_{\rm EdGB}$ and the coefficients $\delta \omega^{(i)}$ and $\delta \tau^{(i)}$, $i=1,2$ \ab{can be}
+\hs{We can expand the resulting formula} in $\gamma_{\rm EdGB}$ and the coefficients $\delta \omega^{(i)}$ and $\delta \tau^{(i)}$, $i=1,2$ can be
 read-off by comparison against Eqs.~\eqref{eq:qnm_nongr_iso}, where for the damping time we use the relation ${\rm Im}(\sigma)_{\rm EdGB} = - 1 / \tau_{\rm EdGB}$
 and re-expand in small coupling and spin.
 %
@@ -2248,16 +2252,20 @@ by the assumptions of small coupling and small spin used to calculate the QNM fr
 \section{The estimation of  intrinsic binary parameters in General Relativity and modified theories of gravity}
 \label{app:big_contour}
 
-\ab{We show} in Fig.~\ref{fig:corner_plot_all} a corner plot \ab{for all the} intrinsic binary parameters from our parameter-estimation study of GW150914, using the \pSEOB{} waveform models for GR and dCS.
+% HS: I agree with all the changes below
+We show in Fig.~\ref{fig:corner_plot_all} a corner plot for all the intrinsic
+binary parameters from our parameter-estimation study of GW150914, using the
+\pSEOB{} waveform models for GR and dCS.
 %
-We see that \ab{the} median\ab{s} of the \ab{posterior distributions are} not affected substantially by the inclusion of the non-GR parameters. \ab{This is particularly important for the $\Mf$ and $\chi_{\rm f}$ parameters, since
-the ParSpec framework assumes that the non-GR theory induces small deviations from GR.}
+We see that the medians of the posterior distributions are not affected substantially by the inclusion of the non-GR parameters.
 %
-We \ab{obtain} qualitative similar results for GW200129 and the other modified gravity theories considered in our work.
+This is particularly important for the $\Mf$ and $\chi_{\rm f}$ parameters, since
+the ParSpec framework assumes that the non-GR theory induces small deviations from GR.
+%
+We obtain qualitative similar results for GW200129 and the other modified gravity theories considered in our work.
 %
 We also remark that the fact that the posterior on $\chi_{\rm f}$ has most support around $\approx 0.7$ justifies our use
 of the fitting coefficients in the ParSpec formulas of Ref.~\cite{Maselli:2019mjd}.
-
 
 \begin{figure*}[t]
 \includegraphics[width=0.9\textwidth]{figs/tmp_GW150914_intrinsic_params.pdf}
