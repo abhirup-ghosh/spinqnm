@@ -263,7 +263,8 @@ They were obtained combining Bayesian-inference results from GW150914 and GW2001
 Current constraints on $\ell_{\rm th}$ are also listed.
 %
 \hs{Our result for the quartic EFT of GR is only in marginal tension with our hard cut-off scale for the
-validity of the theory and hence we do still quote it here. See Sec.~\ref{sec:results_qeft} for details.}
+validity of the theory and hence we do still quote it here. See Secs.~\ref{sec:remarks} and~\ref{sec:results_qeft}
+for details.}
 }
 \label{tab:bound_summary}
 \end{table}
@@ -897,7 +898,7 @@ $\omega^{(j)}$ and $\tau^{(j)}$.
 We can proceed in a similar way with QNMs calculated in the context of a non-GR theory.
 %
 In particular, in the literature, we can already find fitting formulas relating
-the QNMs to the BHs mass, spin and coupling constant $\ell_{\rm th}$, the latter being
+the QNMs to the BHs mass, spin and length-scale $\ell_{\rm th}$, the latter being
 specific to each theory, up to $j=1$ in the spin expansion (see Table~\ref{tab:ref_theories_qnms}).
 %
 The idea is then to compare these formulas against Eq.~\eqref{eq:qnm_nongr_iso}
@@ -1213,7 +1214,7 @@ As a cut-off length-scale for the validity of the EFT we use,
 where $\varepsilon$ is a dimensionless number and $\mathfrak{m}$ is the median
 value of one of the mass scales involved in the problem.
 %
-We note that $\Lambda_{\rm EFT}$ has dimensions of length and hence can be compared to the coupling strength $\ell_{\rm th}$.
+We note that $\Lambda_{\rm EFT}$ has dimensions of length and hence can be compared to \hs{each theory's fundamental length-scale} $\ell_{\rm th}$.
 %
 Here we explore the range $\varepsilon \in [0, 1]$, but following
 the Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} we quote our final results using
@@ -1923,7 +1924,7 @@ of GW150914 and GW200129. This is the first GW-alone constrain on this theory.
 %
 In contrast, we could not place any bounds on the \hs{fundamental} length-scale \abcomm{Maybe
 this is common in the literature, but I would call it length-scale instead of coupling
-constant. What do you think?}~\hscomm{I agree.} of EdGB gravity $\ell_{\rm EdGB}$.
+constant. What do you think?}~\hscomm{I agree. I introduced ``length-scale'' at a few other place in the text.} of EdGB gravity $\ell_{\rm EdGB}$.
 %
 This dichotomy between the two theories has a counterpart with works that considered
 the inspiral part of the GW signal alone~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}.
@@ -1949,26 +1950,32 @@ For the events analyzed here, the original fit by Ref.~\cite{Maselli:2019mjd}
 was sufficient, but it might not be the case with upcoming GW observation campaigns.
 %
 Second, it would be important to incorporate additional effects, such as spin-precession and eccentricity
-to \pSEOB~(see, for instance, Refs.~\cite{Ossokine:2020kjp,Ramos-Buades:2021adz}). \ab{Third, it will be
-interesting, to perfom tests of modified theories of gravity using IMR waveform models that include, during
-the inspiral stage, finite-size effects induced by the non-GR geometry around the  holes ---
-for example the ones due to spin-induced quadrupole, tidal deformability and absorbtion, and also
+to \pSEOB~(see, for instance, Refs.~\cite{Ossokine:2020kjp,Ramos-Buades:2021adz}).
+%
+Third, it will be
+interesting, to perform tests of modified theories of gravity using IMR waveform models that include, during
+the inspiral stage, finite-size effects induced by the non-GR geometry around the BHs ---
+for example the ones due to spin-induced quadrupole, tidal deformability and absorption, and also
 orbital effects due to non-GR gravitational interactions
-between the holes. Those effects could be included using the flexible theory-independent
+between the BHs. Those effects could be included using the flexible theory-independent
 method~\cite{Mehta:2022pcn}, as done in Ref.~\cite{Sennett:2019bpc} or the
 TIGER code~\cite{Li:2011cg,Agathos:2013upa}. However, setting bounds on deviations
 from GR caused by orbital effects requires a different EFT interpretation than what we
-adopted in Sec.~\ref{sec:remarks} (see also Sec. II C in Ref.~\cite{Sennett:2019bpc}).
+adopted in Sec.~\ref{sec:remarks} (see also Sec.~IIC in Ref.~\cite{Sennett:2019bpc}).
 Indeed, in this case one would need to analyze the data considering that the modified theory of
-gravity is valid for $\ell \gtrsim  M$, but $\ell \lesssim R$, being $R$ the binary's separation. Fourth,
-to test the robustness of the results obtained in this paper, it will be very useful to employ NR waveforms
+gravity is valid for $\ell_{\rm th} \gtrsim  M$, but $\ell_{\rm th} \lesssim \mathcal{R}$, being $\mathcal{R}$ the binary's separation.
+%
+Fourth, to test the robustness of the results obtained in this paper, it will be very useful to employ NR waveforms
 produced in some of the non-GR theories under consideration, as synthetic signals, and carry out
 Bayesian analysis to recover the binary's parameters, including the non-GR ones during the ringdown.
-As today, there are only a handful of such NR simulations~XXX. Last, but not least, it will be very
+As today, there are only a small number of such BBH NR simulations, for a
+given theory~\cite{Healy:2011ef,Witek:2018dmd,Okounkova:2017yby,Hirschmann:2017psw,Okounkova:2020rqw,Okounkova:2020rqw,Silva:2020omi,East:2020hgw,East:2021bqk,Figueras:2021abd}.
+%
+Last, but not least, it will be very
 beneficial to calculate the QNMs (complex) frequencies of rapidly-rotating BHs in modified gravity theories
 (with BH perturbation theory). This is a challenging problem, but certainly necessary,
-also in the context of ParSpec, if higher spin ocrrections would need to be
-included to make the framwork robust.}
+also in the context of ParSpec, if higher spin corrections would need to be
+included to make the framework robust.
 
 % \hscomm{TODO: say that we could try to expand the waveform model to include modification to
 % the inspiral part too; maybe through FTI~\cite{Mehta:2022pcn}?}
@@ -2069,7 +2076,7 @@ Refs.~\cite{Blazquez-Salcedo:2016enn,Pierini:2021jxd} to determine the ParSpec c
 % and~\cite{Pierini:2021jxd}, respectively.
 %
 In particular, Ref.~\cite{Blazquez-Salcedo:2016enn} found that the damping time
-of the \hs{dominant \emph{axial} gravitational-led} mode increases as the coupling constant
+of the \hs{dominant \emph{axial} gravitational-led} mode increases as the length-scale
 $\ell_{\rm EdGB}$ is increased. The leading-order spin corrections to the
 \emph{polar}-parity QNMs was studied in Ref.~\cite{Pierini:2021jxd}.
 %
@@ -2118,9 +2125,9 @@ which for consistency with our previous discussion, we truncate at \hs{leading-o
 \hscomm{Could remove this part until the end of this section.}
 \hs{We can expand the resulting formula} in $\gamma_{\rm EdGB}$ and the coefficients $\delta \omega^{(i)}$ and $\delta \tau^{(i)}$, $i=1,2$ can be
 read-off by comparison against Eqs.~\eqref{eq:qnm_nongr_iso}, where for the damping time we use the relation ${\rm Im}(\sigma)_{\rm EdGB} = - 1 / \tau_{\rm EdGB}$
-and re-expand in small coupling and spin.
+and re-expand in $\ell_{\rm EdGB}$ and $\chi$.
 %
-These steps yield \ab{for} $p_{\rm EdGB} = 4$,
+These steps yield for $p_{\rm EdGB} = 4$,
 %
 \begin{align}
      \delta \omega_{\rm EdGB}^{(0)} = -0.0107, \quad \delta \tau_{\rm EdGB}^{(0)} = -0.2480,
@@ -2151,18 +2158,18 @@ for the $j=1$ coefficients.
 \label{app:map_dcs}
 
 For dCS gravity, we follow Ref.~\cite{Wagle:2021tam}, which numerically calculated the QNMs, $\sigma_{\rm dCS}$,
-of slowly-rotating BHs, \sout{in this theory} and found that \ab{for} the axial gravitational modes \ab{the} \sout{have their} damping time increases, as we
-increase the Chern-Simons coupling $\ell_{\rm dCS}$, at fixed spin $\chi$ of the BH.
+of slowly-rotating BHs, and found that for the axial gravitational modes the damping time increases, as we
+increase the Chern-Simons coupling $\ell_{\rm dCS}$, \hs{at constant BH spin.}
 %
 Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
 this is the branch of QNMs we choose to work with.
 
 We then proceed to determine $\delta\omega^{(j)}$ and $\delta\tau^{(j)}$ as follows.
 %
-\ab{We use} \sout{Using} the fitting formula Eq.~(54a) of Ref.~\cite{Wagle:2021tam}, namely,
+Using the fitting formula Eq.~(54a) of Ref.~\cite{Wagle:2021tam}, namely,
 %
 \begin{equation}
-    M \, {\rm Re}(\sigma)_{\rm dCS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi_{\rm f})^{c_{5} + c_{6} \kappa \zeta},
+    M {\rm Re}(\sigma)_{\rm dCS} = c_{1} + c_{2} \kappa \zeta + (c_{3} + c_{4} \kappa \zeta) \, (1 - \chi_{\rm f})^{c_{5} + c_{6} \kappa \zeta},
     \label{eq:omega_dsc_eg}
 \end{equation}
 %
@@ -2183,7 +2190,7 @@ gather the terms proportional to $\gamma_{\rm dCS}$.
 We obtain
 %
 \begin{align}
-    M \, \omega_{\rm dCS} =
+    M \omega_{\rm dCS} =
     \left( 0.3722 + 1.1945 \gamma_{\rm dCS} \right)
     + \left(0.1861 + 5.1828 \gamma_{\rm dCS} \right) \, \chi,
     \nonumber \\
@@ -2192,10 +2199,12 @@ We obtain
 %
 where we make use of the numerical values of the coefficients $c_{i}$.
 %
-We find that (reassuringly) the nonrotating GR part of the expression above agrees with $\omega^{(0)}$ of Ref.~\cite{Maselli:2019mjd} to 0.5\% relative \sout{percent} error. The same \sout{error} estimate \sout{is} \ab{leads to a} larger \ab{relative error} ($\approx 20$\%) for the linear-in-spin coefficient (i.e., 0.1861 in comparison to 0.1258 of Ref.~\cite{Maselli:2019mjd}).
+We find (reassuringly) that the nonrotating GR part of the expression above agrees with $\omega^{(0)}$ of Ref.~\cite{Maselli:2019mjd} to 0.5\% relative error. The same estimate leads to a larger relative error ($\approx 20$\%) for the linear-in-spin coefficient (i.e., 0.1861 in comparison to 0.1258 of Ref.~\cite{Maselli:2019mjd}).
 %
-We attribute this difference to Ref.~\cite{Wagle:2021tam} having fitted Eq.~\eqref{eq:omega_dsc_eg} to QNM data computed to linear-order in spin, whereas~\cite{Maselli:2019mjd}
-fitted Eq.~\eqref{eq:kerr_expansion} to Kerr QNM valid to all orders in spin.
+We attribute this difference to Ref.~\cite{Wagle:2021tam} having fitted
+Eq.~\eqref{eq:omega_dsc_eg} to QNM data computed to linear-order in spin,
+whereas~\cite{Maselli:2019mjd} fitted Eq.~\eqref{eq:kerr_expansion} to Kerr QNM
+valid to all orders in spin.
 
 We can now isolate the dCS corrections from Eq.~\eqref{eq:omega_dcs_interm} and
 compare against Eq.~\eqref{eq:qnm_nongr_iso}, to find
@@ -2206,7 +2215,7 @@ $p_{\rm dCS} = 4$,
 \label{eq:cs_omega_coefs}
 \end{equation}
 %
-We can carry the same steps for $\tau_{\rm dCS}$ and find
+We can carry the same steps for $\tau_{\rm dCS} = - 1 / {\rm Im}(\sigma)_{\rm dCS}$ and find
 %
 \begin{equation}
 \delta \tau^{(0)}_{\rm dCS} = 6.3619\,, \quad \delta \tau^{(1)}_{\rm dCS} = 794.66,
@@ -2216,10 +2225,10 @@ We can carry the same steps for $\tau_{\rm dCS}$ and find
 which completes the set of fixed non-GR parameters in the ringdown of the \pSEOB{}
 waveform model for this theory.
 %
-As for the case of EdGB gravity, we remark that the alarmingly large values of
+We remark that the alarmingly large values of
 $\delta \omega_{\rm dCS}^{(1)}$ and $\delta \tau_{\rm dCS}^{(1)}$ are
-compensated by the assumptions that $\gamma_{dCS}$ and $\chi$
-are much less than unity, which are the assumptions used in Ref.~\cite{Wagle:2021tam}
+compensated by the assumptions that $\gamma_{\rm dCS}$ and $\chi$
+are much less than unity, which are indeed the assumptions used in Ref.~\cite{Wagle:2021tam}
 to compute the QNMs.
 
 \subsection{Effective-field-theory of General Relativity}
