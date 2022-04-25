@@ -1799,22 +1799,40 @@ Let us now consider the quartic EFT of GR, as our final example.
 In Fig.~\ref{fig:qEFT_exec_sum} we show the posteriors on $\ell_{\rm qEFT}$ for GW150914 (top panel),
 GW200129 (middle panel) for $N_{\rm max} = 0$, which are qualitatively similar to the cubic EFT of GR.
 %
-We find that both the EFT~\eqref{eq:eft_bound} and ParSpec~\eqref{eq:parspec_bound} are satisfied,
-hence allowing us to infer bounds on $\ell_{\rm qEFT}$.
+We find that while the Parspec bound is satisfied, the EFT bound is only marginally so,
 %
-As Fig.~\ref{fig:qEFT_cdf} shows the CDFs for both events reach 90\% for $\gm = M_{\rm f}$ before $\varepsilon = 1/2$.
+As shown in Fig.~\ref{fig:qEFT_cdf}, the 90\% credible level is reached for $\varepsilon \approx 0.58$
+(in the case of GW15094) and for $\varepsilon \approx 0.64$ (in the case of GW200129).
 %
-Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final result,
+Having in mind that the hard cut-off $\varepsilon = 1/2$ is not fundamental, but to keep consistency
+across our analysis, our final result
 %
 \begin{equation}
-    \ell_{\rm qEFT} \leqslant 51.3~\textrm{km} \quad \textrm{at 90\% credible level}\,.
+    \ell_{\rm qEFT} \leqslant 51.3~\textrm{km} \quad \textrm{at 90\% credible level},
 \end{equation}
 %
-% \abcomm{Please update the paragraph below.}
+at 90\% credible level should be taken lightly.
+%
+However, we \emph{can} claim the validity of the bound above, but at a lower,
+68\% credible level.
+
+% We find that both the EFT~\eqref{eq:eft_bound} and ParSpec~\eqref{eq:parspec_bound} are satisfied,
+% hence allowing us to infer bounds on $\ell_{\rm qEFT}$.
+% %
+% As Fig.~\ref{fig:qEFT_cdf} shows the CDFs for both events reach 90\% for $\gm = M_{\rm f}$ before $\varepsilon = 1/2$.
+% %
+% Consequently, from the joint posterior of $\ell_{\rm qEFT}$ we quote our final result,
+% %
+% \begin{equation}
+%     \ell_{\rm qEFT} \leqslant 51.3~\textrm{km} \quad \textrm{at 90\% credible level}\,.
+% \end{equation}
+% %
+% % \abcomm{Please update the paragraph below.}
 In this theory, we have considered only $N_{\rm max} = 0$.
 %
-\ab{Indeed, we find that when adding the spin corrections and for $\ell_{\rm qEFT} \gtrsim 80$~km,
-the waveforms can have a ringdown segment larger (sometimes seconds long) than the inspiral-plunge segment in the detectors frequency band, making the parameter estimation challenging.} \abcomm{The reference to 80 km comes out of the blue. Doesn't it? Why did you refer to it?}
+\ab{We find that the addition of spin corrections (while maintaining the same prior ranges on $\ell_{\rm qEFT}$ as
+used in the $N_{\rm max} = 0$ study)
+can result in waveforms that can have a ringdown segment larger (sometimes seconds long) than the inspiral-plunge segment in the detectors frequency band, making the parameter estimation challenging.} \abcomm{The reference to 80 km comes out of the blue. Doesn't it? Why did you refer to it?}~\hscomm{That was the upper prior limit for the GW150914 run. I modified the text to explain this.}
 % for which the ringdown portions of the larger than the inspiral-plunge part. \abcomm{The last sentence
 % has some problems in English. I do not udnerstand it.}
 %
@@ -1835,7 +1853,7 @@ GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel)
 \includegraphics[width=\columnwidth]{figs/qeft_cdf_varying_threshold_corrected.pdf}
 \caption{Similar to Fig.~\ref{fig:edgb_cdf}, but for the quartic EFT of GR.
 We find that similarly to what happens in dCS gravity and the cubic EFT of GR, we
-can place a constrain on $\ell_{\rm qEFT}$ when $\gm = M_{\rm f}$ for both events at 90\% credibility.
+can place a constrain on $\ell_{\rm qEFT}$ when $\gm = M_{\rm f}$ for both events at \hs{68\% credibility}.
 }
 \label{fig:qEFT_cdf}
 \end{figure}
@@ -1909,7 +1927,7 @@ We showed with concrete examples, how theory-specific QNM calculations of
 slowly-rotating BHs in modified gravity theories can be mapped onto the
 non-GR parameters of the ParSpec formalism.
 %
-The resulting \pSEOB~waveform model \ab{does} not bias (relative to GR) the inference of
+The resulting \pSEOB~waveform model does not bias (relative to GR) the inference of
 the intrinsic binary parameters, as required by ParSpec (see, in particular, Fig.~\ref{fig:corner_plot} and
 Fig.~\ref{fig:corner_plot_all} in Appendix~\ref{app:big_contour}),
 %
@@ -2159,7 +2177,7 @@ for the $j=1$ coefficients.
 
 For dCS gravity, we follow Ref.~\cite{Wagle:2021tam}, which numerically calculated the QNMs, $\sigma_{\rm dCS}$,
 of slowly-rotating BHs, and found that for the axial gravitational modes the damping time increases, as we
-increase the Chern-Simons coupling $\ell_{\rm dCS}$, \hs{at constant BH spin.}
+increase $\ell_{\rm dCS}$, \hs{at constant BH spin.}
 %
 Hence, according to the prescription of Sec.~\ref{sec:theory_specific_qnm},
 this is the branch of QNMs we choose to work with.
@@ -2267,7 +2285,7 @@ Decreases less with respect to what? Do you mean it has a smaller damping time?}
 \end{align}
 %
 As with the previous theories, the larger values of some of these parameters are compensated
-by the assumptions of small coupling and small spin used to calculate the QNM frequencies.
+by the assumptions of weak coupling and small spin used to calculate the QNM frequencies.
 \
 \section{The estimation of  intrinsic binary parameters in General Relativity and modified theories of gravity}
 \label{app:big_contour}
