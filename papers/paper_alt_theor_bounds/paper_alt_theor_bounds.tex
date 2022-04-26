@@ -1246,13 +1246,15 @@ value of one of the mass scales involved in the problem.
 We note that $\Lambda_{\rm EFT}$ has dimensions of length and hence can be compared to each theory's fundamental length-scale $\ell_{\rm th}$.
 %
 Here we explore the range $\varepsilon \in [0, 1]$, but following
-the Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} we quote our final results using
-$\varepsilon = 1/2$.
+Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} we quote our final
+results using $\varepsilon = 1/2$, \hs{but we stress that there is no
+fundamental justification for using this cut off.}
 % %
 % In Refs.~\cite{Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr}, $\varepsilon = 1/2$ was used,
 % but here we explore $\varepsilon \in [0, 1]$ for generality.
 % %
-We say that a bound has been placed on $\ell_{\rm th}$, if most of the PDF $P(\ell_{\rm th} | d)$ support is in the interval
+
+Under these assumptions, we will say that a bound has been placed on $\ell_{\rm th}$, if most of the PDF $P(\ell_{\rm th} | d)$ support is in the interval
 $[0, \, \Lambda_{\rm EFT}(1/2, \mathfrak{m})]$.
 %
 In practice, this can be quantified through the cumulative distribution function
@@ -1342,20 +1344,6 @@ interpretations of the results of our parameter estimation.
 \subsection{Einstein-dilaton-Gauss-Bonnet gravity}
 \label{sec:results_edgb}
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
-\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
-for GW150914 (top panel), GW200129 (middle panel)
-and from combining results (bottom panel).
-%
-In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
-of the linear-in-spin QNM correction.
-%
-The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
-in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. We mark
-with vertical lines theh $90\%$ upper credible intervals.}
-\label{fig:edgb_exec_sum}
-\end{figure}
 
 We start with EdGB gravity.
 %
@@ -1386,6 +1374,21 @@ We also observe that the inclusion of the spin corrections (i.e., the curves wit
 displaces the posteriors distributions towards smaller values of $\ell_{\rm EdGB}$ (see Fig.~\ref{fig:edgb_exec_sum}),
 and larger values of $\gamma_{\rm EdGB}$ (see Fig.~\ref{fig:gamma_gb}).
 
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
+\caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
+for GW150914 (top panel), GW200129 (middle panel)
+and from combining results (bottom panel).
+%
+In all panels, different line colors correspond to the inclusion ($N_{\rm max} = 1$) or not ($N_{\rm max} = 0$)
+of the linear-in-spin QNM correction.
+%
+The joint posteriors are shown for illustrative purposes only. As we explain in Fig.~\ref{fig:edgb_cdf} and
+in the main text, our analysis of these events fails to satisfy the EFT bound~\eqref{eq:eft_bound}. We mark
+with vertical lines theh $90\%$ upper credible intervals.}
+\label{fig:edgb_exec_sum}
+\end{figure}
+
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
 \caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
@@ -1399,7 +1402,7 @@ the curves are flat in this range for both events and when $N_{\rm max} = 1$.}
 \label{fig:gamma_gb}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{figs/edgb_cdf_varying_threshold.pdf}
 \caption{(Color online).~The CDF evaluated at the
 cut-off $\Lambda_{\rm EFT}(\varepsilon,\gm)$ for EdGB gravity as a function of the parameter
@@ -1464,7 +1467,7 @@ $N_{\rm max}$ & Event &  EFT    & ParSpec & Constraint      \\
 \caption{Detailed summary of our results for EdGB gravity for GW150914, GW200129, and
 combined events using $\gm = M_{\rm f}$, $\varepsilon = 1/2$ and quoting only 90\% credible results.
 %
-We find that we cannot place any constraint on $\ell_{\rm EdGB}$ with our waveform model from either GW event.
+We find that we cannot place any bound on $\ell_{\rm EdGB}$ with our waveform model from either GW event.
 }
 \label{tab:summary_edgb}
 \end{table}
@@ -1785,7 +1788,6 @@ the QNMs, meaning that we cannot use this case to draw any meaningful
 constraint on this parameter.
 %
 We summarize our results in Table~\ref{tab:summary_ceft}.
-
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_cdf_varying_threshold.pdf}
@@ -2300,11 +2302,11 @@ to compute the QNMs.
 
 The QNMs of slowly-rotating BHs in both cubic and quartic EFT of GR where calculated in Ref.~\cite{Cano:2021myl}.
 %
-For the cubic EFT, we use their Eq.~(67), particularizing \ab{it} to $\lame = \lamo = 1$.
+For the cubic EFT, we use their Eq.~(67), particularizing it to $\lame = \lamo = 1$.
 %
-We further linearize that equation in $\chi$ and \sout{particularize} \ab{consider} $m=2$.
+We further linearize that equation in $\chi$ and consider the harmonic $m=2$.
 %
-This process, shows that the mode labeled ``-'' is the least-damped \ab{mode}, and it is the one we use.
+This process, shows that the mode labeled ``-'' is the least-damped mode, and it is the one we use.
 %
 Direct comparison with Eqs.~\eqref{eq:qnm_nongr_iso} results in $p_{\rm cEFT} = 4$,
 %
@@ -2322,7 +2324,7 @@ In this case we find that both modes (``-'' and ``+'' in the notation of Ref.~\c
 fundamental QNM damp fast, and we choose the ``-'' mode which decreases less the damping time. \abcomm{Not clear.
 Decreases less with respect to what? Do you mean it has a smaller damping time?}
 %
-\ab{This time we} then find \sout{this time} that $p_{\rm qEFT} = 6$,
+This time we then find that $p_{\rm qEFT} = 6$,
 %
 \begin{align}
     \delta \omega_{\rm qEFT}^{(0)} = -0.2114, \quad \delta \tau_{\rm qEFT}^{(0)} = -0.6070,
