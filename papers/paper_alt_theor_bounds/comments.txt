@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+Dear Alessandra Buonanno,
+
+Gregorio Carullo has commented on publication "Black-hole ringdown as a probe of higher-curvature gravity theories":
+
+   Dear Hector, Abhirup, Alessandra,
+
+   Very interesting results!
+
+   I have a couple of comments regarding the comparisons with Ref.[49].
+
+   First, here I would like to note explicitly that it's hard to make
+   apple-to-apple comparisons, since: i) we are using different events; ii)
+   when quoting the results on \ell, I was including up to quadratic terms
+   in the non-GR expansion.  Although it is an approximate one, I agree it
+   makes sense to present a comparison of the results. If attempting such
+   comparison, it might be good to mention the points above.
+
+   Secondly, I do not think that what is currently written in the
+   manuscript correctly represents what I presented in [49]. You write:
+
+   "then proceeded to use the posteriors on \ell to draw conclusions to any
+   theory that predict corrections at a given p"
+
+   and
+
+   "We can compare this conclusion with that of Ref. [49], which obtained
+   l_EdGB 􏰁< 35 km, by setting p = 4"
+
+   Projecting the bounds obtained with ParSpec onto a specific theory has
+   several subtleties, as you correctly discuss. For these reasons, I tried
+   to (and hopefully managed to) be very careful in the way I stated the
+   results obtained. Specifically, I never wrote that the bounds I obtained
+   were a direct constrain on EdGB/dCS.
+   I only stated that those theories would give rise to a correction which
+   has the same scaling of the one I considered, nothing more [49]:
+
+   "In this case we obtain a bound of l < 35km. Two notable examples of
+   quadratic gravity theories with a QNM spectrum featuring p = 4
+   corrections, are Einstein-scalar-Gauss-Bonnet(EsGB) and
+   dynamical-Chern-Simons gravity (dCS)."
+
+   Could you please amend the text to make your statements more
+   representative of what I wrote?
+
+   Thanks and congratulations for the very interesting analysis,
+   Gregorio
+%%%%%%%%%%%%%%%%%%%%%%%%
