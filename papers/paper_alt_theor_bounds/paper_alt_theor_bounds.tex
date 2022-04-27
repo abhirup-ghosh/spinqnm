@@ -8,7 +8,7 @@
                amsfonts,
                amsmath,
                longbibliography]{revtex4-1}
-
+\usepackage[flushleft]{threeparttable}
 \usepackage{epsfig}
 \usepackage{graphics}
 \usepackage{graphicx}
@@ -247,6 +247,7 @@ on the length-scale $\ell_{\rm th}$ of each theory. In Table~\ref{tab:bound_summ
 them with existing constraints.
 
 \begin{table}[t]
+\begin{threeparttable}
 \begin{tabular}{c | c c}
 \hline \hline
 Theory & Constraint & This work \\
@@ -254,9 +255,7 @@ Theory & Constraint & This work \\
 EdGB        & $\ell_{\rm EdGB} \leqslant 1.18$~km~(GW)~\cite{Lyu:2022gdr} & -- \\
 dCS         & $\ell_{\rm dCS} \leqslant 8.5$~km~(EM+GW)~\cite{Silva:2020acr}  & $\ell_{\rm dCS} \leqslant 38.7$~km \\
 cubic EFT   & -- & $\ell_{\rm cEFT} \leqslant 38.2$~km \\
-quartic EFT & $\ell_{\rm qEFT} \leqslant 150$~km~\cite{Sennett:2019bpc}  & $\ell_{\rm qEFT} \leqslant 51.3$~km~\footnote{We notice that our result for the quartic EFT of GR is only in marginal tension with our hard cut-off scale for the
-validity of the theory, and hence we do still quote it here (see Secs.~\ref{sec:remarks} and~\ref{sec:results_qeft}
-for details).}
+quartic EFT & $\ell_{\rm qEFT} \leqslant 150$~km~\cite{Sennett:2019bpc}  & $\ell_{\rm qEFT} \leqslant 51.3$~km~\tnote{a}
 \\
 \hline \hline
 \end{tabular}
@@ -264,7 +263,13 @@ for details).}
 on the length-scale of the modified gravity theories under investigation.
 They were obtained combining Bayesian-inference results from GW150914 and GW200129.
 Current constraints on $\ell_{\rm th}$ are also listed.}
+\begin{tablenotes}
+\item[a]{\footnotesize We notice that our result for the quartic EFT of GR is only in marginal tension with our hard cut-off scale for the
+validity of the theory, and hence we do still quote it here (see Secs.~\ref{sec:remarks} and~\ref{sec:results_qeft}
+for details)}
+\end{tablenotes}
 \label{tab:bound_summary}
+\end{threeparttable}
 \end{table}
 
 The paper is organized as follows. In Sec.~\ref{sec:review_theories}, we briefly describe the four
@@ -392,7 +397,7 @@ $\ell_{\rm EdGB} \leqslant 9.1$~km,
 by stacking the posteriors of $\ell_{\rm EdGB}$ from a selection of BBHs
 from the GWTC-1 and GWTC-2 catalogs~\cite{LIGOScientific:2018mvr,LIGOScientific:2020ibl}\footnote{These bounds
 are, strictly speaking, valid only when the scalar field $\varphi$ is small (i.e., $\varphi \ll 1$), and
-they take into account only the leading-order scalar field interaction arising from the original dilatonic coupling 
+they take into account only the leading-order scalar field interaction arising from the original dilatonic coupling
 (i.e., $f(\varphi) \approx \varphi$ in Eq.~\eqref{eq:action_sgb}).
 This results in what is often referred to as shift-symmetric scalar-Gauss-Bonnet theory.
 In this theory, NSs do not have scalar monopole charge~\cite{Yagi:2015oca}, while BHs do~\cite{Yunes:2011we,Sotiriou:2013qea,Sotiriou:2014pfa}. Finally, we note that the constant $\alpha_{\rm EdGB}$ used in Refs.~\cite{Yagi:2011xp,Nair:2019iur,Perkins:2021mhb,Lyu:2022gdr} is related to $\ell_{\rm EdGB}$ as $\ell_{\rm EdGB} = 4 \pi^{1/4} |\alpha_{\rm EdGB}|^{1/2}$.}.
@@ -2182,8 +2187,8 @@ leading-order in $\gamma_{\rm EdGB}$, but we emphasize that we are being inconsi
 mixing results valid for modes of different parities.
 %
 We still do so, simply to explore what the rotational corrections to EdGB gravity QNMs \emph{might}
-tells us in our ringdown analysis and the results of Ref.~\cite{Pierini:2021jxd} are our best 
-presently available guide.  
+tells us in our ringdown analysis and the results of Ref.~\cite{Pierini:2021jxd} are our best
+presently available guide.
 % \abcomm{$\ell_{\rm EdCS}^4$?}.
 
 % \hscomm{Could remove this part until the end of this section.}
@@ -2358,10 +2363,10 @@ We see that the medians of the posterior distributions are not affected substant
 This is particularly important for the $\Mf$ and $\chi_{\rm f}$ parameters, since
 the ParSpec framework assumes that the non-GR theory induces small deviations from GR.
 %
-Indeed, since \pSEOB{} introduces only minimal modifications to the plunge-merger 
+Indeed, since \pSEOB{} introduces only minimal modifications to the plunge-merger
 and because the remnant BH parameters are estimated according to GR
-predictions using the binary's component masses and spins, the fact that only small 
-biases are introduced on $\Mf$ and $\chi_{\rm f}$ is, to some extend, expected. 
+predictions using the binary's component masses and spins, the fact that only small
+biases are introduced on $\Mf$ and $\chi_{\rm f}$ is, to some extend, expected.
 %
 We obtain qualitative similar results for GW200129 and the other modified gravity theories considered in our work.
 %
