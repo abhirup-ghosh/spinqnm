@@ -944,6 +944,22 @@ under the hypothesis above, for the theories listed in Sec.~\ref{sec:review_theo
 We summarize our results in Table~\ref{tab:ref_theories_qnms} and
 leave the details of our calculations to Appendix~\ref{app:map_details}.
 
+\begin{figure}[hb]
+\includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
+\caption{(Color online). Gravitational-wave signal with GW150914-like parameters
+for both GR (solid line) and cubic EFT of GR (dashed line) with the leading-order
+$n=0$ modifications to the fundamental QNM, for $\ell_{\rm cEFT} = 65$~km.
+%
+The former is computed with the \SEOB{} model, while the latter with the
+\pSEOB{} model, with ringdown modifications according to the results in
+Table~\ref{tab:ref_theories_qnms}.
+%
+Top panel: the $+$ polarization $h_{+}(t)$. Bottom panel: the GW amplitude
+$|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes).
+}
+\label{fig:example_waveform}
+\end{figure}
+
 In Fig.~\ref{fig:example_waveform} we show an illustrative waveform for GR (solid line; using the \texttt{SEOBNR} model) and in the cubic EFT of gravity (dashed line; using the \pSEOB{} model),
 including the leading-order $j = 0$ deformations to the fundamental QNM (see Table~\ref{tab:ref_theories_qnms}).
 %
@@ -960,22 +976,6 @@ defined in Sec.~\ref{sec:review_pSEOB}, after which they differ during the ringd
 By construction, the ringdown lasts longer for the cubic EFT of GR waveform and
 with a smaller instantaneous frequency (see the bottom panel) due to the negative value of the
 $\delta\omega^{(0)}$ coefficient in this theory.
-
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/example_waveform_cubicEFT.pdf}
-\caption{(Color online). Gravitational-wave signal with GW150914-like parameters
-for both GR (solid line) and cubic EFT of GR (dashed line) with the leading-order
-$n=0$ modifications to the fundamental QNM, for $\ell_{\rm cEFT} = 65$~km.
-%
-The former is computed with the \SEOB{} model, while the latter with the
-\pSEOB{} model, with ringdown modifications according to the results in
-Table~\ref{tab:ref_theories_qnms}.
-%
-Top panel: the $+$ polarization $h_{+}(t)$. Bottom panel: the GW amplitude
-$|\tilde{h}(t)|$ (left axes) and the instantaneous frequency $f(t)$ (right axes).
-}
-\label{fig:example_waveform}
-\end{figure}
 
 % --------------------------------------------------------------------------------- %
 \section{Parameter inference and validity of our bounds}
@@ -1052,7 +1052,7 @@ P(\ell_{\rm th} | \{d_j\},\mathcal{H}) = p(\ell_{\rm th}) \prod_{j=1}^{N} \frac{
 \label{eq:cumulative_dist_ell}
 \end{equation}
 %
-where $p_j(\ell_{\rm th} | \mathcal{H})$ are the priors used for each observation, \redsout{and} $p(\ell_{\rm th} | \mathcal{H})$ is an overall prior, and we assume that the value of $\ell_{\rm th}$ is shared among all events.
+where $p_j(\ell_{\rm th} | \mathcal{H})$ are the priors used for each observation, $p(\ell_{\rm th} | \mathcal{H})$ is an overall prior, and we assume that the value of $\ell_{\rm th}$ is shared among all events.
 %
 Since we assume a uniform prior on $\ell_{\rm th}$, the joint posterior is
 equal to the joint likelihood. Hereafter, we will drop the explicit usage of
@@ -1250,7 +1250,7 @@ We also observe that the inclusion of the spin corrections (i.e., the curves wit
 displaces the posteriors distributions towards smaller values of $\ell_{\rm EdGB}$ (see Fig.~\ref{fig:edgb_exec_sum}),
 and larger values of $\gamma_{\rm EdGB}$ (see Fig.~\ref{fig:gamma_gb}).
 
-\begin{figure}[h]
+\begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/edgb_posteriors_combined.pdf}
 \caption{(Color online).~Posterior distribution function on coupling constant $\ell_{\rm EdGB}$ in EdGB gravity
 for GW150914 (top panel), GW200129 (middle panel)
@@ -1265,7 +1265,7 @@ with vertical lines the $90\%$ upper credible intervals.}
 \label{fig:edgb_exec_sum}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{figs/edgb_gamma.pdf}
 \caption{(Color online).~Posterior distribution function on the dimensionless parameter $\gamma_{\rm EdGB}$,
 defined in Eq.~\eqref{eq:def_gamma_gb}. Different line colors distinguish between events, while
@@ -1323,7 +1323,7 @@ present model}.
 %
 We summarize our findings in Table~\ref{tab:summary_edgb}.
 
-\begin{table}[h]
+\begin{table}[b]
 \begin{tabular}{l l c c c}
 \hline
 \hline
@@ -1348,9 +1348,13 @@ We find that we cannot place any bound on $\ell_{\rm EdGB}$ with our waveform mo
 \label{tab:summary_edgb}
 \end{table}
 
-
-We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui}, which obtained $\ell_{\rm EdGB} \lesssim 35$~km,
-by setting $p=4$, \emph{but not} including theory-specific QNM information on $\delta \omega^{(j)}$ and $\delta \tau^{(j)}$.
+We can compare this conclusion with that of Ref.~\cite{Carullo:2021dui},
+\hs{which found that $p=4$ modifications (such as the case of EdGB gravity)
+are constrained to $\ell \lesssim 35$~km,}
+% which obtained $\ell_{\rm EdGB} \lesssim 35$~km,
+% by setting $p=4$,
+%
+\emph{but not} including theory-specific QNM information on $\delta \omega^{(j)}$ and $\delta \tau^{(j)}$.
 \ab{Furthermore, Ref.~\cite{Carullo:2021dui} did not impose the EFT and ParSpec bounds that we imposed.}
 %
 Our results provide a concrete example of the importance of including
@@ -1551,18 +1555,6 @@ cases in Figs.~\ref{fig:edgb_exec_sum} and~\ref{fig:dCS_exec_sum}).
 %
 For values $\ell_{\rm cEFT} \gtrsim 40$~km, the posteriors smoothly approach zero.
 
-\begin{figure}[t]
-\includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined_corrected.pdf}
-\caption{(Color online).~Similar to Fig.~\ref{fig:edgb_exec_sum}, but for the cubic EFT of GR.
-We show our results for
-GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
-%
-The colors distinguish different $N_{\rm max}$ in the spin expansion and, once more, the vertical
-lines mark the 90\% upper credible intervals.
-}
-\label{fig:cEFT_exec_sum}
-\end{figure}
-
 In Fig.~\ref{fig:cEFT_cdf} we show the CDF for both events, calculated in the
 same way as already described for the EdGB and dCS theories.
 %
@@ -1585,6 +1577,18 @@ the QNMs, meaning that we cannot use this case to draw any meaningful
 constraint on this parameter.
 %
 We summarize our results in Table~\ref{tab:summary_ceft}.
+
+\begin{figure}[t]
+\includegraphics[width=\columnwidth]{figs/ceft_posteriors_combined_corrected.pdf}
+\caption{(Color online).~Similar to Fig.~\ref{fig:edgb_exec_sum}, but for the cubic EFT of GR.
+We show our results for
+GW150914 (top panel), GW200129 (middle panel) and combined events (bottom panel).
+%
+The colors distinguish different $N_{\rm max}$ in the spin expansion and, once more, the vertical
+lines mark the 90\% upper credible intervals.
+}
+\label{fig:cEFT_exec_sum}
+\end{figure}
 
 \begin{figure}[t]
 \includegraphics[width=\columnwidth]{figs/ceft_cdf_varying_threshold_corrected.pdf}
